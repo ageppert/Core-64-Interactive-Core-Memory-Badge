@@ -15,52 +15,602 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Teensy:Teensy-LC U1
+L Teensy:Teensy-LC U2
 U 1 1 5D260953
-P 3950 3700
-F 0 "U1" H 3975 4937 60  0000 C CNN
-F 1 "Teensy-LC" H 3975 4831 60  0000 C CNN
-F 2 "Teensy:Teensy30_31_32_LC" H 3950 3150 60  0001 C CNN
-F 3 "" H 3950 3150 60  0000 C CNN
-	1    3950 3700
+P 2750 2900
+F 0 "U2" H 2775 4137 60  0000 C CNN
+F 1 "Teensy-LC" H 2775 4031 60  0000 C CNN
+F 2 "Teensy:Teensy30_31_32_LC" H 2750 2350 60  0001 C CNN
+F 3 "" H 2750 2350 60  0000 C CNN
+	1    2750 2900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+BATT #PWR05
-U 1 1 5D29D01F
-P 5750 2100
-F 0 "#PWR05" H 5750 1950 50  0001 C CNN
-F 1 "+BATT" H 5765 2273 50  0000 C CNN
-F 2 "" H 5750 2100 50  0001 C CNN
-F 3 "" H 5750 2100 50  0001 C CNN
-	1    5750 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:-BATT #PWR06
-U 1 1 5D29F1EF
-P 2000 5150
-F 0 "#PWR06" H 2000 5000 50  0001 C CNN
-F 1 "-BATT" H 2015 5323 50  0000 C CNN
-F 2 "" H 2000 5150 50  0001 C CNN
-F 3 "" H 2000 5150 50  0001 C CNN
-	1    2000 5150
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2000 5150 2000 4350
-Wire Wire Line
-	2000 4350 2900 4350
-Text GLabel 2750 2950 0    50   Output ~ 0
+Text GLabel 1550 2150 0    50   Output ~ 0
 Q1P
-Text GLabel 2750 3050 0    50   Output ~ 0
+Text GLabel 1550 2250 0    50   Output ~ 0
 Q1N
 Wire Wire Line
-	2750 2950 2900 2950
+	1550 2150 1700 2150
 Wire Wire Line
-	2750 3050 2900 3050
+	1550 2250 1700 2250
 Wire Wire Line
-	5750 2100 5750 3450
+	5200 1300 5200 2650
 Wire Wire Line
-	5750 3450 5050 3450
+	5200 2650 3850 2650
+Text GLabel 4900 1250 1    50   Output ~ 0
+V+USB
+NoConn ~ 3850 2050
+NoConn ~ 3850 2150
+NoConn ~ 1700 3650
+$Comp
+L power:+VSW #PWR038
+U 1 1 5D31CDEF
+P 5200 1300
+F 0 "#PWR038" H 5200 1150 50  0001 C CNN
+F 1 "+VSW" H 5215 1473 50  0000 C CNN
+F 2 "" H 5200 1300 50  0001 C CNN
+F 3 "" H 5200 1300 50  0001 C CNN
+	1    5200 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 4200 4900 2750
+Wire Wire Line
+	4900 1250 4900 2550
+Wire Wire Line
+	4900 2550 3850 2550
+Wire Wire Line
+	4900 2750 3850 2750
+$Comp
+L power:+3V3 #PWR040
+U 1 1 5D32AA99
+P 5900 1300
+F 0 "#PWR040" H 5900 1150 50  0001 C CNN
+F 1 "+3V3" H 5915 1473 50  0000 C CNN
+F 2 "" H 5900 1300 50  0001 C CNN
+F 3 "" H 5900 1300 50  0001 C CNN
+	1    5900 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2850 3850 2850
+Wire Wire Line
+	5900 1300 5900 2450
+Wire Wire Line
+	3850 2450 5900 2450
+Connection ~ 5900 2450
+Wire Wire Line
+	5900 2450 5900 2850
+$Comp
+L Device:R R36
+U 1 1 5D32CB70
+P 5200 3400
+F 0 "R36" H 5270 3446 50  0000 L CNN
+F 1 "10k" H 5270 3355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5130 3400 50  0001 C CNN
+F 3 "~" H 5200 3400 50  0001 C CNN
+	1    5200 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R37
+U 1 1 5D32E04D
+P 5200 3700
+F 0 "R37" H 5270 3746 50  0000 L CNN
+F 1 "10k" H 5270 3655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5130 3700 50  0001 C CNN
+F 3 "~" H 5200 3700 50  0001 C CNN
+	1    5200 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 3850 5200 4200
+Wire Wire Line
+	5200 2650 5200 3250
+Connection ~ 5200 2650
+Text Notes 5300 3200 0    50   ~ 0
+Battery Voltage Monitor\nAnalog reads 1/2 battery voltage
+Text Notes 750  1350 0    50   ~ 0
+Teensy LC has incoming USB\npower/programming on board.\n\nUSB V+ bridge cut and routes ONLY\nto the LiPo charger module.\n\nLiPo must be connected for whole\nsystem to work.
+$Comp
+L power:-BATT #PWR037
+U 1 1 5D337E9E
+P 4900 4200
+F 0 "#PWR037" H 4900 4050 50  0001 C CNN
+F 1 "-BATT" H 4915 4373 50  0000 C CNN
+F 2 "" H 4900 4200 50  0001 C CNN
+F 3 "" H 4900 4200 50  0001 C CNN
+	1    4900 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:-BATT #PWR039
+U 1 1 5D338C7F
+P 5200 4200
+F 0 "#PWR039" H 5200 4050 50  0001 C CNN
+F 1 "-BATT" H 5215 4373 50  0000 C CNN
+F 2 "" H 5200 4200 50  0001 C CNN
+F 3 "" H 5200 4200 50  0001 C CNN
+	1    5200 4200
+	-1   0    0    1   
+$EndComp
+Text Notes 6150 1150 0    50   ~ 0
+Use +3V3 for low power accessories:\nReed switch, hall sensors, sense circuit, expansion bus, …
+Text Notes 700  5250 0    50   ~ 0
+SENSE SIGNAL PROCESSING
+Text GLabel 6450 3900 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 6450 4300 2    50   BiDi ~ 0
+I2C_DATA
+$Comp
+L Device:R R39
+U 1 1 5D35152C
+P 6250 3750
+F 0 "R39" H 6320 3796 50  0000 L CNN
+F 1 "4K7" H 6320 3705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6180 3750 50  0001 C CNN
+F 3 "~" H 6250 3750 50  0001 C CNN
+	1    6250 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R38
+U 1 1 5D3522EA
+P 5950 4150
+F 0 "R38" H 6020 4196 50  0000 L CNN
+F 1 "4K7" H 6020 4105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5880 4150 50  0001 C CNN
+F 3 "~" H 5950 4150 50  0001 C CNN
+	1    5950 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 4000 4600 3450
+Wire Wire Line
+	4600 3450 3850 3450
+Wire Wire Line
+	4600 4000 5700 4000
+Wire Wire Line
+	5700 4000 5700 4300
+Wire Wire Line
+	5700 4300 5950 4300
+Connection ~ 5950 4300
+Wire Wire Line
+	5950 4300 6450 4300
+Wire Wire Line
+	3850 3350 4700 3350
+Wire Wire Line
+	4700 3350 4700 3900
+Connection ~ 6250 3900
+Wire Wire Line
+	6250 3900 6450 3900
+$Comp
+L power:+3V3 #PWR042
+U 1 1 5D3544A4
+P 6250 3600
+F 0 "#PWR042" H 6250 3450 50  0001 C CNN
+F 1 "+3V3" H 6265 3773 50  0000 C CNN
+F 2 "" H 6250 3600 50  0001 C CNN
+F 3 "" H 6250 3600 50  0001 C CNN
+	1    6250 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR041
+U 1 1 5D3556B5
+P 5950 3600
+F 0 "#PWR041" H 5950 3450 50  0001 C CNN
+F 1 "+3V3" H 5965 3773 50  0000 C CNN
+F 2 "" H 5950 3600 50  0001 C CNN
+F 3 "" H 5950 3600 50  0001 C CNN
+	1    5950 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 4000 5950 3600
+Text GLabel 6450 2950 2    50   Output ~ 0
+WRITE_ENABLE
+Wire Wire Line
+	3850 2950 6450 2950
+Text GLabel 1550 2050 0    50   Input ~ 0
+SENSE_PULSE
+Wire Wire Line
+	1550 2050 1700 2050
+Text GLabel 1550 2350 0    50   Output ~ 0
+Q2P
+Text GLabel 1550 2450 0    50   Output ~ 0
+Q2N
+Wire Wire Line
+	1550 2350 1700 2350
+Wire Wire Line
+	1550 2450 1700 2450
+Text GLabel 1550 2550 0    50   Output ~ 0
+Q3P
+Text GLabel 1550 2650 0    50   Output ~ 0
+Q3N
+Wire Wire Line
+	1550 2550 1700 2550
+Wire Wire Line
+	1550 2650 1700 2650
+Text GLabel 1550 2750 0    50   Output ~ 0
+Q4P
+Text GLabel 1550 2850 0    50   Output ~ 0
+Q4N
+Wire Wire Line
+	1550 2750 1700 2750
+Wire Wire Line
+	1550 2850 1700 2850
+Text GLabel 1550 2950 0    50   Output ~ 0
+Q5P
+Text GLabel 1550 3050 0    50   Output ~ 0
+Q5N
+Wire Wire Line
+	1550 2950 1700 2950
+Wire Wire Line
+	1550 3050 1700 3050
+Text GLabel 1550 3150 0    50   Output ~ 0
+Q6P
+Text GLabel 1550 3250 0    50   Output ~ 0
+Q6N
+Wire Wire Line
+	1550 3150 1700 3150
+Wire Wire Line
+	1550 3250 1700 3250
+NoConn ~ 1700 3350
+$Comp
+L power:GNDD #PWR029
+U 1 1 5D3AFD5B
+P 800 4250
+F 0 "#PWR029" H 800 4000 50  0001 C CNN
+F 1 "GNDD" H 804 4095 50  0000 C CNN
+F 2 "" H 800 4250 50  0001 C CNN
+F 3 "" H 800 4250 50  0001 C CNN
+	1    800  4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1950 800  1950
+Wire Wire Line
+	800  1950 800  3550
+Wire Wire Line
+	1700 3550 800  3550
+Connection ~ 800  3550
+Wire Wire Line
+	800  3550 800  4250
+Text Notes 8500 1100 0    50   ~ 0
+TO DO EXPANSION FEMALE .100” HEADER:\nAll power and logic
+$Comp
+L Comparator:LM393 U?
+U 1 1 5D3DC9EC
+P 3600 5300
+AR Path="/5D3DC9EC" Ref="U?"  Part="1" 
+AR Path="/5D2551FF/5D3DC9EC" Ref="U3"  Part="1" 
+F 0 "U3" H 3600 4933 50  0000 C CNN
+F 1 "LM393" H 3600 5024 50  0000 C CNN
+F 2 "Digikey:SOIC-8_W3.9mm" H 3600 5300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3600 5300 50  0001 C CNN
+	1    3600 5300
+	1    0    0    -1  
+$EndComp
+Text GLabel 4650 5750 2    50   Output ~ 0
+SENSE_PULSE
+Text GLabel 1300 5600 0    50   Input ~ 0
+SENSE1
+Text GLabel 1300 6200 0    50   Input ~ 0
+SENSE2
+Text GLabel 1550 3850 0    50   Output ~ 0
+Q7P
+Wire Wire Line
+	1550 3850 1700 3850
+Wire Wire Line
+	3850 3850 4000 3850
+Wire Wire Line
+	3850 3750 4000 3750
+Wire Wire Line
+	3850 2350 5050 2350
+Wire Wire Line
+	5050 2350 5050 3550
+Wire Wire Line
+	5050 3550 5200 3550
+Connection ~ 5200 3550
+Wire Wire Line
+	3850 3650 4000 3650
+Text GLabel 4000 3550 2    50   Output ~ 0
+Q9P
+Wire Wire Line
+	3850 3550 4000 3550
+Text GLabel 4000 3650 2    50   Output ~ 0
+Q8N
+Text GLabel 4000 3750 2    50   Output ~ 0
+Q8P
+Text GLabel 4000 3850 2    50   Output ~ 0
+Q7N
+Wire Wire Line
+	3850 3250 4000 3250
+Wire Wire Line
+	3850 3150 4000 3150
+Wire Wire Line
+	3850 3050 4000 3050
+Text GLabel 4000 3050 2    50   Output ~ 0
+Q10N
+Text GLabel 4000 3150 2    50   Output ~ 0
+Q10P
+Text GLabel 4000 3250 2    50   Output ~ 0
+Q9N
+Text GLabel 4000 2250 2    50   Input ~ 0
+REED_SWITCH
+Wire Wire Line
+	3850 2250 4000 2250
+$Comp
+L Device:R R29
+U 1 1 5D39C2B1
+P 2200 4950
+F 0 "R29" H 2270 4996 50  0000 L CNN
+F 1 "1K8" H 2270 4905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2130 4950 50  0001 C CNN
+F 3 "~" H 2200 4950 50  0001 C CNN
+	1    2200 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR030
+U 1 1 5D39CF16
+P 2200 4800
+F 0 "#PWR030" H 2200 4650 50  0001 C CNN
+F 1 "+3V3" H 2215 4973 50  0000 C CNN
+F 2 "" H 2200 4800 50  0001 C CNN
+F 3 "" H 2200 4800 50  0001 C CNN
+	1    2200 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR032
+U 1 1 5D39E432
+P 2750 4800
+F 0 "#PWR032" H 2750 4650 50  0001 C CNN
+F 1 "+3V3" H 2765 4973 50  0000 C CNN
+F 2 "" H 2750 4800 50  0001 C CNN
+F 3 "" H 2750 4800 50  0001 C CNN
+	1    2750 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R32
+U 1 1 5D39F434
+P 2750 4950
+F 0 "R32" H 2820 4996 50  0000 L CNN
+F 1 "1K8" H 2820 4905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2680 4950 50  0001 C CNN
+F 3 "~" H 2750 4950 50  0001 C CNN
+	1    2750 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R30
+U 1 1 5D3A5EF4
+P 2200 5850
+F 0 "R30" H 2270 5896 50  0000 L CNN
+F 1 "22" H 2270 5805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2130 5850 50  0001 C CNN
+F 3 "~" H 2200 5850 50  0001 C CNN
+	1    2200 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R33
+U 1 1 5D3A668A
+P 2750 5850
+F 0 "R33" H 2820 5896 50  0000 L CNN
+F 1 "22" H 2820 5805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2680 5850 50  0001 C CNN
+F 3 "~" H 2750 5850 50  0001 C CNN
+	1    2750 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R31
+U 1 1 5D3A6BA6
+P 2200 6650
+F 0 "R31" H 2270 6696 50  0000 L CNN
+F 1 "1K5" H 2270 6605 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2130 6650 50  0001 C CNN
+F 3 "~" H 2200 6650 50  0001 C CNN
+	1    2200 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R34
+U 1 1 5D3A7392
+P 2750 6650
+F 0 "R34" H 2820 6696 50  0000 L CNN
+F 1 "1K5" H 2820 6605 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2680 6650 50  0001 C CNN
+F 3 "~" H 2750 6650 50  0001 C CNN
+	1    2750 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 5100 2200 5600
+Wire Wire Line
+	2200 6000 2200 6400
+Wire Wire Line
+	2750 6000 2750 6200
+Wire Wire Line
+	2750 5100 2750 5400
+$Comp
+L power:GNDD #PWR031
+U 1 1 5D3AE7CA
+P 2200 6800
+F 0 "#PWR031" H 2200 6550 50  0001 C CNN
+F 1 "GNDD" H 2204 6645 50  0000 C CNN
+F 2 "" H 2200 6800 50  0001 C CNN
+F 3 "" H 2200 6800 50  0001 C CNN
+	1    2200 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR033
+U 1 1 5D3AF508
+P 2750 6800
+F 0 "#PWR033" H 2750 6550 50  0001 C CNN
+F 1 "GNDD" H 2754 6645 50  0000 C CNN
+F 2 "" H 2750 6800 50  0001 C CNN
+F 3 "" H 2750 6800 50  0001 C CNN
+	1    2750 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 5600 1600 5600
+Wire Wire Line
+	1950 5600 1950 6200
+Wire Wire Line
+	1950 6200 2750 6200
+Connection ~ 2750 6200
+Wire Wire Line
+	2750 6200 2750 6500
+Wire Wire Line
+	1300 6200 1600 6200
+Wire Wire Line
+	1800 6200 1800 6400
+Wire Wire Line
+	1800 6400 2200 6400
+Connection ~ 2200 6400
+Wire Wire Line
+	2200 6400 2200 6500
+Wire Wire Line
+	2750 5400 3300 5400
+Connection ~ 2750 5400
+Wire Wire Line
+	2750 5400 2750 5700
+Wire Wire Line
+	3300 5200 2500 5200
+Wire Wire Line
+	2500 5200 2500 6400
+Wire Wire Line
+	2500 6400 2200 6400
+Wire Wire Line
+	2750 6200 3050 6200
+Wire Wire Line
+	3050 6200 3050 6350
+Wire Wire Line
+	3050 6350 3300 6350
+Wire Wire Line
+	2200 5600 3050 5600
+Wire Wire Line
+	3050 5600 3050 6150
+Wire Wire Line
+	3050 6150 3300 6150
+Connection ~ 2200 5600
+Wire Wire Line
+	2200 5600 2200 5700
+$Comp
+L Comparator:LM393 U3
+U 2 1 5D3C9C38
+P 3600 6250
+F 0 "U3" H 3600 6617 50  0000 C CNN
+F 1 "LM393" H 3600 6526 50  0000 C CNN
+F 2 "Digikey:SOIC-8_W3.9mm" H 3600 6250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3600 6250 50  0001 C CNN
+	2    3600 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM393 U3
+U 3 1 5D3CAF67
+P 3700 7050
+F 0 "U3" H 3658 7096 50  0000 L CNN
+F 1 "LM393" H 3658 7005 50  0000 L CNN
+F 2 "Digikey:SOIC-8_W3.9mm" H 3700 7050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3700 7050 50  0001 C CNN
+	3    3700 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR034
+U 1 1 5D3D496F
+P 3600 6750
+F 0 "#PWR034" H 3600 6600 50  0001 C CNN
+F 1 "+3V3" H 3615 6923 50  0000 C CNN
+F 2 "" H 3600 6750 50  0001 C CNN
+F 3 "" H 3600 6750 50  0001 C CNN
+	1    3600 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR035
+U 1 1 5D3D5196
+P 3600 7350
+F 0 "#PWR035" H 3600 7100 50  0001 C CNN
+F 1 "GNDD" H 3604 7195 50  0000 C CNN
+F 2 "" H 3600 7350 50  0001 C CNN
+F 3 "" H 3600 7350 50  0001 C CNN
+	1    3600 7350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 3900 6250 3900
+$Comp
+L Device:R R35
+U 1 1 5D3F592D
+P 4350 4950
+F 0 "R35" H 4420 4996 50  0000 L CNN
+F 1 "10k" H 4420 4905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4280 4950 50  0001 C CNN
+F 3 "~" H 4350 4950 50  0001 C CNN
+	1    4350 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR036
+U 1 1 5D3F7604
+P 4350 4800
+F 0 "#PWR036" H 4350 4650 50  0001 C CNN
+F 1 "+3V3" H 4365 4973 50  0000 C CNN
+F 2 "" H 4350 4800 50  0001 C CNN
+F 3 "" H 4350 4800 50  0001 C CNN
+	1    4350 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 5750 4350 5750
+Wire Wire Line
+	4150 5300 4150 5750
+Wire Wire Line
+	4150 6250 4150 5750
+Connection ~ 4150 5750
+Wire Wire Line
+	3900 6250 4150 6250
+NoConn ~ 1700 3450
+Text GLabel 1550 3750 0    50   BiDi ~ 0
+AVAILABLE
+Wire Wire Line
+	1550 3750 1700 3750
+Wire Wire Line
+	3900 5300 4150 5300
+Wire Wire Line
+	4350 5100 4350 5750
+Connection ~ 4350 5750
+Wire Wire Line
+	4350 5750 4650 5750
+Wire Wire Line
+	1600 5700 1600 5600
+Connection ~ 1600 5600
+Wire Wire Line
+	1600 5600 1950 5600
+Wire Wire Line
+	1600 6000 1600 6200
+Connection ~ 1600 6200
+Wire Wire Line
+	1600 6200 1800 6200
+$Comp
+L Device:R R28
+U 1 1 5D48BBA6
+P 1600 5850
+F 0 "R28" H 1670 5896 50  0000 L CNN
+F 1 "1K5" H 1670 5805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1530 5850 50  0001 C CNN
+F 3 "~" H 1600 5850 50  0001 C CNN
+	1    1600 5850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
