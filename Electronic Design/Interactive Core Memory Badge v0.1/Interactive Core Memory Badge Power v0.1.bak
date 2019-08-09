@@ -17,12 +17,12 @@ $EndDescr
 $Comp
 L power:+BATT #PWR023
 U 1 1 5D2956F9
-P 3700 1700
-F 0 "#PWR023" H 3700 1550 50  0001 C CNN
-F 1 "+BATT" H 3715 1873 50  0000 C CNN
-F 2 "" H 3700 1700 50  0001 C CNN
-F 3 "" H 3700 1700 50  0001 C CNN
-	1    3700 1700
+P 3700 1650
+F 0 "#PWR023" H 3700 1500 50  0001 C CNN
+F 1 "+BATT" H 3715 1823 50  0000 C CNN
+F 2 "" H 3700 1650 50  0001 C CNN
+F 3 "" H 3700 1650 50  0001 C CNN
+	1    3700 1650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -39,46 +39,46 @@ $EndComp
 $Comp
 L Device:Polyfuse F1
 U 1 1 5D3009B0
-P 4650 1700
-F 0 "F1" V 4425 1700 50  0000 C CNN
-F 1 "Polyfuse" V 4516 1700 50  0000 C CNN
-F 2 "Fuse:Fuse_0805_2012Metric" H 4700 1500 50  0001 L CNN
-F 3 "~" H 4650 1700 50  0001 C CNN
-	1    4650 1700
+P 4650 1950
+F 0 "F1" V 4425 1950 50  0000 C CNN
+F 1 "Polyfuse" V 4516 1950 50  0000 C CNN
+F 2 "Fuse:Fuse_0805_2012Metric" H 4700 1750 50  0001 L CNN
+F 3 "~" H 4650 1950 50  0001 C CNN
+	1    4650 1950
 	0    1    1    0   
 $EndComp
 $Comp
 L Switch:SW_SPST SW1
 U 1 1 5D30313B
-P 4200 1700
-F 0 "SW1" H 4200 1935 50  0000 C CNN
-F 1 "SW_SPST" H 4200 1844 50  0000 C CNN
-F 2 "Digikey:Switch_Slide_JS202011SCQN" H 4200 1700 50  0001 C CNN
-F 3 "~" H 4200 1700 50  0001 C CNN
-	1    4200 1700
-	1    0    0    -1  
+P 4200 1950
+F 0 "SW1" H 4200 2185 50  0000 C CNN
+F 1 "SW_SPST" H 4200 2094 50  0000 C CNN
+F 2 "Digikey:Switch_Slide_JS202011SCQN" H 4200 1950 50  0001 C CNN
+F 3 "~" H 4200 1950 50  0001 C CNN
+	1    4200 1950
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	4400 1700 4500 1700
+	4400 1950 4500 1950
 $Comp
 L power:+VSW #PWR024
 U 1 1 5D305A98
-P 5000 1700
-F 0 "#PWR024" H 5000 1550 50  0001 C CNN
-F 1 "+VSW" H 5015 1873 50  0000 C CNN
-F 2 "" H 5000 1700 50  0001 C CNN
-F 3 "" H 5000 1700 50  0001 C CNN
-	1    5000 1700
+P 5000 1650
+F 0 "#PWR024" H 5000 1500 50  0001 C CNN
+F 1 "+VSW" H 5015 1823 50  0000 C CNN
+F 2 "" H 5000 1650 50  0001 C CNN
+F 3 "" H 5000 1650 50  0001 C CNN
+	1    5000 1650
 	1    0    0    -1  
 $EndComp
 Text Notes 1400 1250 0    50   ~ 0
 Adafruit LiPo Charger Module\nHas built-in connection to battery 1S Lipo\nApprox. 3-4V operating voltage supplied to WHOLE SYSTEM.
 Wire Wire Line
-	3700 1700 4000 1700
+	3700 1950 4000 1950
 Wire Wire Line
-	4800 1700 5000 1700
+	4800 1950 5000 1950
 Text Notes 600  850  0    50   ~ 0
-USB V+ pad to charger module to charge from USB.\nSystem is only powered from the LiPo.\nLiPo must be connected to run.
+Charger module receives power from USB, either Micro LiPo charger or Teensy LC.\nRest of the the system is only powered from the LiPo.\nLiPo must be connected to operate.
 Text GLabel 1700 1600 0    50   Input ~ 0
 V+USB
 $Comp
@@ -117,12 +117,12 @@ Connection ~ 2250 2200
 $Comp
 L power:-BATT #PWR022
 U 1 1 5D30A5B6
-P 2400 2650
-F 0 "#PWR022" H 2400 2500 50  0001 C CNN
-F 1 "-BATT" H 2415 2823 50  0000 C CNN
-F 2 "" H 2400 2650 50  0001 C CNN
-F 3 "" H 2400 2650 50  0001 C CNN
-	1    2400 2650
+P 2400 2800
+F 0 "#PWR022" H 2400 2650 50  0001 C CNN
+F 1 "-BATT" H 2415 2973 50  0000 C CNN
+F 2 "" H 2400 2800 50  0001 C CNN
+F 3 "" H 2400 2800 50  0001 C CNN
+	1    2400 2800
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -139,8 +139,8 @@ $EndComp
 Wire Wire Line
 	2000 2300 2400 2300
 Wire Wire Line
-	2400 2300 2400 1700
-Text Notes 1900 3050 0    50   ~ 0
+	2400 2300 2400 1750
+Text Notes 1900 3200 0    50   ~ 0
 STAR GROUND EVERYTHING TO -BATT
 Text GLabel 6150 1900 1    50   Input ~ 0
 WRITE_ENABLE
@@ -151,15 +151,15 @@ IN: V+USB (5V) into Micro LiPo Charger circuit to charge 1S battery\nOUT: as +BA
 Text Notes 600  3400 0    50   ~ 0
 POWER FLOW:
 Text Notes 600  3650 0    50   ~ 0
-IN: From computer USB 5V into Teensy LC module board (jumper cut to MCU onboard),\nOUT: V+USB and -BATT.
+IN: From computer USB 5V into Teensy LC module board (jumper cut on bottom of MCU onboard),\nOUT: V+USB and -BATT, and +3V3
 Text Notes 7300 3650 0    50   ~ 0
 IN: +VSW\nOUT: VMEM to cores controlled by WRITE_ENABLE
 Wire Wire Line
 	2250 2550 2400 2550
 Wire Wire Line
-	2400 2550 2400 2650
+	2400 2550 2400 2800
 Wire Wire Line
-	1700 1600 2150 1600
+	1700 1600 1800 1600
 Wire Wire Line
 	2150 2000 2150 1600
 Connection ~ 2400 2550
@@ -236,18 +236,18 @@ Wire Wire Line
 $Comp
 L power:GNDPWR #PWR?
 U 1 1 5D35C3D6
-P 7650 1800
+P 9500 2000
 AR Path="/5D35C3D6" Ref="#PWR?"  Part="1" 
 AR Path="/5D254AE8/5D35C3D6" Ref="#PWR028"  Part="1" 
-F 0 "#PWR028" H 7650 1600 50  0001 C CNN
-F 1 "GNDPWR" H 7654 1646 50  0000 C CNN
-F 2 "" H 7650 1750 50  0001 C CNN
-F 3 "" H 7650 1750 50  0001 C CNN
-	1    7650 1800
+F 0 "#PWR028" H 9500 1800 50  0001 C CNN
+F 1 "GNDPWR" H 9504 1846 50  0000 C CNN
+F 2 "" H 9500 1950 50  0001 C CNN
+F 3 "" H 9500 1950 50  0001 C CNN
+	1    9500 2000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 1800 7650 1800
+	7250 1800 8500 1800
 Wire Wire Line
 	6150 2150 6500 2150
 Wire Wire Line
@@ -256,4 +256,152 @@ Text Notes 7300 1300 0    50   ~ 0
 Core Memory Power
 Text Notes 4550 1250 0    50   ~ 0
 MCU, LED Array, I2C
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5D48B700
+P 1800 1550
+F 0 "TP1" H 1858 1668 50  0000 L CNN
+F 1 "V+USB" H 1858 1577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2000 1550 50  0001 C CNN
+F 3 "~" H 2000 1550 50  0001 C CNN
+	1    1800 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1550 1800 1600
+Connection ~ 1800 1600
+Wire Wire Line
+	1800 1600 2150 1600
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5D48C4DD
+P 2750 1750
+F 0 "TP3" H 2808 1868 50  0000 L CNN
+F 1 "+BATT" H 2808 1777 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2950 1750 50  0001 C CNN
+F 3 "~" H 2950 1750 50  0001 C CNN
+	1    2750 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 1750 2750 1750
+Connection ~ 2400 1750
+Wire Wire Line
+	2400 1750 2400 1700
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5D48D068
+P 2750 2800
+F 0 "TP4" H 2808 2918 50  0000 L CNN
+F 1 "-BATT" H 2808 2827 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2950 2800 50  0001 C CNN
+F 3 "~" H 2950 2800 50  0001 C CNN
+	1    2750 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 2800 2400 2800
+Connection ~ 2400 2800
+$Comp
+L Connector:TestPoint TP5
+U 1 1 5D48E646
+P 5350 1700
+F 0 "TP5" H 5408 1818 50  0000 L CNN
+F 1 "+VSW" H 5408 1727 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 5550 1700 50  0001 C CNN
+F 3 "~" H 5550 1700 50  0001 C CNN
+	1    5350 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 1950 5350 1950
+Wire Wire Line
+	5350 1950 5350 1700
+Connection ~ 5000 1950
+$Comp
+L Connector:TestPoint TP6
+U 1 1 5D48F2A7
+P 8050 1550
+F 0 "TP6" H 8108 1668 50  0000 L CNN
+F 1 "VMEM" H 8108 1577 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 8250 1550 50  0001 C CNN
+F 3 "~" H 8250 1550 50  0001 C CNN
+	1    8050 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 1650 8050 1650
+Wire Wire Line
+	8050 1650 8050 1550
+Connection ~ 7650 1650
+Wire Wire Line
+	9500 2000 9500 1800
+Wire Wire Line
+	3700 1950 3700 1650
+Wire Wire Line
+	5000 1650 5000 1950
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5D542466
+P 1850 2750
+F 0 "TP2" H 1908 2868 50  0000 L CNN
+F 1 "V-USB" H 1908 2777 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2050 2750 50  0001 C CNN
+F 3 "~" H 2050 2750 50  0001 C CNN
+	1    1850 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 2750 1850 2800
+Wire Wire Line
+	1850 2800 2400 2800
+$Comp
+L Device:R R?
+U 1 1 5D4B5807
+P 8950 1800
+AR Path="/5D4B5807" Ref="R?"  Part="1" 
+AR Path="/5D254AE8/5D4B5807" Ref="R43"  Part="1" 
+F 0 "R43" V 8743 1800 50  0000 C CNN
+F 1 "0" V 8834 1800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 8880 1800 50  0001 C CNN
+F 3 "~" H 8950 1800 50  0001 C CNN
+	1    8950 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9100 1800 9350 1800
+Text Notes 8500 1250 0    50   ~ 0
+All core power flows to ground through this resistor.\nCan this replace all of the others?\nAt least it can be used to measure current.\nCCL = Core Current Lowside Measurement\nCCH = Core Current Highside Measurement
+$Comp
+L Connector:TestPoint TP18
+U 1 1 5D4B94F7
+P 8500 1700
+F 0 "TP18" H 8558 1818 50  0000 L CNN
+F 1 "CCL" H 8558 1727 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 8700 1700 50  0001 C CNN
+F 3 "~" H 8700 1700 50  0001 C CNN
+	1    8500 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP19
+U 1 1 5D4B9C69
+P 9350 1700
+F 0 "TP19" H 9408 1818 50  0000 L CNN
+F 1 "CCH" H 9408 1727 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 9550 1700 50  0001 C CNN
+F 3 "~" H 9550 1700 50  0001 C CNN
+	1    9350 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 1700 9350 1800
+Connection ~ 9350 1800
+Wire Wire Line
+	9350 1800 9500 1800
+Wire Wire Line
+	8500 1700 8500 1800
+Connection ~ 8500 1800
+Wire Wire Line
+	8500 1800 8800 1800
 $EndSCHEMATC

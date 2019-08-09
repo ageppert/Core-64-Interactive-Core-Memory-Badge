@@ -87,123 +87,10 @@ F 3 "" H 2150 4000 50  0001 C CNN
 $EndComp
 Text Notes 2950 850  0    50   ~ 0
 NOTE: Orientation of core array is the user view. \nThe user view is the BACK COPPER of the PCB where only the core array is installed. \nThe other side of the board is the FRONT COPPER PCB where all other compnents are populated, out of sight of the user. \nThe PCB layout is viewed from the FRONT COPPER PCB side.
-$Comp
-L Diode:BAW56S D1
-U 3 1 5D3B6B5E
-P 2400 6550
-F 0 "D1" H 2400 6765 50  0000 C CNN
-F 1 "BAW56S" H 2400 6674 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2400 6375 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 2400 6650 50  0001 C CNN
-	3    2400 6550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Digikey-Transistors:MMBT4403LT1G Q1
-U 1 1 5D3B6B6D
-P 1750 6050
-F 0 "Q1" H 1938 6103 60  0000 L CNN
-F 1 "MMBT4403LT1G" H 1938 5997 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 1950 6250 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1950 6350 60  0001 L CNN
-F 4 "MMBT4403LT1GOSCT-ND" H 1950 6450 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4403LT1G" H 1950 6550 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 1950 6650 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 1950 6750 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1950 6850 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 1950 6950 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS PNP 40V 0.6A SOT23" H 1950 7050 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 1950 7150 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 1950 7250 60  0001 L CNN "Status"
-	1    1750 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Digikey-Transistors:MMBT4401LT1G Q2
-U 1 1 5D3B6B7C
-P 1750 7500
-F 0 "Q2" H 1938 7553 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 1938 7447 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 1950 7700 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 1950 7800 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 1950 7900 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 1950 8000 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 1950 8100 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 1950 8200 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 1950 8300 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 1950 8400 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 1950 8500 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 1950 8600 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 1950 8700 60  0001 L CNN "Status"
-	1    1750 7500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:BAW56S D1
-U 4 1 5D3B6B82
-P 2700 6550
-F 0 "D1" H 2700 6765 50  0000 C CNN
-F 1 "BAW56S" H 2700 6674 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2700 6375 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 2700 6650 50  0001 C CNN
-	4    2700 6550
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Diode:BAW56S D1
-U 1 1 5D3B6B88
-P 1200 6550
-F 0 "D1" H 1200 6765 50  0000 C CNN
-F 1 "BAW56S" H 1200 6674 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1200 6375 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 1200 6650 50  0001 C CNN
-	1    1200 6550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:BAW56S D1
-U 2 1 5D3B6B8E
-P 1500 6550
-F 0 "D1" H 1500 6765 50  0000 C CNN
-F 1 "BAW56S" H 1500 6674 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1500 6375 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 1500 6650 50  0001 C CNN
-	2    1500 6550
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	1850 6250 2550 6250
 Wire Wire Line
 	2550 6250 2550 6550
-Connection ~ 2550 6550
-Wire Wire Line
-	1850 6250 1350 6250
 Wire Wire Line
 	1350 6250 1350 6550
-Connection ~ 1850 6250
-Connection ~ 1350 6550
-$Comp
-L Diode:BAV70S D2
-U 1 1 5D3B6B9C
-P 1350 7050
-F 0 "D2" H 1350 7266 50  0000 C CNN
-F 1 "BAV70S" H 1350 7175 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1350 7050 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BAV70_SER.pdf" H 1350 7050 50  0001 C CNN
-	1    1350 7050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:BAV70S D2
-U 2 1 5D3B6BA2
-P 2550 7050
-F 0 "D2" H 2550 7266 50  0000 C CNN
-F 1 "BAV70S" H 2550 7175 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2550 7050 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/BAV70_SER.pdf" H 2550 7050 50  0001 C CNN
-	2    2550 7050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1350 7250 1850 7250
 Wire Wire Line
@@ -236,30 +123,8 @@ Wire Wire Line
 	1050 7500 1100 7500
 Wire Wire Line
 	1050 6050 1100 6050
-$Comp
-L Device:R R1
-U 1 1 5D3B6BCF
-P 1250 6050
-F 0 "R1" V 1043 6050 50  0000 C CNN
-F 1 "220" V 1134 6050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 1180 6050 50  0001 C CNN
-F 3 "~" H 1250 6050 50  0001 C CNN
-	1    1250 6050
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1400 6050 1550 6050
-$Comp
-L Device:R R2
-U 1 1 5D3B6BD6
-P 1250 7500
-F 0 "R2" V 1043 7500 50  0000 C CNN
-F 1 "220" V 1134 7500 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 1180 7500 50  0001 C CNN
-F 3 "~" H 1250 7500 50  0001 C CNN
-	1    1250 7500
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1400 7500 1550 7500
 $Comp
@@ -1749,4 +1614,161 @@ Wire Wire Line
 	3600 4100 3600 4300
 Wire Wire Line
 	3300 4100 3600 4100
+$Comp
+L Device:R R1
+U 1 1 5D48D653
+P 1250 6050
+F 0 "R1" V 1043 6050 50  0000 C CNN
+F 1 "220" V 1134 6050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1180 6050 50  0001 C CNN
+F 3 "~" H 1250 6050 50  0001 C CNN
+	1    1250 6050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5D48DBED
+P 1250 7500
+F 0 "R2" V 1043 7500 50  0000 C CNN
+F 1 "220" V 1134 7500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1180 7500 50  0001 C CNN
+F 3 "~" H 1250 7500 50  0001 C CNN
+	1    1250 7500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1350 6250 1850 6250
+$Comp
+L Digikey-Transistors:MMBT4403LT1G Q1
+U 1 1 5D49119D
+P 1750 6050
+F 0 "Q1" H 1938 6103 60  0000 L CNN
+F 1 "MMBT4403LT1G" H 1938 5997 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 1950 6250 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1950 6350 60  0001 L CNN
+F 4 "MMBT4403LT1GOSCT-ND" H 1950 6450 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4403LT1G" H 1950 6550 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 1950 6650 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 1950 6750 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1950 6850 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 1950 6950 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS PNP 40V 0.6A SOT23" H 1950 7050 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 1950 7150 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 1950 7250 60  0001 L CNN "Status"
+	1    1750 6050
+	1    0    0    -1  
+$EndComp
+Connection ~ 1850 6250
+Wire Wire Line
+	1850 6250 2550 6250
+$Comp
+L Diode:BAW56S D1
+U 1 1 5D491FF5
+P 1200 6550
+F 0 "D1" H 1200 6765 50  0000 C CNN
+F 1 "BAW56S" H 1200 6674 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1200 6375 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 1200 6650 50  0001 C CNN
+	1    1200 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BAW56S D1
+U 2 1 5D492F96
+P 1500 6550
+F 0 "D1" H 1500 6765 50  0000 C CNN
+F 1 "BAW56S" H 1500 6674 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1500 6375 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 1500 6650 50  0001 C CNN
+	2    1500 6550
+	-1   0    0    -1  
+$EndComp
+Connection ~ 1350 6550
+$Comp
+L Diode:BAW56S D1
+U 3 1 5D493D32
+P 2400 6550
+F 0 "D1" H 2400 6765 50  0000 C CNN
+F 1 "BAW56S" H 2400 6674 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2400 6375 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 2400 6650 50  0001 C CNN
+	3    2400 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BAW56S D1
+U 4 1 5D494DBE
+P 2700 6550
+F 0 "D1" H 2700 6765 50  0000 C CNN
+F 1 "BAW56S" H 2700 6674 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2700 6375 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAV756S_BAW56_SER.pdf" H 2700 6650 50  0001 C CNN
+	4    2700 6550
+	-1   0    0    -1  
+$EndComp
+Connection ~ 2550 6550
+$Comp
+L Diode:BAV70S D2
+U 1 1 5D4959E2
+P 1350 7050
+F 0 "D2" H 1350 7266 50  0000 C CNN
+F 1 "BAV70S" H 1350 7175 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 1350 7050 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAV70_SER.pdf" H 1350 7050 50  0001 C CNN
+	1    1350 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BAV70S D2
+U 2 1 5D4967AE
+P 2550 7050
+F 0 "D2" H 2550 7266 50  0000 C CNN
+F 1 "BAV70S" H 2550 7175 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 2550 7050 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAV70_SER.pdf" H 2550 7050 50  0001 C CNN
+	2    2550 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Digikey-Transistors:MMBT4401LT1G Q2
+U 1 1 5D4976F4
+P 1750 7500
+F 0 "Q2" H 1938 7553 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 1938 7447 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 1950 7700 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 1950 7800 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 1950 7900 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 1950 8000 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 1950 8100 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 1950 8200 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 1950 8300 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 1950 8400 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 1950 8500 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 1950 8600 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 1950 8700 60  0001 L CNN "Status"
+	1    1750 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BAT54AW D?
+U 1 1 5D4E500E
+P -400 6500
+F 0 "D?" H -400 6633 50  0000 C CNN
+F 1 "BAT54AW" H -400 6724 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H -325 6625 50  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H -520 6500 50  0001 C CNN
+	1    -400 6500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:BAT54CW D?
+U 1 1 5D4E8A7D
+P -400 7200
+F 0 "D?" H -400 7425 50  0000 C CNN
+F 1 "BAT54CW" H -400 7334 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H -325 7325 50  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H -480 7200 50  0001 C CNN
+	1    -400 7200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
