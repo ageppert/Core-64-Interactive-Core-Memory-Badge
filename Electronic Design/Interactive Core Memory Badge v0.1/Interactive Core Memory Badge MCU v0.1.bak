@@ -608,13 +608,13 @@ LED_MATRIX
 Wire Wire Line
 	1650 3350 1800 3350
 $Comp
-L Motor:Fan_3pin M1
+L Motor:Fan_3pin H1
 U 1 1 5D465797
 P 5850 6850
-F 0 "M1" H 6008 6846 50  0000 L CNN
+F 0 "H1" H 6008 6846 50  0000 L CNN
 F 1 "LED_Array" H 6008 6755 50  0000 L CNN
-F 2 "Connector:FanPinHeader_1x03_P2.54mm_Vertical" H 5850 6760 50  0001 C CNN
-F 3 "http://www.hardwarecanucks.com/forum/attachments/new-builds/16287d1330775095-help-chassis-power-fan-connectors-motherboard-asus_p8z68.jpg" H 5850 6760 50  0001 C CNN
+F 2 "Core_Memory_8x8_Array:LED_Matrix_Header_3pin" H 5850 6760 50  0001 C CNN
+F 3 "" H 5850 6760 50  0001 C CNN
 	1    5850 6850
 	1    0    0    -1  
 $EndComp
@@ -749,13 +749,13 @@ Connection ~ 9400 2200
 Wire Wire Line
 	9400 2200 9400 2100
 $Comp
-L Motor:Fan_4pin M2
+L Motor:Fan_4pin H2
 U 1 1 5D49F2EF
 P 6350 5450
-F 0 "M2" H 6508 5546 50  0000 L CNN
+F 0 "H2" H 6508 5546 50  0000 L CNN
 F 1 "OLED_DISPLAY" H 6508 5455 50  0000 L CNN
-F 2 "Connector:FanPinHeader_1x04_P2.54mm_Vertical" H 6350 5460 50  0001 C CNN
-F 3 "http://www.formfactors.org/developer%5Cspecs%5Crev1_2_public.pdf" H 6350 5460 50  0001 C CNN
+F 2 "Core_Memory_8x8_Array:OLED_Header_4PIN" H 6350 5460 50  0001 C CNN
+F 3 "" H 6350 5460 50  0001 C CNN
 	1    6350 5450
 	1    0    0    -1  
 $EndComp
