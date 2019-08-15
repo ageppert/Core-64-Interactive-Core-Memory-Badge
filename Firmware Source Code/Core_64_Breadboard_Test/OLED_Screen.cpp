@@ -7,6 +7,8 @@
 #endif
 
 #include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
+//#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
+//#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
