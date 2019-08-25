@@ -18,7 +18,7 @@ SETUP:
 //#ifdef __cplusplus
 //extern "C" {
 //#endif
-
+uint16_t GetBatteryVoltagemV();
 void AnalogSetup();
 void AnalogUpdate();
 

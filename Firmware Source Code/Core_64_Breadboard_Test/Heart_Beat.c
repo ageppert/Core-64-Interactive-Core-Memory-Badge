@@ -12,6 +12,7 @@ void HeartBeatSetup() {
   pinMode(Pin_Built_In_LED, OUTPUT);
 }
 
+// Purpose: 
 void HeartBeat() {
   static unsigned long HeartBeatSequence[] = {150,150,150,550}; // On, off, on, off 
   static unsigned HeartBeatSequencePosition = 0;

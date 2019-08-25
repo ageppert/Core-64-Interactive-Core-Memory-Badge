@@ -19,15 +19,15 @@
 
 void setup() {
   HeartBeatSetup();
+  DigitalIOSetup();
+  AnalogSetup();
+  LEDArraySetup();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; } // wait for serial port to connect. Needed for native USB port only
     Serial.println();
     Serial.println("Serial Debug Port Started at ");
   OLEDScreenSetup();
-  DigitalIOSetup();
-  AnalogSetup();
-  LEDArraySetup();
 }
 
 void loop() {
