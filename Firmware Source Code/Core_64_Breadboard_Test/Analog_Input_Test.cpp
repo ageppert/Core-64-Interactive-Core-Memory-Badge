@@ -39,8 +39,10 @@ void AnalogUpdate() {
   {
     AnalogReadTimer = NowTime;
     ReadAnalogVoltage();
+    /*
     Serial.print("Battery ");
     Serial.print(GetBatteryVoltagemV());
     Serial.println(" mV.");
+    */
   }
 }
