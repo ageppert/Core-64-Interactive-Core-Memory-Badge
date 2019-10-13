@@ -12,6 +12,7 @@
 #include "Analog_Input_Test.h"
 
 #include <Adafruit_GFX.h>
+//#include "src/Adafruit-GFX-Library-1.4.8/Adafruit_GFX.h" // ToDo: include this and use a later version.
 #include <Adafruit_SSD1306.h>
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -59,13 +60,13 @@ void OLEDScreenSetup() {
 }
 
 void OLEDScreenUpdate() {
-  static unsigned long UpdatePeriodms = 5000;
+  static unsigned long UpdatePeriodms = 5000;  
   static unsigned long NowTime = 0;
   static unsigned long UpdateTimer = 0;
   NowTime = millis();
   if ((NowTime - UpdateTimer) >= UpdatePeriodms)
   {
     UpdateTimer = NowTime;
-    OLEDScreenSplash();
+    OLEDScreenSplash();                             // TO DO: This refresh causes the aqua colored Hackaday logo (and others) to blink. Is it signal interference?
   }
 }
