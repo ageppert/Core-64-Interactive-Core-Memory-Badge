@@ -7,9 +7,10 @@
 #endif
 
 #include "HardwareIOMap.h"
-#include "Core_Functions.h"
+#include "Core_API.h"
 #include "CharacterMap.h"
-#include <FastLED.h>          // See File/Examples/FastLED/XYMAtrix
+//#include <FastLED.h>          // See File/Examples/FastLED/XYMAtrix
+#include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
 #define COLOR_ORDER GRB
 #define CHIPSET     WS2812B
 #define BRIGHTNESS 3
@@ -138,13 +139,11 @@ void RainbowDemo() {
   }
 
 //
-// Set Core Memory Array bits into monochrome LED Array memory
+// Copy Core Memory Array bits into monochrome LED Array memory
 //
   void WriteCoreMemoryToMonochromeLEDArrayMemory() {
-    for( uint8_t y = 0; y < kMatrixHeight; y++) 
-    {
-      for( uint8_t x = 0; x < kMatrixWidth; x++) 
-      {
+    for( uint8_t y = 0; y < kMatrixHeight; y++) {
+      for( uint8_t x = 0; x < kMatrixWidth; x++) {
         LEDArrayMonochromeMemory[x][y] = CoreArrayMemory[x][y];
       }
     }
@@ -192,7 +191,7 @@ void LEDArrayUpdate() {
     // WriteCharacterMapToCoreMemoryArrayMemory();
     // WriteCoreMemoryToMonochromeLEDArrayMemory();
     // LEDArrayMonochromeUpdate();
-    WriteColorFontSymbolToLEDArrayColorHSVMemory(2);
-    LEDArrayColorHSVUpdate();
+    // WriteColorFontSymbolToLEDArrayColorHSVMemory(2);
+    // LEDArrayColorHSVUpdate();
   }
 }

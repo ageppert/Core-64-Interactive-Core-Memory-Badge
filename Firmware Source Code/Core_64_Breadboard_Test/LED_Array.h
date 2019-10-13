@@ -21,6 +21,10 @@ SETUP:
 
 void LEDArraySetup();
 void LEDArrayUpdate();
+void LEDArrayColorHSVUpdate();
+extern void WriteColorFontSymbolToLEDArrayColorHSVMemory(uint8_t SymbolNumber);
+void WriteCoreMemoryToMonochromeLEDArrayMemory();
+void LEDArrayMonochromeUpdate();
 
 //#ifdef __cplusplus
 //} // extern "C"
