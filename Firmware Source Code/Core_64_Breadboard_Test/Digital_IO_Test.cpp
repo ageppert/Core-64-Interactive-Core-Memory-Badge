@@ -6,44 +6,43 @@
 #include <WProgram.h>
 #endif
 
-#include "HardwareIOMap.H"
-#include "Core_Functions.h"
+#include "HardwareIOMap.h"
 
 void DigitalIOSetup() {
   pinMode(Pin_Sense_Pulse, INPUT);
-  pinMode(Pin_Matrix_Drive_1_Q1P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_2_Q1N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_3_Q2P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_4_Q2N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_5_Q3P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_6_Q3N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_7_Q4P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_8_Q4N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_9_Q5P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_10_Q5N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_11_Q6P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_12_Q6N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_13_Q7P, OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
-  pinMode(Pin_Matrix_Drive_14_Q7N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_15_Q8P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_16_Q8N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_17_Q9P, OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
-  pinMode(Pin_Matrix_Drive_18_Q9N, OUTPUT);
-  pinMode(Pin_Matrix_Drive_19_Q10P, OUTPUT);
-  pinMode(Pin_Matrix_Drive_20_Q10N, OUTPUT);
-  pinMode(Pin_Write_Enable, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q1P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q1N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q2P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q2N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q3P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q3N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q4P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q4N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q5P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q5N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q6P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q6N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q7P, OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
+  pinMode(PIN_MATRIX_DRIVE_Q7N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q8P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q8N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q9P, OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
+  pinMode(PIN_MATRIX_DRIVE_Q9N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q10P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
+  pinMode(PIN_WRITE_ENABLE, OUTPUT);
   pinMode(Pin_Reed_Switch, INPUT);
   pinMode(Pin_Hall_Switch, INPUT);
 }
 
 void DigitalIOUpdate() {
 /*
-  //digitalWrite(Pin_Matrix_Drive_1, LOW); 
-  digitalWrite(Pin_Matrix_Drive_1, HIGH); // High is 700 ns
-  digitalWrite(Pin_Matrix_Drive_1, LOW);
-  //digitalWriteFast(Pin_Matrix_Drive_17, LOW);  // 
-  digitalWriteFast(Pin_Matrix_Drive_17, HIGH); // High is 10-20 ns (10ns is resolution limit of 100 MHz scope)
-  digitalWriteFast(Pin_Matrix_Drive_17, LOW);
+  //digitalWrite(PIN_MATRIX_DRIVE_1, LOW); 
+  digitalWrite(PIN_MATRIX_DRIVE_1, HIGH); // High is 700 ns
+  digitalWrite(PIN_MATRIX_DRIVE_1, LOW);
+  //digitalWriteFast(PIN_MATRIX_DRIVE_17, LOW);  // 
+  digitalWriteFast(PIN_MATRIX_DRIVE_17, HIGH); // High is 10-20 ns (10ns is resolution limit of 100 MHz scope)
+  digitalWriteFast(PIN_MATRIX_DRIVE_17, LOW);
 */
   static uint32_t NowTime = 0;
   static uint32_t PulseStateTimer = 0;

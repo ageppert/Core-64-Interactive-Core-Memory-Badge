@@ -21,6 +21,7 @@ SETUP:
 
 void DigitalIOSetup();
 void DigitalIOUpdate();
+void     CoreClearAll();
 
 //#ifdef __cplusplus
 //} // extern "C"
