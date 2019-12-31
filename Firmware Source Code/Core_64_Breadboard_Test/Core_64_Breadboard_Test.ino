@@ -55,14 +55,16 @@ void loop() {
   static uint8_t ColorFontSymbolToDisplay = 2;
   static bool ButtonReleased = true;
   static uint32_t Button1HoldTime = 0;
+  static uint8_t coreToTest = 0;
 
   /*                      *********************
                           *** Housekeepting ***
                           *********************
   */
   HeartBeat();
-  // Testing skipping AnalogUpdate() OLEDScreenUpdate() and it runs a lot longer before causing that white LED problem
-  // AnalogUpdate();
+  // With AnalogUpdate() and OLEDScreenUpdate() both commented out, white LED problem does not happen in STATE_CORE_TEST_ONE,
+  // but it still happens (less frequently) in STATE_CORE_TEST_ALL.
+  // AnalogUpdate();      
   // OLEDScreenUpdate();
   // DigitalIOUpdate();
   // LEDArrayUpdate();
@@ -96,8 +98,6 @@ void loop() {
     }
   }
 
-  uint8_t coreToTest = 0;
-
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
@@ -111,11 +111,21 @@ void loop() {
     CoreWriteBit(coreToTest,0);
     WriteOneBitToCoreMemory(coreToTest,CoreReadBit(coreToTest));
     WriteCoreMemoryToMonochromeLEDArrayMemory();
+    // Testing to see if I decode this to the LED matrix correctly
+    // This code is lighting up row 0, col 0-6 then jumps to row 1, col 1-7.
+    // It should be lighting up all of row 0 and the 0-6 of of row 1.
+    // ToDo: figure out why the proper bit is not lighting up. 
+    delay(150);
+    WriteOneBitToMonochromeLEDArrayMemory(coreToTest,0);
+    coreToTest++;
+    if(coreToTest==15){coreToTest=0;}
+    WriteOneBitToMonochromeLEDArrayMemory(coreToTest,1);
+    // Test end
     LEDArrayMonochromeUpdate();
     break;
 
-  case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the two above.
-    CoreReadArray(); // Update Core Memory with read state of bits
+  case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
+    CoreReadArray(); // Update Core Memory with read state of all 64 bits.
     WriteCoreMemoryToMonochromeLEDArrayMemory();
     LEDArrayMonochromeUpdate();
     break;

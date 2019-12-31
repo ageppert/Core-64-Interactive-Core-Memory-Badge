@@ -139,6 +139,20 @@ void RainbowDemo() {
   }
 
 //
+// Write on bit into monochrome LED Array memory        ToDo: This may not be decoding to the right place in the LED array.
+//
+void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value) {
+  if      (bit < 8 ) { LEDArrayMonochromeMemory [0] [  bit     ] = value; }
+  else if (bit < 16) { LEDArrayMonochromeMemory [1] [ (bit-8 ) ] = value; }
+  else if (bit < 24) { LEDArrayMonochromeMemory [2] [ (bit-16) ] = value; }
+  else if (bit < 32) { LEDArrayMonochromeMemory [3] [ (bit-24) ] = value; }
+  else if (bit < 40) { LEDArrayMonochromeMemory [4] [ (bit-32) ] = value; }
+  else if (bit < 48) { LEDArrayMonochromeMemory [5] [ (bit-40) ] = value; }
+  else if (bit < 56) { LEDArrayMonochromeMemory [6] [ (bit-48) ] = value; }
+  else if (bit < 64) { LEDArrayMonochromeMemory [7] [ (bit-56) ] = value; }
+}
+
+//
 // Copy Core Memory Array bits into monochrome LED Array memory
 //
   void WriteCoreMemoryToMonochromeLEDArrayMemory() {

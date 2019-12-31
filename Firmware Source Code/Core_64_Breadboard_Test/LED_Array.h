@@ -23,6 +23,7 @@ void LEDArraySetup();
 void LEDArrayUpdate();
 void LEDArrayColorHSVUpdate();
 extern void WriteColorFontSymbolToLEDArrayColorHSVMemory(uint8_t SymbolNumber);
+extern void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value);
 void WriteCoreMemoryToMonochromeLEDArrayMemory();
 void LEDArrayMonochromeUpdate();
 
