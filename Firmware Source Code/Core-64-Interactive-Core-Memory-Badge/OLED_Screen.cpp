@@ -6,6 +6,7 @@
 #include <WProgram.h>
 #endif
 
+#include "version.h"
 #include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
@@ -25,9 +26,11 @@ void OLEDScreenSplash() {
   display.clearDisplay();
 //  display.display();
   display.setCursor(0, 0);     // Start at top-left corner
-  display.println(F("Core 64 at"));
+  display.print(F("Core64"));
+  display.println(F(HARDWARE_VERSION));
   display.println(F(" Hackaday "));
-  display.println(F("Prize 2019"));
+  display.print(F("v"));
+  display.println(F(FIRMWARE_VERSION));
   display.print(F("Bat:"));
   display.print(GetBatteryVoltagemV(),DEC);
   display.println(F("mV"));

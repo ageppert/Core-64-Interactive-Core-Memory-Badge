@@ -19,9 +19,6 @@
 
 //#define DEBUG 1
 
-#define VERSION "0.1.0"   // TO DO: connect version number to a value that the firmware can interact with and display.
-const String FirmwareVersion=VERSION;
-
 uint8_t TopLevelState;   // Master State Machine
 enum TopLevelState
 {
