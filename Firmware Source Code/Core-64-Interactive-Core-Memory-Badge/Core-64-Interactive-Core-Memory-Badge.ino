@@ -1,6 +1,6 @@
 /*
  * Core 64 Breadboard Test
- * 2019 - Andy Geppert
+ * 2019 and beyond - Andy Geppert
  * Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)
  */
 
@@ -25,7 +25,9 @@ enum TopLevelState
   STATE_SCROLLING_TEXT = 0,     //  0 Scrolling text at power on
   STATE_CORE_TEST_ONE,          //  1 Testing core #3 and displaying core state
   STATE_CORE_TEST_ALL,          //  2 Testing all cores and displaying core state
-  STATE_LAST                    //  3 last one, return to 0.
+  STATE_LED_TEST_ONE_MATRIX,    //  3 Testing LED Driver
+  STATE_LED_TEST_ONE_STRING,    //  4 Testing LED Driver
+  STATE_LAST                    //  5 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -46,6 +48,7 @@ void setup() {
   ButtonsSetup();
   CoreSetup();
   TopLevelState = STATE_SCROLLING_TEXT;
+//  TopLevelState = STATE_LED_TEST_ONE_MATRIX;
 }
 
 void loop() {
@@ -87,7 +90,7 @@ void loop() {
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
-    if(TopLevelState == STATE_LAST) { TopLevelState = 0; }    
+    if(TopLevelState == STATE_LAST) { TopLevelState = STATE_SCROLLING_TEXT; }    
   }
   else {
     if (Button1HoldTime == 0) {
@@ -98,34 +101,74 @@ void loop() {
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
-    ScrollTextToCoreMemory(); // This write directly to the core memory array and bypasses readiing it.
-    WriteCoreMemoryToMonochromeLEDArrayMemory();
-    LEDArrayMonochromeUpdate();
+    ScrollTextToCoreMemory(); // This writes directly to the core memory array and bypasses reading it.
+    CopyCoreMemoryToMonochromeLEDArrayMemory();
+    // LEDArrayMonochromeUpdate();
+    DisplayLedScreenMemoryMonochrome2DImage();
     break;
 
   case STATE_CORE_TEST_ONE:
     CoreClearAll();
     CoreWriteBit(coreToTest,0);
     WriteOneBitToCoreMemory(coreToTest,CoreReadBit(coreToTest));
-    WriteCoreMemoryToMonochromeLEDArrayMemory();
+    CopyCoreMemoryToMonochromeLEDArrayMemory();
     // Testing to see if I decode this to the LED matrix correctly
     // This code is lighting up row 0, col 0-6 then jumps to row 1, col 1-7.
     // It should be lighting up all of row 0 and the 0-6 of of row 1.
     // ToDo: figure out why the proper bit is not lighting up. 
     delay(150);
     WriteOneBitToMonochromeLEDArrayMemory(coreToTest,0);
-    coreToTest++;
-    if(coreToTest==15){coreToTest=0;}
+    // coreToTest++;
+    // if(coreToTest>=9){coreToTest=0;}
+    coreToTest=2;
     WriteOneBitToMonochromeLEDArrayMemory(coreToTest,1);
     // Test end
-    LEDArrayMonochromeUpdate();
+    // LEDArrayMonochromeUpdate();
+    DisplayLedScreenMemoryMonochrome2DImage();
     break;
 
   case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
     CoreReadArray(); // Update Core Memory with read state of all 64 bits.
-    WriteCoreMemoryToMonochromeLEDArrayMemory();
-    LEDArrayMonochromeUpdate();
+    CopyCoreMemoryToMonochromeLEDArrayMemory();
+    // LEDArrayMonochromeUpdate();
+    DisplayLedScreenMemoryMonochrome2DImage();
     break;
+
+  case STATE_LED_TEST_ONE_MATRIX: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
+    static uint8_t x = 0;
+    static uint8_t y = 0;
+    static unsigned long UpdatePeriodms = 50;  
+    static unsigned long NowTime = 0;
+    static unsigned long UpdateTimer = 0;
+    NowTime = millis();
+    if ((NowTime - UpdateTimer) >= UpdatePeriodms)
+    {
+      UpdateTimer = NowTime;
+      LedScreenMemoryMonochrome2DImageClear();
+      LedScreenMemoryMonochrome2DImageWrite(y, x, 1);
+      DisplayLedScreenMemoryMonochrome2DImage();
+      x++;
+      if (x==8) {x=0; y++;}
+      if (y==8) {y=0;}    
+    }
+  break;
+
+  case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
+    static uint8_t stringPos = 0;
+    static unsigned long StringUpdatePeriodms = 10;  
+    static unsigned long StringNowTime = 0;
+    static unsigned long StringUpdateTimer = 0;
+    NowTime = millis();
+    if ((NowTime - StringUpdateTimer) >= StringUpdatePeriodms)
+    {
+      StringUpdateTimer = NowTime;
+      LedScreenMemoryMonochrome1DPixelStringClear();
+      LedScreenMemoryMonochrome1DPixelStringWrite(stringPos, 1);
+      DisplayLedScreenMonochrome1DPixelString();
+      stringPos++;
+      if (stringPos>63) {stringPos=0;}
+    }
+  break;
 
   default:
     Serial.println("Invalid TopLevelState");
