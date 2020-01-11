@@ -135,6 +135,7 @@ void loop() {
     break;
 
   case STATE_LED_TEST_ONE_MATRIX: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
+    // Cycles through LEDs first in row 0, by X 0 to 7, then row 1, and so on. Ends at X and Y 7.
     static uint8_t x = 0;
     static uint8_t y = 0;
     static unsigned long UpdatePeriodms = 50;  
