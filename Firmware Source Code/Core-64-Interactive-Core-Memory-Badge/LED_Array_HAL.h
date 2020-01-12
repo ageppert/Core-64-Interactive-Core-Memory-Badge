@@ -4,8 +4,8 @@ SETUP:
 - Configure in LED_Array.c
 */
  
-#ifndef LED_ARRAY_H
-#define LED_ARRAY_H
+#ifndef LED_ARRAY_HAL_H
+#define LED_ARRAY_HAL_H
 
 #if (ARDUINO >= 100)
 #include <Arduino.h>
@@ -19,7 +19,6 @@ SETUP:
 //extern "C" {
 //#endif
 
-void LEDArraySetup();
 void LEDArrayUpdate();
 void LEDArrayColorHSVUpdate();
 extern void WriteColorFontSymbolToLEDArrayColorHSVMemory(uint8_t SymbolNumber);
@@ -38,6 +37,10 @@ void DisplayLedScreenMemoryMonochrome2DImage();
 void LedScreenMemoryMonochrome1DPixelStringClear();
 extern void LedScreenMemoryMonochrome1DPixelStringWrite(uint8_t bit, bool value);
 void DisplayLedScreenMonochrome1DPixelString();
+
+// Updated 2019-01-11 for HAL over Driver architecture
+// The API for the LED Array HAL
+void LED_Array_Init();	// Sets up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h 
 
 //#ifdef __cplusplus
 //} // extern "C"

@@ -13,7 +13,7 @@
 // TO DO: connect version number to a value that the firmware can interact with and display.
 
 #define HARDWARE_VERSION  " 0.1"   		// First prototypes (green board) are V0.1
-#define FIRMWARE_VERSION  "200101-02"   // Working on basic functionality of all connected hardware.
+#define FIRMWARE_VERSION  "200111-03"   // Working on basic functionality of all connected hardware.
 
 const String FirmwareVersion = FIRMWARE_VERSION;
 const String HardwareVersion = HARDWARE_VERSION;

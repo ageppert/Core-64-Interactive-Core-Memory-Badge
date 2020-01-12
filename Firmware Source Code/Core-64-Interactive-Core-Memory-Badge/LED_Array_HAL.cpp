@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <stdbool.h>
+//#include <stdbool.h> // Not required because FastLED library redfines bool.
 #if (ARDUINO >= 100)
 #include <Arduino.h>
 #else
@@ -9,28 +9,23 @@
 #include "HardwareIOMap.h"
 #include "Core_API.h"
 #include "CharacterMap.h"
-//#include <FastLED.h>          // See File/Examples/FastLED/XYMAtrix
-#include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
-#define COLOR_ORDER GRB
-#define CHIPSET     WS2812B
-#define BRIGHTNESS 3
 
-const uint8_t kMatrixWidth = 8;
-const uint8_t kMatrixHeight = 8;
-const bool    kMatrixSerpentineLayout = true;
-  //Red (0..) "HUE_RED"
-  //Orange (32..) "HUE_ORANGE"
-  //Yellow (64..) "HUE_YELLOW"
-  //Green (96..) "HUE_GREEN"
-  //Aqua (128..) "HUE_AQUA"
-  //Blue (160..) "HUE_BLUE"
-  //Purple (192..) "HUE_PURPLE"
-  //Pink(224..) "HUE_PINK"  
+#include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
+#include "FastLED_Config.h"
+
 uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
+
+// LED Array Memory Buffers for the 1D and 2D user representations of the LED Array.
+static bool LedScreenMemoryMonochrome1DPixelString [64];  // 0 is upper left, 63 is lower right, counting left to right and top to bottom
+static bool LedScreenMemoryMonochrome2DImage [8][8];      // order y,x : 0,0 is upper left, 7,7 is lower right, counting left to right and top to bottom
+// TODO
+// Add LED color 1D array
+// Add LED color 2D array
+// Move usage of the two below, to the ones above, and get rid of these two.
 static bool    LEDArrayMonochromeMemory [8][8];                        // In order of y,x position
-static bool    LedScreenMemoryMonochrome2DImage [8][8];      // 0,0 is upper left, 7,7 is lower right, counting left to right and top to bottom
-static bool    LedScreenMemoryMonochrome1DPixelString [64];      // 0 is upper left, 63 is lower right, counting left to right and top to bottom
 uint8_t LEDArrayColorHSVMemory [8][8];
+
+// Look up tables to translate the 1D and 2D user representations of the array to the LED positions used by the LED Array Driver, FastLED.
 const uint8_t ScreenPixelPosition1DLUT [64] = { // Maps Screen Pixel Position to LED 1D array position.
   63,62,61,60,59,58,57,56, 
   48,49,50,51,52,53,54,55, 
@@ -52,9 +47,11 @@ const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position 
   { 0, 1, 2, 3, 4, 5, 6, 7}  
   };
 
-#define NUM_LEDS (kMatrixWidth * kMatrixHeight)
-CRGB leds_plus_safety_pixel[ NUM_LEDS + 1];
-CRGB* const leds( leds_plus_safety_pixel + 1);
+void LED_Array_Init() {
+  // These parameters are set in FastLED_Config.h
+  FastLED.addLeds<CHIPSET, Pin_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.setBrightness( BRIGHTNESS );
+}
 
 uint16_t XY( uint8_t x, uint8_t y)
 {
@@ -258,10 +255,6 @@ void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value) {
     }
   }
 
-void LEDArraySetup() {
-  FastLED.addLeds<CHIPSET, Pin_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
-  FastLED.setBrightness( BRIGHTNESS );
-}
 
 void LEDArrayUpdate() {
   static uint32_t NowTimems = 0;

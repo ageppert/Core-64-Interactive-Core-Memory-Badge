@@ -10,7 +10,7 @@
 
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
-#include "LED_Array.h"
+#include "LED_Array_HAL.h"
 #include "OLED_Screen.h"
 #include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
@@ -38,7 +38,7 @@ void setup() {
   HeartBeatSetup();
   DigitalIOSetup();
   AnalogSetup();
-  LEDArraySetup();
+  LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; } // wait for serial port to connect. Needed for native USB port only
@@ -159,10 +159,10 @@ void loop() {
     static unsigned long StringUpdatePeriodms = 10;  
     static unsigned long StringNowTime = 0;
     static unsigned long StringUpdateTimer = 0;
-    NowTime = millis();
+    StringNowTime = millis();
     if ((NowTime - StringUpdateTimer) >= StringUpdatePeriodms)
     {
-      StringUpdateTimer = NowTime;
+      StringUpdateTimer = StringNowTime;
       LedScreenMemoryMonochrome1DPixelStringClear();
       LedScreenMemoryMonochrome1DPixelStringWrite(stringPos, 1);
       DisplayLedScreenMonochrome1DPixelString();
