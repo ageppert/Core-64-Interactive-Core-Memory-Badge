@@ -7,16 +7,18 @@
 #endif
 
 #include "HardwareIOMap.h"
-#include "Core_API.h"
+#include "Core_API.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
 #include "CharacterMap.h"
 
 #include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
-#include "FastLED_Config.h"
+#include "FastLED_Config.h" // Custom config file for FastLED library
 
-uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
+// LED Array Memory Buffers for user representations of the LED Array.
+static bool LedArrayMemoryBinary [64];  // 0 is lower right (LSb), 63 is upper left (MSb), counting right to left, then up to the next row. Each row up is a higher Byte.
+static bool LedArrayMemoryString [64];  // 0 is upper left, 63 is lower right, counting left to right, then down to next row
+// static uint8_t LedArrayMemoryMatrix [8][8];  // order y,x : 0,0 is upper left, 7,7 is lower right, each pixel is a joint HSV color encoded in a Byte.
+// Exception for HSV color encoding is 1 is interpreted as the monochrome color, which will be substituted. 0 is off. 
 
-// LED Array Memory Buffers for the 1D and 2D user representations of the LED Array.
-static bool LedScreenMemoryMonochrome1DPixelString [64];  // 0 is upper left, 63 is lower right, counting left to right and top to bottom
 static bool LedScreenMemoryMonochrome2DImage [8][8];      // order y,x : 0,0 is upper left, 7,7 is lower right, counting left to right and top to bottom
 // TODO
 // Add LED color 1D array
@@ -47,11 +49,29 @@ const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position 
   { 0, 1, 2, 3, 4, 5, 6, 7}  
   };
 
+uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
+
+
 void LED_Array_Init() {
-  // These parameters are set in FastLED_Config.h
+  // These parameters are set in FastLED_Config.h and from HardwareIOMap.h
   FastLED.addLeds<CHIPSET, Pin_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
   FastLED.setBrightness( BRIGHTNESS );
 }
+
+void LED_Array_Memory_Clear() {
+  for( uint8_t i = 0; i < NUM_LEDS; i++) {
+    LedArrayMemoryBinary[i] = 0;
+    LedArrayMemoryString[i] = 0;
+  }
+  for( uint8_t y = 0; y < kMatrixHeight; y++) 
+  {
+    for( uint8_t x = 0; x < kMatrixWidth; x++) 
+    {
+      LedScreenMemoryMonochrome2DImage[y][x] = 0;
+    }
+  }
+}
+
 
 uint16_t XY( uint8_t x, uint8_t y)
 {
@@ -131,39 +151,6 @@ void RainbowDemo() {
     FastLED.show();
 }
 
-// Deprecated
-// Read 64 bits of monochrome LED Screen memory and update the LED Array
-// Map LEDArrayMonochromeMemory to LEDArray layout, which requires a 90 CW rotation in V0.1
-//
-//  void LEDArrayMonochromeUpdate() {
-//  
-//    for( uint8_t y = 0; y < kMatrixHeight; y++) 
-//    {
-//      for( uint8_t x = 0; x < kMatrixWidth; x++) 
-//      {
-//        // bool value = LEDArrayMonochromeMemory [y][x];
-//        bool value = LEDArrayMonochromeMemory [kMatrixHeight-1-y][x];  // Rotate LEDArrayMonochromeMemory 90 CW
-//        if (value != 0)
-//        {
-//          leds[ XY(x, y)]  = CHSV(LEDArrayMonochromeColorHSV[0],LEDArrayMonochromeColorHSV[1],LEDArrayMonochromeColorHSV[2]);
-//        }
-//        else
-//        {
-//          leds[ XY(x, y)]  = CHSV(0,0,0);
-//        }
-//      }
-//    }
-//    FastLED.show();
-//  }
-
-// depracated
-// Clear the LED Array
-//
-//  void LEDArrayMonochromeAllOff() {
-//    for(uint8_t i = 0; i < NUM_LEDS; i++) {leds[i] = CHSV(0,0,0);}
-//    FastLED.show();
-//  }
-
 //
 // Turn on one LED in the Array with X and Y coordinate
 //
@@ -230,7 +217,7 @@ void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value) {
   }
 
 //
-// Copy Core Memory Array bits into monochrome LED Array memory
+// Copy Color Font Symbol into monochrome LED Array memory
 //
   void WriteCharacterMapToCoreMemoryArrayMemory() {
     for( uint8_t y = 0; y < kMatrixHeight; y++) 
@@ -255,7 +242,6 @@ void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value) {
     }
   }
 
-
 void LEDArrayUpdate() {
   static uint32_t NowTimems = 0;
   static uint32_t LEDArrayUpdateTimerms = 0;
@@ -269,17 +255,6 @@ void LEDArrayUpdate() {
     // LEDArrayMonochromeUpdate();
     // WriteColorFontSymbolToLEDArrayColorHSVMemory(2);
     // LEDArrayColorHSVUpdate();
-  }
-}
-
-
-void LedScreenMemoryMonochrome2DImageClear() {
-  for( uint8_t y = 0; y < kMatrixHeight; y++) 
-  {
-    for( uint8_t x = 0; x < kMatrixWidth; x++) 
-    {
-      LedScreenMemoryMonochrome2DImage[x][y] = 0;
-    }
   }
 }
 
@@ -305,13 +280,8 @@ void DisplayLedScreenMemoryMonochrome2DImage() {
   FastLED.show();
 }
 
-
-void LedScreenMemoryMonochrome1DPixelStringClear() {
-  for ( uint8_t bit = 0; bit < NUM_LEDS; bit++ ) { LedScreenMemoryMonochrome1DPixelString [bit] = 0; }
-}
-
 void LedScreenMemoryMonochrome1DPixelStringWrite(uint8_t bit, bool value) {
-  LedScreenMemoryMonochrome1DPixelString [bit] = value;
+  LedArrayMemoryString [bit] = value;
 }
 
 void DisplayLedScreenMonochrome1DPixelString() {
@@ -320,7 +290,7 @@ void DisplayLedScreenMonochrome1DPixelString() {
     // Convert from screen position to LED array position 
     LEDPixelPosition = ScreenPixelPosition1DLUT [ScreenPixel];
     // Turn on or off the corresponding LED
-    if ( LedScreenMemoryMonochrome1DPixelString [ScreenPixel] ) {
+    if ( LedArrayMemoryString [ScreenPixel] ) {
       leds[LEDPixelPosition] = CHSV(LEDArrayMonochromeColorHSV[0],LEDArrayMonochromeColorHSV[1],LEDArrayMonochromeColorHSV[2]);
     }
     else {

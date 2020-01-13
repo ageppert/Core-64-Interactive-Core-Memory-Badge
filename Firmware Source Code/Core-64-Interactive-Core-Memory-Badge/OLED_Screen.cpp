@@ -26,7 +26,7 @@ void OLEDScreenSplash() {
   display.clearDisplay();
 //  display.display();
   display.setCursor(0, 0);     // Start at top-left corner
-  display.print(F("Core64"));
+  display.print(F("Core64 "));
   display.println(F(HARDWARE_VERSION));
   display.println(F(" Hackaday "));
   display.print(F("v"));

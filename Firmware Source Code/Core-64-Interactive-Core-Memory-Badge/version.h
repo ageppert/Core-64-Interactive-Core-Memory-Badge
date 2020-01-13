@@ -1,6 +1,6 @@
 /*
-	PURPOSE: Define the version number and scheme
-	SETUP: manually update the field assigned as VERSION
+	PURPOSE: Define/assign/log the version scheme and number.
+	SETUP: Manually update the field assigned as VERSION
 */
 
 /*	VERSION SCHEME
@@ -12,8 +12,12 @@
 
 // TO DO: connect version number to a value that the firmware can interact with and display.
 
-#define HARDWARE_VERSION  " 0.1"   		// First prototypes (green board) are V0.1
-#define FIRMWARE_VERSION  "200111-03"   // Working on basic functionality of all connected hardware.
+#define HARDWARE_VERSION  "0.2"   		
+/* 
+ * V0.1 the first batch of 5 prototype green boards. 
+ * V0.2 hand re-worked updates on V0.1 for first bring-up.
+*/
+#define FIRMWARE_VERSION  "200112-04"   // Working on basic functionality of all connected hardware.
 
 const String FirmwareVersion = FIRMWARE_VERSION;
 const String HardwareVersion = HARDWARE_VERSION;

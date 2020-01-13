@@ -103,7 +103,6 @@ void loop() {
   case STATE_SCROLLING_TEXT:
     ScrollTextToCoreMemory(); // This writes directly to the core memory array and bypasses reading it.
     CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // LEDArrayMonochromeUpdate();
     DisplayLedScreenMemoryMonochrome2DImage();
     break;
 
@@ -145,7 +144,8 @@ void loop() {
     if ((NowTime - UpdateTimer) >= UpdatePeriodms)
     {
       UpdateTimer = NowTime;
-      LedScreenMemoryMonochrome2DImageClear();
+      LED_Array_Memory_Clear();
+      //LedScreenMemoryMonochrome2DImageClear();
       LedScreenMemoryMonochrome2DImageWrite(y, x, 1);
       DisplayLedScreenMemoryMonochrome2DImage();
       x++;
@@ -163,7 +163,8 @@ void loop() {
     if ((NowTime - StringUpdateTimer) >= StringUpdatePeriodms)
     {
       StringUpdateTimer = StringNowTime;
-      LedScreenMemoryMonochrome1DPixelStringClear();
+      LED_Array_Memory_Clear();
+      //LedScreenMemoryMonochrome1DPixelStringClear();
       LedScreenMemoryMonochrome1DPixelStringWrite(stringPos, 1);
       DisplayLedScreenMonochrome1DPixelString();
       stringPos++;
