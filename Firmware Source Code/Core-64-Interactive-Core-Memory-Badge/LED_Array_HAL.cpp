@@ -13,6 +13,8 @@
 #include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
 #include "FastLED_Config.h" // Custom config file for FastLED library
 
+#define MONOCHROMECOLORCHANGER 1
+
 // LED Array Memory Buffers for user representations of the LED Array.
 static bool LedArrayMemoryBinary [64];  // 0 is lower right (LSb), 63 is upper left (MSb), counting right to left, then up to the next row. Each row up is a higher Byte.
 static bool LedArrayMemoryString [64];  // 0 is upper left, 63 is lower right, counting left to right, then down to next row
@@ -49,6 +51,7 @@ const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position 
   { 0, 1, 2, 3, 4, 5, 6, 7}  
   };
 
+// Default monochrome color (OLED aqua)
 uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
 
 
@@ -72,6 +75,11 @@ void LED_Array_Memory_Clear() {
   }
 }
 
+void LED_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t brightness) {
+  LEDArrayMonochromeColorHSV[0] = hue;
+  LEDArrayMonochromeColorHSV[1] = saturation;
+  LEDArrayMonochromeColorHSV[2] = brightness;
+}
 
 uint16_t XY( uint8_t x, uint8_t y)
 {
@@ -242,22 +250,6 @@ void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value) {
     }
   }
 
-void LEDArrayUpdate() {
-  static uint32_t NowTimems = 0;
-  static uint32_t LEDArrayUpdateTimerms = 0;
-  static uint32_t LEDArrayUpdatePeriodms = 1000; // ms
-  NowTimems = millis();
-  if ((NowTimems - LEDArrayUpdateTimerms) >= LEDArrayUpdatePeriodms)
-  {
-    LEDArrayUpdateTimerms = NowTimems;
-    // WriteCharacterMapToCoreMemoryArrayMemory();
-    // CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // LEDArrayMonochromeUpdate();
-    // WriteColorFontSymbolToLEDArrayColorHSVMemory(2);
-    // LEDArrayColorHSVUpdate();
-  }
-}
-
 void LedScreenMemoryMonochrome2DImageWrite(uint8_t y, uint8_t x, bool value) {
   LedScreenMemoryMonochrome2DImage[y][x] = value;
 }
@@ -300,3 +292,51 @@ void DisplayLedScreenMonochrome1DPixelString() {
   FastLED.show();
 }
 
+void LED_Array_Test_Pixel_String() {
+    static uint8_t stringPos = 0;
+    static unsigned long StringUpdatePeriodms = 10;  
+    static unsigned long StringNowTime = 0;
+    static unsigned long StringUpdateTimer = 0;
+    StringNowTime = millis();
+    if ((StringNowTime - StringUpdateTimer) >= StringUpdatePeriodms)
+    {
+      StringUpdateTimer = StringNowTime;
+      LED_Array_Memory_Clear();
+      LedScreenMemoryMonochrome1DPixelStringWrite(stringPos, 1);
+      DisplayLedScreenMonochrome1DPixelString();
+      stringPos++;
+      if (stringPos>63) {stringPos=0;}
+      #ifdef MONOCHROMECOLORCHANGER
+        static uint8_t MonochromeColorChange = 0;
+        LED_Array_Monochrome_Set_Color(MonochromeColorChange, 255, 255);
+        MonochromeColorChange ++;
+      #endif
+    }
+}
+
+// Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
+// Cycles through LEDs first in row 0, by X 0 to 7, then row 1, and so on. Ends at X and Y 7.
+void LED_Array_Test_Pixel_Matrix() {
+    static uint8_t x = 0;
+    static uint8_t y = 0;
+    static unsigned long UpdatePeriodms = 50;  
+    static unsigned long NowTime = 0;
+    static unsigned long UpdateTimer = 0;
+    NowTime = millis();
+    if ((NowTime - UpdateTimer) >= UpdatePeriodms)
+    {
+      UpdateTimer = NowTime;
+      LED_Array_Memory_Clear();
+      //LedScreenMemoryMonochrome2DImageClear();
+      LedScreenMemoryMonochrome2DImageWrite(y, x, 1);
+      DisplayLedScreenMemoryMonochrome2DImage();
+      x++;
+      if (x==8) {x=0; y++;}
+      if (y==8) {y=0;}    
+      #ifdef MONOCHROMECOLORCHANGER
+        static uint8_t MonochromeColorChange = 0;
+        LED_Array_Monochrome_Set_Color(MonochromeColorChange, 255, 255);
+        MonochromeColorChange ++;
+      #endif
+    }
+}

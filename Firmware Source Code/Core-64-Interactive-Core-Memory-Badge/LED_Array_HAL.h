@@ -23,6 +23,11 @@ USAGE: Init, Clear, Write to one of the buffers in monochrome or color mode, upd
 // The API for the LED Array HAL
 void LED_Array_Init();				// Sets up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h 
 void LED_Array_Memory_Clear(); 		// Clears all of the LED Array memory buffers.
+void LED_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t brightness); // Overide the default monochrome color
+void LED_Array_Test_Pixel_String(); // Test all 64 LEDs. Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
+// Tests four functions: clear, monochrome color, write one pixel 1d, display 1d buffer
+void LED_Array_Test_Pixel_Matrix(); // Test all 64 LEDs. Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D string addressing
+// Tests four functions: clear, monochrome color, write one pixel 2d, display 2d buffer
 
 // New proven functions 2019-01-01
 extern void LedScreenMemoryMonochrome2DImageWrite(uint8_t y, uint8_t x, bool value);
@@ -32,7 +37,6 @@ extern void LedScreenMemoryMonochrome1DPixelStringWrite(uint8_t bit, bool value)
 void DisplayLedScreenMonochrome1DPixelString();
 
 // Older stuff that needs cleanup
-void LEDArrayUpdate();
 void LEDArrayColorHSVUpdate();
 extern void WriteColorFontSymbolToLEDArrayColorHSVMemory(uint8_t SymbolNumber);
 extern void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value);

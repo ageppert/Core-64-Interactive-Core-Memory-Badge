@@ -17,7 +17,7 @@
 #include "Buttons.h"
 #include "Core_API.h"
 
-//#define DEBUG 1
+// #define DEBUG 1
 
 uint8_t TopLevelState;   // Master State Machine
 enum TopLevelState
@@ -67,9 +67,7 @@ void loop() {
   // AnalogUpdate();      
   // OLEDScreenUpdate();
   // DigitalIOUpdate();
-  // LEDArrayUpdate();
   // WriteColorFontSymbolToLEDArrayColorHSVMemory(ColorFontSymbolToDisplay);
-  // LEDArrayColorHSVUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
@@ -134,42 +132,11 @@ void loop() {
     break;
 
   case STATE_LED_TEST_ONE_MATRIX: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
-    // Cycles through LEDs first in row 0, by X 0 to 7, then row 1, and so on. Ends at X and Y 7.
-    static uint8_t x = 0;
-    static uint8_t y = 0;
-    static unsigned long UpdatePeriodms = 50;  
-    static unsigned long NowTime = 0;
-    static unsigned long UpdateTimer = 0;
-    NowTime = millis();
-    if ((NowTime - UpdateTimer) >= UpdatePeriodms)
-    {
-      UpdateTimer = NowTime;
-      LED_Array_Memory_Clear();
-      //LedScreenMemoryMonochrome2DImageClear();
-      LedScreenMemoryMonochrome2DImageWrite(y, x, 1);
-      DisplayLedScreenMemoryMonochrome2DImage();
-      x++;
-      if (x==8) {x=0; y++;}
-      if (y==8) {y=0;}    
-    }
+    LED_Array_Test_Pixel_Matrix();
   break;
 
   case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
-    static uint8_t stringPos = 0;
-    static unsigned long StringUpdatePeriodms = 10;  
-    static unsigned long StringNowTime = 0;
-    static unsigned long StringUpdateTimer = 0;
-    StringNowTime = millis();
-    if ((NowTime - StringUpdateTimer) >= StringUpdatePeriodms)
-    {
-      StringUpdateTimer = StringNowTime;
-      LED_Array_Memory_Clear();
-      //LedScreenMemoryMonochrome1DPixelStringClear();
-      LedScreenMemoryMonochrome1DPixelStringWrite(stringPos, 1);
-      DisplayLedScreenMonochrome1DPixelString();
-      stringPos++;
-      if (stringPos>63) {stringPos=0;}
-    }
+    LED_Array_Test_Pixel_String();
   break;
 
   default:

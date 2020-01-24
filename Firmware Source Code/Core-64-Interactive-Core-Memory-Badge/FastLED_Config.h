@@ -19,7 +19,7 @@ PURPOSE: Configure the NeoPixel Style LED Array for the FastLED library
 
 #define COLOR_ORDER GRB
 #define CHIPSET     WS2812B
-#define BRIGHTNESS 3
+#define BRIGHTNESS  3
 
 const uint8_t kMatrixWidth = 8;
 const uint8_t kMatrixHeight = 8;

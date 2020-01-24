@@ -6,7 +6,7 @@
 /*	VERSION SCHEME
 	major.minor.date-iteration
 	major.minor is locked to hardware version
-	date is last two digits of year, two digit month, two digit date
+	date is last two digits of year, two digit month, two digit day of the month
 	iteration increments from build to build
 */
 
@@ -17,7 +17,7 @@
  * V0.1 the first batch of 5 prototype green boards. 
  * V0.2 hand re-worked updates on V0.1 for first bring-up.
 */
-#define FIRMWARE_VERSION  "200112-04"   // Working on basic functionality of all connected hardware.
+#define FIRMWARE_VERSION  "200123-04"   // Working on basic functionality of all connected hardware.
 
 const String FirmwareVersion = FIRMWARE_VERSION;
 const String HardwareVersion = HARDWARE_VERSION;
