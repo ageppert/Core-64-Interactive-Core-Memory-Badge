@@ -23,26 +23,36 @@ USAGE: Init, Clear, Write to one of the buffers in monochrome or color mode, upd
 // The API for the LED Array HAL
 void LED_Array_Init();				// Sets up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h 
 void LED_Array_Memory_Clear(); 		// Clears all of the LED Array memory buffers.
-void LED_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t brightness); // Overide the default monochrome color
+void LED_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t value); // Overide the default monochrome color for next pixel to be written to the any monochrome memory buffer.
+
+void LED_Array_Test_Count_Binary(); // Test all 64 LEDs. Counting from 0 to 2^64 from bottom up.
 void LED_Array_Test_Pixel_String(); // Test all 64 LEDs. Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
-// Tests four functions: clear, monochrome color, write one pixel 1d, display 1d buffer
-void LED_Array_Test_Pixel_Matrix(); // Test all 64 LEDs. Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D string addressing
-// Tests four functions: clear, monochrome color, write one pixel 2d, display 2d buffer
+// Tests four functions: clear, monochrome color change, incrementally write one pixel 1d, display 1d buffer
+void LED_Array_Test_Pixel_Matrix_Mono(); // Test all 64 LEDs. Turns on all LEDs in a row/col, sequentially, from upper left to lower right using 2D matrix addressing
+// Tests four functions: clear, monochrome color change, incrementally write one pixel 2d, display 2d buffer
+void LED_Array_Test_Pixel_Matrix_Color(); // Test all 64 LEDs. Using multi-color symbols.
+// Tests four functions: clear, multi-color symbols, , display 2d buffer
+void LED_Array_Test_Rainbow_Demo();	// Full color demo.
 
-// New proven functions 2019-01-01
-extern void LedScreenMemoryMonochrome2DImageWrite(uint8_t y, uint8_t x, bool value);
-void DisplayLedScreenMemoryMonochrome2DImage();
 
-extern void LedScreenMemoryMonochrome1DPixelStringWrite(uint8_t bit, bool value);
-void DisplayLedScreenMonochrome1DPixelString();
+
+void LED_Array_Binary_Write(uint64_t BinaryValue);
+void LED_Array_String_Write(uint8_t bit, bool value);
+void LED_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value);
+// void LED_Array_Matrix_Color_Write(uint8_t y, uint8_t x, uint8_t hue);
+
+void LED_Array_Binary_Display();
+void LED_Array_String_Display();
+void LED_Array_Matrix_Mono_Display();
+void LED_Array_Matrix_Color_Display();
+
+// TO DO: Clean up the naming convention of these sub-functions
+extern void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumber);
+
 
 // Older stuff that needs cleanup
 void LEDArrayColorHSVUpdate();
-extern void WriteColorFontSymbolToLEDArrayColorHSVMemory(uint8_t SymbolNumber);
-extern void WriteOneBitToMonochromeLEDArrayMemory(uint8_t bit, bool value);
 void CopyCoreMemoryToMonochromeLEDArrayMemory();
-// void LEDArrayMonochromeUpdate(); // deprecated
-// void LEDArrayMonochromeAllOff(); // depracated
 extern void LEDArrayMonochromeOneOnMatrix(uint8_t x, uint8_t y);
 extern void LEDArrayMonochromeOneOnString(uint16_t i);
 
