@@ -335,20 +335,16 @@ void LED_Array_String_Display() {
 
 void LED_Array_Test_Count_Binary() {
     static uint64_t BinaryValue = 0;
+    LED_Array_Monochrome_Set_Color(135,255,255);
     LED_Array_Memory_Clear();
     LED_Array_Binary_Write(BinaryValue);
     LED_Array_Binary_Display();
     BinaryValue++;
-    #ifdef MONOCHROMECOLORCHANGER
-      static uint8_t MonochromeColorChange = 0;
-      LED_Array_Monochrome_Set_Color(MonochromeColorChange, 255, 255);
-      MonochromeColorChange ++;
-    #endif
 }
 
 void LED_Array_Test_Pixel_String() {
     static uint8_t stringPos = 0;
-    static unsigned long StringUpdatePeriodms = 10;  
+    static unsigned long StringUpdatePeriodms = 25;  
     static unsigned long StringNowTime = 0;
     static unsigned long StringUpdateTimer = 0;
     StringNowTime = millis();

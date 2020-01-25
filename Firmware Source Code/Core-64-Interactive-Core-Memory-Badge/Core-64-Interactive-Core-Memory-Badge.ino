@@ -151,9 +151,12 @@ void loop() {
     CopyCoreMemoryToMonochromeLEDArrayMemory();
     // LEDArrayMonochromeUpdate();
     LED_Array_Matrix_Mono_Display();
+    //TopLevelState = STATE_SCROLLING_TEXT;   
     break;
 
   case STATE_LAST:
+    CoreClearAll();
+    LED_Array_Monochrome_Set_Color(125,255,255);
     TopLevelState = STATE_SCROLLING_TEXT;   
     break;
 
