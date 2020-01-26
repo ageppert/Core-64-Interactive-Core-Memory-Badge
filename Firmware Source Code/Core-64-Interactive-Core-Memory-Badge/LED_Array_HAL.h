@@ -34,12 +34,10 @@ void LED_Array_Test_Pixel_Matrix_Color(); // Test all 64 LEDs. Using multi-color
 // Tests four functions: clear, multi-color symbols, , display 2d buffer
 void LED_Array_Test_Rainbow_Demo();	// Full color demo.
 
-
-
 void LED_Array_Binary_Write(uint64_t BinaryValue);
 void LED_Array_String_Write(uint8_t bit, bool value);
 void LED_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value);
-// void LED_Array_Matrix_Color_Write(uint8_t y, uint8_t x, uint8_t hue);
+void LED_Array_Matrix_Color_Write(uint8_t y, uint8_t x, uint8_t hue);
 
 void LED_Array_Binary_Display();
 void LED_Array_String_Display();
@@ -51,10 +49,7 @@ extern void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumbe
 
 
 // Older stuff that needs cleanup
-void LEDArrayColorHSVUpdate();
 void CopyCoreMemoryToMonochromeLEDArrayMemory();
-extern void LEDArrayMonochromeOneOnMatrix(uint8_t x, uint8_t y);
-extern void LEDArrayMonochromeOneOnString(uint16_t i);
 
 //#ifdef __cplusplus
 //} // extern "C"

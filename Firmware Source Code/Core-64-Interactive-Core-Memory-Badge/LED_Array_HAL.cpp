@@ -173,45 +173,6 @@ void LED_Array_Test_Rainbow_Demo() {
 }
 
 //
-// Turn on one LED in the Array with X and Y coordinate
-//
-  void LEDArrayMonochromeOneOnMatrix(uint8_t x, uint8_t y) {
-    leds[ XY(x, y)]  = CHSV(LEDArrayMonochromeColorHSV[0],LEDArrayMonochromeColorHSV[1],LEDArrayMonochromeColorHSV[2]);
-    FastLED.show();
-  }
-
-//
-// Turn on one LED in the Array with direct electrical string number position
-//
-  void LEDArrayMonochromeOneOnString(uint16_t i) {
-    leds[i]  = CHSV(LEDArrayMonochromeColorHSV[0],LEDArrayMonochromeColorHSV[1],LEDArrayMonochromeColorHSV[2]);
-    FastLED.show();
-  }
-
-//
-// Read 64 bytes of Color HSV LED Array memory and update the LED Array
-// Map LedScreenMemoryMatrixColor to LEDArray layout, which requires a 90 CW rotation in V0.1 Hardware
-//
-  void LEDArrayColorHSVUpdate() {
-    for( uint8_t y = 0; y < kMatrixHeight; y++) 
-    {
-      for( uint8_t x = 0; x < kMatrixWidth; x++) 
-      {
-        uint8_t value = LedScreenMemoryMatrixColor [kMatrixHeight-1-y][x];  // Rotate LedScreenMemoryMatrixMono 90 CW
-        if (value != 0)
-        {
-          leds[ XY(x, y)]  = CHSV(value,255,255);
-        }
-        else
-        {
-          leds[ XY(x, y)]  = CHSV(0,0,0);
-        }
-      }
-    }
-    FastLED.show();
-  }
-
-//
 // Copy Core Memory Array bits into monochrome LED Array memory
 //
   void CopyCoreMemoryToMonochromeLEDArrayMemory() {
@@ -244,7 +205,7 @@ void LED_Array_Test_Rainbow_Demo() {
     {
       for( uint8_t x = 0; x < kMatrixWidth; x++) 
       {
-        LedScreenMemoryMatrixColor[x][y] = ColorFontSymbols[SymbolNumber][x][y];
+        LedScreenMemoryMatrixColor[y][x] = ColorFontSymbols[SymbolNumber][y][x];
       }
     }
   }
@@ -252,9 +213,17 @@ void LED_Array_Test_Rainbow_Demo() {
 //
 // Write one bit into monochrome LED Array memory
 //
-  void LED_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value) {
+void LED_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value) {
   LedScreenMemoryMatrixMono[y][x] = value;
 }
+
+//
+// Write one COLOR bit into color LED Array memory
+//
+void LED_Array_Matrix_Color_Write(uint8_t y, uint8_t x, uint8_t hue) {
+  LedScreenMemoryMatrixColor[y][x] = hue;
+}
+
 
 void LED_Array_Matrix_Mono_Display() {
   uint8_t LEDPixelPosition = 0;
@@ -344,7 +313,7 @@ void LED_Array_Test_Count_Binary() {
 
 void LED_Array_Test_Pixel_String() {
     static uint8_t stringPos = 0;
-    static unsigned long StringUpdatePeriodms = 25;  
+    static unsigned long StringUpdatePeriodms = 50;  
     static unsigned long StringNowTime = 0;
     static unsigned long StringUpdateTimer = 0;
     StringNowTime = millis();
@@ -367,7 +336,8 @@ void LED_Array_Test_Pixel_String() {
 
 void LED_Array_Test_Pixel_Matrix_Mono() {
     static uint8_t Sequence = 0;
-    static unsigned long UpdatePeriodms = 150;  
+    static bool SequenceUpnDown = 1;
+    static unsigned long UpdatePeriodms = 100;  
     static unsigned long NowTime = 0;
     static unsigned long UpdateTimer = 0;
     NowTime = millis();
@@ -381,15 +351,31 @@ void LED_Array_Test_Pixel_Matrix_Mono() {
             {
             for(uint8_t x=0; x<8; x++)
               {
-                LED_Array_Matrix_Mono_Write(Sequence, x, 1);
+              LED_Array_Matrix_Mono_Write(Sequence, x, 1);
               }
             }
             LED_Array_Matrix_Mono_Write(y, Sequence, 1);
           }
       // LED_Array_Matrix_Mono_Write(1, 1, 1); // works
       LED_Array_Matrix_Mono_Display();
-      Sequence++;
-      if (Sequence==8) {Sequence=0;}    
+      if (SequenceUpnDown)
+      {
+        Sequence++;
+        if (Sequence==8)
+        {
+          SequenceUpnDown=0;
+          Sequence=6;
+        } 
+      }
+      else
+      {
+        Sequence--;
+        if (Sequence==255)
+        {
+          SequenceUpnDown=1;
+          Sequence=1;
+        } 
+      }
       #ifdef MONOCHROMECOLORCHANGER
         static uint8_t MonochromeColorChange = 0;
         LED_Array_Monochrome_Set_Color(MonochromeColorChange, 255, 255);
@@ -401,7 +387,7 @@ void LED_Array_Test_Pixel_Matrix_Mono() {
 // Cycles through available multi-color font symbols
 void LED_Array_Test_Pixel_Matrix_Color() {
     static uint8_t FontSymbolNumber = 0;
-    static unsigned long UpdatePeriodms = 1000;  
+    static unsigned long UpdatePeriodms = 750;  
     static unsigned long NowTime = 0;
     static unsigned long UpdateTimer = 0;
     NowTime = millis();
