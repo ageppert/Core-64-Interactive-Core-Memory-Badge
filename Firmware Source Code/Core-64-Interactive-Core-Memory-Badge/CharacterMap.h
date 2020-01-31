@@ -181,7 +181,8 @@ const static bool character_font_wide[15][8][8] PROGMEM = {   // Character, Row,
 }
 };
 
-const static uint8_t ColorFontSymbols[4][8][8] PROGMEM = {   // Character, Row, Column
+const static uint8_t NumberOfColorFontSymbols = 4;
+const static uint8_t ColorFontSymbols[NumberOfColorFontSymbols][8][8] PROGMEM = {   // Character, Row, Column
 
 {  {  0,  0,  1,  1,  1,  0,  0,  0},
    {  0, 35, 35, 35, 35,  0,  0,  0},

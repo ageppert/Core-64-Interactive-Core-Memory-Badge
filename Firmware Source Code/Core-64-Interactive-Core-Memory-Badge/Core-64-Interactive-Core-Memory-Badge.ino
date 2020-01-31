@@ -10,24 +10,27 @@
 
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
-#include "LED_Array.h"
+#include "LED_Array_HAL.h"
 #include "OLED_Screen.h"
 #include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
 #include "Buttons.h"
 #include "Core_API.h"
 
-//#define DEBUG 1
+// #define DEBUG 1
 
 uint8_t TopLevelState;   // Master State Machine
 enum TopLevelState
 {
-  STATE_SCROLLING_TEXT = 0,     //  0 Scrolling text at power on
-  STATE_CORE_TEST_ONE,          //  1 Testing core #3 and displaying core state
-  STATE_CORE_TEST_ALL,          //  2 Testing all cores and displaying core state
-  STATE_LED_TEST_ONE_MATRIX,    //  3 Testing LED Driver
-  STATE_LED_TEST_ONE_STRING,    //  4 Testing LED Driver
-  STATE_LAST                    //  5 last one, return to 0.
+  STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
+  STATE_LED_TEST_ALL_BINARY,        //  1 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //  2 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //  3 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  4 Testing LED Driver with matrix array and multi-color symbols
+  STATE_LED_TEST_ALL_COLOR,         //  5 Test LED Driver with all pixels and all colors
+  STATE_CORE_TEST_ONE,              //  6 Testing core #3 and displaying core state
+  STATE_CORE_TEST_ALL,              //  7 Testing all cores and displaying core state
+  STATE_LAST                        //  8 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -38,7 +41,7 @@ void setup() {
   HeartBeatSetup();
   DigitalIOSetup();
   AnalogSetup();
-  LEDArraySetup();
+  LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; } // wait for serial port to connect. Needed for native USB port only
@@ -67,9 +70,7 @@ void loop() {
   // AnalogUpdate();      
   // OLEDScreenUpdate();
   // DigitalIOUpdate();
-  // LEDArrayUpdate();
-  // WriteColorFontSymbolToLEDArrayColorHSVMemory(ColorFontSymbolToDisplay);
-  // LEDArrayColorHSVUpdate();
+  // WriteColorFontSymbolToLedScreenMemoryMatrixColor(ColorFontSymbolToDisplay);
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
@@ -90,7 +91,6 @@ void loop() {
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
-    if(TopLevelState == STATE_LAST) { TopLevelState = STATE_SCROLLING_TEXT; }    
   }
   else {
     if (Button1HoldTime == 0) {
@@ -103,8 +103,27 @@ void loop() {
   case STATE_SCROLLING_TEXT:
     ScrollTextToCoreMemory(); // This writes directly to the core memory array and bypasses reading it.
     CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // LEDArrayMonochromeUpdate();
-    DisplayLedScreenMemoryMonochrome2DImage();
+    LED_Array_Matrix_Mono_Display();
+    break;
+
+  case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
+    LED_Array_Test_Count_Binary();
+    break;
+
+  case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
+    LED_Array_Test_Pixel_String();
+    break;
+
+  case STATE_LED_TEST_ONE_MATRIX_MONO: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
+    LED_Array_Test_Pixel_Matrix_Mono();
+    break;
+
+  case STATE_LED_TEST_ONE_MATRIX_COLOR: // Multi-color symbols
+    LED_Array_Test_Pixel_Matrix_Color();
+    break;
+
+  case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
+    LED_Array_Test_Rainbow_Demo();
     break;
 
   case STATE_CORE_TEST_ONE:
@@ -117,59 +136,29 @@ void loop() {
     // It should be lighting up all of row 0 and the 0-6 of of row 1.
     // ToDo: figure out why the proper bit is not lighting up. 
     delay(150);
-    WriteOneBitToMonochromeLEDArrayMemory(coreToTest,0);
+    LED_Array_String_Write(coreToTest,0);
     // coreToTest++;
     // if(coreToTest>=9){coreToTest=0;}
     coreToTest=2;
-    WriteOneBitToMonochromeLEDArrayMemory(coreToTest,1);
+    LED_Array_String_Write(coreToTest,1);
     // Test end
     // LEDArrayMonochromeUpdate();
-    DisplayLedScreenMemoryMonochrome2DImage();
+    LED_Array_Matrix_Mono_Display();
     break;
 
   case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
     CoreReadArray(); // Update Core Memory with read state of all 64 bits.
     CopyCoreMemoryToMonochromeLEDArrayMemory();
     // LEDArrayMonochromeUpdate();
-    DisplayLedScreenMemoryMonochrome2DImage();
+    LED_Array_Matrix_Mono_Display();
+    //TopLevelState = STATE_SCROLLING_TEXT;   
     break;
 
-  case STATE_LED_TEST_ONE_MATRIX: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
-    // Cycles through LEDs first in row 0, by X 0 to 7, then row 1, and so on. Ends at X and Y 7.
-    static uint8_t x = 0;
-    static uint8_t y = 0;
-    static unsigned long UpdatePeriodms = 50;  
-    static unsigned long NowTime = 0;
-    static unsigned long UpdateTimer = 0;
-    NowTime = millis();
-    if ((NowTime - UpdateTimer) >= UpdatePeriodms)
-    {
-      UpdateTimer = NowTime;
-      LedScreenMemoryMonochrome2DImageClear();
-      LedScreenMemoryMonochrome2DImageWrite(y, x, 1);
-      DisplayLedScreenMemoryMonochrome2DImage();
-      x++;
-      if (x==8) {x=0; y++;}
-      if (y==8) {y=0;}    
-    }
-  break;
-
-  case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
-    static uint8_t stringPos = 0;
-    static unsigned long StringUpdatePeriodms = 10;  
-    static unsigned long StringNowTime = 0;
-    static unsigned long StringUpdateTimer = 0;
-    NowTime = millis();
-    if ((NowTime - StringUpdateTimer) >= StringUpdatePeriodms)
-    {
-      StringUpdateTimer = NowTime;
-      LedScreenMemoryMonochrome1DPixelStringClear();
-      LedScreenMemoryMonochrome1DPixelStringWrite(stringPos, 1);
-      DisplayLedScreenMonochrome1DPixelString();
-      stringPos++;
-      if (stringPos>63) {stringPos=0;}
-    }
-  break;
+  case STATE_LAST:
+    CoreClearAll();
+    LED_Array_Monochrome_Set_Color(125,255,255);
+    TopLevelState = STATE_SCROLLING_TEXT;   
+    break;
 
   default:
     Serial.println("Invalid TopLevelState");
