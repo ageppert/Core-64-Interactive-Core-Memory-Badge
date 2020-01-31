@@ -28,9 +28,10 @@ enum TopLevelState
   STATE_LED_TEST_ONE_MATRIX_MONO,   //  3 Testing LED Driver with matrix array and monochrome color
   STATE_LED_TEST_ONE_MATRIX_COLOR,  //  4 Testing LED Driver with matrix array and multi-color symbols
   STATE_LED_TEST_ALL_COLOR,         //  5 Test LED Driver with all pixels and all colors
-  STATE_CORE_TEST_ONE,              //  6 Testing core #3 and displaying core state
-  STATE_CORE_TEST_ALL,              //  7 Testing all cores and displaying core state
-  STATE_LAST                        //  8 last one, return to 0.
+  STATE_CORE_TOGGLE_BIT,            //  6 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  7 Testing core #coreToTest and displaying core state
+  STATE_CORE_TEST_ALL,              //  8 Testing all cores and displaying core state
+  STATE_LAST                        //  9 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -50,7 +51,7 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_CORE_TOGGLE_BIT; // STATE_SCROLLING_TEXT;
 //  TopLevelState = STATE_LED_TEST_ONE_MATRIX;
 }
 
@@ -58,7 +59,7 @@ void loop() {
   static uint8_t ColorFontSymbolToDisplay = 2;
   static bool ButtonReleased = true;
   static uint32_t Button1HoldTime = 0;
-  static uint8_t coreToTest = 0;
+  static uint8_t coreToTest = 59;
 
   /*                      *********************
                           *** Housekeepting ***
@@ -126,6 +127,23 @@ void loop() {
     LED_Array_Test_Rainbow_Demo();
     break;
 
+  case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
+    LED_Array_Memory_Clear();
+    LED_Array_Matrix_Mono_Display();
+    // CoreZeroClear();
+    // CoreZeroSet();
+    // CoreOneSet();
+    // CoreOneClear();
+    // Matrix encoding using these functions is not correct.
+    // CoreWriteBit(coreToTest,0);
+    // CoreWriteBit(coreToTest,1);
+    for (uint8_t bit = 0; bit<6; bit++)
+      {
+      CoreWriteBit(bit,0);
+      CoreWriteBit(bit,1);
+      }
+    break;
+
   case STATE_CORE_TEST_ONE:
     CoreClearAll();
     CoreWriteBit(coreToTest,0);
@@ -155,7 +173,8 @@ void loop() {
     break;
 
   case STATE_LAST:
-    CoreClearAll();
+    LED_Array_Memory_Clear();
+    LED_Array_Matrix_Mono_Display();
     LED_Array_Monochrome_Set_Color(125,255,255);
     TopLevelState = STATE_SCROLLING_TEXT;   
     break;

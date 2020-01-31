@@ -100,10 +100,17 @@ uint8_t CMMDClearCol[8][2] = {
 // Set is given the arbitrary definition of current flow rightward in the top four rows.
 // Top four rows connected to VMEM and bottom four rows connected to GNDPWR.
 uint8_t CMMDSetRow[8][2] = {
+  // 2020-01-30 I think these are wrong and need the P and Ns swapped. Testing below.
   { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Row 0
   { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q10N },  // Row 1
   { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Row 2
   { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Row 3
+  // This isn't the write fix because it just swaps the problem. The fix needs to apply only the odd columns.
+  // { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 0
+  // { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 1
+  // { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 2
+  // { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Row 3
+  // Test ends here
   { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 4
   { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 5
   { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 6
@@ -113,15 +120,48 @@ uint8_t CMMDSetRow[8][2] = {
 // Clear is given the arbitrary definition of current flow leftward in that column.
 // Top of column connected to GNDPWR and bottom of column connected to VMEM.
 uint8_t CMMDClearRow[8][2] = {
+  // 2020-01-30 I think these are wrong and need the P and Ns swapped. Testing below.
   { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 0 
   { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 1
   { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 2
   { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Row 3
+  // This isn't the write fix because it just swaps the problem. The fix needs to apply only the odd columns.
+  //  PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Row 0 
+  //  PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q10N },  // Row 1
+  //  PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Row 2
+  //  PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Row 3
+  // Test ends here
   { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 4
   { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  },  // Row 5
   { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 6
   { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  }   // Row 7      
 };
+
+// The original assumption of current going left to right in a row does not work because the cores are not all placed in the same orientation.
+// A new row set and clear array are required which take into account that every other bit needs to have the current direction reversed
+// in order to compensate if all of the cores are to be physically addressed in an orderly sequence.
+uint8_t CMMDSetRowByBit[][2] = {
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 0 ok
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 1 ok
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 2 ok
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 3 ok
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 4
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 5
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 6
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  }   // Bit 7      
+};
+
+uint8_t CMMDClearRowByBit[][2] = {
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 0 ok
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 1 ok
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 2 ok
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 3 ok
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 4
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 5
+  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 6
+  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  }   // Bit 7      
+};
+
 
 void MatrixEnableTransistorInactive() { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE); }
 
@@ -135,18 +175,71 @@ void MatrixDriveTransistorsInactive() {
 }
 
 // Configure four transistors to activate the specified core.
+
+// Testing this with revised row logic table
+// for testing first row, assume only row 0 because the LUT is only written that far.
+// Use col to selection the proper place in the look up table
 void SetRowAndCol (uint8_t row, uint8_t col) {
-  digitalWriteFast( (CMMDSetRow[row] [0] ), MatrixDrivePinActiveState[ CMMDSetRow[row] [0] ] ); // for bit 0, pin 13, 0
-  digitalWriteFast( (CMMDSetRow[row] [1] ), MatrixDrivePinActiveState[ CMMDSetRow[row] [1] ] ); // for bit 0, pin 20, 1
+  digitalWriteFast( (CMMDSetRowByBit[col] [0] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[col] [0] ] ); // for bit 0, pin 13, 0
+  digitalWriteFast( (CMMDSetRowByBit[col] [1] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[col] [1] ] ); // for bit 0, pin 20, 1
   digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] ); // for bit 0, pin  5, 0
   digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] ); // for bit 0, pin  2, 1
 }
+// 2020-01-30 Testing direct access to row and column transistors to debug matrix position encoding problem.
+// This has proper column, wrong row
+// void SetRowAndCol (uint8_t row, uint8_t col) {
+//   digitalWriteFast( (CMMDSetRow[row] [0] ), MatrixDrivePinActiveState[ CMMDSetRow[row] [0] ] ); // for bit 0, pin 13, 0
+//   digitalWriteFast( (CMMDSetRow[row] [1] ), MatrixDrivePinActiveState[ CMMDSetRow[row] [1] ] ); // for bit 0, pin 20, 1
+//   digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] ); // for bit 0, pin  5, 0
+//   digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] ); // for bit 0, pin  2, 1
+// }
+// void SetRowZeroAndColZero () {
+//   digitalWriteFast( (PIN_MATRIX_DRIVE_Q7P), 0 ); // for bit 0, pin 13, 0
+//   digitalWriteFast( (PIN_MATRIX_DRIVE_Q9N), 1 ); // for bit 0, pin 20, 1
+//   digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] ); // for bit 0, pin  5, 0
+//   digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] ); // for bit 0, pin  2, 1
+// }
+// Testing this
+// void SetRowAndCol (uint8_t row, uint8_t col) {
+//   digitalWriteFast( (CMMDSetRow[row] [0] ), MatrixDrivePinActiveState[ CMMDSetRow[row] [0] ] ); // for bit 0, pin 13, 0
+//   digitalWriteFast( (CMMDSetRow[row] [1] ), MatrixDrivePinActiveState[ CMMDSetRow[row] [1] ] ); // for bit 0, pin 20, 1
+//   digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] ); // for bit 0, pin  5, 0
+//   digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] ); // for bit 0, pin  2, 1
+// }
 
+// 2020-01-30 Testing direct access to row and column transistors to debug matrix position encoding problem.
+// This has proper column, wrong row
+// void ClearRowAndCol (uint8_t row, uint8_t col) {
+//   digitalWriteFast( (CMMDClearRow[row] [0] ), MatrixDrivePinActiveState[ CMMDClearRow[row] [0] ] ); // for bit 0, pin 
+//   digitalWriteFast( (CMMDClearRow[row] [1] ), MatrixDrivePinActiveState[ CMMDClearRow[row] [1] ] ); // for bit 0, pin 
+//   digitalWriteFast( (CMMDClearCol[col] [0] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [0] ] ); // for bit 0, pin 
+//   digitalWriteFast( (CMMDClearCol[col] [1] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [1] ] ); // for bit 0, pin    
+// }
+
+// Testing this with revised row logic table
+// for testing first row, assume only row 0 because the LUT is only written that far.
+// Use col to selection the proper place in the look up table
 void ClearRowAndCol (uint8_t row, uint8_t col) {
-  digitalWriteFast( (CMMDClearRow[row] [0] ), MatrixDrivePinActiveState[ CMMDClearRow[row] [0] ] ); // for bit 0, pin 
-  digitalWriteFast( (CMMDClearRow[row] [1] ), MatrixDrivePinActiveState[ CMMDClearRow[row] [1] ] ); // for bit 0, pin 
+  digitalWriteFast( (CMMDClearRowByBit[col] [0] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[col] [0] ] ); // for bit 0, pin 
+  digitalWriteFast( (CMMDClearRowByBit[col] [1] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[col] [1] ] ); // for bit 0, pin 
   digitalWriteFast( (CMMDClearCol[col] [0] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [0] ] ); // for bit 0, pin 
   digitalWriteFast( (CMMDClearCol[col] [1] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [1] ] ); // for bit 0, pin    
+}
+
+
+// This has proper column, wrong row
+// void ClearRowZeroAndColZero () {
+//   digitalWriteFast( (PIN_MATRIX_DRIVE_Q7N), 1 ); // for bit 0, YL0 to GND
+//   digitalWriteFast( (PIN_MATRIX_DRIVE_Q9P), 0 ); // for bit 0, YL4 to VMEM
+//   digitalWriteFast( (PIN_MATRIX_DRIVE_Q3N), 1 ); // for bit 0, XT0 to GND
+//   digitalWriteFast( (PIN_MATRIX_DRIVE_Q1P), 0 ); // for bit 0, XB0 to VMEM
+// }
+// This is correct
+void ClearRowZeroAndColZero () {
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q7P), 0 ); // for bit 0, row 0 YL0 to VMEM <- this fixed the problem
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q9N), 1 ); // for bit 0, row 0 YL4 to GND  <- this fixed the problem
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q3N), 1 ); // for bit 0, col 0 XT0 to GND
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q1P), 0 ); // for bit 0, col 0 XB0 to VMEM
 }
 
 bool SenseWirePulse() {

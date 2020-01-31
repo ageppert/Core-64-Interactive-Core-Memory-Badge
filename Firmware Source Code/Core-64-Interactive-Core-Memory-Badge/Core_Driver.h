@@ -31,6 +31,9 @@ void tempDebugPin25Twiddle ();
 void tempDebugPin25OutputMode ();
 void tempDebugPin25InputMode ();
 
+void ClearRowZeroAndColZero ();
+// void SetRowZeroAndColZero ();
+
 //#ifdef __cplusplus
 //} // extern "C"
 //#endif

@@ -35,6 +35,11 @@ extern uint64_t CoreReadArray(); 	// TO DO Add a pointer to the array
 void ScrollTextToCoreMemory();
 extern void WriteOneBitToCoreMemory(uint8_t bit, bool value);
 
+void CoreZeroSet();
+void CoreZeroClear();
+void CoreOneSet();
+void CoreOneClear();
+
 //#ifdef __cplusplus
 //} // extern "C"
 //#endif
