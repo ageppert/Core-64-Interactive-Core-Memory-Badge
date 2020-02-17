@@ -96,21 +96,22 @@ void CoreOneSet() {
 }
 
 void CoreWriteBit(uint8_t bit, bool value) {
-  DebugWithReedSwitchOutput();                  // T -13 us
-   TracingPulses(1);                             // T   2 us  
+  //DebugWithReedSwitchOutput();                  // T -13 us
+   //TracingPulses(1);                             // T   2 us  
   AllDriveIoSafe();                             // T   0 us  CCL/CCH drops from 0.0 to -.4 V. * Why do they go negative by ~Vce?
   // AllDriveIoReadAndStore();
-  // AllDriveIoEnable();                           // Might need to set this before matrix lines for more stable switching.
+  AllDriveIoEnable();                           // Might need to set this before matrix lines for more stable switching.
   if (value == 1) { AllDriveIoSetBit(bit); }    // T  15/16 us  Toward the end of this time CCL/CCH step up to 3.0 and 3.3 V.
   else { AllDriveIoClearBit(bit); } 
-   TracingPulses(2);                             // T  17 us
-  AllDriveIoEnable();                           // T  18 us  CCL/CCH drops ~1 V ??? Why not zero?
+   //TracingPulses(2);                             // T  17 us
+  //AllDriveIoEnable();                           // T  18 us  CCL/CCH drops ~1 V ??? Why not zero?
   delayMicroseconds(5);                         //           Jussi 2 us for write pulse, with the last us showing sense pulse.
-  AllDriveIoDisable();                          // T  21 us  CCL/CCH returns to 3.3V, then down to 3.1, then 2.9
+  // AllDriveIoDisable();                          // T  21 us  CCL/CCH returns to 3.3V, then down to 3.1, then 2.9
   // AllDriveIoRecallAndWrite();
-  AllDriveIoSafe();                             // T  33 us  CCL/CCH drops to 0V for 500 ns (during enable), then down to -0.4 V again. ????
-   TracingPulses(3);                             // T  34 us  ~ 5ms after, CCL/CCH settles to 0V. Would be nice to dissipate this faster.
-  DebugWithReedSwitchInput();
+  // AllDriveIoSafe();                             // T  33 us  CCL/CCH drops to 0V for 500 ns (during enable), then down to -0.4 V again. ????
+  AllDriveIoDisable();
+   //TracingPulses(3);                             // T  34 us  ~ 5ms after, CCL/CCH settles to 0V. Would be nice to dissipate this faster.
+  //DebugWithReedSwitchInput();
 }
 
 bool CoreReadBit(uint8_t bit) {

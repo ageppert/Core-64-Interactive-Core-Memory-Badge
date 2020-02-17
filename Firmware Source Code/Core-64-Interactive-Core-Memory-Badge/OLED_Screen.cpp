@@ -22,19 +22,28 @@
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+uint8_t TopLevelStateLocal = 0;
+
 void OLEDScreenSplash() {
+// Short
   display.clearDisplay();
-//  display.display();
   display.setCursor(0, 0);     // Start at top-left corner
-  display.print(F("Core64 "));
-  display.println(F(HARDWARE_VERSION));
-  display.println(F(" Hackaday "));
-  display.print(F("v"));
-  display.println(F(FIRMWARE_VERSION));
-  display.print(F("Bat:"));
-  display.print(GetBatteryVoltagemV(),DEC);
-  display.println(F("mV"));
+  display.print(F("State:"));
+  display.println(TopLevelStateLocal,DEC);
   display.display();
+// Long
+//   display.clearDisplay();
+// //  display.display();
+//   display.setCursor(0, 0);     // Start at top-left corner
+//   display.print(F("Core64 "));
+//   display.println(F(HARDWARE_VERSION));
+//   display.println(F(" Hackaday "));
+//   display.print(F("v"));
+//   display.println(F(FIRMWARE_VERSION));
+//   display.print(F("Bat:"));
+//   display.print(GetBatteryVoltagemV(),DEC);
+//   display.println(F("mV"));
+//   display.display();
 }
 
 void OLEDScreenSetup() {
@@ -63,7 +72,7 @@ void OLEDScreenSetup() {
 }
 
 void OLEDScreenUpdate() {
-  static unsigned long UpdatePeriodms = 5000;  
+  static unsigned long UpdatePeriodms = 250;  
   static unsigned long NowTime = 0;
   static unsigned long UpdateTimer = 0;
   NowTime = millis();
@@ -72,4 +81,8 @@ void OLEDScreenUpdate() {
     UpdateTimer = NowTime;
     OLEDScreenSplash();                             // TO DO: This refresh causes the aqua colored Hackaday logo (and others) to blink. Is it signal interference?
   }
+}
+
+void OLEDSetTopLevelState(uint8_t state) {
+  TopLevelStateLocal = state;
 }
