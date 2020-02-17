@@ -15,8 +15,7 @@
 #include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
 #include "Buttons.h"
-#include "Core_API.h"
-#include "Core_HAL.h" // TEMP CORE TESTING
+#include "Core_HAL.h"
 
 // #define DEBUG 1
 

@@ -7,7 +7,7 @@
 #endif
 
 #include "HardwareIOMap.h"
-#include "Core_API.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
+#include "Core_HAL.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
 #include "CharacterMap.h"
 
 #include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
