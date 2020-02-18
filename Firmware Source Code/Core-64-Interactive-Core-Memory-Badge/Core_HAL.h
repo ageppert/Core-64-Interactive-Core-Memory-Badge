@@ -26,12 +26,15 @@ SETUP:
 
 extern bool CoreArrayMemory [8][8];
 
+// NEW API Command List
+void Core_Mem_Bit_Write(uint8_t bit, bool value); // bit 0-63, 0 or 1
 
-// API Command List
+
+// OLD API Command List
 extern void CoreSetup();
 extern void CoreClearAll();
 extern void CoreSetAll();
-extern void CoreWriteBit(uint8_t bit, bool value);
+// extern void CoreWriteBit(uint8_t bit, bool value);
 extern bool CoreReadBit(uint8_t bit);
 extern void CoreWriteLongInt(uint64_t value);
 extern uint64_t CoreReadLongInt();

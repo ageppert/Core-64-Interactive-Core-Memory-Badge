@@ -39,7 +39,7 @@ void CoreSetup() {
 
 void CoreClearAll() {
   for (uint8_t i = 0; i <64; i++) { 
-    CoreWriteBit(i,0); 
+    Core_Mem_Bit_Write(i,0); 
   }
   for (uint8_t x=1; x<=7; x++) {
     for (uint8_t y=0; y<=7; y++) {
@@ -50,7 +50,7 @@ void CoreClearAll() {
 
 void CoreSetAll() {
   for (uint8_t i = 0; i <64; i++) {
-    CoreWriteBit(i,1);
+    Core_Mem_Bit_Write(i,1);
   }
 }
 
@@ -93,7 +93,7 @@ void CoreOneSet() {
   AllDriveIoDisable();                          
   AllDriveIoSafe();                             
 }
-
+/*
 void CoreWriteBit(uint8_t bit, bool value) {
   //DebugWithReedSwitchOutput();                  // T -13 us
    //TracingPulses(1);                             // T   2 us  
@@ -112,6 +112,23 @@ void CoreWriteBit(uint8_t bit, bool value) {
    //TracingPulses(3);                             // T  34 us  ~ 5ms after, CCL/CCH settles to 0V. Would be nice to dissipate this faster.
   //DebugWithReedSwitchInput();
 }
+*/
+
+void Core_Mem_Bit_Write(uint8_t bit, bool value) {
+  // Turn off all of the matrix signals
+  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
+  MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
+  // Prepare to activate the matrix drive transistors
+  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+  // Activate the selected matrix drive transistors according to bit position and the set/clear request
+  if (value == 1) { AllDriveIoSetBit(bit); } 
+  else { AllDriveIoClearBit(bit); }
+  delayMicroseconds(3);  
+  // Turn off all of the matrix signals
+  MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
+  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
+}
+
 
 bool CoreReadBit(uint8_t bit) {
   static bool value;
@@ -240,7 +257,6 @@ void AllDriveIoRecallAndWrite() {
 }
 
 void AllDriveIoSetBit(uint8_t bit) {
-  MatrixDriveTransistorsInactive();
   if      (bit < 8 ) { SetRowAndCol(0, bit    ); }
   else if (bit < 16) { SetRowAndCol(1,(bit-8 )); }
   else if (bit < 24) { SetRowAndCol(2,(bit-16)); }
@@ -252,7 +268,6 @@ void AllDriveIoSetBit(uint8_t bit) {
 }
 
 void AllDriveIoClearBit(uint8_t bit) {
-  MatrixDriveTransistorsInactive();
   if      (bit < 8 ) { ClearRowAndCol(0, bit    ); }
   else if (bit < 16) { ClearRowAndCol(1,(bit-8 )); }
   else if (bit < 24) { ClearRowAndCol(2,(bit-16)); }

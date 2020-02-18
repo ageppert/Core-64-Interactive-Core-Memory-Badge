@@ -132,26 +132,16 @@ void loop() {
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
-    coreToTest=20;
+    coreToTest=0;
     LED_Array_Monochrome_Set_Color(125,255,255);
     LED_Array_String_Write(coreToTest,1);
     LED_Array_String_Display();
-    // LED_Array_Memory_Clear();
     LED_Array_Matrix_Mono_Display();
-    // CoreZeroClear();
-    // CoreZeroSet();
-    // CoreOneSet();
-    // CoreOneClear();
-    // Matrix encoding using these functions is not correct.
-    // CoreWriteBit(coreToTest,0);
-    // CoreWriteBit(coreToTest,1);
     DebugWithReedSwitchOutput();
-    for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
+    for (uint8_t bit = coreToTest; bit<(coreToTest+32); bit++)
       {
-      CoreWriteBit(bit,0);
-      // delayMicroseconds(75); // Testing to see if slower pulse sequence results in more consistent sensing.
-      CoreWriteBit(bit,1);
-       delayMicroseconds(75); // Testing to see if slower pulse sequence results in more consistent sensing.
+      Core_Mem_Bit_Write(bit,0);
+      Core_Mem_Bit_Write(bit,1);
       }
     DebugWithReedSwitchInput();
     LED_Array_String_Write(coreToTest,0);
@@ -160,7 +150,7 @@ void loop() {
 
   case STATE_CORE_TEST_ONE:
     CoreClearAll();
-    CoreWriteBit(coreToTest,0);
+    Core_Mem_Bit_Write(coreToTest,0);
     WriteOneBitToCoreMemory(coreToTest,CoreReadBit(coreToTest));
     CopyCoreMemoryToMonochromeLEDArrayMemory();
     // Testing to see if I decode this to the LED matrix correctly
@@ -213,8 +203,8 @@ void coreTesting() {
   if (c == 64) {c=0;}
   */
   // Read testing
-   CoreWriteBit(3,1);
-   CoreWriteBit(3,0);
+   Core_Mem_Bit_Write(3,1);
+   Core_Mem_Bit_Write(3,0);
   // CoreArrayMemory [0][3] = CoreReadBit(3);
   // Whole Array Testing
   //  for (uint8_t i = 0; i <= 63; i++ ) { CoreWriteBit(i,1); }
