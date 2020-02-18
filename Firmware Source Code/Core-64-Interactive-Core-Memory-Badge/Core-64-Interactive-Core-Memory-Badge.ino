@@ -51,7 +51,7 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  TopLevelState = STATE_CORE_TOGGLE_BIT;
+  TopLevelState = STATE_CORE_TEST_ONE;
   // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
@@ -138,7 +138,7 @@ void loop() {
     LED_Array_String_Display();
     LED_Array_Matrix_Mono_Display();
     DebugWithReedSwitchOutput();
-    for (uint8_t bit = coreToTest; bit<(coreToTest+64); bit++)
+    for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
       Core_Mem_Bit_Write(bit,0);
       Core_Mem_Bit_Write(bit,1);
@@ -149,34 +149,33 @@ void loop() {
     break;
 
   case STATE_CORE_TEST_ONE:
-    CoreClearAll();
-    Core_Mem_Bit_Write(coreToTest,0);
-    WriteOneBitToCoreMemory(coreToTest,CoreReadBit(coreToTest));
-    CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // Testing to see if I decode this to the LED matrix correctly
-    // This code is lighting up row 0, col 0-6 then jumps to row 1, col 1-7.
-    // It should be lighting up all of row 0 and the 0-6 of of row 1.
-    // ToDo: figure out why the proper bit is not lighting up. 
-    // delay(150);
-    LED_Array_String_Write(coreToTest,0);
-    // coreToTest++;
-    // if(coreToTest>=9){coreToTest=0;}
-    coreToTest=2;
-    LED_Array_String_Write(coreToTest,1);
-    // Test end
-    // LEDArrayMonochromeUpdate();
-    LED_Array_Matrix_Mono_Display();
+    coreToTest=63;
+    //  DebugWithReedSwitchOutput();
+    LED_Array_Monochrome_Set_Color(200,255,255);
+    LED_Array_Memory_Clear();
+    //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
+    //  TracingPulses(1);
+    Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+    //  TracingPulses(2);
+    if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
+    else { LED_Array_String_Write(coreToTest, 0); }
+    //  TracingPulses(1);
+    LED_Array_String_Display();
+    //  DebugWithReedSwitchInput();
+    delay(10);
     break;
 
   case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
-    // Not working 02-08-2020
-    // CoreReadArray(); // Update Core Memory with read state of all 64 bits. 
-    // CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // LEDArrayMonochromeUpdate();
-    // LED_Array_Matrix_Mono_Display();
-    // TopLevelState = STATE_SCROLLING_TEXT;   
+    LED_Array_Monochrome_Set_Color(100,255,255);
     LED_Array_Memory_Clear();
-    LED_Array_Matrix_Mono_Display();
+    for (coreToTest = 0; coreToTest < 1 ; coreToTest++) {
+      Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+      if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
+      else { LED_Array_String_Write(coreToTest, 0); }
+      delay(5);
+    }
+    LED_Array_String_Display();
+
     break;
 
   case STATE_LAST:

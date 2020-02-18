@@ -123,19 +123,53 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
   if (value == 1) { AllDriveIoSetBit(bit); } 
   else { AllDriveIoClearBit(bit); }
-  delayMicroseconds(3);  
+  delayMicroseconds(8);                             // give the core time to change state
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
 }
 
+bool Core_Mem_Bit_Read(uint8_t bit) {
+  static bool value = 0;
+//DebugWithReedSwitchOutput();
+  CoreStateChangeFlag(1);                           // Clear the sense flag
+  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
+  MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
+  // Activate the selected matrix drive transistors according to bit position and SET it to 1.
+//TracingPulses(1); 
+  AllDriveIoSetBit(bit);
+  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+  // loop around this to detect it - not sure on timing needs
+//TracingPulses(2); 
+  //for (uint8_t i = 0; i <=3; i++)                  // Each time through the loop is about 1 us
+  //{
+    CoreStateChangeFlag(0);                         // Polling for a change
+  //}
+
+  // Turn off all of the matrix signals
+  MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
+  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
+  if (CoreStateChangeFlag(0) == true)               // If the core changed state, then it was a 0, and is now 1...
+  {
+    Core_Mem_Bit_Write(bit,0);                      // ...so return the core to 0
+    value = 0;                                      // ...update value to represent the core state
+//TracingPulses(4); 
+  }
+  else                                              // otherwise the core was already 1
+  {
+    value = 1;                                      // ...update value to represent the core state
+//TracingPulses(3); 
+  }
+//DebugWithReedSwitchInput();
+  return (value);                                   // Return the value of the core
+}
 
 bool CoreReadBit(uint8_t bit) {
   static bool value;
-  DebugWithReedSwitchOutput();
+  //DebugWithReedSwitchOutput();
   AllDriveIoSafe();
   AllDriveIoSetBit(bit);
-  TracingPulses(1);
+  //TracingPulses(1);
   AllDriveIoEnable();
   // loop around this to detect it - not sure on timing needs
   for (uint8_t i = 0; i <=4; i++)
@@ -144,7 +178,7 @@ bool CoreReadBit(uint8_t bit) {
   }
   AllDriveIoDisable(); 
   AllDriveIoSafe();
-  TracingPulses(2);
+  //TracingPulses(2);
   value = 1;
   if (CoreStateChangeFlag(0) == true)
   {
@@ -289,6 +323,14 @@ void AllDriveIoDisable() {
 bool CoreStateChangeFlag(bool clearFlag) {                    // Send this function a 0 to poll it, 1 to clear the flag
   static bool CoreStateChangeFlag = 0;
   if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+  // TracingPulses(2); 
   if (clearFlag == true) { CoreStateChangeFlag = 0; }           // Override detected state when user requests to clear the flag
   return CoreStateChangeFlag;
 }
