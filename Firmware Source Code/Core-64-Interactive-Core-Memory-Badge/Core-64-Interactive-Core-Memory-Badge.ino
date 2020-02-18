@@ -138,7 +138,7 @@ void loop() {
     LED_Array_String_Display();
     LED_Array_Matrix_Mono_Display();
     DebugWithReedSwitchOutput();
-    for (uint8_t bit = coreToTest; bit<(coreToTest+32); bit++)
+    for (uint8_t bit = coreToTest; bit<(coreToTest+64); bit++)
       {
       Core_Mem_Bit_Write(bit,0);
       Core_Mem_Bit_Write(bit,1);
