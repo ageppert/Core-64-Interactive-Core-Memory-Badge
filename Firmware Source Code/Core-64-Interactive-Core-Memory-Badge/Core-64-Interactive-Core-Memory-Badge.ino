@@ -149,30 +149,32 @@ void loop() {
     break;
 
   case STATE_CORE_TEST_ONE:
-    coreToTest=63;
+    coreToTest=2;
     //  DebugWithReedSwitchOutput();
     LED_Array_Monochrome_Set_Color(200,255,255);
-    LED_Array_Memory_Clear();
+    // LED_Array_Memory_Clear();
     //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
     //  TracingPulses(1);
-    Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+    // Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+    Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
     //  TracingPulses(2);
     if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
     else { LED_Array_String_Write(coreToTest, 0); }
     //  TracingPulses(1);
     LED_Array_String_Display();
     //  DebugWithReedSwitchInput();
-    delay(10);
+    delay(10); // TODO: this delay is needed to keep the LED from flickering when the stylus is present. Why?
     break;
 
   case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
     LED_Array_Monochrome_Set_Color(100,255,255);
     LED_Array_Memory_Clear();
-    for (coreToTest = 0; coreToTest < 1 ; coreToTest++) {
-      Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+    for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {    // TO DO: When this is greater than 16, the bit to LED align shifts in alternating row to lead/lag the stylus.
+      //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+      Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
       if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
       else { LED_Array_String_Write(coreToTest, 0); }
-      delay(5);
+      //delay(10);
     }
     LED_Array_String_Display();
 

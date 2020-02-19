@@ -137,21 +137,24 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   // Activate the selected matrix drive transistors according to bit position and SET it to 1.
 //TracingPulses(1); 
-  AllDriveIoSetBit(bit);
+  //AllDriveIoSetBit(bit);
+  AllDriveIoClearBit(bit);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+  cli();                                            // Disable interrupts while poling for sense pulse.
   // loop around this to detect it - not sure on timing needs
 //TracingPulses(2); 
   //for (uint8_t i = 0; i <=3; i++)                  // Each time through the loop is about 1 us
   //{
     CoreStateChangeFlag(0);                         // Polling for a change
   //}
-
+  sei();                                            // Enable interrupts when done poling for sense pulse.
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   if (CoreStateChangeFlag(0) == true)               // If the core changed state, then it was a 0, and is now 1...
   {
-    Core_Mem_Bit_Write(bit,0);                      // ...so return the core to 0
+    //Core_Mem_Bit_Write(bit,0);                      // ...so return the core to 0
+    Core_Mem_Bit_Write(bit,1);
     value = 0;                                      // ...update value to represent the core state
 //TracingPulses(4); 
   }
