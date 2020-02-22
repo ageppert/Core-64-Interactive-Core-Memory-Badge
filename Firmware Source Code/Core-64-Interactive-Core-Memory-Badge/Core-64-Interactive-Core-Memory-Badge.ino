@@ -166,11 +166,11 @@ void loop() {
     //  DebugWithReedSwitchInput();
     break;
 
-  case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
+  case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
     LED_Array_Monochrome_Set_Color(150,255,255);
     LED_Array_Memory_Clear();
     //DebugWithReedSwitchOutput();
-    for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {    // TO DO: When this is greater than 16, the bit to LED align shifts in alternating row to lead/lag the stylus.
+    for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   
       //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
       Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
       if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
