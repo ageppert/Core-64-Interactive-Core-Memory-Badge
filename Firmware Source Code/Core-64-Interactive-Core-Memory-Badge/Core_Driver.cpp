@@ -303,6 +303,10 @@ void MatrixDriveTransistorsInactive() {
   }
 }
 
+void ReturnMatrixQ9NtoLowForLEDArray() {
+  digitalWriteFast(PIN_MATRIX_DRIVE_Q9P, 0);
+}
+
 // Configure four transistors to activate the specified core.
 
 // Testing this with revised row logic table

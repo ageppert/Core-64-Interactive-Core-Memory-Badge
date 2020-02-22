@@ -54,6 +54,7 @@ void CoreSetAll() {
   }
 }
 
+/* Delete these functions
 void CoreZeroClear() {
   AllDriveIoSafe();                             
   // suspect the logic in this is wrong
@@ -93,6 +94,8 @@ void CoreOneSet() {
   AllDriveIoDisable();                          
   AllDriveIoSafe();                             
 }
+*/
+
 /*
 void CoreWriteBit(uint8_t bit, bool value) {
   //DebugWithReedSwitchOutput();                  // T -13 us
@@ -127,6 +130,7 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
+  ReturnMatrixQ9NtoLowForLEDArray();
 }
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
@@ -151,6 +155,7 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
+  ReturnMatrixQ9NtoLowForLEDArray();
   if (CoreStateChangeFlag(0) == true)               // If the core changed state, then it was a 0, and is now 1...
   {
     //Core_Mem_Bit_Write(bit,0);                      // ...so return the core to 0

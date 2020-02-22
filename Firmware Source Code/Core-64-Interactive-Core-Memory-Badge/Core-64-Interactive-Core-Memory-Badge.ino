@@ -51,7 +51,7 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  TopLevelState = STATE_CORE_TEST_ONE;
+  TopLevelState = STATE_CORE_TEST_ALL;
   // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
@@ -59,19 +59,16 @@ void loop() {
   static uint8_t ColorFontSymbolToDisplay = 2;
   static bool ButtonReleased = true;
   static uint32_t Button1HoldTime = 0;
-  static uint8_t coreToTest = 59;
+  static uint8_t coreToTest = 0;
 
   /*                      *********************
                           *** Housekeepting ***
                           *********************
   */
   HeartBeat();
-  // With AnalogUpdate() and OLEDScreenUpdate() both commented out, white LED problem does not happen in STATE_CORE_TEST_ONE,
-  // but it still happens (less frequently) in STATE_CORE_TEST_ALL.
-  // AnalogUpdate();      
-  OLEDScreenUpdate();
-  // DigitalIOUpdate();
-  // WriteColorFontSymbolToLedScreenMemoryMatrixColor(ColorFontSymbolToDisplay);
+  AnalogUpdate();      
+  // OLEDScreenUpdate();
+  DigitalIOUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
@@ -132,27 +129,30 @@ void loop() {
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
-    coreToTest=0;
-    LED_Array_Monochrome_Set_Color(125,255,255);
-    LED_Array_String_Write(coreToTest,1);
-    LED_Array_String_Display();
-    LED_Array_Matrix_Mono_Display();
-    DebugWithReedSwitchOutput();
+    coreToTest=8;
+    LED_Array_Monochrome_Set_Color(50,255,255);
+
+    // DebugWithReedSwitchOutput();
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
-      Core_Mem_Bit_Write(bit,0);
-      Core_Mem_Bit_Write(bit,1);
+        Core_Mem_Bit_Write(bit,0);       // When this is active, proper LED flashes, and pesky lower left flashes full green, alternating timing.
+        LED_Array_String_Write(bit,0);
+        LED_Array_String_Display();
+        delay(500);
+        Core_Mem_Bit_Write(bit,1);     // When this is active, proper LED flashes, and pesky lower left flashes full green, same timing.
+        LED_Array_String_Write(bit,1);
+        LED_Array_String_Display();
+        delay(500);
       }
-    DebugWithReedSwitchInput();
-    LED_Array_String_Write(coreToTest,0);
-    LED_Array_String_Display();
+    // DebugWithReedSwitchInput();
+    //LED_Array_String_Write(coreToTest,0); // When this is set, with cores setting, the pesky first LED is on (full bright, proper color), which it should not be.
     break;
 
   case STATE_CORE_TEST_ONE:
     coreToTest=2;
     //  DebugWithReedSwitchOutput();
-    LED_Array_Monochrome_Set_Color(200,255,255);
-    // LED_Array_Memory_Clear();
+    LED_Array_Monochrome_Set_Color(100,255,255);
+    LED_Array_Memory_Clear();
     //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
     //  TracingPulses(1);
     // Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
@@ -161,22 +161,26 @@ void loop() {
     if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
     else { LED_Array_String_Write(coreToTest, 0); }
     //  TracingPulses(1);
+    // delay(10);
     LED_Array_String_Display();
     //  DebugWithReedSwitchInput();
-    delay(10); // TODO: this delay is needed to keep the LED from flickering when the stylus is present. Why?
     break;
 
   case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
-    LED_Array_Monochrome_Set_Color(100,255,255);
+    LED_Array_Monochrome_Set_Color(150,255,255);
     LED_Array_Memory_Clear();
+    //DebugWithReedSwitchOutput();
     for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {    // TO DO: When this is greater than 16, the bit to LED align shifts in alternating row to lead/lag the stylus.
       //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
       Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
       if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
       else { LED_Array_String_Write(coreToTest, 0); }
-      //delay(10);
+      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!??
     }
+    //TracingPulses(1);
+    //delayMicroseconds(100);
     LED_Array_String_Display();
+    //DebugWithReedSwitchInput();
 
     break;
 

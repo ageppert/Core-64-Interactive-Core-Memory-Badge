@@ -14,6 +14,8 @@
 #include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
 #include "FastLED_Config.h" // Custom config file for FastLED library
 
+// FastLED.show() takes a little less than 2ms (measured) to update 64 LEDs. Good to have it delay 1/2 ms after core matrix twiddles the data pin.
+
 #define MONOCHROMECOLORCHANGER 1
 
 // LED Array Memory Buffers for user representations of the LED Array.

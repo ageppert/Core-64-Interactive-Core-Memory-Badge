@@ -17,7 +17,7 @@
  * V0.1 the first batch of 5 prototype green boards. 
  * V0.2 hand re-worked updates on V0.1 for first bring-up.
 */
-#define FIRMWARE_VERSION  "200219-01"   // Working on basic functionality of all connected hardware.
+#define FIRMWARE_VERSION  "200221-01"   // Working on basic functionality of all connected hardware.
 
 const String FirmwareVersion = FIRMWARE_VERSION;
 const String HardwareVersion = HARDWARE_VERSION;

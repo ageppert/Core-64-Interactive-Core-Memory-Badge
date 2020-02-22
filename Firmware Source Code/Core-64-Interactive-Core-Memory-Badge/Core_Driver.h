@@ -20,6 +20,8 @@ SETUP:
 //extern "C" {
 //#endif
 
+void ReturnMatrixQ9NtoLowForLEDArray();
+
 void MatrixEnableTransistorInactive();
 void MatrixEnableTransistorActive();
 void MatrixDriveTransistorsInactive();
