@@ -36,6 +36,10 @@ void tempDebugPin25InputMode ();
 void ClearRowZeroAndColZero ();
 // void SetRowZeroAndColZero ();
 
+extern void TracingPulses(uint8_t numberOfPulses);
+void DebugWithReedSwitchOutput();
+void DebugWithReedSwitchInput();
+
 //#ifdef __cplusplus
 //} // extern "C"
 //#endif

@@ -66,9 +66,9 @@ void loop() {
                           *********************
   */
   HeartBeat();
-  AnalogUpdate();      
-  // OLEDScreenUpdate();
-  DigitalIOUpdate();
+  // AnalogUpdate();      
+  OLEDScreenUpdate();
+  // DigitalIOUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
@@ -138,18 +138,18 @@ void loop() {
         Core_Mem_Bit_Write(bit,0);       // When this is active, proper LED flashes, and pesky lower left flashes full green, alternating timing.
         LED_Array_String_Write(bit,0);
         LED_Array_String_Display();
-        delay(500);
+        delay(100);
         Core_Mem_Bit_Write(bit,1);     // When this is active, proper LED flashes, and pesky lower left flashes full green, same timing.
         LED_Array_String_Write(bit,1);
         LED_Array_String_Display();
-        delay(500);
+        delay(100);
       }
     // DebugWithReedSwitchInput();
     //LED_Array_String_Write(coreToTest,0); // When this is set, with cores setting, the pesky first LED is on (full bright, proper color), which it should not be.
     break;
 
   case STATE_CORE_TEST_ONE:
-    coreToTest=2;
+    coreToTest=0;
     //  DebugWithReedSwitchOutput();
     LED_Array_Monochrome_Set_Color(100,255,255);
     LED_Array_Memory_Clear();

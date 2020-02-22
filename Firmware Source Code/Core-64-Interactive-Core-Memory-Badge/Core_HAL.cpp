@@ -119,6 +119,7 @@ void CoreWriteBit(uint8_t bit, bool value) {
 
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Turn off all of the matrix signals
+  cli();                                            // Testing for consistent timing.
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   // Prepare to activate the matrix drive transistors
@@ -131,11 +132,13 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   ReturnMatrixQ9NtoLowForLEDArray();
+  sei();                                            // Testing for consistent timing.
 }
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
   static bool value = 0;
-//DebugWithReedSwitchOutput();
+  cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
+  DebugWithReedSwitchOutput();
   CoreStateChangeFlag(1);                           // Clear the sense flag
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
@@ -144,14 +147,12 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
   //AllDriveIoSetBit(bit);
   AllDriveIoClearBit(bit);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
-  cli();                                            // Disable interrupts while poling for sense pulse.
   // loop around this to detect it - not sure on timing needs
 //TracingPulses(2); 
   //for (uint8_t i = 0; i <=3; i++)                  // Each time through the loop is about 1 us
   //{
     CoreStateChangeFlag(0);                         // Polling for a change
   //}
-  sei();                                            // Enable interrupts when done poling for sense pulse.
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
@@ -168,13 +169,14 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
     value = 1;                                      // ...update value to represent the core state
 //TracingPulses(3); 
   }
-//DebugWithReedSwitchInput();
+  DebugWithReedSwitchInput();
+  sei();                                            // Testing for consistent timing. Enable interrupts when done poling for sense pulse.
   return (value);                                   // Return the value of the core
 }
 
 bool CoreReadBit(uint8_t bit) {
   static bool value;
-  //DebugWithReedSwitchOutput();
+  DebugWithReedSwitchOutput();
   AllDriveIoSafe();
   AllDriveIoSetBit(bit);
   //TracingPulses(1);
@@ -199,6 +201,7 @@ bool CoreReadBit(uint8_t bit) {
     value = 0;
   }
   CoreStateChangeFlag(1);
+  DebugWithReedSwitchInput();
   return (value);
 }
 
@@ -341,20 +344,6 @@ bool CoreStateChangeFlag(bool clearFlag) {                    // Send this funct
   // TracingPulses(2); 
   if (clearFlag == true) { CoreStateChangeFlag = 0; }           // Override detected state when user requests to clear the flag
   return CoreStateChangeFlag;
-}
-
-void TracingPulses(uint8_t numberOfPulses) {
-  for (uint8_t i = 1; i <= numberOfPulses; i++) {
-    tempDebugPin25Twiddle ();
-  }
-}
-
-void DebugWithReedSwitchOutput() {
-  tempDebugPin25OutputMode();
-}
-
-void DebugWithReedSwitchInput() {
-  tempDebugPin25InputMode();
 }
 
 /*

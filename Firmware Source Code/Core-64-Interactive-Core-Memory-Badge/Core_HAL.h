@@ -60,11 +60,6 @@ void AllDriveIoEnable();
 void AllDriveIoDisable();
 extern bool CoreStateChangeFlag(bool clearFlag);
 
-extern void TracingPulses(uint8_t numberOfPulses);
-void DebugWithReedSwitchOutput();
-void DebugWithReedSwitchInput();
-
-
 //#ifdef __cplusplus
 //} // extern "C"
 //#endif

@@ -382,7 +382,10 @@ void ClearRowZeroAndColZero () {
 }
 
 bool SenseWirePulse() {
-  return digitalReadFast(Pin_Sense_Pulse);
+  bool temp = 0;
+  temp = digitalReadFast(Pin_Sense_Pulse);
+  // TracingPulses(temp);
+  return temp;
 }
 
 void tempDebugPin17Twiddle () {
@@ -403,4 +406,18 @@ void tempDebugPin25OutputMode () {
 void tempDebugPin25InputMode () {
   digitalWriteFast(Pin_Reed_Switch, 0);
   pinMode(Pin_Reed_Switch, INPUT);
+}
+
+void TracingPulses(uint8_t numberOfPulses) {
+  for (uint8_t i = 1; i <= numberOfPulses; i++) {
+    tempDebugPin25Twiddle ();
+  }
+}
+
+void DebugWithReedSwitchOutput() {
+  tempDebugPin25OutputMode();
+}
+
+void DebugWithReedSwitchInput() {
+  tempDebugPin25InputMode();
 }
