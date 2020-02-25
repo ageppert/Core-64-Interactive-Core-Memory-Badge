@@ -23,15 +23,16 @@ uint8_t TopLevelState;   // Master State Machine
 enum TopLevelState
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_LED_TEST_ALL_BINARY,        //  1 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        //  2 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   //  3 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  4 Testing LED Driver with matrix array and multi-color symbols
-  STATE_LED_TEST_ALL_COLOR,         //  5 Test LED Driver with all pixels and all colors
-  STATE_CORE_TOGGLE_BIT,            //  6 Test one core with one function
-  STATE_CORE_TEST_ONE,              //  7 Testing core #coreToTest and displaying core state
-  STATE_CORE_TEST_ALL,              //  8 Testing all cores and displaying core state
-  STATE_LAST                        //  9 last one, return to 0.
+  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
+  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        //  4 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //  5 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //  6 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  7 Testing LED Driver with matrix array and multi-color symbols
+  STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
+  STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
+  STATE_LAST                        //  11 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -116,6 +117,30 @@ void loop() {
     // delay(25);
     break;
 
+  case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
+    LED_Array_Monochrome_Set_Color(150,255,255);
+    LED_Array_Memory_Clear();
+    //DebugWithReedSwitchOutput();
+    for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   
+      //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+      Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
+      if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
+      else { LED_Array_String_Write(coreToTest, 0); }
+      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!??
+    }
+    //TracingPulses(1);
+    LED_Array_String_Display();
+    //DebugWithReedSwitchInput();
+    break;
+
+  case STATE_MONOCHROME_DRAW:       // Simple drawing mode
+    LED_Array_Monochrome_Set_Color(250,255,255);
+    //LED_Array_Memory_Clear();
+    // Which cores changed state?
+    // Activate that pixel in the LED Array.
+    LED_Array_String_Display();
+    break;
+
   case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
     LED_Array_Test_Count_Binary();
     break;
@@ -172,23 +197,6 @@ void loop() {
     // delay(10);
     LED_Array_String_Display();
     //  DebugWithReedSwitchInput();
-    break;
-
-  case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
-    LED_Array_Monochrome_Set_Color(150,255,255);
-    LED_Array_Memory_Clear();
-    //DebugWithReedSwitchOutput();
-    for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   
-      //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
-      Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
-      if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
-      else { LED_Array_String_Write(coreToTest, 0); }
-      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!??
-    }
-    //TracingPulses(1);
-    //delayMicroseconds(100);
-    LED_Array_String_Display();
-    //DebugWithReedSwitchInput();
     break;
 
   case STATE_LAST:
