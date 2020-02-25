@@ -51,8 +51,8 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  TopLevelState = STATE_CORE_TEST_ALL;
-  // TopLevelState = STATE_SCROLLING_TEXT;
+  // TopLevelState = STATE_CORE_TEST_ALL;
+  TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
