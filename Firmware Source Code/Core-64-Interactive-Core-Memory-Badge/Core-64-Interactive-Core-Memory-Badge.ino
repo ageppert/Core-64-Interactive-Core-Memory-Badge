@@ -103,9 +103,17 @@ void loop() {
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
-    ScrollTextToCoreMemory(); // This writes directly to the core memory array and bypasses reading it.
+    ScrollTextToCoreMemory();   // This writes directly to the RAM core memory array and bypasses reading it.
+    // delay(25);
+    Core_Mem_Array_Write();     // Transfer from RAM Core Memory Array to physical core memory
+    // Core_Mem_Array_Write_Test_Pattern();
+    // delay(25);
+    Core_Mem_Array_Read();      // Transfer from physical core memory to RAM Core Memory Array
+    // delay(25);
     CopyCoreMemoryToMonochromeLEDArrayMemory();
+    // delay(25);
     LED_Array_Matrix_Mono_Display();
+    // delay(25);
     break;
 
   case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
@@ -181,7 +189,6 @@ void loop() {
     //delayMicroseconds(100);
     LED_Array_String_Display();
     //DebugWithReedSwitchInput();
-
     break;
 
   case STATE_LAST:

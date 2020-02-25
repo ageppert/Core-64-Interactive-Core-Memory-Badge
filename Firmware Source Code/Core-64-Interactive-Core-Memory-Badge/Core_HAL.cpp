@@ -14,7 +14,7 @@
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
 // The CoreArrayMemory is only accurate after all real core memory bits have been read once.
 // It us up to the user to request CoreReadArray() in order provide an initial update to the CoreArrayMemory array.
-bool    CoreArrayMemory [8][8] = {
+static bool CoreArrayMemory [8][8] = {
                                   {1,1,1,0,1,0,1,0},
                                   {1,0,0,0,1,0,1,0},
                                   {1,1,1,0,1,1,1,0},
@@ -51,6 +51,11 @@ void CoreClearAll() {
 void CoreSetAll() {
   for (uint8_t i = 0; i <64; i++) {
     Core_Mem_Bit_Write(i,1);
+  }
+  for (uint8_t x=1; x<=7; x++) {
+    for (uint8_t y=0; y<=7; y++) {
+      CoreArrayMemory [y][x] = 1;
+    }
   }
 }
 
@@ -116,6 +121,39 @@ void CoreWriteBit(uint8_t bit, bool value) {
   //DebugWithReedSwitchInput();
 }
 */
+void Core_Mem_Array_Write() {
+  for (uint8_t y=0; y<8; y++)
+  {
+    for (uint8_t x=0; x<8; x++)
+    {
+      // CoreArrayMemory [y][x] = pgm_read_byte(&(character_font_wide[3][y][x])); // testing
+      Core_Mem_Bit_Write( (y*8)+x, !CoreArrayMemory [y][x]);  // Must invert the bits because 0 is LED on, 1 is LED off.
+      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird!
+    }
+  }
+}
+
+void Core_Mem_Array_Write_Test_Pattern() {
+  for (uint8_t y=0; y<8; y=y+1)
+  {
+    for (uint8_t x=0; x<8; x=x+1)
+    {
+      Core_Mem_Bit_Write( (y*8)+x, pgm_read_byte(&(character_font_wide[2][y][x])) );
+      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird!
+    }
+  }
+}
+
+void Core_Mem_Array_Read() {
+  for (uint8_t y=0; y<8; y++)
+  {
+    for (uint8_t x=0; x<8; x++)
+    {
+      CoreArrayMemory [y][x] = (Core_Mem_Bit_Read( (y*8)+x ));
+      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird!
+    }
+  }
+}
 
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Turn off all of the matrix signals
@@ -266,24 +304,6 @@ void ScrollTextToCoreMemory() {
       }
       characterColumn++; // prepare for next column
   }
-}
-
-void WriteOneBitToCoreMemory(uint8_t bit, bool value) {
-  for (uint8_t x=0; x<=7; x++)
-  {
-    for (uint8_t y=0; y<=7; y++)
-    {
-      CoreArrayMemory [y][x] = 0;
-    }
-  }
-  if      (bit < 8 ) { CoreArrayMemory[0][ bit    ] = value; }
-  else if (bit < 16) { CoreArrayMemory[1][(bit-8 )] = value; }
-  else if (bit < 24) { CoreArrayMemory[2][(bit-16)] = value; }
-  else if (bit < 32) { CoreArrayMemory[3][(bit-24)] = value; }
-  else if (bit < 40) { CoreArrayMemory[4][(bit-32)] = value; }
-  else if (bit < 48) { CoreArrayMemory[5][(bit-40)] = value; }
-  else if (bit < 56) { CoreArrayMemory[6][(bit-48)] = value; }
-  else if (bit < 64) { CoreArrayMemory[7][(bit-56)] = value; }
 }
 
 void AllDriveIoSafe() {
