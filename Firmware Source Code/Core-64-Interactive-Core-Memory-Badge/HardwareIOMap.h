@@ -72,7 +72,7 @@ extern "C" {
 
 
 // Hardware for Built-in LED
-	#define Pin_Built_In_LED           13   // Shared with Matrix Drive
+	#define Pin_Built_In_LED           13   // Shared with Matrix Drive Q7P
 
 // Hardware for RGB LED Array
 	#define Pin_LED_Array              17    // Teensy LC pin with buffered Digital Pin 17 driven at Vin. Shared pin 17. Return to previous state when finished using. 

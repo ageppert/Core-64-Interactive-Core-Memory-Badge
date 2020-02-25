@@ -21,7 +21,7 @@ USAGE: Init, Clear, Write to one of the buffers in monochrome or color mode, upd
 
 // Updated 2019-01-11 for HAL over Driver architecture
 // The API for the LED Array HAL
-void LED_Array_Init();				// Sets up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h 
+void LED_Array_Init();				// Called once from Setup. Set up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h 
 void LED_Array_Memory_Clear(); 		// Clears all of the LED Array memory buffers.
 void LED_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t value); // Overide the default monochrome color for next pixel to be written to the any monochrome memory buffer.
 

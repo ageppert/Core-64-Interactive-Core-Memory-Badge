@@ -20,6 +20,8 @@ SETUP:
 //extern "C" {
 //#endif
 
+void ReturnMatrixQ9NtoLowForLEDArray();
+
 void MatrixEnableTransistorInactive();
 void MatrixEnableTransistorActive();
 void MatrixDriveTransistorsInactive();
@@ -30,6 +32,13 @@ void tempDebugPin17Twiddle ();
 void tempDebugPin25Twiddle ();
 void tempDebugPin25OutputMode ();
 void tempDebugPin25InputMode ();
+
+void ClearRowZeroAndColZero ();
+// void SetRowZeroAndColZero ();
+
+extern void TracingPulses(uint8_t numberOfPulses);
+void DebugWithReedSwitchOutput();
+void DebugWithReedSwitchInput();
 
 //#ifdef __cplusplus
 //} // extern "C"

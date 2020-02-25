@@ -7,11 +7,14 @@
 #endif
 
 #include "HardwareIOMap.h"
-#include "Core_API.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
+#include "Core_HAL.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
 #include "CharacterMap.h"
 
+#define FASTLED_ALLOW_INTERRUPTS 0     // include before #include FastLED.h to disable inetrrupts during writes.
 #include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
 #include "FastLED_Config.h" // Custom config file for FastLED library
+
+// FastLED.show() takes a little less than 2ms (measured) to update 64 LEDs. Good to have it delay 1/2 ms after core matrix twiddles the data pin.
 
 #define MONOCHROMECOLORCHANGER 1
 

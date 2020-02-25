@@ -1,5 +1,6 @@
 /*
 PURPOSE: Configure the NeoPixel Style LED Array for the FastLED library
+Pimoroni Unicorn Hat: https://shop.pimoroni.com/products/unicorn-hat 
 */
  
 #ifndef FASTLED_CONFIG_H
@@ -18,7 +19,7 @@ PURPOSE: Configure the NeoPixel Style LED Array for the FastLED library
 //#endif
 
 #define COLOR_ORDER GRB
-#define CHIPSET     WS2812B
+#define CHIPSET     WS2812B			// Used in Pimoroni Unicorn Hat. Limited to a data rate of about 800Kbps, hard coded in FastLED library. 
 #define BRIGHTNESS  3
 
 const uint8_t kMatrixWidth = 8;

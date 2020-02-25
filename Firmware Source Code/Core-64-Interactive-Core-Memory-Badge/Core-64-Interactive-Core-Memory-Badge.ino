@@ -15,7 +15,7 @@
 #include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
 #include "Buttons.h"
-#include "Core_API.h"
+#include "Core_HAL.h"
 
 // #define DEBUG 1
 
@@ -28,9 +28,10 @@ enum TopLevelState
   STATE_LED_TEST_ONE_MATRIX_MONO,   //  3 Testing LED Driver with matrix array and monochrome color
   STATE_LED_TEST_ONE_MATRIX_COLOR,  //  4 Testing LED Driver with matrix array and multi-color symbols
   STATE_LED_TEST_ALL_COLOR,         //  5 Test LED Driver with all pixels and all colors
-  STATE_CORE_TEST_ONE,              //  6 Testing core #3 and displaying core state
-  STATE_CORE_TEST_ALL,              //  7 Testing all cores and displaying core state
-  STATE_LAST                        //  8 last one, return to 0.
+  STATE_CORE_TOGGLE_BIT,            //  6 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  7 Testing core #coreToTest and displaying core state
+  STATE_CORE_TEST_ALL,              //  8 Testing all cores and displaying core state
+  STATE_LAST                        //  9 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -50,8 +51,8 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  TopLevelState = STATE_SCROLLING_TEXT;
-//  TopLevelState = STATE_LED_TEST_ONE_MATRIX;
+  TopLevelState = STATE_CORE_TEST_ALL;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -65,12 +66,9 @@ void loop() {
                           *********************
   */
   HeartBeat();
-  // With AnalogUpdate() and OLEDScreenUpdate() both commented out, white LED problem does not happen in STATE_CORE_TEST_ONE,
-  // but it still happens (less frequently) in STATE_CORE_TEST_ALL.
   // AnalogUpdate();      
-  // OLEDScreenUpdate();
+  OLEDScreenUpdate();
   // DigitalIOUpdate();
-  // WriteColorFontSymbolToLedScreenMemoryMatrixColor(ColorFontSymbolToDisplay);
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
@@ -98,6 +96,10 @@ void loop() {
     }
   }
 
+  // 02-08-2020 TO DO Last few states aren't working correctly. Temporary work around.
+  // if (TopLevelState >= STATE_CORE_TEST_ONE) {TopLevelState = STATE_SCROLLING_TEXT;}
+
+  OLEDSetTopLevelState(TopLevelState);
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
@@ -126,36 +128,65 @@ void loop() {
     LED_Array_Test_Rainbow_Demo();
     break;
 
-  case STATE_CORE_TEST_ONE:
-    CoreClearAll();
-    CoreWriteBit(coreToTest,0);
-    WriteOneBitToCoreMemory(coreToTest,CoreReadBit(coreToTest));
-    CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // Testing to see if I decode this to the LED matrix correctly
-    // This code is lighting up row 0, col 0-6 then jumps to row 1, col 1-7.
-    // It should be lighting up all of row 0 and the 0-6 of of row 1.
-    // ToDo: figure out why the proper bit is not lighting up. 
-    delay(150);
-    LED_Array_String_Write(coreToTest,0);
-    // coreToTest++;
-    // if(coreToTest>=9){coreToTest=0;}
-    coreToTest=2;
-    LED_Array_String_Write(coreToTest,1);
-    // Test end
-    // LEDArrayMonochromeUpdate();
-    LED_Array_Matrix_Mono_Display();
+  case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
+    coreToTest=8;
+    LED_Array_Monochrome_Set_Color(50,255,255);
+
+    // DebugWithReedSwitchOutput();
+    for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
+      {
+        Core_Mem_Bit_Write(bit,0);       // When this is active, proper LED flashes, and pesky lower left flashes full green, alternating timing.
+        LED_Array_String_Write(bit,0);
+        LED_Array_String_Display();
+        delay(100);
+        Core_Mem_Bit_Write(bit,1);     // When this is active, proper LED flashes, and pesky lower left flashes full green, same timing.
+        LED_Array_String_Write(bit,1);
+        LED_Array_String_Display();
+        delay(100);
+      }
+    // DebugWithReedSwitchInput();
+    //LED_Array_String_Write(coreToTest,0); // When this is set, with cores setting, the pesky first LED is on (full bright, proper color), which it should not be.
     break;
 
-  case STATE_CORE_TEST_ALL: // ToDo: White stuck LED happens in this state, but not in the scrolling text state. CoreReadArray() is the big difference.
-    CoreReadArray(); // Update Core Memory with read state of all 64 bits.
-    CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // LEDArrayMonochromeUpdate();
-    LED_Array_Matrix_Mono_Display();
-    //TopLevelState = STATE_SCROLLING_TEXT;   
+  case STATE_CORE_TEST_ONE:
+    coreToTest=0;
+    //  DebugWithReedSwitchOutput();
+    LED_Array_Monochrome_Set_Color(100,255,255);
+    LED_Array_Memory_Clear();
+    //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
+    //  TracingPulses(1);
+    // Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+    Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
+    //  TracingPulses(2);
+    if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
+    else { LED_Array_String_Write(coreToTest, 0); }
+    //  TracingPulses(1);
+    // delay(10);
+    LED_Array_String_Display();
+    //  DebugWithReedSwitchInput();
+    break;
+
+  case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
+    LED_Array_Monochrome_Set_Color(150,255,255);
+    LED_Array_Memory_Clear();
+    //DebugWithReedSwitchOutput();
+    for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   
+      //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+      Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
+      if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
+      else { LED_Array_String_Write(coreToTest, 0); }
+      delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!??
+    }
+    //TracingPulses(1);
+    //delayMicroseconds(100);
+    LED_Array_String_Display();
+    //DebugWithReedSwitchInput();
+
     break;
 
   case STATE_LAST:
-    CoreClearAll();
+    LED_Array_Memory_Clear();
+    LED_Array_Matrix_Mono_Display();
     LED_Array_Monochrome_Set_Color(125,255,255);
     TopLevelState = STATE_SCROLLING_TEXT;   
     break;
@@ -177,8 +208,8 @@ void coreTesting() {
   if (c == 64) {c=0;}
   */
   // Read testing
-   CoreWriteBit(3,1);
-   CoreWriteBit(3,0);
+   Core_Mem_Bit_Write(3,1);
+   Core_Mem_Bit_Write(3,0);
   // CoreArrayMemory [0][3] = CoreReadBit(3);
   // Whole Array Testing
   //  for (uint8_t i = 0; i <= 63; i++ ) { CoreWriteBit(i,1); }

@@ -21,8 +21,7 @@ SETUP:
 
 void OLEDScreenSetup();
 void OLEDScreenUpdate();
-
-
+void OLEDSetTopLevelState(uint8_t state);
 
 //#ifdef __cplusplus
 //} // extern "C"
