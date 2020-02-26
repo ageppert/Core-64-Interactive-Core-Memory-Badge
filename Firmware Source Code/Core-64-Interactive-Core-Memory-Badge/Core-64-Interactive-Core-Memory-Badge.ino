@@ -52,8 +52,8 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  // TopLevelState = STATE_CORE_TEST_ALL;
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_MONOCHROME_DRAW;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -135,10 +135,23 @@ void loop() {
 
   case STATE_MONOCHROME_DRAW:       // Simple drawing mode
     LED_Array_Monochrome_Set_Color(250,255,255);
-    //LED_Array_Memory_Clear();
+    // delay(100);
+    // First time entry,
+      //  LED_Array_Memory_Clear();
+    // Monitor cores for changes. 
+      Core_Mem_Monitor();
     // Which cores changed state?
-    // Activate that pixel in the LED Array.
-    LED_Array_String_Display();
+    // Add selected color to that pixel in the LED Array.
+    for (uint8_t y=0; y<8; y++)
+    {
+      for (uint8_t x=0; x<8; x++)
+      {
+        if (CoreArrayMemory [y][x]) { LED_Array_Matrix_Mono_Write(y, x, 1); }
+      }
+    }
+    //LED_Array_Matrix_Mono_Write(0, 0, 1);
+    // Show the updated LED array.
+    LED_Array_Matrix_Mono_Display();
     break;
 
   case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
