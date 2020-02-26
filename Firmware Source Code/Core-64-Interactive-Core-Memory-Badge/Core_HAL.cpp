@@ -155,6 +155,29 @@ void Core_Mem_Array_Read() {
   }
 }
 
+//
+// Monitor for flux interference in Core Memory RAM, reported through CoreArrayMemory
+// Pre-conditions: none
+// Inputs: none
+// Outputs: indirectly through CoreArrayMemory(8x8)
+// The process is destructive to core memory RAM, with any bits not affected by an external magnetic flux in a zero state.
+// Each core is cleared to one, tested to still be one, CoreArrayMemory bit is updated.
+// CoreArrayMemory reflects whether a bit is being affected by a magnetic flux, 1, or not, 0.
+
+void Core_Mem_Monitor() {     
+  uint8_t bit;
+  for (uint8_t y=0; y<8; y++)
+  {
+    for (uint8_t x=0; x<8; x++)
+    {
+      bit = (y*8)+x;
+      Core_Mem_Bit_Write(bit , 1);
+      CoreArrayMemory [y][x] = Core_Mem_Bit_Read(bit);
+      delayMicroseconds(40); // This 40us (may be able to use less here) delay is required or LED array, first 3-4 pixels in the electronic string, get weird!
+    }
+  }
+}
+
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Turn off all of the matrix signals
   cli();                                            // Testing for consistent timing.
@@ -189,7 +212,7 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
 //TracingPulses(2); 
   //for (uint8_t i = 0; i <=3; i++)                  // Each time through the loop is about 1 us
   //{
-    CoreStateChangeFlag(0);                         // Polling for a change
+    CoreStateChangeFlag(0);                         // Polling for a change inside this function is faster than the for loop.
   //}
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors

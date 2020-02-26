@@ -390,7 +390,7 @@ void LED_Array_Test_Pixel_Matrix_Mono() {
 // Cycles through available multi-color font symbols
 void LED_Array_Test_Pixel_Matrix_Color() {
     static uint8_t FontSymbolNumber = 0;
-    static unsigned long UpdatePeriodms = 750;  
+    static unsigned long UpdatePeriodms = 1000;  
     static unsigned long NowTime = 0;
     static unsigned long UpdateTimer = 0;
     NowTime = millis();
@@ -401,6 +401,6 @@ void LED_Array_Test_Pixel_Matrix_Color() {
       WriteColorFontSymbolToLedScreenMemoryMatrixColor(FontSymbolNumber);
       LED_Array_Matrix_Color_Display();
       FontSymbolNumber++;
-      if(FontSymbolNumber==NumberOfColorFontSymbols){FontSymbolNumber=0;}
+      if(FontSymbolNumber==4){FontSymbolNumber=0;}
     }
 }

@@ -52,7 +52,7 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  // TopLevelState = STATE_CORE_TEST_ALL;
+  // TopLevelState = STATE_MONOCHROME_DRAW;
   TopLevelState = STATE_SCROLLING_TEXT;
 }
 
@@ -67,7 +67,7 @@ void loop() {
                           *********************
   */
   HeartBeat();
-  // AnalogUpdate();      
+  AnalogUpdate();      
   OLEDScreenUpdate();
   // DigitalIOUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
@@ -84,7 +84,7 @@ void loop() {
   // If button is pressed, go to next logo symbol and send core array pulse test.
   // Must be released and pressed again for subsequent action.
   Button1HoldTime = Button1State(0);
-  if ( (ButtonReleased == true) && (Button1HoldTime >= 10) ){
+  if ( (ButtonReleased == true) && (Button1HoldTime >= 500) ){
     Button1State(1); // Pause between presses, clear the duration
     ButtonReleased = false;
     ColorFontSymbolToDisplay++;
@@ -134,11 +134,22 @@ void loop() {
     break;
 
   case STATE_MONOCHROME_DRAW:       // Simple drawing mode
-    LED_Array_Monochrome_Set_Color(250,255,255);
-    //LED_Array_Memory_Clear();
+    LED_Array_Monochrome_Set_Color(35,255,255);
+    // Monitor cores for changes. 
+      Core_Mem_Monitor();
     // Which cores changed state?
-    // Activate that pixel in the LED Array.
-    LED_Array_String_Display();
+    // Add selected color to that pixel in the LED Array.
+    for (uint8_t y=0; y<8; y++)
+    {
+      for (uint8_t x=0; x<8; x++)
+      {
+        if (CoreArrayMemory [y][x]) { LED_Array_Matrix_Mono_Write(y, x, 1); }
+      }
+    }
+    // Quick touch of the hall sensor clears the screen.
+    if (Button1State(0)) { LED_Array_Memory_Clear(); }
+    // Show the updated LED array.
+    LED_Array_Matrix_Mono_Display();
     break;
 
   case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
@@ -158,7 +169,9 @@ void loop() {
     break;
 
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
-    LED_Array_Test_Rainbow_Demo();
+    // LED_Array_Test_Rainbow_Demo();
+    // Skip out of this test state immediately.
+    TopLevelState = STATE_LAST;
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
@@ -168,17 +181,19 @@ void loop() {
     // DebugWithReedSwitchOutput();
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
-        Core_Mem_Bit_Write(bit,0);       // When this is active, proper LED flashes, and pesky lower left flashes full green, alternating timing.
+        Core_Mem_Bit_Write(bit,0);
         LED_Array_String_Write(bit,0);
         LED_Array_String_Display();
         delay(100);
-        Core_Mem_Bit_Write(bit,1);     // When this is active, proper LED flashes, and pesky lower left flashes full green, same timing.
+        Core_Mem_Bit_Write(bit,1);
         LED_Array_String_Write(bit,1);
         LED_Array_String_Display();
         delay(100);
       }
     // DebugWithReedSwitchInput();
-    //LED_Array_String_Write(coreToTest,0); // When this is set, with cores setting, the pesky first LED is on (full bright, proper color), which it should not be.
+
+    // Skip out of this test state immediately.
+    TopLevelState = STATE_LAST;
     break;
 
   case STATE_CORE_TEST_ONE:
@@ -197,6 +212,9 @@ void loop() {
     // delay(10);
     LED_Array_String_Display();
     //  DebugWithReedSwitchInput();
+
+    // Skip out of this test state immediately.
+    TopLevelState = STATE_LAST;
     break;
 
   case STATE_LAST:
