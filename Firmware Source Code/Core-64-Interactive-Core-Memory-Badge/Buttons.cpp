@@ -44,5 +44,5 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   Serial.println(" ms");
   */
   lasttime = thistime;
-  return duration;
+  return duration; // in ms
 }
