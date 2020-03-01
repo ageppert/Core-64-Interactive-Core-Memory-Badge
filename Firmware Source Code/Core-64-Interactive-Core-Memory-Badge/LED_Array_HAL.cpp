@@ -222,6 +222,13 @@ void LED_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value) {
 }
 
 //
+// Read one bit from monochrome LED Array memory
+//
+bool LED_Array_Matrix_Mono_Read(uint8_t y, uint8_t x) {
+  return (LedScreenMemoryMatrixMono[y][x]);
+}
+
+//
 // Write one COLOR bit into color LED Array memory
 //
 void LED_Array_Matrix_Color_Write(uint8_t y, uint8_t x, uint8_t hue) {
@@ -286,6 +293,10 @@ void LED_Array_Binary_Write(uint64_t BinaryValue){
   LedArrayMemoryBinary = BinaryValue;
 }
 
+uint64_t LED_Array_Binary_Read(){
+  return (LedArrayMemoryBinary);
+}
+
 void LED_Array_String_Write(uint8_t bit, bool value) {
   LedArrayMemoryString [bit] = value;
 }
@@ -338,8 +349,25 @@ void LED_Array_Binary_To_Matrix_Mono() {        // TO DO: There is something wro
       LED_Array_Matrix_Mono_Write(y, x, bitValue);
     }
   }
-
 }
+
+void LED_Array_Matrix_Mono_to_Binary() {        
+  uint64_t bitValue;
+  uint8_t pixelPosition;
+  uint8_t bitPosition = 0;
+  uint64_t testValue;
+  for( uint8_t y = 0; y < kMatrixHeight; y++) 
+  {
+    for( uint8_t x = 0; x < kMatrixWidth; x++) 
+    {
+      pixelPosition = (y*8)+x; // row 0, column 0: 0 * 8 + 0 = 0
+      bitPosition = 63 - pixelPosition; // Bit position 0 is lower right, Pixel position 0 (or 0,0) is upper left
+      bitValue = LED_Array_Matrix_Mono_Read(y, x);
+      LedArrayMemoryBinary = (LedArrayMemoryBinary | (bitValue <<bitPosition));
+    }
+  }
+}
+
 
 void LED_Array_Test_Count_Binary() {
     static uint64_t BinaryValue = 0; // Tested to see what happens after 32 bits and 63 bits and it rolls over as expected.

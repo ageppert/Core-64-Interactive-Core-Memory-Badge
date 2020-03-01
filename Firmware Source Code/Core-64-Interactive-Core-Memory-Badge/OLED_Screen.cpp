@@ -11,6 +11,7 @@
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 #include "Analog_Input_Test.h"
+#include "LED_Array_HAL.h"
 
 #include <Adafruit_GFX.h>
 //#include "src/Adafruit-GFX-Library-1.4.8/Adafruit_GFX.h" // ToDo: include this and use a later version.
@@ -90,3 +91,60 @@ void OLEDScreenUpdate() {
 void OLEDSetTopLevelState(uint8_t state) {
   TopLevelStateLocal = state;
 }
+
+void OLED_Show_Matrix_Mono_Hex() {
+  uint64_t Full64BitValue;
+  uint32_t Lower32BitValue;
+  uint32_t Upper32BitValue;
+  uint8_t  HexValue;
+  static unsigned long UpdatePeriodms = 250;  
+  static unsigned long NowTime = 0;
+  static unsigned long UpdateTimer = 0;
+  NowTime = millis();
+  if ((NowTime - UpdateTimer) >= UpdatePeriodms)
+  {
+    UpdateTimer = NowTime;
+    display.clearDisplay();
+    display.setCursor(0, 0);     // Start at top-left corner
+    display.println(F("Hex Data: "));
+    display.println(F("          "));
+    // One way to print the values, but it doesn't support leading "0" padding when printing to the OLED.
+    /*
+    Full64BitValue = LED_Array_Binary_Read();
+    Lower32BitValue = uint32_t(Full64BitValue);
+    Upper32BitValue = uint32_t(Full64BitValue >>32);
+    display.println(Upper32BitValue,HEX);         // This function only allows 32 bit values.
+    display.println(Lower32BitValue,HEX);         // This function only allows 32 bit values.
+    */
+    // Another way to print the value
+    Full64BitValue = LED_Array_Binary_Read();
+    display.print(F(" "));
+    for(int8_t i = 60; i >= 0; i=i-4)
+    {
+      HexValue = (Full64BitValue >> i);           // Get the 4 LSb to display in hex, but also 4 MSb that are not wanted.
+      HexValue = (HexValue & B00001111);          // Mask out the 4 MSb and keep only 4 LSb
+      if (!HexValue) {display.print(F("0"));}
+      else {display.print(HexValue,HEX);}
+      if (i==32) {display.println(); display.print(F(" "));}
+    }
+    display.display();
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

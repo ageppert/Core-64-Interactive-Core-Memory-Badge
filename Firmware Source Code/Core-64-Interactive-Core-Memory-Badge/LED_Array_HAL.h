@@ -35,8 +35,10 @@ void LED_Array_Test_Pixel_Matrix_Color(); // Test all 64 LEDs. Using multi-color
 void LED_Array_Test_Rainbow_Demo();	// Full color demo.
 
 void LED_Array_Binary_Write(uint64_t BinaryValue);
+uint64_t LED_Array_Binary_Read();
 void LED_Array_String_Write(uint8_t bit, bool value);
 void LED_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value);
+bool LED_Array_Matrix_Mono_Read(uint8_t y, uint8_t x);
 void LED_Array_Matrix_Color_Write(uint8_t y, uint8_t x, uint8_t hue);
 
 void LED_Array_Binary_Display();
@@ -45,7 +47,8 @@ void LED_Array_Matrix_Mono_Display();
 void LED_Array_Matrix_Color_Display();
 
 void LED_Array_Binary_Write_Default(); // Set the Binary memory to it's default value
-void LED_Array_Binary_To_Matrix_Mono(); // convert the contents of the 64 Binary screen memory to 8x8 Matrix Monochrome memory
+void LED_Array_Binary_To_Matrix_Mono(); // convert the contents of the 64 Bit Binary screen memory to 8x8 Matrix Monochrome memory
+void LED_Array_Matrix_Mono_to_Binary(); // convert the contesnt of 8x8 Matrix Monochrome memory to the 64 Bit Binary Screen Memory
 
 // TO DO: Clean up the naming convention of these sub-functions
 extern void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumber);
