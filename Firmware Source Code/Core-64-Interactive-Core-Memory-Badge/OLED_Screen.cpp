@@ -88,16 +88,20 @@ void OLEDScreenUpdate() {
   }
 }
 
+void OLEDScreenClear() {
+    display.clearDisplay();
+    display.setCursor(0, 0);
+    display.display();
+}
+
 void OLEDSetTopLevelState(uint8_t state) {
   TopLevelStateLocal = state;
 }
 
 void OLED_Show_Matrix_Mono_Hex() {
   uint64_t Full64BitValue;
-  uint32_t Lower32BitValue;
-  uint32_t Upper32BitValue;
   uint8_t  HexValue;
-  static unsigned long UpdatePeriodms = 250;  
+  static unsigned long UpdatePeriodms = 1000;  
   static unsigned long NowTime = 0;
   static unsigned long UpdateTimer = 0;
   NowTime = millis();
@@ -108,15 +112,6 @@ void OLED_Show_Matrix_Mono_Hex() {
     display.setCursor(0, 0);     // Start at top-left corner
     display.println(F("Hex Data: "));
     display.println(F("          "));
-    // One way to print the values, but it doesn't support leading "0" padding when printing to the OLED.
-    /*
-    Full64BitValue = LED_Array_Binary_Read();
-    Lower32BitValue = uint32_t(Full64BitValue);
-    Upper32BitValue = uint32_t(Full64BitValue >>32);
-    display.println(Upper32BitValue,HEX);         // This function only allows 32 bit values.
-    display.println(Lower32BitValue,HEX);         // This function only allows 32 bit values.
-    */
-    // Another way to print the value
     Full64BitValue = LED_Array_Binary_Read();
     display.print(F(" "));
     for(int8_t i = 60; i >= 0; i=i-4)
@@ -129,7 +124,6 @@ void OLED_Show_Matrix_Mono_Hex() {
     }
     display.display();
   }
-
 }
 
 

@@ -156,6 +156,7 @@ void loop() {
       LED_Array_Monochrome_Set_Color(35,255,255);
       LED_Array_Binary_Write_Default();
       LED_Array_Binary_To_Matrix_Mono();
+      OLEDScreenClear();
     }
     LED_Array_Matrix_Mono_Display();                  // Show the updated LED array.
     LED_Array_Matrix_Mono_to_Binary();                // Convert whatever is in the LED Matrix Array to a 64-bit binary value...
