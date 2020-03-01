@@ -20,19 +20,20 @@
 // #define DEBUG 1
 
 uint8_t TopLevelState;   // Master State Machine
+bool TopLevelStateChanged = false;
 enum TopLevelState
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
-  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        //  4 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        //  5 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   //  6 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  7 Testing LED Driver with matrix array and multi-color symbols
-  STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
-  STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
-  STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
-  STATE_LAST                        //  11 last one, return to 0.
+  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state (aka flux test mode)
+  STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        //  3 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //  4 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //  5 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  6 Testing LED Driver with matrix array and multi-color symbols
+  STATE_LED_TEST_ALL_COLOR,         //  7 Test LED Driver with all pixels and all colors
+  STATE_CORE_TOGGLE_BIT,            //  8 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  9 Testing core #coreToTest and displaying core state
+  STATE_LAST                        //  10 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -52,8 +53,8 @@ void setup() {
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-  // TopLevelState = STATE_MONOCHROME_DRAW;
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_MONOCHROME_DRAW;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -90,17 +91,17 @@ void loop() {
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
+    TopLevelStateChanged = true; // User application has one time to use this before it is reset.
   }
   else {
     if (Button1HoldTime == 0) {
       ButtonReleased = true;
-    }
+      TopLevelStateChanged = false;
+      }
   }
 
-  // 02-08-2020 TO DO Last few states aren't working correctly. Temporary work around.
-  // if (TopLevelState >= STATE_CORE_TEST_ONE) {TopLevelState = STATE_SCROLLING_TEXT;}
-
   OLEDSetTopLevelState(TopLevelState);
+
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
@@ -135,7 +136,6 @@ void loop() {
     break;
 
   case STATE_MONOCHROME_DRAW:       // Simple drawing mode
-    LED_Array_Monochrome_Set_Color(35,255,255);
     // Monitor cores for changes. 
       Core_Mem_Monitor();
     // Which cores changed state?
@@ -149,6 +149,15 @@ void loop() {
     }
     // Quick touch of the hall sensor clears the screen.
     if (Button1State(0)) { LED_Array_Memory_Clear(); }
+    // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
+    if (TopLevelStateChanged)
+    //if (true)
+    {
+      CoreClearAll();
+      LED_Array_Monochrome_Set_Color(35,255,255);
+      LED_Array_Binary_Write_Default();
+      LED_Array_Binary_To_Matrix_Mono();
+    }
     // Show the updated LED array.
     LED_Array_Matrix_Mono_Display();
     break;

@@ -39,7 +39,8 @@ void CoreSetup() {
 
 void CoreClearAll() {
   for (uint8_t i = 0; i <64; i++) { 
-    Core_Mem_Bit_Write(i,0); 
+    Core_Mem_Bit_Write(i,0);
+    delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!?? 
   }
   for (uint8_t x=1; x<=7; x++) {
     for (uint8_t y=0; y<=7; y++) {

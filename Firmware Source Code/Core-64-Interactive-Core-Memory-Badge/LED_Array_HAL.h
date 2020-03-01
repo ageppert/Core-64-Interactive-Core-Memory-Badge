@@ -44,6 +44,9 @@ void LED_Array_String_Display();
 void LED_Array_Matrix_Mono_Display();
 void LED_Array_Matrix_Color_Display();
 
+void LED_Array_Binary_Write_Default(); // Set the Binary memory to it's default value
+void LED_Array_Binary_To_Matrix_Mono(); // convert the contents of the 64 Binary screen memory to 8x8 Matrix Monochrome memory
+
 // TO DO: Clean up the naming convention of these sub-functions
 extern void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumber);
 

@@ -22,7 +22,8 @@
 // Interaction with the abstract memory buffers which define the LED Array for the user to view:
 // BINARY [64 bit data word, monochrome]
   // 0 is lower right (LSb), 63 is upper left (MSb), counting right to left, then up to the next row. Each row up is a higher Byte.
-  static uint64_t LedArrayMemoryBinary;  
+  static uint64_t LedArrayMemoryBinary = 0;
+  static uint64_t LedArrayMemoryBinaryDefault = 0xDEADBEEFC0D3C4FE; // 0x8142241818244281; // "X" //  0xDEADBEEF and 0xC0D3C4FE
 // STRING [1D 64 pixel string, monochrome]
   // 0 is upper left, 63 is lower right, counting left to right, then down to next row
   static bool LedArrayMemoryString [64];  
@@ -305,8 +306,43 @@ void LED_Array_String_Display() {
   FastLED.show();
 }
 
+void LED_Array_Binary_Write_Default() {
+  LedArrayMemoryBinary = LedArrayMemoryBinaryDefault;
+}
+
+void LED_Array_Binary_To_Matrix_Mono() {        // TO DO: There is something wrong with Bit 31 (4,0) math because it is always set on if anything above it is on
+  bool bitValue;
+  uint8_t pixelPosition;
+  uint8_t bitPosition = 0;
+  uint64_t testValue;
+  for( uint8_t y = 0; y < kMatrixHeight; y++) 
+  {
+    for( uint8_t x = 0; x < kMatrixWidth; x++) 
+    {
+      pixelPosition = (y*8)+x; // row 0, column 0: 0 * 8 + 0 = 0
+      bitPosition = 63 - pixelPosition; // Bit position 0 is lower right, Pixel position 0 (or 0,0) is upper left
+      //if (bitPosition < 32)
+      if (pixelPosition > 31)
+      {
+        testValue = 1 << bitPosition;       // This "1 << bitPosition" doesn't work beyond 32 bits in Arduino-land...
+        bitValue = (LedArrayMemoryBinary & testValue);
+        // TO DO: For bit 31 (4,0) the bitValue above calculates to 1 if anything above bit position 31 is set, even if 31 is zero.
+        // So I added this special case handling. Need to figure out what is going wrong when 1<<31 should be 0b1000000000000000
+        if ((y==4)&&(x==0)) {bitValue = (LedArrayMemoryBinary & 0b1000000000000000);}
+      }
+      else
+      {
+        testValue = 1 << (bitPosition-32);  // ...so the functionality is split at the 32 bit line...
+        bitValue = ( (LedArrayMemoryBinary>>32) & testValue); // ...and it turns out >>32 shift works on a 64 bit number
+      }
+      LED_Array_Matrix_Mono_Write(y, x, bitValue);
+    }
+  }
+
+}
+
 void LED_Array_Test_Count_Binary() {
-    static uint64_t BinaryValue = 0;
+    static uint64_t BinaryValue = 0; // Tested to see what happens after 32 bits and 63 bits and it rolls over as expected.
     LED_Array_Monochrome_Set_Color(135,255,255);
     LED_Array_Memory_Clear();
     LED_Array_Binary_Write(BinaryValue);
