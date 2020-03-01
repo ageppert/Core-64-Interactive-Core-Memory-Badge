@@ -104,6 +104,7 @@ void loop() {
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
+    LED_Array_Monochrome_Set_Color(140,255,255);
     ScrollTextToCoreMemory();   // This writes directly to the RAM core memory array and bypasses reading it.
     // delay(25);
     Core_Mem_Array_Write();     // Transfer from RAM Core Memory Array to physical core memory
