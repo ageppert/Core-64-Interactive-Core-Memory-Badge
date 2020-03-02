@@ -25,6 +25,14 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 uint8_t TopLevelStateLocal = 0;
 
+// Call this routine to update the OLED display.
+// Refreshing the OLED display is otherwise not stable, possibly due to some library compression stuff.
+void OLED_Display_Stability_Work_Around() {   
+  display.invertDisplay(true);        // Inverting and
+  display.invertDisplay(false);       // Reverting the screen memory seems to be a good workaround.
+  display.display();
+}
+
 void OLEDScreenSplash() {
 // Short
   /*
@@ -48,7 +56,7 @@ void OLEDScreenSplash() {
   display.print(F("Bat:"));
   display.print(GetBatteryVoltagemV(),DEC);
   display.println(F("mV"));
-  display.display();
+  OLED_Display_Stability_Work_Around();
 }
 
 void OLEDScreenSetup() {
@@ -91,7 +99,7 @@ void OLEDScreenUpdate() {
 void OLEDScreenClear() {
     display.clearDisplay();
     display.setCursor(0, 0);
-    display.display();
+    OLED_Display_Stability_Work_Around();
 }
 
 void OLEDSetTopLevelState(uint8_t state) {
@@ -101,7 +109,7 @@ void OLEDSetTopLevelState(uint8_t state) {
 void OLED_Show_Matrix_Mono_Hex() {
   uint64_t Full64BitValue;
   uint8_t  HexValue;
-  static unsigned long UpdatePeriodms = 1000;  
+  static unsigned long UpdatePeriodms = 50;  
   static unsigned long NowTime = 0;
   static unsigned long UpdateTimer = 0;
   NowTime = millis();
@@ -122,11 +130,9 @@ void OLED_Show_Matrix_Mono_Hex() {
       else {display.print(HexValue,HEX);}
       if (i==32) {display.println(); display.print(F(" "));}
     }
-    display.display();
+    OLED_Display_Stability_Work_Around();
   }
 }
-
-
 
 
 
