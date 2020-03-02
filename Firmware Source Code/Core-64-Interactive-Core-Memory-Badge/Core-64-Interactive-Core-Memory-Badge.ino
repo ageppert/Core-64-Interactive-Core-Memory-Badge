@@ -16,6 +16,7 @@
 #include "Analog_Input_Test.h"
 #include "Buttons.h"
 #include "Core_HAL.h"
+#include "EEPROM_HAL.h"
 
 // #define DEBUG 1
 
@@ -40,6 +41,7 @@ enum TopLevelState
                           *********************
   */
 void setup() {
+  EEPROM_Setup();
   HeartBeatSetup();
   DigitalIOSetup();
   AnalogSetup();
