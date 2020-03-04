@@ -21,19 +21,20 @@
 // #define DEBUG 1
 
 uint8_t TopLevelState;   // Master State Machine
+bool TopLevelStateChanged = false;
 enum TopLevelState
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
-  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        //  4 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        //  5 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   //  6 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  7 Testing LED Driver with matrix array and multi-color symbols
-  STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
-  STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
-  STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
-  STATE_LAST                        //  11 last one, return to 0.
+  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state (aka flux test mode)
+  STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        //  3 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //  4 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //  5 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  6 Testing LED Driver with matrix array and multi-color symbols
+  STATE_LED_TEST_ALL_COLOR,         //  7 Test LED Driver with all pixels and all colors
+  STATE_CORE_TOGGLE_BIT,            //  8 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  9 Testing core #coreToTest and displaying core state
+  STATE_LAST                        //  10 last one, return to 0.
 } ;
 
   /*                      *********************
@@ -70,7 +71,6 @@ void loop() {
   */
   HeartBeat();
   AnalogUpdate();      
-  OLEDScreenUpdate();
   // DigitalIOUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
@@ -92,17 +92,15 @@ void loop() {
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
+    TopLevelStateChanged = true; // User application has one time to use this before it is reset.
   }
   else {
     if (Button1HoldTime == 0) {
       ButtonReleased = true;
-    }
+      TopLevelStateChanged = false;
+      }
   }
 
-  // 02-08-2020 TO DO Last few states aren't working correctly. Temporary work around.
-  // if (TopLevelState >= STATE_CORE_TEST_ONE) {TopLevelState = STATE_SCROLLING_TEXT;}
-
-  OLEDSetTopLevelState(TopLevelState);
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
@@ -118,6 +116,8 @@ void loop() {
     // delay(25);
     LED_Array_Matrix_Mono_Display();
     // delay(25);
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
@@ -134,10 +134,11 @@ void loop() {
     //TracingPulses(1);
     LED_Array_String_Display();
     //DebugWithReedSwitchInput();
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_MONOCHROME_DRAW:       // Simple drawing mode
-    LED_Array_Monochrome_Set_Color(35,255,255);
     // Monitor cores for changes. 
       Core_Mem_Monitor();
     // Which cores changed state?
@@ -151,30 +152,49 @@ void loop() {
     }
     // Quick touch of the hall sensor clears the screen.
     if (Button1State(0)) { LED_Array_Memory_Clear(); }
-    // Show the updated LED array.
-    LED_Array_Matrix_Mono_Display();
+    // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
+    if (TopLevelStateChanged)
+    {
+      LED_Array_Monochrome_Set_Color(35,255,255);
+      LED_Array_Binary_Write_Default();
+      LED_Array_Binary_To_Matrix_Mono();
+      OLEDScreenClear();
+    }
+    LED_Array_Matrix_Mono_Display();                  // Show the updated LED array.
+    LED_Array_Matrix_Mono_to_Binary();                // Convert whatever is in the LED Matrix Array to a 64-bit binary value...
+    OLED_Show_Matrix_Mono_Hex();                      // ...and display it on the OLED.
     break;
 
   case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
     LED_Array_Test_Count_Binary();
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
     LED_Array_Test_Pixel_String();
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_LED_TEST_ONE_MATRIX_MONO: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 2D matrix addressing
     LED_Array_Test_Pixel_Matrix_Mono();
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_LED_TEST_ONE_MATRIX_COLOR: // Multi-color symbols
     LED_Array_Test_Pixel_Matrix_Color();
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
     // LED_Array_Test_Rainbow_Demo();
     // Skip out of this test state immediately.
     TopLevelState = STATE_LAST;
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
@@ -196,6 +216,8 @@ void loop() {
     // DebugWithReedSwitchInput();
 
     // Skip out of this test state immediately.
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     TopLevelState = STATE_LAST;
     break;
 
@@ -217,6 +239,8 @@ void loop() {
     //  DebugWithReedSwitchInput();
 
     // Skip out of this test state immediately.
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     TopLevelState = STATE_LAST;
     break;
 
@@ -224,6 +248,8 @@ void loop() {
     LED_Array_Memory_Clear();
     LED_Array_Matrix_Mono_Display();
     LED_Array_Monochrome_Set_Color(125,255,255);
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     TopLevelState = STATE_SCROLLING_TEXT;   
     break;
 
