@@ -16,6 +16,7 @@
 #include "Analog_Input_Test.h"
 #include "Buttons.h"
 #include "Core_HAL.h"
+#include "EEPROM_HAL.h"
 
 // #define DEBUG 1
 
@@ -24,23 +25,28 @@ bool TopLevelStateChanged = false;
 enum TopLevelState
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state (aka flux test mode)
-  STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        //  3 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        //  4 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   //  5 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  6 Testing LED Driver with matrix array and multi-color symbols
-  STATE_LED_TEST_ALL_COLOR,         //  7 Test LED Driver with all pixels and all colors
-  STATE_CORE_TOGGLE_BIT,            //  8 Test one core with one function
-  STATE_CORE_TEST_ONE,              //  9 Testing core #coreToTest and displaying core state
-  STATE_LAST                        //  10 last one, return to 0.
+  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        //  4 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //  5 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //  6 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  7 Testing LED Driver with matrix array and multi-color symbols
+  STATE_TEST_EEPROM,                // 
+  STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
+  STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
+  STATE_LAST,                       //  11 last one, return to 0.
+  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
 } ;
+    uint8_t value = 0;
+    uint8_t a = 0;
+
 
   /*                      *********************
                           ***     Setup     ***
                           *********************
   */
 void setup() {
+  EEPROM_Setup();
   HeartBeatSetup();
   DigitalIOSetup();
   AnalogSetup();
@@ -91,7 +97,7 @@ void loop() {
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
     TopLevelStateChanged = true; // User application has one time to use this before it is reset.
-  }
+}
   else {
     if (Button1HoldTime == 0) {
       ButtonReleased = true;
@@ -185,6 +191,19 @@ void loop() {
     LED_Array_Test_Pixel_Matrix_Color();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
+    break;
+
+  case STATE_TEST_EEPROM: // 
+    value = EEPROM_Hardware_Version_Read(a);
+    Serial.print(a);
+    Serial.print("\t");
+    Serial.print(value);
+    Serial.println();
+    a = a + 1;
+    if (a == 128) {
+      a = 0;
+    }
+    delay(10);
     break;
 
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
