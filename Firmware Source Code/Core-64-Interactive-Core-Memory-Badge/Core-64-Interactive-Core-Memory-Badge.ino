@@ -25,17 +25,17 @@ bool TopLevelStateChanged = false;
 enum TopLevelState
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        //  4 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        //  5 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   //  6 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  7 Testing LED Driver with matrix array and multi-color symbols
-  STATE_TEST_EEPROM,                // 
+  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
+  STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        //  3 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //  4 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //  5 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  6 Testing LED Driver with matrix array and multi-color symbols
+  STATE_TEST_EEPROM,                //  7
   STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
   STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
   STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
   STATE_LAST,                       //  11 last one, return to 0.
-  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
 } ;
     uint8_t value = 0;
     uint8_t a = 0;
