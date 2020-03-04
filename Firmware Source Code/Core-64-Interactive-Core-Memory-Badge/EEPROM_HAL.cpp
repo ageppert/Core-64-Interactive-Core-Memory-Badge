@@ -19,7 +19,7 @@ void EEPROM_Hardware_Version_Write(uint8_t address, uint8_t byte) {
 }
 
 uint8_t EEPROM_Hardware_Version_Read(uint8_t address) {
-  if (address > 1024)
+  if (address > 128)
   {
     return 0;
   }

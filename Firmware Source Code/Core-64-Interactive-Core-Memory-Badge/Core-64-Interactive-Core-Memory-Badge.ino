@@ -30,11 +30,17 @@ enum TopLevelState
   STATE_LED_TEST_ONE_STRING,        //  5 Testing LED Driver
   STATE_LED_TEST_ONE_MATRIX_MONO,   //  6 Testing LED Driver with matrix array and monochrome color
   STATE_LED_TEST_ONE_MATRIX_COLOR,  //  7 Testing LED Driver with matrix array and multi-color symbols
+  STATE_TEST_EEPROM,                // 
   STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
   STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
   STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
   STATE_LAST                        //  11 last one, return to 0.
 } ;
+
+// Temporary for EEPROM test
+    uint8_t value = 0;
+    uint8_t a = 0;
+
 
   /*                      *********************
                           ***     Setup     ***
@@ -169,6 +175,19 @@ void loop() {
 
   case STATE_LED_TEST_ONE_MATRIX_COLOR: // Multi-color symbols
     LED_Array_Test_Pixel_Matrix_Color();
+    break;
+
+  case STATE_TEST_EEPROM: // 
+    value = EEPROM_Hardware_Version_Read(a);
+    Serial.print(a);
+    Serial.print("\t");
+    Serial.print(value);
+    Serial.println();
+    a = a + 1;
+    if (a == 128) {
+      a = 0;
+    }
+    delay(10);
     break;
 
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
