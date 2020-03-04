@@ -96,7 +96,8 @@ void loop() {
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
-  }
+    TopLevelStateChanged = true; // User application has one time to use this before it is reset.
+}
   else {
     if (Button1HoldTime == 0) {
       ButtonReleased = true;
