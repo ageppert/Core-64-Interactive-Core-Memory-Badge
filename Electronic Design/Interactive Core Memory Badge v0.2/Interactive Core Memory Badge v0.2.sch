@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Interactive Core Memory Badge v0.2-cache
 EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
@@ -17,13 +18,13 @@ $Sheet
 S 700  700  500  150 
 U 5D254AE8
 F0 "Power" 50
-F1 "Interactive Core Memory Badge Power v0.1.sch" 50
+F1 "Interactive Core Memory Badge Power v0.2.sch" 50
 $EndSheet
 $Sheet
 S 700  1100 500  150 
 U 5D2551FF
 F0 "MCU" 50
-F1 "Interactive Core Memory Badge MCU v0.1.sch" 50
+F1 "Interactive Core Memory Badge MCU v0.2.sch" 50
 $EndSheet
 Text GLabel 1750 4600 3    50   Input ~ 0
 XB0
