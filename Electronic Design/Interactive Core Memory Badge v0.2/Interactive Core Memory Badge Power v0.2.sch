@@ -5,20 +5,20 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 3
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Core 64 - Interactive Core Memory Badge"
+Date "2020-03-05"
+Rev "0.2"
+Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L power:+BATT #PWR?
+L power:+BATT #PWR023
 U 1 1 5D2956F9
 P 3700 1650
-F 0 "#PWR?" H 3700 1500 50  0001 C CNN
+F 0 "#PWR023" H 3700 1500 50  0001 C CNN
 F 1 "+BATT" H 3715 1823 50  0000 C CNN
 F 2 "" H 3700 1650 50  0001 C CNN
 F 3 "" H 3700 1650 50  0001 C CNN
@@ -26,10 +26,10 @@ F 3 "" H 3700 1650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:VMEM #PWR?
+L power:VMEM #PWR027
 U 1 1 5D2FEB13
 P 7650 1600
-F 0 "#PWR?" H 7650 1450 50  0001 C CNN
+F 0 "#PWR027" H 7650 1450 50  0001 C CNN
 F 1 "VMEM" H 7665 1773 50  0000 C CNN
 F 2 "" H 7650 1600 50  0001 C CNN
 F 3 "" H 7650 1600 50  0001 C CNN
@@ -37,34 +37,23 @@ F 3 "" H 7650 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Polyfuse F?
+L Device:Polyfuse F1
 U 1 1 5D3009B0
 P 4650 1950
-F 0 "F?" V 4425 1950 50  0000 C CNN
+F 0 "F1" V 4425 1950 50  0000 C CNN
 F 1 "Polyfuse" V 4516 1950 50  0000 C CNN
 F 2 "Fuse:Fuse_0805_2012Metric" H 4700 1750 50  0001 L CNN
 F 3 "~" H 4650 1950 50  0001 C CNN
 	1    4650 1950
 	0    1    1    0   
 $EndComp
-$Comp
-L Switch:SW_SPST SW?
-U 1 1 5D30313B
-P 4200 1950
-F 0 "SW?" H 4200 2185 50  0000 C CNN
-F 1 "SW_SPST" H 4200 2094 50  0000 C CNN
-F 2 "Digikey:Switch_Slide_JS202011SCQN" H 4200 1950 50  0001 C CNN
-F 3 "~" H 4200 1950 50  0001 C CNN
-	1    4200 1950
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	4400 1950 4500 1950
 $Comp
-L power:+VSW #PWR?
+L power:+VSW #PWR024
 U 1 1 5D305A98
 P 5000 1650
-F 0 "#PWR?" H 5000 1500 50  0001 C CNN
+F 0 "#PWR024" H 5000 1500 50  0001 C CNN
 F 1 "+VSW" H 5015 1823 50  0000 C CNN
 F 2 "" H 5000 1650 50  0001 C CNN
 F 3 "" H 5000 1650 50  0001 C CNN
@@ -74,7 +63,7 @@ $EndComp
 Text Notes 1400 1250 0    50   ~ 0
 Adafruit LiPo Charger Module\nHas built-in connection to battery 1S Lipo\nApprox. 3-4V operating voltage supplied to WHOLE SYSTEM.
 Wire Wire Line
-	3700 1950 4000 1950
+	3700 2050 4000 2050
 Wire Wire Line
 	4800 1950 5000 1950
 Text Notes 600  850  0    50   ~ 0
@@ -82,10 +71,10 @@ Charger module receives power from USB, either Micro LiPo charger or Teensy LC.\
 Text GLabel 1700 1600 0    50   Input ~ 0
 V+USB
 $Comp
-L power:GNDD #PWR?
+L power:GNDD #PWR025
 U 1 1 5D31E05B
 P 5000 2650
-F 0 "#PWR?" H 5000 2400 50  0001 C CNN
+F 0 "#PWR025" H 5000 2400 50  0001 C CNN
 F 1 "GNDD" H 5004 2495 50  0000 C CNN
 F 2 "" H 5000 2650 50  0001 C CNN
 F 3 "" H 5000 2650 50  0001 C CNN
@@ -95,10 +84,10 @@ $EndComp
 Wire Wire Line
 	5000 2550 2400 2550
 $Comp
-L CORE_64_LIBRARY:Micro_LiPo_Charger U?
+L CORE_64_LIBRARY:Micro_LiPo_Charger U1
 U 1 1 5D30894A
 P 1700 2100
-F 0 "U?" H 1758 2425 50  0000 C CNN
+F 0 "U1" H 1758 2425 50  0000 C CNN
 F 1 "Micro_LiPo_Charger" H 1758 2334 50  0000 C CNN
 F 2 "Core_Memory_8x8_Array:Micro_LiPo_Charger" H 1700 2100 50  0001 C CNN
 F 3 "" H 1700 2100 50  0001 C CNN
@@ -115,10 +104,10 @@ Wire Wire Line
 	2250 2200 2000 2200
 Connection ~ 2250 2200
 $Comp
-L power:-BATT #PWR?
+L power:-BATT #PWR022
 U 1 1 5D30A5B6
 P 2400 2800
-F 0 "#PWR?" H 2400 2650 50  0001 C CNN
+F 0 "#PWR022" H 2400 2650 50  0001 C CNN
 F 1 "-BATT" H 2415 2973 50  0000 C CNN
 F 2 "" H 2400 2800 50  0001 C CNN
 F 3 "" H 2400 2800 50  0001 C CNN
@@ -126,10 +115,10 @@ F 3 "" H 2400 2800 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L power:+BATT #PWR?
+L power:+BATT #PWR021
 U 1 1 5D30AA43
 P 2400 1700
-F 0 "#PWR?" H 2400 1550 50  0001 C CNN
+F 0 "#PWR021" H 2400 1550 50  0001 C CNN
 F 1 "+BATT" H 2415 1873 50  0000 C CNN
 F 2 "" H 2400 1700 50  0001 C CNN
 F 3 "" H 2400 1700 50  0001 C CNN
@@ -176,10 +165,10 @@ Wire Wire Line
 Wire Wire Line
 	2250 2200 2250 2550
 $Comp
-L power:+VSW #PWR?
+L power:+VSW #PWR026
 U 1 1 5D3925E7
 P 6750 1600
-F 0 "#PWR?" H 6750 1450 50  0001 C CNN
+F 0 "#PWR026" H 6750 1450 50  0001 C CNN
 F 1 "+VSW" H 6765 1773 50  0000 C CNN
 F 2 "" H 6750 1600 50  0001 C CNN
 F 3 "" H 6750 1600 50  0001 C CNN
@@ -225,7 +214,7 @@ P 6650 2150
 AR Path="/5D35C3CF" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5D35C3CF" Ref="R27"  Part="1" 
 F 0 "R27" V 6443 2150 50  0000 C CNN
-F 1 "220" V 6534 2150 50  0000 C CNN
+F 1 "470" V 6534 2150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6580 2150 50  0001 C CNN
 F 3 "~" H 6650 2150 50  0001 C CNN
 	1    6650 2150
@@ -257,10 +246,10 @@ Core Memory Power
 Text Notes 4550 1250 0    50   ~ 0
 MCU, LED Array, I2C
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP1
 U 1 1 5D48B700
 P 1800 1550
-F 0 "TP?" H 1858 1668 50  0000 L CNN
+F 0 "TP1" H 1858 1668 50  0000 L CNN
 F 1 "V+USB" H 1858 1577 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2000 1550 50  0001 C CNN
 F 3 "~" H 2000 1550 50  0001 C CNN
@@ -273,10 +262,10 @@ Connection ~ 1800 1600
 Wire Wire Line
 	1800 1600 2150 1600
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP3
 U 1 1 5D48C4DD
 P 2750 1750
-F 0 "TP?" H 2808 1868 50  0000 L CNN
+F 0 "TP3" H 2808 1868 50  0000 L CNN
 F 1 "+BATT" H 2808 1777 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2950 1750 50  0001 C CNN
 F 3 "~" H 2950 1750 50  0001 C CNN
@@ -289,10 +278,10 @@ Connection ~ 2400 1750
 Wire Wire Line
 	2400 1750 2400 1700
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP4
 U 1 1 5D48D068
 P 2750 2800
-F 0 "TP?" H 2808 2918 50  0000 L CNN
+F 0 "TP4" H 2808 2918 50  0000 L CNN
 F 1 "-BATT" H 2808 2827 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2950 2800 50  0001 C CNN
 F 3 "~" H 2950 2800 50  0001 C CNN
@@ -303,10 +292,10 @@ Wire Wire Line
 	2750 2800 2400 2800
 Connection ~ 2400 2800
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP5
 U 1 1 5D48E646
 P 5350 1700
-F 0 "TP?" H 5408 1818 50  0000 L CNN
+F 0 "TP5" H 5408 1818 50  0000 L CNN
 F 1 "+VSW" H 5408 1727 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 5550 1700 50  0001 C CNN
 F 3 "~" H 5550 1700 50  0001 C CNN
@@ -319,10 +308,10 @@ Wire Wire Line
 	5350 1950 5350 1700
 Connection ~ 5000 1950
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP6
 U 1 1 5D48F2A7
 P 8050 1550
-F 0 "TP?" H 8108 1668 50  0000 L CNN
+F 0 "TP6" H 8108 1668 50  0000 L CNN
 F 1 "VMEM" H 8108 1577 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 8250 1550 50  0001 C CNN
 F 3 "~" H 8250 1550 50  0001 C CNN
@@ -337,14 +326,14 @@ Connection ~ 7650 1650
 Wire Wire Line
 	9500 2000 9500 1800
 Wire Wire Line
-	3700 1950 3700 1650
+	3700 2050 3700 1650
 Wire Wire Line
 	5000 1650 5000 1950
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP2
 U 1 1 5D542466
 P 1850 2750
-F 0 "TP?" H 1908 2868 50  0000 L CNN
+F 0 "TP2" H 1908 2868 50  0000 L CNN
 F 1 "V-USB" H 1908 2777 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2050 2750 50  0001 C CNN
 F 3 "~" H 2050 2750 50  0001 C CNN
@@ -373,10 +362,10 @@ Wire Wire Line
 Text Notes 8500 1250 0    50   ~ 0
 All core power flows to ground through this resistor.\nCan this replace all of the others?\nAt least it can be used to measure current.\nCCL = Core Current Lowside Measurement\nCCH = Core Current Highside Measurement
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP7
 U 1 1 5D4B94F7
 P 8500 1700
-F 0 "TP?" H 8558 1818 50  0000 L CNN
+F 0 "TP7" H 8558 1818 50  0000 L CNN
 F 1 "CCL" H 8558 1727 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 8700 1700 50  0001 C CNN
 F 3 "~" H 8700 1700 50  0001 C CNN
@@ -384,10 +373,10 @@ F 3 "~" H 8700 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP8
 U 1 1 5D4B9C69
 P 9350 1700
-F 0 "TP?" H 9408 1818 50  0000 L CNN
+F 0 "TP8" H 9408 1818 50  0000 L CNN
 F 1 "CCH" H 9408 1727 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 9550 1700 50  0001 C CNN
 F 3 "~" H 9550 1700 50  0001 C CNN
@@ -404,4 +393,37 @@ Wire Wire Line
 Connection ~ 8500 1800
 Wire Wire Line
 	8500 1800 8800 1800
+Text Notes 7000 6900 0    50   ~ 0
+NOTES:\nv0.2 represents improvements learned from producing v0.1, along witih some additional best\npractices (decoupling caps, series LED matrix signal resistor and large power filter cap).\nv0.2 was not produced, but it should work well.
+$Comp
+L Switch:SW_DPDT_x2 SW3
+U 1 1 5E9AF194
+P 4200 1950
+F 0 "SW3" H 4200 1621 50  0000 C CNN
+F 1 "SW_DPDT_x2" H 4200 1714 50  0000 C CNN
+F 2 "Digikey:Switch_Slide_JS202011SCQN" H 4200 1950 50  0001 C CNN
+F 3 "~" H 4200 1950 50  0001 C CNN
+	1    4200 1950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3450 2000 3450 1850
+Wire Wire Line
+	3450 1850 4000 1850
+$Comp
+L Device:D_Small D13
+U 1 1 5E9B647B
+P 3000 2000
+F 0 "D13" H 3000 1900 50  0000 C CNN
+F 1 "S1M-13-F" H 3000 2150 50  0000 C CNN
+F 2 "Digikey:DO-214AC" H 3000 2000 50  0001 C CNN
+F 3 "~" H 3000 2000 50  0001 C CNN
+	1    3000 2000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3100 2000 3450 2000
+Wire Wire Line
+	2900 2000 2150 2000
+Connection ~ 2150 2000
 $EndSCHEMATC
