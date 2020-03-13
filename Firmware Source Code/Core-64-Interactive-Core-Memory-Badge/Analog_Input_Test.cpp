@@ -20,7 +20,8 @@ void ReadAnalogVoltage() {
   // Multiply above result by 2 = 6.458 [full battery] milliVolts/count
   // ADC reading * 6.458 = battery voltage in milliVolts
   static unsigned long BatteryHalfADC = 0 ;
-  static float BatteryScalarADCtomV = 6.65 ; // adjusted to match reading from multimeter
+  // static float BatteryScalarADCtomV = 6.65 ; // adjusted to match reading from multimeter
+  static float BatteryScalarADCtomV = 6.366 ; // adjusted during V0.2 Battery Reading Calibration.xlsx work Mar 09, 2020
   BatteryHalfADC = analogRead(Pin_Battery_Voltage);
   BatterymV = (uint16_t)(BatteryHalfADC * BatteryScalarADCtomV);
 }
