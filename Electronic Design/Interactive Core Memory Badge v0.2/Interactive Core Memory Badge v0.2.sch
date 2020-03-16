@@ -1679,4 +1679,42 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 $EndComp
 Text Notes 6300 7150 0    50   ~ 0
 NOTES:\nv0.2 represents improvements learned from producing v0.1, along witih some additional best\npractices (decoupling caps, series LED matrix signal resistor and large power filter cap).\nv0.2 was not produced, but it should work well.
+Text Notes 3700 3850 0    50   ~ 0
+Drive Transistor current: 3.3/470=7mA (too much for Teensy LC)\nMatrix 1/2 select current: 3.3/6.8= 485 mA (does not acccount \nfor voltage drop in transistors)
+Text Notes 2800 1700 0    50   ~ 0
+COL 0,4
+Text Notes 4650 1700 0    50   ~ 0
+COL 1,5
+Text Notes 6600 1700 0    50   ~ 0
+COL 2,6
+Text Notes 8500 1700 0    50   ~ 0
+COL 3,7
+Text Notes 1700 6600 0    50   ~ 0
+COL 0
+Text Notes 1750 6800 0    50   ~ 0
+COL 1
+Text Notes 2000 6950 0    50   ~ 0
+COL 2
+Text Notes 2900 6950 0    50   ~ 0
+COL 3
+Text Notes 4300 6600 0    50   ~ 0
+COL 4
+Text Notes 4350 6800 0    50   ~ 0
+COL 5
+Text Notes 4600 6900 0    50   ~ 0
+COL 6
+Text Notes 5500 6900 0    50   ~ 0
+COL 7
+Text Notes 6400 4600 0    50   ~ 0
+ROW 0,4\nROW 2,6
+Text Notes 6400 6250 0    50   ~ 0
+ROW 1,5\nROW 3,7
+Text Notes 8700 3400 0    50   ~ 0
+ROW 0,4
+Text Notes 8700 5850 0    50   ~ 0
+ROW 3,7
+Text Notes 8700 3700 0    50   ~ 0
+ROW 1,5
+Text Notes 8700 5550 0    50   ~ 0
+ROW 2,6
 $EndSCHEMATC

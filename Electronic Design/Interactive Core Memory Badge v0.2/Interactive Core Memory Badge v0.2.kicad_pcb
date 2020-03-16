@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 70)
+    (drawings 71)
     (tracks 1022)
     (zones 0)
     (modules 122)
@@ -5104,6 +5104,9 @@
     (pad 6 smd rect (at 2.5 -2.75 270) (size 1.2 2.5) (layers F.Cu F.Paste F.Mask))
   )
 
+  (gr_text "CURRENT\nSENSE" (at 58.42 139.065) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
   (gr_text "Power\nSwitch" (at 58.42 152.4) (layer F.SilkS) (tstamp 5D4DFB5D)
     (effects (font (size 1 1) (thickness 0.15)))
   )

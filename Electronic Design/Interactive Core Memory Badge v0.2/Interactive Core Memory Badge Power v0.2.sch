@@ -351,7 +351,7 @@ P 8950 1800
 AR Path="/5D4B5807" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5D4B5807" Ref="R43"  Part="1" 
 F 0 "R43" V 8743 1800 50  0000 C CNN
-F 1 "0" V 8834 1800 50  0000 C CNN
+F 1 "0.01" V 8834 1800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 8880 1800 50  0001 C CNN
 F 3 "~" H 8950 1800 50  0001 C CNN
 	1    8950 1800
@@ -426,4 +426,6 @@ Wire Wire Line
 Wire Wire Line
 	2900 2000 2150 2000
 Connection ~ 2150 2000
+Text Notes 2800 2350 0    50   ~ 0
+1.1V DROP IF USING USB POWER\n(Keep +VSW close to 4V maximum.)
 $EndSCHEMATC
