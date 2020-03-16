@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name CORE_64_LIBRARY)(type Legacy)(uri "/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/Core_64_symbols/Core_64_KiCad_Library.lib")(options "")(descr ""))
+)
