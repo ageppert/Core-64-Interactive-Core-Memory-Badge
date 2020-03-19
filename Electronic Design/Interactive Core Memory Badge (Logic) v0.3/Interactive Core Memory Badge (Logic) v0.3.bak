@@ -1,11 +1,11 @@
 EESchema Schematic File Version 4
-LIBS:Interactive Core Memory Badge v0.3-cache
+LIBS:Interactive Core Memory Badge (Logic) v0.3-cache
 EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 1 3
-Title "Core 64 - Interactive Core Memory Badge (Dual Board)"
+Title "Core 64 - Interactive Core Memory Badge (Logic)"
 Date "2020-03-15"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
@@ -18,13 +18,13 @@ $Sheet
 S 700  700  500  150 
 U 5D254AE8
 F0 "Power" 50
-F1 "Interactive Core Memory Badge Power v0.3.sch" 50
+F1 "Interactive Core Memory Badge (Logic) Power v0.3.sch" 50
 $EndSheet
 $Sheet
 S 700  1100 500  150 
 U 5D2551FF
 F0 "MCU" 50
-F1 "Interactive Core Memory Badge MCU v0.3.sch" 50
+F1 "Interactive Core Memory Badge (Logic) MCU v0.3.sch" 50
 $EndSheet
 Text GLabel 1750 4600 3    50   Input ~ 0
 XB0
@@ -1677,8 +1677,6 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 	1    9400 3750
 	1    0    0    -1  
 $EndComp
-Text Notes 6300 7150 0    50   ~ 0
-NOTES:\nv0.2 represents improvements learned from producing v0.1, along witih some additional best\npractices (decoupling caps, series LED matrix signal resistor and large power filter cap).\nv0.2 was not produced, but it should work well.
 Text Notes 3700 3850 0    50   ~ 0
 Drive Transistor current: 3.3/470=7mA (too much for Teensy LC)\nMatrix 1/2 select current: 3.3/6.8= 485 mA (does not acccount \nfor voltage drop in transistors)
 Text Notes 2800 1700 0    50   ~ 0
