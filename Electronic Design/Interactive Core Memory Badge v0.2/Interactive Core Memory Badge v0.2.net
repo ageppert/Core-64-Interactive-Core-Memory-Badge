@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Interactive Core Memory Badge v0.2/Interactive Core Memory Badge v0.2.sch")
-    (date "Thursday, March 05, 2020 at 11:25:03 AM")
+    (date "Monday, March 16, 2020 at 11:56:45 AM")
     (tool "Eeschema (5.1.2-1)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -39,7 +39,7 @@
   (components
     (comp (ref CM1)
       (value Core_Memory_8x8_Array)
-      (footprint Core_Memory_8x8_Array:core_64)
+      (footprint Core_Memory_8x8_Array:core_64_x6.7_y6.5mm)
       (libsource (lib CORE_64_LIBRARY) (part Core_Memory_8x8_Array) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 5D2EBF55))
@@ -729,7 +729,7 @@
       (sheetpath (names /Power/) (tstamps /5D254AE8/))
       (tstamp 5D542466))
     (comp (ref R43)
-      (value 0)
+      (value 0.01)
       (footprint Resistor_SMD:R_0805_2012Metric)
       (datasheet ~)
       (libsource (lib Device) (part R) (description Resistor))

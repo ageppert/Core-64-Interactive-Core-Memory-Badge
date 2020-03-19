@@ -263,8 +263,6 @@ Wire Wire Line
 Wire Wire Line
 	1800 3550 1000 3550
 Connection ~ 1000 3550
-Text Notes 8700 4250 0    50   ~ 0
-TO DO:\nEXPANSION FEMALE .100” HEADER for all power and logic
 $Comp
 L Comparator:LM393 U?
 U 1 1 5D3DC9EC

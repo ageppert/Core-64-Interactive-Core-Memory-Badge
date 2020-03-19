@@ -80,7 +80,7 @@ U 1 1 5D2EBF55
 P 2100 3950
 F 0 "CM1" H 2600 4600 50  0000 L CNN
 F 1 "Core_Memory_8x8_Array" H 700 3300 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:core_64" H 2150 4000 50  0001 C CNN
+F 2 "Core_Memory_8x8_Array:core_64_x6.7_y6.5mm_solder_pads_close_to_edge" H 2150 4000 50  0001 C CNN
 F 3 "" H 2150 4000 50  0001 C CNN
 	1    2100 3950
 	1    0    0    -1  
