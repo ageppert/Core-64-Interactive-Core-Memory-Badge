@@ -1,6 +1,6 @@
-update=Sunday, March 15, 2020 at 09:40:07 PM
+update=Friday, March 20, 2020 at 07:21:38 PM
 version=1
-last_client=kicad
+last_client=pcbnew
 [general]
 version=1
 RootSch=
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=Interactive Core Memory Badge v0.3.net
+LastNetListRead=Interactive Core Memory Badge (Logic) Main v0.3.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
