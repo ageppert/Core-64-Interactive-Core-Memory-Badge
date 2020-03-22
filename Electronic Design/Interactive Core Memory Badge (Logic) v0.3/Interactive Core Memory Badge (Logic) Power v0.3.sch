@@ -56,7 +56,7 @@ F 3 "" H 3950 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7050 5150 7250 5150
+	6950 5050 7150 5050
 Text GLabel 1000 5050 0    50   Input ~ 0
 5V_USB
 $Comp
@@ -85,15 +85,15 @@ F 3 "" H 850 6950 50  0001 C CNN
 	1    850  6950
 	-1   0    0    1   
 $EndComp
-Text Notes 700  7400 0    50   ~ 0
-REVERSE POLARITY DETECTION AND SYSTEM\nCURRENT MEASUREMENT CLOSE TO BATTERY.
+Text Notes 550  7750 0    50   ~ 0
+REVERSE POLARITY DETECTION AND SYSTEM\nCURRENT MEASUREMENT CLOSE TO BATTERY.\n\nREF: https://www.instructables.com/id/Reverse-polarity-protection-for-your-circuit-with/\nIRLML6344TRPBF https://www.digikey.com/product-detail/en/infineon-technologies/IRLML6344TRPBF/IRLML6344TRPBFCT-ND/2538168
 Wire Wire Line
 	850  6850 850  6950
 Wire Wire Line
 	5500 6950 5500 6850
-Text Notes 4650 7250 0    50   ~ 0
+Text Notes 4700 7250 0    50   ~ 0
 DIGITAL LOGIC GROUND
-Text Notes 6900 4650 0    50   ~ 0
+Text Notes 6800 4550 0    50   ~ 0
 CORES AND ACCESSORIES
 $Comp
 L Connector:TestPoint TP2
@@ -148,10 +148,10 @@ F 3 "~" H 3650 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 5150 7400 5150
-Connection ~ 7250 5150
+	7150 5050 7300 5050
+Connection ~ 7150 5050
 Wire Wire Line
-	7250 4900 7250 5150
+	7150 4800 7150 5050
 $Comp
 L Device:R R?
 U 1 1 5D4B5807
@@ -228,35 +228,22 @@ Diode provides 1.1V drop if using USB power.\n  Keeps +VSW close to 4V to reduce
 $Comp
 L Regulator_Linear:LD1117S33TR_SOT223 U1
 U 1 1 5E7B5B14
-P 6750 5150
+P 6650 5050
 AR Path="/5E7548ED/5E7B5B14" Ref="U1"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E7B5B14" Ref="U?"  Part="1" 
-F 0 "U1" H 6750 5395 50  0000 C CNN
-F 1 "LD1117S33TR_SOT223" H 6750 5302 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 6750 5350 50  0001 C CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000544.pdf" H 6850 4900 50  0001 C CNN
-	1    6750 5150
+F 0 "U1" H 6650 5295 50  0000 C CNN
+F 1 "LD1117S33TR_SOT223" H 6650 5202 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 6650 5250 50  0001 C CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000544.pdf" H 6750 4800 50  0001 C CNN
+	1    6650 5050
 	1    0    0    -1  
 $EndComp
 Text Notes 550  6200 0    118  ~ 0
 REVERSE POLARITY PROTECTION
-$Comp
-L Transistor_FET:BS870 Q1
-U 1 1 5E73C5E5
-P 1800 6750
-AR Path="/5E7548ED/5E73C5E5" Ref="Q1"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5E73C5E5" Ref="Q?"  Part="1" 
-F 0 "Q1" V 2051 6750 50  0000 C CNN
-F 1 "BS870" V 2144 6750 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 2000 6675 50  0001 L CIN
-F 3 "http://www.diodes.com/assets/Datasheets/ds11302.pdf" H 1800 6750 50  0001 L CNN
-	1    1800 6750
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	850  6850 1600 6850
 Wire Wire Line
-	6000 5150 6450 5150
+	6200 5050 6350 5050
 Text Notes 750  2200 0    50   ~ 0
 MODE 1\n  BUILT-IN BATTERY PACK (Keystone 2482CN) WITH 4X “AAA” ALKALINE OR NIMH CELLS\n  …or 3-4 “AA” alkaline/NiMh, or 1S LiPo, but the logic board does not recharge these batteries automatically from USB power.\n  CONNECTED TO 3 PIN input for Battery Pack\n  On PCB: SMT CONN, 3 TERM, HORZ, 2mm spacing, detent lock\n  Such as: Keystone 976, JST PA BM03B-PASS-1-TFT(LF)(SN), Adafruit 4391 (JST PH 3-pin aka STEMMA)\n  from KAWEEI Technology CW2001-03T-H01-BD-A, 
 Text Notes 750  3250 0    50   ~ 0
@@ -415,11 +402,11 @@ Wire Notes Line style solid
 Text Notes 600  1200 0    100  ~ 0
 TEENSY LC OR 3.2 AND ALKALINE/NIMH BATTERY PACK\n*** MUST CUT VIN-VUSB TRACE ***\nTHIS IS THE STANDARD MANUFACTURED KIT CONFIGURATION
 Text Notes 6150 1900 0    50   ~ 0
-HACKER UPGRADE TO USE FEATHER REQUIRES EITHER:\nA) REPLACE THE ALKALINE/NIMH BATTERY PACK WITH 1S LIPO IN THE SAME POWER PORT, OR ONE OF THE ALTERNATE PORTS\n>>> ALTERNATE CONNECTOR 1 - Adafruit (1769) SMT 2-pin JST-PH (used with the Feather and similar)\n>>> ALTERNATE CONNECTOR 2 - Generic SMT 2-pin .1” header option for everything else. \nB) REMOVE THE ALKALINE/NIMH BATTERY PACK AND CONNECT 1S LIPO DIRECTLY TO FEATHER JST-PH BATTERY/CHARGING PORT.
+HACKER UPGRADE TO USE FEATHER REQUIRES EITHER:\nA) REPLACE THE ALKALINE/NIMH BATTERY PACK WITH 1S LIPO IN THE SAME POWER PORT, OR ONE OF THE ALTERNATE PORTS\n>>> ALTERNATE CONNECTOR 1 - Adafruit (1769) SMT 2-pin JST-PH (used with the Feather and Adafruit batteries)\n>>> ALTERNATE CONNECTOR 2 - Generic SMT 2-pin .1” header option for everything else. \nB) REMOVE THE ALKALINE/NIMH BATTERY PACK AND CONNECT 1S LIPO DIRECTLY TO FEATHER JST-PH BATTERY/CHARGING PORT.
 Text Notes 6050 1200 0    100  ~ 0
 HACKER POWER OPTION: ADAFRUIT FEATHER WITH REQUIRED LIPO\n*** MUST REMOVE ALKALINE/NIMH BATTERY PACK ***\nUSER MODIFICATION REQUIRED
 Text Notes 6150 2100 0    50   ~ 0
-TWO POWER MODES SELECTED BY DOUBLE-THROW SWITCH:
+TWO ALTERNATIVE POWER MODES SELECTED BY DOUBLE-THROW SWITCH:
 Wire Wire Line
 	4500 3050 4800 3050
 Wire Wire Line
@@ -439,8 +426,8 @@ F 3 "" H 4800 3050 50  0001 C CNN
 $EndComp
 Text Notes 4000 2800 0    50   ~ 0
 BOTH MODES REQUIRE:\nVIN must be supplied TO the Teensy and\nthe Core 64 Logic Board provides it here.
-Text Notes 8550 4700 0    50   ~ 0
-TEENSY OR FEATHER 3.3V REGULATOR USED BY:\nAnalog reference, Core Sense Op-Amps, Magnetic Hall switches.
+Text Notes 8400 4650 0    50   ~ 0
+TEENSY OR FEATHER 3.3V REGULATOR USED BY:\nMCU, Analog reference, Core Sense Op-Amps, Magnetic Hall switches.
 Text GLabel 9100 5150 0    50   Input ~ 0
 FEATHER_3V3
 Text GLabel 9600 5050 2    50   Input ~ 0
@@ -457,7 +444,7 @@ Wire Wire Line
 	9350 5150 9100 5150
 Connection ~ 9350 5050
 Text Notes 6250 2500 0    50   ~ 0
-MODE 3\n  DIY 1S LIPO BATTERY 3-4V\n  THE FEATHER WILL TRY TO CHARGE THIS WHEN USB POWER IS CONNECTED. \n  FAILURE TO USE A 1S LIPO WILL DETROY THE CHARGER CIRCUIT.
+MODE 3\n  USER REPLACED 1S LIPO BATTERY 3.7 OR 4.2V\n  THE FEATHER WILL TRY TO CHARGE THE BATTERY AT 100MA WHEN USB POWER IS CONNECTED. \n  FAILURE TO USE A 1S LIPO WILL DESTROY THE CHARGER CIRCUIT ON THE FEATHER.
 $Comp
 L Connector:Conn_01x02_Male J5
 U 1 1 5E86075C
@@ -502,25 +489,25 @@ Wire Wire Line
 Wire Wire Line
 	8350 2900 8900 2900
 Text Notes 6250 3350 0    50   ~ 0
-MODE 4\n  USB 5V through the Feather.\n  Automatically recharges a connected 1s LiPo.
+MODE 4\n  USB 5V through the Feather.\n  Automatically recharges a connected 1s LiPo at 100mA.
 Wire Wire Line
 	10050 2750 10400 2750
 $Comp
 L power:+VSW #PWR0113
 U 1 1 5E8659D4
-P 6000 4950
+P 6200 4800
 AR Path="/5E7548ED/5E8659D4" Ref="#PWR0113"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8659D4" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0113" H 6000 4800 50  0001 C CNN
-F 1 "+VSW" H 6015 5123 50  0000 C CNN
-F 2 "" H 6000 4950 50  0001 C CNN
-F 3 "" H 6000 4950 50  0001 C CNN
-	1    6000 4950
+F 0 "#PWR0113" H 6200 4650 50  0001 C CNN
+F 1 "+VSW" H 6215 4973 50  0000 C CNN
+F 2 "" H 6200 4800 50  0001 C CNN
+F 3 "" H 6200 4800 50  0001 C CNN
+	1    6200 4800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6000 4950 6000 5150
-Text GLabel 7400 5150 2    50   Input ~ 0
+	6200 4800 6200 5050
+Text GLabel 7300 5050 2    50   Input ~ 0
 3V3_800mA
 Wire Wire Line
 	1200 5050 1850 5050
@@ -549,14 +536,14 @@ $EndComp
 $Comp
 L Connector:TestPoint TP7
 U 1 1 5E88DBA6
-P 7250 4900
+P 7150 4800
 AR Path="/5E7548ED/5E88DBA6" Ref="TP7"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E88DBA6" Ref="TP?"  Part="1" 
-F 0 "TP7" H 7308 5018 50  0000 L CNN
-F 1 "3V3_HP" H 7308 4927 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 7450 4900 50  0001 C CNN
-F 3 "~" H 7450 4900 50  0001 C CNN
-	1    7250 4900
+F 0 "TP7" H 7208 4918 50  0000 L CNN
+F 1 "3V3_HP" H 7208 4827 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 7350 4800 50  0001 C CNN
+F 3 "~" H 7350 4800 50  0001 C CNN
+	1    7150 4800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -582,31 +569,31 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0115
 U 1 1 5E8C20D5
-P 6200 7150
+P 6200 6950
 AR Path="/5E7548ED/5E8C20D5" Ref="#PWR0115"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8C20D5" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0115" H 6200 6900 50  0001 C CNN
-F 1 "GND" H 6205 6975 50  0000 C CNN
-F 2 "" H 6200 7150 50  0001 C CNN
-F 3 "" H 6200 7150 50  0001 C CNN
-	1    6200 7150
+F 0 "#PWR0115" H 6200 6700 50  0001 C CNN
+F 1 "GND" H 6205 6775 50  0000 C CNN
+F 2 "" H 6200 6950 50  0001 C CNN
+F 3 "" H 6200 6950 50  0001 C CNN
+	1    6200 6950
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0116
 U 1 1 5E8C4F56
-P 6750 5600
+P 6650 5500
 AR Path="/5E7548ED/5E8C4F56" Ref="#PWR0116"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8C4F56" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0116" H 6750 5350 50  0001 C CNN
-F 1 "GND" H 6755 5425 50  0000 C CNN
-F 2 "" H 6750 5600 50  0001 C CNN
-F 3 "" H 6750 5600 50  0001 C CNN
-	1    6750 5600
+F 0 "#PWR0116" H 6650 5250 50  0001 C CNN
+F 1 "GND" H 6655 5325 50  0000 C CNN
+F 2 "" H 6650 5500 50  0001 C CNN
+F 3 "" H 6650 5500 50  0001 C CNN
+	1    6650 5500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6750 5450 6750 5600
+	6650 5350 6650 5500
 Connection ~ 5500 6850
 Wire Wire Line
 	2000 6850 4100 6850
@@ -614,10 +601,10 @@ Connection ~ 4100 6850
 Text Notes 4000 6200 0    118  ~ 0
 SYSTEM CURRENT MEASUREMENT
 Wire Wire Line
-	6200 7150 6200 6850
+	6200 6950 6200 6850
 Wire Wire Line
 	6200 6850 5500 6850
-Text Notes 5600 7500 0    50   ~ 0
+Text Notes 5750 7250 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Wire Wire Line
 	5100 6850 5250 6850
@@ -698,7 +685,7 @@ F 3 "" H 4450 5250 50  0001 C CNN
 	1    4450 5250
 	1    0    0    -1  
 $EndComp
-Text Notes 6750 5900 0    50   ~ 0
+Text Notes 6650 5800 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Text Notes 4400 5550 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
@@ -706,6 +693,25 @@ Text Notes 7300 3900 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Text Notes 2050 3850 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
-Text Notes 3050 7600 0    50   ~ 0
+Text Notes 4900 7450 0    50   ~ 0
 STAR GROUND AS MUCH AS POSSIBLE REVERSE\nPOLARITY FET TO GNDD (DIGITAL) AND GND (POWER).
+Text Notes 8550 5300 0    50   ~ 0
+*** USE ONE 3V3 SOURCE AT A TIME ***
+Text Notes 3800 4400 0    50   ~ 0
+LED ARRAY, TEENSY VIN
+Text Notes 8550 3600 0    50   ~ 10
+TO DO: Does Feather receive power to MCU directly from battery?\nDoes Feather require a battery to be connected in order to work?
+$Comp
+L Transistor_FET:IRLML2060 Q?
+U 1 1 5E770BB5
+P 1800 6750
+F 0 "Q?" V 2051 6750 50  0000 C CNN
+F 1 "IRLML6344TRPBF" V 2144 6750 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2000 6675 50  0001 L CIN
+F 3 "https://www.digikey.com/product-detail/en/infineon-technologies/IRLML6344TRPBF/IRLML6344TRPBFCT-ND/2538168" H 1800 6750 50  0001 L CNN
+	1    1800 6750
+	0    1    1    0   
+$EndComp
+Text Notes 3200 3650 0    50   ~ 10
+TO DO: Teensy and feather power to -Batt or GND? \nDo they need to avoid the reverse polarity detector? \nOr will they interfere?
 $EndSCHEMATC

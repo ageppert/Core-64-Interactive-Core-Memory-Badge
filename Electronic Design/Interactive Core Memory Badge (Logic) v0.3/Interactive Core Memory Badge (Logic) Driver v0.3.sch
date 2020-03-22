@@ -1708,71 +1708,65 @@ Wire Wire Line
 	2450 1900 2550 1900
 Wire Wire Line
 	2450 2000 2550 2000
-Text GLabel 1250 1800 2    50   Output ~ 0
+Text GLabel 1450 1800 2    50   Output ~ 0
 YL1
-Text GLabel 1250 1700 2    50   Output ~ 0
+Text GLabel 1450 1700 2    50   Output ~ 0
 YL0
-Text GLabel 1250 1900 2    50   Output ~ 0
+Text GLabel 1450 1900 2    50   Output ~ 0
 YL2
-Text GLabel 1250 2000 2    50   Output ~ 0
+Text GLabel 1450 2000 2    50   Output ~ 0
 YL3
-Text GLabel 1250 2100 2    50   Output ~ 0
-YL4
-Text GLabel 1250 2200 2    50   Output ~ 0
-YL5
-Text GLabel 1250 2300 2    50   Output ~ 0
-YL6
-Text GLabel 1250 2400 2    50   Output ~ 0
+Text GLabel 1450 2400 2    50   Output ~ 0
 YL7
 Wire Wire Line
-	1200 2100 1200 2300
+	1400 2100 1400 2300
 Wire Wire Line
-	1200 2300 1250 2300
+	1400 2300 1450 2300
 Wire Wire Line
-	1250 1700 800  1700
+	1450 1700 800  1700
 Wire Wire Line
-	1250 2000 800  2000
+	1450 2000 800  2000
 Wire Wire Line
-	1250 2100 1200 2100
+	1450 2100 1400 2100
 Wire Wire Line
-	1200 2100 800  2100
-Connection ~ 1200 2100
+	1400 2100 800  2100
+Connection ~ 1400 2100
 Wire Wire Line
-	1150 2400 1250 2400
+	1350 2400 1450 2400
 Wire Wire Line
-	1150 2200 1150 2400
+	1350 2200 1350 2400
 Wire Wire Line
-	1250 2200 1150 2200
+	1450 2200 1350 2200
 Text Notes 600  1400 0    50   ~ 0
 YL: 6\nSENSE: 2\nSPARE: 2\nGND, 3V3: 2\nMHS: 4 (hall switches)\nTOTAL=16
 Wire Wire Line
-	1150 2200 800  2200
-Connection ~ 1150 2200
+	1350 2200 800  2200
+Connection ~ 1350 2200
 Wire Wire Line
 	2450 2800 2550 2800
 Wire Wire Line
 	2450 2700 2550 2700
 $Comp
-L Connector:Conn_01x16_Male J2
+L Connector:Conn_01x16_Female J2
 U 1 1 5E78B5ED
 P 2750 2400
-F 0 "J2" H 3300 3350 50  0000 C CNN
-F 1 "Conn_01x16_Male" H 3050 3250 50  0000 C CNN
+F 0 "J2" H 2100 3350 50  0000 C CNN
+F 1 "Conn_01x16_Female" H 2400 3250 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical_SMD_Pin1Left" H 2750 2400 50  0001 C CNN
 F 3 "~" H 2750 2400 50  0001 C CNN
 	1    2750 2400
-	-1   0    0    -1  
+	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x16_Male J1
+L Connector:Conn_01x16_Female J1
 U 1 1 5E78B5F3
 P 600 2400
-F 0 "J1" H 700 3350 50  0000 C CNN
-F 1 "Conn_01x16_Male" H 950 3250 50  0000 C CNN
+F 0 "J1" H 550 3350 50  0000 C CNN
+F 1 "Conn_01x16_Female" H 250 3250 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical_SMD_Pin1Left" H 600 2400 50  0001 C CNN
 F 3 "~" H 600 2400 50  0001 C CNN
 	1    600  2400
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Text Notes 1950 1400 0    50   ~ 0
 XT: 4\nXB :8\nLED MATRIX: 3\n    (V+, SIGNAL, GND)\nSPARE: 1\nTOTAL=16
@@ -1780,20 +1774,12 @@ Wire Wire Line
 	2450 2400 2550 2400
 Wire Wire Line
 	2450 2600 2550 2600
-Text GLabel 1250 2500 2    50   Input ~ 0
+Text GLabel 900  2300 2    50   Input ~ 0
 SENSE1
-Text GLabel 1250 2600 2    50   Input ~ 0
+Text GLabel 900  2400 2    50   Input ~ 0
 SENSE2
 Wire Wire Line
-	1100 2500 1250 2500
-Wire Wire Line
-	1100 2300 1100 2500
-Wire Wire Line
-	1250 2600 1050 2600
-Wire Wire Line
-	1050 2600 1050 2400
-Wire Wire Line
-	1050 2400 800  2400
+	900  2400 800  2400
 Text GLabel 2500 3000 0    50   Input ~ 0
 LED_MATRIX
 Wire Wire Line
@@ -1820,7 +1806,7 @@ HALL_SWITCH_4
 Wire Wire Line
 	1600 2800 1600 3050
 Wire Wire Line
-	800  2700 1100 2700
+	800  2700 900  2700
 Wire Wire Line
 	800  2800 1600 2800
 Wire Wire Line
@@ -1855,14 +1841,14 @@ F 3 "" H 2100 3100 50  0001 C CNN
 	1    2100 3100
 	1    0    0    -1  
 $EndComp
-Text GLabel 1100 2700 2    50   Input ~ 0
+Text GLabel 900  2700 2    50   Input ~ 0
 3V3_100mA
 Wire Wire Line
-	800  1800 1250 1800
+	800  1800 1450 1800
 Wire Wire Line
-	800  1900 1250 1900
+	800  1900 1450 1900
 Wire Wire Line
-	800  2300 1100 2300
+	800  2300 900  2300
 Wire Wire Line
 	800  2900 850  2900
 Wire Wire Line
@@ -1887,10 +1873,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 2900 2550 2900
 Text Notes 2350 3200 0    50   ~ 0
-N/C
-Text Notes 850  2550 0    50   ~ 0
-N/C
-Text Notes 850  2650 0    50   ~ 0
 N/C
 Wire Wire Line
 	1450 7100 1900 7100
@@ -1952,4 +1934,18 @@ Text Notes 1250 7800 0    50   ~ 0
 SYSTEM POWER GROUND
 Wire Wire Line
 	1250 7400 1250 7500
+Text GLabel 900  2500 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 900  2600 2    50   BiDi ~ 0
+I2C_DATA
+Text GLabel 1450 2300 2    50   Output ~ 0
+YL6
+Text GLabel 1450 2200 2    50   Output ~ 0
+YL5
+Text GLabel 1450 2100 2    50   Output ~ 0
+YL4
+Wire Wire Line
+	800  2500 900  2500
+Wire Wire Line
+	800  2600 900  2600
 $EndSCHEMATC

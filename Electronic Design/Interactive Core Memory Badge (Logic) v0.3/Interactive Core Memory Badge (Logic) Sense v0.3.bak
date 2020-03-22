@@ -567,4 +567,6 @@ Text Notes 6450 2100 0    118  ~ 0
 SENSE SIGNAL BUFFER AND HOLD
 Connection ~ 3050 4850
 Connection ~ 3050 5450
+Text Notes 7200 3400 0    50   ~ 10
+TO DO: Added latched buffer with AND and OR gates?
 $EndSCHEMATC

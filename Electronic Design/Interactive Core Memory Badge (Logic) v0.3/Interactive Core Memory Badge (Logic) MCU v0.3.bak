@@ -36,56 +36,27 @@ Wire Wire Line
 Wire Wire Line
 	1650 2250 1800 2250
 Wire Wire Line
-	5300 1300 5300 2650
+	5300 1650 5300 2650
 Wire Wire Line
 	5300 2650 3950 2650
-Text GLabel 5000 1250 1    50   Output ~ 0
-V+USB
+Text GLabel 5000 1700 1    50   Output ~ 0
+TEENSY_VUSB
 NoConn ~ 3950 2050
 NoConn ~ 3950 2150
-$Comp
-L power:+VSW #PWR0119
-U 1 1 5D31CDEF
-P 5300 1300
-AR Path="/5E755787/5D31CDEF" Ref="#PWR0119"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D31CDEF" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0119" H 5300 1150 50  0001 C CNN
-F 1 "+VSW" H 5315 1473 50  0000 C CNN
-F 2 "" H 5300 1300 50  0001 C CNN
-F 3 "" H 5300 1300 50  0001 C CNN
-	1    5300 1300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5000 4200 5000 2750
 Wire Wire Line
-	5000 1250 5000 2550
+	5000 1700 5000 2550
 Wire Wire Line
 	5000 2550 3950 2550
 Wire Wire Line
 	5000 2750 3950 2750
-$Comp
-L power:+3V3 #PWR0120
-U 1 1 5D32AA99
-P 6000 1300
-AR Path="/5E755787/5D32AA99" Ref="#PWR0120"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D32AA99" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0120" H 6000 1150 50  0001 C CNN
-F 1 "+3V3" H 6015 1473 50  0000 C CNN
-F 2 "" H 6000 1300 50  0001 C CNN
-F 3 "" H 6000 1300 50  0001 C CNN
-	1    6000 1300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	6000 2850 3950 2850
+	5650 2850 3950 2850
 Wire Wire Line
-	6000 1300 6000 1500
+	3950 2450 5650 2450
 Wire Wire Line
-	3950 2450 6000 2450
-Connection ~ 6000 2450
-Wire Wire Line
-	6000 2450 6000 2850
+	5650 2450 5650 2850
 $Comp
 L Device:R R4
 U 1 1 5D32CB70
@@ -117,38 +88,12 @@ Wire Wire Line
 Wire Wire Line
 	5300 2650 5300 3250
 Connection ~ 5300 2650
-Text Notes 5250 850  0    50   ~ 0
+Text Notes 4750 1000 0    50   ~ 0
 Battery Voltage Monitor for +VSW\nAnalog reads 1/2 battery voltage
-Text Notes 850  1350 0    50   ~ 0
-Teensy LC has incoming USB\npower/programming on board.\n\nUSB V+ bridge cut and routes ONLY\nto the LiPo charger module.\n\nLiPo must be connected for whole\nsystem to work.
-$Comp
-L power:-BATT #PWR0121
-U 1 1 5D337E9E
-P 5000 4200
-AR Path="/5E755787/5D337E9E" Ref="#PWR0121"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D337E9E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0121" H 5000 4050 50  0001 C CNN
-F 1 "-BATT" H 5015 4373 50  0000 C CNN
-F 2 "" H 5000 4200 50  0001 C CNN
-F 3 "" H 5000 4200 50  0001 C CNN
-	1    5000 4200
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:-BATT #PWR0122
-U 1 1 5D338C7F
-P 5300 4200
-AR Path="/5E755787/5D338C7F" Ref="#PWR0122"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D338C7F" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0122" H 5300 4050 50  0001 C CNN
-F 1 "-BATT" H 5315 4373 50  0000 C CNN
-F 2 "" H 5300 4200 50  0001 C CNN
-F 3 "" H 5300 4200 50  0001 C CNN
-	1    5300 4200
-	-1   0    0    1   
-$EndComp
-Text Notes 6250 1150 0    50   ~ 0
-Use +3V3 for low power accessories:\nReed switch, hall sensors, sense circuit, expansion bus, …
+Text Notes 900  900  0    50   ~ 0
+Teensy LC has incoming USB power/programming on board.\n\n*** CUT THE USB-VIN bridge. ***
+Text Notes 5750 1300 0    50   ~ 0
+Use +3V3 for low power accessories:\nHall sensors, sense circuit, MCU
 Text GLabel 7000 3900 2    50   BiDi ~ 0
 I2C_CLOCK
 Text GLabel 7000 4300 2    50   BiDi ~ 0
@@ -427,24 +372,6 @@ F 3 "~" H 2150 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP11
-U 1 1 5D4D6E00
-P 6300 1500
-AR Path="/5E755787/5D4D6E00" Ref="TP11"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D4D6E00" Ref="TP?"  Part="1" 
-F 0 "TP11" H 6358 1618 50  0000 L CNN
-F 1 "+3V3" H 6358 1527 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 6500 1500 50  0001 C CNN
-F 3 "~" H 6500 1500 50  0001 C CNN
-	1    6300 1500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6300 1500 6000 1500
-Connection ~ 6000 1500
-Wire Wire Line
-	6000 1500 6000 2450
-$Comp
 L Connector:TestPoint TP12
 U 1 1 5D4DAE01
 P 6450 2800
@@ -473,19 +400,6 @@ F 1 "4K7" H 770 1955 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 630 2000 50  0001 C CNN
 F 3 "~" H 700 2000 50  0001 C CNN
 	1    700  2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0130
-U 1 1 5D4CC3D1
-P 700 1850
-AR Path="/5E755787/5D4CC3D1" Ref="#PWR0130"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D4CC3D1" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0130" H 700 1700 50  0001 C CNN
-F 1 "+3V3" H 715 2023 50  0000 C CNN
-F 2 "" H 700 1850 50  0001 C CNN
-F 3 "" H 700 1850 50  0001 C CNN
-	1    700  1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -578,7 +492,7 @@ Wire Wire Line
 	6050 4300 6900 4300
 Wire Wire Line
 	6050 3500 6050 3950
-Text Notes 1950 1550 0    50   ~ 0
+Text Notes 1650 1550 0    50   ~ 0
 CONNECTORS\nTEENSY LC: Qty 2, 14 pins each side (does not include end/center pins)\nFEATHER: one row 12 pins, one row 16 pins
 Wire Wire Line
 	2700 4750 2800 4750
@@ -590,4 +504,45 @@ Wire Wire Line
 	1700 4750 1950 4750
 Wire Wire Line
 	1000 3550 1000 4250
+$Comp
+L power:GNDD #PWR?
+U 1 1 5E79D787
+P 5000 4200
+AR Path="/5E755787/5E79D787" Ref="#PWR?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5E79D787" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5000 3950 50  0001 C CNN
+F 1 "GNDD" H 5004 4045 50  0000 C CNN
+F 2 "" H 5000 4200 50  0001 C CNN
+F 3 "" H 5000 4200 50  0001 C CNN
+	1    5000 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5E7A2329
+P 5300 4200
+AR Path="/5E755787/5E7A2329" Ref="#PWR?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5E7A2329" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5300 3950 50  0001 C CNN
+F 1 "GNDD" H 5304 4045 50  0000 C CNN
+F 2 "" H 5300 4200 50  0001 C CNN
+F 3 "" H 5300 4200 50  0001 C CNN
+	1    5300 4200
+	1    0    0    -1  
+$EndComp
+Connection ~ 5650 2450
+Text GLabel 5650 1650 1    50   Input ~ 0
+TEENSY_3V3
+Wire Wire Line
+	5650 1650 5650 2450
+Text GLabel 700  1650 1    50   Input ~ 0
+TEENSY_3V3
+Wire Wire Line
+	700  1850 700  1650
+Text Notes 700  6150 0    50   ~ 10
+TO DO: Update this to be SAO, and some easy to add I2C OLED 4-pin header.
+Text Notes 8050 1350 0    50   ~ 10
+TO DO: Add Feather module.
+Text GLabel 5300 1650 1    50   Input ~ 0
+TEENSY_VIN
 $EndSCHEMATC
