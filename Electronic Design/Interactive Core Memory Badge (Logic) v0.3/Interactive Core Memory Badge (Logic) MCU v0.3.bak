@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 3 6
 Title "Core 64 - MCU Logic"
 Date "2020-03-15"
 Rev "0.3"
@@ -27,10 +27,6 @@ F 3 "" H 2850 2350 60  0000 C CNN
 	1    2850 2900
 	1    0    0    -1  
 $EndComp
-Text GLabel 1650 2150 0    50   Output ~ 0
-Q1P
-Text GLabel 1650 2250 0    50   Output ~ 0
-Q1N
 Wire Wire Line
 	1650 2150 1800 2150
 Wire Wire Line
@@ -136,76 +132,24 @@ Wire Wire Line
 	3950 3350 4800 3350
 Wire Wire Line
 	4800 3350 4800 3900
-$Comp
-L power:+3V3 #PWR0123
-U 1 1 5D3544A4
-P 6350 3500
-AR Path="/5E755787/5D3544A4" Ref="#PWR0123"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D3544A4" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0123" H 6350 3350 50  0001 C CNN
-F 1 "+3V3" H 6365 3673 50  0000 C CNN
-F 2 "" H 6350 3500 50  0001 C CNN
-F 3 "" H 6350 3500 50  0001 C CNN
-	1    6350 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0124
-U 1 1 5D3556B5
-P 6050 3500
-AR Path="/5E755787/5D3556B5" Ref="#PWR0124"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D3556B5" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0124" H 6050 3350 50  0001 C CNN
-F 1 "+3V3" H 6065 3673 50  0000 C CNN
-F 2 "" H 6050 3500 50  0001 C CNN
-F 3 "" H 6050 3500 50  0001 C CNN
-	1    6050 3500
-	1    0    0    -1  
-$EndComp
-Text GLabel 6550 2950 2    50   Output ~ 0
-WRITE_ENABLE
-Wire Wire Line
-	3950 2950 6450 2950
-Text GLabel 1650 2050 0    50   Input ~ 0
-SENSE_PULSE
 Wire Wire Line
 	1650 2050 1800 2050
-Text GLabel 1650 2350 0    50   Output ~ 0
-Q2P
-Text GLabel 1650 2450 0    50   Output ~ 0
-Q2N
 Wire Wire Line
 	1650 2350 1800 2350
 Wire Wire Line
 	1650 2450 1800 2450
-Text GLabel 1650 2550 0    50   Output ~ 0
-Q3P
-Text GLabel 1650 2650 0    50   Output ~ 0
-Q3N
 Wire Wire Line
 	1650 2550 1800 2550
 Wire Wire Line
 	1650 2650 1800 2650
-Text GLabel 1650 2750 0    50   Output ~ 0
-Q4P
-Text GLabel 1650 2850 0    50   Output ~ 0
-Q4N
 Wire Wire Line
 	1650 2750 1800 2750
 Wire Wire Line
 	1650 2850 1800 2850
-Text GLabel 1650 2950 0    50   Output ~ 0
-Q5P
-Text GLabel 1650 3050 0    50   Output ~ 0
-Q5N
 Wire Wire Line
 	1650 2950 1800 2950
 Wire Wire Line
 	1650 3050 1800 3050
-Text GLabel 1650 3150 0    50   Output ~ 0
-Q6P
-Text GLabel 1650 3250 0    50   Output ~ 0
-Q6N
 Wire Wire Line
 	1650 3150 1800 3150
 Wire Wire Line
@@ -230,8 +174,6 @@ Wire Wire Line
 Wire Wire Line
 	1800 3550 1000 3550
 Connection ~ 1000 3550
-Text GLabel 1650 3850 0    50   Output ~ 0
-Q7P
 Wire Wire Line
 	1650 3850 1800 3850
 Wire Wire Line
@@ -246,82 +188,21 @@ Wire Wire Line
 	5150 3550 5300 3550
 Wire Wire Line
 	3950 3650 4100 3650
-Text GLabel 4100 3550 2    50   Output ~ 0
-Q9P
 Wire Wire Line
 	3950 3550 4100 3550
-Text GLabel 4100 3650 2    50   Output ~ 0
-Q8N
-Text GLabel 4100 3750 2    50   Output ~ 0
-Q8P
-Text GLabel 4100 3850 2    50   Output ~ 0
-Q7N
 Wire Wire Line
 	3950 3250 4100 3250
 Wire Wire Line
 	3950 3150 4100 3150
 Wire Wire Line
 	3950 3050 4100 3050
-Text GLabel 4100 3050 2    50   Output ~ 0
-Q10N
-Text GLabel 4100 3150 2    50   Output ~ 0
-Q10P
-Text GLabel 4100 3250 2    50   Output ~ 0
-Q9N
-Text GLabel 4100 2250 2    50   Input ~ 0
-REED_SWITCH
 Wire Wire Line
 	3950 2250 4100 2250
 NoConn ~ 1800 3450
-Text GLabel 1650 3750 0    50   Input ~ 0
-HALL_SWITCH
 Wire Wire Line
 	1650 3750 1800 3750
 Text GLabel 2800 4750 2    50   Input ~ 0
 LED_MATRIX
-$Comp
-L Motor:Fan_4pin H1
-U 1 1 5D49F2EF
-P 1600 6850
-AR Path="/5E755787/5D49F2EF" Ref="H1"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D49F2EF" Ref="H?"  Part="1" 
-F 0 "H1" H 1758 6946 50  0000 L CNN
-F 1 "OLED_DISPLAY" H 1758 6855 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:OLED_Header_4PIN" H 1600 6860 50  0001 C CNN
-F 3 "" H 1600 6860 50  0001 C CNN
-	1    1600 6850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:-BATT #PWR0128
-U 1 1 5D49FCEF
-P 1600 7050
-AR Path="/5E755787/5D49FCEF" Ref="#PWR0128"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D49FCEF" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0128" H 1600 6900 50  0001 C CNN
-F 1 "-BATT" H 1615 7223 50  0000 C CNN
-F 2 "" H 1600 7050 50  0001 C CNN
-F 3 "" H 1600 7050 50  0001 C CNN
-	1    1600 7050
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:+VSW #PWR0129
-U 1 1 5D4A026C
-P 1600 6550
-AR Path="/5E755787/5D4A026C" Ref="#PWR0129"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D4A026C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0129" H 1600 6400 50  0001 C CNN
-F 1 "+VSW" H 1615 6723 50  0000 C CNN
-F 2 "" H 1600 6550 50  0001 C CNN
-F 3 "" H 1600 6550 50  0001 C CNN
-	1    1600 6550
-	1    0    0    -1  
-$EndComp
-Text GLabel 1150 6750 0    50   BiDi ~ 0
-I2C_CLOCK
-Text GLabel 1150 6950 0    50   BiDi ~ 0
-I2C_DATA
 $Comp
 L Connector:TestPoint TP13
 U 1 1 5D477EF0
@@ -372,92 +253,24 @@ F 3 "~" H 2150 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP12
-U 1 1 5D4DAE01
-P 6450 2800
-AR Path="/5E755787/5D4DAE01" Ref="TP12"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5D4DAE01" Ref="TP?"  Part="1" 
-F 0 "TP12" H 6508 2918 50  0000 L CNN
-F 1 "WRITE_ENABLE" H 6508 2827 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 6650 2800 50  0001 C CNN
-F 3 "~" H 6650 2800 50  0001 C CNN
-	1    6450 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6450 2800 6450 2950
-Connection ~ 6450 2950
-Wire Wire Line
-	6450 2950 6550 2950
-$Comp
 L Device:R R2
 U 1 1 5D4CBADA
-P 700 2000
+P 700 2700
 AR Path="/5E755787/5D4CBADA" Ref="R2"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5D4CBADA" Ref="R?"  Part="1" 
-F 0 "R2" H 770 2046 50  0000 L CNN
-F 1 "4K7" H 770 1955 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 630 2000 50  0001 C CNN
-F 3 "~" H 700 2000 50  0001 C CNN
-	1    700  2000
+F 0 "R2" H 770 2746 50  0000 L CNN
+F 1 "4K7" H 770 2655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 630 2700 50  0001 C CNN
+F 3 "~" H 700 2700 50  0001 C CNN
+	1    700  2700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	700  2150 700  3650
+	700  2850 700  3650
 Wire Wire Line
 	700  3650 1800 3650
 Wire Wire Line
 	4800 3900 6350 3900
-Wire Wire Line
-	1150 6750 1300 6750
-Wire Wire Line
-	1150 6950 1300 6950
-$Comp
-L Device:CP1_Small C2
-U 1 1 5E7402CF
-P 2950 6800
-AR Path="/5E755787/5E7402CF" Ref="C2"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5E7402CF" Ref="C?"  Part="1" 
-F 0 "C2" H 3041 6846 50  0000 L CNN
-F 1 "10uF" H 3041 6755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2950 6800 50  0001 C CNN
-F 3 "~" H 2950 6800 50  0001 C CNN
-	1    2950 6800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1_Small C1
-U 1 1 5E741B68
-P 2500 6800
-AR Path="/5E755787/5E741B68" Ref="C1"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5E741B68" Ref="C?"  Part="1" 
-F 0 "C1" H 2591 6846 50  0000 L CNN
-F 1 "0.1uF" H 2591 6755 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2500 6800 50  0001 C CNN
-F 3 "~" H 2500 6800 50  0001 C CNN
-	1    2500 6800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1600 6550 2500 6550
-Wire Wire Line
-	2950 6550 2950 6700
-Connection ~ 1600 6550
-Wire Wire Line
-	2950 6900 2950 7050
-Wire Wire Line
-	2950 7050 2500 7050
-Connection ~ 1600 7050
-Wire Wire Line
-	2500 6700 2500 6550
-Connection ~ 2500 6550
-Wire Wire Line
-	2500 6550 2950 6550
-Wire Wire Line
-	2500 6900 2500 7050
-Connection ~ 2500 7050
-Wire Wire Line
-	2500 7050 1600 7050
 $Comp
 L Device:R R3
 U 1 1 5E768FF3
@@ -505,12 +318,12 @@ Wire Wire Line
 Wire Wire Line
 	1000 3550 1000 4250
 $Comp
-L power:GNDD #PWR?
+L power:GNDD #PWR0120
 U 1 1 5E79D787
 P 5000 4200
-AR Path="/5E755787/5E79D787" Ref="#PWR?"  Part="1" 
+AR Path="/5E755787/5E79D787" Ref="#PWR0120"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E79D787" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5000 3950 50  0001 C CNN
+F 0 "#PWR0120" H 5000 3950 50  0001 C CNN
 F 1 "GNDD" H 5004 4045 50  0000 C CNN
 F 2 "" H 5000 4200 50  0001 C CNN
 F 3 "" H 5000 4200 50  0001 C CNN
@@ -518,12 +331,12 @@ F 3 "" H 5000 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDD #PWR?
+L power:GNDD #PWR0121
 U 1 1 5E7A2329
 P 5300 4200
-AR Path="/5E755787/5E7A2329" Ref="#PWR?"  Part="1" 
+AR Path="/5E755787/5E7A2329" Ref="#PWR0121"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E7A2329" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5300 3950 50  0001 C CNN
+F 0 "#PWR0121" H 5300 3950 50  0001 C CNN
 F 1 "GNDD" H 5304 4045 50  0000 C CNN
 F 2 "" H 5300 4200 50  0001 C CNN
 F 3 "" H 5300 4200 50  0001 C CNN
@@ -531,18 +344,20 @@ F 3 "" H 5300 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5650 2450
-Text GLabel 5650 1650 1    50   Input ~ 0
+Text GLabel 5650 1650 1    50   Output ~ 0
 TEENSY_3V3
 Wire Wire Line
 	5650 1650 5650 2450
-Text GLabel 700  1650 1    50   Input ~ 0
+Text GLabel 700  2350 1    50   Input ~ 0
 TEENSY_3V3
 Wire Wire Line
-	700  1850 700  1650
-Text Notes 700  6150 0    50   ~ 10
-TO DO: Update this to be SAO, and some easy to add I2C OLED 4-pin header.
-Text Notes 8050 1350 0    50   ~ 10
+	700  2550 700  2350
+Text Notes 8500 900  0    50   ~ 10
 TO DO: Add Feather module.
 Text GLabel 5300 1650 1    50   Input ~ 0
 TEENSY_VIN
+Text GLabel 6050 3500 1    50   Input ~ 0
+TEENSY_3V3
+Text GLabel 6350 3500 1    50   Input ~ 0
+TEENSY_3V3
 $EndSCHEMATC

@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title "Core 64 - Power Schematic"
 Date "2020-03-15"
 Rev "0.3"
@@ -655,8 +655,8 @@ P 4450 5100
 AR Path="/5E755787/5E90E57B" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E90E57B" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5E90E57B" Ref="C?"  Part="1" 
-AR Path="/5E7548ED/5E90E57B" Ref="C?"  Part="1" 
-F 0 "C?" H 4550 5200 50  0000 L CNN
+AR Path="/5E7548ED/5E90E57B" Ref="C3"  Part="1" 
+F 0 "C3" H 4550 5200 50  0000 L CNN
 F 1 "1000uF" H 4550 5100 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_8x10" H 4450 5100 50  0001 C CNN
 F 3 "~" H 4450 5100 50  0001 C CNN
@@ -673,12 +673,12 @@ Connection ~ 3950 4950
 Wire Wire Line
 	4450 4950 4450 5000
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0119
 U 1 1 5E9A5B3C
 P 4450 5250
-AR Path="/5E7548ED/5E9A5B3C" Ref="#PWR?"  Part="1" 
+AR Path="/5E7548ED/5E9A5B3C" Ref="#PWR0119"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E9A5B3C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4450 5000 50  0001 C CNN
+F 0 "#PWR0119" H 4450 5000 50  0001 C CNN
 F 1 "GND" H 4455 5075 50  0000 C CNN
 F 2 "" H 4450 5250 50  0001 C CNN
 F 3 "" H 4450 5250 50  0001 C CNN
@@ -702,10 +702,10 @@ LED ARRAY, TEENSY VIN
 Text Notes 8550 3600 0    50   ~ 10
 TO DO: Does Feather receive power to MCU directly from battery?\nDoes Feather require a battery to be connected in order to work?
 $Comp
-L Transistor_FET:IRLML2060 Q?
+L Transistor_FET:IRLML2060 Q1
 U 1 1 5E770BB5
 P 1800 6750
-F 0 "Q?" V 2051 6750 50  0000 C CNN
+F 0 "Q1" V 2051 6750 50  0000 C CNN
 F 1 "IRLML6344TRPBF" V 2144 6750 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 2000 6675 50  0001 L CIN
 F 3 "https://www.digikey.com/product-detail/en/infineon-technologies/IRLML6344TRPBF/IRLML6344TRPBFCT-ND/2538168" H 1800 6750 50  0001 L CNN

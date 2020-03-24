@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title "Core 64 - Main Sheet Index"
 Date "2020-03-20"
 Rev "0.3"
@@ -23,7 +23,7 @@ $EndSheet
 $Sheet
 S 3500 1000 2250 300 
 U 5E755787
-F0 "MCU Logic" 50
+F0 "MCUs" 50
 F1 "Interactive Core Memory Badge (Logic) MCU v0.3.sch" 50
 $EndSheet
 $Sheet
@@ -40,4 +40,12 @@ U 5E75D6AB
 F0 "SENSE" 50
 F1 "Interactive Core Memory Badge (Logic) Sense v0.3.sch" 50
 $EndSheet
+$Sheet
+S 3500 1850 2250 300 
+U 5EA63449
+F0 "IO Expansion" 50
+F1 "IO Expansion.sch" 50
+$EndSheet
+Text Notes 1000 2850 0    50   ~ 10
+TO DO: Move the two MCUs to this top level sheet and remove the MCU logic sheet?
 $EndSCHEMATC
