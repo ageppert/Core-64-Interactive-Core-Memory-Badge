@@ -360,4 +360,10 @@ Text GLabel 6050 3500 1    50   Input ~ 0
 TEENSY_3V3
 Text GLabel 6350 3500 1    50   Input ~ 0
 TEENSY_3V3
+Text Notes 2250 4200 0    50   ~ 10
+TO DO: Board ID setting with analog levels for two analog pins?
+Text Notes 4200 3200 0    50   ~ 10
+TO DO: SD Card access?
+Text Notes 4200 4950 0    50   ~ 10
+TO DO: Magnetic or NFC connection.
 $EndSCHEMATC

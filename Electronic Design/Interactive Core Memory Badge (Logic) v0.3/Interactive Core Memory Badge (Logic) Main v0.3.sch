@@ -44,7 +44,7 @@ $Sheet
 S 3500 1850 2250 300 
 U 5EA63449
 F0 "IO Expansion" 50
-F1 "IO Expansion.sch" 50
+F1 "Interactive Core Memory Badge (Logic) IO Expansion V0.3.sch" 50
 $EndSheet
 Text Notes 1000 2850 0    50   ~ 10
 TO DO: Move the two MCUs to this top level sheet and remove the MCU logic sheet?

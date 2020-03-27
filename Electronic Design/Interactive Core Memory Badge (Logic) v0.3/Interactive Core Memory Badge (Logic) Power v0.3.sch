@@ -714,4 +714,6 @@ F 3 "https://www.digikey.com/product-detail/en/infineon-technologies/IRLML6344TR
 $EndComp
 Text Notes 3200 3650 0    50   ~ 10
 TO DO: Teensy and feather power to -Batt or GND? \nDo they need to avoid the reverse polarity detector? \nOr will they interfere?
+Text Notes 3650 6450 0    50   ~ 10
+TO DO: Connect to analog inputs of MCU for self-test and diagnostics.
 $EndSCHEMATC

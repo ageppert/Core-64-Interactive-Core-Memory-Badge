@@ -4765,7 +4765,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical_SMD_Pin1Left (layer F.Cu) (tedit 5A19A423) (tstamp 5E7570DF)
-    (at -29.635 -8.15)
+    (at -35.56 0)
     (descr "surface-mounted straight socket strip, 1x16, 2.54mm pitch, single row, style 1 (pin 1 left) (https://cdn.harwin.com/pdfs/M20-786.pdf), script generated")
     (tags "Surface mounted socket strip SMD 1x16 2.54mm single row style1 pin1 left")
     (path /5E755AC8/5E78B5F3)
@@ -4897,7 +4897,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical_SMD_Pin1Left (layer F.Cu) (tedit 5A19A423) (tstamp 5E757142)
-    (at 30.115 -8.4)
+    (at 35.56 0)
     (descr "surface-mounted straight socket strip, 1x16, 2.54mm pitch, single row, style 1 (pin 1 left) (https://cdn.harwin.com/pdfs/M20-786.pdf), script generated")
     (tags "Surface mounted socket strip SMD 1x16 2.54mm single row style1 pin1 left")
     (path /5E755AC8/5E78B5ED)
