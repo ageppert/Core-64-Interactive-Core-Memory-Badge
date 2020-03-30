@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 4 6
+Sheet 2 5
 Title "Core 64 - Core Array Driver"
 Date "2020-03-15"
 Rev "0.3"
@@ -1781,7 +1781,7 @@ SENSE2
 Wire Wire Line
 	900  2400 800  2400
 Text GLabel 2500 3000 0    50   Input ~ 0
-LED_MATRIX
+LED_MATRIX_+VSW
 Wire Wire Line
 	2500 3000 2550 3000
 $Comp
