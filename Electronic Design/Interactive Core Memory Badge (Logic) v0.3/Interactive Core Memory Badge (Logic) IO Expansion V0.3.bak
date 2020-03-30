@@ -72,7 +72,7 @@ AR Path="/5E755787/5EAA2FDC" Ref="U?"  Part="1"
 AR Path="/5EA63449/5EAA2FDC" Ref="U8"  Part="1" 
 F 0 "U8" H 7500 1770 50  0000 C CNN
 F 1 "74HC14" H 7500 1677 50  0000 C CNN
-F 2 "" H 7500 1450 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7500 1450 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 1450 50  0001 C CNN
 	1    7500 1450
 	1    0    0    -1  
@@ -89,7 +89,7 @@ AR Path="/5E755787/5EAA2FE4" Ref="U?"  Part="2"
 AR Path="/5EA63449/5EAA2FE4" Ref="U8"  Part="2" 
 F 0 "U8" H 7500 2270 50  0000 C CNN
 F 1 "74HC14" H 7500 2177 50  0000 C CNN
-F 2 "" H 7500 1950 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7500 1950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 1950 50  0001 C CNN
 	2    7500 1950
 	1    0    0    -1  
@@ -102,7 +102,7 @@ AR Path="/5E755787/5EAA2FEA" Ref="U?"  Part="3"
 AR Path="/5EA63449/5EAA2FEA" Ref="U8"  Part="3" 
 F 0 "U8" H 7500 2770 50  0000 C CNN
 F 1 "74HC14" H 7500 2677 50  0000 C CNN
-F 2 "" H 7500 2450 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7500 2450 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 2450 50  0001 C CNN
 	3    7500 2450
 	1    0    0    -1  
@@ -115,7 +115,7 @@ AR Path="/5E755787/5EAA2FF0" Ref="U?"  Part="4"
 AR Path="/5EA63449/5EAA2FF0" Ref="U8"  Part="4" 
 F 0 "U8" H 7500 3320 50  0000 C CNN
 F 1 "74HC14" H 7500 3227 50  0000 C CNN
-F 2 "" H 7500 3000 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7500 3000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 3000 50  0001 C CNN
 	4    7500 3000
 	1    0    0    -1  
@@ -128,7 +128,7 @@ AR Path="/5E755787/5EAA2FF6" Ref="U?"  Part="5"
 AR Path="/5EA63449/5EAA2FF6" Ref="U8"  Part="5" 
 F 0 "U8" H 7500 3820 50  0000 C CNN
 F 1 "74HC14" H 7500 3727 50  0000 C CNN
-F 2 "" H 7500 3500 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7500 3500 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 3500 50  0001 C CNN
 	5    7500 3500
 	1    0    0    -1  
@@ -141,7 +141,7 @@ AR Path="/5E755787/5EAA2FFC" Ref="U?"  Part="6"
 AR Path="/5EA63449/5EAA2FFC" Ref="U8"  Part="6" 
 F 0 "U8" H 7500 4370 50  0000 C CNN
 F 1 "74HC14" H 7500 4277 50  0000 C CNN
-F 2 "" H 7500 4050 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7500 4050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 4050 50  0001 C CNN
 	6    7500 4050
 	1    0    0    -1  
@@ -154,7 +154,7 @@ AR Path="/5E755787/5EAA3002" Ref="U?"  Part="7"
 AR Path="/5EA63449/5EAA3002" Ref="U8"  Part="7" 
 F 0 "U8" H 10630 1297 50  0000 L CNN
 F 1 "74HC14" H 10630 1204 50  0000 L CNN
-F 2 "" H 10400 1250 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 10400 1250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 10400 1250 50  0001 C CNN
 	7    10400 1250
 	1    0    0    -1  
@@ -167,7 +167,7 @@ AR Path="/5E755787/5EAA3008" Ref="U?"  Part="1"
 AR Path="/5EA63449/5EAA3008" Ref="U9"  Part="1" 
 F 0 "U9" H 9250 1770 50  0000 C CNN
 F 1 "74HC14" H 9250 1677 50  0000 C CNN
-F 2 "" H 9250 1450 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 9250 1450 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 1450 50  0001 C CNN
 	1    9250 1450
 	1    0    0    -1  
@@ -180,7 +180,7 @@ AR Path="/5E755787/5EAA300E" Ref="U?"  Part="2"
 AR Path="/5EA63449/5EAA300E" Ref="U9"  Part="2" 
 F 0 "U9" H 9250 2270 50  0000 C CNN
 F 1 "74HC14" H 9250 2177 50  0000 C CNN
-F 2 "" H 9250 1950 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 9250 1950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 1950 50  0001 C CNN
 	2    9250 1950
 	1    0    0    -1  
@@ -193,7 +193,7 @@ AR Path="/5E755787/5EAA3014" Ref="U?"  Part="3"
 AR Path="/5EA63449/5EAA3014" Ref="U9"  Part="3" 
 F 0 "U9" H 9250 2770 50  0000 C CNN
 F 1 "74HC14" H 9250 2677 50  0000 C CNN
-F 2 "" H 9250 2450 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 9250 2450 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 2450 50  0001 C CNN
 	3    9250 2450
 	1    0    0    -1  
@@ -206,7 +206,7 @@ AR Path="/5E755787/5EAA301A" Ref="U?"  Part="4"
 AR Path="/5EA63449/5EAA301A" Ref="U9"  Part="4" 
 F 0 "U9" H 9250 3320 50  0000 C CNN
 F 1 "74HC14" H 9250 3227 50  0000 C CNN
-F 2 "" H 9250 3000 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 9250 3000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 3000 50  0001 C CNN
 	4    9250 3000
 	1    0    0    -1  
@@ -219,7 +219,7 @@ AR Path="/5E755787/5EAA3020" Ref="U?"  Part="5"
 AR Path="/5EA63449/5EAA3020" Ref="U9"  Part="5" 
 F 0 "U9" H 9250 3870 50  0000 C CNN
 F 1 "74HC14" H 9250 3777 50  0000 C CNN
-F 2 "" H 9250 3550 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 9250 3550 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 3550 50  0001 C CNN
 	5    9250 3550
 	1    0    0    -1  
@@ -232,7 +232,7 @@ AR Path="/5E755787/5EAA3026" Ref="U?"  Part="6"
 AR Path="/5EA63449/5EAA3026" Ref="U9"  Part="6" 
 F 0 "U9" H 9250 4370 50  0000 C CNN
 F 1 "74HC14" H 9250 4277 50  0000 C CNN
-F 2 "" H 9250 4050 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 9250 4050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 4050 50  0001 C CNN
 	6    9250 4050
 	1    0    0    -1  
@@ -245,7 +245,7 @@ AR Path="/5E755787/5EAA302C" Ref="U?"  Part="7"
 AR Path="/5EA63449/5EAA302C" Ref="U9"  Part="7" 
 F 0 "U9" H 10780 2797 50  0000 L CNN
 F 1 "74HC14" H 10780 2704 50  0000 L CNN
-F 2 "" H 10550 2750 50  0001 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 10550 2750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 10550 2750 50  0001 C CNN
 	7    10550 2750
 	1    0    0    -1  
@@ -308,24 +308,24 @@ F 3 "" H 6350 5450 50  0001 C CNN
 	1    6350 5450
 	1    0    0    -1  
 $EndComp
-Text GLabel 7850 5400 2    50   BiDi ~ 0
+Text GLabel 8200 5400 2    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 7850 5550 2    50   BiDi ~ 0
+Text GLabel 8200 5550 2    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
-	7850 5550 7700 5550
+	8200 5550 8150 5550
 $Comp
 L Device:CP1_Small C?
 U 1 1 5EAA9409
-P 6800 5700
+P 6750 5700
 AR Path="/5E755787/5EAA9409" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EAA9409" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5EAA9409" Ref="C2"  Part="1" 
-F 0 "C2" H 6891 5746 50  0000 L CNN
-F 1 "10uF" H 6891 5655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 6800 5700 50  0001 C CNN
-F 3 "~" H 6800 5700 50  0001 C CNN
-	1    6800 5700
+F 0 "C2" H 6841 5746 50  0000 L CNN
+F 1 "10uF" H 6841 5655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6750 5700 50  0001 C CNN
+F 3 "~" H 6750 5700 50  0001 C CNN
+	1    6750 5700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -343,16 +343,14 @@ F 3 "~" H 6350 5700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6800 5450 6800 5600
+	6750 5450 6750 5600
 Wire Wire Line
-	6800 5800 6800 5950
-Wire Wire Line
-	6800 5950 6350 5950
+	6750 5800 6750 5950
 Wire Wire Line
 	6350 5600 6350 5450
 Connection ~ 6350 5450
 Wire Wire Line
-	6350 5450 6800 5450
+	6350 5450 6750 5450
 Wire Wire Line
 	6350 5800 6350 5950
 Connection ~ 6350 5950
@@ -592,34 +590,27 @@ OLED DISPLAY (OPTIONAL)
 $Comp
 L Connector:Conn_01x04_Female J5
 U 1 1 5E830BC9
-P 7500 5800
-F 0 "J5" V 7400 5450 50  0000 L CNN
-F 1 "Conn_01x04_Female" V 7600 5350 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 7500 5800 50  0001 C CNN
-F 3 "~" H 7500 5800 50  0001 C CNN
-	1    7500 5800
+P 7950 5800
+F 0 "J5" V 7850 5450 50  0000 L CNN
+F 1 "Conn_01x04_Female" V 8050 5350 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 7950 5800 50  0001 C CNN
+F 3 "~" H 7950 5800 50  0001 C CNN
+	1    7950 5800
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	7700 5600 7700 5550
+	8150 5600 8150 5550
 Wire Wire Line
-	7600 5400 7600 5600
+	8050 5400 8050 5600
 Wire Wire Line
-	7600 5400 7850 5400
+	8050 5400 8200 5400
 Wire Wire Line
-	6800 5450 7500 5450
+	7250 5500 7950 5500
 Wire Wire Line
-	7500 5450 7500 5600
-Connection ~ 6800 5450
+	7950 5500 7950 5600
+Connection ~ 6750 5950
 Wire Wire Line
-	6800 5950 7150 5950
-Wire Wire Line
-	7150 5950 7150 5550
-Wire Wire Line
-	7150 5550 7400 5550
-Connection ~ 6800 5950
-Wire Wire Line
-	7400 5550 7400 5600
+	7850 5550 7850 5600
 Text Notes 6300 5150 0    50   ~ 0
 0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C\n(alternate is 0x3D, not 0x7A or 0x78!)
 Text Notes 9750 5150 0    50   ~ 0
@@ -822,4 +813,51 @@ Wire Wire Line
 	4950 7250 4950 7200
 Wire Wire Line
 	4950 7200 5000 7200
+$Comp
+L Jumper:SolderJumper_3_Open JP2
+U 1 1 5E81A96A
+P 7400 5750
+F 0 "JP2" V 7250 5800 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 7000 5300 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 7400 5750 50  0001 C CNN
+F 3 "~" H 7400 5750 50  0001 C CNN
+	1    7400 5750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Open JP1
+U 1 1 5E82F3CE
+P 7100 5650
+F 0 "JP1" V 7200 5700 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 6450 5550 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 7100 5650 50  0001 C CNN
+F 3 "~" H 7100 5650 50  0001 C CNN
+	1    7100 5650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7600 5550 7850 5550
+Wire Wire Line
+	7550 5750 7600 5750
+Wire Wire Line
+	7600 5750 7600 5550
+Wire Wire Line
+	7250 5650 7250 5500
+Wire Wire Line
+	7100 5950 7100 5850
+Connection ~ 7100 5950
+Wire Wire Line
+	7100 5950 7400 5950
+Wire Wire Line
+	7100 5450 7400 5450
+Wire Wire Line
+	7400 5450 7400 5550
+Wire Wire Line
+	6750 5950 6350 5950
+Wire Wire Line
+	6750 5950 7100 5950
+Wire Wire Line
+	6750 5450 7100 5450
+Connection ~ 6750 5450
+Connection ~ 7100 5450
 $EndSCHEMATC
