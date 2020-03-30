@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BM03B-PASS-1-TFT__LF__SN_
+D Conn Shrouded Header HDR 3 POS 2mm Solder ST SMD T/R
+K
+F http://www.jst-mfg.com/product/pdf/eng/ePA-F.pdf
+$ENDCMP
+#
+#End Doc Library
