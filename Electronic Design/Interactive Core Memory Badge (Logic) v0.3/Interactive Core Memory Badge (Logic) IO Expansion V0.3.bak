@@ -14,367 +14,363 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 4900 1300 2    50   Output ~ 0
+Text GLabel 3050 1300 2    50   Output ~ 0
 nQ1P
-Text GLabel 4900 1400 2    50   Output ~ 0
+Text GLabel 3050 1400 2    50   Output ~ 0
 Q1N
-Text GLabel 4900 4800 2    50   Input ~ 0
+Text GLabel 3000 4850 2    50   Input ~ 0
 SENSE_PULSE
-Text GLabel 4900 1500 2    50   Output ~ 0
+Text GLabel 3050 1500 2    50   Output ~ 0
 nQ2P
-Text GLabel 4900 1600 2    50   Output ~ 0
+Text GLabel 3050 1600 2    50   Output ~ 0
 Q2N
-Text GLabel 4900 1700 2    50   Output ~ 0
+Text GLabel 3050 1700 2    50   Output ~ 0
 nQ3P
-Text GLabel 4900 1800 2    50   Output ~ 0
+Text GLabel 3050 1800 2    50   Output ~ 0
 Q3N
-Text GLabel 4900 1900 2    50   Output ~ 0
+Text GLabel 3050 1900 2    50   Output ~ 0
 nQ4P
-Text GLabel 4900 2000 2    50   Output ~ 0
+Text GLabel 3050 2000 2    50   Output ~ 0
 Q4N
-Text GLabel 4900 2200 2    50   Output ~ 0
+Text GLabel 3050 2200 2    50   Output ~ 0
 nQ5P
-Text GLabel 4900 2300 2    50   Output ~ 0
+Text GLabel 3050 2300 2    50   Output ~ 0
 Q5N
-Text GLabel 4900 2400 2    50   Output ~ 0
+Text GLabel 3050 2400 2    50   Output ~ 0
 nQ6P
-Text GLabel 4900 2500 2    50   Output ~ 0
+Text GLabel 3050 2500 2    50   Output ~ 0
 Q6N
-Text GLabel 4900 2600 2    50   Output ~ 0
+Text GLabel 3050 2600 2    50   Output ~ 0
 nQ7P
-Text GLabel 4900 3900 2    50   Output ~ 0
+Text GLabel 3000 3950 2    50   Output ~ 0
 nQ9P
-Text GLabel 4900 2900 2    50   Output ~ 0
+Text GLabel 3050 2900 2    50   Output ~ 0
 Q8N
-Text GLabel 4900 2800 2    50   Output ~ 0
+Text GLabel 3050 2800 2    50   Output ~ 0
 nQ8P
-Text GLabel 4900 2700 2    50   Output ~ 0
+Text GLabel 3050 2700 2    50   Output ~ 0
 Q7N
-Text GLabel 4900 4200 2    50   Output ~ 0
+Text GLabel 3000 4250 2    50   Output ~ 0
 Q10N
-Text GLabel 4900 4100 2    50   Output ~ 0
+Text GLabel 3000 4150 2    50   Output ~ 0
 nQ10P
-Text GLabel 4900 4000 2    50   Output ~ 0
+Text GLabel 3000 4050 2    50   Output ~ 0
 Q9N
-Text GLabel 4900 4900 2    50   Input ~ 0
+Text GLabel 3000 4950 2    50   Input ~ 0
 HALL_SWITCH
-Text GLabel 4900 4400 2    50   Output ~ 0
+Text GLabel 3000 4450 2    50   Output ~ 0
 SENSE_RESET
-Text Notes 2250 700  0    118  ~ 0
-IO EXPANSION
-Text Notes 6850 1050 0    118  ~ 0
-Invert PNP transistor drives
+Text Notes 550  700  0    118  ~ 0
+IO EXPANDER FOR CORE DRIVE ARRAY
+Text Notes 5350 700  0    118  ~ 0
+INVERT DRIVE SIGNALS FOR PNP TRANSISTORS
 $Comp
 L 74xx:74HC14 U?
 U 1 1 5EAA2FDC
-P 7500 1450
+P 6000 1100
 AR Path="/5E755787/5EAA2FDC" Ref="U?"  Part="1" 
 AR Path="/5EA63449/5EAA2FDC" Ref="U8"  Part="1" 
-F 0 "U8" H 7500 1770 50  0000 C CNN
-F 1 "74HC14" H 7500 1677 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7500 1450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 1450 50  0001 C CNN
-	1    7500 1450
+F 0 "U8" H 6000 1420 50  0000 C CNN
+F 1 "74HC14" H 6000 1327 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 6000 1100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 1100 50  0001 C CNN
+	1    6000 1100
 	1    0    0    -1  
 $EndComp
-Text GLabel 7200 1450 0    50   Input ~ 0
+Text GLabel 5700 1100 0    50   Input ~ 0
 nQ1P
-Text GLabel 7800 1450 2    50   Output ~ 0
+Text GLabel 6300 1100 2    50   Output ~ 0
 Q1P
 $Comp
 L 74xx:74HC14 U?
 U 2 1 5EAA2FE4
-P 7500 1950
+P 6000 1600
 AR Path="/5E755787/5EAA2FE4" Ref="U?"  Part="2" 
 AR Path="/5EA63449/5EAA2FE4" Ref="U8"  Part="2" 
-F 0 "U8" H 7500 2270 50  0000 C CNN
-F 1 "74HC14" H 7500 2177 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7500 1950 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 1950 50  0001 C CNN
-	2    7500 1950
+F 0 "U8" H 6000 1920 50  0000 C CNN
+F 1 "74HC14" H 6000 1827 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 6000 1600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 1600 50  0001 C CNN
+	2    6000 1600
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 3 1 5EAA2FEA
-P 7500 2450
+P 6000 2100
 AR Path="/5E755787/5EAA2FEA" Ref="U?"  Part="3" 
 AR Path="/5EA63449/5EAA2FEA" Ref="U8"  Part="3" 
-F 0 "U8" H 7500 2770 50  0000 C CNN
-F 1 "74HC14" H 7500 2677 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7500 2450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 2450 50  0001 C CNN
-	3    7500 2450
+F 0 "U8" H 6000 2420 50  0000 C CNN
+F 1 "74HC14" H 6000 2327 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 6000 2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 2100 50  0001 C CNN
+	3    6000 2100
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 4 1 5EAA2FF0
-P 7500 3000
+P 6000 2650
 AR Path="/5E755787/5EAA2FF0" Ref="U?"  Part="4" 
 AR Path="/5EA63449/5EAA2FF0" Ref="U8"  Part="4" 
-F 0 "U8" H 7500 3320 50  0000 C CNN
-F 1 "74HC14" H 7500 3227 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7500 3000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 3000 50  0001 C CNN
-	4    7500 3000
+F 0 "U8" H 6000 2970 50  0000 C CNN
+F 1 "74HC14" H 6000 2877 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 6000 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 2650 50  0001 C CNN
+	4    6000 2650
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 5 1 5EAA2FF6
-P 7500 3500
+P 6000 3150
 AR Path="/5E755787/5EAA2FF6" Ref="U?"  Part="5" 
 AR Path="/5EA63449/5EAA2FF6" Ref="U8"  Part="5" 
-F 0 "U8" H 7500 3820 50  0000 C CNN
-F 1 "74HC14" H 7500 3727 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7500 3500 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 3500 50  0001 C CNN
-	5    7500 3500
+F 0 "U8" H 6000 3470 50  0000 C CNN
+F 1 "74HC14" H 6000 3377 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 6000 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 3150 50  0001 C CNN
+	5    6000 3150
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 6 1 5EAA2FFC
-P 7500 4050
+P 6000 3700
 AR Path="/5E755787/5EAA2FFC" Ref="U?"  Part="6" 
 AR Path="/5EA63449/5EAA2FFC" Ref="U8"  Part="6" 
-F 0 "U8" H 7500 4370 50  0000 C CNN
-F 1 "74HC14" H 7500 4277 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7500 4050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7500 4050 50  0001 C CNN
-	6    7500 4050
+F 0 "U8" H 6000 4020 50  0000 C CNN
+F 1 "74HC14" H 6000 3927 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 6000 3700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 3700 50  0001 C CNN
+	6    6000 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 7 1 5EAA3002
-P 10400 1250
+P 8400 1500
 AR Path="/5E755787/5EAA3002" Ref="U?"  Part="7" 
 AR Path="/5EA63449/5EAA3002" Ref="U8"  Part="7" 
-F 0 "U8" H 10630 1297 50  0000 L CNN
-F 1 "74HC14" H 10630 1204 50  0000 L CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 10400 1250 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 10400 1250 50  0001 C CNN
-	7    10400 1250
+F 0 "U8" H 8630 1547 50  0000 L CNN
+F 1 "74HC14" H 8630 1454 50  0000 L CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 8400 1500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 8400 1500 50  0001 C CNN
+	7    8400 1500
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 1 1 5EAA3008
-P 9250 1450
+P 7350 1100
 AR Path="/5E755787/5EAA3008" Ref="U?"  Part="1" 
 AR Path="/5EA63449/5EAA3008" Ref="U9"  Part="1" 
-F 0 "U9" H 9250 1770 50  0000 C CNN
-F 1 "74HC14" H 9250 1677 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 9250 1450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 1450 50  0001 C CNN
-	1    9250 1450
+F 0 "U9" H 7350 1420 50  0000 C CNN
+F 1 "74HC14" H 7350 1327 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7350 1100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 1100 50  0001 C CNN
+	1    7350 1100
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 2 1 5EAA300E
-P 9250 1950
+P 7350 1600
 AR Path="/5E755787/5EAA300E" Ref="U?"  Part="2" 
 AR Path="/5EA63449/5EAA300E" Ref="U9"  Part="2" 
-F 0 "U9" H 9250 2270 50  0000 C CNN
-F 1 "74HC14" H 9250 2177 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 9250 1950 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 1950 50  0001 C CNN
-	2    9250 1950
+F 0 "U9" H 7350 1920 50  0000 C CNN
+F 1 "74HC14" H 7350 1827 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7350 1600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 1600 50  0001 C CNN
+	2    7350 1600
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 3 1 5EAA3014
-P 9250 2450
+P 7350 2100
 AR Path="/5E755787/5EAA3014" Ref="U?"  Part="3" 
 AR Path="/5EA63449/5EAA3014" Ref="U9"  Part="3" 
-F 0 "U9" H 9250 2770 50  0000 C CNN
-F 1 "74HC14" H 9250 2677 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 9250 2450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 2450 50  0001 C CNN
-	3    9250 2450
+F 0 "U9" H 7350 2420 50  0000 C CNN
+F 1 "74HC14" H 7350 2327 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7350 2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 2100 50  0001 C CNN
+	3    7350 2100
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 4 1 5EAA301A
-P 9250 3000
+P 7350 2650
 AR Path="/5E755787/5EAA301A" Ref="U?"  Part="4" 
 AR Path="/5EA63449/5EAA301A" Ref="U9"  Part="4" 
-F 0 "U9" H 9250 3320 50  0000 C CNN
-F 1 "74HC14" H 9250 3227 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 9250 3000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 3000 50  0001 C CNN
-	4    9250 3000
+F 0 "U9" H 7350 2970 50  0000 C CNN
+F 1 "74HC14" H 7350 2877 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7350 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 2650 50  0001 C CNN
+	4    7350 2650
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 5 1 5EAA3020
-P 9250 3550
+P 7350 3200
 AR Path="/5E755787/5EAA3020" Ref="U?"  Part="5" 
 AR Path="/5EA63449/5EAA3020" Ref="U9"  Part="5" 
-F 0 "U9" H 9250 3870 50  0000 C CNN
-F 1 "74HC14" H 9250 3777 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 9250 3550 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 3550 50  0001 C CNN
-	5    9250 3550
+F 0 "U9" H 7350 3520 50  0000 C CNN
+F 1 "74HC14" H 7350 3427 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7350 3200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 3200 50  0001 C CNN
+	5    7350 3200
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 6 1 5EAA3026
-P 9250 4050
+P 7350 3700
 AR Path="/5E755787/5EAA3026" Ref="U?"  Part="6" 
 AR Path="/5EA63449/5EAA3026" Ref="U9"  Part="6" 
-F 0 "U9" H 9250 4370 50  0000 C CNN
-F 1 "74HC14" H 9250 4277 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 9250 4050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9250 4050 50  0001 C CNN
-	6    9250 4050
+F 0 "U9" H 7350 4020 50  0000 C CNN
+F 1 "74HC14" H 7350 3927 50  0000 C CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 7350 3700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 3700 50  0001 C CNN
+	6    7350 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74HC14 U?
 U 7 1 5EAA302C
-P 10550 2750
+P 8400 3150
 AR Path="/5E755787/5EAA302C" Ref="U?"  Part="7" 
 AR Path="/5EA63449/5EAA302C" Ref="U9"  Part="7" 
-F 0 "U9" H 10780 2797 50  0000 L CNN
-F 1 "74HC14" H 10780 2704 50  0000 L CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 10550 2750 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 10550 2750 50  0001 C CNN
-	7    10550 2750
+F 0 "U9" H 8630 3197 50  0000 L CNN
+F 1 "74HC14" H 8630 3104 50  0000 L CNN
+F 2 "Digikey:SOIC-14_W3.9mm" H 8400 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 8400 3150 50  0001 C CNN
+	7    8400 3150
 	1    0    0    -1  
 $EndComp
-Text GLabel 7200 1950 0    50   Input ~ 0
+Text GLabel 5700 1600 0    50   Input ~ 0
 nQ2P
-Text GLabel 7200 2450 0    50   Input ~ 0
+Text GLabel 5700 2100 0    50   Input ~ 0
 nQ3P
-Text GLabel 7200 3000 0    50   Input ~ 0
+Text GLabel 5700 2650 0    50   Input ~ 0
 nQ4P
-Text GLabel 7200 3500 0    50   Input ~ 0
+Text GLabel 5700 3150 0    50   Input ~ 0
 nQ5P
-Text GLabel 7200 4050 0    50   Input ~ 0
+Text GLabel 5700 3700 0    50   Input ~ 0
 nQ6P
-Text GLabel 8950 1450 0    50   Input ~ 0
+Text GLabel 7050 1100 0    50   Input ~ 0
 nQ7P
-Text GLabel 8700 1950 2    50   Input ~ 0
+Text GLabel 6800 1600 2    50   Input ~ 0
 nQ8P
-Text GLabel 8700 2450 2    50   Input ~ 0
+Text GLabel 6800 2100 2    50   Input ~ 0
 nQ9P
-Text GLabel 8650 3000 2    50   Input ~ 0
+Text GLabel 6750 2650 2    50   Input ~ 0
 nQ10P
-Text GLabel 7800 1950 2    50   Output ~ 0
+Text GLabel 6300 1600 2    50   Output ~ 0
 Q2P
-Text GLabel 7800 2450 2    50   Output ~ 0
+Text GLabel 6300 2100 2    50   Output ~ 0
 Q3P
-Text GLabel 7800 3000 2    50   Output ~ 0
+Text GLabel 6300 2650 2    50   Output ~ 0
 Q4P
-Text GLabel 7800 3500 2    50   Output ~ 0
+Text GLabel 6300 3150 2    50   Output ~ 0
 Q5P
-Text GLabel 7800 4050 2    50   Output ~ 0
+Text GLabel 6300 3700 2    50   Output ~ 0
 Q6P
-Text GLabel 9550 1450 2    50   Output ~ 0
+Text GLabel 7650 1100 2    50   Output ~ 0
 Q7P
-Text GLabel 9550 1950 2    50   Output ~ 0
+Text GLabel 7650 1600 2    50   Output ~ 0
 Q8P
-Text GLabel 9550 2450 2    50   Output ~ 0
+Text GLabel 7650 2100 2    50   Output ~ 0
 Q9P
-Text GLabel 9550 3000 2    50   Output ~ 0
+Text GLabel 7650 2650 2    50   Output ~ 0
 Q10P
-Text GLabel 4900 5000 2    50   Input ~ 0
+Text GLabel 3000 5050 2    50   Input ~ 0
 HALL_SWITCH
-Text GLabel 4900 5100 2    50   Input ~ 0
+Text GLabel 3000 5150 2    50   Input ~ 0
 HALL_SWITCH
-Text GLabel 4900 5200 2    50   Input ~ 0
+Text GLabel 3000 5250 2    50   Input ~ 0
 HALL_SWITCH
-Text GLabel 4900 4300 2    50   Output ~ 0
+Text GLabel 3000 4350 2    50   Output ~ 0
 WRITE_ENABLE
 $Comp
 L power:+VSW #PWR?
 U 1 1 5EAA93FF
-P 6350 5450
+P 5950 5700
 AR Path="/5E755787/5EAA93FF" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EAA93FF" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5EAA93FF" Ref="#PWR0123"  Part="1" 
-F 0 "#PWR0123" H 6350 5300 50  0001 C CNN
-F 1 "+VSW" H 6365 5623 50  0000 C CNN
-F 2 "" H 6350 5450 50  0001 C CNN
-F 3 "" H 6350 5450 50  0001 C CNN
-	1    6350 5450
+F 0 "#PWR0123" H 5950 5550 50  0001 C CNN
+F 1 "+VSW" H 5965 5873 50  0000 C CNN
+F 2 "" H 5950 5700 50  0001 C CNN
+F 3 "" H 5950 5700 50  0001 C CNN
+	1    5950 5700
 	1    0    0    -1  
 $EndComp
-Text GLabel 8200 5400 2    50   BiDi ~ 0
+Text GLabel 7800 5650 2    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 8200 5550 2    50   BiDi ~ 0
+Text GLabel 7800 5800 2    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
-	8200 5550 8150 5550
+	7800 5800 7750 5800
 $Comp
 L Device:CP1_Small C?
 U 1 1 5EAA9409
-P 6750 5700
+P 6350 5950
 AR Path="/5E755787/5EAA9409" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EAA9409" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5EAA9409" Ref="C2"  Part="1" 
-F 0 "C2" H 6841 5746 50  0000 L CNN
-F 1 "10uF" H 6841 5655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 6750 5700 50  0001 C CNN
-F 3 "~" H 6750 5700 50  0001 C CNN
-	1    6750 5700
+F 0 "C2" H 6441 5996 50  0000 L CNN
+F 1 "10uF" H 6441 5905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6350 5950 50  0001 C CNN
+F 3 "~" H 6350 5950 50  0001 C CNN
+	1    6350 5950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP1_Small C?
 U 1 1 5EAA940F
-P 6350 5700
+P 5950 5950
 AR Path="/5E755787/5EAA940F" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EAA940F" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5EAA940F" Ref="C1"  Part="1" 
-F 0 "C1" H 6441 5746 50  0000 L CNN
-F 1 "0.1uF" H 6441 5655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 6350 5700 50  0001 C CNN
-F 3 "~" H 6350 5700 50  0001 C CNN
-	1    6350 5700
+F 0 "C1" H 6041 5996 50  0000 L CNN
+F 1 "0.1uF" H 6041 5905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 5950 5950 50  0001 C CNN
+F 3 "~" H 5950 5950 50  0001 C CNN
+	1    5950 5950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6750 5450 6750 5600
+	6350 5700 6350 5850
 Wire Wire Line
-	6750 5800 6750 5950
+	6350 6050 6350 6200
 Wire Wire Line
-	6350 5600 6350 5450
-Connection ~ 6350 5450
+	5950 5850 5950 5700
+Connection ~ 5950 5700
 Wire Wire Line
-	6350 5450 6750 5450
+	5950 5700 6350 5700
 Wire Wire Line
-	6350 5800 6350 5950
-Connection ~ 6350 5950
+	5950 6050 5950 6200
+Connection ~ 5950 6200
 Text Notes 550  6300 0    118  ~ 0
 SUPERIOR ADD-ON SOCKET (OPTIONAL)
 $Comp
 L power:GND #PWR?
 U 1 1 5EAA9421
-P 6350 6000
+P 5950 6250
 AR Path="/5E755787/5EAA9421" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5EAA9421" Ref="#PWR0124"  Part="1" 
-F 0 "#PWR0124" H 6350 5750 50  0001 C CNN
-F 1 "GND" H 6355 5825 50  0000 C CNN
-F 2 "" H 6350 6000 50  0001 C CNN
-F 3 "" H 6350 6000 50  0001 C CNN
-	1    6350 6000
+F 0 "#PWR0124" H 5950 6000 50  0001 C CNN
+F 1 "GND" H 5955 6075 50  0000 C CNN
+F 2 "" H 5950 6250 50  0001 C CNN
+F 3 "" H 5950 6250 50  0001 C CNN
+	1    5950 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6350 6000 6350 5950
-Text Notes 250  2650 0    50   ~ 0
-I2C ID: 0100xxx\nI2C address range is 32 decimal to 37 decimal or 0x20 to 0x27.
-Text Notes 1100 1050 0    50   ~ 10
-TO DO: I2C Address conflicts?
+	5950 6250 5950 6200
 $Comp
 L Device:R R?
 U 1 1 5E87C8E7
@@ -389,11 +385,11 @@ F 3 "~" H 9200 5450 50  0001 C CNN
 	1    9200 5450
 	1    0    0    -1  
 $EndComp
-Text GLabel 4900 5300 2    50   Input ~ 0
+Text GLabel 3000 5350 2    50   Input ~ 0
 BOARD_ID1
-Text GLabel 4900 5400 2    50   Input ~ 0
+Text GLabel 3000 5450 2    50   Input ~ 0
 BOARD_ID2
-Text GLabel 4900 5500 2    50   Input ~ 0
+Text GLabel 3000 5550 2    50   Input ~ 0
 BOARD_ID3
 Text GLabel 9800 5650 2    50   Output ~ 0
 BOARD_ID1
@@ -443,8 +439,6 @@ F 3 "~" H 9500 6100 50  0001 C CNN
 	1    9500 6100
 	1    0    0    -1  
 $EndComp
-Text GLabel 8900 5300 1    50   Input ~ 0
-3V3_100mA
 $Comp
 L Device:R R?
 U 1 1 5E883867
@@ -494,34 +488,10 @@ F 3 "~" H 8900 5450 50  0001 C CNN
 	1    8900 5450
 	1    0    0    -1  
 $EndComp
-Text Notes 9700 4850 0    118  ~ 0
+Text Notes 8850 5100 0    118  ~ 0
 BOARD ID
-Text GLabel 9200 5300 1    50   Input ~ 0
+Text GLabel 9600 5200 2    50   Input ~ 0
 3V3_100mA
-Text GLabel 9500 5300 1    50   Input ~ 0
-3V3_100mA
-$Comp
-L power:GNDD #PWR0120
-U 1 1 5E89052C
-P 8900 6250
-F 0 "#PWR0120" H 8900 6000 50  0001 C CNN
-F 1 "GNDD" H 8904 6094 50  0000 C CNN
-F 2 "" H 8900 6250 50  0001 C CNN
-F 3 "" H 8900 6250 50  0001 C CNN
-	1    8900 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDD #PWR0121
-U 1 1 5E89114B
-P 9200 6250
-F 0 "#PWR0121" H 9200 6000 50  0001 C CNN
-F 1 "GNDD" H 9204 6094 50  0000 C CNN
-F 2 "" H 9200 6250 50  0001 C CNN
-F 3 "" H 9200 6250 50  0001 C CNN
-	1    9200 6250
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GNDD #PWR0125
 U 1 1 5E891539
@@ -536,85 +506,77 @@ $EndComp
 $Comp
 L power:GNDD #PWR0128
 U 1 1 5E89228A
-P 10400 1750
-F 0 "#PWR0128" H 10400 1500 50  0001 C CNN
-F 1 "GNDD" H 10404 1594 50  0000 C CNN
-F 2 "" H 10400 1750 50  0001 C CNN
-F 3 "" H 10400 1750 50  0001 C CNN
-	1    10400 1750
+P 8400 2000
+F 0 "#PWR0128" H 8400 1750 50  0001 C CNN
+F 1 "GNDD" H 8404 1844 50  0000 C CNN
+F 2 "" H 8400 2000 50  0001 C CNN
+F 3 "" H 8400 2000 50  0001 C CNN
+	1    8400 2000
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDD #PWR0129
 U 1 1 5E89286A
-P 10550 3250
-F 0 "#PWR0129" H 10550 3000 50  0001 C CNN
-F 1 "GNDD" H 10554 3094 50  0000 C CNN
-F 2 "" H 10550 3250 50  0001 C CNN
-F 3 "" H 10550 3250 50  0001 C CNN
-	1    10550 3250
+P 8400 3650
+F 0 "#PWR0129" H 8400 3400 50  0001 C CNN
+F 1 "GNDD" H 8404 3494 50  0000 C CNN
+F 2 "" H 8400 3650 50  0001 C CNN
+F 3 "" H 8400 3650 50  0001 C CNN
+	1    8400 3650
 	1    0    0    -1  
 $EndComp
-Text GLabel 11100 1150 1    50   Input ~ 0
-3V3_100mA
 $Comp
 L power:GNDD #PWR0130
 U 1 1 5E892DA1
-P 4100 5900
-F 0 "#PWR0130" H 4100 5650 50  0001 C CNN
-F 1 "GNDD" H 4104 5744 50  0000 C CNN
-F 2 "" H 4100 5900 50  0001 C CNN
-F 3 "" H 4100 5900 50  0001 C CNN
-	1    4100 5900
+P 2050 5850
+F 0 "#PWR0130" H 2050 5600 50  0001 C CNN
+F 1 "GNDD" H 2054 5694 50  0000 C CNN
+F 2 "" H 2050 5850 50  0001 C CNN
+F 3 "" H 2050 5850 50  0001 C CNN
+	1    2050 5850
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDD #PWR0154
 U 1 1 5E8936A9
-P 4100 3200
-F 0 "#PWR0154" H 4100 2950 50  0001 C CNN
-F 1 "GNDD" H 4104 3044 50  0000 C CNN
-F 2 "" H 4100 3200 50  0001 C CNN
-F 3 "" H 4100 3200 50  0001 C CNN
-	1    4100 3200
+P 2000 3200
+F 0 "#PWR0154" H 2000 2950 50  0001 C CNN
+F 1 "GNDD" H 2004 3044 50  0000 C CNN
+F 2 "" H 2000 3200 50  0001 C CNN
+F 3 "" H 2000 3200 50  0001 C CNN
+	1    2000 3200
 	1    0    0    -1  
 $EndComp
-Text GLabel 4600 3650 1    50   Input ~ 0
-3V3_100mA
-Text GLabel 4850 1050 1    50   Input ~ 0
-3V3_100mA
-Text GLabel 11000 2500 1    50   Input ~ 0
-3V3_100mA
-Text Notes 6250 4850 0    118  ~ 0
+Text Notes 5850 5100 0    118  ~ 0
 OLED DISPLAY (OPTIONAL)
 $Comp
 L Connector:Conn_01x04_Female J5
 U 1 1 5E830BC9
-P 7950 5800
-F 0 "J5" V 7850 5450 50  0000 L CNN
-F 1 "Conn_01x04_Female" V 8050 5350 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 7950 5800 50  0001 C CNN
-F 3 "~" H 7950 5800 50  0001 C CNN
-	1    7950 5800
+P 7550 6050
+F 0 "J5" V 7450 5700 50  0000 L CNN
+F 1 "Conn_01x04_Female" V 7650 5600 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 7550 6050 50  0001 C CNN
+F 3 "~" H 7550 6050 50  0001 C CNN
+	1    7550 6050
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	8150 5600 8150 5550
+	7750 5850 7750 5800
 Wire Wire Line
-	8050 5400 8050 5600
+	7650 5650 7650 5850
 Wire Wire Line
-	8050 5400 8200 5400
+	7650 5650 7800 5650
 Wire Wire Line
-	7250 5500 7950 5500
+	6850 5750 7550 5750
 Wire Wire Line
-	7950 5500 7950 5600
-Connection ~ 6750 5950
+	7550 5750 7550 5850
+Connection ~ 6350 6200
 Wire Wire Line
-	7850 5550 7850 5600
-Text Notes 6300 5150 0    50   ~ 0
-0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C\n(alternate is 0x3D, not 0x7A or 0x78!)
-Text Notes 9750 5150 0    50   ~ 0
-0b001 = 0x01 = 1\nTop 3 resistors: DNI, DNI, 10K\nBottom 3 resistors: 10K, 10K, DNI
+	7450 5800 7450 5850
+Text Notes 5900 5400 0    50   ~ 0
+0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\n(alternate is 0x3D, not 0x7A or 0x78!)
+Text Notes 9800 5550 0    50   ~ 0
+0b000 = 0x00 = 0\nTop 3 resistors: DNI, DNI, DNI\nBottom 3 resistors: 10K, 10K, 10K
 $Comp
 L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
 U 1 1 5E88FF30
@@ -627,25 +589,14 @@ F 3 "" H 1350 7050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Interface_Expansion:MCP23017_SO U5
-U 1 1 5E8CA59F
-P 4100 2100
-F 0 "U5" H 4100 3385 50  0000 C CNN
-F 1 "MCP23017_SO" H 4100 3292 50  0000 C CNN
-F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 4300 1100 50  0001 L CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 4300 1000 50  0001 L CNN
-	1    4100 2100
-	1    0    0    -1  
-$EndComp
-$Comp
 L Interface_Expansion:MCP23017_SO U6
 U 1 1 5E900DF7
-P 4100 4700
-F 0 "U6" H 4100 5985 50  0000 C CNN
-F 1 "MCP23017_SO" H 4100 5892 50  0000 C CNN
-F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 4300 3700 50  0001 L CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 4300 3600 50  0001 L CNN
-	1    4100 4700
+P 2300 4750
+F 0 "U6" H 1850 5750 50  0000 C CNN
+F 1 "MCP23017_SO" H 2200 5250 50  0000 C CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 2500 3750 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 2500 3650 50  0001 L CNN
+	1    2300 4750
 	1    0    0    -1  
 $EndComp
 Text GLabel 1050 6800 0    50   Input ~ 0
@@ -668,7 +619,7 @@ I2C_CLOCK
 Text GLabel 1150 6400 0    50   BiDi ~ 0
 I2C_DATA
 Text Notes 550  7700 0    50   ~ 0
-A.K.A. SAO v1.69bis using Sullins SFH11-NBPC-D03-ST-BK\nhttps://www.digikey.com/product-detail/en/sullins-connector-solutions/SFH11-NBPC-D03-ST-BK/S9717-ND/4558818
+A.K.A. SAO v1.69bis (https://hackaday.io/project/52950-shitty-add-ons) using Sullins SFH11-NBPC-D03-ST-BK\nhttps://www.digikey.com/product-detail/en/sullins-connector-solutions/SFH11-NBPC-D03-ST-BK/S9717-ND/4558818
 Wire Wire Line
 	1050 6800 1100 6800
 Wire Wire Line
@@ -699,13 +650,13 @@ Wire Wire Line
 Wire Wire Line
 	1300 6400 3000 6400
 Connection ~ 1300 6400
-Text GLabel 3100 1400 0    50   BiDi ~ 0
+Text GLabel 1650 1400 0    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 3100 1250 0    50   BiDi ~ 0
+Text GLabel 1650 1300 0    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 3100 4050 0    50   BiDi ~ 0
+Text GLabel 1600 4050 0    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 3100 3900 0    50   BiDi ~ 0
+Text GLabel 1600 3950 0    50   BiDi ~ 0
 I2C_DATA
 Text GLabel 1600 7200 2    50   BiDi ~ 0
 SAO1_GPIO2(RX)
@@ -816,48 +767,155 @@ Wire Wire Line
 $Comp
 L Jumper:SolderJumper_3_Open JP2
 U 1 1 5E81A96A
-P 7400 5750
-F 0 "JP2" V 7250 5800 50  0000 L CNN
-F 1 "SolderJumper_3_Open" V 7000 5300 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 7400 5750 50  0001 C CNN
-F 3 "~" H 7400 5750 50  0001 C CNN
-	1    7400 5750
+P 7000 6000
+F 0 "JP2" V 6850 6050 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 6600 5550 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 7000 6000 50  0001 C CNN
+F 3 "~" H 7000 6000 50  0001 C CNN
+	1    7000 6000
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Jumper:SolderJumper_3_Open JP1
 U 1 1 5E82F3CE
-P 7100 5650
-F 0 "JP1" V 7200 5700 50  0000 L CNN
-F 1 "SolderJumper_3_Open" V 6450 5550 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 7100 5650 50  0001 C CNN
-F 3 "~" H 7100 5650 50  0001 C CNN
-	1    7100 5650
+P 6700 5900
+F 0 "JP1" V 6800 5950 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 6050 5800 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 6700 5900 50  0001 C CNN
+F 3 "~" H 6700 5900 50  0001 C CNN
+	1    6700 5900
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7600 5550 7850 5550
+	7200 5800 7450 5800
 Wire Wire Line
-	7550 5750 7600 5750
+	7150 6000 7200 6000
 Wire Wire Line
-	7600 5750 7600 5550
+	7200 6000 7200 5800
 Wire Wire Line
-	7250 5650 7250 5500
+	6850 5900 6850 5750
 Wire Wire Line
-	7100 5950 7100 5850
-Connection ~ 7100 5950
+	6700 6200 6700 6100
+Connection ~ 6700 6200
 Wire Wire Line
-	7100 5950 7400 5950
+	6700 6200 7000 6200
 Wire Wire Line
-	7100 5450 7400 5450
+	6700 5700 7000 5700
 Wire Wire Line
-	7400 5450 7400 5550
+	7000 5700 7000 5800
 Wire Wire Line
-	6750 5950 6350 5950
+	6350 6200 5950 6200
 Wire Wire Line
-	6750 5950 7100 5950
+	6350 6200 6700 6200
 Wire Wire Line
-	6750 5450 7100 5450
-Connection ~ 6750 5450
-Connection ~ 7100 5450
+	6350 5700 6700 5700
+Connection ~ 6350 5700
+Connection ~ 6700 5700
+Text GLabel 2500 1000 2    50   Input ~ 0
+3V3_800mA
+$Comp
+L Interface_Expansion:MCP23017_SO U5
+U 1 1 5E8CA59F
+P 2350 2100
+F 0 "U5" H 1950 3100 50  0000 C CNN
+F 1 "MCP23017_SO" H 2250 2550 50  0000 C CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 2550 1100 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 2550 1000 50  0001 L CNN
+	1    2350 2100
+	1    0    0    -1  
+$EndComp
+Text GLabel 2450 3650 2    50   Input ~ 0
+3V3_800mA
+Wire Wire Line
+	1650 2200 850  2200
+Wire Wire Line
+	850  1000 2350 1000
+Wire Wire Line
+	850  1000 850  2200
+Wire Wire Line
+	2350 1000 2500 1000
+Connection ~ 2350 1000
+Wire Wire Line
+	2350 3200 2000 3200
+Wire Wire Line
+	2000 3200 1550 3200
+Wire Wire Line
+	1550 3200 1550 2900
+Wire Wire Line
+	1550 2700 1650 2700
+Connection ~ 2000 3200
+Wire Wire Line
+	1650 2800 1550 2800
+Connection ~ 1550 2800
+Wire Wire Line
+	1550 2800 1550 2700
+Wire Wire Line
+	1650 2900 1550 2900
+Connection ~ 1550 2900
+Wire Wire Line
+	1550 2900 1550 2800
+Text Notes 850  950  0    50   ~ 0
+I2C ID: 0100000 (7-bit address) 32 decimal 0x20\n(Available address range is 32 decimal to 37 decimal or 0x20 to 0x27)
+Text Notes 850  3600 0    50   ~ 0
+I2C ID: 0100001 (7-bit address) 33 decimal 0x21\n(Available address range is 32 decimal to 37 decimal or 0x20 to 0x27)
+Wire Wire Line
+	2450 3650 2300 3650
+Wire Wire Line
+	2300 3650 850  3650
+Wire Wire Line
+	850  3650 850  4850
+Wire Wire Line
+	850  4850 1600 4850
+Connection ~ 2300 3650
+Wire Wire Line
+	1600 5550 850  5550
+Wire Wire Line
+	850  5550 850  4850
+Connection ~ 850  4850
+Wire Wire Line
+	1600 5450 1500 5450
+Wire Wire Line
+	1500 5450 1500 5850
+Wire Wire Line
+	1500 5850 2050 5850
+Connection ~ 2050 5850
+Wire Wire Line
+	2050 5850 2300 5850
+Wire Wire Line
+	1600 5350 1500 5350
+Wire Wire Line
+	1500 5350 1500 5450
+Connection ~ 1500 5450
+Text GLabel 1650 2000 0    50   Output ~ 0
+IOEXP_ID32_INT_A
+Text GLabel 1650 1900 0    50   Output ~ 0
+IOEXP_ID32_INT_B
+Text GLabel 1600 4650 0    50   Output ~ 0
+IOEXP_ID33_INT_A
+Text GLabel 1600 4550 0    50   Output ~ 0
+IOEXP_ID33_INT_B
+Wire Wire Line
+	8900 6250 9200 6250
+Connection ~ 9200 6250
+Wire Wire Line
+	9500 6250 9200 6250
+Connection ~ 9500 6250
+Wire Wire Line
+	8900 5300 8900 5200
+Wire Wire Line
+	8900 5200 9200 5200
+Wire Wire Line
+	9500 5300 9500 5200
+Wire Wire Line
+	9200 5300 9200 5200
+Connection ~ 9200 5200
+Wire Wire Line
+	9200 5200 9500 5200
+Wire Wire Line
+	9500 5200 9600 5200
+Connection ~ 9500 5200
+Text GLabel 8400 1000 2    50   Input ~ 0
+3V3_800mA
+Text GLabel 8400 2650 2    50   Input ~ 0
+3V3_800mA
 $EndSCHEMATC
