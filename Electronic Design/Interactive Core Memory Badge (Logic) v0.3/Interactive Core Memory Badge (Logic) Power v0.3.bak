@@ -56,7 +56,7 @@ F 3 "" H 3950 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6950 4900 7150 4900
+	7700 4900 7900 4900
 Text GLabel 1000 4900 0    50   Input ~ 0
 5V_USB
 $Comp
@@ -72,7 +72,7 @@ F 3 "" H 850 6850 50  0001 C CNN
 	1    850  6850
 	-1   0    0    1   
 $EndComp
-Text Notes 6800 4400 0    50   ~ 0
+Text Notes 7550 4400 0    50   ~ 0
 CORES AND ACCESSORIES
 $Comp
 L Connector:TestPoint TP2
@@ -127,10 +127,10 @@ F 3 "~" H 3650 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7150 4900 7300 4900
-Connection ~ 7150 4900
+	7900 4900 8050 4900
+Connection ~ 7900 4900
 Wire Wire Line
-	7150 4650 7150 4900
+	7900 4650 7900 4900
 $Comp
 L Switch:SW_DPDT_x2 SW1
 U 1 1 5E9AF194
@@ -162,20 +162,20 @@ Diode provides 1.1V drop if using USB power.\n  Keeps +VSW close to 4V to reduce
 $Comp
 L Regulator_Linear:LD1117S33TR_SOT223 U1
 U 1 1 5E7B5B14
-P 6650 4900
+P 7400 4900
 AR Path="/5E7548ED/5E7B5B14" Ref="U1"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E7B5B14" Ref="U?"  Part="1" 
-F 0 "U1" H 6650 5145 50  0000 C CNN
-F 1 "LD1117S33TR_SOT223" H 6650 5052 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 6650 5100 50  0001 C CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000544.pdf" H 6750 4650 50  0001 C CNN
-	1    6650 4900
+F 0 "U1" H 7400 5145 50  0000 C CNN
+F 1 "LD1117S33TR_SOT223" H 7400 5052 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 7400 5100 50  0001 C CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000544.pdf" H 7500 4650 50  0001 C CNN
+	1    7400 4900
 	1    0    0    -1  
 $EndComp
 Text Notes 550  6200 0    118  ~ 0
 REVERSE POLARITY\nPROTECTION
 Wire Wire Line
-	6200 4900 6350 4900
+	6950 4900 7100 4900
 Text Notes 750  2200 0    50   ~ 0
 MODE 1\n  BUILT-IN BATTERY PACK (Keystone 2482CN) WITH 4X “AAA” ALKALINE OR NIMH CELLS\n  …or 3-4 “AA” alkaline/NiMh, or 1S LiPo, but the logic board does not recharge these batteries automatically from USB power.\n  CONNECTED TO 3 PIN input for Battery Pack\n  On PCB: SMT CONN, 3 TERM, HORZ, 2mm spacing, detent lock\n  Such as: Keystone 976, JST PA BM03B-PASS-1-TFT(LF)(SN), Adafruit 4391 (JST PH 3-pin aka STEMMA)\n  from KAWEEI Technology CW2001-03T-H01-BD-A, 
 Text Notes 800  3250 0    50   ~ 0
@@ -249,8 +249,6 @@ Text Notes 650  1550 0    50   ~ 0
 TWO POWER MODES SELECTED BY DOUBLE-THROW SWITCH:
 Text GLabel 4450 3800 0    50   Input ~ 0
 TEENSY_VIN
-Text GLabel 9100 4800 0    50   Input ~ 0
-TEENSY_3V3
 Text GLabel 1600 3550 0    50   Input ~ 0
 TEENSY_GND
 Wire Wire Line
@@ -313,39 +311,22 @@ F 3 "" H 4750 3800 50  0001 C CNN
 $EndComp
 Text Notes 3950 3500 0    50   ~ 0
 BOTH MODES REQUIRE:\nVIN must be supplied TO the Teensy\n(because VIN-VUSB is cut) and the \nCore 64 Logic Board provides it here.
-Text Notes 8400 4500 0    50   ~ 0
-TEENSY OR FEATHER 3.3V REGULATOR USED BY:\nMCU, Analog reference, Core Sense Op-Amps, Magnetic Hall switches.
-Text GLabel 9100 5000 0    50   Input ~ 0
-FEATHER_3V3
-Text GLabel 9600 4900 2    50   Input ~ 0
-3V3_100mA
-Wire Wire Line
-	9100 4800 9350 4800
-Wire Wire Line
-	9350 4800 9350 4900
-Wire Wire Line
-	9350 4900 9600 4900
-Wire Wire Line
-	9350 4900 9350 5000
-Wire Wire Line
-	9350 5000 9100 5000
-Connection ~ 9350 4900
 $Comp
 L power:+VSW #PWR0113
 U 1 1 5E8659D4
-P 6200 4650
+P 6950 4650
 AR Path="/5E7548ED/5E8659D4" Ref="#PWR0113"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8659D4" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0113" H 6200 4500 50  0001 C CNN
-F 1 "+VSW" H 6215 4823 50  0000 C CNN
-F 2 "" H 6200 4650 50  0001 C CNN
-F 3 "" H 6200 4650 50  0001 C CNN
-	1    6200 4650
+F 0 "#PWR0113" H 6950 4500 50  0001 C CNN
+F 1 "+VSW" H 6965 4823 50  0000 C CNN
+F 2 "" H 6950 4650 50  0001 C CNN
+F 3 "" H 6950 4650 50  0001 C CNN
+	1    6950 4650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6200 4650 6200 4900
-Text GLabel 7300 4900 2    50   Input ~ 0
+	6950 4650 6950 4900
+Text GLabel 8050 4900 2    50   Input ~ 0
 3V3_800mA
 Wire Wire Line
 	1200 4900 1850 4900
@@ -354,34 +335,19 @@ Wire Wire Line
 Connection ~ 1200 4900
 Text Notes 550  4250 0    118  ~ 0
 POWER SWITCH AND VOLTAGE MONITOR
-Text Notes 8400 4250 0    118  ~ 0
-3.3V LOW POWER SUPPLY
-Text Notes 5700 4250 0    118  ~ 0
+Text Notes 6450 4250 0    118  ~ 0
 3.3V HIGH POWER SUPPLY
-$Comp
-L Connector:TestPoint TP8
-U 1 1 5E88D7B5
-P 9350 4800
-AR Path="/5E7548ED/5E88D7B5" Ref="TP8"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5E88D7B5" Ref="TP?"  Part="1" 
-F 0 "TP8" H 9408 4918 50  0000 L CNN
-F 1 "3V3_LP" H 9408 4827 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 9550 4800 50  0001 C CNN
-F 3 "~" H 9550 4800 50  0001 C CNN
-	1    9350 4800
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:TestPoint TP7
 U 1 1 5E88DBA6
-P 7150 4650
+P 7900 4650
 AR Path="/5E7548ED/5E88DBA6" Ref="TP7"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E88DBA6" Ref="TP?"  Part="1" 
-F 0 "TP7" H 7208 4768 50  0000 L CNN
-F 1 "3V3_HP" H 7208 4677 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 7350 4650 50  0001 C CNN
-F 3 "~" H 7350 4650 50  0001 C CNN
-	1    7150 4650
+F 0 "TP7" H 7958 4768 50  0000 L CNN
+F 1 "3V3_HP" H 7958 4677 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 8100 4650 50  0001 C CNN
+F 3 "~" H 8100 4650 50  0001 C CNN
+	1    7900 4650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -407,18 +373,18 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0116
 U 1 1 5E8C4F56
-P 6650 5350
+P 7400 5350
 AR Path="/5E7548ED/5E8C4F56" Ref="#PWR0116"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8C4F56" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0116" H 6650 5100 50  0001 C CNN
-F 1 "GND" H 6655 5175 50  0000 C CNN
-F 2 "" H 6650 5350 50  0001 C CNN
-F 3 "" H 6650 5350 50  0001 C CNN
-	1    6650 5350
+F 0 "#PWR0116" H 7400 5100 50  0001 C CNN
+F 1 "GND" H 7405 5175 50  0000 C CNN
+F 2 "" H 7400 5350 50  0001 C CNN
+F 3 "" H 7400 5350 50  0001 C CNN
+	1    7400 5350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6650 5200 6650 5350
+	7400 5200 7400 5350
 Text Notes 2650 6200 0    118  ~ 0
 SYSTEM CURRENT\nMEASUREMENT
 Wire Notes Line
@@ -442,7 +408,6 @@ F 3 "" H 2050 3550 50  0001 C CNN
 	1    2050 3550
 	1    0    0    -1  
 $EndComp
-Connection ~ 9350 4800
 $Comp
 L Device:CP1_Small C?
 U 1 1 5E90E57B
@@ -480,14 +445,12 @@ F 3 "" H 4450 5100 50  0001 C CNN
 	1    4450 5100
 	1    0    0    -1  
 $EndComp
-Text Notes 6650 5650 0    50   ~ 0
+Text Notes 7400 5650 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Text Notes 4400 5400 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Text Notes 2050 3850 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
-Text Notes 8550 5150 0    50   ~ 0
-*** USE ONE 3V3 SOURCE AT A TIME ***
 Text Notes 4000 4650 0    50   ~ 0
 LED ARRAY, TEENSY VIN
 $Comp

@@ -163,68 +163,8 @@ Wire Wire Line
 	4200 4000 4350 4000
 Text GLabel 4350 4000 2    50   Output ~ 0
 LED_MATRIX_3V3
-$Comp
-L Device:R R?
-U 1 1 5EA33C99
-P 1650 6800
-AR Path="/5E755787/5EA33C99" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA33C99" Ref="R?"  Part="1" 
-AR Path="/5EA33C99" Ref="R4"  Part="1" 
-F 0 "R4" H 1720 6846 50  0000 L CNN
-F 1 "4K7" H 1720 6755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 1580 6800 50  0001 C CNN
-F 3 "~" H 1650 6800 50  0001 C CNN
-	1    1650 6800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5EA33C9F
-P 1350 7200
-AR Path="/5E755787/5EA33C9F" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA33C9F" Ref="R?"  Part="1" 
-AR Path="/5EA33C9F" Ref="R3"  Part="1" 
-F 0 "R3" H 1420 7246 50  0000 L CNN
-F 1 "4K7" H 1420 7155 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 1280 7200 50  0001 C CNN
-F 3 "~" H 1350 7200 50  0001 C CNN
-	1    1350 7200
-	1    0    0    -1  
-$EndComp
 Text GLabel 9950 2950 2    50   Output ~ 0
 LED_MATRIX_+VSW
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5EA33CA6
-P 1950 6900
-AR Path="/5E755787/5EA33CA6" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA33CA6" Ref="TP?"  Part="1" 
-AR Path="/5EA33CA6" Ref="TP11"  Part="1" 
-F 0 "TP11" H 2008 7018 50  0000 L CNN
-F 1 "I2C_Clock" H 2008 6927 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2150 6900 50  0001 C CNN
-F 3 "~" H 2150 6900 50  0001 C CNN
-	1    1950 6900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1950 6900 1950 7000
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5EA33CAD
-P 1950 7300
-AR Path="/5E755787/5EA33CAD" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA33CAD" Ref="TP?"  Part="1" 
-AR Path="/5EA33CAD" Ref="TP12"  Part="1" 
-F 0 "TP12" H 2008 7418 50  0000 L CNN
-F 1 "I2C_Data" H 2008 7327 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2150 7300 50  0001 C CNN
-F 3 "~" H 2150 7300 50  0001 C CNN
-	1    1950 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1950 7300 1950 7400
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EA33CB4
@@ -239,8 +179,6 @@ F 3 "~" H 9750 2850 50  0001 C CNN
 	1    9550 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1150 7000 1650 7000
 $Comp
 L Device:R R?
 U 1 1 5EA33CBB
@@ -261,25 +199,9 @@ Connection ~ 9550 2950
 Wire Wire Line
 	9550 2950 9600 2950
 Wire Wire Line
-	1650 6950 1650 7000
-Connection ~ 1650 7000
-Wire Wire Line
-	1650 7000 1950 7000
-Wire Wire Line
-	1150 7400 1350 7400
-Wire Wire Line
-	1350 7350 1350 7400
-Connection ~ 1350 7400
-Wire Wire Line
-	1350 7400 1950 7400
-Wire Wire Line
 	9900 2950 9950 2950
 Wire Wire Line
 	9500 2950 9550 2950
-Text GLabel 1150 7400 0    50   BiDi ~ 0
-I2C_DATA
-Text GLabel 1150 7000 0    50   BiDi ~ 0
-I2C_CLOCK
 Text GLabel 8650 2950 0    50   Input ~ 0
 LED_MATRIX_3V3
 Wire Wire Line
@@ -363,9 +285,7 @@ Wire Wire Line
 	9200 3300 9100 3300
 Connection ~ 9100 3300
 Text Notes 7900 2200 0    118  ~ 0
-LEVEL SHIFT TO DRIVE LED ARRAY
-Text Notes 650  6250 0    118  ~ 0
-I2C REQUIRED PULL-UPS
+LED ARRAY DRIVE LEVEL SHIFT
 Text Notes 650  1800 0    118  ~ 0
 TEENSY MCU CONNECTIONS
 Text GLabel 1900 2700 0    50   Input ~ 0
@@ -376,7 +296,7 @@ Text GLabel 1900 2900 0    50   Input ~ 0
 IOEXP_ID33_INT_A
 Text GLabel 1900 3000 0    50   Input ~ 0
 IOEXP_ID33_INT_B
-Text Notes 3050 7300 0    50   ~ 10
+Text Notes 800  6500 0    50   ~ 10
 TO DO: I2C Address conflicts?\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\nOptional\n  OLED: 60 decimal, 0x3C
 Text Notes 700  4100 0    50   ~ 0
 Try not to use any of these\nto avoid the need to populate\nthis end row header on the PCB.
@@ -386,15 +306,4 @@ Wire Notes Line
 	650  3800 650  4200
 Wire Notes Line
 	650  4200 1900 4200
-Text GLabel 1800 6500 2    50   Input ~ 0
-3V3_100mA
-Wire Wire Line
-	1350 6500 1650 6500
-Wire Wire Line
-	1350 6500 1350 7050
-Wire Wire Line
-	1650 6500 1650 6650
-Connection ~ 1650 6500
-Wire Wire Line
-	1650 6500 1800 6500
 $EndSCHEMATC
