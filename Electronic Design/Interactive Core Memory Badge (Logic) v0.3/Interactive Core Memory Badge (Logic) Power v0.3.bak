@@ -30,18 +30,18 @@ $EndComp
 $Comp
 L Device:Polyfuse F1
 U 1 1 5D3009B0
-P 3100 4800
+P 3000 4800
 AR Path="/5E7548ED/5D3009B0" Ref="F1"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5D3009B0" Ref="F?"  Part="1" 
-F 0 "F1" V 2875 4800 50  0000 C CNN
-F 1 "Polyfuse" V 2966 4800 50  0000 C CNN
-F 2 "Fuse:Fuse_0805_2012Metric" H 3150 4600 50  0001 L CNN
-F 3 "~" H 3100 4800 50  0001 C CNN
-	1    3100 4800
+F 0 "F1" V 2775 4800 50  0000 C CNN
+F 1 "Polyfuse" V 2866 4800 50  0000 C CNN
+F 2 "Fuse:Fuse_0805_2012Metric" H 3050 4600 50  0001 L CNN
+F 3 "~" H 3000 4800 50  0001 C CNN
+	1    3000 4800
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2750 4800 2950 4800
+	2750 4800 2850 4800
 $Comp
 L power:+VSW #PWR0102
 U 1 1 5D305A98
@@ -116,14 +116,14 @@ $EndComp
 $Comp
 L Connector:TestPoint TP4
 U 1 1 5D48E646
-P 3450 4650
+P 3650 4650
 AR Path="/5E7548ED/5D48E646" Ref="TP4"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5D48E646" Ref="TP?"  Part="1" 
-F 0 "TP4" H 3508 4768 50  0000 L CNN
-F 1 "+VSW" H 3508 4677 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 3650 4650 50  0001 C CNN
-F 3 "~" H 3650 4650 50  0001 C CNN
-	1    3450 4650
+F 0 "TP4" H 3708 4768 50  0000 L CNN
+F 1 "+VSW" H 3708 4677 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 3850 4650 50  0001 C CNN
+F 3 "~" H 3850 4650 50  0001 C CNN
+	1    3650 4650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -142,19 +142,6 @@ F 1 "SW_DPDT_x2" H 2550 4564 50  0000 C CNN
 F 2 "Digikey:Switch_Slide_JS202011SCQN" H 2550 4800 50  0001 C CNN
 F 3 "~" H 2550 4800 50  0001 C CNN
 	1    2550 4800
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:D_Small D1
-U 1 1 5E9B647B
-P 1950 4900
-AR Path="/5E7548ED/5E9B647B" Ref="D1"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5E9B647B" Ref="D?"  Part="1" 
-F 0 "D1" H 1950 4800 50  0000 C CNN
-F 1 "S1M-13-F" H 1950 5050 50  0000 C CNN
-F 2 "Diode_SMD:D_SMA_Handsoldering" H 1950 4900 50  0001 C CNN
-F 3 "~" H 1950 4900 50  0001 C CNN
-	1    1950 4900
 	-1   0    0    1   
 $EndComp
 Text Notes 700  5450 0    50   ~ 0
@@ -364,12 +351,12 @@ F 3 "" H 1450 6450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3450 4800 3250 4800
+	3650 4800 3550 4800
 Wire Wire Line
-	3950 4800 3450 4800
-Connection ~ 3450 4800
+	3950 4800 3650 4800
+Connection ~ 3650 4800
 Wire Wire Line
-	3450 4650 3450 4800
+	3650 4650 3650 4800
 $Comp
 L power:GND #PWR0116
 U 1 1 5E8C4F56
@@ -636,4 +623,21 @@ F 11 "" H 2550 1950 50  0001 L CNN "RS Price/Stock"
 $EndComp
 Wire Wire Line
 	1800 2550 2400 2550
+Text Notes 4000 4400 0    50   ~ 10
+TO DO: Move diode after switch and use a lower V drop diode!
+$Comp
+L Diode:MBR0520 D1
+U 1 1 5E87F7F2
+P 3400 4800
+F 0 "D1" H 3400 4581 50  0000 C CNN
+F 1 "MBR120" H 3400 4674 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 3400 4625 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/MBR120VLSFT1G/MBR120VLSFT1GOSCT-ND/893874" H 3400 4800 50  0001 C CNN
+	1    3400 4800
+	-1   0    0    1   
+$EndComp
+Text Notes 2000 4400 0    50   ~ 10
+TO DO: update switch footprint for samples
+Wire Wire Line
+	3250 4800 3150 4800
 $EndSCHEMATC

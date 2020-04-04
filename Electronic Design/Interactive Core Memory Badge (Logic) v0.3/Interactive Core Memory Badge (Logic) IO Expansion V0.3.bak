@@ -71,9 +71,9 @@ P 6000 1100
 AR Path="/5E755787/5EAA2FDC" Ref="U?"  Part="1" 
 AR Path="/5EA63449/5EAA2FDC" Ref="U8"  Part="1" 
 F 0 "U8" H 6000 1420 50  0000 C CNN
-F 1 "74HC14" H 6000 1327 50  0000 C CNN
+F 1 "74AC04" H 6000 1327 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 6000 1100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 1100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 6000 1100 50  0001 C CNN
 	1    6000 1100
 	1    0    0    -1  
 $EndComp
@@ -88,7 +88,7 @@ P 6000 1600
 AR Path="/5E755787/5EAA2FE4" Ref="U?"  Part="2" 
 AR Path="/5EA63449/5EAA2FE4" Ref="U8"  Part="2" 
 F 0 "U8" H 6000 1920 50  0000 C CNN
-F 1 "74HC14" H 6000 1827 50  0000 C CNN
+F 1 "74AC04" H 6000 1827 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 6000 1600 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 1600 50  0001 C CNN
 	2    6000 1600
@@ -101,9 +101,9 @@ P 6000 2100
 AR Path="/5E755787/5EAA2FEA" Ref="U?"  Part="3" 
 AR Path="/5EA63449/5EAA2FEA" Ref="U8"  Part="3" 
 F 0 "U8" H 6000 2420 50  0000 C CNN
-F 1 "74HC14" H 6000 2327 50  0000 C CNN
+F 1 "74AC04" H 6000 2327 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 6000 2100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 6000 2100 50  0001 C CNN
 	3    6000 2100
 	1    0    0    -1  
 $EndComp
@@ -114,9 +114,9 @@ P 6000 2650
 AR Path="/5E755787/5EAA2FF0" Ref="U?"  Part="4" 
 AR Path="/5EA63449/5EAA2FF0" Ref="U8"  Part="4" 
 F 0 "U8" H 6000 2970 50  0000 C CNN
-F 1 "74HC14" H 6000 2877 50  0000 C CNN
+F 1 "74AC04" H 6000 2877 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 6000 2650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 6000 2650 50  0001 C CNN
 	4    6000 2650
 	1    0    0    -1  
 $EndComp
@@ -127,9 +127,9 @@ P 6000 3150
 AR Path="/5E755787/5EAA2FF6" Ref="U?"  Part="5" 
 AR Path="/5EA63449/5EAA2FF6" Ref="U8"  Part="5" 
 F 0 "U8" H 6000 3470 50  0000 C CNN
-F 1 "74HC14" H 6000 3377 50  0000 C CNN
+F 1 "74AC04" H 6000 3377 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 6000 3150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 6000 3150 50  0001 C CNN
 	5    6000 3150
 	1    0    0    -1  
 $EndComp
@@ -140,9 +140,9 @@ P 6000 3700
 AR Path="/5E755787/5EAA2FFC" Ref="U?"  Part="6" 
 AR Path="/5EA63449/5EAA2FFC" Ref="U8"  Part="6" 
 F 0 "U8" H 6000 4020 50  0000 C CNN
-F 1 "74HC14" H 6000 3927 50  0000 C CNN
+F 1 "74AC04" H 6000 3927 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 6000 3700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6000 3700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 6000 3700 50  0001 C CNN
 	6    6000 3700
 	1    0    0    -1  
 $EndComp
@@ -153,9 +153,9 @@ P 8400 1500
 AR Path="/5E755787/5EAA3002" Ref="U?"  Part="7" 
 AR Path="/5EA63449/5EAA3002" Ref="U8"  Part="7" 
 F 0 "U8" H 8630 1547 50  0000 L CNN
-F 1 "74HC14" H 8630 1454 50  0000 L CNN
+F 1 "74AC04" H 8630 1454 50  0000 L CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 8400 1500 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 8400 1500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8400 1500 50  0001 C CNN
 	7    8400 1500
 	1    0    0    -1  
 $EndComp
@@ -166,9 +166,9 @@ P 7350 1100
 AR Path="/5E755787/5EAA3008" Ref="U?"  Part="1" 
 AR Path="/5EA63449/5EAA3008" Ref="U9"  Part="1" 
 F 0 "U9" H 7350 1420 50  0000 C CNN
-F 1 "74HC14" H 7350 1327 50  0000 C CNN
+F 1 "74AC04" H 7350 1327 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 7350 1100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 1100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7350 1100 50  0001 C CNN
 	1    7350 1100
 	1    0    0    -1  
 $EndComp
@@ -179,9 +179,9 @@ P 7350 1600
 AR Path="/5E755787/5EAA300E" Ref="U?"  Part="2" 
 AR Path="/5EA63449/5EAA300E" Ref="U9"  Part="2" 
 F 0 "U9" H 7350 1920 50  0000 C CNN
-F 1 "74HC14" H 7350 1827 50  0000 C CNN
+F 1 "74AC04" H 7350 1827 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 7350 1600 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 1600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7350 1600 50  0001 C CNN
 	2    7350 1600
 	1    0    0    -1  
 $EndComp
@@ -192,9 +192,9 @@ P 7350 2100
 AR Path="/5E755787/5EAA3014" Ref="U?"  Part="3" 
 AR Path="/5EA63449/5EAA3014" Ref="U9"  Part="3" 
 F 0 "U9" H 7350 2420 50  0000 C CNN
-F 1 "74HC14" H 7350 2327 50  0000 C CNN
+F 1 "74AC04" H 7350 2327 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 7350 2100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7350 2100 50  0001 C CNN
 	3    7350 2100
 	1    0    0    -1  
 $EndComp
@@ -205,9 +205,9 @@ P 7350 2650
 AR Path="/5E755787/5EAA301A" Ref="U?"  Part="4" 
 AR Path="/5EA63449/5EAA301A" Ref="U9"  Part="4" 
 F 0 "U9" H 7350 2970 50  0000 C CNN
-F 1 "74HC14" H 7350 2877 50  0000 C CNN
+F 1 "74AC04" H 7350 2877 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 7350 2650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7350 2650 50  0001 C CNN
 	4    7350 2650
 	1    0    0    -1  
 $EndComp
@@ -218,9 +218,9 @@ P 7350 3200
 AR Path="/5E755787/5EAA3020" Ref="U?"  Part="5" 
 AR Path="/5EA63449/5EAA3020" Ref="U9"  Part="5" 
 F 0 "U9" H 7350 3520 50  0000 C CNN
-F 1 "74HC14" H 7350 3427 50  0000 C CNN
+F 1 "74AC04" H 7350 3427 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 7350 3200 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 3200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7350 3200 50  0001 C CNN
 	5    7350 3200
 	1    0    0    -1  
 $EndComp
@@ -231,9 +231,9 @@ P 7350 3700
 AR Path="/5E755787/5EAA3026" Ref="U?"  Part="6" 
 AR Path="/5EA63449/5EAA3026" Ref="U9"  Part="6" 
 F 0 "U9" H 7350 4020 50  0000 C CNN
-F 1 "74HC14" H 7350 3927 50  0000 C CNN
+F 1 "74AC04" H 7350 3927 50  0000 C CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 7350 3700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7350 3700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7350 3700 50  0001 C CNN
 	6    7350 3700
 	1    0    0    -1  
 $EndComp
@@ -244,9 +244,9 @@ P 8400 3150
 AR Path="/5E755787/5EAA302C" Ref="U?"  Part="7" 
 AR Path="/5EA63449/5EAA302C" Ref="U9"  Part="7" 
 F 0 "U9" H 8630 3197 50  0000 L CNN
-F 1 "74HC14" H 8630 3104 50  0000 L CNN
+F 1 "74AC04" H 8630 3104 50  0000 L CNN
 F 2 "Digikey:SOIC-14_W3.9mm" H 8400 3150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 8400 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8400 3150 50  0001 C CNN
 	7    8400 3150
 	1    0    0    -1  
 $EndComp
@@ -262,11 +262,11 @@ Text GLabel 5700 3700 0    50   Input ~ 0
 nQ6P
 Text GLabel 7050 1100 0    50   Input ~ 0
 nQ7P
-Text GLabel 6800 1600 2    50   Input ~ 0
+Text GLabel 7050 1600 0    50   Input ~ 0
 nQ8P
-Text GLabel 6800 2100 2    50   Input ~ 0
+Text GLabel 7050 2100 0    50   Input ~ 0
 nQ9P
-Text GLabel 6750 2650 2    50   Input ~ 0
+Text GLabel 7050 2650 0    50   Input ~ 0
 nQ10P
 Text GLabel 6300 1600 2    50   Output ~ 0
 Q2P
