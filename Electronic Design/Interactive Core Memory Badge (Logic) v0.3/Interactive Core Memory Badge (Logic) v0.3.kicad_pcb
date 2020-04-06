@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 50)
+    (drawings 52)
     (tracks 45)
     (zones 0)
     (modules 129)
@@ -6213,6 +6213,12 @@
       (net 88 3V3_800mA))
   )
 
+  (gr_text "TO DO: Larger radius outer corners on both boards?" (at 66.465 -38.65) (layer F.SilkS) (tstamp 5E8A9DB6)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
+  (gr_text "TO DO: Lanyard slots, for alligator clips?" (at 66.365 -30.35) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_text "BOARD ID" (at -47.385 93.85) (layer F.SilkS) (tstamp 5E875C9D)
     (effects (font (size 1.6 1.6) (thickness 0.15)))
   )
@@ -6286,7 +6292,7 @@
     (arrow2b (pts (xy -49.384999 -40) (xy -48.798578 -38.873496)))
   )
   (dimension 80 (width 0.15) (layer Dwgs.User) (tstamp 5E875CAB)
-    (gr_text "80.000 mm" (at 0 -50.2) (layer Dwgs.User) (tstamp 5E875CAC)
+    (gr_text "80.000 mm" (at 0 -50.2) (layer Dwgs.User) (tstamp 5E875CAB)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (feature1 (pts (xy 40 -35) (xy 40 -49.486421)))

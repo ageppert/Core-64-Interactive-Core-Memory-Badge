@@ -306,4 +306,6 @@ Wire Notes Line
 	650  3800 650  4200
 Wire Notes Line
 	650  4200 1900 4200
+Text Notes 7550 4200 0    50   ~ 10
+TO DO: Place header on main board into RasPi header of LED Array
 $EndSCHEMATC

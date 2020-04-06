@@ -144,8 +144,8 @@ F 3 "~" H 2550 4800 50  0001 C CNN
 	1    2550 4800
 	-1   0    0    1   
 $EndComp
-Text Notes 700  5450 0    50   ~ 0
-Diode provides 1.1V drop if using USB power.\n  Keeps +VSW close to 4V to reduce 3.3V regulator strain.\n  Prevents current flow back to USB and provides \n    additional reverse polarity protection.
+Text Notes 2800 5000 0    50   ~ 0
+Reverse polarity protection
 $Comp
 L Regulator_Linear:LD1117S33TR_SOT223 U1
 U 1 1 5E7B5B14
@@ -623,8 +623,6 @@ F 11 "" H 2550 1950 50  0001 L CNN "RS Price/Stock"
 $EndComp
 Wire Wire Line
 	1800 2550 2400 2550
-Text Notes 4000 4400 0    50   ~ 10
-TO DO: Move diode after switch and use a lower V drop diode!
 $Comp
 L Diode:MBR0520 D1
 U 1 1 5E87F7F2
