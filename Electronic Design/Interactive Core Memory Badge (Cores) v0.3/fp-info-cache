@@ -1,4 +1,4 @@
-16691321441612727
+16692928535050727
 2829
 ADAFRUIT_2829
 
@@ -28063,6 +28063,13 @@ Through hole pin header THT 1x16 2.54mm single row
 16
 16
 Connector_PinHeader_2.54mm
+PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left
+surface-mounted straight pin header, 1x16, 2.54mm pitch, single row, style 1 (pin 1 left)
+Surface mounted pin header SMD 1x16 2.54mm single row style1 pin1 left
+0
+32
+16
+Connector_PinHeader_2.54mm
 PinHeader_1x16_P2.54mm_Vertical_SMD_Pin1Left
 surface-mounted straight pin header, 1x16, 2.54mm pitch, single row, style 1 (pin 1 left)
 Surface mounted pin header SMD 1x16 2.54mm single row style1 pin1 left
@@ -41048,9 +41055,9 @@ Core Memory 8x8 Array
 34
 34
 Core_Memory_8x8_Array
-LED_Matrix_Header_3pin
-3-pin CPU fan Through hole pin header, see http://www.formfactors.org/developer%5Cspecs%5Crev1_2_public.pdf
-pin header 3-pin CPU fan
+LED_Matrix_Header_3pin_0.9_holes
+
+pin header 3-pin
 0
 3
 3

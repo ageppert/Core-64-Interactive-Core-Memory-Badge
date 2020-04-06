@@ -47,6 +47,29 @@ X YR0 9 700 350 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
+# Connector_Conn_01x03_Female
+#
+DEF Connector_Conn_01x03_Female J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Conn_01x03_Female" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+A 0 -100 20 901 -901 1 1 6 N 0 -80 0 -120
+A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
+A 0 100 20 901 -901 1 1 6 N 0 120 0 80
+P 2 1 1 6 -50 -100 -20 -100 N
+P 2 1 1 6 -50 0 -20 0 N
+P 2 1 1 6 -50 100 -20 100 N
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Connector_Conn_01x16_Male
 #
 DEF Connector_Conn_01x16_Male J 0 40 Y N 1 F N
@@ -109,23 +132,6 @@ X Pin_9 9 200 -100 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_TestPoint
-#
-DEF Connector_TestPoint TP 0 30 N N 1 F N
-F0 "TP" 0 270 50 H V C CNN
-F1 "Connector_TestPoint" 0 200 50 H V C CNN
-F2 "" 200 0 50 H I C CNN
-F3 "" 200 0 50 H I C CNN
-$FPLIST
- Pin*
- Test*
-$ENDFPLIST
-DRAW
-C 0 130 30 0 1 0 N
-X 1 1 0 0 100 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # Device_CP1_Small
 #
 DEF Device_CP1_Small C 0 10 N N 1 F N
@@ -163,37 +169,31 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Motor_Fan_3pin
+# Jumper_SolderJumper_3_Bridged12
 #
-DEF Motor_Fan_3pin M 0 0 Y Y 1 F N
-F0 "M" 100 100 50 H V L CNN
-F1 "Motor_Fan_3pin" 100 -200 50 H V L TNN
-F2 "" 0 -90 50 H I C CNN
-F3 "" 0 -90 50 H I C CNN
-ALIAS Fan_3pin Fan_PC_Chassis
+DEF Jumper_SolderJumper_3_Bridged12 JP 0 0 Y N 1 F N
+F0 "JP" -100 -100 50 H V C CNN
+F1 "Jumper_SolderJumper_3_Bridged12" 0 110 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
 $FPLIST
- FanPinHeader*P2.54mm*Vertical*
- PinHeader*P2.54mm*Vertical*
- TerminalBlock*
+ SolderJumper*Bridged12*
 $ENDFPLIST
 DRAW
-A -200 -40 20 1800 900 0 0 0 N -220 -40 -200 -20
-A -200 -40 20 -1799 -1 0 0 0 N -220 -40 -180 -40
-A -98 -6 113 297 -910 0 1 0 N 0 50 -100 -120
-A 0 -170 112 1534 266 0 1 0 N -100 -120 100 -120
-A 103 -5 115 -915 1519 0 1 0 N 100 -120 0 50
-C 0 -60 128 0 1 10 N
-P 2 0 0 0 -200 -20 -210 -15 N
-P 2 0 0 0 -200 -20 -205 -30 N
-P 3 0 0 0 -160 0 -160 -60 -130 -60 N
-P 2 0 1 0 -160 0 -200 0 N
-P 2 0 1 0 0 -300 0 -280 N
-P 2 0 1 0 0 -188 0 -204 N
-P 2 0 1 0 0 68 0 82 N
-P 2 0 1 0 0 80 0 100 N
-X Tacho 1 -300 0 100 R 50 50 1 1 P
-X + 2 0 200 100 D 50 50 1 1 P
-X - 3 0 -300 100 U 50 50 1 1 P
+A -40 0 40 901 -901 0 1 0 N -40 40 -40 -40
+A -40 0 40 901 -901 0 1 0 F -40 40 -40 -40
+A 40 0 40 -899 899 0 1 0 N 40 -40 40 40
+A 40 0 40 -899 899 0 1 0 F 40 -40 40 40
+S -40 20 -20 -20 0 1 0 F
+S -20 40 20 -40 0 1 0 F
+P 2 0 1 0 -100 0 -80 0 N
+P 2 0 1 0 -40 40 -40 -40 N
+P 2 0 1 0 0 -50 0 -40 N
+P 2 0 1 0 40 40 40 -40 N
+P 2 0 1 0 100 0 80 0 N
+X A 1 -200 0 100 R 50 50 1 1 P
+X C 2 0 -150 100 U 50 50 1 1 I
+X B 3 200 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
