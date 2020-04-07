@@ -1921,7 +1921,7 @@
       ))
   )
 
-  (gr_arc (start -24.87 24.95) (end -24.87 39.95) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5632))
+  (gr_arc (start -29.885 29.9) (end -29.885 39.95) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5632))
   (gr_arc (start 25.15 -24.25) (end 25.15 -39.25) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5629))
   (gr_text "TO DO: Move XT0…YL0…etc tighter into inner edge." (at -1.035 -13.35) (layer F.SilkS) (tstamp 5E8B5473)
     (effects (font (size 1 1) (thickness 0.15)))

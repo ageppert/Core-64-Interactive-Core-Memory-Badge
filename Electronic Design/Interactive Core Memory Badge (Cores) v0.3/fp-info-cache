@@ -1,4 +1,4 @@
-16692928535050727
+16692959302538727
 2829
 ADAFRUIT_2829
 
@@ -34388,7 +34388,7 @@ PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left
 surface-mounted straight socket strip, 1x02, 2.54mm pitch, single row, style 1 (pin 1 left) (https://cdn.harwin.com/pdfs/M20-786.pdf), script generated
 Surface mounted socket strip SMD 1x02 2.54mm single row style1 pin1 left
 0
-2
+4
 2
 Connector_PinSocket_2.54mm
 PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Right

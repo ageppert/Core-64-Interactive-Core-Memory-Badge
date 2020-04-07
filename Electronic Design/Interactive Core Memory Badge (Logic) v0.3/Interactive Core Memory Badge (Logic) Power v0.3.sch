@@ -55,8 +55,6 @@ F 3 "" H 3950 4600 50  0001 C CNN
 	1    3950 4600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7700 4900 7900 4900
 Text GLabel 1000 4900 0    50   Input ~ 0
 5V_USB
 $Comp
@@ -74,63 +72,6 @@ F 3 "" H 850 6850 50  0001 C CNN
 $EndComp
 Text Notes 7550 4400 0    50   ~ 0
 CORES AND ACCESSORIES
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5D48B700
-P 1200 4800
-AR Path="/5E7548ED/5D48B700" Ref="TP2"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5D48B700" Ref="TP?"  Part="1" 
-F 0 "TP2" H 1258 4918 50  0000 L CNN
-F 1 "5V_VUSB" H 1258 4827 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 1400 4800 50  0001 C CNN
-F 3 "~" H 1400 4800 50  0001 C CNN
-	1    1200 4800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP3
-U 1 1 5D48C4DD
-P 1950 4650
-AR Path="/5E7548ED/5D48C4DD" Ref="TP3"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5D48C4DD" Ref="TP?"  Part="1" 
-F 0 "TP3" H 2000 4800 50  0000 L CNN
-F 1 "+BATT" H 2000 4700 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2150 4650 50  0001 C CNN
-F 3 "~" H 2150 4650 50  0001 C CNN
-	1    1950 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5D48D068
-P 850 6600
-AR Path="/5E7548ED/5D48D068" Ref="TP1"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5D48D068" Ref="TP?"  Part="1" 
-F 0 "TP1" H 908 6718 50  0000 L CNN
-F 1 "-BATT" H 908 6627 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 1050 6600 50  0001 C CNN
-F 3 "~" H 1050 6600 50  0001 C CNN
-	1    850  6600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP4
-U 1 1 5D48E646
-P 3650 4650
-AR Path="/5E7548ED/5D48E646" Ref="TP4"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5D48E646" Ref="TP?"  Part="1" 
-F 0 "TP4" H 3708 4768 50  0000 L CNN
-F 1 "+VSW" H 3708 4677 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 3850 4650 50  0001 C CNN
-F 3 "~" H 3850 4650 50  0001 C CNN
-	1    3650 4650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7900 4900 8050 4900
-Connection ~ 7900 4900
-Wire Wire Line
-	7900 4650 7900 4900
 $Comp
 L Switch:SW_DPDT_x2 SW1
 U 1 1 5E9AF194
@@ -250,21 +191,10 @@ Wire Wire Line
 	4400 2700 4950 2700
 Wire Wire Line
 	4400 2800 4950 2800
-Wire Wire Line
-	1650 4700 1950 4700
-Wire Wire Line
-	2350 4900 2050 4900
-Wire Wire Line
-	1950 4650 1950 4700
-Connection ~ 1950 4700
-Wire Wire Line
-	1950 4700 2350 4700
 Text GLabel 1600 3400 0    50   Input ~ 0
 TEENSY_VUSB
 Text GLabel 2050 3400 2    50   Output ~ 0
 5V_USB
-Wire Wire Line
-	1200 4900 1200 4800
 Wire Notes Line style solid
 	600  1400 5900 1400
 Wire Notes Line style solid
@@ -301,42 +231,24 @@ BOTH MODES REQUIRE:\nVIN must be supplied TO the Teensy\n(because VIN-VUSB is cu
 $Comp
 L power:+VSW #PWR0113
 U 1 1 5E8659D4
-P 6950 4650
+P 9550 5850
 AR Path="/5E7548ED/5E8659D4" Ref="#PWR0113"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8659D4" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0113" H 6950 4500 50  0001 C CNN
-F 1 "+VSW" H 6965 4823 50  0000 C CNN
-F 2 "" H 6950 4650 50  0001 C CNN
-F 3 "" H 6950 4650 50  0001 C CNN
-	1    6950 4650
+F 0 "#PWR0113" H 9550 5700 50  0001 C CNN
+F 1 "+VSW" H 9565 6023 50  0000 C CNN
+F 2 "" H 9550 5850 50  0001 C CNN
+F 3 "" H 9550 5850 50  0001 C CNN
+	1    9550 5850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	6950 4650 6950 4900
 Text GLabel 8050 4900 2    50   Input ~ 0
 3V3_800mA
-Wire Wire Line
-	1200 4900 1850 4900
-Wire Wire Line
-	1000 4900 1200 4900
-Connection ~ 1200 4900
 Text Notes 550  4250 0    118  ~ 0
 POWER SWITCH AND VOLTAGE MONITOR
 Text Notes 6450 4250 0    118  ~ 0
 3.3V HIGH POWER SUPPLY
-$Comp
-L Connector:TestPoint TP7
-U 1 1 5E88DBA6
-P 7900 4650
-AR Path="/5E7548ED/5E88DBA6" Ref="TP7"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5E88DBA6" Ref="TP?"  Part="1" 
-F 0 "TP7" H 7958 4768 50  0000 L CNN
-F 1 "3V3_HP" H 7958 4677 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 8100 4650 50  0001 C CNN
-F 3 "~" H 8100 4650 50  0001 C CNN
-	1    7900 4650
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+VSW #PWR0114
 U 1 1 5E89D125
@@ -350,13 +262,6 @@ F 3 "" H 1450 6450 50  0001 C CNN
 	1    1450 6450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3650 4800 3550 4800
-Wire Wire Line
-	3950 4800 3650 4800
-Connection ~ 3650 4800
-Wire Wire Line
-	3650 4650 3650 4800
 $Comp
 L power:GND #PWR0116
 U 1 1 5E8C4F56
@@ -487,13 +392,10 @@ $EndComp
 Text GLabel 3800 5100 0    50   Output ~ 0
 VSW_HALF_VOL_MONITOR
 Wire Wire Line
-	1650 6750 2700 6750
-Connection ~ 2700 6750
-Wire Wire Line
-	850  6600 850  6750
+	1650 6750 2950 6750
+Connection ~ 2950 6750
 Wire Wire Line
 	1250 6750 850  6750
-Connection ~ 850  6750
 Wire Wire Line
 	850  6750 850  6850
 $Comp
@@ -527,7 +429,7 @@ F 3 "" H 6500 6850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3250 6750 3500 6750
+	3500 6750 3750 6750
 Wire Wire Line
 	5700 6750 5700 6850
 Text Notes 5100 7250 0    50   ~ 0
@@ -545,61 +447,35 @@ F 3 "" H 5700 6850 50  0001 C CNN
 	1    5700 6850
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP6
-U 1 1 5D4B9C69
-P 3500 6550
-AR Path="/5E7548ED/5D4B9C69" Ref="TP6"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5D4B9C69" Ref="TP?"  Part="1" 
-F 0 "TP6" H 3558 6668 50  0000 L CNN
-F 1 "SYS_CUR_HI" H 3558 6577 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 3700 6550 50  0001 C CNN
-F 3 "~" H 3700 6550 50  0001 C CNN
-	1    3500 6550
-	1    0    0    -1  
-$EndComp
 Text Notes 550  7750 0    50   ~ 0
 REVERSE POLARITY DETECTION AND SYSTEM\nCURRENT MEASUREMENT CLOSE TO BATTERY.\n\nREF: https://www.instructables.com/id/Reverse-polarity-protection-for-your-circuit-with/\nIRLML6344TRPBF https://www.digikey.com/product-detail/en/infineon-technologies/IRLML6344TRPBF/IRLML6344TRPBFCT-ND/2538168
 Wire Wire Line
-	2700 6550 2700 6750
-$Comp
-L Connector:TestPoint TP5
-U 1 1 5D4B94F7
-P 2700 6550
-AR Path="/5E7548ED/5D4B94F7" Ref="TP5"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5D4B94F7" Ref="TP?"  Part="1" 
-F 0 "TP5" H 2758 6668 50  0000 L CNN
-F 1 "SYS_CUR_LOW" H 2758 6577 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 2900 6550 50  0001 C CNN
-F 3 "~" H 2900 6550 50  0001 C CNN
-	1    2700 6550
-	1    0    0    -1  
-$EndComp
+	2950 6550 2950 6750
 Connection ~ 5700 6750
 Wire Wire Line
 	5700 6750 6500 6750
 Wire Wire Line
-	2700 6750 2950 6750
+	2950 6750 3200 6750
 $Comp
 L Device:R R?
 U 1 1 5D4B5807
-P 3100 6750
+P 3350 6750
 AR Path="/5D4B5807" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5D4B5807" Ref="R43"  Part="1" 
 AR Path="/5E7548ED/5D4B5807" Ref="R1"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5D4B5807" Ref="R?"  Part="1" 
-F 0 "R1" V 3200 6750 50  0000 C CNN
-F 1 "0.001" V 3000 6750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3030 6750 50  0001 C CNN
-F 3 "~" H 3100 6750 50  0001 C CNN
-	1    3100 6750
+F 0 "R1" V 3450 6750 50  0000 C CNN
+F 1 "0.001" V 3250 6750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3280 6750 50  0001 C CNN
+F 3 "~" H 3350 6750 50  0001 C CNN
+	1    3350 6750
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	3500 6550 3500 6750
-Connection ~ 3500 6750
+	3750 6550 3750 6750
+Connection ~ 3750 6750
 Wire Wire Line
-	3500 6750 5700 6750
+	3750 6750 5700 6750
 Text Notes 3950 2450 0    50   ~ 0
 ALTERNATE CONNECTOR - Generic SMT 2-pin .1” \nheader option for everything else. 
 $Comp
@@ -638,4 +514,139 @@ Text Notes 2000 4400 0    50   ~ 10
 TO DO: update switch footprint for samples
 Wire Wire Line
 	3250 4800 3150 4800
+$Comp
+L Connector:Conn_01x08_Female J?
+U 1 1 5E8E7260
+P 10400 5450
+AR Path="/5E75D6AB/5E8E7260" Ref="J?"  Part="1" 
+AR Path="/5E7548ED/5E8E7260" Ref="J8"  Part="1" 
+F 0 "J8" H 10427 5427 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 10427 5334 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 10400 5450 50  0001 C CNN
+F 3 "~" H 10400 5450 50  0001 C CNN
+	1    10400 5450
+	1    0    0    -1  
+$EndComp
+Text Notes 10250 4950 0    50   ~ 0
+POWER RAILS
+Text GLabel 9700 5550 0    50   Input ~ 0
+3V3_800mA
+$Comp
+L power:-BATT #PWR0123
+U 1 1 5E8EB9C2
+P 9550 4650
+AR Path="/5E7548ED/5E8EB9C2" Ref="#PWR0123"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/5E8EB9C2" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0123" H 9550 4500 50  0001 C CNN
+F 1 "-BATT" H 9565 4823 50  0000 C CNN
+F 2 "" H 9550 4650 50  0001 C CNN
+F 3 "" H 9550 4650 50  0001 C CNN
+	1    9550 4650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7700 4900 8050 4900
+Wire Wire Line
+	3550 4800 3950 4800
+Wire Wire Line
+	1650 4700 2350 4700
+$Comp
+L power:+BATT #PWR0157
+U 1 1 5E8F0624
+P 9550 6150
+AR Path="/5E7548ED/5E8F0624" Ref="#PWR0157"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/5E8F0624" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0157" H 9550 6000 50  0001 C CNN
+F 1 "+BATT" H 9565 6323 50  0000 C CNN
+F 2 "" H 9550 6150 50  0001 C CNN
+F 3 "" H 9550 6150 50  0001 C CNN
+	1    9550 6150
+	1    0    0    -1  
+$EndComp
+Text GLabel 9700 6250 0    50   Input ~ 0
+5V_USB
+Text GLabel 2850 6550 0    50   Output ~ 0
+CUR_LOW
+Text GLabel 3850 6550 2    50   Output ~ 0
+CUR_HI
+Wire Wire Line
+	2850 6550 2950 6550
+Wire Wire Line
+	3750 6550 3850 6550
+Text GLabel 9650 4950 0    50   Output ~ 0
+CUR_LOW
+Text GLabel 9650 5100 0    50   Output ~ 0
+CUR_HI
+Wire Wire Line
+	9550 4650 10100 4650
+Wire Wire Line
+	10100 4650 10100 5150
+Wire Wire Line
+	10100 5150 10200 5150
+Wire Wire Line
+	9650 4950 10000 4950
+Wire Wire Line
+	10000 4950 10000 5250
+Wire Wire Line
+	10000 5250 10200 5250
+Wire Wire Line
+	9650 5100 9900 5100
+Wire Wire Line
+	9900 5100 9900 5350
+Wire Wire Line
+	9900 5350 10200 5350
+Wire Wire Line
+	9550 5250 9800 5250
+Wire Wire Line
+	9800 5250 9800 5450
+Wire Wire Line
+	9800 5450 10200 5450
+Wire Wire Line
+	9550 5850 9900 5850
+Wire Wire Line
+	9900 5850 9900 5650
+Wire Wire Line
+	9900 5650 10200 5650
+Wire Wire Line
+	9550 6150 10000 6150
+Wire Wire Line
+	10000 6150 10000 5750
+Wire Wire Line
+	10000 5750 10200 5750
+Wire Wire Line
+	9700 6250 10100 6250
+Wire Wire Line
+	10100 6250 10100 5850
+Wire Wire Line
+	10100 5850 10200 5850
+Wire Wire Line
+	9700 5550 10200 5550
+$Comp
+L power:+VSW #PWR0160
+U 1 1 5E91C71C
+P 6950 4650
+AR Path="/5E7548ED/5E91C71C" Ref="#PWR0160"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/5E91C71C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0160" H 6950 4500 50  0001 C CNN
+F 1 "+VSW" H 6965 4823 50  0000 C CNN
+F 2 "" H 6950 4650 50  0001 C CNN
+F 3 "" H 6950 4650 50  0001 C CNN
+	1    6950 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0161
+U 1 1 5E91E931
+P 9550 5250
+AR Path="/5E7548ED/5E91E931" Ref="#PWR0161"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/5E91E931" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0161" H 9550 5000 50  0001 C CNN
+F 1 "GND" H 9555 5075 50  0000 C CNN
+F 2 "" H 9550 5250 50  0001 C CNN
+F 3 "" H 9550 5250 50  0001 C CNN
+	1    9550 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 4900 2350 4900
 $EndSCHEMATC

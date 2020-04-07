@@ -1752,7 +1752,7 @@ U 1 1 5E78B5ED
 P 2750 2400
 F 0 "J2" H 2100 3350 50  0000 C CNN
 F 1 "Conn_01x16_Female" H 2400 3250 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical_SMD_Pin1Left" H 2750 2400 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2750 2400 50  0001 C CNN
 F 3 "~" H 2750 2400 50  0001 C CNN
 	1    2750 2400
 	1    0    0    -1  
@@ -1763,7 +1763,7 @@ U 1 1 5E78B5F3
 P 600 2400
 F 0 "J1" H 550 3350 50  0000 C CNN
 F 1 "Conn_01x16_Female" H 250 3250 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical_SMD_Pin1Left" H 600 2400 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 600 2400 50  0001 C CNN
 F 3 "~" H 600 2400 50  0001 C CNN
 	1    600  2400
 	-1   0    0    -1  

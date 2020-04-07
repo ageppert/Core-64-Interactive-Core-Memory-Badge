@@ -306,6 +306,53 @@ Wire Notes Line
 	650  3800 650  4200
 Wire Notes Line
 	650  4200 1900 4200
-Text Notes 7550 4200 0    50   ~ 10
-TO DO: Place header on main board into RasPi header of LED Array
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J9
+U 1 1 5E92C31C
+P 9300 4950
+F 0 "J9" H 9350 5370 50  0000 C CNN
+F 1 "Conn_02x06_Odd_Even" H 9350 5277 50  0000 C CNN
+F 2 "Digikey:PinHeader_2x6_P2.54mm_Vertical_SMD" H 9300 4950 50  0001 C CNN
+F 3 "~" H 9300 4950 50  0001 C CNN
+	1    9300 4950
+	1    0    0    -1  
+$EndComp
+Text GLabel 9700 5250 2    50   Output ~ 0
+LED_MATRIX_+VSW
+$Comp
+L power:GND #PWR?
+U 1 1 5E92D5BA
+P 8950 5250
+AR Path="/5E755787/5E92D5BA" Ref="#PWR?"  Part="1" 
+AR Path="/5E92D5BA" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 8950 5000 50  0001 C CNN
+F 1 "GND" H 8955 5075 50  0000 C CNN
+F 2 "" H 8950 5250 50  0001 C CNN
+F 3 "" H 8950 5250 50  0001 C CNN
+	1    8950 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+VSW #PWR?
+U 1 1 5E92E36E
+P 10000 4750
+AR Path="/5E755787/5E92E36E" Ref="#PWR?"  Part="1" 
+AR Path="/5E92E36E" Ref="#PWR0163"  Part="1" 
+F 0 "#PWR0163" H 10000 4600 50  0001 C CNN
+F 1 "+VSW" H 10015 4925 50  0000 C CNN
+F 2 "" H 10000 4750 50  0001 C CNN
+F 3 "" H 10000 4750 50  0001 C CNN
+	1    10000 4750
+	1    0    0    -1  
+$EndComp
+Text Notes 7550 4050 0    118  ~ 0
+PARTIAL RASPI HEADER FOR LED ARRAY
+Wire Wire Line
+	9600 4750 10000 4750
+Wire Wire Line
+	9600 5250 9700 5250
+Wire Wire Line
+	9100 5150 8950 5150
+Wire Wire Line
+	8950 5150 8950 5250
 $EndSCHEMATC

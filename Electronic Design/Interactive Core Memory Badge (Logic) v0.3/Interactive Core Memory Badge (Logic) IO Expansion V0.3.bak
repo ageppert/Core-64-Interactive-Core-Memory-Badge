@@ -474,7 +474,7 @@ F 3 "~" H 8900 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 8850 4150 0    118  ~ 0
-BOARD ID
+BOARD I.D. AND S/N
 Text GLabel 9600 4250 2    50   Input ~ 0
 3V3_800mA
 $Comp
@@ -1017,4 +1017,49 @@ Wire Wire Line
 	7950 5700 8050 5700
 Wire Wire Line
 	7850 6100 8050 6100
+Text Notes 8850 2300 0    50   ~ 10
+TO DO: Add IO expansion/debug header if there is room…
+$Comp
+L Memory_EEPROM:M24C01-RMN U?
+U 1 1 5E9366CC
+P 12250 4800
+F 0 "U?" H 12250 5285 50  0000 C CNN
+F 1 "M24C01-RMN" H 12250 5192 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 12250 5150 50  0001 C CNN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf" H 12300 4300 50  0001 C CNN
+	1    12250 4800
+	1    0    0    -1  
+$EndComp
+Text GLabel 12650 4700 2    50   BiDi ~ 0
+I2C_DATA
+Text GLabel 12650 4800 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 12650 4250 2    50   Input ~ 0
+3V3_800mA
+$Comp
+L power:GNDD #PWR?
+U 1 1 5E93FD30
+P 12250 5150
+F 0 "#PWR?" H 12250 4900 50  0001 C CNN
+F 1 "GNDD" H 12254 4994 50  0000 C CNN
+F 2 "" H 12250 5150 50  0001 C CNN
+F 3 "" H 12250 5150 50  0001 C CNN
+	1    12250 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11850 4700 11850 4800
+Connection ~ 11850 4800
+Wire Wire Line
+	11850 4800 11850 4900
+Wire Wire Line
+	11850 4900 11850 5100
+Wire Wire Line
+	11850 5100 12250 5100
+Connection ~ 11850 4900
+Wire Wire Line
+	12250 5100 12250 5150
+Connection ~ 12250 5100
+Text Notes 11900 3800 0    50   ~ 10
+TO DO: Swap in EEPROM ID chip. Add header to program it without powering the whole board.
 $EndSCHEMATC
