@@ -297,7 +297,7 @@ IOEXP_ID33_INT_A
 Text GLabel 1900 3000 0    50   Input ~ 0
 IOEXP_ID33_INT_B
 Text Notes 800  6500 0    50   ~ 10
-TO DO: I2C Address conflicts?\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\nOptional\n  OLED: 60 decimal, 0x3C
+I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\n  EEPROM ID: 160 decimal, 0xA0\nOptional\n  OLED: 60 decimal, 0x3C
 Text Notes 700  4100 0    50   ~ 0
 Try not to use any of these\nto avoid the need to populate\nthis end row header on the PCB.
 Wire Notes Line
@@ -307,12 +307,12 @@ Wire Notes Line
 Wire Notes Line
 	650  4200 1900 4200
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J?
+L Connector_Generic:Conn_02x06_Odd_Even J9
 U 1 1 5E92C31C
 P 9300 4950
-F 0 "J?" H 9350 5370 50  0000 C CNN
+F 0 "J9" H 9350 5370 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 9350 5277 50  0000 C CNN
-F 2 "" H 9300 4950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD" H 9300 4950 50  0001 C CNN
 F 3 "~" H 9300 4950 50  0001 C CNN
 	1    9300 4950
 	1    0    0    -1  
@@ -324,8 +324,8 @@ L power:GND #PWR?
 U 1 1 5E92D5BA
 P 8950 5250
 AR Path="/5E755787/5E92D5BA" Ref="#PWR?"  Part="1" 
-AR Path="/5E92D5BA" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 8950 5000 50  0001 C CNN
+AR Path="/5E92D5BA" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 8950 5000 50  0001 C CNN
 F 1 "GND" H 8955 5075 50  0000 C CNN
 F 2 "" H 8950 5250 50  0001 C CNN
 F 3 "" H 8950 5250 50  0001 C CNN
@@ -337,8 +337,8 @@ L power:+VSW #PWR?
 U 1 1 5E92E36E
 P 10000 4750
 AR Path="/5E755787/5E92E36E" Ref="#PWR?"  Part="1" 
-AR Path="/5E92E36E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 10000 4600 50  0001 C CNN
+AR Path="/5E92E36E" Ref="#PWR0163"  Part="1" 
+F 0 "#PWR0163" H 10000 4600 50  0001 C CNN
 F 1 "+VSW" H 10015 4925 50  0000 C CNN
 F 2 "" H 10000 4750 50  0001 C CNN
 F 3 "" H 10000 4750 50  0001 C CNN

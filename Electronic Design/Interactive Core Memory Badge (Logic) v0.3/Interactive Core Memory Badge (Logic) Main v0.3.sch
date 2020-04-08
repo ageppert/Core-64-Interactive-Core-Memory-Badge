@@ -297,7 +297,7 @@ IOEXP_ID33_INT_A
 Text GLabel 1900 3000 0    50   Input ~ 0
 IOEXP_ID33_INT_B
 Text Notes 800  6500 0    50   ~ 10
-TO DO: I2C Address conflicts?\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\nOptional\n  OLED: 60 decimal, 0x3C
+I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\n  EEPROM ID: 160 decimal, 0xA0\nOptional\n  OLED: 60 decimal, 0x3C
 Text Notes 700  4100 0    50   ~ 0
 Try not to use any of these\nto avoid the need to populate\nthis end row header on the PCB.
 Wire Notes Line
@@ -312,7 +312,7 @@ U 1 1 5E92C31C
 P 9300 4950
 F 0 "J9" H 9350 5370 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 9350 5277 50  0000 C CNN
-F 2 "Digikey:PinHeader_2x6_P2.54mm_Vertical_SMD" H 9300 4950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD_and_TH" H 9300 4950 50  0001 C CNN
 F 3 "~" H 9300 4950 50  0001 C CNN
 	1    9300 4950
 	1    0    0    -1  

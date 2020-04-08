@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 30)
+    (drawings 32)
     (tracks 330)
     (zones 0)
     (modules 32)
@@ -1921,8 +1921,10 @@
       ))
   )
 
+  (gr_arc (start 29.965 29.9) (end 30.114999 39.899999) (angle -89.02224822) (layer Edge.Cuts) (width 0.05) (tstamp 5E8D2938))
+  (gr_arc (start -29.735 -29.75) (end -39.734999 -29.899999) (angle 89.02224822) (layer Edge.Cuts) (width 0.05) (tstamp 5E8D2938))
+  (gr_arc (start 30.365001 -30.000001) (end 40.365 -30.15) (angle -89.02224822) (layer Edge.Cuts) (width 0.05))
   (gr_arc (start -29.885 29.9) (end -29.885 39.95) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5632))
-  (gr_arc (start 25.15 -24.25) (end 25.15 -39.25) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5629))
   (gr_text "TO DO: Move XT0…YL0…etc tighter into inner edge." (at -1.035 -13.35) (layer F.SilkS) (tstamp 5E8B5473)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -2266,7 +2268,6 @@
   (segment (start 25.74 31.075) (end 37.215 19.6) (width 0.635) (layer B.Cu) (net 27))
   (via (at 25.74 31.075) (size 0.635) (drill 0.4) (layers F.Cu B.Cu) (net 27))
   (segment (start 35.56 19.05) (end 33.905 19.05) (width 0.635) (layer B.Cu) (net 28))
-  (segment (start -29.985 34.65) (end -29.985 34.3875) (width 0.254) (layer B.Cu) (net 37))
   (via (at -32.535 13.7) (size 0.635) (drill 0.4) (layers F.Cu B.Cu) (net 29))
   (segment (start -33.905 12.33) (end -32.852499 13.382501) (width 0.254) (layer B.Cu) (net 29))
   (segment (start -33.905 11.43) (end -33.905 12.33) (width 0.254) (layer B.Cu) (net 29))
@@ -2333,6 +2334,7 @@
   (segment (start -37.635 -24.05) (end -37.635 0.85) (width 0.254) (layer F.Cu) (net 36))
   (segment (start -27.485 -34.2) (end -37.635 -24.05) (width 0.254) (layer F.Cu) (net 36))
   (segment (start -20.735 -34.2) (end -27.485 -34.2) (width 0.254) (layer F.Cu) (net 36))
+  (segment (start -29.985 34.65) (end -29.985 34.3875) (width 0.254) (layer B.Cu) (net 37))
   (segment (start -32.635 24.35) (end -33.485 23.5) (width 0.254) (layer B.Cu) (net 37))
   (segment (start -32.635 30.599012) (end -32.635 24.35) (width 0.254) (layer B.Cu) (net 37))
   (segment (start -32.535 30.699012) (end -32.635 30.599012) (width 0.254) (layer B.Cu) (net 37))

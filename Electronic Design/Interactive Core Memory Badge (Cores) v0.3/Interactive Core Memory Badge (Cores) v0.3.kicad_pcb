@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 30)
+    (drawings 28)
     (tracks 330)
     (zones 0)
     (modules 32)
@@ -1921,8 +1921,10 @@
       ))
   )
 
+  (gr_arc (start 29.965 29.9) (end 30.114999 39.899999) (angle -89.02224822) (layer Edge.Cuts) (width 0.05) (tstamp 5E8D2938))
+  (gr_arc (start -29.735 -29.75) (end -39.734999 -29.899999) (angle 89.02224822) (layer Edge.Cuts) (width 0.05) (tstamp 5E8D2938))
+  (gr_arc (start 30.365001 -30.000001) (end 40.365 -30.15) (angle -89.02224822) (layer Edge.Cuts) (width 0.05))
   (gr_arc (start -29.885 29.9) (end -29.885 39.95) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5632))
-  (gr_arc (start 25.15 -24.25) (end 25.15 -39.25) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E8B5629))
   (gr_text "TO DO: Move XT0…YL0…etc tighter into inner edge." (at -1.035 -13.35) (layer F.SilkS) (tstamp 5E8B5473)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -1981,8 +1983,6 @@
   (gr_arc (start 25.15 24.25) (end 25.15 26.75) (angle -90) (layer Edge.Cuts) (width 0.05) (tstamp 5E745E81))
   (gr_arc (start -25.15 24.25) (end -25.15 26.75) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E745E62))
   (gr_arc (start -19.785 -21.9) (end -19.785 -24.4) (angle -90) (layer Edge.Cuts) (width 0.05))
-  (gr_arc (start 46.865 30.1) (end 51.865 30.1) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E74516A))
-  (gr_arc (start -42.085 42.05) (end -42.085 47.05) (angle 90) (layer Edge.Cuts) (width 0.05) (tstamp 5E74515A))
   (gr_line (start -35 40) (end 35 40) (layer Edge.Cuts) (width 0.05) (tstamp 5E745006))
   (gr_text www.MachineIdeas.com (at 58.065 -35.35) (layer F.SilkS) (tstamp 5D4E482F)
     (effects (font (size 1.905 1.905) (thickness 0.381)))
@@ -1993,8 +1993,6 @@
   (gr_text "Interactive Core Memory" (at 70.965 -7.55) (layer F.SilkS) (tstamp 5D4E4844)
     (effects (font (size 3.175 3.175) (thickness 0.635)))
   )
-  (gr_arc (start 43.245 -41.32) (end 48.245 -41.32) (angle -90) (layer Edge.Cuts) (width 0.05))
-  (gr_arc (start -41.485 -41.55) (end -41.485 -46.55) (angle -90) (layer Edge.Cuts) (width 0.05))
   (gr_line (start 40 -35) (end 40 35) (layer Edge.Cuts) (width 0.05) (tstamp 5E717C97))
   (gr_text "WWW.MACHINEIDEAS.COM\n2020 ANDY GEPPERT" (at 51.965 38.3) (layer F.SilkS) (tstamp 5D467BB8)
     (effects (font (size 1 1) (thickness 0.15)))

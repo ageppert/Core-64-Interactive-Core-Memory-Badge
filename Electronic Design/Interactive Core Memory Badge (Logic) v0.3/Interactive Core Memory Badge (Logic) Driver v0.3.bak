@@ -1390,8 +1390,8 @@ $Comp
 L Diode:BAT54AW D12
 U 1 1 5D5609D1
 P 9400 5500
-F 0 "D12" H 9400 5633 50  0000 C CNN
-F 1 "BAT54AW" H 9400 5724 50  0000 C CNN
+F 0 "D12" H 9550 5350 50  0000 C CNN
+F 1 "BAT54AW" H 9200 5350 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 9475 5625 50  0001 L CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9280 5500 50  0001 C CNN
 	1    9400 5500
@@ -1401,8 +1401,8 @@ $Comp
 L Diode:BAT54CW D13
 U 1 1 5D56153A
 P 9400 5900
-F 0 "D13" H 9400 6125 50  0000 C CNN
-F 1 "BAT54CW" H 9400 6034 50  0000 C CNN
+F 0 "D13" H 9250 5800 50  0000 C CNN
+F 1 "BAT54CW" H 9600 5800 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 9475 6025 50  0001 L CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 5900 50  0001 C CNN
 	1    9400 5900
@@ -1412,8 +1412,8 @@ $Comp
 L Diode:BAT54AW D10
 U 1 1 5D57DB50
 P 9400 3350
-F 0 "D10" H 9400 3483 50  0000 C CNN
-F 1 "BAT54AW" H 9400 3574 50  0000 C CNN
+F 0 "D10" H 9550 3200 50  0000 C CNN
+F 1 "BAT54AW" H 9200 3200 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 9475 3475 50  0001 L CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9280 3350 50  0001 C CNN
 	1    9400 3350
@@ -1423,8 +1423,8 @@ $Comp
 L Diode:BAT54CW D11
 U 1 1 5D57EB12
 P 9400 3750
-F 0 "D11" H 9400 3975 50  0000 C CNN
-F 1 "BAT54CW" H 9400 3884 50  0000 C CNN
+F 0 "D11" H 9250 3650 50  0000 C CNN
+F 1 "BAT54CW" H 9600 3650 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 9475 3875 50  0001 L CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 3750 50  0001 C CNN
 	1    9400 3750
@@ -1468,141 +1468,85 @@ Text Notes 8700 3700 0    50   ~ 0
 ROW 1,5
 Text Notes 8700 5550 0    50   ~ 0
 ROW 2,6
-Text GLabel 3150 7400 0    50   Input ~ 0
+Text GLabel 3400 7200 0    50   Input ~ 0
 WRITE_ENABLE
-Text Notes 5250 7450 0    50   ~ 0
+Text Notes 5250 7250 0    50   ~ 0
 CORE MEMORY GROUND
 $Comp
 L Digikey-Transistors:MMBT4401LT1G Q?
 U 1 1 5E8ED55F
-P 4100 7400
+P 4100 7200
 AR Path="/5E8ED55F" Ref="Q?"  Part="1" 
 AR Path="/5D254AE8/5E8ED55F" Ref="Q?"  Part="1" 
 AR Path="/5E755AC8/5E8ED55F" Ref="Q4"  Part="1" 
-F 0 "Q4" H 4288 7453 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 4288 7347 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 4300 7600 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4300 7700 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 4300 7800 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 4300 7900 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4300 8000 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4300 8100 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4300 8200 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 4300 8300 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 4300 8400 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 4300 8500 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4300 8600 60  0001 L CNN "Status"
-	1    4100 7400
+F 0 "Q4" H 4288 7253 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 4288 7147 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 4300 7400 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4300 7500 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 4300 7600 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 4300 7700 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 4300 7800 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 4300 7900 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4300 8000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 4300 8100 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 4300 8200 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 4300 8300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4300 8400 60  0001 L CNN "Status"
+	1    4100 7200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4200 7050 4200 7200
+	4200 6850 4200 7000
 $Comp
 L Device:R R?
 U 1 1 5E8ED566
-P 3350 7400
+P 3650 7200
 AR Path="/5E8ED566" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5E8ED566" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5E8ED566" Ref="R10"  Part="1" 
-F 0 "R10" V 3143 7400 50  0000 C CNN
-F 1 "470" V 3234 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3280 7400 50  0001 C CNN
-F 3 "~" H 3350 7400 50  0001 C CNN
-	1    3350 7400
+F 0 "R10" V 3443 7200 50  0000 C CNN
+F 1 "470" V 3534 7200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 7200 50  0001 C CNN
+F 3 "~" H 3650 7200 50  0001 C CNN
+	1    3650 7200
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3500 7400 3550 7400
 $Comp
 L power:GNDPWR #PWR?
 U 1 1 5E8ED56D
-P 5300 7150
+P 5300 6950
 AR Path="/5E8ED56D" Ref="#PWR?"  Part="1" 
 AR Path="/5D254AE8/5E8ED56D" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5E8ED56D" Ref="#PWR0151"  Part="1" 
-F 0 "#PWR0151" H 5300 6950 50  0001 C CNN
-F 1 "GNDPWR" H 5304 6996 50  0000 C CNN
-F 2 "" H 5300 7100 50  0001 C CNN
-F 3 "" H 5300 7100 50  0001 C CNN
-	1    5300 7150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3150 7400 3200 7400
-Text Notes 1500 6750 0    50   ~ 0
-CORE MEMORY POWER
-$Comp
-L Device:R R?
-U 1 1 5E8ED580
-P 4900 7050
-AR Path="/5E8ED580" Ref="R?"  Part="1" 
-AR Path="/5D254AE8/5E8ED580" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5E8ED580" Ref="R16"  Part="1" 
-F 0 "R16" V 4693 7050 50  0000 C CNN
-F 1 "0.01" V 4784 7050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 4830 7050 50  0001 C CNN
-F 3 "~" H 4900 7050 50  0001 C CNN
-	1    4900 7050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5050 7050 5300 7050
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E8ED587
-P 4450 6950
-AR Path="/5D254AE8/5E8ED587" Ref="TP?"  Part="1" 
-AR Path="/5E8ED587" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5E8ED587" Ref="TP16"  Part="1" 
-F 0 "TP16" H 4508 7068 50  0000 L CNN
-F 1 "CCL" H 4508 6977 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 4650 6950 50  0001 C CNN
-F 3 "~" H 4650 6950 50  0001 C CNN
-	1    4450 6950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E8ED58D
-P 5300 6950
-AR Path="/5D254AE8/5E8ED58D" Ref="TP?"  Part="1" 
-AR Path="/5E8ED58D" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5E8ED58D" Ref="TP17"  Part="1" 
-F 0 "TP17" H 5358 7068 50  0000 L CNN
-F 1 "CCH" H 5358 6977 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 5500 6950 50  0001 C CNN
-F 3 "~" H 5500 6950 50  0001 C CNN
+F 0 "#PWR0151" H 5300 6750 50  0001 C CNN
+F 1 "GNDPWR" H 5304 6796 50  0000 C CNN
+F 2 "" H 5300 6900 50  0001 C CNN
+F 3 "" H 5300 6900 50  0001 C CNN
 	1    5300 6950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5300 6950 5300 7050
-Connection ~ 5300 7050
-Wire Wire Line
-	4450 6950 4450 7050
-Connection ~ 4450 7050
-Wire Wire Line
-	4450 7050 4750 7050
+	3400 7200 3500 7200
+Text Notes 1500 6750 0    50   ~ 0
+CORE MEMORY POWER
 Text GLabel 1050 7100 0    50   Input ~ 0
 3V3_800mA
 $Comp
 L power:GND #PWR?
 U 1 1 5E8ED59A
-P 4200 7650
+P 4200 7450
 AR Path="/5D254AE8/5E8ED59A" Ref="#PWR?"  Part="1" 
 AR Path="/5E8ED59A" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5E8ED59A" Ref="#PWR0152"  Part="1" 
-F 0 "#PWR0152" H 4200 7400 50  0001 C CNN
-F 1 "GND" H 4205 7475 50  0000 C CNN
-F 2 "" H 4200 7650 50  0001 C CNN
-F 3 "" H 4200 7650 50  0001 C CNN
-	1    4200 7650
+F 0 "#PWR0152" H 4200 7200 50  0001 C CNN
+F 1 "GND" H 4205 7275 50  0000 C CNN
+F 2 "" H 4200 7450 50  0001 C CNN
+F 3 "" H 4200 7450 50  0001 C CNN
+	1    4200 7450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4200 7600 4200 7650
-Text Notes 2700 7000 0    50   ~ 0
-All core power flows to ground through this\nresistor.\nCCL = Core Current Lowside Measurement\nCCH = Core Current Highside Measurement
+	4200 7400 4200 7450
 Wire Wire Line
 	2600 4000 2600 4200
 Wire Wire Line
@@ -1640,7 +1584,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 4200 5200 4200
 Wire Wire Line
-	5300 7050 5300 7150
+	5300 6850 5300 6950
 Connection ~ 6350 3650
 Wire Wire Line
 	6400 3550 6400 4400
@@ -1668,8 +1612,6 @@ F 3 "" H 1900 7000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1900 7100 1900 7000
-Wire Wire Line
-	4200 7050 4450 7050
 Text Notes 3250 6500 0    118  ~ 0
 CORE ARRAY ENABLE
 Wire Wire Line
@@ -1825,7 +1767,7 @@ Wire Wire Line
 	2550 3100 2100 3100
 Text Notes 750  3350 0    50   ~ 0
 DIGITAL LOGIC GROUND
-Text Notes 4200 7950 0    50   ~ 0
+Text Notes 4200 7750 0    50   ~ 0
 SYSTEM POWER GROUND
 $Comp
 L power:GND #PWR?
@@ -1948,23 +1890,8 @@ Wire Wire Line
 	800  2500 900  2500
 Wire Wire Line
 	800  2600 900  2600
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E9A49E8
-P 3550 7250
-AR Path="/5E755787/5E9A49E8" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5E9A49E8" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5E9A49E8" Ref="TP9"  Part="1" 
-F 0 "TP9" H 3500 7450 50  0000 L CNN
-F 1 "WRITE_ENABLE" H 3600 7350 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Keystone_5000-5004_Miniature" H 3750 7250 50  0001 C CNN
-F 3 "~" H 3750 7250 50  0001 C CNN
-	1    3550 7250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	3550 7250 3550 7400
-Connection ~ 3550 7400
+	4200 6850 5300 6850
 Wire Wire Line
-	3550 7400 3900 7400
+	3800 7200 3900 7200
 $EndSCHEMATC
