@@ -9,7 +9,7 @@
     (nets 45)
   )
 
-  (page A)
+  (page A portrait)
   (title_block
     (title "Core 64 (Cores)")
     (date 2020-03-16)
