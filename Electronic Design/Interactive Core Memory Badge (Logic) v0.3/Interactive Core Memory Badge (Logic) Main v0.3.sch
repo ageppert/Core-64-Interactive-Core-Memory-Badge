@@ -311,7 +311,7 @@ L Connector_Generic:Conn_02x06_Odd_Even J9
 U 1 1 5E92C31C
 P 9300 4950
 F 0 "J9" H 9350 5370 50  0000 C CNN
-F 1 "Conn_02x06_Odd_Even" H 9350 5277 50  0000 C CNN
+F 1 "TSM-106-03-T-DV‎" H 9350 5277 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical_SMD_and_TH" H 9300 4950 50  0001 C CNN
 F 3 "~" H 9300 4950 50  0001 C CNN
 	1    9300 4950
@@ -355,4 +355,6 @@ Wire Wire Line
 	9100 5150 8950 5150
 Wire Wire Line
 	8950 5150 8950 5250
+Text Notes 4450 2200 0    50   ~ 10
+TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
 $EndSCHEMATC

@@ -201,7 +201,7 @@ L Connector:Conn_01x16_Male J2
 U 1 1 5E723F12
 P 8150 2300
 F 0 "J2" H 8258 3185 50  0000 C CNN
-F 1 "Conn_01x16_Male" H 8258 3092 50  0000 C CNN
+F 1 "TSM-116-03-T-SV‎" H 8258 3092 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 8150 2300 50  0001 C CNN
 F 3 "~" H 8150 2300 50  0001 C CNN
 	1    8150 2300
@@ -212,7 +212,7 @@ L Connector:Conn_01x16_Male J1
 U 1 1 5E72894A
 P 1800 2350
 F 0 "J1" H 1908 3235 50  0000 C CNN
-F 1 "Conn_01x16_Male" H 1908 3142 50  0000 C CNN
+F 1 "TSM-116-03-T-SV‎" H 1908 3142 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 1800 2350 50  0001 C CNN
 F 3 "~" H 1800 2350 50  0001 C CNN
 	1    1800 2350
@@ -1045,7 +1045,7 @@ U 1 1 5E98E5C1
 P 2400 6000
 F 0 "JP1" H 2400 6209 50  0000 C CNN
 F 1 "Hall_1" H 2400 6116 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm" H 2400 6000 50  0001 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 2400 6000 50  0001 C CNN
 F 3 "~" H 2400 6000 50  0001 C CNN
 	1    2400 6000
 	1    0    0    -1  
@@ -1066,7 +1066,7 @@ U 1 1 5EA84F0A
 P 5000 6000
 F 0 "JP2" H 5000 6209 50  0000 C CNN
 F 1 "Hall_2" H 5000 6116 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm_NumberLabels" H 5000 6000 50  0001 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 5000 6000 50  0001 C CNN
 F 3 "~" H 5000 6000 50  0001 C CNN
 	1    5000 6000
 	1    0    0    -1  
@@ -1077,7 +1077,7 @@ U 1 1 5EA85C55
 P 7350 6000
 F 0 "JP3" H 7350 6209 50  0000 C CNN
 F 1 "Hall_3" H 7350 6116 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 7350 6000 50  0001 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 7350 6000 50  0001 C CNN
 F 3 "~" H 7350 6000 50  0001 C CNN
 	1    7350 6000
 	1    0    0    -1  

@@ -422,21 +422,21 @@ ALTERNATE CONNECTOR - Generic SMT 2-pin .1” \nheader option for everything els
 $Comp
 L BM03B-PASS-1-TFT__LF__SN_:BM03B-PASS-1-TFT__LF__SN_ J3
 U 1 1 5E870E95
-P 1800 2750
-F 0 "J3" H 2250 2282 50  0000 C CNN
-F 1 "BM03B-PASS-1-TFT__LF__SN_" H 2250 2375 50  0000 C CNN
-F 2 "JST_BM03B-PASS-1-TFT:BM03BPASS1TFTLFSN" H 2550 2850 50  0001 L CNN
-F 3 "http://www.jst-mfg.com/product/pdf/eng/ePA-F.pdf" H 2550 2750 50  0001 L CNN
-F 4 "Conn Shrouded Header HDR 3 POS 2mm Solder ST SMD T/R" H 2550 2650 50  0001 L CNN "Description"
-F 5 "8.8" H 2550 2550 50  0001 L CNN "Height"
-F 6 "JST (JAPAN SOLDERLESS TERMINALS)" H 2550 2450 50  0001 L CNN "Manufacturer_Name"
-F 7 "BM03B-PASS-1-TFT (LF)(SN)" H 2550 2350 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "" H 2550 2250 50  0001 L CNN "Mouser Part Number"
-F 9 "" H 2550 2150 50  0001 L CNN "Mouser Price/Stock"
-F 10 "" H 2550 2050 50  0001 L CNN "RS Part Number"
-F 11 "" H 2550 1950 50  0001 L CNN "RS Price/Stock"
-	1    1800 2750
-	-1   0    0    1   
+P 1800 2550
+F 0 "J3" H 2250 2700 50  0000 C CNN
+F 1 "BM03B-PASS-1-TFT__LF__SN_" H 2200 2800 50  0000 C CNN
+F 2 "JST_BM03B-PASS-1-TFT:BM03BPASS1TFTLFSN" H 2550 2650 50  0001 L CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePA-F.pdf" H 2550 2550 50  0001 L CNN
+F 4 "Conn Shrouded Header HDR 3 POS 2mm Solder ST SMD T/R" H 2550 2450 50  0001 L CNN "Description"
+F 5 "8.8" H 2550 2350 50  0001 L CNN "Height"
+F 6 "JST (JAPAN SOLDERLESS TERMINALS)" H 2550 2250 50  0001 L CNN "Manufacturer_Name"
+F 7 "BM03B-PASS-1-TFT (LF)(SN)" H 2550 2150 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "" H 2550 2050 50  0001 L CNN "Mouser Part Number"
+F 9 "" H 2550 1950 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 2550 1850 50  0001 L CNN "RS Part Number"
+F 11 "" H 2550 1750 50  0001 L CNN "RS Price/Stock"
+	1    1800 2550
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	1800 2550 2400 2550

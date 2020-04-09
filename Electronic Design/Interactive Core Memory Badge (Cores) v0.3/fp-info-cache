@@ -1,4 +1,4 @@
-16692959302538727
+16694575843396727
 2829
 ADAFRUIT_2829
 
@@ -27923,13 +27923,6 @@ Through hole pin header THT 1x11 2.54mm single row
 11
 11
 Connector_PinHeader_2.54mm
-PinHeader_1x11_P2.54mm_Vertical_SMD_Pin1Left
-surface-mounted straight pin header, 1x11, 2.54mm pitch, single row, style 1 (pin 1 left)
-Surface mounted pin header SMD 1x11 2.54mm single row style1 pin1 left
-0
-11
-11
-Connector_PinHeader_2.54mm
 PinHeader_1x11_P2.54mm_Vertical_SMD_Pin1Right
 surface-mounted straight pin header, 1x11, 2.54mm pitch, single row, style 2 (pin 1 right)
 Surface mounted pin header SMD 1x11 2.54mm single row style2 pin1 right
@@ -28066,6 +28059,13 @@ Connector_PinHeader_2.54mm
 PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left
 surface-mounted straight pin header, 1x16, 2.54mm pitch, single row, style 1 (pin 1 left)
 Surface mounted pin header SMD 1x16 2.54mm single row style1 pin1 left
+0
+32
+16
+Connector_PinHeader_2.54mm
+PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Right
+surface-mounted straight pin header, 1x16, 2.54mm pitch, single row, style 2 (pin 1 right)
+Surface mounted pin header SMD 1x16 2.54mm single row style2 pin1 right
 0
 32
 16
@@ -28880,6 +28880,13 @@ surface-mounted straight pin header, 2x06, 2.54mm pitch, double rows
 Surface mounted pin header SMD 2x06 2.54mm double row
 0
 12
+12
+Connector_PinHeader_2.54mm
+PinHeader_2x06_P2.54mm_Vertical_SMD_and_TH
+surface-mounted straight pin header, 2x06, 2.54mm pitch, double rows
+Surface mounted pin header SMD 2x06 2.54mm double row
+0
+24
 12
 Connector_PinHeader_2.54mm
 PinHeader_2x07_P2.54mm_Horizontal

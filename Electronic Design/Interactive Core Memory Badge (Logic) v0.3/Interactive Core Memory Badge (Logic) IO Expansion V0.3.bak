@@ -415,7 +415,7 @@ L Connector:Conn_01x04_Female J5
 U 1 1 5E830BC9
 P 5950 5200
 F 0 "J5" V 5850 4850 50  0000 L CNN
-F 1 "Conn_01x04_Female" V 6050 4750 50  0000 L CNN
+F 1 "SSW-104-22-L-S-VS" V 6050 4750 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 5950 5200 50  0001 C CNN
 F 3 "~" H 5950 5200 50  0001 C CNN
 	1    5950 5200
@@ -441,7 +441,7 @@ L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
 U 1 1 5E88FF30
 P 1500 6850
 F 0 "X1" H 1679 6847 50  0000 L CNN
-F 1 "SAO_v169bis" H 1679 6754 50  0000 L CNN
+F 1 "SFH11-NBPC-D03-ST-BK" H 1679 6754 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 1500 7050 50  0001 C CNN
 F 3 "" H 1500 7050 50  0001 C CNN
 	1    1500 6850
@@ -550,7 +550,7 @@ L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X2
 U 1 1 5E98282F
 P 3200 6850
 F 0 "X2" H 3379 6847 50  0000 L CNN
-F 1 "SAO_v169bis" H 3379 6754 50  0000 L CNN
+F 1 "SFH11-NBPC-D03-ST-BK" H 3379 6754 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 3200 7050 50  0001 C CNN
 F 3 "" H 3200 7050 50  0001 C CNN
 	1    3200 6850
@@ -561,7 +561,7 @@ L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X3
 U 1 1 5E9832A1
 P 4900 6850
 F 0 "X3" H 5079 6847 50  0000 L CNN
-F 1 "SAO_v169bis" H 5079 6754 50  0000 L CNN
+F 1 "SFH11-NBPC-D03-ST-BK" H 5079 6754 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 4900 7050 50  0001 C CNN
 F 3 "" H 4900 7050 50  0001 C CNN
 	1    4900 6850
