@@ -1126,4 +1126,17 @@ Wire Wire Line
 	9700 6100 9700 6200
 Wire Wire Line
 	9700 6200 9750 6200
+Text Notes 8850 1850 0    50   ~ 10
+TO DO: Drop LED Array Header? Add SAO top right of core board?
+$Comp
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
+U 1 1 5E90E5F7
+P 10000 2250
+F 0 "X1" H 10179 2247 50  0000 L CNN
+F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 10179 2154 50  0000 L CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 10000 2450 50  0001 C CNN
+F 3 "" H 10000 2450 50  0001 C CNN
+	1    10000 2250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

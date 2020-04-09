@@ -1,4 +1,4 @@
-16694575843396727
+16696162281876727
 2829
 ADAFRUIT_2829
 
@@ -73705,6 +73705,13 @@ test point THT pad
 TestPoint
 TestPoint_THTPad_D1.5mm_Drill0.7mm
 THT pad as test Point, diameter 1.5mm, hole diameter 0.7mm
+test point THT pad
+0
+1
+1
+TestPoint
+TestPoint_THTPad_D1.7mm_Drill1.0mm
+THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm
 test point THT pad
 0
 1

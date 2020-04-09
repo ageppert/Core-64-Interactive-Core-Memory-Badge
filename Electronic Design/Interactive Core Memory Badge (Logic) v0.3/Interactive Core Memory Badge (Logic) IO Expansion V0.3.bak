@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
-LIBS:Interactive Core Memory Badge (Logic) Main v0.3-cache
+LIBS:Interactive Core Memory Badge (Logic) IO Expansion V0.3-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 5
+Sheet 1 1
 Title "Core 64 - IO Expansion"
 Date "2020-03-24"
 Rev "v0.3"
@@ -437,7 +437,7 @@ Wire Wire Line
 Text Notes 4300 4550 0    50   ~ 0
 0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\n(alternate is 0x3D, not 0x7A or 0x78!)
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
 U 1 1 5E88FF30
 P 1500 6850
 F 0 "X1" H 1679 6847 50  0000 L CNN
@@ -546,7 +546,7 @@ Wire Wire Line
 	1500 7400 3200 7400
 Connection ~ 1500 7400
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X2
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X2
 U 1 1 5E98282F
 P 3200 6850
 F 0 "X2" H 3379 6847 50  0000 L CNN
@@ -557,7 +557,7 @@ F 3 "" H 3200 7050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X3
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X3
 U 1 1 5E9832A1
 P 4900 6850
 F 0 "X3" H 5079 6847 50  0000 L CNN

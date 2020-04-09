@@ -202,7 +202,7 @@ U 1 1 5E723F12
 P 8150 2300
 F 0 "J2" H 8258 3185 50  0000 C CNN
 F 1 "TSM-116-03-T-SV‎" H 8258 3092 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 8150 2300 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 8150 2300 50  0001 C CNN
 F 3 "~" H 8150 2300 50  0001 C CNN
 	1    8150 2300
 	-1   0    0    -1  
@@ -213,7 +213,7 @@ U 1 1 5E72894A
 P 1800 2350
 F 0 "J1" H 1908 3235 50  0000 C CNN
 F 1 "TSM-116-03-T-SV‎" H 1908 3142 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 1800 2350 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1800 2350 50  0001 C CNN
 F 3 "~" H 1800 2350 50  0001 C CNN
 	1    1800 2350
 	1    0    0    -1  
@@ -1126,4 +1126,17 @@ Wire Wire Line
 	9700 6100 9700 6200
 Wire Wire Line
 	9700 6200 9750 6200
+Text Notes 8850 1850 0    50   ~ 10
+TO DO: Drop LED Array Header? Add SAO top right of core board?
+$Comp
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X?
+U 1 1 5E90E5F7
+P 10000 2250
+F 0 "X?" H 10179 2247 50  0000 L CNN
+F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 10179 2154 50  0000 L CNN
+F 2 "" H 10000 2450 50  0001 C CNN
+F 3 "" H 10000 2450 50  0001 C CNN
+	1    10000 2250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

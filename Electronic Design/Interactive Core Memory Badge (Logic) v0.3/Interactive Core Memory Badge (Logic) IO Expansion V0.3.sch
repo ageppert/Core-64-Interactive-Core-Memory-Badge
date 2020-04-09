@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
-LIBS:Interactive Core Memory Badge (Logic) Main v0.3-cache
+LIBS:Interactive Core Memory Badge (Logic) IO Expansion V0.3-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 5
+Sheet 1 1
 Title "Core 64 - IO Expansion"
 Date "2020-03-24"
 Rev "v0.3"
@@ -437,11 +437,11 @@ Wire Wire Line
 Text Notes 4300 4550 0    50   ~ 0
 0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\n(alternate is 0x3D, not 0x7A or 0x78!)
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
 U 1 1 5E88FF30
 P 1500 6850
 F 0 "X1" H 1679 6847 50  0000 L CNN
-F 1 "SFH11-NBPC-D03-ST-BK" H 1679 6754 50  0000 L CNN
+F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 1679 6754 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 1500 7050 50  0001 C CNN
 F 3 "" H 1500 7050 50  0001 C CNN
 	1    1500 6850
@@ -499,11 +499,8 @@ Wire Wire Line
 	1500 7400 1500 7250
 Wire Wire Line
 	1350 6500 1350 6550
-Connection ~ 1350 6500
 Wire Wire Line
-	1350 6500 3050 6500
-Wire Wire Line
-	1450 6400 3150 6400
+	1350 6500 3200 6500
 Connection ~ 1450 6400
 Text GLabel 1550 1400 0    50   BiDi ~ 0
 I2C_CLOCK
@@ -517,13 +514,13 @@ Text GLabel 1750 7200 2    50   BiDi ~ 0
 SAO1_GPIO2(RX)
 Text GLabel 1750 6600 2    50   BiDi ~ 0
 SAO1_GPIO1(TX)
-Text GLabel 3450 7200 2    50   BiDi ~ 0
+Text GLabel 3600 7200 2    50   BiDi ~ 0
 SAO2_GPIO2(RX)
-Text GLabel 3450 6600 2    50   BiDi ~ 0
+Text GLabel 3600 6600 2    50   BiDi ~ 0
 SAO2_GPIO1(TX)
-Text GLabel 5150 6600 2    50   BiDi ~ 0
+Text GLabel 5450 6600 2    50   BiDi ~ 0
 SAO3_GPIO1
-Text GLabel 5150 7200 2    50   BiDi ~ 0
+Text GLabel 5450 7200 2    50   BiDi ~ 0
 SAO3_GPIO2
 Wire Wire Line
 	1600 7250 1700 7250
@@ -540,85 +537,74 @@ Wire Wire Line
 Wire Wire Line
 	1400 7250 1400 7300
 Wire Wire Line
-	1400 7300 3100 7300
-Connection ~ 1400 7300
-Wire Wire Line
-	1500 7400 3200 7400
+	1400 7300 3250 7300
 Connection ~ 1500 7400
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X2
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X2
 U 1 1 5E98282F
-P 3200 6850
-F 0 "X2" H 3379 6847 50  0000 L CNN
-F 1 "SFH11-NBPC-D03-ST-BK" H 3379 6754 50  0000 L CNN
-F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 3200 7050 50  0001 C CNN
-F 3 "" H 3200 7050 50  0001 C CNN
-	1    3200 6850
+P 3350 6850
+F 0 "X2" H 3529 6847 50  0000 L CNN
+F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 3529 6754 50  0000 L CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 3350 7050 50  0001 C CNN
+F 3 "" H 3350 7050 50  0001 C CNN
+	1    3350 6850
 	1    0    0    -1  
 $EndComp
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X3
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X3
 U 1 1 5E9832A1
-P 4900 6850
-F 0 "X3" H 5079 6847 50  0000 L CNN
-F 1 "SFH11-NBPC-D03-ST-BK" H 5079 6754 50  0000 L CNN
-F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 4900 7050 50  0001 C CNN
-F 3 "" H 4900 7050 50  0001 C CNN
-	1    4900 6850
+P 5200 6850
+F 0 "X3" H 5379 6847 50  0000 L CNN
+F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 5379 6754 50  0000 L CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 5200 7050 50  0001 C CNN
+F 3 "" H 5200 7050 50  0001 C CNN
+	1    5200 6850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3050 6500 3050 6550
-Connection ~ 3050 6500
+	3200 6500 3200 6550
 Wire Wire Line
-	3050 6500 4750 6500
+	3200 6500 5050 6500
 Wire Wire Line
-	3150 6400 3150 6550
-Connection ~ 3150 6400
+	3300 6400 3300 6550
 Wire Wire Line
-	3250 6550 3400 6550
+	3400 6550 3550 6550
 Wire Wire Line
-	3400 6550 3400 6600
+	3550 6550 3550 6600
 Wire Wire Line
-	3400 6600 3450 6600
+	3550 6600 3600 6600
 Wire Wire Line
-	3450 7200 3400 7200
+	3600 7200 3550 7200
 Wire Wire Line
-	3400 7200 3400 7250
+	3550 7200 3550 7250
 Wire Wire Line
-	3400 7250 3300 7250
+	3550 7250 3450 7250
 Wire Wire Line
-	3100 7250 3100 7300
-Connection ~ 3100 7300
+	3250 7250 3250 7300
 Wire Wire Line
-	3200 7250 3200 7400
-Connection ~ 3200 7400
+	3350 7250 3350 7400
 Wire Wire Line
-	3200 7400 4900 7400
+	5100 7300 5100 7250
 Wire Wire Line
-	4800 7300 4800 7250
+	3250 7300 5100 7300
 Wire Wire Line
-	3100 7300 4800 7300
+	5200 7250 5200 7400
 Wire Wire Line
-	4900 7250 4900 7400
+	5050 6550 5050 6500
 Wire Wire Line
-	4750 6550 4750 6500
+	5150 6550 5150 6400
 Wire Wire Line
-	3150 6400 4850 6400
+	5250 6550 5400 6550
 Wire Wire Line
-	4850 6550 4850 6400
+	5400 6550 5400 6600
 Wire Wire Line
-	4950 6550 5100 6550
+	5400 6600 5450 6600
 Wire Wire Line
-	5100 6550 5100 6600
+	5300 7250 5400 7250
 Wire Wire Line
-	5100 6600 5150 6600
+	5400 7250 5400 7200
 Wire Wire Line
-	5000 7250 5100 7250
-Wire Wire Line
-	5100 7250 5100 7200
-Wire Wire Line
-	5100 7200 5150 7200
+	5400 7200 5450 7200
 $Comp
 L Jumper:SolderJumper_3_Open JP2
 U 1 1 5E81A96A
@@ -1168,4 +1154,18 @@ Text GLabel 5850 1900 0    50   Output ~ 0
 SPARE_1
 Text GLabel 5850 2000 0    50   Output ~ 0
 SPARE_2
+Connection ~ 3300 6400
+Wire Wire Line
+	3300 6400 5150 6400
+Wire Wire Line
+	3350 7400 5200 7400
+Wire Wire Line
+	1450 6400 3300 6400
+Wire Wire Line
+	1500 7400 3350 7400
+Connection ~ 1350 6500
+Connection ~ 3200 6500
+Connection ~ 3250 7300
+Connection ~ 1400 7300
+Connection ~ 3350 7400
 $EndSCHEMATC
