@@ -174,7 +174,7 @@ AR Path="/5E755AC8/5D2551FF/5EA33CB4" Ref="TP?"  Part="1"
 AR Path="/5EA33CB4" Ref="TP1"  Part="1" 
 F 0 "TP1" H 9608 2968 50  0000 L CNN
 F 1 "LED_MATRIX" H 9608 2877 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 9750 2850 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.7mm_Drill1.0mm" H 9750 2850 50  0001 C CNN
 F 3 "~" H 9750 2850 50  0001 C CNN
 	1    9550 2850
 	1    0    0    -1  

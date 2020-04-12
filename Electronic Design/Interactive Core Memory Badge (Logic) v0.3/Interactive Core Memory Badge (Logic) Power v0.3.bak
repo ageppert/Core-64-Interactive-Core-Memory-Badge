@@ -73,14 +73,14 @@ $EndComp
 Text Notes 7800 4400 0    50   ~ 0
 CORES AND ACCESSORIES
 $Comp
-L Switch:SW_DPDT_x2 SW1
+L Switch:SW_SPDT SW1
 U 1 1 5E9AF194
 P 2550 4800
 AR Path="/5E7548ED/5E9AF194" Ref="SW1"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E9AF194" Ref="SW?"  Part="1" 
 F 0 "SW1" H 2550 4471 50  0000 C CNN
-F 1 "SW_DPDT_x2" H 2550 4564 50  0000 C CNN
-F 2 "Digikey:Switch_Slide_JS202011SCQN" H 2550 4800 50  0001 C CNN
+F 1 "JS102011SAQN" H 2550 4564 50  0000 C CNN
+F 2 "Button_Switch_SMD:SW_SPDT_CK-JS102011SAQN" H 2550 4800 50  0001 C CNN
 F 3 "~" H 2550 4800 50  0001 C CNN
 	1    2550 4800
 	-1   0    0    1   
@@ -451,8 +451,6 @@ F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/MBR120VLSFT1G/MB
 	1    3400 4800
 	-1   0    0    1   
 $EndComp
-Text Notes 2000 4400 0    50   ~ 10
-TO DO: update switch footprint for samples
 Wire Wire Line
 	3250 4800 3150 4800
 $Comp

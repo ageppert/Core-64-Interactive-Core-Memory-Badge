@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
-LIBS:Interactive Core Memory Badge (Logic) IO Expansion V0.3-cache
+LIBS:Interactive Core Memory Badge (Logic) Main v0.3-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 4 5
 Title "Core 64 - IO Expansion"
 Date "2020-03-24"
 Rev "v0.3"

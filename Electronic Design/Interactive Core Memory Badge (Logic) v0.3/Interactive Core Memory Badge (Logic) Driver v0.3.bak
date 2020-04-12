@@ -1832,7 +1832,7 @@ AR Path="/5E8ED577" Ref="TP?"  Part="1"
 AR Path="/5E755AC8/5E8ED577" Ref="TP2"  Part="1" 
 F 0 "TP2" H 1508 7118 50  0000 L CNN
 F 1 "VMEM" H 1508 7027 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 1650 7000 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.7mm_Drill1.0mm" H 1650 7000 50  0001 C CNN
 F 3 "~" H 1650 7000 50  0001 C CNN
 	1    1450 7000
 	1    0    0    -1  

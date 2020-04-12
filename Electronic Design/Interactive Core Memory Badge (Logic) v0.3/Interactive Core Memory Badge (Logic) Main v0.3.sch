@@ -111,8 +111,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 4200 4350 4200
 Wire Wire Line
-	4200 4100 4350 4100
-Wire Wire Line
 	4200 3700 4350 3700
 Wire Wire Line
 	4200 3600 4350 3600
@@ -160,7 +158,7 @@ I2C_CLOCK
 Text GLabel 4350 3900 2    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
-	4200 4000 4350 4000
+	4200 4000 4300 4000
 Text GLabel 4350 4000 2    50   Output ~ 0
 LED_MATRIX_3V3
 Text GLabel 9950 2950 2    50   Output ~ 0
@@ -252,9 +250,9 @@ Text GLabel 1900 3400 0    50   BiDi ~ 0
 SAO2_GPIO2(RX)
 Text GLabel 1900 3500 0    50   BiDi ~ 0
 SAO2_GPIO1(TX)
-Text GLabel 4350 3400 2    50   BiDi ~ 0
+Text GLabel 5150 4000 2    50   BiDi ~ 0
 SAO3_GPIO1
-Text GLabel 4350 3500 2    50   BiDi ~ 0
+Text GLabel 5150 4100 2    50   BiDi ~ 0
 SAO3_GPIO2
 Wire Wire Line
 	4200 3400 4350 3400
@@ -357,4 +355,17 @@ Wire Wire Line
 	8950 5150 8950 5250
 Text Notes 4450 2200 0    50   ~ 10
 TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
+Wire Wire Line
+	4300 4000 4300 4050
+Wire Wire Line
+	4300 4050 5100 4050
+Wire Wire Line
+	5100 4050 5100 4000
+Wire Wire Line
+	5100 4000 5150 4000
+Connection ~ 4300 4000
+Wire Wire Line
+	4300 4000 4350 4000
+Wire Wire Line
+	4200 4100 5150 4100
 $EndSCHEMATC
