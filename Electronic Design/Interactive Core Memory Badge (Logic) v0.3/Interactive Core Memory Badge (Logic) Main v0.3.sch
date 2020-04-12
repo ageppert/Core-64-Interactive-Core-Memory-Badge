@@ -119,8 +119,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 2700 4350 2700
 NoConn ~ 2050 3900
-Text Notes 1050 5200 0    50   ~ 0
-CONNECTORS\nTEENSY LC: Qty 2, 14 pins each side (does not include end/center pins)\nFEATHER: one row 12 pins, one row 16 pins
 $Comp
 L power:GNDD #PWR?
 U 1 1 5EA2C7F1
@@ -294,7 +292,7 @@ Text GLabel 1900 2900 0    50   Input ~ 0
 IOEXP_ID33_INT_A
 Text GLabel 1900 3000 0    50   Input ~ 0
 IOEXP_ID33_INT_B
-Text Notes 800  6500 0    50   ~ 10
+Text Notes 750  7500 0    50   ~ 10
 I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\n  EEPROM ID: 160 decimal, 0xA0\nOptional\n  OLED: 60 decimal, 0x3C
 Text Notes 700  4100 0    50   ~ 0
 Try not to use any of these\nto avoid the need to populate\nthis end row header on the PCB.
@@ -353,8 +351,8 @@ Wire Wire Line
 	9100 5150 8950 5150
 Wire Wire Line
 	8950 5150 8950 5250
-Text Notes 4450 2200 0    50   ~ 10
-TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
+Text Notes 4600 2200 0    50   ~ 10
+BOM TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
 Wire Wire Line
 	4300 4000 4300 4050
 Wire Wire Line
@@ -368,4 +366,17 @@ Wire Wire Line
 	4300 4000 4350 4000
 Wire Wire Line
 	4200 4100 5150 4100
+NoConn ~ 9600 4850
+NoConn ~ 9600 4950
+NoConn ~ 9600 5050
+NoConn ~ 9600 5150
+NoConn ~ 9100 5250
+NoConn ~ 9100 5050
+NoConn ~ 9100 4950
+NoConn ~ 9100 4850
+NoConn ~ 9100 4750
+Text GLabel 1900 3200 0    50   Input ~ 0
+SENSE_OUT_A
+Text GLabel 1900 3300 0    50   Input ~ 0
+SENSE_OUT_B
 $EndSCHEMATC

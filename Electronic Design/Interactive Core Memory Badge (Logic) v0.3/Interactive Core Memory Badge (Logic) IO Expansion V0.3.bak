@@ -437,7 +437,7 @@ Wire Wire Line
 Text Notes 4300 4550 0    50   ~ 0
 0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\n(alternate is 0x3D, not 0x7A or 0x78!)
 $Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
+L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
 U 1 1 5E88FF30
 P 1500 6850
 F 0 "X1" H 1679 6847 50  0000 L CNN
@@ -518,10 +518,6 @@ Text GLabel 3600 7200 2    50   BiDi ~ 0
 SAO2_GPIO2(RX)
 Text GLabel 3600 6600 2    50   BiDi ~ 0
 SAO2_GPIO1(TX)
-Text GLabel 5450 6600 2    50   BiDi ~ 0
-SAO3_GPIO1
-Text GLabel 5450 7200 2    50   BiDi ~ 0
-SAO3_GPIO2
 Wire Wire Line
 	1600 7250 1700 7250
 Wire Wire Line
@@ -540,7 +536,7 @@ Wire Wire Line
 	1400 7300 3250 7300
 Connection ~ 1500 7400
 $Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X2
+L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X2
 U 1 1 5E98282F
 P 3350 6850
 F 0 "X2" H 3529 6847 50  0000 L CNN
@@ -550,21 +546,8 @@ F 3 "" H 3350 7050 50  0001 C CNN
 	1    3350 6850
 	1    0    0    -1  
 $EndComp
-$Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X3
-U 1 1 5E9832A1
-P 5200 6850
-F 0 "X3" H 5379 6847 50  0000 L CNN
-F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 5379 6754 50  0000 L CNN
-F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 5200 7050 50  0001 C CNN
-F 3 "" H 5200 7050 50  0001 C CNN
-	1    5200 6850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3200 6500 3200 6550
-Wire Wire Line
-	3200 6500 5050 6500
 Wire Wire Line
 	3300 6400 3300 6550
 Wire Wire Line
@@ -583,28 +566,6 @@ Wire Wire Line
 	3250 7250 3250 7300
 Wire Wire Line
 	3350 7250 3350 7400
-Wire Wire Line
-	5100 7300 5100 7250
-Wire Wire Line
-	3250 7300 5100 7300
-Wire Wire Line
-	5200 7250 5200 7400
-Wire Wire Line
-	5050 6550 5050 6500
-Wire Wire Line
-	5150 6550 5150 6400
-Wire Wire Line
-	5250 6550 5400 6550
-Wire Wire Line
-	5400 6550 5400 6600
-Wire Wire Line
-	5400 6600 5450 6600
-Wire Wire Line
-	5300 7250 5400 7250
-Wire Wire Line
-	5400 7250 5400 7200
-Wire Wire Line
-	5400 7200 5450 7200
 $Comp
 L Jumper:SolderJumper_3_Open JP2
 U 1 1 5E81A96A
@@ -1140,12 +1101,6 @@ Text GLabel 5850 2600 0    50   Input ~ 0
 HALL_SWITCH
 Text GLabel 5850 1700 0    50   Output ~ 0
 WRITE_ENABLE
-Text GLabel 5850 2700 0    50   Input ~ 0
-BOARD_ID1
-Text GLabel 5850 2800 0    50   Input ~ 0
-BOARD_ID2
-Text GLabel 5850 2900 0    50   Input ~ 0
-BOARD_ID3
 Text GLabel 2900 4550 2    50   Output ~ 0
 SPARE_1
 Text GLabel 2900 4650 2    50   Output ~ 0
@@ -1154,18 +1109,14 @@ Text GLabel 5850 1900 0    50   Output ~ 0
 SPARE_1
 Text GLabel 5850 2000 0    50   Output ~ 0
 SPARE_2
-Connection ~ 3300 6400
-Wire Wire Line
-	3300 6400 5150 6400
-Wire Wire Line
-	3350 7400 5200 7400
 Wire Wire Line
 	1450 6400 3300 6400
 Wire Wire Line
 	1500 7400 3350 7400
 Connection ~ 1350 6500
-Connection ~ 3200 6500
-Connection ~ 3250 7300
 Connection ~ 1400 7300
-Connection ~ 3350 7400
+NoConn ~ 9250 3200
+NoConn ~ 8650 3200
+NoConn ~ 8650 3700
+NoConn ~ 9250 3700
 $EndSCHEMATC

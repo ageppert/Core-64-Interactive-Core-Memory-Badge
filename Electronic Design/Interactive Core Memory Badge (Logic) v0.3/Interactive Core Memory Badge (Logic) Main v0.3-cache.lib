@@ -874,6 +874,24 @@ X D 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# badgelife_shitty_addon_v169bis_Badgelife_sao_connector_v169bis
+#
+DEF badgelife_shitty_addon_v169bis_Badgelife_sao_connector_v169bis X 0 40 Y Y 1 F N
+F0 "X" 200 50 50 H V C CNN
+F1 "badgelife_shitty_addon_v169bis_Badgelife_sao_connector_v169bis" 800 -100 50 H V C CNN
+F2 "" 0 200 50 H I C CNN
+F3 "" 0 200 50 H I C CNN
+DRAW
+S -200 100 150 -200 0 1 0 N
+X VCC 1 -150 300 200 D 50 50 1 1 I
+X GND 2 -100 -400 200 U 50 50 1 1 I
+X SDA 3 -50 300 200 D 50 50 1 1 I
+X SCL 4 0 -400 200 U 50 50 1 1 I
+X GPIO1 5 50 300 200 D 50 50 1 1 I
+X GPIO2 6 100 -400 200 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # power_+BATT
 #
 DEF power_+BATT #PWR 0 0 Y Y 1 F P
