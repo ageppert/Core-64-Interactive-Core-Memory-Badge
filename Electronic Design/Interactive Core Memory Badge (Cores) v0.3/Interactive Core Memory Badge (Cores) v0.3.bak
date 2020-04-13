@@ -318,7 +318,7 @@ L CORE_64_LIBRARY:Core_Memory_8x8_Array_Front_Facing CM1
 U 1 1 5E79BDE1
 P 4600 2150
 F 0 "CM1" H 3950 2800 50  0000 C CNN
-F 1 "Core_Memory_8x8_Array_Front_Facing" H 5750 2800 50  0000 C CNN
+F 1 "Core_Memory_8x8_Array_Front_Facing" H 4550 3550 50  0000 C CNN
 F 2 "Core_Memory_8x8_Array:core_64_x6.7_y6.5mm_v0.3_front_facing" H 4650 2200 50  0001 C CNN
 F 3 "" H 4650 2200 50  0001 C CNN
 	1    4600 2150
@@ -359,22 +359,14 @@ Wire Wire Line
 $Comp
 L power:+VSW #PWR010
 U 1 1 5E7FB1ED
-P 6950 2450
-F 0 "#PWR010" H 6950 2300 50  0001 C CNN
-F 1 "+VSW" H 6965 2623 50  0000 C CNN
-F 2 "" H 6950 2450 50  0001 C CNN
-F 3 "" H 6950 2450 50  0001 C CNN
-	1    6950 2450
+P 7100 2450
+F 0 "#PWR010" H 7100 2300 50  0001 C CNN
+F 1 "+VSW" H 7115 2623 50  0000 C CNN
+F 2 "" H 7100 2450 50  0001 C CNN
+F 3 "" H 7100 2450 50  0001 C CNN
+	1    7100 2450
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	7100 2550 7100 2900
-Text GLabel 7700 2650 0    50   Input ~ 0
-LED_MATRIX
-Wire Wire Line
-	7100 2550 7950 2550
-Wire Wire Line
-	7950 2750 6950 2750
 $Comp
 L power:GNDD #PWR05
 U 1 1 5E880DFA
@@ -425,15 +417,15 @@ Text GLabel 2000 5050 2    50   Input ~ 0
 $Comp
 L power:GND #PWR011
 U 1 1 5E7A3E16
-P 7100 2900
-F 0 "#PWR011" H 7100 2650 50  0001 C CNN
-F 1 "GND" H 7105 2725 50  0000 C CNN
-F 2 "" H 7100 2900 50  0001 C CNN
-F 3 "" H 7100 2900 50  0001 C CNN
-	1    7100 2900
+P 6850 2950
+F 0 "#PWR011" H 6850 2700 50  0001 C CNN
+F 1 "GND" H 6855 2775 50  0000 C CNN
+F 2 "" H 6850 2950 50  0001 C CNN
+F 3 "" H 6850 2950 50  0001 C CNN
+	1    6850 2950
 	1    0    0    -1  
 $EndComp
-Text Notes 6700 3100 0    50   ~ 0
+Text Notes 6400 3200 0    50   ~ 0
 SYSTEM\nPOWER\nGROUND
 Text Notes 1250 6450 0    50   ~ 0
 DIGITAL LOGIC GROUND
@@ -759,7 +751,7 @@ L Sensor_Magnetic:SI7210 U2
 U 1 1 5E88BBFB
 P 2050 4250
 F 0 "U2" H 2025 4520 50  0000 C CNN
-F 1 "SI7210" H 2025 4427 50  0000 C CNN
+F 1 "SI7210-B-01" H 2025 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2050 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 1900 4750 50  0001 C CNN
 	1    2050 4250
@@ -795,7 +787,7 @@ L Sensor_Magnetic:SI7210 U4
 U 1 1 5E8F8CC9
 P 4450 4250
 F 0 "U4" H 4425 4520 50  0000 C CNN
-F 1 "SI7210" H 4425 4427 50  0000 C CNN
+F 1 "SI7210-B-02" H 4425 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4450 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 4300 4750 50  0001 C CNN
 	1    4450 4250
@@ -806,7 +798,7 @@ L Sensor_Magnetic:SI7210 U6
 U 1 1 5E90A275
 P 6950 4250
 F 0 "U6" H 6925 4520 50  0000 C CNN
-F 1 "SI7210" H 6925 4427 50  0000 C CNN
+F 1 "SI7210-B-03" H 6925 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6950 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 6800 4750 50  0001 C CNN
 	1    6950 4250
@@ -817,7 +809,7 @@ L Sensor_Magnetic:SI7210 U8
 U 1 1 5E90A741
 P 9200 4250
 F 0 "U8" H 9175 4520 50  0000 C CNN
-F 1 "SI7210" H 9175 4427 50  0000 C CNN
+F 1 "SI7210-B-04" H 9175 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 9200 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 9050 4750 50  0001 C CNN
 	1    9200 4250
@@ -999,29 +991,21 @@ Wire Wire Line
 	6800 5750 7100 5750
 Wire Wire Line
 	9200 5700 9450 5700
-Wire Wire Line
-	6950 2750 6950 2450
 $Comp
 L Connector:Conn_01x03_Female J3
 U 1 1 5E9687EF
 P 6200 2650
-F 0 "J3" H 6092 2938 50  0000 C CNN
-F 1 "Conn_01x03_Female" H 6092 2845 50  0000 C CNN
+F 0 "J3" H 6200 2300 50  0000 C CNN
+F 1 "Conn_01x03_Female" H 5850 2400 50  0000 C CNN
 F 2 "Core_Memory_8x8_Array:LED_Matrix_Header_3pin_0.9_holes" H 6200 2650 50  0001 C CNN
 F 3 "~" H 6200 2650 50  0001 C CNN
 	1    6200 2650
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6400 2750 6950 2750
-Connection ~ 6950 2750
+	7650 2650 7650 2750
 Wire Wire Line
-	6400 2550 7100 2550
-Connection ~ 7100 2550
-Wire Wire Line
-	7800 2650 7800 3150
-Wire Wire Line
-	7800 3150 6550 3150
+	7650 2750 6500 2750
 Text Notes 600  3450 0    50   ~ 0
 v0.3 Testing I2C sensor instead of just switch.\nSilicon Labs SI7210-B-04-IVR (configurable with 4 addresses, 0x30 up to 0x33 as P/N Si7210-B-01- IV(R) through Si7210-B-04- IV(R)\nLow (push-pull) up to 20 mT, SOT23-5\nhttps://www.digikey.com/product-detail/en/silicon-labs/SI7210-B-04-IVR/336-4129-1-ND/7648844
 Text Notes 2750 2450 0    50   ~ 0
@@ -1029,14 +1013,14 @@ DIGITAL LOGIC GROUND
 Text Notes 600  7900 0    50   ~ 0
 HALL SWITCH 1 (MODE)\n  v0.1 used hall sensor Allegro A3214ELHLT-T, Omnipolar N/S, ±7mT trip, ±1mT release SOT23W\n  https://www.digikey.com/product-detail/en/allegro-microsystems/A3214ELHLT-T/620-1519-1-ND/4171832\n\nHALL SWITCH 2 (A)\n  v0.3 Try more sensitive option:\n  TI DRV5032FADBZR, Omni, 4.8mT, 20Hz, Push-Pull output, SOT23-3\n  https://www.digikey.com/product-detail/en/texas-instruments/DRV5032FADBZR/296-47765-1-ND/8133114\n\nHALL SWITCH 3 (B)\n  v0.3 Try more sensitive option:\n  TI DRV5032DUDBZR, Unipolar, 3.9mT, ±20Hz, Push-pull output, SOT23-3\n  https://www.digikey.com/product-detail/en/texas-instruments/DRV5032DUDBZR/296-DRV5032DUDBZRCT-ND/10435200\n\nHALL SWITCH 4 (SET)\n  ???
 Wire Wire Line
-	7700 2650 7800 2650
+	7500 2650 7650 2650
 Wire Wire Line
-	6550 2650 6400 2650
+	6500 2650 6400 2650
 Wire Wire Line
-	6550 3150 6550 2650
-Connection ~ 7800 2650
+	6500 2750 6500 2650
+Connection ~ 7650 2650
 Wire Wire Line
-	7800 2650 7950 2650
+	7650 2650 7950 2650
 $Comp
 L Jumper:SolderJumper_3_Bridged12 JP1
 U 1 1 5E98E5C1
@@ -1127,65 +1111,98 @@ Wire Wire Line
 $Comp
 L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
 U 1 1 5E90E5F7
-P 9050 2600
-F 0 "X1" H 9229 2597 50  0000 L CNN
-F 1 "SFH11-NBPC-D03-ST-BK" H 9229 2504 50  0000 L CNN
-F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 9050 2800 50  0001 C CNN
-F 3 "" H 9050 2800 50  0001 C CNN
-	1    9050 2600
+P 9150 2050
+F 0 "X1" H 9329 2047 50  0000 L CNN
+F 1 "SFH11-NBPC-D03-ST-BK" H 9329 1954 50  0000 L CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 9150 2250 50  0001 C CNN
+F 3 "" H 9150 2250 50  0001 C CNN
+	1    9150 2050
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0101
 U 1 1 5E9443CF
-P 8950 3000
-F 0 "#PWR?" H 8950 2750 50  0001 C CNN
-F 1 "GND" H 8955 2825 50  0000 C CNN
-F 2 "" H 8950 3000 50  0001 C CNN
-F 3 "" H 8950 3000 50  0001 C CNN
-	1    8950 3000
+P 9050 2450
+F 0 "#PWR0101" H 9050 2200 50  0001 C CNN
+F 1 "GND" H 9055 2275 50  0000 C CNN
+F 2 "" H 9050 2450 50  0001 C CNN
+F 3 "" H 9050 2450 50  0001 C CNN
+	1    9050 2450
 	1    0    0    -1  
 $EndComp
-Text GLabel 9200 2200 2    50   Input ~ 0
+Text GLabel 9350 1650 2    50   Input ~ 0
 SAO3_GPIO1
-Text GLabel 9250 3100 2    50   Input ~ 0
+Text GLabel 9350 2800 2    50   Input ~ 0
 SAO3_GPIO2
-Text GLabel 9200 1900 2    50   Input ~ 0
+Text GLabel 8900 1650 0    50   Input ~ 0
 3V3_800mA
-Text GLabel 9200 2050 2    50   BiDi ~ 0
+Text GLabel 8900 1400 0    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 9250 3250 2    50   BiDi ~ 0
+Text GLabel 8950 2800 0    50   BiDi ~ 0
 I2C_CLOCK
 Wire Wire Line
-	9050 3000 9050 3250
+	9150 2450 9150 2800
 Wire Wire Line
-	9050 3250 9250 3250
+	9150 2800 8950 2800
 Wire Wire Line
-	9150 3000 9150 3100
+	9250 2450 9250 2800
 Wire Wire Line
-	9150 3100 9250 3100
+	9250 2800 9350 2800
 Wire Wire Line
-	9100 2300 9100 2200
+	9200 1750 9200 1650
 Wire Wire Line
-	9100 2200 9200 2200
+	9100 1750 9100 1400
 Wire Wire Line
-	9000 2300 9000 2050
+	9100 1400 8900 1400
 Wire Wire Line
-	9000 2050 9200 2050
+	8900 1650 9000 1650
 Wire Wire Line
-	9200 1900 8900 1900
+	9000 1650 9000 1750
 Wire Wire Line
-	8900 1900 8900 2300
+	7950 2850 7850 2850
 Wire Wire Line
-	7800 3150 8500 3150
+	6400 2550 7100 2550
 Wire Wire Line
-	8500 3150 8500 2200
+	7100 2550 7100 2450
+Connection ~ 7100 2550
 Wire Wire Line
-	8500 2200 9100 2200
-Connection ~ 7800 3150
-Connection ~ 9100 2200
-Text GLabel 7700 2850 0    50   Input ~ 0
-SAO3_GPIO2
+	7100 2550 7950 2550
 Wire Wire Line
-	7950 2850 7700 2850
+	6850 2950 6850 2850
+Wire Wire Line
+	7850 2850 7850 2950
+Wire Wire Line
+	7850 2950 9250 2950
+Connection ~ 9250 2800
+Text GLabel 7500 2650 0    50   Input ~ 0
+LED_MATRIX_+VSW_SIG
+Wire Wire Line
+	10400 1400 10400 3050
+Wire Wire Line
+	10400 3050 7650 3050
+Wire Wire Line
+	7950 2750 7750 2750
+Wire Wire Line
+	7750 2750 7750 2850
+Wire Wire Line
+	7750 2850 6850 2850
+Wire Wire Line
+	6450 2850 6450 2750
+Wire Wire Line
+	6450 2750 6400 2750
+Connection ~ 6850 2850
+Wire Wire Line
+	6850 2850 6450 2850
+Wire Wire Line
+	7650 2750 7650 3050
+Connection ~ 7650 2750
+Wire Wire Line
+	9250 2800 9250 2950
+Wire Wire Line
+	9200 1400 10400 1400
+Wire Wire Line
+	9200 1650 9350 1650
+Connection ~ 9200 1650
+Wire Wire Line
+	9200 1650 9200 1400
 $EndSCHEMATC

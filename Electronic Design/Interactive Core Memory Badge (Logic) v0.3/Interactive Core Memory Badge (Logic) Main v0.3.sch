@@ -156,11 +156,11 @@ I2C_CLOCK
 Text GLabel 4350 3900 2    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
-	4200 4000 4300 4000
-Text GLabel 4350 4000 2    50   Output ~ 0
-LED_MATRIX_3V3
+	4200 4000 4650 4000
+Text GLabel 4750 4000 2    50   Output ~ 0
+LED_MATRIX_3V3_SIG
 Text GLabel 9950 2950 2    50   Output ~ 0
-LED_MATRIX_+VSW
+LED_MATRIX_+VSW_SIG
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EA33CB4
@@ -199,7 +199,7 @@ Wire Wire Line
 Wire Wire Line
 	9500 2950 9550 2950
 Text GLabel 8650 2950 0    50   Input ~ 0
-LED_MATRIX_3V3
+LED_MATRIX_3V3_SIG
 Wire Wire Line
 	8650 2950 8700 2950
 $Comp
@@ -248,9 +248,9 @@ Text GLabel 1900 3400 0    50   BiDi ~ 0
 SAO2_GPIO2(RX)
 Text GLabel 1900 3500 0    50   BiDi ~ 0
 SAO2_GPIO1(TX)
-Text GLabel 5150 4000 2    50   BiDi ~ 0
+Text GLabel 5750 4000 2    50   BiDi ~ 0
 SAO3_GPIO1
-Text GLabel 5150 4100 2    50   BiDi ~ 0
+Text GLabel 5750 4200 2    50   BiDi ~ 0
 SAO3_GPIO2
 Wire Wire Line
 	4200 3400 4350 3400
@@ -314,7 +314,7 @@ F 3 "~" H 9300 4950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9700 5250 2    50   Output ~ 0
-LED_MATRIX_+VSW
+LED_MATRIX_+VSW_SIG
 $Comp
 L power:GND #PWR?
 U 1 1 5E92D5BA
@@ -354,18 +354,18 @@ Wire Wire Line
 Text Notes 4600 2200 0    50   ~ 10
 BOM TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
 Wire Wire Line
-	4300 4000 4300 4050
+	4650 4000 4650 4100
 Wire Wire Line
-	4300 4050 5100 4050
+	4650 4100 5700 4100
 Wire Wire Line
-	5100 4050 5100 4000
+	5700 4100 5700 4000
 Wire Wire Line
-	5100 4000 5150 4000
-Connection ~ 4300 4000
+	5700 4000 5750 4000
+Connection ~ 4650 4000
 Wire Wire Line
-	4300 4000 4350 4000
+	4650 4000 4750 4000
 Wire Wire Line
-	4200 4100 5150 4100
+	4200 4100 4550 4100
 NoConn ~ 9600 4850
 NoConn ~ 9600 4950
 NoConn ~ 9600 5050
@@ -379,4 +379,8 @@ Text GLabel 1900 3200 0    50   Input ~ 0
 SENSE_OUT_A
 Text GLabel 1900 3300 0    50   Input ~ 0
 SENSE_OUT_B
+Wire Wire Line
+	4550 4100 4550 4200
+Wire Wire Line
+	4550 4200 5750 4200
 $EndSCHEMATC

@@ -1784,7 +1784,7 @@ F 3 "" H 1900 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 900  2700 2    50   Input ~ 0
-3V3_100mA
+3V3_800mA
 Wire Wire Line
 	800  1800 1450 1800
 Wire Wire Line

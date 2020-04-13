@@ -357,11 +357,11 @@ $EndComp
 Wire Wire Line
 	4350 5400 4350 5350
 Text GLabel 2900 5350 2    50   Input ~ 0
-BOARD_ID1
+SPARE_3
 Text GLabel 2900 5450 2    50   Input ~ 0
-BOARD_ID2
+SPARE_4
 Text GLabel 2900 5550 2    50   Input ~ 0
-BOARD_ID3
+SPARE_5
 Text Notes 9000 4250 0    118  ~ 0
 BOARD I.D. AND S/N
 $Comp
@@ -1119,4 +1119,10 @@ NoConn ~ 9250 3200
 NoConn ~ 8650 3200
 NoConn ~ 8650 3700
 NoConn ~ 9250 3700
+Text GLabel 5850 2700 0    50   Input ~ 0
+SPARE_3
+Text GLabel 5850 2800 0    50   Input ~ 0
+SPARE_4
+Text GLabel 5850 2900 0    50   Input ~ 0
+SPARE_5
 $EndSCHEMATC
