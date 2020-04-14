@@ -169,6 +169,24 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue_Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis
+#
+DEF Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue_Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis X 0 40 Y Y 1 F N
+F0 "X" 200 50 50 H V C CNN
+F1 "Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue_Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis" 800 -100 50 H V C CNN
+F2 "" 0 200 50 H I C CNN
+F3 "" 0 200 50 H I C CNN
+DRAW
+S -200 100 150 -200 0 1 0 N
+X VCC 1 -150 300 200 D 50 50 1 1 I
+X GND 2 -100 -400 200 U 50 50 1 1 I
+X SDA 3 -50 300 200 D 50 50 1 1 I
+X SCL 4 0 -400 200 U 50 50 1 1 I
+X GPIO1 5 50 300 200 D 50 50 1 1 I
+X GPIO2 6 100 -400 200 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # Jumper_SolderJumper_3_Bridged12
 #
 DEF Jumper_SolderJumper_3_Bridged12 JP 0 0 Y N 1 F N
@@ -211,8 +229,8 @@ $ENDFPLIST
 DRAW
 S -200 300 200 -300 0 1 10 f
 X VCC 1 -100 400 100 D 50 50 1 1 W
-X VOUT 2 300 0 100 L 50 50 1 1 O
-X GND 3 -100 -400 100 U 50 50 1 1 W
+X VOUT 2 -100 -400 100 U 50 50 1 1 O
+X GND 3 300 0 100 L 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
@@ -233,24 +251,6 @@ X GND 2 -400 -100 100 R 50 50 1 1 W
 X SCL 3 -400 -200 100 R 50 50 1 1 B
 X VDD 4 350 -200 100 L 50 50 1 1 W
 X ALERT 5 350 0 100 L 50 50 1 1 w
-ENDDRAW
-ENDDEF
-#
-# badgelife_shitty_addon_v169bis_Badgelife_sao_connector_v169bis
-#
-DEF badgelife_shitty_addon_v169bis_Badgelife_sao_connector_v169bis X 0 40 Y Y 1 F N
-F0 "X" 200 50 50 H V C CNN
-F1 "badgelife_shitty_addon_v169bis_Badgelife_sao_connector_v169bis" 800 -100 50 H V C CNN
-F2 "" 0 200 50 H I C CNN
-F3 "" 0 200 50 H I C CNN
-DRAW
-S -200 100 150 -200 0 1 0 N
-X VCC 1 -150 300 200 D 50 50 1 1 I
-X GND 2 -100 -400 200 U 50 50 1 1 I
-X SDA 3 -50 300 200 D 50 50 1 1 I
-X SCL 4 0 -400 200 U 50 50 1 1 I
-X GPIO1 5 50 300 200 D 50 50 1 1 I
-X GPIO2 6 100 -400 200 U 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
