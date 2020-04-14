@@ -293,7 +293,7 @@ IOEXP_ID33_INT_A
 Text GLabel 1900 3000 0    50   Input ~ 0
 IOEXP_ID33_INT_B
 Text Notes 750  7500 0    50   ~ 10
-I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 32 decimal, 0x20\n  IO EXPANDER 2: 33 decimal, 0x21\n  HALL SENSOR 1: 48 decimal, 0x30\n  HALL SENSOR 2: 49 decimal, 0x31\n  HALL SENSOR 3: 50 decimal, 0x32\n  HALL SENSOR 4: 51 decimal, 0x33\n  EEPROM ID: 160 decimal, 0xA0\nOptional\n  OLED: 60 decimal, 0x3C
+I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 0x26 (38 decimal)\n  IO EXPANDER 2: 0x27 (39 decimal)\n  HALL SENSOR 1: 0x30 (48 decimal)\n  HALL SENSOR 2: 0x31 (49 decimal)\n  HALL SENSOR 3: 0x32 (50 decimal)\n  HALL SENSOR 4: 0x33 (51 decimal)\n  EEPROM: 0b1010111, 0x57 (87 decimal)\nOptional\n  OLED: 0x3C (60 decimal)\n  AND!XOR GPIO Expander MCP23017 0x20 (32 decimal)\n  AND!XOR EEPROM AT24C32r 0x50 (80 decimal)\n\nAll 7-bit addresses should be greater than 0x07 and less than 0x78 (120).
 Text Notes 700  4100 0    50   ~ 0
 Try not to use any of these\nto avoid the need to populate\nthis end row header on the PCB.
 Wire Notes Line

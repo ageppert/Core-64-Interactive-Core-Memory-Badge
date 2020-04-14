@@ -435,9 +435,9 @@ Connection ~ 4750 5350
 Wire Wire Line
 	5850 4950 5850 5000
 Text Notes 4300 4550 0    50   ~ 0
-0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\n(alternate is 0x3D, not 0x7A or 0x78!)
+0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X1
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
 U 1 1 5E88FF30
 P 1500 6850
 F 0 "X1" H 1679 6847 50  0000 L CNN
@@ -536,7 +536,7 @@ Wire Wire Line
 	1400 7300 3250 7300
 Connection ~ 1500 7400
 $Comp
-L badgelife_shitty_addon_v169bis:Badgelife_sao_connector_v169bis X2
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X2
 U 1 1 5E98282F
 P 3350 6850
 F 0 "X2" H 3529 6847 50  0000 L CNN
@@ -615,49 +615,25 @@ Connection ~ 4750 4850
 Connection ~ 5100 4850
 Text GLabel 2400 1000 2    50   Input ~ 0
 3V3_800mA
-$Comp
-L Interface_Expansion:MCP23017_SO U5
-U 1 1 5E8CA59F
-P 2250 2100
-F 0 "U5" H 1850 3100 50  0000 C CNN
-F 1 "MCP23017_SO" H 2150 2550 50  0000 C CNN
-F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 2450 1100 50  0001 L CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 2450 1000 50  0001 L CNN
-	1    2250 2100
-	1    0    0    -1  
-$EndComp
 Text GLabel 2350 3650 2    50   Input ~ 0
 3V3_800mA
 Wire Wire Line
 	1550 2200 750  2200
 Wire Wire Line
-	750  1000 2250 1000
-Wire Wire Line
 	750  1000 750  2200
 Wire Wire Line
-	2250 1000 2400 1000
-Connection ~ 2250 1000
-Wire Wire Line
 	2250 3200 1900 3200
-Wire Wire Line
-	1450 3200 1450 2900
 Wire Wire Line
 	1450 2700 1550 2700
 Connection ~ 1900 3200
 Wire Wire Line
 	1550 2800 1450 2800
-Connection ~ 1450 2800
 Wire Wire Line
 	1450 2800 1450 2700
 Wire Wire Line
 	1550 2900 1450 2900
-Connection ~ 1450 2900
-Wire Wire Line
-	1450 2900 1450 2800
-Text Notes 750  950  0    50   ~ 0
-I2C ID: 0100000 (7-bit address) 32 decimal 0x20\n(Available address range is 32 decimal to 37 decimal or 0x20 to 0x27)
-Text Notes 750  3600 0    50   ~ 0
-I2C ID: 0100001 (7-bit address) 33 decimal 0x21\n(Available address range is 32 decimal to 37 decimal or 0x20 to 0x27)
+Text Notes 750  850  0    50   ~ 0
+I2C ID: 0100110 (7-bit address) 0x26 (38 decimal)
 Wire Wire Line
 	2350 3650 2200 3650
 Wire Wire Line
@@ -667,10 +643,6 @@ Wire Wire Line
 Wire Wire Line
 	750  4850 1500 4850
 Connection ~ 2200 3650
-Wire Wire Line
-	1500 5550 750  5550
-Wire Wire Line
-	750  5550 750  4850
 Connection ~ 750  4850
 Wire Wire Line
 	1500 5450 1400 5450
@@ -850,11 +822,6 @@ Connection ~ 9500 5000
 Wire Wire Line
 	9500 5000 9500 5100
 Wire Wire Line
-	9500 5100 9500 5300
-Wire Wire Line
-	9500 5300 9900 5300
-Connection ~ 9500 5100
-Wire Wire Line
 	9900 5300 9900 5350
 Connection ~ 9900 5300
 Wire Wire Line
@@ -880,15 +847,12 @@ F 3 "~" H 9150 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9900 4550 9150 4550
+	9900 4550 9500 4550
 Wire Wire Line
 	9150 4550 9150 4950
 Connection ~ 9900 4550
 Wire Wire Line
 	9150 5150 9150 5300
-Wire Wire Line
-	9150 5300 9500 5300
-Connection ~ 9500 5300
 $Comp
 L Device:CP1_Small C?
 U 1 1 5EA570E9
@@ -946,18 +910,10 @@ F 3 "~" H 750 5700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	750  2200 750  2500
+	750  2200 750  2350
 Connection ~ 750  2200
 Wire Wire Line
 	750  2700 750  3200
-Wire Wire Line
-	750  3200 1450 3200
-Connection ~ 1450 3200
-Wire Wire Line
-	1450 3200 1900 3200
-Wire Wire Line
-	750  5550 750  5600
-Connection ~ 750  5550
 Wire Wire Line
 	750  5800 750  5850
 Wire Wire Line
@@ -1125,4 +1081,49 @@ Text GLabel 5850 2800 0    50   Input ~ 0
 SPARE_4
 Text GLabel 5850 2900 0    50   Input ~ 0
 SPARE_5
+Text Notes 9000 4450 0    50   ~ 0
+EEPROM I2C ADDRESS: 0b1010111, 0x57 (87 decimal)
+Wire Wire Line
+	9150 5300 9900 5300
+Wire Wire Line
+	9500 4900 9500 4550
+Connection ~ 9500 4900
+Connection ~ 9500 4550
+Wire Wire Line
+	9500 4550 9150 4550
+Wire Wire Line
+	2250 1000 2400 1000
+Wire Wire Line
+	750  1000 2250 1000
+Connection ~ 2250 1000
+$Comp
+L Interface_Expansion:MCP23017_SO U5
+U 1 1 5E8CA59F
+P 2250 2100
+F 0 "U5" H 1850 3100 50  0000 C CNN
+F 1 "MCP23017_SO" H 2150 2550 50  0000 C CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 2450 1100 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 2450 1000 50  0001 L CNN
+	1    2250 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 3200 1900 3200
+Wire Wire Line
+	750  3200 1450 3200
+Connection ~ 1450 3200
+Wire Wire Line
+	1450 3200 1450 2900
+Wire Wire Line
+	750  4850 750  5600
+Wire Wire Line
+	1450 2700 1450 2350
+Wire Wire Line
+	1450 2350 750  2350
+Connection ~ 1450 2700
+Connection ~ 750  2350
+Wire Wire Line
+	750  2350 750  2500
+Text Notes 750  3550 0    50   ~ 0
+I2C ID: 0100111 (7-bit address) 0x27 (39 decimal)
 $EndSCHEMATC
