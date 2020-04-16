@@ -1227,4 +1227,15 @@ Wire Wire Line
 Wire Wire Line
 	8650 6150 8650 6100
 Connection ~ 9200 5700
+$Comp
+L CORE_64_LIBRARY:Core_64_Github_Link L1
+U 1 1 5E9833FF
+P 500 600
+F 0 "L1" H 525 647 50  0000 L CNN
+F 1 "Core_64_Github_Link" H 525 554 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Github_Link" H 500 600 50  0001 C CNN
+F 3 "" H 500 600 50  0001 C CNN
+	1    500  600 
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

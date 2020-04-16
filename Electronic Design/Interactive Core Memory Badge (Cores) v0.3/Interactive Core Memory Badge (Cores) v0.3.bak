@@ -984,7 +984,7 @@ L Connector:Conn_01x03_Female J3
 U 1 1 5E9687EF
 P 6200 2650
 F 0 "J3" H 6200 2300 50  0000 C CNN
-F 1 "Conn_01x03_Female" H 5850 2400 50  0000 C CNN
+F 1 "LED ARRAY" H 6050 2400 50  0000 C CNN
 F 2 "Core_Memory_8x8_Array:LED_Matrix_Header_3pin_0.9_holes" H 6200 2650 50  0001 C CNN
 F 3 "~" H 6200 2650 50  0001 C CNN
 	1    6200 2650
@@ -1227,4 +1227,15 @@ Wire Wire Line
 Wire Wire Line
 	8650 6150 8650 6100
 Connection ~ 9200 5700
+$Comp
+L CORE_64_LIBRARY:Core_64_Github_Link L1
+U 1 1 5E9833FF
+P 9600 6650
+F 0 "L1" H 9625 6697 50  0000 L CNN
+F 1 "Core_64_Github_Link" H 9625 6604 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Github_Link" H 9600 6650 50  0001 C CNN
+F 3 "" H 9600 6650 50  0001 C CNN
+	1    9600 6650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

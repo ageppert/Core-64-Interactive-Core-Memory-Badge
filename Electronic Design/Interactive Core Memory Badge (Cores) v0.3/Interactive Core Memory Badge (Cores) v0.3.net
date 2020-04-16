@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Interactive Core Memory Badge (Cores) v0.3/Interactive Core Memory Badge (Cores) v0.3.sch")
-    (date "Monday, April 13, 2020 at 09:08:44 PM")
+    (date "Tuesday, April 14, 2020 at 08:12:00 PM")
     (tool "Eeschema (5.1.2-1)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -243,8 +243,18 @@
       (footprint badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3)
       (libsource (lib "Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue") (part Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis) (description ""))
       (sheetpath (names /) (tstamps /))
-      (tstamp 5E90E5F7)))
+      (tstamp 5E90E5F7))
+    (comp (ref L1)
+      (value Core_64_Github_Link)
+      (footprint Core_Memory_8x8_Array:Github_Link)
+      (libsource (lib CORE_64_LIBRARY) (part Core_64_Github_Link) (description ""))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 5E9833FF)))
   (libparts
+    (libpart (lib CORE_64_LIBRARY) (part Core_64_Github_Link)
+      (fields
+        (field (name Reference) L)
+        (field (name Value) Core_64_Github_Link)))
     (libpart (lib CORE_64_LIBRARY) (part Core_Memory_8x8_Array_Front_Facing)
       (fields
         (field (name Reference) CM)
