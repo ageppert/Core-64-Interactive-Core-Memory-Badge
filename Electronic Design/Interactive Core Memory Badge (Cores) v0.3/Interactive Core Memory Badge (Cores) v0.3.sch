@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Core 64 - Interactive Core Memory Badge (Cores)"
-Date "2020-04-12"
+Date "2020-04-17"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -458,10 +458,10 @@ $EndComp
 Wire Wire Line
 	4350 5550 4350 5750
 $Comp
-L Device:CP1_Small C5
+L Device:CP1_Small C4
 U 1 1 5E7D3CE8
 P 4600 6050
-F 0 "C5" H 4691 6096 50  0000 L CNN
+F 0 "C4" H 4691 6096 50  0000 L CNN
 F 1 "10pF" H 4691 6005 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4600 6050 50  0001 C CNN
 F 3 "~" H 4600 6050 50  0001 C CNN
@@ -482,10 +482,10 @@ $EndComp
 Wire Wire Line
 	4600 5950 4600 5750
 $Comp
-L Device:CP1_Small C4
+L Device:CP1_Small C3
 U 1 1 5E7D3CF5
 P 3300 5250
-F 0 "C4" H 3391 5296 50  0000 L CNN
+F 0 "C3" H 3391 5296 50  0000 L CNN
 F 1 "0.1uF" H 3391 5205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 3300 5250 50  0001 C CNN
 F 3 "~" H 3300 5250 50  0001 C CNN
@@ -513,10 +513,10 @@ Connection ~ 3800 5050
 Wire Wire Line
 	3800 5050 4350 5050
 $Comp
-L Sensor_Magnetic:A3214ELHLT-T U3
+L Sensor_Magnetic:A3214ELHLT-T U2
 U 1 1 5E7D3D06
 P 3900 5750
-F 0 "U3" H 3670 5796 50  0000 R CNN
+F 0 "U2" H 3670 5796 50  0000 R CNN
 F 1 "DRV5032FADBZR" H 3670 5705 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 3900 5400 50  0001 L CIN
 F 3 "http://www.allegromicro.com/~/media/Files/Datasheets/A3213-4-Datasheet.ashx" H 3800 5750 50  0001 C CNN
@@ -559,10 +559,10 @@ $EndComp
 Wire Wire Line
 	6800 5550 6800 5750
 $Comp
-L Device:CP1_Small C8
+L Device:CP1_Small C6
 U 1 1 5E7DADB9
 P 7000 6050
-F 0 "C8" H 7091 6096 50  0000 L CNN
+F 0 "C6" H 7091 6096 50  0000 L CNN
 F 1 "10pF" H 7091 6005 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 7000 6050 50  0001 C CNN
 F 3 "~" H 7000 6050 50  0001 C CNN
@@ -583,10 +583,10 @@ $EndComp
 Wire Wire Line
 	7000 5950 7000 5750
 $Comp
-L Device:CP1_Small C7
+L Device:CP1_Small C5
 U 1 1 5E7DADC6
 P 5750 5250
-F 0 "C7" H 5841 5296 50  0000 L CNN
+F 0 "C5" H 5841 5296 50  0000 L CNN
 F 1 "0.1uF" H 5841 5205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 5750 5250 50  0001 C CNN
 F 3 "~" H 5750 5250 50  0001 C CNN
@@ -614,10 +614,10 @@ Connection ~ 6250 5050
 Wire Wire Line
 	6250 5050 6800 5050
 $Comp
-L Sensor_Magnetic:A3214ELHLT-T U5
+L Sensor_Magnetic:A3214ELHLT-T U3
 U 1 1 5E7DADD7
 P 6350 5750
-F 0 "U5" H 6120 5796 50  0000 R CNN
+F 0 "U3" H 6120 5796 50  0000 R CNN
 F 1 "DRV5032DUDBZR" H 6120 5705 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 6350 5400 50  0001 L CIN
 F 3 "http://www.allegromicro.com/~/media/Files/Datasheets/A3213-4-Datasheet.ashx" H 6250 5750 50  0001 C CNN
@@ -660,10 +660,10 @@ $EndComp
 Wire Wire Line
 	9200 5450 9200 5700
 $Comp
-L Device:CP1_Small C11
+L Device:CP1_Small C8
 U 1 1 5E7E3328
 P 9350 6000
-F 0 "C11" H 9441 6046 50  0000 L CNN
+F 0 "C8" H 9441 6046 50  0000 L CNN
 F 1 "10pF" H 9441 5955 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 9350 6000 50  0001 C CNN
 F 3 "~" H 9350 6000 50  0001 C CNN
@@ -684,10 +684,10 @@ $EndComp
 Wire Wire Line
 	9350 5900 9350 5700
 $Comp
-L Device:CP1_Small C10
+L Device:CP1_Small C7
 U 1 1 5E7E3335
 P 8150 5200
-F 0 "C10" H 8241 5246 50  0000 L CNN
+F 0 "C7" H 8241 5246 50  0000 L CNN
 F 1 "0.1uF" H 8241 5155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 8150 5200 50  0001 C CNN
 F 3 "~" H 8150 5200 50  0001 C CNN
@@ -715,10 +715,10 @@ Connection ~ 8650 5000
 Wire Wire Line
 	8650 5000 9200 5000
 $Comp
-L Sensor_Magnetic:A3214ELHLT-T U7
+L Sensor_Magnetic:A3214ELHLT-T U4
 U 1 1 5E7E3346
 P 8750 5700
-F 0 "U7" H 8520 5746 50  0000 R CNN
+F 0 "U4" H 8520 5746 50  0000 R CNN
 F 1 "DRV5032" H 8520 5655 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 8750 5350 50  0001 L CIN
 F 3 "http://www.allegromicro.com/~/media/Files/Datasheets/A3213-4-Datasheet.ashx" H 8650 5700 50  0001 C CNN
@@ -735,10 +735,10 @@ Wire Wire Line
 	9200 5000 9300 5000
 Connection ~ 9200 5000
 $Comp
-L Sensor_Magnetic:SI7210 U2
+L Sensor_Magnetic:SI7210 U5
 U 1 1 5E88BBFB
 P 2050 4250
-F 0 "U2" H 2025 4520 50  0000 C CNN
+F 0 "U5" H 2025 4520 50  0000 C CNN
 F 1 "SI7210-B-01" H 2025 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2050 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 1900 4750 50  0001 C CNN
@@ -771,10 +771,10 @@ Wire Wire Line
 Wire Wire Line
 	3150 3600 1100 3600
 $Comp
-L Sensor_Magnetic:SI7210 U4
+L Sensor_Magnetic:SI7210 U6
 U 1 1 5E8F8CC9
 P 4450 4250
-F 0 "U4" H 4425 4520 50  0000 C CNN
+F 0 "U6" H 4425 4520 50  0000 C CNN
 F 1 "SI7210-B-02" H 4425 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4450 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 4300 4750 50  0001 C CNN
@@ -782,10 +782,10 @@ F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=
 	1    0    0    -1  
 $EndComp
 $Comp
-L Sensor_Magnetic:SI7210 U6
+L Sensor_Magnetic:SI7210 U7
 U 1 1 5E90A275
 P 6950 4250
-F 0 "U6" H 6925 4520 50  0000 C CNN
+F 0 "U7" H 6925 4520 50  0000 C CNN
 F 1 "SI7210-B-03" H 6925 4427 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6950 3900 50  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-TLV493D-A1B6-DS-v01_00-EN.pdf?fileId=5546d462525dbac40152a6b85c760e80" H 6800 4750 50  0001 C CNN
@@ -910,10 +910,10 @@ Wire Wire Line
 Wire Wire Line
 	2450 4450 3150 4450
 $Comp
-L Device:CP1_Small C3
+L Device:CP1_Small C9
 U 1 1 5EACD96D
 P 2450 4550
-F 0 "C3" H 2541 4596 50  0000 L CNN
+F 0 "C9" H 2541 4596 50  0000 L CNN
 F 1 "0.1uF" H 2541 4505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 2450 4550 50  0001 C CNN
 F 3 "~" H 2450 4550 50  0001 C CNN
@@ -921,10 +921,10 @@ F 3 "~" H 2450 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP1_Small C6
+L Device:CP1_Small C10
 U 1 1 5EAEAD4B
 P 4850 4550
-F 0 "C6" H 4941 4596 50  0000 L CNN
+F 0 "C10" H 4941 4596 50  0000 L CNN
 F 1 "0.1uF" H 4941 4505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4850 4550 50  0001 C CNN
 F 3 "~" H 4850 4550 50  0001 C CNN
@@ -938,10 +938,10 @@ Connection ~ 4850 4650
 Wire Wire Line
 	4850 4650 6300 4650
 $Comp
-L Device:CP1_Small C9
+L Device:CP1_Small C11
 U 1 1 5EAEBDAE
 P 7350 4550
-F 0 "C9" H 7441 4596 50  0000 L CNN
+F 0 "C11" H 7441 4596 50  0000 L CNN
 F 1 "0.1uF" H 7441 4505 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 7350 4550 50  0001 C CNN
 F 3 "~" H 7350 4550 50  0001 C CNN
@@ -1238,4 +1238,10 @@ F 3 "" H 500 600 50  0001 C CNN
 	1    500  600 
 	1    0    0    -1  
 $EndComp
+Text Notes 8050 3300 0    50   ~ 0
+SIG1 on the PCB silkscreen
+Text Notes 9400 1550 0    50   ~ 0
+SIG1 on the PCB silkscreen
+Text Notes 6350 6900 0    50   ~ 0
+As prototyped 2020-04-17
 $EndSCHEMATC
