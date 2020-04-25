@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 5
 Title "Core 64 - IO Expansion"
-Date "2020-03-24"
+Date "2020-04-24"
 Rev "v0.3"
 Comp ""
 Comment1 ""
@@ -646,10 +646,6 @@ Connection ~ 2200 3650
 Connection ~ 750  4850
 Wire Wire Line
 	1500 5450 1400 5450
-Wire Wire Line
-	1400 5450 1400 5850
-Wire Wire Line
-	1400 5850 1950 5850
 Connection ~ 1950 5850
 Wire Wire Line
 	1950 5850 2200 5850
@@ -657,7 +653,6 @@ Wire Wire Line
 	1500 5350 1400 5350
 Wire Wire Line
 	1400 5350 1400 5450
-Connection ~ 1400 5450
 Text GLabel 1550 2000 0    50   Output ~ 0
 IOEXP_ID32_INT_A
 Text GLabel 1550 1900 0    50   Output ~ 0
@@ -753,7 +748,7 @@ Wire Wire Line
 	7950 4650 7950 4750
 Wire Wire Line
 	8150 4450 8150 4500
-Text GLabel 8050 5800 2    50   Input ~ 0
+Text GLabel 8050 6100 2    50   Input ~ 0
 3V3_800mA
 $Comp
 L power:GND #PWR?
@@ -776,12 +771,6 @@ Wire Wire Line
 	7850 5900 8050 5900
 Wire Wire Line
 	7850 6000 8050 6000
-Wire Wire Line
-	7850 6100 7950 6100
-Wire Wire Line
-	7950 6100 7950 5800
-Wire Wire Line
-	7950 5800 8050 5800
 Wire Wire Line
 	7850 6200 8050 6200
 Text Notes 4250 900  0    50   ~ 10
@@ -916,9 +905,6 @@ Wire Wire Line
 	750  2700 750  3200
 Wire Wire Line
 	750  5800 750  5850
-Wire Wire Line
-	750  5850 1400 5850
-Connection ~ 1400 5850
 Wire Wire Line
 	10000 1000 10000 900 
 Wire Wire Line
@@ -1115,7 +1101,7 @@ Connection ~ 1450 3200
 Wire Wire Line
 	1450 3200 1450 2900
 Wire Wire Line
-	750  4850 750  5600
+	750  4850 750  5350
 Wire Wire Line
 	1450 2700 1450 2350
 Wire Wire Line
@@ -1126,4 +1112,19 @@ Wire Wire Line
 	750  2350 750  2500
 Text Notes 750  3550 0    50   ~ 0
 I2C ID: 0100111 (7-bit address) 0x27 (39 decimal)
+Wire Wire Line
+	750  5850 1950 5850
+Wire Wire Line
+	1500 5550 1400 5550
+Wire Wire Line
+	1400 5550 1400 5450
+Connection ~ 1400 5450
+Wire Wire Line
+	750  5350 1400 5350
+Connection ~ 750  5350
+Wire Wire Line
+	750  5350 750  5600
+Connection ~ 1400 5350
+Wire Wire Line
+	7850 6100 8050 6100
 $EndSCHEMATC

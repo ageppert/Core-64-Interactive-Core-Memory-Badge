@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 5
 Title "Core 64 - Sense"
-Date "2020-03-15"
+Date "2020-04-24"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""

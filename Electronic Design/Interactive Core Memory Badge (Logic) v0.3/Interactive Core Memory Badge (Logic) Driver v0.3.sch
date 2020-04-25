@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 5
 Title "Core 64 - Core Array Driver"
-Date "2020-03-15"
+Date "2020-04-24"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -1815,26 +1815,7 @@ Wire Wire Line
 Wire Wire Line
 	1900 2800 2550 2800
 Wire Wire Line
-	1450 7100 1900 7100
-Wire Wire Line
 	1050 7100 1250 7100
-Connection ~ 1450 7100
-Wire Wire Line
-	1450 7100 1450 7000
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E8ED577
-P 1450 7000
-AR Path="/5D254AE8/5E8ED577" Ref="TP?"  Part="1" 
-AR Path="/5E8ED577" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5E8ED577" Ref="TP2"  Part="1" 
-F 0 "TP2" H 1508 7118 50  0000 L CNN
-F 1 "VMEM" H 1508 7027 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.7mm_Drill1.0mm" H 1650 7000 50  0001 C CNN
-F 3 "~" H 1650 7000 50  0001 C CNN
-	1    1450 7000
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:CP1_Small C?
 U 1 1 5E91F406
@@ -1854,8 +1835,6 @@ Wire Wire Line
 Text Notes 550  7600 0    50   ~ 0
 PLACE\nCAPACITOR\nNEAR\nCORE DRIVERS
 Connection ~ 1250 7100
-Wire Wire Line
-	1250 7100 1450 7100
 $Comp
 L power:GND #PWR?
 U 1 1 5E94D2F4
@@ -1896,4 +1875,6 @@ Text GLabel 2550 3100 0    50   BiDi ~ 0
 SAO3_GPIO2
 Wire Wire Line
 	1900 3000 1900 3050
+Wire Wire Line
+	1250 7100 1900 7100
 $EndSCHEMATC

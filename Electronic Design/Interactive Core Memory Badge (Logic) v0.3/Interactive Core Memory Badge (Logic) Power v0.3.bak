@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
 Title "Core 64 - Power Schematic"
-Date "2020-03-15"
+Date "2020-04-24"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -669,12 +669,12 @@ Connection ~ 3350 6750
 Wire Wire Line
 	3350 6750 4150 6750
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0167
 U 1 1 5E93E34A
 P 4900 5450
-AR Path="/5E7548ED/5E93E34A" Ref="#PWR?"  Part="1" 
+AR Path="/5E7548ED/5E93E34A" Ref="#PWR0167"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E93E34A" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4900 5200 50  0001 C CNN
+F 0 "#PWR0167" H 4900 5200 50  0001 C CNN
 F 1 "GND" H 4905 5275 50  0000 C CNN
 F 2 "" H 4900 5450 50  0001 C CNN
 F 3 "" H 4900 5450 50  0001 C CNN

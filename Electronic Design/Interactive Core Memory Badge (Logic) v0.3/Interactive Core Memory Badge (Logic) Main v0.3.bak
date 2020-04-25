@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2020-03-20"
+Date "2020-04-24"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -20,8 +20,8 @@ U 5E755AC8
 F0 "Core Array Driver" 50
 F1 "Interactive Core Memory Badge (Logic) Driver v0.3.sch" 50
 $EndSheet
-Text Notes 2900 750  0    118  ~ 0
-CORE 64 INTERACTIVE CORE MEMORY BADGE V0.3 DUAL BOARD
+Text Notes 2650 750  0    118  ~ 0
+CORE 64 INTERACTIVE CORE MEMORY BADGE V0.3 DUAL BOARD (LOGIC)
 $Sheet
 S 8750 1000 2250 300 
 U 5E75D6AB
@@ -93,15 +93,15 @@ Wire Wire Line
 $Comp
 L power:GNDD #PWR?
 U 1 1 5EA2C7D3
-P 1050 2450
+P 800 2500
 AR Path="/5E755787/5EA2C7D3" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EA2C7D3" Ref="#PWR?"  Part="1" 
 AR Path="/5EA2C7D3" Ref="#PWR0109"  Part="1" 
-F 0 "#PWR0109" H 1050 2200 50  0001 C CNN
-F 1 "GNDD" H 1054 2295 50  0000 C CNN
-F 2 "" H 1050 2450 50  0001 C CNN
-F 3 "" H 1050 2450 50  0001 C CNN
-	1    1050 2450
+F 0 "#PWR0109" H 800 2250 50  0001 C CNN
+F 1 "GNDD" H 804 2345 50  0000 C CNN
+F 2 "" H 800 2500 50  0001 C CNN
+F 3 "" H 800 2500 50  0001 C CNN
+	1    800  2500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -162,20 +162,6 @@ LED_MATRIX_3V3_SIG
 Text GLabel 9950 2950 2    50   Output ~ 0
 LED_MATRIX_+VSW_SIG
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5EA33CB4
-P 9550 2850
-AR Path="/5E755787/5EA33CB4" Ref="TP?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA33CB4" Ref="TP?"  Part="1" 
-AR Path="/5EA33CB4" Ref="TP1"  Part="1" 
-F 0 "TP1" H 9608 2968 50  0000 L CNN
-F 1 "LED_MATRIX" H 9608 2877 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.7mm_Drill1.0mm" H 9750 2850 50  0001 C CNN
-F 3 "~" H 9750 2850 50  0001 C CNN
-	1    9550 2850
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 5EA33CBB
 P 9750 2950
@@ -190,14 +176,7 @@ F 3 "~" H 9750 2950 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	9550 2850 9550 2950
-Connection ~ 9550 2950
-Wire Wire Line
-	9550 2950 9600 2950
-Wire Wire Line
 	9900 2950 9950 2950
-Wire Wire Line
-	9500 2950 9550 2950
 Text GLabel 8650 2950 0    50   Input ~ 0
 LED_MATRIX_3V3_SIG
 Wire Wire Line
@@ -241,12 +220,12 @@ $EndSheet
 Text GLabel 1900 2500 0    50   BiDi ~ 0
 SAO1_GPIO2(RX)
 Wire Wire Line
-	2050 2400 1050 2400
+	2050 2400 800  2400
 Text GLabel 1900 2600 0    50   BiDi ~ 0
 SAO1_GPIO1(TX)
-Text GLabel 1900 3400 0    50   BiDi ~ 0
+Text GLabel 1900 3100 0    50   BiDi ~ 0
 SAO2_GPIO2(RX)
-Text GLabel 1900 3500 0    50   BiDi ~ 0
+Text GLabel 1900 3200 0    50   BiDi ~ 0
 SAO2_GPIO1(TX)
 Text GLabel 5750 4000 2    50   BiDi ~ 0
 SAO3_GPIO1
@@ -258,7 +237,7 @@ NoConn ~ 2050 4100
 NoConn ~ 2050 4200
 NoConn ~ 2050 4000
 Wire Wire Line
-	1050 2400 1050 2450
+	800  2400 800  2500
 NoConn ~ 2050 3800
 $Comp
 L Logic_LevelTranslator:SN74LV1T125DBVR U7
@@ -292,8 +271,8 @@ Text GLabel 1900 2900 0    50   Input ~ 0
 IOEXP_ID33_INT_A
 Text GLabel 1900 3000 0    50   Input ~ 0
 IOEXP_ID33_INT_B
-Text Notes 750  7500 0    50   ~ 10
-I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 0x20 ( decimal)\n  IO EXPANDER 2: 0x21 ( decimal)\n  HALL SENSOR 1: 0x30 (48 decimal)\n  HALL SENSOR 2: 0x31 (49 decimal)\n  HALL SENSOR 3: 0x32 (50 decimal)\n  HALL SENSOR 4: 0x33 (51 decimal)\n  EEPROM: 0b1010111, 0x57 (87 decimal)\nOptional\n  OLED: 0x3C (60 decimal)\n  AND!XOR GPIO Expander MCP23017 0x20 (32 decimal)\n  AND!XOR EEPROM AT24C32r 0x50 (80 decimal)\n\nAll 7-bit addresses should be greater than 0x07 and less than 0x78 (120). If your slave address is outside this range, chances are your vendor has specified an 8-bit address.
+Text Notes 650  7600 0    50   ~ 10
+I2C ADDRESS TABLE\nRequired\n  IO EXPANDER 1: 0x26 (38 decimal)\n  IO EXPANDER 2: 0x27 (39 decimal)\n  HALL SENSOR 1: 0x30 (48 decimal)\n  HALL SENSOR 2: 0x31 (49 decimal)\n  HALL SENSOR 3: 0x32 (50 decimal)\n  HALL SENSOR 4: 0x33 (51 decimal)\n  EEPROM: 0b1010111, 0x57 (87 decimal)\nOptional\n  OLED: 0x3C (60 decimal)\n  AND!XOR GPIO Expander MCP23017 0x20 (32 decimal)\n  AND!XOR EEPROM AT24C32r 0x50 (80 decimal)\n\nAll 7-bit addresses should be greater than 0x07 and less than 0x78 (120).
 Text Notes 700  4100 0    50   ~ 0
 Try not to use any of these\nto avoid the need to populate\nthis end row header on the PCB.
 Wire Notes Line
@@ -375,12 +354,93 @@ NoConn ~ 9100 5050
 NoConn ~ 9100 4950
 NoConn ~ 9100 4850
 NoConn ~ 9100 4750
-Text GLabel 1900 3200 0    50   Input ~ 0
-SENSE_OUT_A
 Text GLabel 1900 3300 0    50   Input ~ 0
+SENSE_OUT_A
+Text GLabel 1900 3400 0    50   Input ~ 0
 SENSE_OUT_B
 Wire Wire Line
 	4550 4100 4550 4200
 Wire Wire Line
 	4550 4200 5750 4200
+Text GLabel 1900 3500 0    50   Output ~ 0
+SD_CS
+Text GLabel 1900 3600 0    50   Output ~ 0
+SD_DI
+Text GLabel 1900 3700 0    50   Input ~ 0
+SD_DO
+Text GLabel 1900 4300 0    50   Output ~ 0
+SD_CLK
+Text Notes 4450 6300 0    118  ~ 0
+MicroSD Card (OPTIONAL)
+Text Notes 4450 6450 0    50   ~ 0
+Suggested: https://www.adafruit.com/product/254
+Text GLabel 4350 4300 2    50   Input ~ 0
+SD_CD
+$Comp
+L power:GNDD #PWR?
+U 1 1 5EA5A8BD
+P 5550 7450
+AR Path="/5E755787/5EA5A8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5EA5A8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5EA5A8BD" Ref="#PWR0125"  Part="1" 
+F 0 "#PWR0125" H 5550 7200 50  0001 C CNN
+F 1 "GNDD" H 5554 7295 50  0000 C CNN
+F 2 "" H 5550 7450 50  0001 C CNN
+F 3 "" H 5550 7450 50  0001 C CNN
+	1    5550 7450
+	1    0    0    -1  
+$EndComp
+Text GLabel 5950 6650 0    50   Output ~ 0
+SD_CD
+Text GLabel 5950 7050 0    50   Input ~ 0
+SD_CLK
+Text GLabel 5950 6950 0    50   Output ~ 0
+SD_DO
+Text GLabel 5950 6850 0    50   Input ~ 0
+SD_DI
+Text GLabel 5950 6750 0    50   Input ~ 0
+SD_CS
+$Comp
+L Connector:Conn_01x08_Female J?
+U 1 1 5EA64A99
+P 6150 6950
+AR Path="/5EA63449/5EA64A99" Ref="J?"  Part="1" 
+AR Path="/5EA64A99" Ref="J14"  Part="1" 
+F 0 "J14" H 6000 6450 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 5750 6350 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 6150 6950 50  0001 C CNN
+F 3 "~" H 6150 6950 50  0001 C CNN
+	1    6150 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 7350 5300 7250
+$Comp
+L power:+VSW #PWR?
+U 1 1 5EA6AD84
+P 5300 7250
+AR Path="/5E755787/5EA6AD84" Ref="#PWR?"  Part="1" 
+AR Path="/5EA6AD84" Ref="#PWR0155"  Part="1" 
+F 0 "#PWR0155" H 5300 7100 50  0001 C CNN
+F 1 "+VSW" H 5315 7425 50  0000 C CNN
+F 2 "" H 5300 7250 50  0001 C CNN
+F 3 "" H 5300 7250 50  0001 C CNN
+	1    5300 7250
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5950 7250
+Wire Wire Line
+	5550 7450 5550 7150
+Wire Wire Line
+	5550 7150 5950 7150
+Wire Wire Line
+	5950 7350 5300 7350
+Wire Wire Line
+	9500 2950 9600 2950
+NoConn ~ 4350 2700
+NoConn ~ 4350 2800
+NoConn ~ 4350 3400
+NoConn ~ 4350 3500
+NoConn ~ 4350 3700
+NoConn ~ 4350 4200
 $EndSCHEMATC
