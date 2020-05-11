@@ -110,13 +110,13 @@ Text GLabel 3200 1400 0    50   Input ~ 0
 Q3P
 Wire Wire Line
 	3950 1150 3950 1200
-Text GLabel 3150 1750 0    50   Output ~ 0
+Text GLabel 3250 1750 0    50   Output ~ 0
 XT0-4
-Text GLabel 5050 1750 0    50   Output ~ 0
+Text GLabel 5150 1750 0    50   Output ~ 0
 XT1-5
-Text GLabel 6950 1750 0    50   Output ~ 0
+Text GLabel 7050 1750 0    50   Output ~ 0
 XT2-6
-Text GLabel 8850 1750 0    50   Output ~ 0
+Text GLabel 8950 1750 0    50   Output ~ 0
 XT3-7
 $Comp
 L Digikey-Transistors:MMBT4403LT1G Q5
@@ -700,9 +700,9 @@ Wire Wire Line
 Wire Wire Line
 	9650 1750 9650 1850
 Wire Wire Line
-	8850 1750 9100 1750
+	8950 1750 9100 1750
 Wire Wire Line
-	7200 1750 6950 1750
+	7200 1750 7050 1750
 $Comp
 L Device:R R24
 U 1 1 5D63437C
@@ -715,14 +715,14 @@ F 3 "~" H 7350 1750 50  0001 C CNN
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	5050 1750 5300 1750
+	5150 1750 5300 1750
 Wire Wire Line
 	3800 1750 3950 1750
 Connection ~ 3950 1750
 Wire Wire Line
 	3950 1750 3950 1850
 Wire Wire Line
-	3150 1750 3500 1750
+	3250 1750 3500 1750
 Wire Wire Line
 	9650 1600 9650 1750
 Connection ~ 9650 1750
@@ -1432,17 +1432,17 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 $EndComp
 Text Notes 6350 7050 0    50   ~ 0
 Drive Transistor current: 3.3/470=7mA (too much for Teensy LC)\nMatrix 1/2 select current: 3.3/6.8= 485 mA (does not acccount \nfor voltage drop in transistors)
-Text Notes 3050 1700 0    50   ~ 0
+Text Notes 2950 1700 0    50   ~ 0
 COL 0,4
 Text Notes 4850 1700 0    50   ~ 0
 COL 1,5
 Text Notes 6750 1700 0    50   ~ 0
 COL 2,6
-Text Notes 8600 1700 0    50   ~ 0
+Text Notes 8650 1700 0    50   ~ 0
 COL 3,7
 Text Notes 1550 4800 0    50   ~ 0
 COL 0
-Text Notes 1600 5000 0    50   ~ 0
+Text Notes 1550 5000 0    50   ~ 0
 COL 1
 Text Notes 1850 5150 0    50   ~ 0
 COL 2
@@ -1450,11 +1450,11 @@ Text Notes 2750 5150 0    50   ~ 0
 COL 3
 Text Notes 4150 4800 0    50   ~ 0
 COL 4
-Text Notes 4200 5000 0    50   ~ 0
+Text Notes 4150 5000 0    50   ~ 0
 COL 5
-Text Notes 4450 5100 0    50   ~ 0
+Text Notes 4450 5150 0    50   ~ 0
 COL 6
-Text Notes 5350 5100 0    50   ~ 0
+Text Notes 5350 5150 0    50   ~ 0
 COL 7
 Text Notes 6400 4600 0    50   ~ 0
 ROW 0,4\nROW 2,6
@@ -1689,10 +1689,10 @@ Wire Wire Line
 Wire Wire Line
 	2450 2600 2550 2600
 $Comp
-L Connector:Conn_01x16_Female J2
+L Connector:Conn_01x16_Female J10
 U 1 1 5E78B5ED
 P 2750 2300
-F 0 "J2" H 1950 3250 50  0000 C CNN
+F 0 "J10" H 1950 3250 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 2350 3150 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2750 2300 50  0001 C CNN
 F 3 "~" H 2750 2300 50  0001 C CNN
@@ -1700,10 +1700,10 @@ F 3 "~" H 2750 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x16_Female J1
+L Connector:Conn_01x16_Female J9
 U 1 1 5E78B5F3
 P 550 2300
-F 0 "J1" H 500 3250 50  0000 C CNN
+F 0 "J9" H 500 3250 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 100 3150 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 550 2300 50  0001 C CNN
 F 3 "~" H 550 2300 50  0001 C CNN
@@ -1822,10 +1822,10 @@ U 1 1 5E91F406
 P 1250 7300
 AR Path="/5E755787/5E91F406" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E91F406" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5E91F406" Ref="C6"  Part="1" 
-F 0 "C6" H 1350 7400 50  0000 L CNN
+AR Path="/5E755AC8/5E91F406" Ref="C12"  Part="1" 
+F 0 "C12" H 1350 7400 50  0000 L CNN
 F 1 "1000uF" H 1350 7300 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_8x10" H 1250 7300 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_10x10" H 1250 7300 50  0001 C CNN
 F 3 "~" H 1250 7300 50  0001 C CNN
 	1    1250 7300
 	1    0    0    -1  
