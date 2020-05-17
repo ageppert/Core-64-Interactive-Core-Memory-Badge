@@ -38,16 +38,16 @@ Wire Wire Line
 Connection ~ 2700 5000
 Connection ~ 2100 4950
 Connection ~ 1500 4900
-Text GLabel 900  4250 0    50   Input ~ 0
+Text GLabel 900  4200 0    50   Input ~ 0
 Q1P
 Text GLabel 900  5700 0    50   Input ~ 0
 Q1N
 Wire Wire Line
 	900  5700 950  5700
 Wire Wire Line
-	900  4250 950  4250
+	900  4200 950  4200
 Wire Wire Line
-	1250 4250 1400 4250
+	1250 4200 1400 4200
 Wire Wire Line
 	1250 5700 1400 5700
 $Comp
@@ -64,12 +64,12 @@ $EndComp
 $Comp
 L power:VMEM #PWR0132
 U 1 1 5D3B6BE3
-P 1700 4050
-F 0 "#PWR0132" H 1700 3900 50  0001 C CNN
-F 1 "VMEM" H 1715 4223 50  0000 C CNN
-F 2 "" H 1700 4050 50  0001 C CNN
-F 3 "" H 1700 4050 50  0001 C CNN
-	1    1700 4050
+P 1700 4000
+F 0 "#PWR0132" H 1700 3850 50  0001 C CNN
+F 1 "VMEM" H 1715 4173 50  0000 C CNN
+F 2 "" H 1700 4000 50  0001 C CNN
+F 3 "" H 1700 4000 50  0001 C CNN
+	1    1700 4000
 	1    0    0    -1  
 $EndComp
 Text GLabel 5200 4000 1    50   Output ~ 0
@@ -216,21 +216,21 @@ Wire Wire Line
 $Comp
 L Digikey-Transistors:MMBT4403LT1G Q7
 U 1 1 5D5BD2C4
-P 4200 4250
-F 0 "Q7" H 4388 4303 60  0000 L CNN
-F 1 "MMBT4403LT1G" H 4388 4197 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 4400 4450 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 4400 4550 60  0001 L CNN
-F 4 "MMBT4403LT1GOSCT-ND" H 4400 4650 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4403LT1G" H 4400 4750 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4400 4850 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4400 4950 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 4400 5050 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 4400 5150 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS PNP 40V 0.6A SOT23" H 4400 5250 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 4400 5350 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4400 5450 60  0001 L CNN "Status"
-	1    4200 4250
+P 4200 4200
+F 0 "Q7" H 4388 4253 60  0000 L CNN
+F 1 "MMBT4403LT1G" H 4388 4147 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 4400 4400 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 4400 4500 60  0001 L CNN
+F 4 "MMBT4403LT1GOSCT-ND" H 4400 4600 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4403LT1G" H 4400 4700 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 4400 4800 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 4400 4900 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 4400 5000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 4400 5100 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS PNP 40V 0.6A SOT23" H 4400 5200 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 4400 5300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4400 5400 60  0001 L CNN "Status"
+	1    4200 4200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -280,27 +280,27 @@ Connection ~ 4700 4950
 Connection ~ 4100 4900
 Wire Wire Line
 	3500 4850 5350 4850
-Text GLabel 3500 4250 0    50   Input ~ 0
+Text GLabel 3500 4200 0    50   Input ~ 0
 Q2P
 Text GLabel 3500 5700 0    50   Input ~ 0
 Q2N
 Wire Wire Line
 	3500 5700 3550 5700
 Wire Wire Line
-	3500 4250 3550 4250
+	3500 4200 3550 4200
 $Comp
 L Device:R R14
 U 1 1 5D5BD310
-P 3700 4250
-F 0 "R14" V 3493 4250 50  0000 C CNN
-F 1 "470" V 3584 4250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3630 4250 50  0001 C CNN
-F 3 "~" H 3700 4250 50  0001 C CNN
-	1    3700 4250
+P 3700 4200
+F 0 "R14" V 3493 4200 50  0000 C CNN
+F 1 "470" V 3584 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3630 4200 50  0001 C CNN
+F 3 "~" H 3700 4200 50  0001 C CNN
+	1    3700 4200
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3850 4250 4000 4250
+	3850 4200 4000 4200
 $Comp
 L Device:R R15
 U 1 1 5D5BD317
@@ -328,12 +328,12 @@ $EndComp
 $Comp
 L power:VMEM #PWR0136
 U 1 1 5D5BD324
-P 4300 4050
-F 0 "#PWR0136" H 4300 3900 50  0001 C CNN
-F 1 "VMEM" H 4315 4223 50  0000 C CNN
-F 2 "" H 4300 4050 50  0001 C CNN
-F 3 "" H 4300 4050 50  0001 C CNN
-	1    4300 4050
+P 4300 4000
+F 0 "#PWR0136" H 4300 3850 50  0001 C CNN
+F 1 "VMEM" H 4315 4173 50  0000 C CNN
+F 2 "" H 4300 4000 50  0001 C CNN
+F 3 "" H 4300 4000 50  0001 C CNN
+	1    4300 4000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1235,12 +1235,12 @@ Wire Wire Line
 $Comp
 L Device:R R8
 U 1 1 5D48D653
-P 1100 4250
-F 0 "R8" V 893 4250 50  0000 C CNN
-F 1 "470" V 984 4250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 1030 4250 50  0001 C CNN
-F 3 "~" H 1100 4250 50  0001 C CNN
-	1    1100 4250
+P 1100 4200
+F 0 "R8" V 893 4200 50  0000 C CNN
+F 1 "470" V 984 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1030 4200 50  0001 C CNN
+F 3 "~" H 1100 4200 50  0001 C CNN
+	1    1100 4200
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1257,21 +1257,21 @@ $EndComp
 $Comp
 L Digikey-Transistors:MMBT4403LT1G Q2
 U 1 1 5D49119D
-P 1600 4250
-F 0 "Q2" H 1788 4303 60  0000 L CNN
-F 1 "MMBT4403LT1G" H 1788 4197 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 1800 4450 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1800 4550 60  0001 L CNN
-F 4 "MMBT4403LT1GOSCT-ND" H 1800 4650 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4403LT1G" H 1800 4750 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 1800 4850 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 1800 4950 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1800 5050 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 1800 5150 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS PNP 40V 0.6A SOT23" H 1800 5250 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 1800 5350 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 1800 5450 60  0001 L CNN "Status"
-	1    1600 4250
+P 1600 4200
+F 0 "Q2" H 1788 4253 60  0000 L CNN
+F 1 "MMBT4403LT1G" H 1788 4147 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 1800 4400 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1800 4500 60  0001 L CNN
+F 4 "MMBT4403LT1GOSCT-ND" H 1800 4600 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4403LT1G" H 1800 4700 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 1800 4800 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 1800 4900 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1800 5000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 1800 5100 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS PNP 40V 0.6A SOT23" H 1800 5200 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 1800 5300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 1800 5400 60  0001 L CNN "Status"
+	1    1600 4200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1615,9 +1615,9 @@ Wire Wire Line
 Text Notes 3250 6500 0    118  ~ 0
 CORE ARRAY ENABLE
 Wire Wire Line
-	3800 4450 5000 4450
+	3800 4450 4300 4450
 Wire Wire Line
-	1200 4450 2400 4450
+	1200 4450 1700 4450
 Text GLabel 2450 2300 0    50   Output ~ 0
 XB3
 Text GLabel 2450 2200 0    50   Output ~ 0
@@ -1877,4 +1877,14 @@ Wire Wire Line
 	1900 3000 1900 3050
 Wire Wire Line
 	1250 7100 1900 7100
+Wire Wire Line
+	1700 4400 1700 4450
+Connection ~ 1700 4450
+Wire Wire Line
+	1700 4450 2400 4450
+Wire Wire Line
+	4300 4400 4300 4450
+Connection ~ 4300 4450
+Wire Wire Line
+	4300 4450 5000 4450
 $EndSCHEMATC

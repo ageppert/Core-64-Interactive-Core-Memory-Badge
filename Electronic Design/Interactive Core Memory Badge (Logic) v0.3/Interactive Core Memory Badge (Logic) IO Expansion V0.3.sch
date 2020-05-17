@@ -57,7 +57,7 @@ nQ10P
 Text GLabel 2900 4050 2    50   Output ~ 0
 Q9N
 Text GLabel 2900 4950 2    50   Input ~ 0
-HALL_SWITCH
+HALL_SWITCH_1
 Text GLabel 2900 4450 2    50   Output ~ 0
 SENSE_RESET
 Text Notes 550  700  0    118  ~ 0
@@ -287,11 +287,11 @@ Q9P
 Text GLabel 9250 2650 2    50   Output ~ 0
 Q10P
 Text GLabel 2900 5050 2    50   Input ~ 0
-HALL_SWITCH
+HALL_SWITCH_2
 Text GLabel 2900 5150 2    50   Input ~ 0
-HALL_SWITCH
+HALL_SWITCH_3
 Text GLabel 2900 5250 2    50   Input ~ 0
-HALL_SWITCH
+HALL_SWITCH_4
 Text GLabel 2900 4350 2    50   Output ~ 0
 WRITE_ENABLE
 Text GLabel 2650 6900 2    50   BiDi ~ 0
@@ -656,8 +656,8 @@ Wire Wire Line
 	4950 4900 5150 4900
 Wire Wire Line
 	4950 5100 5150 5100
-Text Notes 4250 900  0    50   ~ 10
-IO Expansion/debug header if there is room…
+Text Notes 4850 1450 0    50   ~ 10
+IO Expansion header
 $Comp
 L Device:CP1_Small C?
 U 1 1 5EA570E9
@@ -762,120 +762,31 @@ Wire Wire Line
 Wire Wire Line
 	6950 5050 6950 5400
 $Comp
-L Connector:Conn_01x08_Female J5
-U 1 1 5EAFE6D6
-P 4700 1600
-F 0 "J5" H 4550 2150 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 4300 2050 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 4700 1600 50  0001 C CNN
-F 3 "~" H 4700 1600 50  0001 C CNN
-	1    4700 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x08_Female J6
-U 1 1 5EB02E1E
-P 4700 2500
-F 0 "J6" H 4550 2000 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 4300 1900 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 4700 2500 50  0001 C CNN
-F 3 "~" H 4700 2500 50  0001 C CNN
-	1    4700 2500
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:Conn_01x08_Female J7
 U 1 1 5EB0C89C
-P 6050 1600
-F 0 "J7" H 5900 2150 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 5700 2050 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 6050 1600 50  0001 C CNN
-F 3 "~" H 6050 1600 50  0001 C CNN
-	1    6050 1600
+P 5450 2100
+F 0 "J7" H 5300 2650 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 5100 2550 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5450 2100 50  0001 C CNN
+F 3 "~" H 5450 2100 50  0001 C CNN
+	1    5450 2100
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x08_Female J8
-U 1 1 5EB0C8A2
-P 6050 2500
-F 0 "J8" H 5900 2000 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 5650 1900 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 6050 2500 50  0001 C CNN
-F 3 "~" H 6050 2500 50  0001 C CNN
-	1    6050 2500
-	1    0    0    -1  
-$EndComp
-Text GLabel 4500 1300 0    50   Output ~ 0
-nQ1P
-Text GLabel 4500 1400 0    50   Output ~ 0
-Q1N
-Text GLabel 4500 1500 0    50   Output ~ 0
-nQ2P
-Text GLabel 4500 1600 0    50   Output ~ 0
-Q2N
-Text GLabel 4500 1700 0    50   Output ~ 0
-nQ3P
-Text GLabel 4500 1800 0    50   Output ~ 0
-Q3N
-Text GLabel 4500 1900 0    50   Output ~ 0
-nQ4P
-Text GLabel 4500 2000 0    50   Output ~ 0
-Q4N
-Text GLabel 4500 2200 0    50   Output ~ 0
-nQ5P
-Text GLabel 4500 2300 0    50   Output ~ 0
-Q5N
-Text GLabel 4500 2400 0    50   Output ~ 0
-nQ6P
-Text GLabel 4500 2500 0    50   Output ~ 0
-Q6N
-Text GLabel 4500 2600 0    50   Output ~ 0
-nQ7P
-Text GLabel 4500 2900 0    50   Output ~ 0
-Q8N
-Text GLabel 4500 2800 0    50   Output ~ 0
-nQ8P
-Text GLabel 4500 2700 0    50   Output ~ 0
-Q7N
-Text GLabel 5850 2200 0    50   Input ~ 0
-SENSE_PULSE
-Text GLabel 5850 1300 0    50   Output ~ 0
-nQ9P
-Text GLabel 5850 1600 0    50   Output ~ 0
-Q10N
-Text GLabel 5850 1500 0    50   Output ~ 0
-nQ10P
-Text GLabel 5850 1400 0    50   Output ~ 0
-Q9N
-Text GLabel 5850 2300 0    50   Input ~ 0
-HALL_SWITCH
-Text GLabel 5850 1800 0    50   Output ~ 0
-SENSE_RESET
-Text GLabel 5850 2400 0    50   Input ~ 0
-HALL_SWITCH
-Text GLabel 5850 2500 0    50   Input ~ 0
-HALL_SWITCH
-Text GLabel 5850 2600 0    50   Input ~ 0
-HALL_SWITCH
-Text GLabel 5850 1700 0    50   Output ~ 0
+Text GLabel 5250 2300 0    50   Output ~ 0
 WRITE_ENABLE
 Text GLabel 2900 4550 2    50   Output ~ 0
 SPARE_1
 Text GLabel 2900 4650 2    50   Output ~ 0
 SPARE_2
-Text GLabel 5850 1900 0    50   Output ~ 0
-SPARE_1
-Text GLabel 5850 2000 0    50   Output ~ 0
-SPARE_2
 NoConn ~ 9250 3200
 NoConn ~ 8650 3200
 NoConn ~ 8650 3700
 NoConn ~ 9250 3700
-Text GLabel 5850 2700 0    50   Input ~ 0
+Text GLabel 5250 2000 0    50   Input ~ 0
 SPARE_3
-Text GLabel 5850 2800 0    50   Input ~ 0
+Text GLabel 5250 2100 0    50   Input ~ 0
 SPARE_4
-Text GLabel 5850 2900 0    50   Input ~ 0
+Text GLabel 5250 2200 0    50   Input ~ 0
 SPARE_5
 Wire Wire Line
 	2250 1000 2400 1000
@@ -1003,4 +914,23 @@ F 3 "~" H 1550 7150 50  0001 C CNN
 	1    1550 7150
 	0    -1   -1   0   
 $EndComp
+Text GLabel 5250 1900 0    50   Input ~ 0
+SPARE_2
+Text GLabel 5250 1800 0    50   Input ~ 0
+SPARE_1
+$Comp
+L power:GND #PWR?
+U 1 1 5EC9F516
+P 5250 2500
+AR Path="/5E755787/5EC9F516" Ref="#PWR?"  Part="1" 
+AR Path="/5EA63449/5EC9F516" Ref="#PWR0166"  Part="1" 
+F 0 "#PWR0166" H 5250 2250 50  0001 C CNN
+F 1 "GND" H 5255 2325 50  0000 C CNN
+F 2 "" H 5250 2500 50  0001 C CNN
+F 3 "" H 5250 2500 50  0001 C CNN
+	1    5250 2500
+	1    0    0    -1  
+$EndComp
+Text GLabel 5250 2400 0    50   Input ~ 0
+3V3_800mA
 $EndSCHEMATC

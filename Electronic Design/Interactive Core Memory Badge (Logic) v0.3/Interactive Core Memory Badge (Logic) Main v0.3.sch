@@ -366,7 +366,7 @@ Text GLabel 1900 3600 0    50   Output ~ 0
 SD_DI
 Text GLabel 1900 3700 0    50   Input ~ 0
 SD_DO
-Text GLabel 3200 4600 2    50   Output ~ 0
+Text GLabel 3000 5100 0    50   Output ~ 0
 SD_CLK
 Text GLabel 4250 4200 2    50   Input ~ 0
 SD_CD
@@ -535,12 +535,12 @@ F 1 "SolderJumper_3_Bridged12" H 3100 5062 50  0000 C CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm_NumberLabels" H 3100 4850 50  0001 C CNN
 F 3 "~" H 3100 4850 50  0001 C CNN
 	1    3100 4850
-	1    0    0    1   
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	3100 4700 3100 4600
+	3100 5000 3100 5100
 Wire Wire Line
-	3100 4600 3200 4600
+	3100 5100 3000 5100
 Wire Wire Line
 	4350 4300 4350 4850
 Wire Wire Line
