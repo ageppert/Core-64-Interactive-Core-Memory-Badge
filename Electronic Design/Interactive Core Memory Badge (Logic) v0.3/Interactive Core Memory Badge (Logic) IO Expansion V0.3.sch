@@ -14,285 +14,61 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 2950 1300 2    50   Output ~ 0
-nQ1P
-Text GLabel 2950 1400 2    50   Output ~ 0
+Text GLabel 2900 4850 2    50   Output ~ 0
+Q1P
+Text GLabel 2900 4950 2    50   Output ~ 0
 Q1N
-Text GLabel 2900 4850 2    50   Input ~ 0
+Text GLabel 2900 4650 2    50   Input ~ 0
 SENSE_PULSE
-Text GLabel 2950 1500 2    50   Output ~ 0
-nQ2P
-Text GLabel 2950 1600 2    50   Output ~ 0
+Text GLabel 2900 5050 2    50   Output ~ 0
+Q2P
+Text GLabel 2900 5150 2    50   Output ~ 0
 Q2N
 Text GLabel 2950 1700 2    50   Output ~ 0
-nQ3P
+Q3P
 Text GLabel 2950 1800 2    50   Output ~ 0
 Q3N
 Text GLabel 2950 1900 2    50   Output ~ 0
-nQ4P
+Q4P
 Text GLabel 2950 2000 2    50   Output ~ 0
 Q4N
 Text GLabel 2950 2200 2    50   Output ~ 0
-nQ5P
+Q5P
 Text GLabel 2950 2300 2    50   Output ~ 0
 Q5N
 Text GLabel 2950 2400 2    50   Output ~ 0
-nQ6P
+Q6P
 Text GLabel 2950 2500 2    50   Output ~ 0
 Q6N
 Text GLabel 2950 2600 2    50   Output ~ 0
-nQ7P
-Text GLabel 2900 3950 2    50   Output ~ 0
-nQ9P
+Q7P
+Text GLabel 2950 1300 2    50   Output ~ 0
+Q9P
 Text GLabel 2950 2900 2    50   Output ~ 0
 Q8N
 Text GLabel 2950 2800 2    50   Output ~ 0
-nQ8P
+Q8P
 Text GLabel 2950 2700 2    50   Output ~ 0
 Q7N
-Text GLabel 2900 4250 2    50   Output ~ 0
+Text GLabel 2950 1600 2    50   Output ~ 0
 Q10N
-Text GLabel 2900 4150 2    50   Output ~ 0
-nQ10P
-Text GLabel 2900 4050 2    50   Output ~ 0
+Text GLabel 2950 1500 2    50   Output ~ 0
+Q10P
+Text GLabel 2950 1400 2    50   Output ~ 0
 Q9N
-Text GLabel 2900 4950 2    50   Input ~ 0
+Text GLabel 2900 5250 2    50   Input ~ 0
 HALL_SWITCH_1
-Text GLabel 2900 4450 2    50   Output ~ 0
+Text GLabel 2900 4550 2    50   Output ~ 0
 SENSE_RESET
 Text Notes 550  700  0    118  ~ 0
 IO EXPANDER FOR CORE DRIVE ARRAY
-Text Notes 6950 700  0    118  ~ 0
-INVERT DRIVE SIGNALS FOR PNP TRANSISTORS
-$Comp
-L 74xx:74HC14 U?
-U 1 1 5EAA2FDC
-P 7600 1100
-AR Path="/5E755787/5EAA2FDC" Ref="U?"  Part="1" 
-AR Path="/5EA63449/5EAA2FDC" Ref="U7"  Part="1" 
-F 0 "U7" H 7600 1420 50  0000 C CNN
-F 1 "74AC04" H 7600 1327 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7600 1100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7600 1100 50  0001 C CNN
-	1    7600 1100
-	1    0    0    -1  
-$EndComp
-Text GLabel 7300 1100 0    50   Input ~ 0
-nQ1P
-Text GLabel 7900 1100 2    50   Output ~ 0
-Q1P
-$Comp
-L 74xx:74HC14 U?
-U 2 1 5EAA2FE4
-P 7600 1600
-AR Path="/5E755787/5EAA2FE4" Ref="U?"  Part="2" 
-AR Path="/5EA63449/5EAA2FE4" Ref="U7"  Part="2" 
-F 0 "U7" H 7600 1920 50  0000 C CNN
-F 1 "74AC04" H 7600 1827 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7600 1600 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7600 1600 50  0001 C CNN
-	2    7600 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 3 1 5EAA2FEA
-P 7600 2100
-AR Path="/5E755787/5EAA2FEA" Ref="U?"  Part="3" 
-AR Path="/5EA63449/5EAA2FEA" Ref="U7"  Part="3" 
-F 0 "U7" H 7600 2420 50  0000 C CNN
-F 1 "74AC04" H 7600 2327 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7600 2100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7600 2100 50  0001 C CNN
-	3    7600 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 4 1 5EAA2FF0
-P 7600 2650
-AR Path="/5E755787/5EAA2FF0" Ref="U?"  Part="4" 
-AR Path="/5EA63449/5EAA2FF0" Ref="U7"  Part="4" 
-F 0 "U7" H 7600 2970 50  0000 C CNN
-F 1 "74AC04" H 7600 2877 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7600 2650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7600 2650 50  0001 C CNN
-	4    7600 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 5 1 5EAA2FF6
-P 7600 3150
-AR Path="/5E755787/5EAA2FF6" Ref="U?"  Part="5" 
-AR Path="/5EA63449/5EAA2FF6" Ref="U7"  Part="5" 
-F 0 "U7" H 7600 3470 50  0000 C CNN
-F 1 "74AC04" H 7600 3377 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7600 3150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7600 3150 50  0001 C CNN
-	5    7600 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 6 1 5EAA2FFC
-P 7600 3700
-AR Path="/5E755787/5EAA2FFC" Ref="U?"  Part="6" 
-AR Path="/5EA63449/5EAA2FFC" Ref="U7"  Part="6" 
-F 0 "U7" H 7600 4020 50  0000 C CNN
-F 1 "74AC04" H 7600 3927 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 7600 3700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 7600 3700 50  0001 C CNN
-	6    7600 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 7 1 5EAA3002
-P 10000 1500
-AR Path="/5E755787/5EAA3002" Ref="U?"  Part="7" 
-AR Path="/5EA63449/5EAA3002" Ref="U7"  Part="7" 
-F 0 "U7" H 10230 1547 50  0000 L CNN
-F 1 "74AC04" H 10230 1454 50  0000 L CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 10000 1500 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 10000 1500 50  0001 C CNN
-	7    10000 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 1 1 5EAA3008
-P 8950 1100
-AR Path="/5E755787/5EAA3008" Ref="U?"  Part="1" 
-AR Path="/5EA63449/5EAA3008" Ref="U8"  Part="1" 
-F 0 "U8" H 8950 1420 50  0000 C CNN
-F 1 "74AC04" H 8950 1327 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 8950 1100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8950 1100 50  0001 C CNN
-	1    8950 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 2 1 5EAA300E
-P 8950 1600
-AR Path="/5E755787/5EAA300E" Ref="U?"  Part="2" 
-AR Path="/5EA63449/5EAA300E" Ref="U8"  Part="2" 
-F 0 "U8" H 8950 1920 50  0000 C CNN
-F 1 "74AC04" H 8950 1827 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 8950 1600 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8950 1600 50  0001 C CNN
-	2    8950 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 3 1 5EAA3014
-P 8950 2100
-AR Path="/5E755787/5EAA3014" Ref="U?"  Part="3" 
-AR Path="/5EA63449/5EAA3014" Ref="U8"  Part="3" 
-F 0 "U8" H 8950 2420 50  0000 C CNN
-F 1 "74AC04" H 8950 2327 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 8950 2100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8950 2100 50  0001 C CNN
-	3    8950 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 4 1 5EAA301A
-P 8950 2650
-AR Path="/5E755787/5EAA301A" Ref="U?"  Part="4" 
-AR Path="/5EA63449/5EAA301A" Ref="U8"  Part="4" 
-F 0 "U8" H 8950 2970 50  0000 C CNN
-F 1 "74AC04" H 8950 2877 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 8950 2650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8950 2650 50  0001 C CNN
-	4    8950 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 5 1 5EAA3020
-P 8950 3200
-AR Path="/5E755787/5EAA3020" Ref="U?"  Part="5" 
-AR Path="/5EA63449/5EAA3020" Ref="U8"  Part="5" 
-F 0 "U8" H 8950 3520 50  0000 C CNN
-F 1 "74AC04" H 8950 3427 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 8950 3200 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8950 3200 50  0001 C CNN
-	5    8950 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 6 1 5EAA3026
-P 8950 3700
-AR Path="/5E755787/5EAA3026" Ref="U?"  Part="6" 
-AR Path="/5EA63449/5EAA3026" Ref="U8"  Part="6" 
-F 0 "U8" H 8950 4020 50  0000 C CNN
-F 1 "74AC04" H 8950 3927 50  0000 C CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 8950 3700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 8950 3700 50  0001 C CNN
-	6    8950 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74HC14 U?
-U 7 1 5EAA302C
-P 10000 3150
-AR Path="/5E755787/5EAA302C" Ref="U?"  Part="7" 
-AR Path="/5EA63449/5EAA302C" Ref="U8"  Part="7" 
-F 0 "U8" H 10230 3197 50  0000 L CNN
-F 1 "74AC04" H 10230 3104 50  0000 L CNN
-F 2 "Digikey:SOIC-14_W3.9mm" H 10000 3150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74AC04" H 10000 3150 50  0001 C CNN
-	7    10000 3150
-	1    0    0    -1  
-$EndComp
-Text GLabel 7300 1600 0    50   Input ~ 0
-nQ2P
-Text GLabel 7300 2100 0    50   Input ~ 0
-nQ3P
-Text GLabel 7300 2650 0    50   Input ~ 0
-nQ4P
-Text GLabel 7300 3150 0    50   Input ~ 0
-nQ5P
-Text GLabel 7300 3700 0    50   Input ~ 0
-nQ6P
-Text GLabel 8650 1100 0    50   Input ~ 0
-nQ7P
-Text GLabel 8650 1600 0    50   Input ~ 0
-nQ8P
-Text GLabel 8650 2100 0    50   Input ~ 0
-nQ9P
-Text GLabel 8650 2650 0    50   Input ~ 0
-nQ10P
-Text GLabel 7900 1600 2    50   Output ~ 0
-Q2P
-Text GLabel 7900 2100 2    50   Output ~ 0
-Q3P
-Text GLabel 7900 2650 2    50   Output ~ 0
-Q4P
-Text GLabel 7900 3150 2    50   Output ~ 0
-Q5P
-Text GLabel 7900 3700 2    50   Output ~ 0
-Q6P
-Text GLabel 9250 1100 2    50   Output ~ 0
-Q7P
-Text GLabel 9250 1600 2    50   Output ~ 0
-Q8P
-Text GLabel 9250 2100 2    50   Output ~ 0
-Q9P
-Text GLabel 9250 2650 2    50   Output ~ 0
-Q10P
-Text GLabel 2900 5050 2    50   Input ~ 0
+Text GLabel 2900 5350 2    50   Input ~ 0
 HALL_SWITCH_2
-Text GLabel 2900 5150 2    50   Input ~ 0
+Text GLabel 2900 5450 2    50   Input ~ 0
 HALL_SWITCH_3
-Text GLabel 2900 5250 2    50   Input ~ 0
+Text GLabel 2900 5550 2    50   Input ~ 0
 HALL_SWITCH_4
-Text GLabel 2900 4350 2    50   Output ~ 0
+Text GLabel 2900 4450 2    50   Output ~ 0
 WRITE_ENABLE
 Text GLabel 2650 6900 2    50   BiDi ~ 0
 I2C_CLOCK
@@ -300,45 +76,6 @@ Text GLabel 2650 7050 2    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
 	2650 7050 2600 7050
-$Comp
-L Device:CP1_Small C?
-U 1 1 5EAA9409
-P 1200 7200
-AR Path="/5E755787/5EAA9409" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EAA9409" Ref="C?"  Part="1" 
-AR Path="/5EA63449/5EAA9409" Ref="C11"  Part="1" 
-F 0 "C11" H 1291 7246 50  0000 L CNN
-F 1 "10uF" H 1291 7155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1200 7200 50  0001 C CNN
-F 3 "~" H 1200 7200 50  0001 C CNN
-	1    1200 7200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1_Small C?
-U 1 1 5EAA940F
-P 800 7200
-AR Path="/5E755787/5EAA940F" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EAA940F" Ref="C?"  Part="1" 
-AR Path="/5EA63449/5EAA940F" Ref="C10"  Part="1" 
-F 0 "C10" H 891 7246 50  0000 L CNN
-F 1 "0.1uF" H 891 7155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 800 7200 50  0001 C CNN
-F 3 "~" H 800 7200 50  0001 C CNN
-	1    800  7200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1200 6950 1200 7100
-Wire Wire Line
-	1200 7300 1200 7450
-Wire Wire Line
-	800  7100 800  6950
-Wire Wire Line
-	800  6950 1200 6950
-Wire Wire Line
-	800  7300 800  7450
-Connection ~ 800  7450
 Text Notes 6250 4400 0    118  ~ 0
 SUPERIOR ADD-ON SOCKET (OPTIONAL)
 $Comp
@@ -356,34 +93,12 @@ F 3 "" H 800 7500 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	800  7500 800  7450
-Text GLabel 2900 5350 2    50   Input ~ 0
+Text GLabel 2900 4150 2    50   Input ~ 0
 SPARE_3
-Text GLabel 2900 5450 2    50   Input ~ 0
+Text GLabel 2900 4250 2    50   Input ~ 0
 SPARE_4
-Text GLabel 2900 5550 2    50   Input ~ 0
+Text GLabel 2900 4350 2    50   Input ~ 0
 SPARE_5
-$Comp
-L power:GNDD #PWR0128
-U 1 1 5E89228A
-P 10000 2100
-F 0 "#PWR0128" H 10000 1850 50  0001 C CNN
-F 1 "GNDD" H 10004 1944 50  0000 C CNN
-F 2 "" H 10000 2100 50  0001 C CNN
-F 3 "" H 10000 2100 50  0001 C CNN
-	1    10000 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDD #PWR0129
-U 1 1 5E89286A
-P 10000 3750
-F 0 "#PWR0129" H 10000 3500 50  0001 C CNN
-F 1 "GNDD" H 10004 3594 50  0000 C CNN
-F 2 "" H 10000 3750 50  0001 C CNN
-F 3 "" H 10000 3750 50  0001 C CNN
-	1    10000 3750
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GNDD #PWR0130
 U 1 1 5E892DA1
@@ -429,7 +144,6 @@ Wire Wire Line
 	1700 7000 2400 7000
 Wire Wire Line
 	2400 7000 2400 7100
-Connection ~ 1200 7450
 Wire Wire Line
 	2300 7050 2300 7100
 Text Notes 750  6650 0    50   ~ 0
@@ -551,13 +265,6 @@ Wire Wire Line
 	1550 6950 1850 6950
 Wire Wire Line
 	1850 6950 1850 7050
-Wire Wire Line
-	1200 7450 800  7450
-Wire Wire Line
-	1200 7450 1550 7450
-Wire Wire Line
-	1200 6950 1550 6950
-Connection ~ 1200 6950
 Connection ~ 1550 6950
 Text GLabel 2400 1000 2    50   Input ~ 0
 3V3_800mA
@@ -607,17 +314,12 @@ Text GLabel 1500 4650 0    50   Output ~ 0
 IOEXP_ID33_INT_A
 Text GLabel 1500 4550 0    50   Output ~ 0
 IOEXP_ID33_INT_B
-Text GLabel 10100 900  2    50   Input ~ 0
-3V3_800mA
-Text GLabel 10100 2550 2    50   Input ~ 0
-3V3_800mA
 Text GLabel 850  6800 2    50   Input ~ 0
 3V3_800mA
 Wire Wire Line
 	800  6950 800  6800
 Wire Wire Line
 	800  6800 850  6800
-Connection ~ 800  6950
 $Comp
 L Connector:Conn_01x04_Male X3
 U 1 1 5E87C9AB
@@ -660,34 +362,6 @@ Text Notes 4850 1450 0    50   ~ 10
 IO Expansion header
 $Comp
 L Device:CP1_Small C?
-U 1 1 5EA570E9
-P 10650 3150
-AR Path="/5E755787/5EA570E9" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA570E9" Ref="C?"  Part="1" 
-AR Path="/5EA63449/5EA570E9" Ref="C9"  Part="1" 
-F 0 "C9" H 10741 3196 50  0000 L CNN
-F 1 "0.1uF" H 10741 3105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 10650 3150 50  0001 C CNN
-F 3 "~" H 10650 3150 50  0001 C CNN
-	1    10650 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1_Small C?
-U 1 1 5EA58AFC
-P 10650 1500
-AR Path="/5E755787/5EA58AFC" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA58AFC" Ref="C?"  Part="1" 
-AR Path="/5EA63449/5EA58AFC" Ref="C8"  Part="1" 
-F 0 "C8" H 10741 1546 50  0000 L CNN
-F 1 "0.1uF" H 10741 1455 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 10650 1500 50  0001 C CNN
-F 3 "~" H 10650 1500 50  0001 C CNN
-	1    10650 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1_Small C?
 U 1 1 5EA590CF
 P 750 2600
 AR Path="/5E755787/5EA590CF" Ref="C?"  Part="1" 
@@ -722,42 +396,6 @@ Wire Wire Line
 Wire Wire Line
 	750  5800 750  5850
 Wire Wire Line
-	10000 1000 10000 900 
-Wire Wire Line
-	10000 900  10100 900 
-Wire Wire Line
-	10000 1000 10650 1000
-Wire Wire Line
-	10650 1000 10650 1400
-Connection ~ 10000 1000
-Wire Wire Line
-	10000 2000 10000 2050
-Wire Wire Line
-	10000 2050 10650 2050
-Wire Wire Line
-	10650 2050 10650 1600
-Connection ~ 10000 2050
-Wire Wire Line
-	10000 2050 10000 2100
-Wire Wire Line
-	10100 2550 10000 2550
-Wire Wire Line
-	10000 2550 10000 2650
-Wire Wire Line
-	10000 2650 10650 2650
-Wire Wire Line
-	10650 2650 10650 3050
-Connection ~ 10000 2650
-Wire Wire Line
-	10000 3750 10000 3700
-Wire Wire Line
-	10000 3700 10650 3700
-Wire Wire Line
-	10650 3700 10650 3250
-Connection ~ 10000 3700
-Wire Wire Line
-	10000 3700 10000 3650
-Wire Wire Line
 	6950 4800 6950 4600
 Wire Wire Line
 	6950 5050 6950 5400
@@ -774,14 +412,10 @@ F 3 "~" H 5450 2100 50  0001 C CNN
 $EndComp
 Text GLabel 5250 2300 0    50   Output ~ 0
 WRITE_ENABLE
-Text GLabel 2900 4550 2    50   Output ~ 0
+Text GLabel 2900 3950 2    50   Output ~ 0
 SPARE_1
-Text GLabel 2900 4650 2    50   Output ~ 0
+Text GLabel 2900 4050 2    50   Output ~ 0
 SPARE_2
-NoConn ~ 9250 3200
-NoConn ~ 8650 3200
-NoConn ~ 8650 3700
-NoConn ~ 9250 3700
 Text GLabel 5250 2000 0    50   Input ~ 0
 SPARE_3
 Text GLabel 5250 2100 0    50   Input ~ 0
@@ -933,4 +567,8 @@ F 3 "" H 5250 2500 50  0001 C CNN
 $EndComp
 Text GLabel 5250 2400 0    50   Input ~ 0
 3V3_800mA
+Wire Wire Line
+	800  7450 1550 7450
+Wire Wire Line
+	800  6950 1550 6950
 $EndSCHEMATC

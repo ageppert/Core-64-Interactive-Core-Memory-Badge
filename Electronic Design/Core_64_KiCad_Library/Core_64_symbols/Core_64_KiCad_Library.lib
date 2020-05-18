@@ -12,6 +12,17 @@ DRAW
 ENDDRAW
 ENDDEF
 #
+# Core_64_Logo
+#
+DEF Core_64_Logo L 0 40 Y Y 1 F N
+F0 "L" 0 0 50 H V C CNN
+F1 "Core_64_Logo" 50 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+ENDDRAW
+ENDDEF
+#
 # Core_Memory_8x8_Array
 #
 DEF Core_Memory_8x8_Array CM 0 40 Y Y 1 F N
