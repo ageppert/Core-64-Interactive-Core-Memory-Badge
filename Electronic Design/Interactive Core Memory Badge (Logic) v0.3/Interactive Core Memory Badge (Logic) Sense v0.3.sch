@@ -12,7 +12,7 @@ Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 ""
+Comment4 "As prototyped 2020-05-18"
 $EndDescr
 Text Notes 600  850  0    118  ~ 0
 SENSE SIGNAL PROCESSING

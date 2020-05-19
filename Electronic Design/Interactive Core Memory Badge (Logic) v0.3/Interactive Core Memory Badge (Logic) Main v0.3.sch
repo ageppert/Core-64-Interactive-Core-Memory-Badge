@@ -12,7 +12,7 @@ Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 ""
+Comment4 "As prototyped 2020-05-18"
 $EndDescr
 $Sheet
 S 6100 1000 2250 300 

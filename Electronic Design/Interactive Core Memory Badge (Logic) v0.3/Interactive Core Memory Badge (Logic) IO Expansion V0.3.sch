@@ -12,7 +12,7 @@ Comp ""
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 ""
+Comment4 "As prototyped 2020-05-18"
 $EndDescr
 Text GLabel 2900 4850 2    50   Output ~ 0
 Q1P

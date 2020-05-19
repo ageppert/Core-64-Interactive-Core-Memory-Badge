@@ -12,7 +12,7 @@ Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 ""
+Comment4 "As prototyped 2020-05-18"
 $EndDescr
 Wire Wire Line
 	2400 4450 2400 4550
@@ -1430,7 +1430,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 	1    9400 3750
 	1    0    0    -1  
 $EndComp
-Text Notes 6350 7050 0    50   ~ 0
+Text Notes 7950 7050 0    50   ~ 0
 Drive Transistor current: 3.3/470=7mA (too much for Teensy LC)\nMatrix 1/2 select current: 3.3/6.8= 485 mA (does not acccount \nfor voltage drop in transistors)
 Text Notes 2950 1700 0    50   ~ 0
 COL 0,4
