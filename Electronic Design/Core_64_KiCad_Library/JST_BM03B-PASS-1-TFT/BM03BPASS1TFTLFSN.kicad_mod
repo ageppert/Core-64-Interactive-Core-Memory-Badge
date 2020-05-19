@@ -1,8 +1,8 @@
-(module BM03BPASS1TFTLFSN (layer F.Cu) (tedit 5E811D9D)
+(module BM03BPASS1TFTLFSN (layer F.Cu) (tedit 5EC33C59)
   (descr "BM03B-PASS-1-TFT (LF)(SN)-3")
   (tags Connector)
   (fp_text reference J** (at 0 -7.5) (layer F.SilkS)
-    (effects (font (size 1.27 1.27) (thickness 0.254)))
+    (effects (font (size 1 1) (thickness 0.15)))
   )
   (fp_text value BM03BPASS1TFTLFSN (at 0 6.5) (layer F.SilkS) hide
     (effects (font (size 1.27 1.27) (thickness 0.254)))

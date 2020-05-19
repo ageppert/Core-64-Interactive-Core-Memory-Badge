@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 5
 Title "Core 64 - IO Expansion"
-Date "2020-04-24"
+Date "2020-05-18"
 Rev "v0.3"
 Comp ""
 Comment1 ""
@@ -400,10 +400,10 @@ Wire Wire Line
 Wire Wire Line
 	6950 5050 6950 5400
 $Comp
-L Connector:Conn_01x08_Female J7
+L Connector:Conn_01x08_Female J5
 U 1 1 5EB0C89C
 P 5450 2100
-F 0 "J7" H 5300 2650 50  0000 L CNN
+F 0 "J5" H 5300 2650 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 5100 2550 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5450 2100 50  0001 C CNN
 F 3 "~" H 5450 2100 50  0001 C CNN
@@ -568,7 +568,7 @@ $EndComp
 Text GLabel 5250 2400 0    50   Input ~ 0
 3V3_800mA
 Wire Wire Line
-	800  6950 1550 6950
-Wire Wire Line
 	800  7450 1550 7450
+Wire Wire Line
+	800  6950 1550 6950
 $EndSCHEMATC

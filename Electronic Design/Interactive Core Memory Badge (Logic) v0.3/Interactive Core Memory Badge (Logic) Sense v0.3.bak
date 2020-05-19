@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 5
 Title "Core 64 - Sense"
-Date "2020-04-24"
+Date "2020-05-18"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -23,8 +23,8 @@ P 3250 2050
 AR Path="/5D3DC9EC" Ref="U?"  Part="1" 
 AR Path="/5D2551FF/5D3DC9EC" Ref="U3"  Part="1" 
 AR Path="/5E755787/5D3DC9EC" Ref="U?"  Part="1" 
-AR Path="/5E75D6AB/5D3DC9EC" Ref="U9"  Part="1" 
-F 0 "U9" H 3250 2350 50  0000 C CNN
+AR Path="/5E75D6AB/5D3DC9EC" Ref="U7"  Part="1" 
+F 0 "U7" H 3250 2350 50  0000 C CNN
 F 1 "LM393" H 3300 2250 50  0000 C CNN
 F 2 "Digikey:SOIC-8_W3.9mm" H 3250 2050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3250 2050 50  0001 C CNN
@@ -142,10 +142,10 @@ Connection ~ 1850 2350
 Wire Wire Line
 	1850 2350 1850 2450
 $Comp
-L Comparator:LM393 U9
+L Comparator:LM393 U7
 U 2 1 5D3C9C38
 P 3250 3050
-F 0 "U9" H 3250 3350 50  0000 C CNN
+F 0 "U7" H 3250 3350 50  0000 C CNN
 F 1 "LM393" H 3300 3250 50  0000 C CNN
 F 2 "Digikey:SOIC-8_W3.9mm" H 3250 3050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3250 3050 50  0001 C CNN
@@ -153,10 +153,10 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3250 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Comparator:LM393 U9
+L Comparator:LM393 U7
 U 3 1 5D3CAF67
 P 3550 3900
-F 0 "U9" H 3508 3946 50  0000 L CNN
+F 0 "U7" H 3508 3946 50  0000 L CNN
 F 1 "LM393" H 3508 3855 50  0000 L CNN
 F 2 "Digikey:SOIC-8_W3.9mm" H 3550 3900 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3550 3900 50  0001 C CNN
@@ -268,10 +268,10 @@ Wire Wire Line
 Text Notes 1000 2700 0    50   ~ 0
 DNI
 $Comp
-L Device:CP1_Small C13
+L Device:CP1_Small C9
 U 1 1 5E6F58E8
 P 3900 3900
-F 0 "C13" H 3991 3946 50  0000 L CNN
+F 0 "C9" H 3991 3946 50  0000 L CNN
 F 1 "0.1uF" H 3991 3855 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 3900 3900 50  0001 C CNN
 F 3 "~" H 3900 3900 50  0001 C CNN
@@ -279,10 +279,10 @@ F 3 "~" H 3900 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP1_Small C14
+L Device:CP1_Small C10
 U 1 1 5E6F8864
 P 4300 3900
-F 0 "C14" H 4391 3946 50  0000 L CNN
+F 0 "C10" H 4391 3946 50  0000 L CNN
 F 1 "10uF" H 4391 3855 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4300 3900 50  0001 C CNN
 F 3 "~" H 4300 3900 50  0001 C CNN
@@ -313,10 +313,10 @@ Connection ~ 3450 4200
 Text GLabel 7200 1750 2    50   Output ~ 0
 SENSE_PULSE
 $Comp
-L 74xx:74HC02 U10
+L 74xx:74HC02 U8
 U 1 1 5E7CE53C
 P 5100 2600
-F 0 "U10" H 5100 2929 50  0000 C CNN
+F 0 "U8" H 5100 2929 50  0000 C CNN
 F 1 "74HC02" H 5100 2836 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5100 2600 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 5100 2600 50  0001 C CNN
@@ -324,10 +324,10 @@ F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 5100 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74xx:74HC02 U10
+L 74xx:74HC02 U8
 U 2 1 5E7D6166
 P 5800 2600
-F 0 "U10" H 5800 2929 50  0000 C CNN
+F 0 "U8" H 5800 2929 50  0000 C CNN
 F 1 "74HC02" H 5800 2836 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5800 2600 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 5800 2600 50  0001 C CNN
@@ -335,10 +335,10 @@ F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 5800 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74xx:74HC02 U10
+L 74xx:74HC02 U8
 U 3 1 5E7DA182
 P 6600 1750
-F 0 "U10" H 6500 2050 50  0000 C CNN
+F 0 "U8" H 6500 2050 50  0000 C CNN
 F 1 "74HC02" H 6550 1950 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6600 1750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 6600 1750 50  0001 C CNN
@@ -346,10 +346,10 @@ F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 6600 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74xx:74HC02 U10
+L 74xx:74HC02 U8
 U 4 1 5E7DD8C9
 P 6600 2500
-F 0 "U10" H 6500 2800 50  0000 C CNN
+F 0 "U8" H 6500 2800 50  0000 C CNN
 F 1 "74HC02" H 6550 2700 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6600 2500 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 6600 2500 50  0001 C CNN
@@ -357,10 +357,10 @@ F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 6600 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74xx:74HC02 U10
+L 74xx:74HC02 U8
 U 5 1 5E7E6F63
 P 6200 3700
-F 0 "U10" H 6430 3747 50  0000 L CNN
+F 0 "U8" H 6430 3747 50  0000 L CNN
 F 1 "74HC02" H 6430 3654 50  0000 L CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6200 3700 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74hc02" H 6200 3700 50  0001 C CNN
@@ -418,10 +418,10 @@ SENSE_RESET
 Wire Wire Line
 	6100 2600 6300 2600
 $Comp
-L Device:CP1_Small C15
+L Device:CP1_Small C11
 U 1 1 5E84C4A5
 P 6850 3700
-F 0 "C15" H 6941 3746 50  0000 L CNN
+F 0 "C11" H 6941 3746 50  0000 L CNN
 F 1 "0.1uF" H 6941 3655 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 6850 3700 50  0001 C CNN
 F 3 "~" H 6850 3700 50  0001 C CNN
@@ -481,10 +481,10 @@ Wire Wire Line
 Wire Wire Line
 	2400 1450 1850 1450
 $Comp
-L Connector:Conn_01x08_Female J11
+L Connector:Conn_01x08_Female J8
 U 1 1 5E868B9C
 P 1600 5100
-F 0 "J11" H 1627 5077 50  0000 L CNN
+F 0 "J8" H 1627 5077 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 1627 4984 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 1600 5100 50  0001 C CNN
 F 3 "~" H 1600 5100 50  0001 C CNN

@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
 Title "Core 64 - Power Schematic"
-Date "2020-04-24"
+Date "2020-05-18"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -270,19 +270,6 @@ Wire Notes Line
 	11200 3950 11200 1400
 Wire Notes Line
 	11200 1400 6050 1400
-$Comp
-L power:GND #PWR0117
-U 1 1 5E952F27
-P 2050 3550
-AR Path="/5E7548ED/5E952F27" Ref="#PWR0117"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5E952F27" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0117" H 2050 3300 50  0001 C CNN
-F 1 "GND" H 2055 3375 50  0000 C CNN
-F 2 "" H 2050 3550 50  0001 C CNN
-F 3 "" H 2050 3550 50  0001 C CNN
-	1    2050 3550
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:CP1_Small C?
 U 1 1 5E90E57B
@@ -731,4 +718,20 @@ Wire Wire Line
 	9850 5350 9850 5300
 Wire Wire Line
 	9850 5300 10350 5300
+NoConn ~ 900  2550
+NoConn ~ 900  2650
+NoConn ~ 1800 2650
+$Comp
+L power:GNDD #PWR0109
+U 1 1 5EC77259
+P 2050 3550
+AR Path="/5E7548ED/5EC77259" Ref="#PWR0109"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/5EC77259" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0109" H 2050 3300 50  0001 C CNN
+F 1 "GNDD" H 2054 3395 50  0000 C CNN
+F 2 "" H 2050 3550 50  0001 C CNN
+F 3 "" H 2050 3550 50  0001 C CNN
+	1    2050 3550
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

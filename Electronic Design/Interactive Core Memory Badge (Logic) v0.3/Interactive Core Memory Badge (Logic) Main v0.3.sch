@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2020-04-24"
+Date "2020-05-18"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -57,9 +57,7 @@ TEENSY_VUSB
 NoConn ~ 4200 2500
 NoConn ~ 4200 2600
 Wire Wire Line
-	5600 3300 5600 3200
-Wire Wire Line
-	5600 3200 4200 3200
+	5100 3200 4200 3200
 Text Notes 5400 3650 0    50   ~ 0
 Reads 1/2 +VSW (battery) voltage
 Text Notes 700  2000 0    50   ~ 10
@@ -77,10 +75,6 @@ Wire Wire Line
 Wire Wire Line
 	1900 3000 2050 3000
 Wire Wire Line
-	1900 3100 2050 3100
-Wire Wire Line
-	1900 3200 2050 3200
-Wire Wire Line
 	1900 3300 2050 3300
 Wire Wire Line
 	1900 3400 2050 3400
@@ -90,20 +84,6 @@ Wire Wire Line
 	1900 3600 2050 3600
 Wire Wire Line
 	1900 3700 2050 3700
-$Comp
-L power:GNDD #PWR?
-U 1 1 5EA2C7D3
-P 800 2500
-AR Path="/5E755787/5EA2C7D3" Ref="#PWR?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA2C7D3" Ref="#PWR?"  Part="1" 
-AR Path="/5EA2C7D3" Ref="#PWR0109"  Part="1" 
-F 0 "#PWR0109" H 800 2250 50  0001 C CNN
-F 1 "GNDD" H 804 2345 50  0000 C CNN
-F 2 "" H 800 2500 50  0001 C CNN
-F 3 "" H 800 2500 50  0001 C CNN
-	1    800  2500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1900 4300 2050 4300
 Wire Wire Line
@@ -117,20 +97,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 2700 4350 2700
 NoConn ~ 2050 3900
-$Comp
-L power:GNDD #PWR?
-U 1 1 5EA2C7F1
-P 5600 3300
-AR Path="/5E755787/5EA2C7F1" Ref="#PWR?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EA2C7F1" Ref="#PWR?"  Part="1" 
-AR Path="/5EA2C7F1" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 5600 3050 50  0001 C CNN
-F 1 "GNDD" H 5604 3145 50  0000 C CNN
-F 2 "" H 5600 3300 50  0001 C CNN
-F 3 "" H 5600 3300 50  0001 C CNN
-	1    5600 3300
-	1    0    0    -1  
-$EndComp
 Text GLabel 4350 3300 2    50   Output ~ 0
 TEENSY_3V3
 Text GLabel 4350 3100 2    50   Input ~ 0
@@ -218,13 +184,9 @@ $EndSheet
 Text GLabel 1900 2500 0    50   BiDi ~ 0
 SAO1_GPIO2(RX)
 Wire Wire Line
-	2050 2400 800  2400
+	2050 2400 1150 2400
 Text GLabel 1900 2600 0    50   BiDi ~ 0
 SAO1_GPIO1(TX)
-Text GLabel 1900 3100 0    50   BiDi ~ 0
-SAO2_GPIO2(RX)
-Text GLabel 1900 3200 0    50   BiDi ~ 0
-SAO2_GPIO1(TX)
 Text GLabel 5750 4000 2    50   BiDi ~ 0
 SAO3_GPIO1
 Text GLabel 5750 4200 2    50   BiDi ~ 0
@@ -234,8 +196,6 @@ Wire Wire Line
 NoConn ~ 2050 4100
 NoConn ~ 2050 4200
 NoConn ~ 2050 4000
-Wire Wire Line
-	800  2400 800  2500
 NoConn ~ 2050 3800
 $Comp
 L Logic_LevelTranslator:SN74LV1T125DBVR U4
@@ -616,4 +576,32 @@ F 3 "" H 6250 7200 50  0001 C CNN
 	1    6250 7200
 	1    0    0    -1  
 $EndComp
+$Comp
+L CORE_64_LIBRARY:Core_64_Github_Link L3
+U 1 1 5EC378E3
+P 6050 6850
+F 0 "L3" H 6075 6897 50  0000 L CNN
+F 1 "Core_64_Github_Link" H 6075 6804 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Github_Link_Large" H 6050 6850 50  0001 C CNN
+F 3 "" H 6050 6850 50  0001 C CNN
+	1    6050 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CORE_64_LIBRARY:Core_64_Github_Link L4
+U 1 1 5EC43F46
+P 6050 6600
+F 0 "L4" H 6075 6647 50  0000 L CNN
+F 1 "Core_64_Github_Link" H 6075 6554 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Github_Link_Small" H 6050 6600 50  0001 C CNN
+F 3 "" H 6050 6600 50  0001 C CNN
+	1    6050 6600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2050 3100
+NoConn ~ 2050 3200
+Text GLabel 5100 3200 2    50   Input ~ 0
+TEENSY_GND
+Text GLabel 1150 2400 0    50   Input ~ 0
+TEENSY_GND
 $EndSCHEMATC

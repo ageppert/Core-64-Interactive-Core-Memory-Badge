@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 5
 Title "Core 64 - Core Array Driver"
-Date "2020-04-24"
+Date "2020-05-18"
 Rev "0.3"
 Comp "Andy Geppert - Machine Ideas, LLC"
 Comment1 ""
@@ -189,12 +189,12 @@ Wire Wire Line
 $Comp
 L power:GNDPWR #PWR0134
 U 1 1 5D3EAB15
-P 3950 2250
-F 0 "#PWR0134" H 3950 2050 50  0001 C CNN
-F 1 "GNDPWR" H 3954 2096 50  0000 C CNN
-F 2 "" H 3950 2200 50  0001 C CNN
-F 3 "" H 3950 2200 50  0001 C CNN
-	1    3950 2250
+P 3950 2300
+F 0 "#PWR0134" H 3950 2100 50  0001 C CNN
+F 1 "GNDPWR" H 3954 2146 50  0000 C CNN
+F 2 "" H 3950 2250 50  0001 C CNN
+F 3 "" H 3950 2250 50  0001 C CNN
+	1    3950 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1689,10 +1689,10 @@ Wire Wire Line
 Wire Wire Line
 	2450 2600 2550 2600
 $Comp
-L Connector:Conn_01x16_Female J10
+L Connector:Conn_01x16_Female J7
 U 1 1 5E78B5ED
 P 2750 2300
-F 0 "J10" H 1950 3250 50  0000 C CNN
+F 0 "J7" H 1950 3250 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 2350 3150 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2750 2300 50  0001 C CNN
 F 3 "~" H 2750 2300 50  0001 C CNN
@@ -1700,10 +1700,10 @@ F 3 "~" H 2750 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x16_Female J9
+L Connector:Conn_01x16_Female J6
 U 1 1 5E78B5F3
 P 550 2300
-F 0 "J9" H 500 3250 50  0000 C CNN
+F 0 "J6" H 500 3250 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 100 3150 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 550 2300 50  0001 C CNN
 F 3 "~" H 550 2300 50  0001 C CNN
@@ -1822,8 +1822,8 @@ U 1 1 5E91F406
 P 1250 7300
 AR Path="/5E755787/5E91F406" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E91F406" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5E91F406" Ref="C12"  Part="1" 
-F 0 "C12" H 1350 7400 50  0000 L CNN
+AR Path="/5E755AC8/5E91F406" Ref="C8"  Part="1" 
+F 0 "C8" H 1350 7400 50  0000 L CNN
 F 1 "1000uF" H 1350 7300 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_10x10" H 1250 7300 50  0001 C CNN
 F 3 "~" H 1250 7300 50  0001 C CNN
@@ -1887,4 +1887,6 @@ Wire Wire Line
 Connection ~ 4300 4450
 Wire Wire Line
 	4300 4450 5000 4450
+Wire Wire Line
+	3950 2250 3950 2300
 $EndSCHEMATC
