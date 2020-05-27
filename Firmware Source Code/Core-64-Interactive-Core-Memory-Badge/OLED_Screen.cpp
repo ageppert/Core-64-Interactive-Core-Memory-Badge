@@ -28,8 +28,9 @@ uint8_t TopLevelStateLocal = 0;
 // Call this routine to update the OLED display.
 // Refreshing the OLED display is otherwise not stable, possibly due to some library compression stuff.
 void OLED_Display_Stability_Work_Around() {   
-  display.invertDisplay(true);        // Inverting and
-  display.invertDisplay(false);       // Reverting the screen memory seems to be a good workaround.
+  // no longer needed
+  // display.invertDisplay(true);        // Inverting and
+  // display.invertDisplay(false);       // Reverting the screen memory seems to be a good workaround.
   display.display();
 }
 
