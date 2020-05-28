@@ -17,7 +17,7 @@
  * V0.1 the first batch of 5 prototype green boards. 
  * V0.2 hand re-worked updates on V0.1 for first bring-up.
 */
-#define FIRMWARE_VERSION  "200527b"   // Adding I2C bus scan at start-up.
+#define FIRMWARE_VERSION  "200527c"   // Adding I2C bus scan at start-up.
 
 const String FirmwareVersion = FIRMWARE_VERSION;
 const String HardwareVersion = HARDWARE_VERSION;

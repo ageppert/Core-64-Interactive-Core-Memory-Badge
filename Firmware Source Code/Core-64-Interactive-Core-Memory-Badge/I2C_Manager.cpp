@@ -64,9 +64,9 @@ void printKnownChips(byte address)
     
     // HALL SENSORS
     case 0x30: Serial.print(F("SI7210-B-01, Hall Sensor 1")); break;
-    case 0x31: Serial.print(F("SI7210-B-01, Hall Sensor 2")); break;
-    case 0x32: Serial.print(F("SI7210-B-01, Hall Sensor 3")); break;
-    case 0x33: Serial.print(F("SI7210-B-01, Hall Sensor 4")); break;
+    case 0x31: Serial.print(F("SI7210-B-02, Hall Sensor 2")); break;
+    case 0x32: Serial.print(F("SI7210-B-03, Hall Sensor 3")); break;
+    case 0x33: Serial.print(F("SI7210-B-04, Hall Sensor 4")); break;
     
     case 0x34: Serial.print(F("MAX11612,MAX11613")); break;
     case 0x35: Serial.print(F("MAX11616,MAX11617")); break;
