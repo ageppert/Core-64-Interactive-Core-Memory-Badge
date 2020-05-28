@@ -1,13 +1,15 @@
 /*
- * Core 64 Breadboard Test
+ * Core 64 Interactive Core Memory Badge
  * 2019 and beyond - Andy Geppert
- * Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)
+ * Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
+ * ... more in HardwareIOMap.h
  */
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <HardwareSerial.h>
 
+#include "version.h"
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
@@ -17,6 +19,7 @@
 #include "Buttons.h"
 #include "Core_HAL.h"
 #include "EEPROM_HAL.h"
+#include "I2C_Manager.h"
 
 // #define DEBUG 1
 
@@ -53,12 +56,24 @@ void setup() {
   LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
-    //while (!Serial) { ; } // wait for serial port to connect. Needed for native USB port only
+    while (!Serial) { ; }  // wait for serial port to connect.
     Serial.println();
-    Serial.println("Serial Debug Port Started at ");
+    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
+    Serial.println("");
+    Serial.println("Core 64 - Interactice Core Memory Badge");
+    Serial.print("Hardware Version: ");
+    Serial.println(HARDWARE_VERSION);
+    Serial.print("Firmware Version: ");
+    Serial.println(FIRMWARE_VERSION);
+    Serial.println("Andy Geppert at www.MachineIdeas.com");
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
+
+  I2CManagerSetup();
+  I2CManagerBusScan();
+
+  
   // TopLevelState = STATE_MONOCHROME_DRAW;
   TopLevelState = STATE_SCROLLING_TEXT;
 }
@@ -73,6 +88,7 @@ void loop() {
                           *** Housekeepting ***
                           *********************
   */
+
   HeartBeat();
   AnalogUpdate();      
   // DigitalIOUpdate();
