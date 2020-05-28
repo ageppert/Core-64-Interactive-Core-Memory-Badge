@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include <HardwareSerial.h>
 
+#include "version.h"
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
@@ -58,6 +59,13 @@ void setup() {
     while (!Serial) { ; }  // wait for serial port to connect.
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
+    Serial.println("");
+    Serial.println("Core 64 - Interactice Core Memory Badge");
+    Serial.print("Hardware Version: ");
+    Serial.println(HARDWARE_VERSION);
+    Serial.print("Firmware Version: ");
+    Serial.println(FIRMWARE_VERSION);
+    Serial.println("Andy Geppert at www.MachineIdeas.com");
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();

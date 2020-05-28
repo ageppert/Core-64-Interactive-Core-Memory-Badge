@@ -11,8 +11,10 @@
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 
+// TO DO: Keep track of which chips are present to use in other functions
+
 void I2CManagerSetup() {
-  Serial.println(F("\nI2C Manager Setup Complete."));
+  Serial.println(F("\nI2C Manager: Setup Complete."));
 }
 
 void printKnownChips(byte address)
@@ -37,14 +39,20 @@ void printKnownChips(byte address)
     case 0x1C: Serial.print(F("LIS3MDL")); break;
     case 0x1D: Serial.print(F("LSM303D,LSM9DS0,ADXL345,MMA7455L,LSM9DS1,LIS3DSH")); break;
     case 0x1E: Serial.print(F("LSM303D,HMC5883L,FXOS8700,LIS3DSH")); break;
+    
+    // AND!XOR GPIO EXPANDER
     case 0x20: Serial.print(F("MCP23017,MCP23008,PCF8574,FXAS21002,SoilMoisture")); break;
+    
     case 0x21: Serial.print(F("MCP23017,MCP23008,PCF8574")); break;
     case 0x22: Serial.print(F("MCP23017,MCP23008,PCF8574")); break;
     case 0x23: Serial.print(F("MCP23017,MCP23008,PCF8574")); break;
     case 0x24: Serial.print(F("MCP23017,MCP23008,PCF8574")); break;
     case 0x25: Serial.print(F("MCP23017,MCP23008,PCF8574")); break;
-    case 0x26: Serial.print(F("MCP23017,MCP23008,PCF8574")); break;
-    case 0x27: Serial.print(F("MCP23017,MCP23008,PCF8574,LCD16x2,DigoleDisplay")); break;
+    
+    // IO EXPANDERS
+    case 0x26: Serial.print(F("MCP23017,IO EXPANDER 1")); break;
+    case 0x27: Serial.print(F("MCP23017,IO EXPANDER 2")); break;
+    
     case 0x28: Serial.print(F("BNO055,EM7180,CAP1188")); break;
     case 0x29: Serial.print(F("TSL2561,VL6180,TSL2561,TSL2591,BNO055,CAP1188")); break;
     case 0x2A: Serial.print(F("SGTL5000,CAP1188")); break;
@@ -53,12 +61,21 @@ void printKnownChips(byte address)
     case 0x2D: Serial.print(F("MCP44XX ePot")); break;
     case 0x2E: Serial.print(F("MCP44XX ePot")); break;
     case 0x2F: Serial.print(F("MCP44XX ePot")); break;
-    case 0x33: Serial.print(F("MAX11614,MAX11615")); break;
+    
+    // HALL SENSORS
+    case 0x30: Serial.print(F("SI7210-B-01, Hall Sensor 1")); break;
+    case 0x31: Serial.print(F("SI7210-B-01, Hall Sensor 2")); break;
+    case 0x32: Serial.print(F("SI7210-B-01, Hall Sensor 3")); break;
+    case 0x33: Serial.print(F("SI7210-B-01, Hall Sensor 4")); break;
+    
     case 0x34: Serial.print(F("MAX11612,MAX11613")); break;
     case 0x35: Serial.print(F("MAX11616,MAX11617")); break;
     case 0x38: Serial.print(F("RA8875,FT6206")); break;
     case 0x39: Serial.print(F("TSL2561, APDS9960")); break;
+    
+    // OLED SCREEN
     case 0x3C: Serial.print(F("SSD1306,DigisparkOLED")); break;
+    
     case 0x3D: Serial.print(F("SSD1306")); break;
     case 0x40: Serial.print(F("PCA9685,Si7021")); break;
     case 0x41: Serial.print(F("STMPE610,PCA9685")); break;
@@ -72,14 +89,20 @@ void printKnownChips(byte address)
     case 0x49: Serial.print(F("ADS1115,TSL2561,PCF8591")); break;
     case 0x4A: Serial.print(F("ADS1115")); break;
     case 0x4B: Serial.print(F("ADS1115,TMP102")); break;
+    
+    // AND!XOR EEPROM
     case 0x50: Serial.print(F("EEPROM")); break;
+
     case 0x51: Serial.print(F("EEPROM")); break;
     case 0x52: Serial.print(F("Nunchuk,EEPROM")); break;
     case 0x53: Serial.print(F("ADXL345,EEPROM")); break;
     case 0x54: Serial.print(F("EEPROM")); break;
     case 0x55: Serial.print(F("EEPROM")); break;
     case 0x56: Serial.print(F("EEPROM")); break;
-    case 0x57: Serial.print(F("EEPROM")); break;
+    
+    // EEPROM BOARD ID
+    case 0x57: Serial.print(F("EEPROM BOARD ID")); break;
+    
     case 0x58: Serial.print(F("TPA2016,MAX21100")); break;
     case 0x5A: Serial.print(F("MPR121")); break;
     case 0x60: Serial.print(F("MPL3115,MCP4725,MCP4728,TEA5767,Si5351")); break;
@@ -107,7 +130,7 @@ void I2CManagerBusScan() {
   byte error, address;
   int nDevices;
 
-  Serial.println(F("I2C Manager is scanning addresses 1 to 127..."));
+  Serial.println(F("I2C_Manager: Scanning addresses 1 to 127..."));
 
   nDevices = 0;
   for (address = 1; address < 127; address++) {
@@ -118,7 +141,7 @@ void I2CManagerBusScan() {
     error = Wire.endTransmission();
 
     if (error == 0) {
-      Serial.print(F("Device found at address 0x"));
+      Serial.print(F("  Device found at address 0x"));
       if (address < 16) {
         Serial.print("0");
       }
@@ -129,7 +152,7 @@ void I2CManagerBusScan() {
 
       nDevices++;
     } else if (error==4) {
-      Serial.print(F("Unknown error at address 0x"));
+      Serial.print(F("  Unknown error at address 0x"));
       if (address < 16) {
         Serial.print("0");
       }
@@ -137,8 +160,8 @@ void I2CManagerBusScan() {
     }
   }
   if (nDevices == 0) {
-    Serial.println(F("No I2C devices found\n"));
+    Serial.println(F("  No I2C devices found.\n"));
   } else {
-    Serial.println(F("done\n"));
+    Serial.println(F("I2C_Manager: Scan complete.\n"));
   }
 }
