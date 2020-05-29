@@ -9,7 +9,7 @@
 #include <stdbool.h>
 #include <HardwareSerial.h>
 
-#include "version.h"
+#include "Version.h"
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
@@ -49,30 +49,31 @@ enum TopLevelState
                           *********************
   */
 void setup() {
+  SerialDebugSetup();
+    Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
+    while (!Serial) { ; }  // wait for serial port to connect.
+    Serial.println("\nCore 64 - Interactice Core Memory Badge");
+    Serial.println("Andy Geppert at www.MachineIdeas.com");
+    Serial.println();
+    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
   HeartBeatSetup();
   DigitalIOSetup();
   AnalogSetup();
   LED_Array_Init();
-  SerialDebugSetup();
-    Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
-    while (!Serial) { ; }  // wait for serial port to connect.
-    Serial.println();
-    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
-    Serial.println("");
-    Serial.println("Core 64 - Interactice Core Memory Badge");
-    Serial.print("Hardware Version: ");
-    Serial.println(HARDWARE_VERSION);
-    Serial.print("Firmware Version: ");
-    Serial.println(FIRMWARE_VERSION);
-    Serial.println("Andy Geppert at www.MachineIdeas.com");
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
-
   I2CManagerSetup();
-  I2CManagerBusScan();
-
+  I2CManagerBusScan();  
+    Serial.print("\nCore 64 Hardware Version: ");
+    Serial.print(HardwareVersionMajor);
+    Serial.print(".");
+    Serial.print(HardwareVersionMinor);
+    Serial.print(".");
+    Serial.println(HardwareVersionBugfix);
+    Serial.print("Core 64 Firmware Version: ");
+    Serial.println(FirmwareVersion);
   
   // TopLevelState = STATE_MONOCHROME_DRAW;
   TopLevelState = STATE_SCROLLING_TEXT;

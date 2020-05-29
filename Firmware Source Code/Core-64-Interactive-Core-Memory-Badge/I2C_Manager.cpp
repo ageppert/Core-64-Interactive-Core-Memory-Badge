@@ -7,6 +7,7 @@
 #endif
 
 #include "I2C_Manager.h"
+#include "Version.h"
 #include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
@@ -101,7 +102,11 @@ void printKnownChips(byte address)
     case 0x56: Serial.print(F("EEPROM")); break;
     
     // EEPROM BOARD ID
-    case 0x57: Serial.print(F("EEPROM BOARD ID")); break;
+    case 0x57: Serial.print(F("EEPROM BOARD ID"));  // TO DO: Put real logic in here.
+      HardwareVersionMajor  = 0; 
+      HardwareVersionMinor  = 3; 
+      HardwareVersionBugfix = 0;
+    break;
     
     case 0x58: Serial.print(F("TPA2016,MAX21100")); break;
     case 0x5A: Serial.print(F("MPR121")); break;

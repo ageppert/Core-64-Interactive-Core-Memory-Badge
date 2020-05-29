@@ -12,12 +12,31 @@
 
 // TO DO: connect version number to a value that the firmware can interact with and display.
 
-#define HARDWARE_VERSION  "0.2"   		
-/* 
- * V0.1 the first batch of 5 prototype green boards. 
- * V0.2 hand re-worked updates on V0.1 for first bring-up.
-*/
-#define FIRMWARE_VERSION  "200527c"   // Adding I2C bus scan at start-up.
+#ifndef VERSION_H
+#define VERSION_H
 
-const String FirmwareVersion = FIRMWARE_VERSION;
-const String HardwareVersion = HARDWARE_VERSION;
+#if (ARDUINO >= 100)
+#include <Arduino.h>
+#else
+#include <WProgram.h>
+#endif
+
+#include <stdint.h>
+
+// #ifdef __cplusplus
+// extern "C" {
+// #endif
+
+extern uint8_t HardwareVersionMajor  ;
+extern uint8_t HardwareVersionMinor  ;
+extern uint8_t HardwareVersionBugfix ;
+
+extern String FirmwareVersion ;
+
+
+// #ifdef __cplusplus
+// } // extern "C"
+// #endif
+
+#endif
+
