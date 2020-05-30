@@ -51,7 +51,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
-	#define FIRMWAREVERSION "0530.1346"
+	#define FIRMWAREVERSION "0530.1501"
 
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************

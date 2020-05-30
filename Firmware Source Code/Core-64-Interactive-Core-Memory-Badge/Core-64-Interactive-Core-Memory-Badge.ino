@@ -58,6 +58,7 @@ enum TopLevelState
                           *********************
   */
 void setup() {
+  HeartBeatSetup();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.
@@ -67,7 +68,6 @@ void setup() {
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
-  HeartBeatSetup();
   DigitalIOSetup();
   LED_Array_Init();
   OLEDScreenSetup();
