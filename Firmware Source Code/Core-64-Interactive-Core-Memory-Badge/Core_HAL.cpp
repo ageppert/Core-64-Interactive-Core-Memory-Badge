@@ -14,7 +14,7 @@
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
 // The CoreArrayMemory is only accurate after all real core memory bits have been read once.
 // It us up to the user to request CoreReadArray() in order provide an initial update to the CoreArrayMemory array.
-static bool CoreArrayMemory [8][8] = {
+bool CoreArrayMemory [8][8] = {
                                   {1,1,1,0,1,0,1,0},
                                   {1,0,0,0,1,0,1,0},
                                   {1,1,1,0,1,1,1,0},

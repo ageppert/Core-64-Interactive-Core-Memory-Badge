@@ -14,6 +14,7 @@ SETUP:
 #endif
 
 #include <stdint.h>
+#include <stdbool.h>
 
 //#ifdef __cplusplus
 //extern "C" {
@@ -21,6 +22,7 @@ SETUP:
 
 void I2CManagerSetup();
 void I2CManagerBusScan();
+bool I2CDetectExternalEEPROM(uint8_t address);
 
 //#ifdef __cplusplus
 //} // extern "C"

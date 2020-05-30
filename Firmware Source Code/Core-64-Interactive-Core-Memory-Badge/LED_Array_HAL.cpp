@@ -10,9 +10,9 @@
 #include "Core_HAL.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
 #include "CharacterMap.h"
 
-#define FASTLED_ALLOW_INTERRUPTS 0     // include before #include FastLED.h to disable inetrrupts during writes.
-#include "src/FastLED-3.3.2/FastLED.h" // https://github.com/FastLED 2019-08-25
-#include "FastLED_Config.h" // Custom config file for FastLED library
+#define FASTLED_ALLOW_INTERRUPTS 0    // include before #include FastLED.h to disable inetrrupts during writes.
+#include <FastLED.h>
+#include "FastLED_Config.h"           // Core 64 Custom config file for FastLED library
 
 // FastLED.show() takes a little less than 2ms (measured) to update 64 LEDs. Good to have it delay 1/2 ms after core matrix twiddles the data pin.
 
@@ -73,7 +73,7 @@ uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Sat
 
 void LED_Array_Init() {
   // These parameters are set in FastLED_Config.h and from HardwareIOMap.h
-  FastLED.addLeds<CHIPSET, Pin_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.addLeds<CHIPSET, Pin_RGB_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
   FastLED.setBrightness( BRIGHTNESS );
 }
 
@@ -355,7 +355,6 @@ void LED_Array_Matrix_Mono_to_Binary() {
   uint64_t bitValue;
   uint8_t pixelPosition;
   uint8_t bitPosition = 0;
-  uint64_t testValue;
   for( uint8_t y = 0; y < kMatrixHeight; y++) 
   {
     for( uint8_t x = 0; x < kMatrixWidth; x++) 

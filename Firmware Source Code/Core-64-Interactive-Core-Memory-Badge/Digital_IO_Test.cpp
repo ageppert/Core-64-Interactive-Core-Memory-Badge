@@ -9,7 +9,7 @@
 #include "HardwareIOMap.h"
 
 void DigitalIOSetup() {
-  pinMode(Pin_Sense_Pulse, INPUT);
+  pinMode(Pin_v020_Sense_Pulse, INPUT);
   pinMode(PIN_MATRIX_DRIVE_Q1P, OUTPUT);
   pinMode(PIN_MATRIX_DRIVE_Q1N, OUTPUT);
   pinMode(PIN_MATRIX_DRIVE_Q2P, OUTPUT);

@@ -51,7 +51,7 @@ void LED_Array_Binary_To_Matrix_Mono(); // convert the contents of the 64 Bit Bi
 void LED_Array_Matrix_Mono_to_Binary(); // convert the contesnt of 8x8 Matrix Monochrome memory to the 64 Bit Binary Screen Memory
 
 // TO DO: Clean up the naming convention of these sub-functions
-extern void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumber);
+void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumber);
 
 
 // Older stuff that needs cleanup
