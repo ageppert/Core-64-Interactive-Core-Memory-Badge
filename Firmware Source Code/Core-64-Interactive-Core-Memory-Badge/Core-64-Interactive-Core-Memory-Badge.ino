@@ -87,8 +87,8 @@ void setup() {
   // Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
   AnalogSetup();
   
-  // TopLevelState = STATE_MONOCHROME_DRAW;
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_LED_TEST_ONE_MATRIX_COLOR;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {

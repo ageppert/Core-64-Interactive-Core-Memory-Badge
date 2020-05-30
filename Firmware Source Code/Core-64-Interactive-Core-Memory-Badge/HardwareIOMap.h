@@ -16,7 +16,7 @@
 	    Same as hardware version scheme, with additional metadata extensions:
 		    -DATE 		Example: -200101
 						Two digit month, two digit day of the month
-			|TIME 	    Example: |0800
+			.TIME 	    Example: |0800
 						Time increments from build to build to clearly denote each unqiue iteration
 */
 
@@ -49,8 +49,9 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.3.x  | 2020-05-30 | Backwards compatible, add hardware version detection for v0.1.0 through v0.3.x
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "030|j"		// TO DO: short version until OLED display updated
-	// #define FIRMWAREVERSION "0.3.0-0529|0859"
+
+	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
+	#define FIRMWAREVERSION "0530.1346"
 
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************
