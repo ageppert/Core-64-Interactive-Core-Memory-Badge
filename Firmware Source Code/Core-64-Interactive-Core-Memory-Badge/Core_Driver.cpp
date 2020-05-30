@@ -383,14 +383,14 @@ void ClearRowZeroAndColZero () {
 
 bool SenseWirePulse() {
   bool temp = 0;
-  temp = digitalReadFast(Pin_Sense_Pulse);
+  temp = digitalReadFast(Pin_v020_Sense_Pulse);
   // TracingPulses(temp);
   return temp;
 }
 
 void tempDebugPin17Twiddle () {
-  digitalWriteFast(Pin_LED_Array, 0);
-  digitalWriteFast(Pin_LED_Array, 1);
+  digitalWriteFast(Pin_RGB_LED_Array, 0);
+  digitalWriteFast(Pin_RGB_LED_Array, 1);
 }
 
 void tempDebugPin25Twiddle () {

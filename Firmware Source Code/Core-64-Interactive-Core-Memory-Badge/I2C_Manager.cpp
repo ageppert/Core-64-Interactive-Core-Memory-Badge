@@ -7,7 +7,7 @@
 #endif
 
 #include "I2C_Manager.h"
-#include "Version.h"
+#include "HardwareIOMap.h"
 #include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
@@ -102,12 +102,11 @@ void printKnownChips(byte address)
     case 0x56: Serial.print(F("EEPROM")); break;
     
     // EEPROM BOARD ID
-    case 0x57: Serial.print(F("EEPROM BOARD ID"));  // TO DO: Put real logic in here.
-      HardwareVersionMajor  = 0; 
-      HardwareVersionMinor  = 3; 
-      HardwareVersionBugfix = 0;
-    break;
+    case 0x57: Serial.print(F("EEPROM BOARD ID")); break;
     
+// TO DO: Don't make the hardware decisions in here. Make a function in HardwareIOMap.cpp dedicated.
+    // Just build an array in I2C Manager to catalog which I2C devices are present.
+
     case 0x58: Serial.print(F("TPA2016,MAX21100")); break;
     case 0x5A: Serial.print(F("MPR121")); break;
     case 0x60: Serial.print(F("MPL3115,MCP4725,MCP4728,TEA5767,Si5351")); break;
@@ -169,4 +168,13 @@ void I2CManagerBusScan() {
   } else {
     Serial.println(F("I2C_Manager: Scan complete.\n"));
   }
+}
+
+bool I2CDetectExternalEEPROM(uint8_t address) {
+    bool presentnpresent = 0;
+    Wire.beginTransmission(address);
+    uint8_t error = Wire.endTransmission();
+    if (error == 0) { presentnpresent = 1; }
+    else { presentnpresent = 0; }
+    return (presentnpresent);
 }

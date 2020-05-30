@@ -1,15 +1,24 @@
 /*
- * Core 64 Interactive Core Memory Badge
- * 2019 and beyond - Andy Geppert
- * Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
- * ... more in HardwareIOMap.h
+  Core 64 Interactive Core Memory Badge
+  2019 and beyond - Andy Geppert
+  Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
+  ... more in HardwareIOMap.h
+  
+  DEPENDENCIES:
+  Arduino > Tools > Manage Libraries > Install the following
+    FastLED                                    3.3.3   by Daniel Garcia
+    Adafruit_SSD1306                           2.2.1   by Adafruit
+    Adafruit GFX Library                       1.8.3   by Adafruit
+    Adafruit_BusIO                             1.3.0   by Adafruit
+    Adafruit_MCP23017 Arduino LIbrary          1.0.6   by Adafruit
+
  */
 
 #include <stdint.h>
 #include <stdbool.h>
 #include <HardwareSerial.h>
 
-#include "Version.h"
+#include "HardwareIOMap.h"
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
@@ -51,7 +60,8 @@ enum TopLevelState
 void setup() {
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
-    while (!Serial) { ; }  // wait for serial port to connect.
+    //while (!Serial) { ; }  // wait for serial port to connect.
+    delay(2000); // Wait for the serial port to connect if it's there. Otherwise, move on.
     Serial.println("\nCore 64 - Interactice Core Memory Badge");
     Serial.println("Andy Geppert at www.MachineIdeas.com");
     Serial.println();
@@ -59,21 +69,23 @@ void setup() {
   EEPROM_Setup();
   HeartBeatSetup();
   DigitalIOSetup();
-  AnalogSetup();
   LED_Array_Init();
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();
   I2CManagerSetup();
-  I2CManagerBusScan();  
+  I2CManagerBusScan();
+  DetectHardwareVersion(); 
     Serial.print("\nCore 64 Hardware Version: ");
     Serial.print(HardwareVersionMajor);
     Serial.print(".");
     Serial.print(HardwareVersionMinor);
     Serial.print(".");
-    Serial.println(HardwareVersionBugfix);
+    Serial.println(HardwareVersionPatch);
     Serial.print("Core 64 Firmware Version: ");
-    Serial.println(FirmwareVersion);
+    Serial.println(FIRMWAREVERSION);
+  // Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
+  AnalogSetup();
   
   // TopLevelState = STATE_MONOCHROME_DRAW;
   TopLevelState = STATE_SCROLLING_TEXT;

@@ -6,7 +6,7 @@
 #include <WProgram.h>
 #endif
 
-#include "Version.h"
+#include "HardwareIOMap.h"
 #include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
@@ -14,7 +14,6 @@
 #include "LED_Array_HAL.h"
 
 #include <Adafruit_GFX.h>
-//#include "src/Adafruit-GFX-Library-1.4.8/Adafruit_GFX.h" // ToDo: include this and use a later version.
 #include <Adafruit_SSD1306.h>
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -53,7 +52,7 @@ void OLEDScreenSplash() {
 
   display.println(F(" Hackaday "));
   display.print(F("v"));
-  display.print(FirmwareVersion);
+  display.print(FIRMWAREVERSION);
   display.print(F(" "));
   display.println(TopLevelStateLocal,DEC);  
   display.print(F("Bat:"));

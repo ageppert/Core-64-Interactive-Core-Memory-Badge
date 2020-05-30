@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <stdbool.h>
+//#include <stdbool.h>
 #include <HardwareSerial.h>
 #if (ARDUINO >= 100)
 #include <Arduino.h>
