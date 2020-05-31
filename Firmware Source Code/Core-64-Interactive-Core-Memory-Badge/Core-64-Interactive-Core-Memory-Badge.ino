@@ -59,9 +59,11 @@ enum TopLevelState
   */
 void setup() {
   HeartBeatSetup();
+  LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.
+    LED_Array_Test_Pixel_Matrix_Color();
     delay(2000); // Wait for the serial port to connect if it's there. Otherwise, move on.
     Serial.println("\nCore 64 - Interactice Core Memory Badge");
     Serial.println("Andy Geppert at www.MachineIdeas.com");
@@ -69,7 +71,6 @@ void setup() {
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
   DigitalIOSetup();
-  LED_Array_Init();
   OLEDScreenSetup();
   ButtonsSetup();
   CoreSetup();

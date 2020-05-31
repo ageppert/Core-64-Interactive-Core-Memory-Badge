@@ -70,13 +70,6 @@ const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position 
 // Default monochrome color (OLED aqua)
 uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
 
-
-void LED_Array_Init() {
-  // These parameters are set in FastLED_Config.h and from HardwareIOMap.h
-  FastLED.addLeds<CHIPSET, Pin_RGB_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
-  FastLED.setBrightness( BRIGHTNESS );
-}
-
 void LED_Array_Memory_Clear() {
   LedArrayMemoryBinary = 0;
   for( uint8_t i = 0; i < NUM_LEDS; i++) {
@@ -464,6 +457,16 @@ void LED_Array_Test_Pixel_Matrix_Color() {
       WriteColorFontSymbolToLedScreenMemoryMatrixColor(FontSymbolNumber);
       LED_Array_Matrix_Color_Display();
       FontSymbolNumber++;
-      if(FontSymbolNumber==4){FontSymbolNumber=0;}
+      if(FontSymbolNumber==2){FontSymbolNumber=0;}
     }
+}
+
+void LED_Array_Init() {
+  // These parameters are set in FastLED_Config.h and from HardwareIOMap.h
+  FastLED.addLeds<CHIPSET, Pin_RGB_LED_Array, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.setBrightness( BRIGHTNESS );
+  LED_Array_Memory_Clear();
+  delay(25);
+  LED_Array_Matrix_Mono_Display();
+  LED_Array_Matrix_Color_Display();
 }
