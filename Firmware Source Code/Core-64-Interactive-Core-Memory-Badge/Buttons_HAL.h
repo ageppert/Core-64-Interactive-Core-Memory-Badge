@@ -1,16 +1,16 @@
 /*
 Title:			  Generic Button Handler
-Filename: 		Buttons.cpp and Buttons.h
+Filename: 		Buttons_HAL.cpp and Buttons_HAL.h
 Author: 		  Andrew Geppert
-Rev: 			    0.1		
-Date:			    2019-09-02
+Rev: 			    0.3		
+Date:			    2020-05-31
 Description:	Returns the state of the button as active/inactive along with duration of that state.
-Usage:			  ButtonsSetup() to configure pin mode and low/high to active/inactive logic.
+Usage:			  Buttons_Setup() to configure pin mode and low/high to active/inactive logic.
               ButtonsState() to query active/inactive state and duration (ms)
 */
  
-#ifndef BUTTONS_H
-#define BUTTONS_H
+#ifndef BUTTONS_HAL_H
+#define BUTTONS_HAL_H
 
 #if (ARDUINO >= 100)
 #include <Arduino.h>
@@ -24,11 +24,11 @@ Usage:			  ButtonsSetup() to configure pin mode and low/high to active/inactive 
 //extern "C" {
 //#endif
 
-void ButtonsSetup();
+void Buttons_Setup();
 extern uint32_t Button1State(uint32_t clear_duration);
 
 //#ifdef __cplusplus
 //} // extern "C"
 //#endif
 
-#endif
+#endif // BUTTONS_HAL_H

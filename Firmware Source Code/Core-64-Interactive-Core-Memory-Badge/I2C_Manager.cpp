@@ -12,6 +12,12 @@
 //#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 //#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 
+#include <Adafruit_MCP23017.h>  // IOE = IO Expander
+/* See: https://www.best-microcontroller-projects.com/mcp23017.html
+*/
+Adafruit_MCP23017 IOE;
+
+
 // TO DO: Keep track of which chips are present to use in other functions
 
 void I2CManagerSetup() {
@@ -171,10 +177,49 @@ void I2CManagerBusScan() {
 }
 
 bool I2CDetectExternalEEPROM(uint8_t address) {
-    bool presentnpresent = 0;
-    Wire.beginTransmission(address);
-    uint8_t error = Wire.endTransmission();
-    if (error == 0) { presentnpresent = 1; }
-    else { presentnpresent = 0; }
-    return (presentnpresent);
+  bool presentnpresent = 0;
+  Wire.beginTransmission(address);
+  uint8_t error = Wire.endTransmission();
+  if (error == 0) { presentnpresent = 1; }
+  else { presentnpresent = 0; }
+  return (presentnpresent);
 }
+
+void I2CIOESetup() {
+}
+
+void I2CIOEScan() {
+  bool state = 0;
+  uint8_t address = 0;
+  uint8_t pin = 0;
+
+  static unsigned long DurationMS = 1000;
+  static unsigned long NowTimeMS = 0;
+  static unsigned long TimerMS = 0;
+  NowTimeMS = millis();
+  if ((NowTimeMS - TimerMS) >= DurationMS)
+  {
+    TimerMS = NowTimeMS;
+    // Connect/disconnect to all 8 possible IO Expanders
+    Serial.println(F("  0000000000111111"));
+    Serial.println(F("  0123456789012345"));
+    for (address = 6; address < 8; address++) {
+      IOE.begin(address);
+      // Configure all pins on each one for input.
+      for (pin = 0; pin < 16; pin++) {
+        IOE.pinMode(pin, INPUT);
+        // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
+      }
+      Serial.print(address,DEC);
+      Serial.print(F(" "));
+      // Report the state of each input for each IOE
+      for (pin = 0; pin < 16; pin++) {
+        state = IOE.digitalRead(pin);
+        // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
+        Serial.print(state);
+      }
+        Serial.println("");
+    }
+  }
+}
+

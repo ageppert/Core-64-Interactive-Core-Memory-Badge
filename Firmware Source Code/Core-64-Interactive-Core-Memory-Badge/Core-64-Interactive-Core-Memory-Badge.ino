@@ -4,13 +4,19 @@
   Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
   ... more in HardwareIOMap.h
   
-  DEPENDENCIES:
+  LIBRARY DEPENDENCIES:
   Arduino > Tools > Manage Libraries > Install the following
-    FastLED                                    3.3.3   by Daniel Garcia
-    Adafruit_SSD1306                           2.2.1   by Adafruit
-    Adafruit GFX Library                       1.8.3   by Adafruit
-    Adafruit_BusIO                             1.3.0   by Adafruit
-    Adafruit_MCP23017 Arduino LIbrary          1.0.6   by Adafruit
+    Adafruit_SSD1306                            2.2.1   by Adafruit
+    Adafruit GFX Library                        1.8.3   by Adafruit
+    Adafruit_BusIO                              1.3.0   by Adafruit
+    Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
+    FastLED                                     3.3.3   by Daniel Garcia
+    Wire.h
+
+
+    DigitalIO                                   1.0.0   by Bill Greiman
+    OR????
+    Romans Audio FastDigitalPinLibrary by Michael Romans??? 1.0.1
 
  */
 
@@ -25,7 +31,7 @@
 #include "OLED_Screen.h"
 #include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
-#include "Buttons.h"
+#include "Buttons_HAL.h"
 #include "Core_HAL.h"
 #include "EEPROM_HAL.h"
 #include "I2C_Manager.h"
@@ -72,7 +78,8 @@ void setup() {
   EEPROM_Setup();
   DigitalIOSetup();
   OLEDScreenSetup();
-  ButtonsSetup();
+  I2CIOESetup();
+  Buttons_Setup();
   CoreSetup();
   I2CManagerSetup();
   I2CManagerBusScan();
@@ -103,13 +110,14 @@ void loop() {
                           *********************
   */
 
-  HeartBeat();
+  HeartBeat(); 
   AnalogUpdate();      
   // DigitalIOUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
   #endif
+  // I2CIOEScan(); // temporary debug
 
   /*                      ************************
                           *** User Interaction ***

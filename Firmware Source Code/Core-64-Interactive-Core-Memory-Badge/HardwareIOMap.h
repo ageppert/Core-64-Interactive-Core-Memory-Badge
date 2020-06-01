@@ -51,7 +51,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
-	#define FIRMWAREVERSION "0530.1720"
+	#define FIRMWAREVERSION "0601.0956"
 
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************
@@ -128,6 +128,52 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define Pin_v030_Battery_Voltage    A7    // 1/2 the battery voltage (otherwise known as Digital pin 24)
 	#define Pin_Reed_Switch             25    // INPUT  DIGITAL (also used as digital output for debugging
 	#define Pin_Hall_Switch             26    // INPUT  DIGITAL
+	/*
+	IOE38CoresOnly
+	MCP23017 Adafruit Library Assignment
+	Physial Pin #	Pin Name	Pin ID 	Core 64 Assignment
+	21				GPA0		0 		Q5P
+	22				GPA1		1 		Q5N
+	23				GPA2		2 		Q6P
+	24				GPA3		3 		Q6N
+	25				GPA4		4 		Q7P
+	26				GPA5		5 		Q7N
+	27				GPA6		6 		Q8P
+	28				GPA7		7 		Q8N
+	1				GPB0		8 		Q9P
+	2				GPB1		9 		Q9N
+	3				GPB2		10		Q10P
+	4				GPB3		11		Q10N
+	5				GPB4		12		Q3P
+	6				GPB5		13		Q3N
+	7				GPB6		14		Q4P
+	8				GPB7		15		Q4N
+	
+    IOE39CoresSenseHalls
+	MCP23017 Adafruit Library Assignment
+	Physial Pin #	Pin Name	Pin ID 	Core 64 Assignment
+	21				GPA0		0 		Q1P
+	22				GPA1		1 		Q1N
+	23				GPA2		2 		Q2P
+	24				GPA3		3 		Q2N
+	25				GPA4		4 		Hall_Switch_1
+	26				GPA5		5 		Hall_Switch_2
+	27				GPA6		6 		Hall_Switch_3
+	28				GPA7		7 		Hall_Switch_4
+	1				GPB0		8 		Spare_1
+	2				GPB1		9 		Spare_2
+	3				GPB2		10		Spare_3
+	4				GPB3		11		Spare_4
+	5				GPB4		12		Spare_5
+	6				GPB5		13		Write_Enable
+	7				GPB6		14		Sense_Reset
+	8				GPB7		15		Sense_Pulse
+	*/
+
+	#define IOE39_Hall_Switch_1		4
+	#define IOE39_Hall_Switch_2		5
+	#define IOE39_Hall_Switch_3		6
+	#define IOE39_Hall_Switch_4		7
 
 #ifdef __cplusplus
 } // extern "C"
