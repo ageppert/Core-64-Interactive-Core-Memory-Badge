@@ -49,7 +49,8 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   else if (HardwareVersionMinor == 3)
   {
     IOE39CoresSenseHalls.begin(7);
-    state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
+    // state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
+    state = 1; // Temporary disable the hall since it's not connected, and force it high.
   }
 
   if(state != 1) {
