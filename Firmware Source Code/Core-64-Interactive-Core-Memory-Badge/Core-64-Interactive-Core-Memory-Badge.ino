@@ -8,15 +8,17 @@
   Arduino > Tools > Manage Libraries > Install the following
     Adafruit_SSD1306                            2.2.1   by Adafruit
     Adafruit GFX Library                        1.8.3   by Adafruit
-    Adafruit_BusIO                              1.3.0   by Adafruit
+    Adafruit_BusIO                              1.3.1   by Adafruit
     Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
     FastLED                                     3.3.3   by Daniel Garcia
     Wire.h
 
 
     DigitalIO                                   1.0.0   by Bill Greiman
-    OR????
-    Romans Audio FastDigitalPinLibrary by Michael Romans??? 1.0.1
+    OR
+    maybe <DigitalFastWrite.h> code by John Rains http://code.google.com/p/digitalwritefast (in DIY drones directory)
+    OR
+    NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
 
  */
 
