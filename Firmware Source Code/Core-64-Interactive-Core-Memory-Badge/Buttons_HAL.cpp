@@ -10,13 +10,6 @@
 #include "HardwareIOMap.h"
 #include "I2C_Manager.h"
 
-#include <Adafruit_MCP23017.h>  // IOE = IO Expander
-/* See: https://www.best-microcontroller-projects.com/mcp23017.html
-        https://learn.adafruit.com/adafruit-class-library-for-windows-iot-core/mcp23017-class
-*/
-Adafruit_MCP23017 IOE38CoresOnly;         // Decimal ID 38, 16 of 20 core array drive transistors.
-Adafruit_MCP23017 IOE39CoresSenseHalls;   // Decimal ID 39, 4 core array drive transistors, hall switches, sense, spare
-
 void Buttons_Setup() {
   if (HardwareVersionMinor == 2)
   {
@@ -24,11 +17,17 @@ void Buttons_Setup() {
   }
   else if (HardwareVersionMinor == 3)
   {
-    IOE38CoresOnly.begin(6);         // DEC 38, with Adafruit Library is addr 6 = A2 high , A1 high , A0 low  110
+    // IOE38CoresOnly.begin(6);         // DEC 38, with Adafruit Library is addr 6 = A2 high , A1 high , A0 low  110
     IOE39CoresSenseHalls.begin(7);   // DEC 39, with Adafruit Library is addr 7 = A2 high, A1 high, A0 high 111
     // TO DO: verify the IO expander is present, return "0=no error" if it is, "1=error" if not.
     IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_1, INPUT);
     IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_1, HIGH);  // turn on a 100K pullup internally
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_2, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_2, HIGH);  // turn on a 100K pullup internally
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_3, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_3, HIGH);  // turn on a 100K pullup internally
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_4, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_4, HIGH);  // turn on a 100K pullup internally
   }
 }
 

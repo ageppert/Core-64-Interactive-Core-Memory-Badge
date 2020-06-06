@@ -14,15 +14,21 @@
 
 #include <Adafruit_MCP23017.h>  // IOE = IO Expander
 /* See: https://www.best-microcontroller-projects.com/mcp23017.html
+        https://learn.adafruit.com/adafruit-class-library-for-windows-iot-core/mcp23017-class
 */
-Adafruit_MCP23017 IOE;
+Adafruit_MCP23017 IOE38CoresOnly;         // Decimal ID 38, 16 of 20 core array drive transistors.
+Adafruit_MCP23017 IOE39CoresSenseHalls;   // Decimal ID 39, 4 core array drive transistors, hall switches, sense, spare
 
-
-// TO DO: Keep track of which chips are present to use in other functions
+/* TO DO: 
+    Keep track of which chips are present to use in other functions.
+*/
 
 void I2CManagerSetup() {
   Serial.println(F("\nI2C Manager: Setup Complete."));
 }
+
+
+
 
 void printKnownChips(byte address)
 {
@@ -204,17 +210,17 @@ void I2CIOEScan() {
     Serial.println(F("  0000000000111111"));
     Serial.println(F("  0123456789012345"));
     for (address = 6; address < 8; address++) {
-      IOE.begin(address);
+      IOE39CoresSenseHalls.begin(address);
       // Configure all pins on each one for input.
       for (pin = 0; pin < 16; pin++) {
-        IOE.pinMode(pin, INPUT);
+        IOE39CoresSenseHalls.pinMode(pin, INPUT);
         // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
       }
       Serial.print(address,DEC);
       Serial.print(F(" "));
       // Report the state of each input for each IOE
       for (pin = 0; pin < 16; pin++) {
-        state = IOE.digitalRead(pin);
+        state = IOE39CoresSenseHalls.digitalRead(pin);
         // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
         Serial.print(state);
       }

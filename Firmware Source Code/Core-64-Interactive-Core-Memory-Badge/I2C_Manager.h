@@ -15,10 +15,15 @@ SETUP:
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <Adafruit_MCP23017.h>  // IOE = IO Expander
 
 //#ifdef __cplusplus
 //extern "C" {
 //#endif
+
+// Used outside of this file 
+extern Adafruit_MCP23017 IOE38CoresOnly;         // Decimal ID 38, 16 of 20 core array drive transistors.
+extern Adafruit_MCP23017 IOE39CoresSenseHalls;   // Decimal ID 39, 4 core array drive transistors, hall switches, sense, spare
 
 // Prints setup message to serial port.
 void I2CManagerSetup();
