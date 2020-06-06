@@ -9,6 +9,7 @@
 #include "Core_HAL.h"
 #include "Core_Driver.h" 
 #include "CharacterMap.h"
+#include "HardwareIOMap.h"
 
 // The CoreArrayMemory may not be written to and read from outside of the Core API.
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
@@ -34,6 +35,28 @@ bool CoreArrayMemory [8][8] = {
 //                                  {0,0,0,0,0,0,0,0}  };
 
 void CoreSetup() {
+  pinMode(Pin_v020_Sense_Pulse, INPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q1P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q1N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q2P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q2N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q3P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q3N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q4P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q4N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q5P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q5N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q6P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q6N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q7P, OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
+  pinMode(PIN_MATRIX_DRIVE_Q7N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q8P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q8N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q9P, OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
+  pinMode(PIN_MATRIX_DRIVE_Q9N, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q10P, OUTPUT);
+  pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
+  pinMode(PIN_WRITE_ENABLE, OUTPUT);
   AllDriveIoSafe();
 }
 

@@ -14,6 +14,7 @@ void Buttons_Setup() {
   if (HardwareVersionMinor == 2)
   {
     pinMode(Pin_Hall_Switch, INPUT);
+    pinMode(Pin_Reed_Switch, INPUT);
   }
   else if (HardwareVersionMinor == 3)
   {

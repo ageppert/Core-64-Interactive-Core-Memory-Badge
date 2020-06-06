@@ -31,7 +31,6 @@
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
 #include "OLED_Screen.h"
-#include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
 #include "Buttons_HAL.h"
 #include "Core_HAL.h"
@@ -78,7 +77,6 @@ void setup() {
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
-  DigitalIOSetup();
   OLEDScreenSetup();
   I2CIOESetup();
   Buttons_Setup();
@@ -113,8 +111,7 @@ void loop() {
   */
 
   HeartBeat(); 
-  AnalogUpdate();      
-  // DigitalIOUpdate();
+  AnalogUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
