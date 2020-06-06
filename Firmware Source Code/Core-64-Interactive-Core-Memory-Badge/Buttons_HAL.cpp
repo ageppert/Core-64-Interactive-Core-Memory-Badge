@@ -12,6 +12,7 @@
 
 #include <Adafruit_MCP23017.h>  // IOE = IO Expander
 /* See: https://www.best-microcontroller-projects.com/mcp23017.html
+        https://learn.adafruit.com/adafruit-class-library-for-windows-iot-core/mcp23017-class
 */
 Adafruit_MCP23017 IOE38CoresOnly;         // Decimal ID 38, 16 of 20 core array drive transistors.
 Adafruit_MCP23017 IOE39CoresSenseHalls;   // Decimal ID 39, 4 core array drive transistors, hall switches, sense, spare
@@ -49,8 +50,7 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   else if (HardwareVersionMinor == 3)
   {
     IOE39CoresSenseHalls.begin(7);
-    // state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
-    state = 1; // Temporary disable the hall since it's not connected, and force it high.
+    state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1)); // Can also read all inputs at once with .readGPIOAB()
   }
 
   if(state != 1) {

@@ -301,6 +301,7 @@ void MatrixDriveTransistorsInactive() {
   for (uint8_t i = 1; i < 23; i++) {
     digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
   }
+  // For Rev 0.3, MCP23017, can write all pins at once with .writeGPIOAB
 }
 
 void ReturnMatrixQ9NtoLowForLEDArray() {
