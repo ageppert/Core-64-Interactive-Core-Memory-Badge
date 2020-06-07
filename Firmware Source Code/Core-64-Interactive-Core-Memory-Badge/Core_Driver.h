@@ -20,6 +20,8 @@ SETUP:
 extern "C" {
 #endif
 
+// Functions coverted to support V0.2 and V0.3 hardware are prefixed with Core_Driver_
+void Core_Driver_Setup();
 void ReturnMatrixQ9NtoLowForLEDArray();
 
 void MatrixEnableTransistorInactive();
