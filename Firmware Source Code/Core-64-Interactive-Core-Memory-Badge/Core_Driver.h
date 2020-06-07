@@ -16,9 +16,9 @@ SETUP:
 #include <stdint.h>
 #include <stdbool.h>
 
-//#ifdef __cplusplus
-//extern "C" {
-//#endif
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 void ReturnMatrixQ9NtoLowForLEDArray();
 
@@ -40,8 +40,8 @@ extern void TracingPulses(uint8_t numberOfPulses);
 void DebugWithReedSwitchOutput();
 void DebugWithReedSwitchInput();
 
-//#ifdef __cplusplus
-//} // extern "C"
-//#endif
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // CORE_DRIVER_H

@@ -11,7 +11,7 @@
 #include "CharacterMap.h"
 #include "HardwareIOMap.h"
 
-// The CoreArrayMemory may not be written to and read from outside of the Core API.
+// The CoreArrayMemory may not be written to and read from outside of the Core HAL.
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
 // The CoreArrayMemory is only accurate after all real core memory bits have been read once.
 // It us up to the user to request CoreReadArray() in order provide an initial update to the CoreArrayMemory array.
