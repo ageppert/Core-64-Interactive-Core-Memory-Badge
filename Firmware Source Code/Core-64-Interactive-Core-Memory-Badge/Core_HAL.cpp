@@ -11,7 +11,7 @@
 #include "CharacterMap.h"
 #include "HardwareIOMap.h"
 
-// The CoreArrayMemory may not be written to and read from outside of the Core HAL.
+// TO DO: The CoreArrayMemory should not be written to and read from outside of the Core HAL.
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
 // The CoreArrayMemory is only accurate after all real core memory bits have been read once.
 // It us up to the user to request CoreReadArray() in order provide an initial update to the CoreArrayMemory array.
@@ -83,68 +83,6 @@ void CoreSetAll() {
   }
 }
 
-/* Delete these functions
-void CoreZeroClear() {
-  AllDriveIoSafe();                             
-  // suspect the logic in this is wrong
-  //  AllDriveIoClearBit(0);
-  // So I'll try it more manually to the pins I think are correct.
-  ClearRowAndCol(0,0); // testing, confirmed this or the logic below it is still wrong.
-  // ClearRowZeroAndColZero(); // testing, 
-  AllDriveIoEnable();                           
-  delayMicroseconds(2);                         
-  AllDriveIoDisable();                          
-  AllDriveIoSafe();                             
-}
-
-void CoreZeroSet() {
-  AllDriveIoSafe();                             
-    AllDriveIoSetBit(0);
-  AllDriveIoEnable();                           
-  delayMicroseconds(2);                         
-  AllDriveIoDisable();                          
-  AllDriveIoSafe();                             
-}
-
-void CoreOneClear() {
-  AllDriveIoSafe();                             
-   AllDriveIoClearBit(1);
-  AllDriveIoEnable();                           
-  delayMicroseconds(2);                         
-  AllDriveIoDisable();                          
-  AllDriveIoSafe();                             
-}
-
-void CoreOneSet() {
-  AllDriveIoSafe();                             
-    AllDriveIoSetBit(1);
-  AllDriveIoEnable();                           
-  delayMicroseconds(2);                         
-  AllDriveIoDisable();                          
-  AllDriveIoSafe();                             
-}
-*/
-
-/*
-void CoreWriteBit(uint8_t bit, bool value) {
-  //DebugWithReedSwitchOutput();                  // T -13 us
-   //TracingPulses(1);                             // T   2 us  
-  AllDriveIoSafe();                             // T   0 us  CCL/CCH drops from 0.0 to -.4 V. * Why do they go negative by ~Vce?
-  // AllDriveIoReadAndStore();
-  AllDriveIoEnable();                           // Might need to set this before matrix lines for more stable switching.
-  if (value == 1) { AllDriveIoSetBit(bit); }    // T  15/16 us  Toward the end of this time CCL/CCH step up to 3.0 and 3.3 V.
-  else { AllDriveIoClearBit(bit); } 
-   //TracingPulses(2);                             // T  17 us
-  //AllDriveIoEnable();                           // T  18 us  CCL/CCH drops ~1 V ??? Why not zero?
-  delayMicroseconds(5);                         //           Jussi 2 us for write pulse, with the last us showing sense pulse.
-  // AllDriveIoDisable();                          // T  21 us  CCL/CCH returns to 3.3V, then down to 3.1, then 2.9
-  // AllDriveIoRecallAndWrite();
-  // AllDriveIoSafe();                             // T  33 us  CCL/CCH drops to 0V for 500 ns (during enable), then down to -0.4 V again. ????
-  AllDriveIoDisable();
-   //TracingPulses(3);                             // T  34 us  ~ 5ms after, CCL/CCH settles to 0V. Would be nice to dissipate this faster.
-  //DebugWithReedSwitchInput();
-}
-*/
 void Core_Mem_Array_Write() {
   for (uint8_t y=0; y<8; y++)
   {
@@ -413,44 +351,3 @@ bool CoreStateChangeFlag(bool clearFlag) {                    // Send this funct
   return CoreStateChangeFlag;
 }
 
-/*
-// Defines the 4 transistors states required to set corresponding bit. Each row correspondes to bits 0 to 63.
-// Each row is sequence of 4 matrix drive line numbers, each followed by 0 or 1 digital output to the transistor on that drive line.
-uint8_t CoreMemoryMatrixDriveSetBitTransistors[][8] = {
-  { 5,0,2,1, 13,0,18,1}
-};
-
-// Defines the 8 transistors states required to clear corresponding bit. Each row correspondes to bits 0 to 63.
-uint8_t CoreMemoryMatrixDriveClearBitTransistors[][8] = {
-  { 6,1,1,0, 14,1,17,0}
-};
-
-void oldCoreWriteBit(uint8_t bit, bool value) {
-  digitalWriteFast(Pin_Write_Enable,LOW);
-  if (value == 0) {
-    for (uint8_t i = 0; i <= 6; i=i+2) {
-      digitalWriteFast(CoreMemoryMatrixDriveClearBitTransistors[bit][i],CoreMemoryMatrixDriveClearBitTransistors[bit][i+1]);
-    }
-  }
-  else {
-    for (uint8_t i = 0; i <= 6; i=i+2) {
-      digitalWriteFast(CoreMemoryMatrixDriveSetBitTransistors[bit][i],CoreMemoryMatrixDriveSetBitTransistors[bit][i+1]);
-    }
-  }
-  digitalWriteFast(Pin_Write_Enable,HIGH);
-  // Not sure how much delay is needed for the core to flip
-  delay(5);
-  //
-  digitalWriteFast(Pin_Write_Enable,LOW);
-  if (value == 0) {
-    for (uint8_t i = 0; i <= 6; i=i+2) {
-      digitalWriteFast(CoreMemoryMatrixDriveClearBitTransistors[bit][i],!(CoreMemoryMatrixDriveClearBitTransistors[bit][i+1]));
-    }
-  }
-  else {
-    for (uint8_t i = 0; i <= 6; i=i+2) {
-      digitalWriteFast(CoreMemoryMatrixDriveSetBitTransistors[bit][i],!(CoreMemoryMatrixDriveSetBitTransistors[bit][i+1]));
-    }
-  }
-  */
-  
