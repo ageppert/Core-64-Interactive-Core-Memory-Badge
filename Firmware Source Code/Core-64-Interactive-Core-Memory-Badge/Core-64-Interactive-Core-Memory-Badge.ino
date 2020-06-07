@@ -5,7 +5,7 @@
   ... more in HardwareIOMap.h
   
   LIBRARY DEPENDENCIES:
-  Arduino > Tools > Manage Libraries > Install the following
+  Arduino > Tools > Manage Libraries > Install
     Adafruit_SSD1306                            2.2.1   by Adafruit
     Adafruit GFX Library                        1.8.3   by Adafruit
     Adafruit_BusIO                              1.3.1   by Adafruit
@@ -19,7 +19,7 @@
     maybe <DigitalFastWrite.h> code by John Rains http://code.google.com/p/digitalwritefast (in DIY drones directory)
     OR
     NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
-
+    The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
  */
 
 #include <stdint.h>
@@ -79,8 +79,6 @@ void setup() {
   EEPROM_Setup();
   OLEDScreenSetup();
   I2CIOESetup();
-  Buttons_Setup();
-  CoreSetup();
   I2CManagerSetup();
   I2CManagerBusScan();
   DetectHardwareVersion(); 
@@ -92,8 +90,10 @@ void setup() {
     Serial.println(HardwareVersionPatch);
     Serial.print("Core 64 Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
-  // Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
+  // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
   AnalogSetup();
+  Buttons_Setup();
+  CoreSetup();
   
   TopLevelState = STATE_LED_TEST_ONE_MATRIX_COLOR;
   // TopLevelState = STATE_SCROLLING_TEXT;
@@ -128,7 +128,7 @@ void loop() {
   // Must be released and pressed again for subsequent action.
   Button1HoldTime = Button1State(0);
   if ( (ButtonReleased == true) && (Button1HoldTime >= 500) ){
-    Button1State(1); // Pause between presses, clear the duration
+    Button1State(1); // Force a "release" after press by clearing the button hold down timer
     ButtonReleased = false;
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }

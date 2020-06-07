@@ -43,15 +43,15 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	****************************************** HARDWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
 	------------------------------------------------------------------------------------------------------------
-	| v0.1.0  | 2019-08-09 | prototype development
-	| v0.1.5  | 2020-02-22 | prototype development
-	| v0.2.0  | 2020-03-16 | prototype development
-	| v0.3.x  | 2020-05-30 | Backwards compatible, add hardware version detection for v0.1.0 through v0.3.x
+	| v0.1.0  | 2019-08-09 | Single board prototype development
+	| v0.1.5  | 2020-02-22 | Single board, reworked board fixes, prototype development
+	| v0.2.0  | 2020-03-16 | Single board, design updated to match v0.1.5, theoretically (not produced)
+	| v0.3.x  | 2020-05-30 | Dual board, hardware version detection for 0.2.x (includes v0.1.x) and v0.3.x
 	------------------------------------------------------------------------------------------------------------
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
-	#define FIRMWAREVERSION "0606.1001" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "0607.1332" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************
@@ -67,7 +67,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	extern uint8_t HardwareVersionMinor  ;
 	extern uint8_t HardwareVersionPatch  ;
 
-// HARDWARE LIST 0.1.0 through 0.2.0
+// HARDWARE v0.1.0 through 0.2.0
 	#define Pin_v020_Sense_Pulse         0   // INPUT  DIGITAL
 	#define PIN_MATRIX_DRIVE_Q1P     	 1   // OUTPUT DIGITAL
 	#define PIN_MATRIX_DRIVE_Q1N     	 2
@@ -85,20 +85,20 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define PIN_MATRIX_DRIVE_Q7N     	14    
 	#define PIN_MATRIX_DRIVE_Q8P     	15    
 	#define PIN_MATRIX_DRIVE_Q8N     	16    
-	#define PIN_MATRIX_DRIVE_Q9P     	17    // Transistor matrix to address the cores. Shared pin 17. With LED array. Return to previous state when finished using.
-	#define PIN_MATRIX_DRIVE_Q9N     	20    // 
-	#define PIN_MATRIX_DRIVE_Q10P    	21    // 
-	#define PIN_MATRIX_DRIVE_Q10N    	22    //	
-	#define PIN_WRITE_ENABLE         	23    // OUTPUT DIGITAL (Could be another analog input)
-	#define Pin_Built_In_LED         	13    // Shared with Matrix Drive Q7P
-	#define Pin_RGB_LED_Array           17    // Teensy LC pin with buffered Digital Pin 17 driven at Vin. Shared pin 17. Return to previous state when finished using. 
-	#define Pin_I2C_Bus_Data         	18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
-	#define Pin_I2C_Bus_Clock        	19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
-	#define Pin_v020_Battery_Voltage   A10    // 1/2 the battery voltage (otherwise known as Digital pin 24)
-	#define Pin_Reed_Switch             25    // INPUT  DIGITAL (also used as digital output for debugging
-	#define Pin_Hall_Switch             26    // INPUT  DIGITAL
+	#define PIN_MATRIX_DRIVE_Q9P     	17   // Transistor matrix to address the cores. Shared pin 17. With LED array. Return to previous state when finished using.
+	#define PIN_MATRIX_DRIVE_Q9N     	20   // 
+	#define PIN_MATRIX_DRIVE_Q10P    	21   // 
+	#define PIN_MATRIX_DRIVE_Q10N    	22   //	
+	#define PIN_WRITE_ENABLE         	23   // OUTPUT DIGITAL (Could be another analog input)
+	#define Pin_Built_In_LED         	13   // Shared with Matrix Drive Q7P
+	#define Pin_RGB_LED_Array           17   // Teensy LC pin with buffered Digital Pin 17 driven at Vin. Shared pin 17. Return to previous state when finished using. 
+	#define Pin_I2C_Bus_Data         	18   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
+	#define Pin_I2C_Bus_Clock        	19   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
+	#define Pin_v020_Battery_Voltage   A10   // 1/2 the battery voltage (otherwise known as Digital pin 24)
+	#define Pin_Reed_Switch             25   // INPUT  DIGITAL (also used as digital output for debugging
+	#define Pin_Hall_Switch             26   // INPUT  DIGITAL
 
-// HARDWARE LIST 0.3.0 through TBD
+// HARDWARE v0.3.0 through TBD
 	#define Pin_v030_Sense_Pulse         0   // INPUT  DIGITAL
 	#define PIN_MATRIX_DRIVE_Q1P     	 1   // OUTPUT DIGITAL
 	#define PIN_MATRIX_DRIVE_Q1N     	 2
@@ -116,18 +116,18 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define PIN_MATRIX_DRIVE_Q7N     	14    
 	#define PIN_MATRIX_DRIVE_Q8P     	15    
 	#define PIN_MATRIX_DRIVE_Q8N     	16    
-	#define PIN_MATRIX_DRIVE_Q9P     	17    // Transistor matrix to address the cores. Shared pin 17. With LED array. Return to previous state when finished using.
-	#define PIN_MATRIX_DRIVE_Q9N     	20    // 
-	#define PIN_MATRIX_DRIVE_Q10P    	21    // 
-	#define PIN_MATRIX_DRIVE_Q10N    	22    //	
-	#define PIN_WRITE_ENABLE         	23    // OUTPUT DIGITAL (Could be another analog input)
-	#define Pin_Built_In_LED         	13    // Shared with Matrix Drive Q7P
-	#define Pin_RGB_LED_Array           17    // Teensy LC pin with buffered Digital Pin 17 driven at Vin. Shared pin 17. Return to previous state when finished using. 
-	#define Pin_I2C_Bus_Data         	18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
-	#define Pin_I2C_Bus_Clock        	19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
-	#define Pin_v030_Battery_Voltage    A7    // 1/2 the battery voltage (otherwise known as Digital pin 24)
-	#define Pin_Reed_Switch             25    // INPUT  DIGITAL (also used as digital output for debugging
-	#define Pin_Hall_Switch             26    // INPUT  DIGITAL
+	#define PIN_MATRIX_DRIVE_Q9P     	17   // Transistor matrix to address the cores. Shared pin 17. With LED array. Return to previous state when finished using.
+	#define PIN_MATRIX_DRIVE_Q9N     	20   // 
+	#define PIN_MATRIX_DRIVE_Q10P    	21   // 
+	#define PIN_MATRIX_DRIVE_Q10N    	22   //	
+	#define PIN_WRITE_ENABLE         	23   // OUTPUT DIGITAL (Could be another analog input)
+	#define Pin_Built_In_LED         	13   // Shared with Matrix Drive Q7P
+	#define Pin_RGB_LED_Array           17   // Teensy LC pin with buffered Digital Pin 17 driven at Vin. Shared pin 17. Return to previous state when finished using. 
+	#define Pin_I2C_Bus_Data         	18   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
+	#define Pin_I2C_Bus_Clock        	19   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
+	#define Pin_v030_Battery_Voltage    A7   // 1/2 the battery voltage (otherwise known as Digital pin 24)
+	#define Pin_Reed_Switch             25   // INPUT  DIGITAL (also used as digital output for debugging
+	#define Pin_Hall_Switch             26   // INPUT  DIGITAL
 	/*
 	IOE38CoresOnly
 	MCP23017 Adafruit Library Assignment
