@@ -15,6 +15,8 @@
 #include <Adafruit_MCP23017.h>  // IOE = IO Expander
 /* See: https://www.best-microcontroller-projects.com/mcp23017.html
         https://learn.adafruit.com/adafruit-class-library-for-windows-iot-core/mcp23017-class
+        http://www.learningaboutelectronics.com/Articles/MCP23017-IO-port-expander-circuit-with-arduino.php
+
 */
 Adafruit_MCP23017 IOE38CoresOnly;         // Decimal ID 38, 16 of 20 core array drive transistors.
 Adafruit_MCP23017 IOE39CoresSenseHalls;   // Decimal ID 39, 4 core array drive transistors, hall switches, sense, spare
@@ -206,23 +208,29 @@ void I2CIOEScan() {
     // Connect/disconnect to all 8 possible IO Expanders
     Serial.println(F("  0000000000111111"));
     Serial.println(F("  0123456789012345"));
-    for (address = 6; address < 8; address++) {
-      IOE39CoresSenseHalls.begin(address);
-      // Configure all pins on each one for input.
-      for (pin = 0; pin < 16; pin++) {
-        IOE39CoresSenseHalls.pinMode(pin, INPUT);
-        // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
-      }
-      Serial.print(address,DEC);
-      Serial.print(F(" "));
-      // Report the state of each input for each IOE
-      for (pin = 0; pin < 16; pin++) {
-        state = IOE39CoresSenseHalls.digitalRead(pin);
-        // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
-        Serial.print(state);
-      }
-        Serial.println("");
+//    for (address = 6; address < 8; address++) {
+//      IOE39CoresSenseHalls.begin(address);            // This changes all IO Expander pins to inputs.
+//      // Configure all pins on each one for input.
+//      for (pin = 0; pin < 16; pin++) {
+//        IOE39CoresSenseHalls.pinMode(pin, INPUT);
+//        // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
+//    }
+    Serial.print(address,DEC);
+    Serial.print(F(" "));
+    // Report the state of each input for each IOE
+    for (pin = 0; pin < 16; pin++) {
+      state = IOE39CoresSenseHalls.digitalRead(pin);
+      // IOE.pullUp(pin, HIGH);  // turn on a 100K pullup internally
+      Serial.print(state);
     }
+    Serial.println("");
   }
+}
+
+void I2CIOESafeInput() {
+    // TO DO: verify the IO expander is present, return "0=no error" if it is, "1=error" if not.
+    // This "begin" only needs to happen once and it just sets the MCP23017 pins to inputs.
+    IOE38CoresOnly.begin(6);         // DEC 38, with Adafruit Library is addr 6 = A2 high , A1 high , A0 low  110
+    IOE39CoresSenseHalls.begin(7);   // DEC 39, with Adafruit Library is addr 7 = A2 high, A1 high, A0 high 111
 }
 

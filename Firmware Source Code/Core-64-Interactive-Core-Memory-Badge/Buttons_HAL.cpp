@@ -18,9 +18,6 @@ void Buttons_Setup() {
   }
   else if (HardwareVersionMinor == 3)
   {
-    // IOE38CoresOnly.begin(6);         // DEC 38, with Adafruit Library is addr 6 = A2 high , A1 high , A0 low  110
-    IOE39CoresSenseHalls.begin(7);   // DEC 39, with Adafruit Library is addr 7 = A2 high, A1 high, A0 high 111
-    // TO DO: verify the IO expander is present, return "0=no error" if it is, "1=error" if not.
     IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_1, INPUT);
     IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_1, HIGH);  // turn on a 100K pullup internally
     IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_2, INPUT);
@@ -49,7 +46,6 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   }
   else if (HardwareVersionMinor == 3)
   {
-    IOE39CoresSenseHalls.begin(7);
     state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1)); // Can also read all inputs at once with .readGPIOAB()
   }
 

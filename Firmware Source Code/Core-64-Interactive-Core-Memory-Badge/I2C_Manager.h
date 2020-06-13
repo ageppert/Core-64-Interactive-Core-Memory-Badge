@@ -33,7 +33,8 @@ void I2CManagerBusScan();
 bool I2CDetectExternalEEPROM(uint8_t address);		
 // IO Expander Scan Inputs and report state with serial
 void I2CIOEScan();
-
+// IO Expander Safe Input to default both chips, all pins, input.
+void I2CIOESafeInput();
 
 //#ifdef __cplusplus
 //} // extern "C"

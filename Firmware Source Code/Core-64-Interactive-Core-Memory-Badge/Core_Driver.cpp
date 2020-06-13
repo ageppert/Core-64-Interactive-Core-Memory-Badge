@@ -60,41 +60,55 @@ void Core_Driver_Setup() {
   if (HardwareVersionMinor == 2)
   {
     pinMode(Pin_v020_Sense_Pulse, INPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q1P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q1N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q2P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q2N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q3P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q3N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q4P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q4N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q5P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q5N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q6P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q6N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q7P, OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
-    pinMode(PIN_MATRIX_DRIVE_Q7N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q8P, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q8N, OUTPUT);
-    pinMode(PIN_MATRIX_DRIVE_Q9P, OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
-    pinMode(PIN_MATRIX_DRIVE_Q9N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q1P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q1N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q2P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q2N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q3P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q3N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q4P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q4N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q5P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q5N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q6P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q6N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q7P,  OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
+    pinMode(PIN_MATRIX_DRIVE_Q7N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q8P,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q8N,  OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q9P,  OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
+    pinMode(PIN_MATRIX_DRIVE_Q9N,  OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q10P, OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
     pinMode(PIN_WRITE_ENABLE, OUTPUT);
   }
   else if (HardwareVersionMinor == 3)
   {
-    // IOE38CoresOnly.begin(6);         // DEC 38, with Adafruit Library is addr 6 = A2 high , A1 high , A0 low  110
-    IOE39CoresSenseHalls.begin(7);   // DEC 39, with Adafruit Library is addr 7 = A2 high, A1 high, A0 high 111
-    // TO DO: verify the IO expander is present, return "0=no error" if it is, "1=error" if not.
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_1, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_1, HIGH);  // turn on a 100K pullup internally
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_2, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_2, HIGH);  // turn on a 100K pullup internally
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_3, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_3, HIGH);  // turn on a 100K pullup internally
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_4, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_4, HIGH);  // turn on a 100K pullup internally
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q5P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q5N           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q6P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q6N           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q7P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q7N           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q8P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q8N           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q9P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q9N           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q10P          , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q10N          , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q3P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q3N           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q4P           , OUTPUT);
+    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q4N           , OUTPUT);
+
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q1P           , OUTPUT);
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q1N           , OUTPUT);
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q2P           , OUTPUT);
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q2N           , OUTPUT);
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Write_Enable  , OUTPUT);
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Sense_Reset   , OUTPUT);
+    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Sense_Pulse   , INPUT);
+    IOE39CoresSenseHalls.pullUp (IOE39_MATRIX_DRIVE_Sense_Pulse   , HIGH);  // turn on a 100K pullup internally
   }
 }
 
@@ -320,9 +334,21 @@ uint8_t CMMDClearRowByBit[][2] = {
 };
 
 
-void MatrixEnableTransistorInactive() { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE); }
+void MatrixEnableTransistorInactive() { 
+  if (HardwareVersionMinor == 2)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE); }
+  else if (HardwareVersionMinor == 3)
+  { 
+    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Write_Enable, WRITE_ENABLE_INACTIVE);
+  }
+}
 
-void MatrixEnableTransistorActive()   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE);   }
+void MatrixEnableTransistorActive()   { 
+  if (HardwareVersionMinor == 2)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE); }
+  else if (HardwareVersionMinor == 3)
+  {
+    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Write_Enable, WRITE_ENABLE_ACTIVE);
+  }
+}
 
 void MatrixDriveTransistorsInactive() {
   // Set all the matrix lines to the safe state, all transistors inactive.
@@ -330,6 +356,7 @@ void MatrixDriveTransistorsInactive() {
     digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
   }
   // For Rev 0.3, MCP23017, can write all pins at once with .writeGPIOAB
+  // Also the IO polarity can be inverted in the chip! IPOL pin inversion register. So logic can be all active 1.
 }
 
 void ReturnMatrixQ9NtoLowForLEDArray() {

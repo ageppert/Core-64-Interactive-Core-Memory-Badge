@@ -51,7 +51,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
-	#define FIRMWAREVERSION "0607.1730" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "0613.1043" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************
@@ -69,7 +69,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 
 // HARDWARE COMMON
 	#define Pin_Built_In_LED         	13   // V0.1.x and 0.2.x Shared with Matrix Drive Q7P
-	#define Pin_RGB_LED_Array           17   // V0.1.x and 0.2.x Shared with Teensy LC pin with buffered Digital Pin 17 driven at Vin. Shared pin 17_VIN. Return to previous state when finished using. 
+	#define Pin_RGB_LED_Array           17   // V0.1.x and 0.2.x Shared with Teensy LC buffered Digital Pin 17 driven at Vin. Return to previous state when finished using. 
 	#define Pin_I2C_Bus_Data         	18   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 	#define Pin_I2C_Bus_Clock        	19   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
 
@@ -87,65 +87,68 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define PIN_MATRIX_DRIVE_Q5N     	10
 	#define PIN_MATRIX_DRIVE_Q6P     	11
 	#define PIN_MATRIX_DRIVE_Q6N     	12
-	#define PIN_MATRIX_DRIVE_Q7P     	13   // Shared with built-in LED
-	#define PIN_MATRIX_DRIVE_Q7N     	14    
-	#define PIN_MATRIX_DRIVE_Q8P     	15    
-	#define PIN_MATRIX_DRIVE_Q8N     	16    
-	#define PIN_MATRIX_DRIVE_Q9P     	17   // Transistor matrix to address the cores. Shared pin 17. With LED array. Return to previous state when finished using.
-	#define PIN_MATRIX_DRIVE_Q9N     	20   // 
-	#define PIN_MATRIX_DRIVE_Q10P    	21   // 
-	#define PIN_MATRIX_DRIVE_Q10N    	22   //	
-	#define PIN_WRITE_ENABLE         	23   // OUTPUT DIGITAL (Could be another analog input)
-	#define Pin_v020_Battery_Voltage   A10   // 1/2 the battery voltage (otherwise known as Digital pin 24)
-	#define Pin_Reed_Switch             25   // INPUT  DIGITAL (also used as digital output for debugging
-	#define Pin_Hall_Switch             26   // INPUT  DIGITAL
+	#define PIN_MATRIX_DRIVE_Q7P     	13  // Shared with built-in LED
+	#define PIN_MATRIX_DRIVE_Q7N     	14   
+	#define PIN_MATRIX_DRIVE_Q8P     	15   
+	#define PIN_MATRIX_DRIVE_Q8N     	16   
+	#define PIN_MATRIX_DRIVE_Q9P     	17  // Transistor matrix to address the cores. Shared pin 17. With LED array. Return to previous state when finished using.
+	#define PIN_MATRIX_DRIVE_Q9N     	20  // 
+	#define PIN_MATRIX_DRIVE_Q10P    	21  // 
+	#define PIN_MATRIX_DRIVE_Q10N    	22  //	
+	#define PIN_WRITE_ENABLE         	23  // OUTPUT DIGITAL (Could be another analog input)
+	#define Pin_v020_Battery_Voltage   A10  // 1/2 the battery voltage (otherwise known as Digital pin 24)
+	#define Pin_Reed_Switch             25  // INPUT  DIGITAL (also used as digital output for debugging
+	#define Pin_Hall_Switch             26  // INPUT  DIGITAL
 
-// HARDWARE v0.3.0
-	#define Pin_v030_Sense_Out_A         8   // INPUT  DIGITAL
-	#define Pin_v030_Sense_Out_B         9   // INPUT  DIGITAL
-	#define Pin_v030_Battery_Voltage    A7   // 1/2 the battery voltage (otherwise known as Digital pin 24)
-
+// HARDWARE v0.3.x
+	#define Pin_v030_Sense_Out_A         8  // INPUT  DIGITAL
+	#define Pin_v030_Sense_Out_B         9  // INPUT  DIGITAL
+	#define Pin_v030_Battery_Voltage    A7  // 1/2 the battery voltage (otherwise known as Digital pin 24)
+	#define IOE38_INT_A					 2	// INPUT DIGITAL
+	#define IOE38_INT_B					 3	// INPUT DIGITAL
+	#define IOE39_INT_A					 4	// INPUT DIGITAL
+	#define IOE39_INT_B					 5	// INPUT DIGITAL
 
 	/*
-	IOE38CoresOnly with MCP23017 Adafruit Library Assignment
-				Core 64 Assignment				Pin ID 		Physial Pin #	Pin Name	
+	IOE38CoresOnly with MCP23017 Adafruit Library Assignment (0x26)
+				Core 64 Assignment				Pin ID 		Physial Pin #	Pin Name	Direction
 	*/			
-	#define IOE38_MATRIX_DRIVE_Q5P	 			 0		//	21				GPA0
-	#define IOE38_MATRIX_DRIVE_Q5N   			 1 		//	22				GPA1
-	#define IOE38_MATRIX_DRIVE_Q6P   			 2 		//	23				GPA2
-	#define IOE38_MATRIX_DRIVE_Q6N   			 3 		//	24				GPA3
-	#define IOE38_MATRIX_DRIVE_Q7P   			 4 		//	25				GPA4
-	#define IOE38_MATRIX_DRIVE_Q7N   			 5 		//	26				GPA5
-	#define IOE38_MATRIX_DRIVE_Q8P   			 6 		//	27				GPA6
-	#define IOE38_MATRIX_DRIVE_Q8N   			 7 		//	28				GPA7
-	#define IOE38_MATRIX_DRIVE_Q9P   			 8 		//	1				GPB0
-	#define IOE38_MATRIX_DRIVE_Q9N   			 9 		//	2				GPB1
-	#define IOE38_MATRIX_DRIVE_Q10P  			10		//	3				GPB2
-	#define IOE38_MATRIX_DRIVE_Q10N  			11		//	4				GPB3
-	#define IOE38_MATRIX_DRIVE_Q3P   			12		//	5				GPB4
-	#define IOE38_MATRIX_DRIVE_Q3N   			13		//	6				GPB5
-	#define IOE38_MATRIX_DRIVE_Q4P   			14		//	7				GPB6
-	#define IOE38_MATRIX_DRIVE_Q4N   			15		//	8				GPB7
+	#define IOE38_MATRIX_DRIVE_Q5P	 			 0		//	21				GPA0		Output
+	#define IOE38_MATRIX_DRIVE_Q5N   			 1 		//	22				GPA1		Output
+	#define IOE38_MATRIX_DRIVE_Q6P   			 2 		//	23				GPA2		Output
+	#define IOE38_MATRIX_DRIVE_Q6N   			 3 		//	24				GPA3		Output
+	#define IOE38_MATRIX_DRIVE_Q7P   			 4 		//	25				GPA4		Output
+	#define IOE38_MATRIX_DRIVE_Q7N   			 5 		//	26				GPA5		Output
+	#define IOE38_MATRIX_DRIVE_Q8P   			 6 		//	27				GPA6		Output
+	#define IOE38_MATRIX_DRIVE_Q8N   			 7 		//	28				GPA7		Output
+	#define IOE38_MATRIX_DRIVE_Q9P   			 8 		//	1				GPB0		Output
+	#define IOE38_MATRIX_DRIVE_Q9N   			 9 		//	2				GPB1		Output
+	#define IOE38_MATRIX_DRIVE_Q10P  			10		//	3				GPB2		Output
+	#define IOE38_MATRIX_DRIVE_Q10N  			11		//	4				GPB3		Output
+	#define IOE38_MATRIX_DRIVE_Q3P   			12		//	5				GPB4		Output
+	#define IOE38_MATRIX_DRIVE_Q3N   			13		//	6				GPB5		Output
+	#define IOE38_MATRIX_DRIVE_Q4P   			14		//	7				GPB6		Output
+	#define IOE38_MATRIX_DRIVE_Q4N   			15		//	8				GPB7		Output
 	/*
-    IOE39CoresSenseHalls with MCP23017 Adafruit Library Assignment
+    IOE39CoresSenseHalls with MCP23017 Adafruit Library Assignment (0x27)
 				Core 64 Assignment				Pin ID 		Physial Pin #	Pin Name	
 	*/
-	#define IOE39_MATRIX_DRIVE_Q1P 			 	 0		//	21				GPA0				
-	#define IOE39_MATRIX_DRIVE_Q1N				 1 		//	22				GPA1
-	#define IOE39_MATRIX_DRIVE_Q2P				 2 		//	23				GPA2
-	#define IOE39_MATRIX_DRIVE_Q2N				 3 		//	24				GPA3
-	#define IOE39_Hall_Switch_1					 4 		//	25				GPA4			
-	#define IOE39_Hall_Switch_2					 5 		//	26				GPA5			
-	#define IOE39_Hall_Switch_3					 6 		//	27				GPA6			
-	#define IOE39_Hall_Switch_4					 7 		//	28				GPA7			
-	#define IOE39_MATRIX_DRIVE_Spare_1			 8 		//	1				GPB0	
-	#define IOE39_MATRIX_DRIVE_Spare_2			 9 		//	2				GPB1	
-	#define IOE39_MATRIX_DRIVE_Spare_3			10		//	3				GPB2	
-	#define IOE39_MATRIX_DRIVE_Spare_4			11		//	4				GPB3	
-	#define IOE39_MATRIX_DRIVE_Spare_5			12		//	5				GPB4	
-	#define IOE39_MATRIX_DRIVE_Write_Enable		13		//	6				GPB5			
-	#define IOE39_MATRIX_DRIVE_Sense_Reset		14		//	7				GPB6		
-	#define IOE39_MATRIX_DRIVE_Sense_Pulse		15		//	8				GPB7		
+	#define IOE39_MATRIX_DRIVE_Q1P 			 	 0		//	21				GPA0		Output				
+	#define IOE39_MATRIX_DRIVE_Q1N				 1 		//	22				GPA1		Output
+	#define IOE39_MATRIX_DRIVE_Q2P				 2 		//	23				GPA2		Output
+	#define IOE39_MATRIX_DRIVE_Q2N				 3 		//	24				GPA3		Output
+	#define IOE39_Hall_Switch_1					 4 		//	25				GPA4		Input			
+	#define IOE39_Hall_Switch_2					 5 		//	26				GPA5		Input			
+	#define IOE39_Hall_Switch_3					 6 		//	27				GPA6		Input			
+	#define IOE39_Hall_Switch_4					 7 		//	28				GPA7		Input			
+	#define IOE39_MATRIX_DRIVE_Spare_1			 8 		//	1				GPB0		Spare/Undefined	
+	#define IOE39_MATRIX_DRIVE_Spare_2			 9 		//	2				GPB1		Spare/Undefined	
+	#define IOE39_MATRIX_DRIVE_Spare_3			10		//	3				GPB2		Spare/Undefined	
+	#define IOE39_MATRIX_DRIVE_Spare_4			11		//	4				GPB3		Spare/Undefined	
+	#define IOE39_MATRIX_DRIVE_Spare_5			12		//	5				GPB4		Spare/Undefined	
+	#define IOE39_MATRIX_DRIVE_Write_Enable		13		//	6				GPB5		Output			
+	#define IOE39_MATRIX_DRIVE_Sense_Reset		14		//	7				GPB6		Output	
+	#define IOE39_MATRIX_DRIVE_Sense_Pulse		15		//	8				GPB7		Input	
 
 #ifdef __cplusplus
 } // extern "C"

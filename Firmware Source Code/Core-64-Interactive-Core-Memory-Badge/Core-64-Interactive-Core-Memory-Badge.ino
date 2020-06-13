@@ -73,11 +73,12 @@ void setup() {
     LED_Array_Test_Pixel_Matrix_Color();
     delay(2000); // Wait for the serial port to connect if it's there. Otherwise, move on.
     Serial.println("\nCore 64 - Interactice Core Memory Badge");
-    Serial.println("Andy Geppert at www.MachineIdeas.com");
+    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
   OLEDScreenSetup();
+  I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
   I2CManagerBusScan();
   DetectHardwareVersion(); 
@@ -94,8 +95,8 @@ void setup() {
   Buttons_Setup();
   CoreSetup();
   
-  TopLevelState = STATE_LED_TEST_ONE_MATRIX_COLOR;
-  // TopLevelState = STATE_SCROLLING_TEXT;
+  // TopLevelState = STATE_LED_TEST_ONE_MATRIX_COLOR;
+  TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
