@@ -57,29 +57,45 @@ static bool MatrixDrivePinActiveState[23]   = { 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
 #define WRITE_ENABLE_INACTIVE 0 // logic level to turn off transistor
 
 void Core_Driver_Setup() {
-  pinMode(Pin_v020_Sense_Pulse, INPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q1P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q1N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q2P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q2N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q3P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q3N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q4P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q4N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q5P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q5N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q6P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q6N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q7P, OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
-  pinMode(PIN_MATRIX_DRIVE_Q7N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q8P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q8N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q9P, OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
-  pinMode(PIN_MATRIX_DRIVE_Q9N, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q10P, OUTPUT);
-  pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
-  pinMode(PIN_WRITE_ENABLE, OUTPUT);
-
+  if (HardwareVersionMinor == 2)
+  {
+    pinMode(Pin_v020_Sense_Pulse, INPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q1P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q1N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q2P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q2N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q3P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q3N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q4P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q4N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q5P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q5N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q6P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q6N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q7P, OUTPUT); // Shared pin 13. Onboard LED, Hearbeat. Return to previous state when finished using.
+    pinMode(PIN_MATRIX_DRIVE_Q7N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q8P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q8N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q9P, OUTPUT); // Shared pin 17. LED Array. Return to previous state when finished using.
+    pinMode(PIN_MATRIX_DRIVE_Q9N, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q10P, OUTPUT);
+    pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
+    pinMode(PIN_WRITE_ENABLE, OUTPUT);
+  }
+  else if (HardwareVersionMinor == 3)
+  {
+    // IOE38CoresOnly.begin(6);         // DEC 38, with Adafruit Library is addr 6 = A2 high , A1 high , A0 low  110
+    IOE39CoresSenseHalls.begin(7);   // DEC 39, with Adafruit Library is addr 7 = A2 high, A1 high, A0 high 111
+    // TO DO: verify the IO expander is present, return "0=no error" if it is, "1=error" if not.
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_1, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_1, HIGH);  // turn on a 100K pullup internally
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_2, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_2, HIGH);  // turn on a 100K pullup internally
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_3, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_3, HIGH);  // turn on a 100K pullup internally
+    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_4, INPUT);
+    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_4, HIGH);  // turn on a 100K pullup internally
+  }
 }
 
 

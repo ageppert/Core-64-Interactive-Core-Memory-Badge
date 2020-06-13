@@ -78,7 +78,6 @@ void setup() {
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
   OLEDScreenSetup();
-  I2CIOESetup();
   I2CManagerSetup();
   I2CManagerBusScan();
   DetectHardwareVersion(); 

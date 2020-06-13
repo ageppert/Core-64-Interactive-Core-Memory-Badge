@@ -191,9 +191,6 @@ bool I2CDetectExternalEEPROM(uint8_t address) {
   return (presentnpresent);
 }
 
-void I2CIOESetup() {
-}
-
 void I2CIOEScan() {
   bool state = 0;
   uint8_t address = 0;

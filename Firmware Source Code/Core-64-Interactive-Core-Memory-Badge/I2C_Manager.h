@@ -31,8 +31,6 @@ void I2CManagerSetup();
 void I2CManagerBusScan();
 // Call with expected address of external EEPROM, returns 1 if present, 0 if not.
 bool I2CDetectExternalEEPROM(uint8_t address);		
-// IO Expander Configuration
-void I2CIOESetup();
 // IO Expander Scan Inputs and report state with serial
 void I2CIOEScan();
 
