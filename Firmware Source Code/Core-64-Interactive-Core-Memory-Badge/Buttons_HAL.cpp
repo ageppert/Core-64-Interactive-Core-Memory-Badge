@@ -36,6 +36,7 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   static uint32_t duration = 0;
   static uint32_t delta = 0;
   static uint8_t  state = 0;
+  static uint8_t  state_test = 0;
 
   if(clear_duration == 1) { duration = 0 ;}
   thistime = millis();
@@ -46,8 +47,12 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   }
   else if (HardwareVersionMinor == 3)
   {
+    // TO DO: Why do I have to read these twice in a row to get a good read?
+    state_test = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1)); // Can also read all inputs at once with .readGPIOAB()
     state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1)); // Can also read all inputs at once with .readGPIOAB()
-  }
+    Serial.print(state_test);
+    Serial.println(state);
+   }
 
   if(state != 1) {
     delta = thistime - lasttime ;
