@@ -35,8 +35,8 @@ void tempDebugPin25Twiddle ();
 void tempDebugPin25OutputMode ();
 void tempDebugPin25InputMode ();
 
-void ClearRowZeroAndColZero ();
-// void SetRowZeroAndColZero ();
+void ClearRowZeroAndColZero (); // temp test function
+void SetRowZeroAndColZero ();   // temp test function
 
 extern void TracingPulses(uint8_t numberOfPulses);
 void DebugWithReedSwitchOutput();

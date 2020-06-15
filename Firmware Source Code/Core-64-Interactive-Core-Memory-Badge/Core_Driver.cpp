@@ -41,6 +41,10 @@ static uint8_t MatrixDrivePinNumber[23] = {
   PIN_MATRIX_DRIVE_Q10N
 };
 
+// All QxN transistors are Active High.
+// All QxP transistors are Active Low.
+
+// V0.1.x and V0.2.x hardware (direct MCU pin control)
 // Look up the drive line number by knowing where it is in the array by it's own number.
 // In other words, the pin # has to be the same as the array position.
 // Array needs to be as big as the largest used pin number.
@@ -48,9 +52,12 @@ static uint8_t MatrixDrivePinNumber[23] = {
 //                             array position:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22
 //                             usable pins   :  -, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,--,--,20,21,22
 // MCU output pins are set to these states to correspond to activation of the transistor needed to achieve on/off state.
-static bool MatrixDrivePinInactiveState[23] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0}; // logic level to turn off transistor
-static bool MatrixDrivePinActiveState[23]   = { 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1}; // logic level to turn on transistor
+const bool MatrixDrivePinInactiveState[23] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0}; // logic level to turn off transistor
+const bool MatrixDrivePinActiveState[23]   = { 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1}; // logic level to turn on transistor
 
+// V0.3.x hardware (through IO Expanders)
+const uint16_t IOE38CoresOnlyMatrixDriveTransistorsInactive       = 0b0101010101010101;
+const uint16_t IOE39CoresSenseHallsMatrixDriveTransistorsInactive = 0b0000000000000101;
 
 // MCU output pin is set to these states to correspond to activation of the transistor needed to achieve active/inactive state.
 #define WRITE_ENABLE_ACTIVE   1 // logic level to turn on transistor
@@ -150,31 +157,33 @@ uint8_t CMMDClearCol[8][2] = {
 // Each row of the array corresponds to rows 0 to 7 of the CMM.
 // Each row is sequence of 2 transitors, first one connects to top four rows and second one connects to the bottom four rows.
 
-// Set is given the arbitrary definition of current flow rightward in the top four rows.
-// Top four rows connected to VMEM and bottom four rows connected to GNDPWR.
-uint8_t CMMDSetRow[8][2] = {
-  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Row 0
-  { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q10N },  // Row 1
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Row 2
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Row 3
-  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 4
-  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 5
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 6
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P }   // Row 7      
-};
+/* These arrays are no longer needed, replaced by CMMDSetRowByBit
+    // Set is given the arbitrary definition of current flow rightward in the top four rows.
+    // Top four rows connected to VMEM and bottom four rows connected to GNDPWR.
+    uint8_t CMMDSetRow[8][2] = {
+      { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Row 0
+      { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q10N },  // Row 1
+      { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Row 2
+      { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Row 3
+      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 4
+      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 5
+      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 6
+      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P }   // Row 7      
+    };
 
-// Clear is given the arbitrary definition of current flow leftward in that column.
-// Top of column connected to GNDPWR and bottom of column connected to VMEM.
-uint8_t CMMDClearRow[8][2] = {
-  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 0 
-  { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 1
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 2
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Row 3
-  { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 4
-  { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  },  // Row 5
-  { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 6
-  { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  }   // Row 7      
-};
+    // Clear is given the arbitrary definition of current flow leftward in that column.
+    // Top of column connected to GNDPWR and bottom of column connected to VMEM.
+    uint8_t CMMDClearRow[8][2] = {
+      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 0 
+      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 1
+      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 2
+      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Row 3
+      { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 4
+      { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  },  // Row 5
+      { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 6
+      { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  }   // Row 7      
+    };
+*/
 
 /* 
 The original assumption of current going left to right in a row does not work because the cores
@@ -247,14 +256,14 @@ uint8_t CMMDSetRowByBit[][2] = {
   { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 54    ROW 6 
   { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 55    ROW 6 
 
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 24    ROW 7 P/N swapped from ROW 3
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 25    ROW 7
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 26    ROW 7
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 27    ROW 7
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 28    ROW 7
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 29    ROW 7
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 30    ROW 7
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N }   // Bit 31    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 56    ROW 7 P/N swapped from ROW 3
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 57    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 58    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 59    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 60    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 61    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 62    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N }   // Bit 63    ROW 7
 
 }; 
 
@@ -322,14 +331,14 @@ uint8_t CMMDClearRowByBit[][2] = {
   { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Bit 54    ROW 6
   { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Bit 55    ROW 6
 
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 24    ROW 7 P/N swapped from ROW 3
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 25    ROW 7
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 26    ROW 7
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 27    ROW 7
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 28    ROW 7
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 29    ROW 7
-  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 30    ROW 7
-  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P }   // Bit 31    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 56    ROW 7 P/N swapped from ROW 3
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 57    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 58    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 59    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 60    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Bit 61    ROW 7
+  { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Bit 62    ROW 7
+  { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P }   // Bit 63    ROW 7
 
 };
 
@@ -352,28 +361,40 @@ void MatrixEnableTransistorActive()   {
 
 void MatrixDriveTransistorsInactive() {
   // Set all the matrix lines to the safe state, all transistors inactive.
-  for (uint8_t i = 1; i < 23; i++) {
-    digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
+  if (HardwareVersionMinor == 2)   { 
+    for (uint8_t i = 1; i < 23; i++) {
+      digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
+    }  
   }
-  // For Rev 0.3, MCP23017, can write all pins at once with .writeGPIOAB
-  // Also the IO polarity can be inverted in the chip! IPOL pin inversion register. So logic can be all active 1.
+  else if (HardwareVersionMinor == 3)
+  {
+    // For Rev 0.3, MCP23017, can write all pins at once with .writeGPIOAB which is faster.
+    IOE38CoresOnly.writeGPIOAB(IOE38CoresOnlyMatrixDriveTransistorsInactive);
+    IOE39CoresSenseHalls.writeGPIOAB(IOE39CoresSenseHallsMatrixDriveTransistorsInactive);
+  }
 }
 
 void ReturnMatrixQ9NtoLowForLEDArray() {
-  digitalWriteFast(PIN_MATRIX_DRIVE_Q9P, 0);
+       if (HardwareVersionMinor == 2) { digitalWriteFast(PIN_MATRIX_DRIVE_Q9P, 0); }
+  else if (HardwareVersionMinor == 3) { } // no need to do anything since the pin isn't shared in V0.3
 }
 
 // Configure four transistors to activate the specified core.
-
-// Use col to selection the proper place in the look up table
 void SetRowAndCol (uint8_t row, uint8_t col) {
-  // decode bit # from row and col data
-  uint8_t bit = col + (row*8);
-  digitalWriteFast( (CMMDSetRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [0] ] ); // for bit 0, pin 13, 0
-  digitalWriteFast( (CMMDSetRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [1] ] ); // for bit 0, pin 20, 1
-  // columns are easier to decode with the simpler CMMDSetCol look-up table.
-  digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] ); // for bit 0, pin  5, 0
-  digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] ); // for bit 0, pin  2, 1
+  if (HardwareVersionMinor == 2)   { 
+    // decode bit # from row and col data
+    uint8_t bit = col + (row*8);
+    digitalWriteFast( (CMMDSetRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [0] ] ); // for bit 0, pin 13, 0
+    digitalWriteFast( (CMMDSetRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [1] ] ); // for bit 0, pin 20, 1
+    // Use col to select the proper place in the look up table
+    // columns are easier to decode with the simpler CMMDSetCol look-up table.
+    digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] ); // for bit 0, pin  5, 0
+    digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] ); // for bit 0, pin  2, 1
+  }
+  else if (HardwareVersionMinor == 3)
+  {
+    // This is the next thing to figure out.
+  }
 }
 
 
@@ -393,6 +414,13 @@ void ClearRowZeroAndColZero () {
   digitalWriteFast( (PIN_MATRIX_DRIVE_Q9N), 1 ); // for bit 0, row 0 YL4 to GND
   digitalWriteFast( (PIN_MATRIX_DRIVE_Q3N), 1 ); // for bit 0, col 0 XT0 to GND
   digitalWriteFast( (PIN_MATRIX_DRIVE_Q1P), 0 ); // for bit 0, col 0 XB0 to VMEM
+}
+
+void SetRowZeroAndColZero () {
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q7P), 1 ); // for bit 0, row 0 YL0 to GND
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q9N), 0 ); // for bit 0, row 0 YL4 to VMEM
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q3N), 0 ); // for bit 0, col 0 XT0 to VMEM
+  digitalWriteFast( (PIN_MATRIX_DRIVE_Q1P), 1 ); // for bit 0, col 0 XB0 to GND
 }
 
 bool SenseWirePulse() {

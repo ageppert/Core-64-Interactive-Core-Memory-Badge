@@ -116,7 +116,7 @@ void loop() {
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
   #endif
-  // I2CIOEScan(); // temporary debug
+  //I2CIOEScan(); // temporary debug
 
   /*                      ************************
                           *** User Interaction ***
