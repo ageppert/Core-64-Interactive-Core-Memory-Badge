@@ -95,8 +95,8 @@ void setup() {
   Buttons_Setup();
   CoreSetup();
   
-  // TopLevelState = STATE_LED_TEST_ONE_MATRIX_COLOR;
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_CORE_TEST_ONE;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -297,7 +297,7 @@ void loop() {
     // Skip out of this test state immediately.
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    TopLevelState = STATE_LAST;
+    // TopLevelState = STATE_LAST;
     break;
 
   case STATE_LAST:

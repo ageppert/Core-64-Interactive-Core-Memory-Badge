@@ -125,8 +125,7 @@ void OLED_Show_Matrix_Mono_Hex() {
     UpdateTimer = NowTime;
     display.clearDisplay();
     display.setCursor(0, 0);     // Start at top-left corner
-    display.println(F("Hex Data: "));
-    display.println(F("          "));
+    display.println(F("Hex View: "));
     Full64BitValue = LED_Array_Binary_Read();
     display.print(F(" "));
     for(int8_t i = 60; i >= 0; i=i-4)

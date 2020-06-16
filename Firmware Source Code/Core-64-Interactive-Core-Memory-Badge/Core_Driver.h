@@ -29,6 +29,7 @@ void MatrixEnableTransistorActive();
 void MatrixDriveTransistorsInactive();
 extern void SetRowAndCol (uint8_t row, uint8_t col);
 extern void ClearRowAndCol (uint8_t row, uint8_t col);
+void CoreSenseReset();
 bool SenseWirePulse();
 void tempDebugPin17Twiddle ();
 void tempDebugPin25Twiddle ();

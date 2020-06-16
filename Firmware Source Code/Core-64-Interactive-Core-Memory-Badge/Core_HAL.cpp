@@ -139,7 +139,7 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
   static bool value = 0;
-  cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
+  // cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
   DebugWithReedSwitchOutput();
   CoreStateChangeFlag(1);                           // Clear the sense flag
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
@@ -148,13 +148,11 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
 //TracingPulses(1); 
   //AllDriveIoSetBit(bit);
   AllDriveIoClearBit(bit);
+  CoreSenseReset();
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
   // loop around this to detect it - not sure on timing needs
 //TracingPulses(2); 
-  //for (uint8_t i = 0; i <=3; i++)                  // Each time through the loop is about 1 us
-  //{
-    CoreStateChangeFlag(0);                         // Polling for a change inside this function is faster than the for loop.
-  //}
+    CoreStateChangeFlag(0);                         // Polling for a change inside this function is faster than the for-loop.
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
@@ -172,7 +170,7 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
 //TracingPulses(3); 
   }
   DebugWithReedSwitchInput();
-  sei();                                            // Testing for consistent timing. Enable interrupts when done poling for sense pulse.
+  // sei();                                            // Testing for consistent timing. Enable interrupts when done poling for sense pulse.
   return (value);                                   // Return the value of the core
 }
 

@@ -669,10 +669,27 @@ void SetRowZeroAndColZero () {
   digitalWriteFast( (PIN_MATRIX_DRIVE_Q1P), 1 ); // for bit 0, col 0 XB0 to GND
 }
 
+void CoreSenseReset() {
+  if (HardwareVersionMinor == 2)   { 
+    // Nothing to do since because there is no flip-flop to reset in this hardware.
+  }
+  else if (HardwareVersionMinor == 3)
+  {
+    IOE39CoresSenseHalls.digitalWrite( IOE39_MATRIX_DRIVE_Sense_Reset, 1);
+    IOE39CoresSenseHalls.digitalWrite( IOE39_MATRIX_DRIVE_Sense_Reset, 0);
+  }
+}
+
 bool SenseWirePulse() {
   bool temp = 0;
-  temp = digitalReadFast(Pin_v020_Sense_Pulse);
-  // TracingPulses(temp);
+  if (HardwareVersionMinor == 2)   { 
+    temp = digitalReadFast(Pin_v020_Sense_Pulse);
+    // TracingPulses(temp);
+  }
+  else if (HardwareVersionMinor == 3)
+  {
+    temp = IOE39CoresSenseHalls.digitalRead(IOE39_MATRIX_DRIVE_Sense_Pulse);
+  }
   return temp;
 }
 
