@@ -6,6 +6,7 @@
 #include <WProgram.h>
 #endif
 
+#include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
 #include "Core_HAL.h"
 #include "Core_Driver.h" 
 #include "CharacterMap.h"
@@ -120,12 +121,18 @@ void Core_Mem_Monitor() {
 }
 
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
+  Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   // Turn off all of the matrix signals
   cli();                                            // Testing for consistent timing.
+  // TracingPulses(1);
+  // DebugPin10_On();
+  CoreSenseReset();                                 // Reset sense pulse flip-flop in case this write is called from read.
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
-  // Prepare to activate the matrix drive transistors
-  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+  // Enable the matrix drive transistors
+  // TracingPulses(2);
+  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
+  // TracingPulses(3);
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
   if (value == 1) { AllDriveIoSetBit(bit); } 
   else { AllDriveIoClearBit(bit); }
@@ -134,24 +141,28 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   ReturnMatrixQ9NtoLowForLEDArray();
+  // TracingPulses(4);
+  // DebugPin10_Off();
+  CoreSenseReset();
   sei();                                            // Testing for consistent timing.
 }
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
+  Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   static bool value = 0;
-  // cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
+   cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
   DebugWithReedSwitchOutput();
   CoreStateChangeFlag(1);                           // Clear the sense flag
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   // Activate the selected matrix drive transistors according to bit position and SET it to 1.
-//TracingPulses(1); 
-  //AllDriveIoSetBit(bit);
-  AllDriveIoClearBit(bit);
+  // TracingPulses(1); 
+  // AllDriveIoSetBit(bit);
   CoreSenseReset();
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+  AllDriveIoClearBit(bit);
   // loop around this to detect it - not sure on timing needs
-//TracingPulses(2); 
+  // TracingPulses(2); 
     CoreStateChangeFlag(0);                         // Polling for a change inside this function is faster than the for-loop.
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
@@ -162,18 +173,20 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
     //Core_Mem_Bit_Write(bit,0);                      // ...so return the core to 0
     Core_Mem_Bit_Write(bit,1);
     value = 0;                                      // ...update value to represent the core state
-//TracingPulses(4); 
+  // TracingPulses(4); 
   }
   else                                              // otherwise the core was already 1
   {
     value = 1;                                      // ...update value to represent the core state
-//TracingPulses(3); 
+  // TracingPulses(3); 
   }
-  DebugWithReedSwitchInput();
-  // sei();                                            // Testing for consistent timing. Enable interrupts when done poling for sense pulse.
+  // DebugWithReedSwitchInput();
+  CoreSenseReset();
+   sei();                                            // Testing for consistent timing. Enable interrupts when done poling for sense pulse.
   return (value);                                   // Return the value of the core
 }
 
+/*
 bool CoreReadBit(uint8_t bit) {
   static bool value;
   DebugWithReedSwitchOutput();
@@ -204,6 +217,7 @@ bool CoreReadBit(uint8_t bit) {
   DebugWithReedSwitchInput();
   return (value);
 }
+*/
 
 void CoreWriteLongInt(uint64_t value) {
 
@@ -218,6 +232,7 @@ void CoreWriteArray() {     // TO DO Add a pointer to the array
 
 }
 
+/*
 uint64_t CoreReadArray() {  // TO DO Add a pointer to the array
   uint64_t value = 0;
   bool bitValue = 0;
@@ -231,6 +246,7 @@ uint64_t CoreReadArray() {  // TO DO Add a pointer to the array
   }
   return (value);
 }
+*/
 
 void ScrollTextToCoreMemory() {
   static unsigned long UpdatePeriodms = 100;  
@@ -315,16 +331,37 @@ void AllDriveIoDisable() {
 
 bool CoreStateChangeFlag(bool clearFlag) {                    // Send this function a 0 to poll it, 1 to clear the flag
   static bool CoreStateChangeFlag = 0;
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
-  // TracingPulses(2); 
+  if (HardwareVersionMinor == 2)   { 
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
+    // TracingPulses(2);     
+  }
+  else if (HardwareVersionMinor == 3)
+  {
+    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }    
+  }
   if (clearFlag == true) { CoreStateChangeFlag = 0; }           // Override detected state when user requests to clear the flag
   return CoreStateChangeFlag;
 }
 
+void IOESpare1_On() {
+  DebugIOESpare1_On();
+}
+
+void IOESpare1_Off() {
+  DebugIOESpare1_Off();
+}
+
+void IOESpare2_On() {
+  DebugIOESpare2_On();
+}
+
+void IOESpare2_Off() {
+  DebugIOESpare2_Off();
+}

@@ -43,6 +43,14 @@ extern void TracingPulses(uint8_t numberOfPulses);
 void DebugWithReedSwitchOutput();
 void DebugWithReedSwitchInput();
 
+void DebugIOESpare1_On();
+void DebugIOESpare1_Off();
+void DebugIOESpare2_On();
+void DebugIOESpare2_Off();
+
+void DebugPin10_On();
+void DebugPin10_Off();
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

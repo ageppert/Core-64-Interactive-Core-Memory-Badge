@@ -39,11 +39,11 @@ void Core_Mem_Monitor();							// Monitor for flux interference in Core Memory R
 
 // OLD API Command List
 // extern void CoreWriteBit(uint8_t bit, bool value);
-extern bool CoreReadBit(uint8_t bit);
+// extern bool CoreReadBit(uint8_t bit);
 extern void CoreWriteLongInt(uint64_t value);
 extern uint64_t CoreReadLongInt();
 extern void CoreWriteArray(); 		// TO DO Add a pointer to the array
-extern uint64_t CoreReadArray(); 	// TO DO Add a pointer to the array
+// extern uint64_t CoreReadArray(); 	// TO DO Add a pointer to the array
 void ScrollTextToCoreMemory();
 
 /* Delete these functions
@@ -61,6 +61,11 @@ extern void AllDriveIoClearBit(uint8_t bit);
 void AllDriveIoEnable();
 void AllDriveIoDisable();
 extern bool CoreStateChangeFlag(bool clearFlag);
+
+void IOESpare1_On();
+void IOESpare1_Off();
+void IOESpare2_On();
+void IOESpare2_Off();
 
 //#ifdef __cplusplus
 //} // extern "C"
