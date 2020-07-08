@@ -201,7 +201,7 @@ void loop() {
     // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
     if (TopLevelStateChanged)
     {
-      LED_Array_Monochrome_Set_Color(35,255,255);
+      LED_Array_Monochrome_Set_Color(0,255,255);      // Hue 0 = RED
       LED_Array_Binary_Write_Default();
       LED_Array_Binary_To_Matrix_Mono();
       OLEDScreenClear();
