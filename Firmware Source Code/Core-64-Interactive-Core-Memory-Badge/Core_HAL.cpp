@@ -131,15 +131,15 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   // Enable the matrix drive transistors
   // TracingPulses(2);
-  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
   // TracingPulses(3);
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
   if (value == 1) { AllDriveIoSetBit(bit); } 
   else { AllDriveIoClearBit(bit); }
+  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
   delayMicroseconds(8);                             // give the core time to change state
+  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
-  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   ReturnMatrixQ9NtoLowForLEDArray();
   // TracingPulses(4);
   // DebugPin10_Off();
