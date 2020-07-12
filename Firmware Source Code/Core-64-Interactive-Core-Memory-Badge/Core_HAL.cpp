@@ -159,14 +159,15 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
   // TracingPulses(1); 
   // AllDriveIoSetBit(bit);
   CoreSenseReset();
-  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
   AllDriveIoClearBit(bit);
+  // TO DO *** When ENABLE is moved here, the flux detection mode on V0.2 has jittery LEDs. Not sure why, but it doesn't look good.
   // loop around this to detect it - not sure on timing needs
   // TracingPulses(2); 
     CoreStateChangeFlag(0);                         // Polling for a change inside this function is faster than the for-loop.
   // Turn off all of the matrix signals
+MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
-  MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   ReturnMatrixQ9NtoLowForLEDArray();
   if (CoreStateChangeFlag(0) == true)               // If the core changed state, then it was a 0, and is now 1...
   {

@@ -51,7 +51,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
-	#define FIRMWAREVERSION "0708.1007" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "0711.2200" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************
@@ -104,6 +104,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define Pin_v030_Sense_Out_A         8  // INPUT  DIGITAL
 	#define Pin_v030_Sense_Out_B         9  // INPUT  DIGITAL
 	#define Pin_v030_Battery_Voltage    A7  // 1/2 the battery voltage (otherwise known as Digital pin 24)
+	#define Pin_v030_Hall_Switch_2    	A9  // Test Hall Switch on analog input (otherwise known as Digital pin 23)
 	#define IOE38_INT_A					 2	// INPUT DIGITAL
 	#define IOE38_INT_B					 3	// INPUT DIGITAL
 	#define IOE39_INT_A					 4	// INPUT DIGITAL

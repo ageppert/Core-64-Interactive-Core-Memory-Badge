@@ -10,6 +10,8 @@
 #include "HardwareIOMap.h"
 #include "I2C_Manager.h"
 
+// #define USE_ANALOG_INPUT_HALL_SWITCH_2
+
 void Buttons_Setup() {
   if (HardwareVersionMinor == 2)
   {
@@ -26,6 +28,9 @@ void Buttons_Setup() {
     IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_3, HIGH);  // turn on a 100K pullup internally
     IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_4, INPUT);
     IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_4, HIGH);  // turn on a 100K pullup internally
+    #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
+    // No setup required
+    #endif
   }
 }
 
@@ -37,6 +42,7 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   static uint32_t delta = 0;
   static uint8_t  state = 0;
   static uint8_t  state_test = 0;
+  static uint16_t AnalogLevel = 0;
 
   if(clear_duration == 1) { duration = 0 ;}
   thistime = millis();
@@ -47,9 +53,15 @@ uint32_t Button1State(uint32_t clear_duration) { // send a 1 or more to clear, 0
   }
   else if (HardwareVersionMinor == 3)
   {
+    #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
+    AnalogLevel = analogRead(Pin_v030_Hall_Switch_2);
+    if(AnalogLevel <= 512) {state = 0;}
+    else {state = 1;}
+    #else
     // TO DO: Why do I have to read these twice in a row to get a good read?
     state_test = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1)); // Can also read all inputs at once with .readGPIOAB()
     state = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1)); // Can also read all inputs at once with .readGPIOAB()
+    #endif
     // Serial.print(state_test);
     // Serial.println(state);
    }
