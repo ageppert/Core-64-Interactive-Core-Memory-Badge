@@ -93,4 +93,15 @@ uint32_t EEPROMExtReadSerialNumber() {
   return (SerialNumberLocal);
 }
 
+uint8_t EEPROMExtReadBornOnYear() {
+  return (EEPROMExtReadByte(EEPROM_ADDRESS, 6));
+}
+
+uint8_t EEPROMExtReadBornOnMonth() {
+  return (EEPROMExtReadByte(EEPROM_ADDRESS, 7));
+}
+
+uint8_t EEPROMExtReadBornOnDay() {
+  return (EEPROMExtReadByte(EEPROM_ADDRESS, 8));
+}
 

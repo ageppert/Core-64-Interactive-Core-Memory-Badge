@@ -92,6 +92,12 @@ void setup() {
     Serial.println(HardwareVersionPatch);
     Serial.print("Serial Number: ");
     Serial.println(SerialNumber);
+    Serial.print("Born on: 20");
+    Serial.print(EEPROMExtReadBornOnYear());
+    Serial.print("-");
+    Serial.print(EEPROMExtReadBornOnMonth());
+    Serial.print("-");
+    Serial.println(EEPROMExtReadBornOnDay());    
     Serial.print("Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
