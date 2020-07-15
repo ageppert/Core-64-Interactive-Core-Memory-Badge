@@ -12,7 +12,7 @@
     Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
     FastLED                                     3.3.3   by Daniel Garcia
     Wire.h
-
+    SdFat - Adafruit Fork                       1.2.3   by Bill Greiman (fork of SdFat)
 
     DigitalIO                                   1.0.0   by Bill Greiman
     OR
@@ -36,6 +36,7 @@
 #include "Core_HAL.h"
 #include "EEPROM_HAL.h"
 #include "I2C_Manager.h"
+#include "SD_Card_Manager.h"
 
 // #define DEBUG 1
 uint32_t SerialNumber = 0;
@@ -104,6 +105,7 @@ void setup() {
   AnalogSetup();
   Buttons_Setup();
   CoreSetup();
+  SDCardSetup();
   
   // TopLevelState = STATE_CORE_TEST_ONE;
   TopLevelState = STATE_SCROLLING_TEXT;
