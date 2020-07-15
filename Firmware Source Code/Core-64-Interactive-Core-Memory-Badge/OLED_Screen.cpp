@@ -15,12 +15,16 @@
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <Fonts/FreeMono9pt7b.h>  // https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
+#define CLK_DURING   2000000   // I2C frequency during OLED write, like Wire.setClock(). Default was 400 kHz if not specified.
+#define CLK_AFTER    2000000   // I2C frequency during OLED write, like Wire.setClock(). Default was 100 kHz if not specified.
 
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET, CLK_DURING, CLK_AFTER);
 
 uint8_t TopLevelStateLocal = 0;
 
@@ -42,22 +46,25 @@ void OLEDScreenSplash() {
   display.display();
   */
 // Long
+  display.setTextSize(1);
   display.clearDisplay();
-//  display.display();
-  display.setCursor(0, 0);     // Start at top-left corner
-  display.print(F("Core64 "));
+  display.setCursor(0, 9);     // Start at top-left corner
+  // display.println(F("   Core64  "));
+  display.println(F("Hackaday.io"));
+  display.print(F("h:"));
   display.print(HardwareVersionMajor);
   display.print(F("."));
-  display.println(HardwareVersionMinor);
-
-  display.println(F(" Hackaday "));
-  display.print(F("v"));
-  display.print(FIRMWAREVERSION);
+  display.print(HardwareVersionMinor);
+  display.print(F("."));
+  display.println(HardwareVersionPatch);
+  display.print(F("f:"));
+  display.println(FIRMWAREVERSION);
+  display.print(F("S:"));
+  display.print(TopLevelStateLocal,DEC);  
   display.print(F(" "));
-  display.println(TopLevelStateLocal,DEC);  
-  display.print(F("Bat:"));
-  display.print(GetBatteryVoltagemV(),DEC);
-  display.println(F("mV"));
+  // display.print(F("Bat:"));
+  display.println(GetBatteryVoltagemV(),DEC);
+  // display.println(F("mV"));
   OLED_Display_Stability_Work_Around();
 }
 
@@ -71,6 +78,7 @@ void OLEDScreenSetup() {
   display.setTextColor(WHITE); // Draw white text
   display.setCursor(0, 0);     // Start at top-left corner
   display.cp437(true);         // Use full 256 char 'Code Page 437' font
+  display.setFont(&FreeMono9pt7b);
 /*  
   display.clearDisplay();
   display.setTextSize(2);      // Normal 1:1 pixel scale
@@ -119,9 +127,9 @@ void OLED_Show_Matrix_Mono_Hex() {
   {
     UpdateTimer = NowTime;
     display.clearDisplay();
+    display.setTextSize(1);      // Normal 1:1 pixel scale
     display.setCursor(0, 0);     // Start at top-left corner
-    display.println(F("Hex Data: "));
-    display.println(F("          "));
+    display.println(F("Hex View: "));
     Full64BitValue = LED_Array_Binary_Read();
     display.print(F(" "));
     for(int8_t i = 60; i >= 0; i=i-4)

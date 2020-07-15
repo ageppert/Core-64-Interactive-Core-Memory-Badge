@@ -1,0 +1,1368 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"volatile",
+				"volatile"
+			],
+			[
+				"NowTimeus",
+				"NowTimeus"
+			],
+			[
+				"uin8_",
+				"uint8_t"
+			],
+			[
+				"uint",
+				"uint32_t"
+			],
+			[
+				"STATE",
+				"STATE_LED_TEST_ALL_BINARY"
+			],
+			[
+				"STATE_",
+				"STATE_LED_TEST_ONE_STRING"
+			],
+			[
+				"rea",
+				"Read"
+			],
+			[
+				"u",
+				"uint8_t"
+			],
+			[
+				"number",
+				"numberOfPulses"
+			],
+			[
+				"bit",
+				"bit"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Analog_Input_Test.cpp",
+			"settings":
+			{
+				"buffer_size": 1612,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Analog_Input_Test.h",
+			"settings":
+			{
+				"buffer_size": 501,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Buttons_HAL.h",
+			"settings":
+			{
+				"buffer_size": 762,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Buttons_HAL.cpp",
+			"settings":
+			{
+				"buffer_size": 2578,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/CharacterMap.h",
+			"settings":
+			{
+				"buffer_size": 4489,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Core_HAL.h",
+			"settings":
+			{
+				"buffer_size": 1917,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Core_HAL.cpp",
+			"settings":
+			{
+				"buffer_size": 16831,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Core_Driver.h",
+			"settings":
+			{
+				"buffer_size": 1039,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Core_Driver.cpp",
+			"settings":
+			{
+				"buffer_size": 23952,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Core-64-Interactive-Core-Memory-Badge.ino",
+			"settings":
+			{
+				"buffer_size": 12614,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Digital_IO_Test.cpp",
+			"settings":
+			{
+				"buffer_size": 2323,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/EEPROM_HAL.cpp",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Digital_IO_Test.h",
+			"settings":
+			{
+				"buffer_size": 480,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/EEPROM_HAL.h",
+			"settings":
+			{
+				"buffer_size": 608,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/FastLED_Config.h",
+			"settings":
+			{
+				"buffer_size": 839,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/HardwareIOMap.cpp",
+			"settings":
+			{
+				"buffer_size": 586,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/HardwareIOMap.h",
+			"settings":
+			{
+				"buffer_size": 8256,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Heart_Beat.c",
+			"settings":
+			{
+				"buffer_size": 931,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Heart_Beat.h",
+			"settings":
+			{
+				"buffer_size": 441,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/I2C_Manager.cpp",
+			"settings":
+			{
+				"buffer_size": 8694,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/I2C_Manager.h",
+			"settings":
+			{
+				"buffer_size": 803,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/LED_Array_HAL.cpp",
+			"settings":
+			{
+				"buffer_size": 15294,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/LED_Array_HAL.h",
+			"settings":
+			{
+				"buffer_size": 2965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/OLED_Screen.cpp",
+			"settings":
+			{
+				"buffer_size": 5049,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/OLED_Screen.h",
+			"settings":
+			{
+				"buffer_size": 591,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Serial_Debug.c",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Core-64-Interactive-Core-Memory-Badge/Serial_Debug.h",
+			"settings":
+			{
+				"buffer_size": 432,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+					""
+				],
+				[
+					"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+					"Build and Run"
+				],
+				[
+					"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+					"Build and Debug"
+				],
+				[
+					"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+					"Build and Run Startup"
+				],
+				[
+					"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+					"Build and Debug Startup"
+				],
+				[
+					"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+					"Build Startup"
+				]
+			],
+			[
+				"Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+				"Build and Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Serial_Debug.c",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/OLED_Screen.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/OLED_Screen.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/LED_Array_HAL.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/LED_Array_HAL.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/I2C_Manager.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/I2C_Manager.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Heart_Beat.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Heart_Beat.c",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/HardwareIOMap.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/HardwareIOMap.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/FastLED_Config.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/EEPROM_HAL.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/EEPROM_HAL.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Digital_IO_Test.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Digital_IO_Test.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_HAL.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge.ino",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_HAL.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_Driver.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_Driver.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Analog_Input_Test.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/CharacterMap.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Buttons_HAL.h",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Buttons_HAL.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Analog_Input_Test.cpp",
+		"/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Serial_Debug.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/Encoder_Output.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/Encoder_Output.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/Encoder_Input.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/Encoder_Output.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/src/DigitalWriteFast/DigitalWriteFast.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/encoder2-1/encoder2-1.ino",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/src/Encoder/utility/interrupt_pins.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/src/Encoder/Encoder.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/Encoder_Pulse_Stretcher/Firmware/Encoder_Pulse_Stretcher/src/Encoder/Encoder.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/libraries/Encoder/utility/interrupt_pins.h",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/docs/Coding Standards/header template.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Serial_Debug.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Serial_Debug.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/OLED_Screen.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/FastLED_Config.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/LED_Array_HAL.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/LED_Array_HAL.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Heart_Beat.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Heart_Beat.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/HardwareIOMap.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/EEPROM_HAL.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/EEPROM_HAL.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Digital_IO_Test.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Digital_IO_Test.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core_Driver.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core_Driver.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core_HAL.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core_HAL.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/CharacterMap.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Buttons.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Buttons.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/version.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Analog_Input_Test.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Analog_Input_Test.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core-64-Interactive-Core-Memory-Badge.ino",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/OLED_Screen.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core_API.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core-64-Interactive-Core-Memory-Badge/Core_API.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Serial_Debug.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Serial_Debug.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/README.md",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/OLED_Screen.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/OLED_Screen.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/LED_Array.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/LED_Array.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Heart_Beat.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Heart_Beat.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Digital_IO_Test.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Digital_IO_Test.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/HardwareIOMap.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_Driver.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_Driver.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_HAL.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_HAL.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_API.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_API.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_64_Breadboard_Test.ino",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/CharacterMap.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Buttons.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Buttons.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Analog_Input_Test.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Analog_Input_Test.cpp",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/libraries/FreeRTOS/src/.gitignore",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/docs/README.md",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_Driver.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_HAL.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_API.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_Functions.c",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_Functions.h",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Firmware Source Code/Core_64_Breadboard_Test/Core_Functions.cpp",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB5-6/h/IoPorts.h",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB7/src/Adc.c",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB5-6/src/Adc1.c",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB5-6/.gitignore",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/docs/.gitignore",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/Circles in text mode/Draw_Circle_Bresenham.asm",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/Andy Test from MusicIrq/Andy Test.asm",
+		"/Users/ageppert/Desktop/README.md",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB5-6-HOT/.gitignore",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Electronics/Core Memory - Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Development Environment/README.md",
+		"/Users/ageppert/Downloads/freeMemory() snippet",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB5-6-211/nbproject/project.xml",
+		"/Users/ageppert/OneDrive/FREAL DATA2 DRIVE/029_GITHUB_Projects/FRLB5-6/src/BlendTable.c",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/Test/test.asm",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/Circles in text mode/Draw Circle Bresenham",
+		"/Applications/KickAssembler/Examples/02.Simple Scripting/SimpleScripting.asm",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Arduino_Projects/NixieClockShieldNCS314HW01.03.01_Abg/NixieClockShieldNCS314HW01.03.01_Abg.ino",
+		"/Users/ageppert/Dropbox/Electronics/6502 Badge/BadgeOS/basic.asm",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/Andy Test from MusicIrq/Andy Test from MusicIrq.asm",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/001-tools-show-notes/tools-1-black-border.asm",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/Andy Test/AndyTest.asm",
+		"/Applications/KickAssembler/Examples/05.Scoping/Scroll.asm",
+		"/Users/ageppert/Dropbox/C-64 VICE Emulator/Kick Assembler Projects/009-jumping-around-show-notes/jumping-around-01-four-corners.asm",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Computers/Commodore 64 Training from 64bites.com/008-assembly-the-sane-way-show-notes/assembly-the-sane-way-01-border.asm",
+		"/Users/ageppert/OneDrive/00_MBP2011-Documents/Computers/Commodore 64 Training from 64bites.com/009-jumping-around-show-notes.zip",
+		"/Applications/KickAssembler/Examples/Andy Test/MusicIrq.asm",
+		"/Applications/KickAssembler/Examples/Andy Test/AndyTest.asm",
+		"/Applications/KickAssembler/Examples/Andy Test/Andy Test 1.asm",
+		"/Applications/KickAssembler/Examples/11. Scripting (FloydSteinberg)/FloydSteinberg.asm"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Analog_Input_Test.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Analog_Input_Test.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Buttons_HAL.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 762,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Buttons_HAL.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Core-64-Interactive-Core-Memory-Badge/CharacterMap.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4489,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Core_HAL.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Core_HAL.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Core_Driver.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Core_Driver.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23952,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17875,
+								17875
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Core-64-Interactive-Core-Memory-Badge.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Digital_IO_Test.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Core-64-Interactive-Core-Memory-Badge/EEPROM_HAL.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Digital_IO_Test.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "Core-64-Interactive-Core-Memory-Badge/EEPROM_HAL.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "Core-64-Interactive-Core-Memory-Badge/FastLED_Config.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Core-64-Interactive-Core-Memory-Badge/HardwareIOMap.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 586,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "Core-64-Interactive-Core-Memory-Badge/HardwareIOMap.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2147,
+								2147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Heart_Beat.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 931,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Heart_Beat.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "Core-64-Interactive-Core-Memory-Badge/I2C_Manager.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "Core-64-Interactive-Core-Memory-Badge/I2C_Manager.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "Core-64-Interactive-Core-Memory-Badge/LED_Array_HAL.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "Core-64-Interactive-Core-Memory-Badge/LED_Array_HAL.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "Core-64-Interactive-Core-Memory-Badge/OLED_Screen.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5049,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "Core-64-Interactive-Core-Memory-Badge/OLED_Screen.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Serial_Debug.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "Core-64-Interactive-Core-Memory-Badge/Serial_Debug.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 31.0
+	},
+	"output.find_results":
+	{
+		"height": 126.0
+	},
+	"pinned_build_system": "Packages/KickAssembler (C64)/Build Systems/KickAssembler(C64).sublime-build",
+	"project": "Core_64.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 198.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

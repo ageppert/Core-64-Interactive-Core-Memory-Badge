@@ -9,6 +9,7 @@
 
 void HeartBeatSetup() {
   pinMode(Pin_Built_In_LED, OUTPUT);
+  digitalWriteFast(Pin_Built_In_LED, 1);
 }
 
 // Purpose: Blink an LED so the user knows the system is alive.

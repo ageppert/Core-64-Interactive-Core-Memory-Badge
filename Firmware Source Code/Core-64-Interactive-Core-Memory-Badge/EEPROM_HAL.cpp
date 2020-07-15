@@ -11,6 +11,7 @@
 
 void EEPROM_Setup() {
   // No setup is required with the Teensy LC and using the Arduino EEPROM library as the driver.
+  // Uses [emulated] EEPROM internal to Teensy LC, which is actually program memory set-aside to emulate EEPROM
 }
 
 

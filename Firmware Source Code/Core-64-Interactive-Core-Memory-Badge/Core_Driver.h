@@ -16,10 +16,12 @@ SETUP:
 #include <stdint.h>
 #include <stdbool.h>
 
-//#ifdef __cplusplus
-//extern "C" {
-//#endif
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+// Functions coverted to support V0.2 and V0.3 hardware are prefixed with Core_Driver_
+void Core_Driver_Setup();
 void ReturnMatrixQ9NtoLowForLEDArray();
 
 void MatrixEnableTransistorInactive();
@@ -27,21 +29,30 @@ void MatrixEnableTransistorActive();
 void MatrixDriveTransistorsInactive();
 extern void SetRowAndCol (uint8_t row, uint8_t col);
 extern void ClearRowAndCol (uint8_t row, uint8_t col);
+void CoreSenseReset();
 bool SenseWirePulse();
 void tempDebugPin17Twiddle ();
 void tempDebugPin25Twiddle ();
 void tempDebugPin25OutputMode ();
 void tempDebugPin25InputMode ();
 
-void ClearRowZeroAndColZero ();
-// void SetRowZeroAndColZero ();
+void ClearRowZeroAndColZero (); // temp test function
+void SetRowZeroAndColZero ();   // temp test function
 
 extern void TracingPulses(uint8_t numberOfPulses);
 void DebugWithReedSwitchOutput();
 void DebugWithReedSwitchInput();
 
-//#ifdef __cplusplus
-//} // extern "C"
-//#endif
+void DebugIOESpare1_On();
+void DebugIOESpare1_Off();
+void DebugIOESpare2_On();
+void DebugIOESpare2_Off();
+
+void DebugPin10_On();
+void DebugPin10_Off();
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // CORE_DRIVER_H

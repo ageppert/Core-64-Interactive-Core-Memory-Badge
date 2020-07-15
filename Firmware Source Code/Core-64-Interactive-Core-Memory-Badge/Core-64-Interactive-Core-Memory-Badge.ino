@@ -4,14 +4,22 @@
   Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
   ... more in HardwareIOMap.h
   
-  DEPENDENCIES:
-  Arduino > Tools > Manage Libraries > Install the following
-    FastLED                                    3.3.3   by Daniel Garcia
-    Adafruit_SSD1306                           2.2.1   by Adafruit
-    Adafruit GFX Library                       1.8.3   by Adafruit
-    Adafruit_BusIO                             1.3.0   by Adafruit
-    Adafruit_MCP23017 Arduino LIbrary          1.0.6   by Adafruit
+  LIBRARY DEPENDENCIES:
+  Arduino > Tools > Manage Libraries > Install
+    Adafruit_SSD1306                            2.2.1   by Adafruit
+    Adafruit GFX Library                        1.8.3   by Adafruit
+    Adafruit_BusIO                              1.3.1   by Adafruit
+    Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
+    FastLED                                     3.3.3   by Daniel Garcia
+    Wire.h
 
+
+    DigitalIO                                   1.0.0   by Bill Greiman
+    OR
+    maybe <DigitalFastWrite.h> code by John Rains http://code.google.com/p/digitalwritefast (in DIY drones directory)
+    OR
+    NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
+    The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
  */
 
 #include <stdint.h>
@@ -23,9 +31,8 @@
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
 #include "OLED_Screen.h"
-#include "Digital_IO_Test.h"
 #include "Analog_Input_Test.h"
-#include "Buttons.h"
+#include "Buttons_HAL.h"
 #include "Core_HAL.h"
 #include "EEPROM_HAL.h"
 #include "I2C_Manager.h"
@@ -47,7 +54,8 @@ enum TopLevelState
   STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
   STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
   STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
-  STATE_LAST,                       //  11 last one, return to 0.
+  STATE_CORE_TEST_MANY,             //  11 Testing multiple cores and displaying core state
+  STATE_LAST,                       //  12 last one, return to 0.
 } ;
 //    uint8_t value = 0;
 //    uint8_t a = 0;
@@ -58,21 +66,20 @@ enum TopLevelState
                           *********************
   */
 void setup() {
+  HeartBeatSetup();
+  LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.
+    LED_Array_Test_Pixel_Matrix_Color();
     delay(2000); // Wait for the serial port to connect if it's there. Otherwise, move on.
     Serial.println("\nCore 64 - Interactice Core Memory Badge");
-    Serial.println("Andy Geppert at www.MachineIdeas.com");
+    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
-  HeartBeatSetup();
-  DigitalIOSetup();
-  LED_Array_Init();
   OLEDScreenSetup();
-  ButtonsSetup();
-  CoreSetup();
+  I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
   I2CManagerBusScan();
   DetectHardwareVersion(); 
@@ -84,10 +91,12 @@ void setup() {
     Serial.println(HardwareVersionPatch);
     Serial.print("Core 64 Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
-  // Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
+  // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
   AnalogSetup();
+  Buttons_Setup();
+  CoreSetup();
   
-  // TopLevelState = STATE_MONOCHROME_DRAW;
+  // TopLevelState = STATE_CORE_TEST_ONE;
   TopLevelState = STATE_SCROLLING_TEXT;
 }
 
@@ -101,14 +110,14 @@ void loop() {
                           *** Housekeepting ***
                           *********************
   */
-
-  HeartBeat();
-  AnalogUpdate();      
-  // DigitalIOUpdate();
+  // IOESpare2_On();
+  HeartBeat(); 
+  AnalogUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
   #endif
+  //I2CIOEScan(); // temporary debug
 
   /*                      ************************
                           *** User Interaction ***
@@ -120,13 +129,13 @@ void loop() {
   // Must be released and pressed again for subsequent action.
   Button1HoldTime = Button1State(0);
   if ( (ButtonReleased == true) && (Button1HoldTime >= 500) ){
-    Button1State(1); // Pause between presses, clear the duration
+    Button1State(1); // Force a "release" after press by clearing the button hold down timer
     ButtonReleased = false;
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
     TopLevelStateChanged = true; // User application has one time to use this before it is reset.
-}
+  }
   else {
     if (Button1HoldTime == 0) {
       ButtonReleased = true;
@@ -134,9 +143,12 @@ void loop() {
       }
   }
 
+  // IOESpare2_Off();
+
   switch(TopLevelState)
   {
   case STATE_SCROLLING_TEXT:
+    // IOESpare1_On();
     LED_Array_Monochrome_Set_Color(140,255,255);
     ScrollTextToCoreMemory();   // This writes directly to the RAM core memory array and bypasses reading it.
     // delay(25);
@@ -151,6 +163,7 @@ void loop() {
     // delay(25);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
+    // IOESpare1_Off();
     break;
 
   case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
@@ -188,7 +201,7 @@ void loop() {
     // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
     if (TopLevelStateChanged)
     {
-      LED_Array_Monochrome_Set_Color(35,255,255);
+      LED_Array_Monochrome_Set_Color(0,255,255);      // Hue 0 = RED
       LED_Array_Binary_Write_Default();
       LED_Array_Binary_To_Matrix_Mono();
       OLEDScreenClear();
@@ -202,6 +215,8 @@ void loop() {
     LED_Array_Test_Count_Binary();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
+    // Skip out of this test state immediately.
+    TopLevelState = STATE_LAST;
     break;
 
   case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
@@ -238,40 +253,45 @@ void loop() {
 */
     
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
-    // LED_Array_Test_Rainbow_Demo();
-    // Skip out of this test state immediately.
-    TopLevelState = STATE_LAST;
+    LED_Array_Test_Rainbow_Demo();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
-    coreToTest=8;
+    coreToTest=0;
     LED_Array_Monochrome_Set_Color(50,255,255);
 
     // DebugWithReedSwitchOutput();
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
+        IOESpare1_On();
         Core_Mem_Bit_Write(bit,0);
         LED_Array_String_Write(bit,0);
         LED_Array_String_Display();
-        delay(100);
+        IOESpare1_Off();
+        delay(1);
+
+        IOESpare1_On();
         Core_Mem_Bit_Write(bit,1);
         LED_Array_String_Write(bit,1);
         LED_Array_String_Display();
-        delay(100);
+        IOESpare1_Off();
+        // delay(50);
       }
     // DebugWithReedSwitchInput();
-
-    // Skip out of this test state immediately.
+    delay(50);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    TopLevelState = STATE_LAST;
     break;
 
   case STATE_CORE_TEST_ONE:
     coreToTest=0;
+
+    IOESpare1_On();
+    // coreToTest=3;
     //  DebugWithReedSwitchOutput();
+    // IOESpare1_On();
     LED_Array_Monochrome_Set_Color(100,255,255);
     LED_Array_Memory_Clear();
     //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
@@ -285,11 +305,42 @@ void loop() {
     // delay(10);
     LED_Array_String_Display();
     //  DebugWithReedSwitchInput();
+    // IOESpare1_Off();
 
-    // Skip out of this test state immediately.
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    TopLevelState = STATE_LAST;
+    IOESpare1_Off();
+    OLEDScreenUpdate();
+    delay(10);
+    break;
+
+  case STATE_CORE_TEST_MANY:
+    coreToTest=0;
+    for (uint8_t bit = coreToTest; bit<(64); bit++)
+      {
+      IOESpare1_On();
+
+      //  DebugWithReedSwitchOutput();
+      // IOESpare1_On();
+      LED_Array_Monochrome_Set_Color(100,255,255);
+      LED_Array_Memory_Clear();
+      //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
+      //  TracingPulses(1);
+      // Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
+      Core_Mem_Bit_Write(bit,1);                     // default to bit set
+      //  TracingPulses(2);
+      if (Core_Mem_Bit_Read(bit)==true) {LED_Array_String_Write(bit, 1);}
+      else { LED_Array_String_Write(bit, 0); }
+      //  TracingPulses(1);
+      // delay(10);
+      LED_Array_String_Display();
+      //  DebugWithReedSwitchInput();
+      // IOESpare1_Off();
+
+      IOESpare1_Off();
+      }
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
     break;
 
   case STATE_LAST:
