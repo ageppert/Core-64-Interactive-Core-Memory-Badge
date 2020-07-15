@@ -26,6 +26,10 @@ http://arduino.cc/en/Reference/EEPROM
 void EEPROM_Setup();
 void EEPROM_Hardware_Version_Write(uint8_t address, uint8_t byte);
 uint8_t EEPROM_Hardware_Version_Read(uint8_t address);
+uint8_t EEPROMExtReadHardwareVersionMajor();
+uint8_t EEPROMExtReadHardwareVersionMinor();
+uint8_t EEPROMExtReadHardwareVersionPatch();
+uint32_t EEPROMExtReadSerialNumber();
 
 //#ifdef __cplusplus
 //} // extern "C"

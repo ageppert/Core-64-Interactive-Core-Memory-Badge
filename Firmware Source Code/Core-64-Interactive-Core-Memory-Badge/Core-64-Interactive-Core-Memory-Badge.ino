@@ -38,7 +38,7 @@
 #include "I2C_Manager.h"
 
 // #define DEBUG 1
-
+uint32_t SerialNumber = 0;
 uint8_t TopLevelState;   // Master State Machine
 bool TopLevelStateChanged = false;
 enum TopLevelState
@@ -72,24 +72,27 @@ void setup() {
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.
     LED_Array_Test_Pixel_Matrix_Color();
-    delay(2000); // Wait for the serial port to connect if it's there. Otherwise, move on.
-    Serial.println("\nCore 64 - Interactice Core Memory Badge");
-    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
-    Serial.println();
-    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
   OLEDScreenSetup();
   I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
+    delay(1500); // Wait for the serial port to connect if it's there. Otherwise, move on.
+    Serial.println("\nCore64 - Interactice Core Memory Badge");
+    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
+    Serial.println();
+    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   I2CManagerBusScan();
-  DetectHardwareVersion(); 
-    Serial.print("\nCore 64 Hardware Version: ");
+  DetectHardwareVersion();
+  SerialNumber = EEPROMExtReadSerialNumber();
+    Serial.print("Hardware Version: ");
     Serial.print(HardwareVersionMajor);
     Serial.print(".");
     Serial.print(HardwareVersionMinor);
     Serial.print(".");
     Serial.println(HardwareVersionPatch);
-    Serial.print("Core 64 Firmware Version: ");
+    Serial.print("Serial Number: ");
+    Serial.println(SerialNumber);
+    Serial.print("Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
   AnalogSetup();
