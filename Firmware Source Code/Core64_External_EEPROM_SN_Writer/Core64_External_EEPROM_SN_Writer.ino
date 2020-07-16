@@ -23,7 +23,7 @@
                                      Serial Number (6)      |  Born on Date (3) |  Born as Version (3) | Checksum (1)
 */
 const uint8_t string_len = 13;
-uint8_t StringToWrite[string_len] = {  0,  0,  0,  0,  0,  2,         20,  7, 14,             0,  3,  0,           0 };
+uint8_t StringToWrite[string_len] = {  0,  0,  0,  0,  0,  2,         20,  7,  4,             0,  3,  1,           0 };
 
 void EEPROMExtWriteByte(int deviceaddress, unsigned int eeaddress, byte data ) 
 {

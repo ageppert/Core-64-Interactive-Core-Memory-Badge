@@ -30,6 +30,7 @@ void DetectHardwareVersion() {
 	}
 	else
 	{
+		// If the external EEPROM is not present, assume hardware version
 		HardwareVersionMajor  = 0;
 		HardwareVersionMinor  = 2;
 		HardwareVersionPatch  = 0;		

@@ -46,21 +46,22 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.1.0  | 2019-08-09 | Single board prototype development
 	| v0.1.5  | 2020-02-22 | Single board, reworked board fixes, prototype development
 	| v0.2.0  | 2020-03-16 | Single board, design updated to match v0.1.5, theoretically (not produced)
-	| v0.3.x  | 2020-05-30 | Dual board, hardware version detection for 0.2.x (includes v0.1.x) and v0.3.x
+	| v0.3.0  | 2020-05-30 | Dual board, hardware version detection for 0.2.x (includes v0.1.x) and v0.3.x
+	| v0.3.1  | 2020-05-30 | Two voltage regulators, 5V0 and 3V3, powered from common switch point
 	------------------------------------------------------------------------------------------------------------
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include who string.
-	#define FIRMWAREVERSION "0715.1550" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "0715.1933" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
-	****************************************** HARDWARE VERSION TABLE ******************************************
+	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
 	------------------------------------------------------------------------------------------------------------
-	| v0.1.0  | 2019-08-09 | Single board, GREEN, as designed, did not work with out modification
-	| v0.1.5  | 2020-02-22 | Single board, GREEN, after rework, functional and tested
-	| v0.2.0  | 2020-03-16 | Single board, N/A, design only revision based on 0.1.5 - not produced or tested
-	| v0.3.x  | 2020-05-18 | Dual boards, RED, assembly in process
+	| v0.1.0  | 2019-      | 
+	| v0.1.5  | 2020-      | 
+	| v0.2.0  | 2020-      | 
+	| v0.3.x  | 2020-      | 
 	------------------------------------------------------------------------------------------------------------
 */
 	extern uint8_t HardwareVersionMajor  ;
