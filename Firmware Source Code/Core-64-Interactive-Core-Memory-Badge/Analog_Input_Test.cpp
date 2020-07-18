@@ -31,7 +31,7 @@ void ReadAnalogVoltage() {
   }
   else if (HardwareVersionMinor == 3)
   {
-    BatteryScalarADCtomV = 4.3 ; // uncalibrated
+    BatteryScalarADCtomV = 6.366 ; // Seems good enough
     BatteryHalfADC = analogRead(Pin_v030_Battery_Voltage);
   }
   BatterymV = (uint16_t)(BatteryHalfADC * BatteryScalarADCtomV);
@@ -42,7 +42,7 @@ void AnalogSetup() {
 }
 
 void AnalogUpdate() {
-  static unsigned long ReadPeriodms = 5000;
+  static unsigned long ReadPeriodms = 1000;
   static unsigned long NowTime = 0;
   static unsigned long AnalogReadTimer = 0;
   
