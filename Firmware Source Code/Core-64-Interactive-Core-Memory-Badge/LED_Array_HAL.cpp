@@ -73,12 +73,17 @@ uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Sat
 uint8_t LEDArrayBrightness = BRIGHTNESS;
 
 void LED_Array_Auto_Brightness() {
-  if(AmbientLightAvaible()==0) {LEDArrayBrightness = BRIGHTNESS;}
-  else {LEDArrayBrightness = GetAmbientLightLevel8BIT();}
-  if(LEDArrayBrightness < BRIGHTNESS_MIN) {LEDArrayBrightness = BRIGHTNESS_MIN;}
-  if(LEDArrayBrightness > BRIGHTNESS_MAX) {LEDArrayBrightness = BRIGHTNESS_MAX;}
-  FastLED.setBrightness( LEDArrayBrightness );
-  Serial.println(LEDArrayBrightness);
+  if(HardwareVersionMinor==2)
+    {return;}
+  else
+    {
+      if(AmbientLightAvaible()==0) {LEDArrayBrightness = BRIGHTNESS;}
+      else {LEDArrayBrightness = GetAmbientLightLevel8BIT();}
+      if(LEDArrayBrightness < BRIGHTNESS_MIN) {LEDArrayBrightness = BRIGHTNESS_MIN;}
+      if(LEDArrayBrightness > BRIGHTNESS_MAX) {LEDArrayBrightness = BRIGHTNESS_MAX;}
+      FastLED.setBrightness( LEDArrayBrightness );
+      Serial.println(LEDArrayBrightness);
+    }
 }
 
 void LED_Array_Memory_Clear() {

@@ -87,18 +87,22 @@ void AmbientLightUpdate() {
   static unsigned long Periodms = 1000;
   static unsigned long NowTimems = 0;
   static unsigned long Timerms = 0;
-  
-  NowTimems = millis();
-  if ((NowTimems - Timerms) >= Periodms)
-  {
-    Timerms = NowTimems;
-    ReadAmbientLightLevel();
-    // /*
-    Serial.print("Light: ");
-    Serial.print(luxVal);
-    Serial.print(" Lux || ");
-    Serial.print(GetAmbientLightLevel8BIT());
-    Serial.println(" 8BIT LEVEL");
-    // */
-  }
+  if(HardwareVersionMinor==2)
+    {return;}
+  else
+    {
+      NowTimems = millis();
+      if ((NowTimems - Timerms) >= Periodms)
+      {
+        Timerms = NowTimems;
+        ReadAmbientLightLevel();
+        // /*
+        Serial.print("Light: ");
+        Serial.print(luxVal);
+        Serial.print(" Lux || ");
+        Serial.print(GetAmbientLightLevel8BIT());
+        Serial.println(" 8BIT LEVEL");
+        // */
+      }
+    }
 }
