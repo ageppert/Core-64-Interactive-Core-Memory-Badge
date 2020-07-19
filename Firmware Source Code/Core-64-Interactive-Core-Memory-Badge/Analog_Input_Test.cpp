@@ -6,7 +6,7 @@
 #include <WProgram.h>
 #endif
 
-#include "HardwareIOMap.H"
+#include "Analog_Input_Test.h"
 #include "HardwareIOMap.h"
 
 static uint16_t BatterymV = 0 ;

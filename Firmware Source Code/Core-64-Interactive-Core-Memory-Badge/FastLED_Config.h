@@ -20,7 +20,9 @@ Pimoroni Unicorn Hat: https://shop.pimoroni.com/products/unicorn-hat
 
 #define COLOR_ORDER GRB
 #define CHIPSET     WS2812B			// Used in Pimoroni Unicorn Hat. Limited to a data rate of about 800Kbps, hard coded in FastLED library. 
-#define BRIGHTNESS  50
+#define BRIGHTNESS  50				// Initial brightness level
+#define BRIGHTNESS_MIN	5			// Lowest useable brightness
+#define BRIGHTNESS_MAX	255			// Highest useable brightness
 
 const uint8_t kMatrixWidth = 8;
 const uint8_t kMatrixHeight = 8;

@@ -50,6 +50,7 @@ void LED_Array_Binary_Write_Default(); // Set the Binary memory to it's default 
 void LED_Array_Binary_To_Matrix_Mono(); // convert the contents of the 64 Bit Binary screen memory to 8x8 Matrix Monochrome memory
 void LED_Array_Matrix_Mono_to_Binary(); // convert the contesnt of 8x8 Matrix Monochrome memory to the 64 Bit Binary Screen Memory
 
+void LED_Array_Auto_Brightness();	// If ambient light sensor is available, use to adjust LED Array brightness
 // TO DO: Clean up the naming convention of these sub-functions
 void WriteColorFontSymbolToLedScreenMemoryMatrixColor(uint8_t SymbolNumber);
 

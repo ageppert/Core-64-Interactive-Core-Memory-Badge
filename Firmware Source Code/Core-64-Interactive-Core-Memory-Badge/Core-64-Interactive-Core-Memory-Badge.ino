@@ -20,6 +20,10 @@
     OR
     NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
     The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
+  OPTIONAL
+    SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
+
+
  */
 
 #include <stdint.h>
@@ -37,6 +41,7 @@
 #include "EEPROM_HAL.h"
 #include "I2C_Manager.h"
 #include "SD_Card_Manager.h"
+#include "Ambient_Light_Sensor.h"
 
 // #define DEBUG 1
 uint32_t SerialNumber = 0;
@@ -106,6 +111,7 @@ void setup() {
   Buttons_Setup();
   CoreSetup();
   SDCardSetup();
+  AmbientLightSetup();
   
   // TopLevelState = STATE_CORE_TEST_ONE;
   TopLevelState = STATE_SCROLLING_TEXT;
@@ -124,6 +130,7 @@ void loop() {
   // IOESpare2_On();
   HeartBeat(); 
   AnalogUpdate();
+  AmbientLightUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
