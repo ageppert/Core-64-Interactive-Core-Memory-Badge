@@ -82,7 +82,7 @@ void LED_Array_Auto_Brightness() {
       if(LEDArrayBrightness < BRIGHTNESS_MIN) {LEDArrayBrightness = BRIGHTNESS_MIN;}
       if(LEDArrayBrightness > BRIGHTNESS_MAX) {LEDArrayBrightness = BRIGHTNESS_MAX;}
       FastLED.setBrightness( LEDArrayBrightness );
-      Serial.println(LEDArrayBrightness);
+      // Serial.println(LEDArrayBrightness);
     }
 }
 
