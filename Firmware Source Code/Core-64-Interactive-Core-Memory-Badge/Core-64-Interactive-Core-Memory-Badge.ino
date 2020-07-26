@@ -56,15 +56,16 @@ enum TopLevelState
   STATE_LED_TEST_ONE_STRING,        //  4 Testing LED Driver
   STATE_LED_TEST_ONE_MATRIX_MONO,   //  5 Testing LED Driver with matrix array and monochrome color
   STATE_LED_TEST_ONE_MATRIX_COLOR,  //  6 Testing LED Driver with matrix array and multi-color symbols
-//  STATE_TEST_EEPROM,                //  7
+  STATE_TEST_EEPROM,                //  7
   STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
   STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
   STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
   STATE_CORE_TEST_MANY,             //  11 Testing multiple cores and displaying core state
-  STATE_LAST,                       //  12 last one, return to 0.
+  STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
+  STATE_LAST,                       //  13 last one, return to 0.
 } ;
-//    uint8_t value = 0;
-//    uint8_t a = 0;
+    uint8_t value = 0;
+    uint8_t a = 0;
 
 
   /*                      *********************
@@ -113,7 +114,7 @@ void setup() {
   SDCardSetup();
   AmbientLightSetup();
   
-  // TopLevelState = STATE_CORE_TEST_ONE;
+  // TopLevelState = STATE_HALL_TEST;
   TopLevelState = STATE_SCROLLING_TEXT;
 }
 
@@ -143,11 +144,11 @@ void loop() {
   */
 
   // MODE SWITCHING
-  // If button is pressed, go to next logo symbol and send core array pulse test.
+  // If button is pressed, go to next mode.
   // Must be released and pressed again for subsequent action.
-  Button1HoldTime = Button1State(0);
+  Button1HoldTime = ButtonState(1,0);
   if ( (ButtonReleased == true) && (Button1HoldTime >= 500) ){
-    Button1State(1); // Force a "release" after press by clearing the button hold down timer
+    ButtonState(1,1); // Force a "release" after press by clearing the button hold down timer
     ButtonReleased = false;
     ColorFontSymbolToDisplay++;
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
@@ -215,7 +216,7 @@ void loop() {
       }
     }
     // Quick touch of the hall sensor clears the screen.
-    if (Button1State(0)) { LED_Array_Memory_Clear(); }
+    if (ButtonState(1,0)) { LED_Array_Memory_Clear(); }
     // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
     if (TopLevelStateChanged)
     {
@@ -255,7 +256,6 @@ void loop() {
     OLEDScreenUpdate();
     break;
 
-/*
   case STATE_TEST_EEPROM: // 
     value = EEPROM_Hardware_Version_Read(a);
     Serial.print(a);
@@ -268,7 +268,6 @@ void loop() {
     }
     delay(10);
     break;
-*/
     
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
     LED_Array_Test_Rainbow_Demo();
@@ -361,6 +360,21 @@ void loop() {
     OLEDScreenUpdate();
     break;
 
+  case STATE_HALL_TEST:
+    LED_Array_Monochrome_Set_Color(125,255,255);
+    LED_Array_Memory_Clear();
+
+    if(ButtonState(1,0)) { LED_Array_String_Write(57,1); }
+    if(ButtonState(2,0)) { LED_Array_String_Write(59,1); }
+    if(ButtonState(3,0)) { LED_Array_String_Write(61,1); }
+    if(ButtonState(4,0)) { LED_Array_String_Write(63,1); }
+
+    LED_Array_String_Display();
+    OLEDSetTopLevelState(TopLevelState);
+    OLEDScreenUpdate();
+  
+    break;
+
   case STATE_LAST:
     LED_Array_Memory_Clear();
     LED_Array_Matrix_Mono_Display();
@@ -372,6 +386,7 @@ void loop() {
 
   default:
     Serial.println("Invalid TopLevelState");
+    break;
   }
 
 }

@@ -25,7 +25,7 @@ Usage:			  Buttons_Setup() to configure pin mode and low/high to active/inactive
 //#endif
 
 void Buttons_Setup();
-extern uint32_t Button1State(uint32_t clear_duration);  // Send a 1 or more to clear timer, 0 to read timer)
+extern uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration);  // Send a 1 or more to clear timer, 0 to read timer)
 
 //#ifdef __cplusplus
 //} // extern "C"
