@@ -4,6 +4,9 @@
   Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
   ... more in HardwareIOMap.h
   
+  Arduino IDE 1.8.9               https://www.arduino.cc/en/Main/Software
+  TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
+
   LIBRARY DEPENDENCIES:
   Arduino > Tools > Manage Libraries > Install
     Adafruit_SSD1306                            2.2.1   by Adafruit
@@ -22,6 +25,7 @@
     The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
   OPTIONAL
     SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
+    Adafruit ILI9341 Library                    1.5.6   by Adafruit
 
 
  */
