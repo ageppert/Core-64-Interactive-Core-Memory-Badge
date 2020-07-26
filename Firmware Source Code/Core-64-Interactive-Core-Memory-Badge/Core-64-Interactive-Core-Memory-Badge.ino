@@ -114,8 +114,8 @@ void setup() {
   SDCardSetup();
   AmbientLightSetup();
   
-  // TopLevelState = STATE_HALL_TEST;
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_HALL_TEST;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -364,10 +364,12 @@ void loop() {
     LED_Array_Monochrome_Set_Color(125,255,255);
     LED_Array_Memory_Clear();
 
+    IOESpare1_On();
     if(ButtonState(1,0)) { LED_Array_String_Write(57,1); }
     if(ButtonState(2,0)) { LED_Array_String_Write(59,1); }
     if(ButtonState(3,0)) { LED_Array_String_Write(61,1); }
     if(ButtonState(4,0)) { LED_Array_String_Write(63,1); }
+    IOESpare1_Off();
 
     LED_Array_String_Display();
     OLEDSetTopLevelState(TopLevelState);

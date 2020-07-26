@@ -69,7 +69,7 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
     if(AnalogLevel <= 512) {state_b2 = 0;}
     else {state_b2 = 1;}
     #else
-    // TO DO: Why do I have to read these twice in a row to get a good read?
+    // TO DO: Why do I have to read  twice in a row to get a good read for the first one?
     // TO DO: Read all inputs at once with .readGPIOAB()
     state_test_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
     state_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
