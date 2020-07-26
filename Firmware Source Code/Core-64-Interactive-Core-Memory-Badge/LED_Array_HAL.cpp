@@ -9,6 +9,7 @@
 #include "HardwareIOMap.h"
 #include "Core_HAL.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
 #include "CharacterMap.h"
+#include "Ambient_Light_Sensor.h"
 
 #define FASTLED_ALLOW_INTERRUPTS 0    // include before #include FastLED.h to disable inetrrupts during writes.
 #include <FastLED.h>
@@ -69,6 +70,21 @@ const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position 
 
 // Default monochrome color (OLED aqua)
 uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
+uint8_t LEDArrayBrightness = BRIGHTNESS;
+
+void LED_Array_Auto_Brightness() {
+  if(HardwareVersionMinor==2)
+    {return;}
+  else
+    {
+      if(AmbientLightAvaible()==0) {LEDArrayBrightness = BRIGHTNESS;}
+      else {LEDArrayBrightness = GetAmbientLightLevel8BIT();}
+      if(LEDArrayBrightness < BRIGHTNESS_MIN) {LEDArrayBrightness = BRIGHTNESS_MIN;}
+      if(LEDArrayBrightness > BRIGHTNESS_MAX) {LEDArrayBrightness = BRIGHTNESS_MAX;}
+      FastLED.setBrightness( LEDArrayBrightness );
+      // Serial.println(LEDArrayBrightness);
+    }
+}
 
 void LED_Array_Memory_Clear() {
   LedArrayMemoryBinary = 0;
@@ -244,6 +260,7 @@ void LED_Array_Matrix_Mono_Display() {
       }
     }
   }
+  LED_Array_Auto_Brightness();
   FastLED.show();
 }
 
@@ -262,6 +279,7 @@ void LED_Array_Matrix_Color_Display() {
       }
     }
   }
+  LED_Array_Auto_Brightness();
   FastLED.show();
 }
 
@@ -279,6 +297,7 @@ void LED_Array_Binary_Display() {
       leds[LEDPixelPosition] = 0;
     }
   }
+  LED_Array_Auto_Brightness();
   FastLED.show();
 }
 
@@ -307,6 +326,7 @@ void LED_Array_String_Display() {
       leds[LEDPixelPosition] = 0;
     }
   }
+  LED_Array_Auto_Brightness();
   FastLED.show();
 }
 

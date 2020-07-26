@@ -4,6 +4,9 @@
   Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
   ... more in HardwareIOMap.h
   
+  Arduino IDE 1.8.9               https://www.arduino.cc/en/Main/Software
+  TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
+
   LIBRARY DEPENDENCIES:
   Arduino > Tools > Manage Libraries > Install
     Adafruit_SSD1306                            2.2.1   by Adafruit
@@ -12,7 +15,7 @@
     Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
     FastLED                                     3.3.3   by Daniel Garcia
     Wire.h
-
+    SdFat - Adafruit Fork                       1.2.3   by Bill Greiman (fork of SdFat)
 
     DigitalIO                                   1.0.0   by Bill Greiman
     OR
@@ -20,6 +23,11 @@
     OR
     NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
     The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
+  OPTIONAL
+    SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
+    Adafruit ILI9341 Library                    1.5.6   by Adafruit
+
+
  */
 
 #include <stdint.h>
@@ -36,9 +44,11 @@
 #include "Core_HAL.h"
 #include "EEPROM_HAL.h"
 #include "I2C_Manager.h"
+#include "SD_Card_Manager.h"
+#include "Ambient_Light_Sensor.h"
 
 // #define DEBUG 1
-
+uint32_t SerialNumber = 0;
 uint8_t TopLevelState;   // Master State Machine
 bool TopLevelStateChanged = false;
 enum TopLevelState
@@ -72,29 +82,40 @@ void setup() {
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.
     LED_Array_Test_Pixel_Matrix_Color();
-    delay(2000); // Wait for the serial port to connect if it's there. Otherwise, move on.
-    Serial.println("\nCore 64 - Interactice Core Memory Badge");
-    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
-    Serial.println();
-    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   EEPROM_Setup();
   OLEDScreenSetup();
   I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
+    delay(1500); // Wait for the serial port to connect if it's there. Otherwise, move on.
+    Serial.println("\nCore64 - Interactice Core Memory Badge");
+    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
+    Serial.println();
+    Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   I2CManagerBusScan();
-  DetectHardwareVersion(); 
-    Serial.print("\nCore 64 Hardware Version: ");
+  DetectHardwareVersion();
+  SerialNumber = EEPROMExtReadSerialNumber();
+    Serial.print("Hardware Version: ");
     Serial.print(HardwareVersionMajor);
     Serial.print(".");
     Serial.print(HardwareVersionMinor);
     Serial.print(".");
     Serial.println(HardwareVersionPatch);
-    Serial.print("Core 64 Firmware Version: ");
+    Serial.print("Serial Number: ");
+    Serial.println(SerialNumber);
+    Serial.print("Born on: 20");
+    Serial.print(EEPROMExtReadBornOnYear());
+    Serial.print("-");
+    Serial.print(EEPROMExtReadBornOnMonth());
+    Serial.print("-");
+    Serial.println(EEPROMExtReadBornOnDay());    
+    Serial.print("Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
   AnalogSetup();
   Buttons_Setup();
   CoreSetup();
+  SDCardSetup();
+  AmbientLightSetup();
   
   // TopLevelState = STATE_CORE_TEST_ONE;
   TopLevelState = STATE_SCROLLING_TEXT;
@@ -113,6 +134,7 @@ void loop() {
   // IOESpare2_On();
   HeartBeat(); 
   AnalogUpdate();
+  AmbientLightUpdate();
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
   Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
