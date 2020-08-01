@@ -100,7 +100,7 @@ void printKnownChips(byte address)
     case 0x45: Serial.print(F("PCA9685, SHT3X")); break;
     case 0x46: Serial.print(F("PCA9685")); break;
     case 0x47: Serial.print(F("PCA9685")); break;
-    case 0x48: Serial.print(F("ADS1115,PN532,TMP102,PCF8591")); break;
+    case 0x48: Serial.print(F("VEML6030_Ambient_Light_Sensor")); break;
     case 0x49: Serial.print(F("ADS1115,TSL2561,PCF8591")); break;
     case 0x4A: Serial.print(F("ADS1115")); break;
     case 0x4B: Serial.print(F("ADS1115,TMP102")); break;

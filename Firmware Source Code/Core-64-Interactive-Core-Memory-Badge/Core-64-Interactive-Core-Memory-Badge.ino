@@ -44,8 +44,9 @@
 #include "Ambient_Light_Sensor.h"
 
 // #define DEBUG 1
-uint32_t SerialNumber = 0;
-uint8_t TopLevelState;   // Master State Machine
+
+uint32_t SerialNumber = 0;          // Default value is 0 and should be non-zero if the Serial Number is valid.
+uint8_t TopLevelState;              // Master State Machine
 bool TopLevelStateChanged = false;
 enum TopLevelState
 {
