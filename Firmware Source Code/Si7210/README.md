@@ -1,3 +1,6 @@
+# https://github.com/FARLY7/si7210-driver
+
+
 # Si7210 Hall-effect sensor driver API
 A portable driver written in C for Silicon Lab's Si7210 hall-effect sensor.
 
