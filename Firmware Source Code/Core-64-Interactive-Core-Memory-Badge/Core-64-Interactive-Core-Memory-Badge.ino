@@ -114,8 +114,8 @@ void setup() {
   SDCardSetup();
   AmbientLightSetup();
   
-  TopLevelState = STATE_HALL_TEST;
-  // TopLevelState = STATE_SCROLLING_TEXT;
+  // TopLevelState = STATE_HALL_TEST;
+  TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -186,7 +186,7 @@ void loop() {
     break;
 
   case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
-    LED_Array_Monochrome_Set_Color(150,255,255);
+    LED_Array_Monochrome_Set_Color(50,255,255);
     LED_Array_Memory_Clear();
     //DebugWithReedSwitchOutput();
     for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   

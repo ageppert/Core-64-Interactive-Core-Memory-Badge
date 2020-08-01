@@ -68,8 +68,8 @@ const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position 
   { 0, 1, 2, 3, 4, 5, 6, 7}  
   };
 
-// Default monochrome color (OLED aqua)
-uint8_t LEDArrayMonochromeColorHSV  [3] = {135,255,255};             // Hue, Saturation, Value. Allowable range 0-255.
+// Default monochrome color (135,255,255 = OLED aqua)
+uint8_t LEDArrayMonochromeColorHSV  [3] = {DEFAULTLEDArrayMonochromeColorH,DEFAULTLEDArrayMonochromeColorS,DEFAULTLEDArrayMonochromeColorV};             // Hue, Saturation, Value. Allowable range 0-255.
 uint8_t LEDArrayBrightness = BRIGHTNESS;
 
 void LED_Array_Auto_Brightness() {
