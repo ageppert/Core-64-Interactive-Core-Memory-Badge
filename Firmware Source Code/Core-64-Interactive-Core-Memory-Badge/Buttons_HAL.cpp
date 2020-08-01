@@ -9,6 +9,9 @@
 #include "Buttons_HAL.h"
 #include "HardwareIOMap.h"
 #include "I2C_Manager.h"
+#ifdef HALL_SENSOR_ENABLE
+  #include "src/Si7210/si7210.h"
+#endif
 
 // #define USE_ANALOG_INPUT_HALL_SWITCH_2     // Tested and works fine.
 
@@ -30,6 +33,9 @@ void Buttons_Setup() {
     IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_4, HIGH);  // turn on a 100K pullup internally
     #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
     // No setup required
+    #endif
+    #ifdef HALL_SENSOR_ENABLE
+      // TO DO: configure the four hall sensors via I2C
     #endif
   }
 }
