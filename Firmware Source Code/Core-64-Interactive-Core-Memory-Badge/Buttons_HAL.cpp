@@ -11,9 +11,46 @@
 #include "I2C_Manager.h"
 #ifdef HALL_SENSOR_ENABLE
   #include "src/Si7210/si7210.h"
-#endif
+  #include "src/Si7210/si7210_defs.h"
+#endif // HALL_SENSOR_ENABLE
 
 // #define USE_ANALOG_INPUT_HALL_SWITCH_2     // Tested and works fine.
+
+#ifdef HALL_SENSOR_ENABLE
+  si7210_status_t rslt = SI7210_OK;
+
+  si7210_status_t usr_i2c_read(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
+  {
+      si7210_status_t rslt = SI7210_OK;
+
+      /* User implemented I2C read function */
+
+      return rslt;
+  }
+
+  si7210_status_t usr_i2c_write(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
+  {
+      si7210_status_t rslt = SI7210_OK;
+
+      /* User implemented I2C write function */
+
+      return rslt;
+  }
+
+  void usr_delay_ms(uint32_t period_ms)
+  {
+      /* User implemented delay (ms) function */
+  }
+
+  si7210_dev_t HallSensor1 = {
+      .dev_id   = SI7210_ADDRESS_0;
+      .read     = usr_i2c_read;
+      .write    = usr_i2c_write;
+      .delay_ms = usr_delay_ms;
+      .callback = callback;
+  };
+#endif // HALL_SENSOR_ENABLE
+
 
 void Buttons_Setup() {
   if (HardwareVersionMinor == 2)
@@ -35,8 +72,8 @@ void Buttons_Setup() {
     // No setup required
     #endif
     #ifdef HALL_SENSOR_ENABLE
-      // TO DO: configure the four hall sensors via I2C
-    #endif
+
+    #endif // HALL_SENSOR_ENABLE
   }
 }
 
