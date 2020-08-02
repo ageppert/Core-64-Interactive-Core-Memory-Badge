@@ -39,15 +39,14 @@
 
   void usr_delay_ms(uint32_t period_ms)
   {
-      /* User implemented delay (ms) function */
+      delay(period_ms);
   }
 
   si7210_dev_t HallSensor1 = {
-      .dev_id   = SI7210_ADDRESS_0;
-      .read     = usr_i2c_read;
-      .write    = usr_i2c_write;
-      .delay_ms = usr_delay_ms;
-      .callback = callback;
+      SI7210_ADDRESS_0,
+      usr_i2c_read,
+      usr_i2c_write,
+      usr_delay_ms
   };
 #endif // HALL_SENSOR_ENABLE
 
@@ -72,7 +71,31 @@ void Buttons_Setup() {
     // No setup required
     #endif
     #ifdef HALL_SENSOR_ENABLE
+      if((rslt = si7210_init(&HallSensor1)) != SI7210_OK)
+          {//return rslt;
+          }
 
+      HallSensor1.settings.range        = SI7210_20mT;
+      HallSensor1.settings.compensation = SI7210_COMPENSATION_TEMP_NEO;
+      HallSensor1.settings.output_pin   = SI7210_OUTPUT_PIN_HIGH;
+       
+      if((rslt = si7210_set_sensor_settings(&HallSensor1)) != SI7210_OK)
+          {//return rslt;
+          }
+
+      if(rslt == SI7210_OK)
+      {
+          float field_strength;
+          float temperature;
+
+          /* Obtain field strength reading from device */
+          si7210_get_field_strength(&HallSensor1, &field_strength);
+
+          /* Obtain a temperature reading from the device */
+          si7210_get_temperature(&HallSensor1, &temperature);
+
+          printf("Field: %fmT\tTemperature: %f*C", field_strength, temperature);
+      }
     #endif // HALL_SENSOR_ENABLE
   }
 }
@@ -91,10 +114,12 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   static uint8_t  state_b3 = 0;
   static uint8_t  state_b4 = 0;
   static uint8_t  state_test_b1 = 0;
-  static uint8_t  state_test_b2 = 0;
-  static uint8_t  state_test_b3 = 0;
-  static uint8_t  state_test_b4 = 0;
-  static uint16_t AnalogLevel = 0;
+  // static uint8_t  state_test_b2 = 0;
+  // static uint8_t  state_test_b3 = 0;
+  // static uint8_t  state_test_b4 = 0;
+  #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
+    static uint16_t AnalogLevel = 0;
+  #endif
 
   if(clear_duration == 1) { duration_b1 = 0 ;}
 
@@ -167,6 +192,5 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
       Serial.println("Invalid Button");
       break;
   }
-
 
 }

@@ -37,7 +37,7 @@ extern "C" {
 
 // #define SDCARD_ENABLE                  // Save program memory (6K) with Teensy LC by commenting this out.
 // #define AMBIENT_LIGHT_SENSOR_ENABLE   // Save program memory (14K) with Teensy LC by commenting this out.
-// #define HALL_SENSOR_ENABLE
+#define HALL_SENSOR_ENABLE
 
 void DetectHardwareVersion ();		// Use once to detect and set the hardware version variables.
 
