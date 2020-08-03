@@ -45,10 +45,10 @@ extern "C" {
 #include <stdint.h>
 
 /* Possible I2C slave addresses */
-#define SI7210_ADDRESS_0    (0x30U << 1)
-#define SI7210_ADDRESS_1    (0x31U << 1)
-#define SI7210_ADDRESS_2    (0x32U << 1)
-#define SI7210_ADDRESS_3    (0x33U << 1)
+#define SI7210_ADDRESS_0    (0x30U ) // << 1)
+#define SI7210_ADDRESS_1    (0x31U ) // << 1)
+#define SI7210_ADDRESS_2    (0x32U ) // << 1)
+#define SI7210_ADDRESS_3    (0x33U ) // << 1)
 
 /* Vdd of SI7210. This is used in device's self-test calculations */
 #define SI7210_VDD          (3.3f)

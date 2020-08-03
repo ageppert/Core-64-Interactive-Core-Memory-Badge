@@ -17,13 +17,24 @@
 // #define USE_ANALOG_INPUT_HALL_SWITCH_2     // Tested and works fine.
 
 #ifdef HALL_SENSOR_ENABLE
-  si7210_status_t rslt = SI7210_OK;
+  si7210_status_t rslt = SI7210_E_DEV_NOT_FOUND;  // Unexpected return from the sensor library, making sure it returns something other than 99
 
   si7210_status_t usr_i2c_read(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
   {
       si7210_status_t rslt = SI7210_OK;
 
       /* User implemented I2C read function */
+      // Serial.print("usr_i2c_read dev_id:     ");
+      // Serial.println(dev_id,HEX);   // print the reading
+      Wire.beginTransmission(dev_id);
+      Wire.write(reg_addr);
+      Wire.endTransmission();
+      Wire.requestFrom(dev_id, len);      // Assuming len is 1 because si7210.c only sends 1's when I search for "dev->read"
+      delay(1);
+      *data = (uint8_t)Wire.read();
+      // DEBUG
+      // Serial.print("usr_i2c_read:     ");
+      // Serial.println(*data,DEC);   // print the reading
 
       return rslt;
   }
@@ -33,7 +44,14 @@
       si7210_status_t rslt = SI7210_OK;
 
       /* User implemented I2C write function */
-
+      Wire.beginTransmission(dev_id);
+      Wire.write(reg_addr);
+      Wire.write(*data);                // Assuming len is 1 because si7210.c only sends 1's when I search for "dev->write"
+      Wire.endTransmission();
+      // DEBUG
+      // Serial.print("usr_i2c_write:");
+      // Serial.println(*data,DEC);
+      
       return rslt;
   }
 
@@ -72,7 +90,10 @@ void Buttons_Setup() {
     #endif
     #ifdef HALL_SENSOR_ENABLE
       if((rslt = si7210_init(&HallSensor1)) != SI7210_OK)
-          {//return rslt;
+          {
+            Serial.print("Init Result Code Not OK: ");
+            Serial.println(rslt,DEC);
+            //return rslt;
           }
 
       HallSensor1.settings.range        = SI7210_20mT;
@@ -80,11 +101,16 @@ void Buttons_Setup() {
       HallSensor1.settings.output_pin   = SI7210_OUTPUT_PIN_HIGH;
        
       if((rslt = si7210_set_sensor_settings(&HallSensor1)) != SI7210_OK)
-          {//return rslt;
+          {
+            Serial.print("Set Sensor Settings Result Code Not OK: ");
+            Serial.println(rslt,DEC);
+            //return rslt;
           }
 
       if(rslt == SI7210_OK)
       {
+          Serial.print("Set Sensor Settings Result Code OK: ");
+          Serial.println(rslt,DEC);
           float field_strength;
           float temperature;
 
@@ -94,8 +120,20 @@ void Buttons_Setup() {
           /* Obtain a temperature reading from the device */
           si7210_get_temperature(&HallSensor1, &temperature);
 
-          printf("Field: %fmT\tTemperature: %f*C", field_strength, temperature);
+          Serial.print("Field / Temperature: ");
+          Serial.print(field_strength);
+          Serial.print(" / ");
+          Serial.println(temperature);
       }
+
+      rslt = si7210_check(&HallSensor1);
+      Serial.print("SENSOR CHECK Result Code: ");
+      Serial.println(rslt,DEC);
+
+      rslt = si7210_self_test(&HallSensor1);
+      Serial.print("Self test Result Code: ");
+      Serial.println(rslt,DEC);
+
     #endif // HALL_SENSOR_ENABLE
   }
 }
@@ -132,6 +170,19 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   }
   else if (HardwareVersionMinor == 3)
   {
+    #ifdef HALL_SENSOR_ENABLE
+          
+          float field_strength;
+          float temperature;
+          si7210_get_field_strength(&HallSensor1, &field_strength);
+          si7210_get_temperature(&HallSensor1, &temperature);
+          Serial.print("Field / Temperature: ");
+          Serial.print(field_strength);
+          Serial.print(" / ");
+          Serial.println(temperature);
+          
+    #endif // HALL_SENSOR_ENABLE
+
     #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
     AnalogLevel = analogRead(Pin_v030_Hall_Switch_2);
     if(AnalogLevel <= 512) {state_b2 = 0;}

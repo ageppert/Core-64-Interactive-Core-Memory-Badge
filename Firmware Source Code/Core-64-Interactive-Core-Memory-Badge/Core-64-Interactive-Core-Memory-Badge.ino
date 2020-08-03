@@ -109,14 +109,15 @@ void setup() {
     Serial.print("Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
+  delay(100);     // A little time to print all that serial data from above.
   AnalogSetup();
   Buttons_Setup();
   CoreSetup();
   SDCardSetup();
   AmbientLightSetup();
   
-  // TopLevelState = STATE_HALL_TEST;
-  TopLevelState = STATE_SCROLLING_TEXT;
+  TopLevelState = STATE_HALL_TEST;
+  // TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
