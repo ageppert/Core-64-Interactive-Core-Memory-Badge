@@ -363,7 +363,7 @@ void loop() {
     break;
 
   case STATE_HALL_TEST:
-    LED_Array_Monochrome_Set_Color(125,255,255);
+    LED_Array_Monochrome_Set_Color(25,255,255);
     LED_Array_Memory_Clear();
 
     IOESpare1_On();
@@ -371,6 +371,10 @@ void loop() {
     if(ButtonState(2,0)) { LED_Array_String_Write(59,1); }
     if(ButtonState(3,0)) { LED_Array_String_Write(61,1); }
     if(ButtonState(4,0)) { LED_Array_String_Write(63,1); }
+    if(ButtonState(5,0)) { LED_Array_String_Write(1,1); }
+    if(ButtonState(6,0)) { LED_Array_String_Write(3,1); }
+    if(ButtonState(7,0)) { LED_Array_String_Write(5,1); }
+    if(ButtonState(8,0)) { LED_Array_String_Write(7,1); }
     IOESpare1_Off();
 
     LED_Array_String_Display();

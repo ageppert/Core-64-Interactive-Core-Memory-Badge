@@ -17,6 +17,8 @@
 // #define USE_ANALOG_INPUT_HALL_SWITCH_2     // Tested and works fine.
 
 #ifdef HALL_SENSOR_ENABLE
+  #define HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL      2     // Level of mT which registers as a button press
+  #define HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL     -2     // Level of mT which registers as a button press
   si7210_status_t rslt = SI7210_E_DEV_NOT_FOUND;  // Unexpected return from the sensor library, making sure it returns something other than 99
 
   si7210_status_t usr_i2c_read(uint8_t dev_id, uint8_t reg_addr, uint8_t *data, uint16_t len)
@@ -27,10 +29,10 @@
       // Serial.print("usr_i2c_read dev_id:     ");
       // Serial.println(dev_id,HEX);   // print the reading
       Wire.beginTransmission(dev_id);
+      Wire.setClock(1000000);             // TO DO: The speed setting is not working.
       Wire.write(reg_addr);
       Wire.endTransmission();
       Wire.requestFrom(dev_id, len);      // Assuming len is 1 because si7210.c only sends 1's when I search for "dev->read"
-      delay(1);
       *data = (uint8_t)Wire.read();
       // DEBUG
       // Serial.print("usr_i2c_read:     ");
@@ -45,6 +47,7 @@
 
       /* User implemented I2C write function */
       Wire.beginTransmission(dev_id);
+      Wire.setClock(1000000);             // TO DO: The speed setting is not working.
       Wire.write(reg_addr);
       Wire.write(*data);                // Assuming len is 1 because si7210.c only sends 1's when I search for "dev->write"
       Wire.endTransmission();
@@ -62,6 +65,24 @@
 
   si7210_dev_t HallSensor1 = {
       SI7210_ADDRESS_0,
+      usr_i2c_read,
+      usr_i2c_write,
+      usr_delay_ms
+  };
+  si7210_dev_t HallSensor2 = {
+      SI7210_ADDRESS_1,
+      usr_i2c_read,
+      usr_i2c_write,
+      usr_delay_ms
+  };
+  si7210_dev_t HallSensor3 = {
+      SI7210_ADDRESS_2,
+      usr_i2c_read,
+      usr_i2c_write,
+      usr_delay_ms
+  };
+  si7210_dev_t HallSensor4 = {
+      SI7210_ADDRESS_3,
       usr_i2c_read,
       usr_i2c_write,
       usr_delay_ms
@@ -106,6 +127,31 @@ void Buttons_Setup() {
             Serial.println(rslt,DEC);
             //return rslt;
           }
+      else { Serial.println("Hall 1 Set Sensor Settings Result OK."); }
+
+      if((rslt = si7210_set_sensor_settings(&HallSensor2)) != SI7210_OK)
+          {
+            Serial.print("Set Sensor Settings Result Code Not OK: ");
+            Serial.println(rslt,DEC);
+            //return rslt;
+          }
+      else { Serial.println("Hall 2 Set Sensor Settings Result OK."); }
+
+      if((rslt = si7210_set_sensor_settings(&HallSensor3)) != SI7210_OK)
+          {
+            Serial.print("Set Sensor Settings Result Code Not OK: ");
+            Serial.println(rslt,DEC);
+            //return rslt;
+          }
+      else { Serial.println("Hall 3 Set Sensor Settings Result OK."); }
+
+      if((rslt = si7210_set_sensor_settings(&HallSensor4)) != SI7210_OK)
+          {
+            Serial.print("Set Sensor Settings Result Code Not OK: ");
+            Serial.println(rslt,DEC);
+            //return rslt;
+          }
+      else { Serial.println("Hall 4 Set Sensor Settings Result OK."); }
 
       if(rslt == SI7210_OK)
       {
@@ -127,11 +173,11 @@ void Buttons_Setup() {
       }
 
       rslt = si7210_check(&HallSensor1);
-      Serial.print("SENSOR CHECK Result Code: ");
+      Serial.print("H1 SENSOR CHECK Result Code: ");
       Serial.println(rslt,DEC);
 
       rslt = si7210_self_test(&HallSensor1);
-      Serial.print("Self test Result Code: ");
+      Serial.print("H1 SELF TEST Result Code: ");
       Serial.println(rslt,DEC);
 
     #endif // HALL_SENSOR_ENABLE
@@ -147,10 +193,18 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   static uint32_t duration_b2 = 0;  // Button 2 duration ON
   static uint32_t duration_b3 = 0;  // Button 3 duration ON
   static uint32_t duration_b4 = 0;  // Button 4 duration ON
+  static uint32_t duration_b5 = 0;  // Sensor 5 duration ON
+  static uint32_t duration_b6 = 0;  // Sensor 6 duration ON
+  static uint32_t duration_b7 = 0;  // Sensor 7 duration ON
+  static uint32_t duration_b8 = 0;  // Sensor 8 duration ON
   static uint8_t  state_b1 = 0;
   static uint8_t  state_b2 = 0;
   static uint8_t  state_b3 = 0;
   static uint8_t  state_b4 = 0;
+  static uint8_t  state_b5 = 0;
+  static uint8_t  state_b6 = 0;
+  static uint8_t  state_b7 = 0;
+  static uint8_t  state_b8 = 0;
   static uint8_t  state_test_b1 = 0;
   // static uint8_t  state_test_b2 = 0;
   // static uint8_t  state_test_b3 = 0;
@@ -170,38 +224,81 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   }
   else if (HardwareVersionMinor == 3)
   {
-    #ifdef HALL_SENSOR_ENABLE
-          
-          float field_strength;
-          float temperature;
+    #ifdef HALL_SENSOR_ENABLE    
+      float field_strength;
+      switch (button_number) {
+        case 5:
           si7210_get_field_strength(&HallSensor1, &field_strength);
-          si7210_get_temperature(&HallSensor1, &temperature);
-          Serial.print("Field / Temperature: ");
-          Serial.print(field_strength);
-          Serial.print(" / ");
-          Serial.println(temperature);
-          
-    #endif // HALL_SENSOR_ENABLE
+          if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
+             || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
+            { duration_b5 = duration_b5 + delta ; }
+          else { duration_b5 = 0; }
+          // DEBUG
+          // Serial.print("Hall 1 Field / On Duration: ");
+          // Serial.print(field_strength);
+          // Serial.print(" / ");
+          // Serial.println(duration_b5);
+          break;
+        case 6:
+          si7210_get_field_strength(&HallSensor2, &field_strength);
+          if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
+             || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
+            { duration_b6 = duration_b6 + delta ; }
+          else { duration_b6 = 0; }
+          break;
+        case 7:
+          si7210_get_field_strength(&HallSensor3, &field_strength);
+          if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
+             || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
+            { duration_b7 = duration_b7 + delta ; }
+          else { duration_b7 = 0; }
+          break;
+        case 8:
+          si7210_get_field_strength(&HallSensor4, &field_strength);
+          if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
+             || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
+            { duration_b8 = duration_b8 + delta ; }
+          else { duration_b8 = 0; }
+          break;
 
+        default:
+          //Serial.println("Invalid Button");
+          break;
+        // Serial.print(state_test);
+        // Serial.println(state);
+        }
+    #endif // HALL_SENSOR_ENABLE
+          
     #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
-    AnalogLevel = analogRead(Pin_v030_Hall_Switch_2);
-    if(AnalogLevel <= 512) {state_b2 = 0;}
-    else {state_b2 = 1;}
+      AnalogLevel = analogRead(Pin_v030_Hall_Switch_2);
+      if(AnalogLevel <= 512) {state_b2 = 0;}
+      else {state_b2 = 1;}
     #else
-    // TO DO: Why do I have to read  twice in a row to get a good read for the first one?
-    // TO DO: Read all inputs at once with .readGPIOAB()
-    state_test_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
-    state_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
-    // state_test_b2 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_2));
-    state_b2 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_2));
-    // state_test_b3 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_3));
-    state_b3 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_3));
-    // state_test_b4 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_4));
-    state_b4 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_4));
-    #endif
-    // Serial.print(state_test);
-    // Serial.println(state);
-   }
+      // TO DO: Why do I have to read  twice in a row to get a good read for the first one?
+      // TO DO: Read all inputs at once with .readGPIOAB()
+      state_test_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
+      switch (button_number) {
+        case 1:
+          state_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
+          break;
+        case 2:
+          state_b2 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_2));
+          break;
+        case 3:
+          state_b3 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_3));
+          break;
+        case 4:
+          state_b4 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_4));
+          break;
+
+        default:
+          //Serial.println("Invalid Button");
+          break;
+        // Serial.print(state_test);
+        // Serial.println(state);
+        }
+      #endif
+  }
 
   if(state_b1 != 1) { duration_b1 = duration_b1 + delta ; }
   else { duration_b1 = 0; }
@@ -239,8 +336,21 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
     case 4:
       return duration_b4; // in ms
       break;
+    case 5:
+      return duration_b5; // in ms
+      break;
+    case 6:
+      return duration_b6; // in ms
+      break;
+    case 7:
+      return duration_b7; // in ms
+      break;
+    case 8:
+      return duration_b8; // in ms
+      break;
+
     default:
-      Serial.println("Invalid Button");
+      //Serial.println("Invalid Button");
       break;
   }
 
