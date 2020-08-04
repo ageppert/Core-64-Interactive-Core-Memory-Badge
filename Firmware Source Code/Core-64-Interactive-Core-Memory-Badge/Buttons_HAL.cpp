@@ -29,7 +29,7 @@
       // Serial.print("usr_i2c_read dev_id:     ");
       // Serial.println(dev_id,HEX);   // print the reading
       Wire.beginTransmission(dev_id);
-      Wire.setClock(1000000);             // TO DO: The speed setting is not working.
+      // Wire.setClock(1000000);             // TO DO: The speed setting is not working.
       Wire.write(reg_addr);
       Wire.endTransmission();
       Wire.requestFrom(dev_id, len);      // Assuming len is 1 because si7210.c only sends 1's when I search for "dev->read"
@@ -47,7 +47,7 @@
 
       /* User implemented I2C write function */
       Wire.beginTransmission(dev_id);
-      Wire.setClock(1000000);             // TO DO: The speed setting is not working.
+      // Wire.setClock(1000000);             // TO DO: The speed setting is not working.
       Wire.write(reg_addr);
       Wire.write(*data);                // Assuming len is 1 because si7210.c only sends 1's when I search for "dev->write"
       Wire.endTransmission();
@@ -60,7 +60,9 @@
 
   void usr_delay_ms(uint32_t period_ms)
   {
-      delay(period_ms);
+      static uint16_t DelayScalar = 500;  // Convert ms to us. 1000 is 1:1. 500 is 2x faster. 2000 is 2x slow.
+      delayMicroseconds(period_ms * DelayScalar);
+      // delay(period_ms);
   }
 
   si7210_dev_t HallSensor1 = {
