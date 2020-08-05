@@ -169,7 +169,7 @@ si7210_status_t si7210_init(si7210_dev_t *dev)
             break;
 
         /* Wait for 10ms and count unsuccessful attempts */
-        dev->delay_ms(10);
+        dev->delay_ms(10); // Default was 10
         try_count--;
     }
 
@@ -271,7 +271,8 @@ si7210_status_t si7210_get_field_strength(si7210_dev_t *dev, float *field)
         return rslt;
 
     /* Use a burst size of 128/4096 samples in FIR and IIR modes */
-    rslt |= si7210_write_reg(dev, SI72XX_CTRL4, 0, DF_BURSTSIZE_128 | DF_BW_4096);
+    // rslt |= si7210_write_reg(dev, SI72XX_CTRL4, 0, DF_BURSTSIZE_128 | DF_BW_4096); // default
+    rslt |= si7210_write_reg(dev, SI72XX_CTRL4, 0, DF_BURSTSIZE_16 | DF_BW_32);
 
     /* Selet field strength measurement */
     rslt |= si7210_write_reg(dev, SI72XX_DSPSIGSEL, 0, DSP_SIGSEL_FIELD_MASK);
@@ -297,7 +298,7 @@ si7210_status_t si7210_get_field_strength(si7210_dev_t *dev, float *field)
             return rslt;
 
         /* Wait 1ms until reading complete */
-        dev->delay_ms(10);
+        dev->delay_ms(1); // Default was 10
         retries--;
     };
 
