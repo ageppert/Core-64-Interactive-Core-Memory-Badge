@@ -116,8 +116,8 @@ void setup() {
   SDCardSetup();
   AmbientLightSetup();
   
-  TopLevelState = STATE_HALL_TEST;
-  // TopLevelState = STATE_SCROLLING_TEXT;
+  // TopLevelState = STATE_HALL_TEST;
+  TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
