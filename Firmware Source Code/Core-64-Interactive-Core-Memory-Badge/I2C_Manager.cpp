@@ -23,6 +23,10 @@ Adafruit_MCP23017 IOE39CoresSenseHalls;   // Decimal ID 39, 4 core array drive t
 
 /* TO DO: 
     Keep track of which chips are present to use in other functions.
+    Read the Chip ID and report that.
+
+ * REFERENCE:
+    Master list of I2C addresses at https://learn.adafruit.com/i2c-addresses/the-list
 */
 
 void I2CManagerSetup() {
@@ -142,7 +146,6 @@ void printKnownChips(byte address)
     default: Serial.print(F("unknown chip"));
   }
 }
-
 
 void I2CManagerBusScan() {
   byte error, address;
