@@ -54,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include whole string.
-	#define FIRMWAREVERSION "0804.1910" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "0808.0750" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
@@ -114,6 +114,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define IOE39_INT_B					 5	// INPUT DIGITAL
 
 	#define PIN_SD_CS     				10  // OUTPUT DIGITAL
+	#define PIN_SD_CD     				15  // INPUT DIGITAL
 
 	/*
 	IOE38CoresOnly with MCP23017 Adafruit Library Assignment (0x26)

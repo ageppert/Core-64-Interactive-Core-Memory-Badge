@@ -21,8 +21,12 @@ SETUP:
 // Used outside of this file 
 
 
-// Prints setup message to serial port.
+// Prints setup messages to serial port.
 void SDCardSetup();
+
+// Creates or appends to existing voltage log file and adds a line
+void SDCardVoltageLog();
+
 
 //#ifdef __cplusplus
 //} // extern "C"
