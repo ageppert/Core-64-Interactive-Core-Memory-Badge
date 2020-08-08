@@ -73,7 +73,8 @@ void printKnownChips(byte address)
     case 0x27: Serial.print(F("MCP23017,IO EXPANDER 2")); break;
     
     case 0x28: Serial.print(F("BNO055,EM7180,CAP1188")); break;
-    case 0x29: Serial.print(F("TSL2561,VL6180,TSL2561,TSL2591,BNO055,CAP1188")); break;
+    // case 0x29: Serial.print(F("TSL2561,VL6180,TSL2561,TSL2591,BNO055,CAP1188")); break;
+    case 0x29: Serial.print(F("LTR-329ALS_Ambient_Light_Sensor")); break;
     case 0x2A: Serial.print(F("SGTL5000,CAP1188")); break;
     case 0x2B: Serial.print(F("CAP1188")); break;
     case 0x2C: Serial.print(F("MCP44XX ePot")); break;
