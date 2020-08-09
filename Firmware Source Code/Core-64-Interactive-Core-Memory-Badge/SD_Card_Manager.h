@@ -7,6 +7,9 @@ SETUP:
 #ifndef SD_Card_Manager_H
 #define SD_Card_Manager_H
 
+#include <stdint.h>
+#include <stdbool.h>
+
 #if (ARDUINO >= 100)
 #include <Arduino.h>
 #else
@@ -24,8 +27,8 @@ SETUP:
 // Prints setup messages to serial port.
 void SDCardSetup();
 
-// Creates or appends to existing voltage log file and adds a line
-void SDCardVoltageLog();
+// Creates or appends to existing voltage log file and adds a line, if it's time to update. User can change update period.
+void SDCardVoltageLog(uint32_t UpdatePeriodms);
 
 
 //#ifdef __cplusplus

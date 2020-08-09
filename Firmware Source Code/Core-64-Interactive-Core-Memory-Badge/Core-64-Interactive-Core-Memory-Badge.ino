@@ -50,9 +50,8 @@
 // #define DEBUG 1
 
 uint32_t SerialNumber = 0;          // Default value is 0 and should be non-zero if the Serial Number is valid.
-uint8_t TopLevelState;              // Master State Machine
 bool TopLevelStateChanged = false;
-enum TopLevelState
+enum TopLevelState                  // Master State Machine
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
   STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
@@ -69,9 +68,9 @@ enum TopLevelState
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-    uint8_t value = 0;
-    uint8_t a = 0;
-
+static uint8_t TopLevelState = STATE_SCROLLING_TEXT;
+uint8_t value = 0;
+uint8_t a = 0;
 
   /*                      *********************
                           ***     Setup     ***
@@ -119,9 +118,6 @@ void setup() {
   CoreSetup();
   SDCardSetup();
   AmbientLightSetup();
-  
-  // TopLevelState = STATE_HALL_TEST;
-  TopLevelState = STATE_SCROLLING_TEXT;
 }
 
 void loop() {
@@ -138,9 +134,10 @@ void loop() {
   HeartBeat(); 
   AnalogUpdate();
   AmbientLightUpdate();
+  SDCardVoltageLog(60000);
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
-  Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
+    Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
   #endif
   //I2CIOEScan(); // temporary debug
 
