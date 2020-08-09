@@ -134,7 +134,7 @@ void loop() {
   HeartBeat(); 
   AnalogUpdate();
   AmbientLightUpdate();
-  SDCardVoltageLog(60000);
+  SDCardVoltageLog(1000);
   CheckForSerialCommand();        // Press "c" to test core write and read
   #ifdef DEBUG
     Serial.println("DEBUG enabled."); // Need to abstract this debug stuff

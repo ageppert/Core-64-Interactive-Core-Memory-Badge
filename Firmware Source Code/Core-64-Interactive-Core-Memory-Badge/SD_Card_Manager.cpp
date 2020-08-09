@@ -145,6 +145,9 @@
     }
   }
 
+File dataFile = SD.open("datalog.txt", FILE_WRITE);
+
+
 void SDCardWriteVoltageLine()
   {
     switch(SDCardState)
@@ -177,85 +180,81 @@ void SDCardWriteVoltageLine()
         break;
 
       case STATE_CREATE_FILE:
-        Serial.println("SDCardState CREATE_FILE");
-        static bool FirstTimeRun = 0;
-        File dataFile = SD.open("datalog.txt", FILE_WRITE);
-
-        if (FirstTimeRun==0)
         {
+          Serial.println("SDCardState CREATE_FILE");
+          static bool FirstTimeRun = 0;
+
+          if (FirstTimeRun==0)
+          {
+            // make a string for assembling the data to log:
+            String HeaderString = "";
+            HeaderString += "Millis, Battery mV, brightness 8bit ***************"; 
+
+            dataFile = SD.open("datalog.txt", FILE_WRITE);
+            // if the file is available, write to it:
+            if (dataFile) {
+              dataFile.println(HeaderString);
+              dataFile.close();
+              // print to the serial port too:
+              Serial.println(HeaderString);
+            }  
+            // if the file isn't open, pop up an error:
+            else {
+              Serial.println("error opening datalog.txt");
+            }
+            FirstTimeRun = 1;
+          } 
+
+  /*
+          // Find an unused file name.
+          if (BASE_NAME_SIZE > 6) {
+            error("FILE_BASE_NAME too long");
+          }
+          while (sd.exists(fileName)) {
+            if (fileName[BASE_NAME_SIZE + 1] != '9') {
+              fileName[BASE_NAME_SIZE + 1]++;
+            } else if (fileName[BASE_NAME_SIZE] != '9') {
+              fileName[BASE_NAME_SIZE + 1] = '0';
+              fileName[BASE_NAME_SIZE]++;
+            } else {
+              error("Can't create file name");
+            }
+          }
+          if (!file.open(fileName, O_WRONLY | O_CREAT | O_EXCL)) {
+            error("file.open");
+          }
+          Serial.print(F("Logging to: "));
+          Serial.println(fileName);
+  */
+/*
           // make a string for assembling the data to log:
-          String HeaderString = "";
-          HeaderString += "Millis, Battery mV, brightness 8bit ***************"; 
+          String dataString = "";
+          uint32_t timer = millis();
+          uint16_t sensor = GetBatteryVoltagemV();
+          uint8_t light = GetAmbientLightLevel8BIT();
+          dataString += String(timer);
+          dataString += ",";
+          dataString += String(sensor);
+          dataString += ",";
+          dataString += String(light);
 
           dataFile = SD.open("datalog.txt", FILE_WRITE);
           // if the file is available, write to it:
           if (dataFile) {
-            dataFile.println(HeaderString);
+            dataFile.println(dataString);
             dataFile.close();
             // print to the serial port too:
-            Serial.println(HeaderString);
+            Serial.println(dataString);
           }  
           // if the file isn't open, pop up an error:
           else {
             Serial.println("error opening datalog.txt");
-          }
-          FirstTimeRun = 1;
-        } 
-
-/*
-        // Find an unused file name.
-        if (BASE_NAME_SIZE > 6) {
-          error("FILE_BASE_NAME too long");
-        }
-        while (sd.exists(fileName)) {
-          if (fileName[BASE_NAME_SIZE + 1] != '9') {
-            fileName[BASE_NAME_SIZE + 1]++;
-          } else if (fileName[BASE_NAME_SIZE] != '9') {
-            fileName[BASE_NAME_SIZE + 1] = '0';
-            fileName[BASE_NAME_SIZE]++;
-          } else {
-            error("Can't create file name");
-          }
-        }
-        if (!file.open(fileName, O_WRONLY | O_CREAT | O_EXCL)) {
-          error("file.open");
-        }
-        Serial.print(F("Logging to: "));
-        Serial.println(fileName);
+          } 
 */
 
-        // make a string for assembling the data to log:
-        String dataString = "";
-        uint32_t timer = millis();
-        uint16_t sensor = GetBatteryVoltagemV();
-        uint8_t light = GetAmbientLightLevel8BIT();
-        dataString += String(timer);
-        dataString += ",";
-        dataString += String(sensor);
-        dataString += ",";
-        dataString += String(light);
-
-        dataFile = SD.open("datalog.txt", FILE_WRITE);
-        // if the file is available, write to it:
-        if (dataFile) {
-          dataFile.println(dataString);
-          dataFile.close();
-          // print to the serial port too:
-          Serial.println(dataString);
-        }  
-        // if the file isn't open, pop up an error:
-        else {
-          Serial.println("error opening datalog.txt");
-        } 
-
-
-        // SDCardState = STATE_WRITE_LINE;     
-        // Serial.println("This is after the line 'SDCardState = STATE_WRITE_LINE;'");
-// TO DO: Not sure why, but all this writing needs to be in one case statement. Otherwise, trying to write the 
-//        header in one case, then going to the next case to print the data doesn't work. 
-//        For some reason, the hand-off to the next state with "SDCardState = STATE_WRITE_LINE" stops working.
-        break;
-
+          SDCardState = STATE_WRITE_LINE;     
+          break;
+        }
       case STATE_APPEND_FILE:
         Serial.println("SDCardState APPEND_FILE");
 /*
@@ -280,28 +279,35 @@ void SDCardWriteVoltageLine()
         break;
 
       case STATE_WRITE_LINE:
-        Serial.println("SDCardState WRITE_LINE");
-/*
-        // make a string for assembling the data to log:
-        String dataString = "";
-        uint16_t sensor = GetBatteryVoltagemV();
-        dataString += String(sensor);
+        {
+          Serial.println("SDCardState WRITE_LINE");
 
-        // File dataFilelog = SD.open("datalog.txt", FILE_WRITE);
-        // if the file is available, write to it:
-        if (dataFile) {
-          dataFile.println(dataString);
-          dataFile.close();
-          // print to the serial port too:
-          Serial.println(dataString);
-        }  
-        // if the file isn't open, pop up an error:
-        else {
-          Serial.println("error opening datalog.txt");
-        } 
-*/
+          // make a string for assembling the data to log:
+          String dataString = "";
+          uint32_t timer = millis();
+          uint16_t sensor = GetBatteryVoltagemV();
+          uint8_t light = GetAmbientLightLevel8BIT();
+          dataString += String(timer);
+          dataString += ",";
+          dataString += String(sensor);
+          dataString += ",";
+          dataString += String(light);
+
+          dataFile = SD.open("datalog.txt", FILE_WRITE);
+          // if the file is available, write to it:
+          if (dataFile) {
+            dataFile.println(dataString);
+            dataFile.close();
+            // print to the serial port too:
+            Serial.println(dataString);
+          }  
+          // if the file isn't open, pop up an error:
+          else {
+            Serial.println("error opening datalog.txt");
+          } 
+
         break;
-
+        }
       case STATE_CLOSE_FILE:
         Serial.println("SDCardState CLOSE_FILE");
 
