@@ -34,7 +34,7 @@
   static uint8_t AmbientLightScalarBitShift = 7;        // 
 
   void AmbientLightSetup() {
-    Serial.println("\nTroubleshooting Light Sensor"); 
+    Serial.println("\nTroubleshooting Light Sensor..."); 
     // Determine which, if any, light sensor is available and configure it for readings
     if (I2CDetectExternalEEPROM(AL_ADDR)) { 
       AmbientLightSensorType = 1;
@@ -54,6 +54,10 @@
     else if (I2CDetectExternalEEPROM(0x60)) { 
       AmbientLightSensorType = 2; 
     }
+    if(AmbientLightSensorType==0)
+    {
+      Serial.println("No light sensor found.");      
+    } 
   }
 
   bool AmbientLightAvaible() {

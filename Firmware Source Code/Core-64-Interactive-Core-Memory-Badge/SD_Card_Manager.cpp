@@ -44,7 +44,15 @@
   // Error messages stored in flash.
   // #define error(msg) sd.errorHalt(F(msg))
 
-
+  void SDCardSelectTwiddle (uint8_t number)
+  {
+    while(number)
+    {
+      digitalWriteFast(chipSelect, 0);
+      number--;
+      digitalWriteFast(chipSelect, 1);
+    }
+  }
 
   void SDCardSetup()
   {
@@ -319,7 +327,7 @@ void SDCardWriteVoltageLine()
         break;
 
       default:
-        Serial.println("USDCardState UNDEFINED");
+        Serial.println("SDCardState UNDEFINED");
         break;
       }
 
@@ -330,17 +338,26 @@ void SDCardWriteVoltageLine()
   {
     static uint32_t NowTime = 0;
     static uint32_t UpdateTimer = 0;
-    NowTime = millis();
-    if ((NowTime - UpdateTimer) >= UpdatePeriodms)
+    if ((HardwareVersionMajor == 0) && (HardwareVersionMinor == 3))
     {
-      UpdateTimer = NowTime;
-      SDCardWriteVoltageLine();                          
+      NowTime = millis();
+      SDCardSelectTwiddle(5); // testing to see if twiddling CS for other use affects the SD Card
+      if ((NowTime - UpdateTimer) >= UpdatePeriodms)
+      {
+        UpdateTimer = NowTime;
+        SDCardWriteVoltageLine();                          
+      }
     }
   }
 
 #else // SDCARD_ENABLE
   void SDCardSetup()
   {
+    if ((HardwareVersionMajor == 0) && (HardwareVersionMinor == 3))
+    {
+      pinMode(PIN_SD_CS, OUTPUT);
+      digitalWriteFast(PIN_SD_CS, 1);
+    }
   }
   void SDCardVoltageLog(uint32_t UpdatePeriodms)
   {
