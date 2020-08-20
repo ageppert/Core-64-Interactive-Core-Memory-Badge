@@ -14,29 +14,29 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 3800 2600 3    50   Input ~ 0
+Text GLabel 3950 2600 3    50   Input ~ 0
 XB0
-Text GLabel 3900 2600 3    50   Input ~ 0
+Text GLabel 4050 2600 3    50   Input ~ 0
 XB1
-Text GLabel 4000 2600 3    50   Input ~ 0
+Text GLabel 4150 2600 3    50   Input ~ 0
 XB2
-Text GLabel 4100 2600 3    50   Input ~ 0
+Text GLabel 4250 2600 3    50   Input ~ 0
 XB3
-Text GLabel 4200 2600 3    50   Input ~ 0
+Text GLabel 4350 2600 3    50   Input ~ 0
 XB4
-Text GLabel 4300 2600 3    50   Input ~ 0
+Text GLabel 4450 2600 3    50   Input ~ 0
 XB5
-Text GLabel 4400 2600 3    50   Input ~ 0
+Text GLabel 4550 2600 3    50   Input ~ 0
 XB6
-Text GLabel 4500 2600 3    50   Input ~ 0
+Text GLabel 4650 2600 3    50   Input ~ 0
 XB7
-Text GLabel 4100 1000 1    50   Input ~ 0
+Text GLabel 4250 1000 1    50   Input ~ 0
 XT3-7
-Text GLabel 4000 1000 1    50   Input ~ 0
+Text GLabel 4150 1000 1    50   Input ~ 0
 XT2-6
-Text GLabel 3900 1000 1    50   Input ~ 0
+Text GLabel 4050 1000 1    50   Input ~ 0
 XT1-5
-Text GLabel 3800 1000 1    50   Input ~ 0
+Text GLabel 3950 1000 1    50   Input ~ 0
 XT0-4
 Text GLabel 6700 1850 0    50   Output ~ 0
 XB3
@@ -63,41 +63,41 @@ H_XT2-6
 Text GLabel 6700 1150 0    50   Output ~ 0
 H_XT3-7
 Wire Wire Line
-	3800 1250 4200 1250
+	3950 1250 4350 1250
 Wire Wire Line
-	4200 1250 4200 1300
+	4350 1250 4350 1300
 Wire Wire Line
-	3800 1250 3800 1300
+	3950 1250 3950 1300
 Wire Wire Line
-	3900 1300 3900 1200
+	4050 1300 4050 1200
 Wire Wire Line
-	3900 1200 4300 1200
+	4050 1200 4450 1200
 Wire Wire Line
-	4300 1200 4300 1300
+	4450 1200 4450 1300
 Wire Wire Line
-	4000 1300 4000 1150
+	4150 1300 4150 1150
 Wire Wire Line
-	4000 1150 4400 1150
+	4150 1150 4550 1150
 Wire Wire Line
-	4400 1150 4400 1300
+	4550 1150 4550 1300
 Wire Wire Line
-	4100 1300 4100 1100
+	4250 1300 4250 1100
 Wire Wire Line
-	4100 1100 4500 1100
+	4250 1100 4650 1100
 Wire Wire Line
-	4500 1100 4500 1300
+	4650 1100 4650 1300
 Wire Wire Line
-	3800 1250 3800 1000
-Connection ~ 3800 1250
+	3950 1250 3950 1000
+Connection ~ 3950 1250
 Wire Wire Line
-	3900 1200 3900 1000
-Connection ~ 3900 1200
+	4050 1200 4050 1000
+Connection ~ 4050 1200
 Wire Wire Line
-	4000 1150 4000 1000
-Connection ~ 4000 1150
+	4150 1150 4150 1000
+Connection ~ 4150 1150
 Wire Wire Line
-	4100 1100 4100 1000
-Connection ~ 4100 1100
+	4250 1100 4250 1000
+Connection ~ 4250 1100
 Wire Wire Line
 	6700 1150 6950 1150
 Wire Wire Line
@@ -106,21 +106,21 @@ Wire Wire Line
 	6700 1350 6950 1350
 Wire Wire Line
 	6700 1450 6950 1450
-Text GLabel 3450 2300 0    50   Input ~ 0
+Text GLabel 3600 2300 0    50   Input ~ 0
 YL7
-Text GLabel 3450 2200 0    50   Input ~ 0
+Text GLabel 3600 2200 0    50   Input ~ 0
 YL6
-Text GLabel 3450 2100 0    50   Input ~ 0
+Text GLabel 3600 2100 0    50   Input ~ 0
 YL5
-Text GLabel 3450 2000 0    50   Input ~ 0
+Text GLabel 3600 2000 0    50   Input ~ 0
 YL4
-Text GLabel 3450 1900 0    50   Input ~ 0
+Text GLabel 3600 1900 0    50   Input ~ 0
 YL3
-Text GLabel 3450 1800 0    50   Input ~ 0
+Text GLabel 3600 1800 0    50   Input ~ 0
 YL2
-Text GLabel 3450 1700 0    50   Input ~ 0
+Text GLabel 3600 1700 0    50   Input ~ 0
 YL1
-Text GLabel 3450 1600 0    50   Input ~ 0
+Text GLabel 3600 1600 0    50   Input ~ 0
 YL0
 Text GLabel 2150 1300 2    50   Output ~ 0
 H_YL1
@@ -156,29 +156,29 @@ Wire Wire Line
 	2100 1600 1500 1600
 Connection ~ 2100 1600
 Wire Wire Line
-	5200 2000 4850 2000
+	5350 2000 5000 2000
 Wire Wire Line
-	5200 1600 5200 2000
+	5350 1600 5350 2000
 Wire Wire Line
-	4850 1600 5200 1600
+	5000 1600 5350 1600
 Wire Wire Line
-	5100 1700 4850 1700
+	5250 1700 5000 1700
 Wire Wire Line
-	5100 2100 5100 1700
+	5250 2100 5250 1700
 Wire Wire Line
-	4850 2100 5100 2100
+	5000 2100 5250 2100
 Wire Wire Line
-	5000 1800 4850 1800
+	5150 1800 5000 1800
 Wire Wire Line
-	5000 2200 5000 1800
+	5150 2200 5150 1800
 Wire Wire Line
-	4850 2200 5000 2200
+	5000 2200 5150 2200
 Wire Wire Line
-	4900 1900 4850 1900
+	5050 1900 5000 1900
 Wire Wire Line
-	4900 2300 4900 1900
+	5050 2300 5050 1900
 Wire Wire Line
-	4850 2300 4900 2300
+	5000 2300 5050 2300
 Wire Wire Line
 	2050 1900 2150 1900
 Wire Wire Line
@@ -217,26 +217,26 @@ F 3 "~" H 1300 1900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7300 2600 0    50   ~ 0
-SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nL1_GPIO1\nL2_GPIO2\nLAYER3\nLAYER4
+SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nL1GPIO1\nL2GPIO2\nLAYER3\nLAYER4
 $Comp
 L CORE_64_LIBRARY:Core_Memory_8x8_Array_Front_Facing CM1
 U 1 1 5E79BDE1
-P 4150 1950
-F 0 "CM1" H 3500 2600 50  0000 C CNN
-F 1 "Core_Memory_8x8_Array_Front_Facing" H 4150 1000 50  0000 C CNN
-F 2 "Core_Memory_8x8_Array:core_64_x6.7_y6.5mm_v0.3_front_facing" H 4200 2000 50  0001 C CNN
-F 3 "" H 4200 2000 50  0001 C CNN
-	1    4150 1950
+P 4300 1950
+F 0 "CM1" H 3650 2600 50  0000 C CNN
+F 1 "Core_Memory_8x8_Array_Front_Facing" H 4300 1000 50  0000 C CNN
+F 2 "Core_Memory_8x8_Array:core_64_x6.7_y6.5mm_v0.3_front_facing" H 4350 2000 50  0001 C CNN
+F 3 "" H 4350 2000 50  0001 C CNN
+	1    4300 1950
 	1    0    0    -1  
 $EndComp
-Text GLabel 3350 2550 0    50   Output ~ 0
+Text GLabel 3500 2550 0    50   Output ~ 0
 SENSE1
-Text GLabel 3350 2650 0    50   Output ~ 0
+Text GLabel 3500 2650 0    50   Output ~ 0
 SENSE2
 Wire Wire Line
-	3350 2650 3700 2650
+	3500 2650 3850 2650
 Wire Wire Line
-	3700 2650 3700 2600
+	3850 2650 3850 2600
 Wire Wire Line
 	6950 1550 6700 1550
 Wire Wire Line
@@ -254,11 +254,11 @@ SENSE1
 Text GLabel 1650 1900 2    50   Input ~ 0
 SENSE2
 Wire Wire Line
-	3450 2400 3400 2400
+	3600 2400 3550 2400
 Wire Wire Line
-	3400 2400 3400 2550
+	3550 2400 3550 2550
 Wire Wire Line
-	3400 2550 3350 2550
+	3550 2550 3500 2550
 Wire Wire Line
 	1650 1900 1500 1900
 Wire Wire Line
@@ -499,9 +499,9 @@ F 3 "" H 9100 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9300 1800 2    50   Input ~ 0
-SAO3_GPIO1
+SAO_GPIO1
 Text GLabel 9300 2950 2    50   Input ~ 0
-SAO3_GPIO2
+SAO_GPIO2
 Text GLabel 8850 1800 0    50   Input ~ 0
 3V3_800mA
 Text GLabel 8850 1550 0    50   BiDi ~ 0
@@ -529,9 +529,9 @@ Wire Wire Line
 Wire Wire Line
 	9150 1800 9300 1800
 Text GLabel 6950 2800 2    50   Input ~ 0
-SAO3_GPIO2
+SAO_GPIO2
 Text GLabel 6950 2950 2    50   Input ~ 0
-SAO3_GPIO1
+SAO_GPIO1
 Wire Wire Line
 	6850 2800 6950 2800
 Wire Wire Line
@@ -539,10 +539,10 @@ Wire Wire Line
 Wire Wire Line
 	6950 2950 6650 2950
 $Comp
-L CORE_64_LIBRARY:Core_64_Github_Link L1
+L CORE_64_LIBRARY:Core_64_Github_Link L2
 U 1 1 5E9833FF
 P 4850 7800
-F 0 "L1" H 4875 7847 50  0000 L CNN
+F 0 "L2" H 4875 7847 50  0000 L CNN
 F 1 "Core_64_Github_Link" H 4875 7754 50  0000 L CNN
 F 2 "Core_Memory_8x8_Array:Github_Link" H 4850 7800 50  0001 C CNN
 F 3 "" H 4850 7800 50  0001 C CNN
@@ -589,7 +589,7 @@ Wire Wire Line
 Wire Wire Line
 	6350 2650 6950 2650
 Text Notes 9150 1700 0    50   ~ 0
-SILKSCREEN: L1_GPIO1, L2_GPIO2
+SILKSCREEN: \nSAO, GND, 3V3, SDA,SCL\nL1GPIO1, L2GPIO2
 $Comp
 L Device:C C13
 U 1 1 5F432D69
@@ -733,27 +733,16 @@ Wire Wire Line
 	8600 4550 9950 4550
 Text Notes 550  5300 0    100  ~ 0
 [OPTIONAL] MATIX LAYER ACTIVATION
-Text Notes 2650 1650 0    50   ~ 0
+Text Notes 2800 1650 0    50   ~ 0
 SILKSCREEN:\nPixel 0-7 ->
-Text Notes 5250 1650 0    50   ~ 0
+Text Notes 5400 1650 0    50   ~ 0
 SILKSCREEN:\n<-bit 63-56
-Text Notes 5250 2300 0    50   ~ 0
+Text Notes 5400 2300 0    50   ~ 0
 SILKSCREEN:\n<-bit 7-0
-Text Notes 2650 2350 0    50   ~ 0
+Text Notes 2800 2350 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
 Text Notes 550  7900 0    50   ~ 0
 CORE BOARD   V0.4   2020-08-20   A. GEPPERT   WWW.MACHINEIDEAS.COM\nInteractive Core Memory
-$Comp
-L CORE_64_LIBRARY:Core_64_Logo L2
-U 1 1 5F5DF542
-P 3950 7800
-F 0 "L2" H 3975 7847 50  0000 L CNN
-F 1 "Core_64_Logo" H 3975 7754 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo" H 3950 7800 50  0001 C CNN
-F 3 "" H 3950 7800 50  0001 C CNN
-	1    3950 7800
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GNDD #PWR0102
 U 1 1 5F5DFB1F
@@ -1229,4 +1218,15 @@ Text Notes 1950 5550 0    50   ~ 0
 STEP 2:\nSolder one layer SJ.
 Text Notes 3650 5550 0    50   ~ 0
 STEP 3:\nAdd two quad switches and two decoupling caps.
+$Comp
+L CORE_64_LIBRARY:Core_64_Logo_9mm_tall L1
+U 1 1 5F3DC9AF
+P 3850 7800
+F 0 "L1" H 3875 7847 50  0000 L CNN
+F 1 "Core_64_Logo_9mm_tall" H 3875 7754 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 3850 7800 50  0001 C CNN
+F 3 "" H 3850 7800 50  0001 C CNN
+	1    3850 7800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

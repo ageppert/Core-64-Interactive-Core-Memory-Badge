@@ -217,7 +217,7 @@ F 3 "~" H 1300 1900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7300 2600 0    50   ~ 0
-SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nL1_GPIO1\nL2_GPIO2\nLAYER3\nLAYER4
+SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nL1GPIO1\nL2GPIO2\nLAYER3\nLAYER4
 $Comp
 L CORE_64_LIBRARY:Core_Memory_8x8_Array_Front_Facing CM1
 U 1 1 5E79BDE1
@@ -499,9 +499,9 @@ F 3 "" H 9100 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9300 1800 2    50   Input ~ 0
-SAO3_GPIO1
+SAO_GPIO1
 Text GLabel 9300 2950 2    50   Input ~ 0
-SAO3_GPIO2
+SAO_GPIO2
 Text GLabel 8850 1800 0    50   Input ~ 0
 3V3_800mA
 Text GLabel 8850 1550 0    50   BiDi ~ 0
@@ -529,9 +529,9 @@ Wire Wire Line
 Wire Wire Line
 	9150 1800 9300 1800
 Text GLabel 6950 2800 2    50   Input ~ 0
-SAO3_GPIO2
+SAO_GPIO2
 Text GLabel 6950 2950 2    50   Input ~ 0
-SAO3_GPIO1
+SAO_GPIO1
 Wire Wire Line
 	6850 2800 6950 2800
 Wire Wire Line
@@ -539,10 +539,10 @@ Wire Wire Line
 Wire Wire Line
 	6950 2950 6650 2950
 $Comp
-L CORE_64_LIBRARY:Core_64_Github_Link L1
+L CORE_64_LIBRARY:Core_64_Github_Link L2
 U 1 1 5E9833FF
 P 4850 7800
-F 0 "L1" H 4875 7847 50  0000 L CNN
+F 0 "L2" H 4875 7847 50  0000 L CNN
 F 1 "Core_64_Github_Link" H 4875 7754 50  0000 L CNN
 F 2 "Core_Memory_8x8_Array:Github_Link" H 4850 7800 50  0001 C CNN
 F 3 "" H 4850 7800 50  0001 C CNN
@@ -589,7 +589,7 @@ Wire Wire Line
 Wire Wire Line
 	6350 2650 6950 2650
 Text Notes 9150 1700 0    50   ~ 0
-SILKSCREEN: L1_GPIO1, L2_GPIO2
+SILKSCREEN: \nSAO, GND, 3V3, SDA,SCL\nL1GPIO1, L2GPIO2
 $Comp
 L Device:C C13
 U 1 1 5F432D69
@@ -743,17 +743,6 @@ Text Notes 2800 2350 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
 Text Notes 550  7900 0    50   ~ 0
 CORE BOARD   V0.4   2020-08-20   A. GEPPERT   WWW.MACHINEIDEAS.COM\nInteractive Core Memory
-$Comp
-L CORE_64_LIBRARY:Core_64_Logo L2
-U 1 1 5F5DF542
-P 3950 7800
-F 0 "L2" H 3975 7847 50  0000 L CNN
-F 1 "Core_64_Logo" H 3975 7754 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo" H 3950 7800 50  0001 C CNN
-F 3 "" H 3950 7800 50  0001 C CNN
-	1    3950 7800
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GNDD #PWR0102
 U 1 1 5F5DFB1F
@@ -1229,4 +1218,15 @@ Text Notes 1950 5550 0    50   ~ 0
 STEP 2:\nSolder one layer SJ.
 Text Notes 3650 5550 0    50   ~ 0
 STEP 3:\nAdd two quad switches and two decoupling caps.
+$Comp
+L CORE_64_LIBRARY:Core_64_Logo_9mm_tall L1
+U 1 1 5F3DC9AF
+P 3850 7800
+F 0 "L1" H 3875 7847 50  0000 L CNN
+F 1 "Core_64_Logo_9mm_tall" H 3875 7754 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 3850 7800 50  0001 C CNN
+F 3 "" H 3850 7800 50  0001 C CNN
+	1    3850 7800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
