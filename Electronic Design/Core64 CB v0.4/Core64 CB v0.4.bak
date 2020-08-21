@@ -186,7 +186,7 @@ Wire Wire Line
 Wire Wire Line
 	2150 1700 2050 1700
 Text Notes 1150 2650 2    50   ~ 0
-SILKSCREEN:\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nLAYER8\nLAYER7\nLAYER6\nLAYER5
+SILKSCREEN:\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nL8\nL7\nL6\nL5
 Wire Wire Line
 	2050 1700 1500 1700
 Connection ~ 2050 1700
@@ -217,7 +217,7 @@ F 3 "~" H 1300 1900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7300 2600 0    50   ~ 0
-SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nL1GPIO1\nL2GPIO2\nLAYER3\nLAYER4
+SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nP1/IO1\nP2/IO2\nP3\nP4
 $Comp
 L CORE_64_LIBRARY:Core_Memory_8x8_Array_Front_Facing CM1
 U 1 1 5E79BDE1
@@ -538,17 +538,6 @@ Wire Wire Line
 	6850 2450 6850 2800
 Wire Wire Line
 	6950 2950 6650 2950
-$Comp
-L CORE_64_LIBRARY:Core_64_Github_Link L2
-U 1 1 5E9833FF
-P 4850 7800
-F 0 "L2" H 4875 7847 50  0000 L CNN
-F 1 "Core_64_Github_Link" H 4875 7754 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Github_Link" H 4850 7800 50  0001 C CNN
-F 3 "" H 4850 7800 50  0001 C CNN
-	1    4850 7800
-	1    0    0    -1  
-$EndComp
 Text Notes 6350 6900 0    50   ~ 0
 Work in progress
 NoConn ~ 9600 4150
@@ -589,7 +578,7 @@ Wire Wire Line
 Wire Wire Line
 	6350 2650 6950 2650
 Text Notes 9150 1700 0    50   ~ 0
-SILKSCREEN: \nSAO, GND, 3V3, SDA,SCL\nL1GPIO1, L2GPIO2
+SILKSCREEN: \nSAO, GND, 3V3, SDA,SCL\nP1/GPIO1, P2/GPIO2
 $Comp
 L Device:C C13
 U 1 1 5F432D69
@@ -732,7 +721,7 @@ Wire Wire Line
 Wire Wire Line
 	8600 4550 9950 4550
 Text Notes 550  5300 0    100  ~ 0
-[OPTIONAL] MATIX LAYER ACTIVATION
+[OPTIONAL] CORE PLANE SELECT
 Text Notes 2800 1650 0    50   ~ 0
 SILKSCREEN:\nPixel 0-7 ->
 Text Notes 5400 1650 0    50   ~ 0
@@ -742,7 +731,7 @@ SILKSCREEN:\n<-bit 7-0
 Text Notes 2800 2350 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
 Text Notes 550  7900 0    50   ~ 0
-CORE BOARD   V0.4   2020-08-20   A. GEPPERT   WWW.MACHINEIDEAS.COM\nInteractive Core Memory
+CORE BOARD   V0.4   [REL. DATE]   A. GEPPERT   Core64.MachineIdeas.com\nInteractive Core Memory
 $Comp
 L power:GNDD #PWR0102
 U 1 1 5F5DFB1F
@@ -793,21 +782,21 @@ Ceramic
 Text Notes 7150 6150 0    50   ~ 0
 Ceramic
 Text GLabel 1900 2400 2    50   Output ~ 0
-LAYER_8
+PLANE_8
 Text GLabel 1900 2500 2    50   Output ~ 0
-LAYER_7
+PLANE_7
 Text GLabel 1900 2600 2    50   Output ~ 0
-LAYER_6
+PLANE_6
 Text GLabel 1900 2700 2    50   Output ~ 0
-LAYER_5
+PLANE_5
 Text GLabel 6350 2650 0    50   Output ~ 0
-LAYER_4
+PLANE_4
 Text GLabel 6350 2550 0    50   Output ~ 0
-LAYER_3
+PLANE_3
 Text GLabel 6350 2450 0    50   Output ~ 0
-LAYER_2
+PLANE_2
 Text GLabel 6350 2350 0    50   Output ~ 0
-LAYER_1
+PLANE_1
 Wire Wire Line
 	6950 2350 6650 2350
 Wire Wire Line
@@ -1136,21 +1125,21 @@ Wire Wire Line
 	2450 5700 2550 5700
 Connection ~ 2450 5700
 Text GLabel 2150 6500 0    50   Output ~ 0
-LAYER_5
+PLANE_5
 Text GLabel 2150 6700 0    50   Output ~ 0
-LAYER_6
+PLANE_6
 Text GLabel 2150 6900 0    50   Output ~ 0
-LAYER_7
+PLANE_7
 Text GLabel 2150 7100 0    50   Output ~ 0
-LAYER_8
+PLANE_8
 Text GLabel 2150 5700 0    50   Output ~ 0
-LAYER_1
+PLANE_1
 Text GLabel 2150 5900 0    50   Output ~ 0
-LAYER_2
+PLANE_2
 Text GLabel 2150 6100 0    50   Output ~ 0
-LAYER_3
+PLANE_3
 Text GLabel 2150 6300 0    50   Output ~ 0
-LAYER_4
+PLANE_4
 $Comp
 L TI_TS3A4751PWR:TS3A4751PWR U10
 U 1 1 5F3A173C
@@ -1215,18 +1204,20 @@ DIGITAL\nLOGIC\nGROUND
 Text Notes 550  5550 0    50   ~ 0
 STEP 1:\nCut all header-to-matrix SJs.
 Text Notes 1950 5550 0    50   ~ 0
-STEP 2:\nSolder one layer SJ.
-Text Notes 3650 5550 0    50   ~ 0
-STEP 3:\nAdd two quad switches and two decoupling caps.
+STEP 2:\nSolder one plane SJ.
+Text Notes 3050 5550 0    50   ~ 0
+STEP 3:\nInstall two quad switches and two decoupling caps.
+Text Notes 5250 5550 0    50   ~ 0
+STEP 4 (LOGIC BOARD):\nCut and solder two plane select/SAO-GPIO jumpers.
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo_9mm_tall L1
 U 1 1 5F3DC9AF
-P 3850 7800
-F 0 "L1" H 3875 7847 50  0000 L CNN
-F 1 "Core_64_Logo_9mm_tall" H 3875 7754 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 3850 7800 50  0001 C CNN
-F 3 "" H 3850 7800 50  0001 C CNN
-	1    3850 7800
+P 3900 7800
+F 0 "L1" H 3925 7847 50  0000 L CNN
+F 1 "Core_64_Logo_9mm_tall" H 3925 7754 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 3900 7800 50  0001 C CNN
+F 3 "" H 3900 7800 50  0001 C CNN
+	1    3900 7800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core64 CB v0.4/Core64 CB v0.4.sch")
-    (date "Tuesday, August 18, 2020 at 09:59:01 PM")
+    (date "Thursday, August 20, 2020 at 05:57:28 PM")
     (tool "Eeschema (5.1.2-1)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -97,12 +97,6 @@
       (libsource (lib Core64-CB-v0.4-rescue) (part "Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis-Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue") (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E90E5F7))
-    (comp (ref L2)
-      (value Core_64_Github_Link)
-      (footprint Core_Memory_8x8_Array:Github_Link)
-      (libsource (lib CORE_64_LIBRARY) (part Core_64_Github_Link) (description ""))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 5E9833FF))
     (comp (ref U9)
       (value LTR-329ALS-01)
       (footprint LiteOn_LTR-329ALS:LTR-329ALS-01)
@@ -262,10 +256,6 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 5F3DC9AF)))
   (libparts
-    (libpart (lib CORE_64_LIBRARY) (part Core_64_Github_Link)
-      (fields
-        (field (name Reference) L)
-        (field (name Value) Core_64_Github_Link)))
     (libpart (lib CORE_64_LIBRARY) (part Core_64_Logo_9mm_tall)
       (fields
         (field (name Reference) L)
