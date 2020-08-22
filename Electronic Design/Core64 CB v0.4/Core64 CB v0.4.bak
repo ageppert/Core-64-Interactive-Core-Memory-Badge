@@ -186,7 +186,7 @@ Wire Wire Line
 Wire Wire Line
 	2150 1700 2050 1700
 Text Notes 1150 2650 2    50   ~ 0
-SILKSCREEN:\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nL8\nL7\nL6\nL5
+SILKSCREEN:\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nP8\nP7\nP6\nP5
 Wire Wire Line
 	2050 1700 1500 1700
 Connection ~ 2050 1700
@@ -1218,6 +1218,17 @@ F 1 "Core_64_Logo_9mm_tall" H 3925 7754 50  0000 L CNN
 F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 3900 7800 50  0001 C CNN
 F 3 "" H 3900 7800 50  0001 C CNN
 	1    3900 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CORE_64_LIBRARY:Core_64_M-+S_Buttons_4mm L2
+U 1 1 5F41CA57
+P 4950 7800
+F 0 "L2" H 4975 7847 50  0000 L CNN
+F 1 "Core_64_M-+S_Buttons_4mm" H 4975 7754 50  0000 L CNN
+F 2 "" H 4950 7800 50  0001 C CNN
+F 3 "" H 4950 7800 50  0001 C CNN
+	1    4950 7800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -1220,4 +1220,15 @@ F 3 "" H 3900 7800 50  0001 C CNN
 	1    3900 7800
 	1    0    0    -1  
 $EndComp
+$Comp
+L CORE_64_LIBRARY:Core_64_M-+S_Buttons_4mm L2
+U 1 1 5F41CA57
+P 4950 7800
+F 0 "L2" H 4975 7847 50  0000 L CNN
+F 1 "Core_64_M-+S_Buttons_4mm" H 4975 7754 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64-M_-_+_S_Buttons" H 4950 7800 50  0001 C CNN
+F 3 "" H 4950 7800 50  0001 C CNN
+	1    4950 7800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
