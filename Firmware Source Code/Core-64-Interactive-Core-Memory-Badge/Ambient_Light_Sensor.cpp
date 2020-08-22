@@ -24,8 +24,8 @@
     // Higher times give higher resolutions and should be used in darker light. 
     int time = 100;
     // These demo settings yield maximum lux reading = 30199 so that can be >>7 (aka /128) to yield 236 max.
-
-    long luxVal = 0; 
+    uint32_t luxMax = 30199;
+    uint32_t luxVal = 0; 
 
   uint8_t AmbientLightSensorType = 0;           // 0 = no sensor available
                                                 // 1 = SparkFun Ambient Light Sensor VEML6030 QWIIC SEN-15436
@@ -80,15 +80,15 @@
     if (AmbientLightSensorType == 1)
     {
       luxVal = light.readLight();
-      if(luxVal>=(255<<AmbientLightScalarBitShift))   // If input lux level is saturated
+      if(luxVal>=luxMax)   // If input lux level is saturated
       {
-        AmbientLightLevel8BIT = 255;                  // assign max level to 8bit value to avoid rollover to lower level
+        AmbientLightLevel8BIT = 250;                  // assign max level to 8bit value to avoid rollover to lower level
       }
       else
       {
-        AmbientLightLevel8BIT = luxVal >> AmbientLightScalarBitShift;  // Simple linear scaling of lux to 0-255    
+        AmbientLightLevel8BIT = (uint8_t) (luxVal >> AmbientLightScalarBitShift);  // Simple linear scaling of lux to 0-255    
       }
-
+      if(AmbientLightLevel8BIT > 250) {AmbientLightLevel8BIT = 250;}
     }
     if (AmbientLightSensorType == 2)
     {
@@ -98,7 +98,7 @@
   }
 
   void AmbientLightUpdate() {
-    static unsigned long Periodms = 1000;
+    static unsigned long Periodms = 100; // 1000;
     static unsigned long NowTimems = 0;
     static unsigned long Timerms = 0;
     if(AmbientLightAvaible())
