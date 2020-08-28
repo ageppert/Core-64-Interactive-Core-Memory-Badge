@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Core64 CB v0.4-cache
+LIBS:Core64 LB v0.4-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -348,10 +348,10 @@ Wire Wire Line
 Text GLabel 4750 5100 0    50   Output ~ 0
 VSW_HALF_VOL_MONITOR
 $Comp
-L Transistor_FET:IRLML2060 Q?
+L Transistor_FET:IRLML2060 Q22
 U 1 1 5E770BB5
 P 1850 6650
-F 0 "Q?" V 2101 6650 50  0000 C CNN
+F 0 "Q22" V 2101 6650 50  0000 C CNN
 F 1 "IRLML6344TRPBF" V 2194 6650 50  0000 C CNN
 F 2 "Digikey:SOT-23-3" H 2050 6575 50  0001 L CIN
 F 3 "https://www.digikey.com/product-detail/en/infineon-technologies/IRLML6344TRPBF/IRLML6344TRPBFCT-ND/2538168" H 1850 6650 50  0001 L CNN
@@ -378,10 +378,10 @@ $EndComp
 Text Notes 3950 2450 0    50   ~ 0
 ALTERNATE CONNECTOR - Generic SMT 2-pin .1” \nheader option for everything else. 
 $Comp
-L BM03B-PASS-1-TFT__LF__SN_:BM03B-PASS-1-TFT__LF__SN_ J?
+L BM03B-PASS-1-TFT__LF__SN_:BM03B-PASS-1-TFT__LF__SN_ J8
 U 1 1 5E870E95
 P 1800 2550
-F 0 "J?" H 2250 2800 50  0000 C CNN
+F 0 "J8" H 2250 2800 50  0000 C CNN
 F 1 "BM03B-PASS-1-TFT__LF__SN_" H 2200 2700 50  0000 C CNN
 F 2 "JST_BM03B-PASS-1-TFT:BM03BPASS1TFTLFSN" H 2550 2650 50  0001 L CNN
 F 3 "http://www.jst-mfg.com/product/pdf/eng/ePA-F.pdf" H 2550 2550 50  0001 L CNN
@@ -399,10 +399,10 @@ $EndComp
 Wire Wire Line
 	1800 2550 2400 2550
 $Comp
-L Diode:MBR0520 D?
+L Diode:MBR0520 D13
 U 1 1 5E87F7F2
 P 3400 4800
-F 0 "D?" H 3400 4581 50  0000 C CNN
+F 0 "D13" H 3400 4581 50  0000 C CNN
 F 1 "MBR120" H 3400 4674 50  0000 C CNN
 F 2 "Diode_SMD:D_SOD-123F" H 3400 4625 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/MBR120VLSFT1G/MBR120VLSFT1GOSCT-ND/893874" H 3400 4800 50  0001 C CNN
@@ -537,10 +537,10 @@ $EndComp
 Wire Wire Line
 	1000 4900 2350 4900
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H2
 U 1 1 5E8DC4AA
 P 3350 6450
-F 0 "H?" H 3450 6500 50  0000 L CNN
+F 0 "H2" H 3450 6500 50  0000 L CNN
 F 1 "GND PAD" H 3450 6407 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 3350 6450 50  0001 C CNN
 F 3 "~" H 3350 6450 50  0001 C CNN
@@ -550,10 +550,10 @@ $EndComp
 Wire Wire Line
 	3350 6550 3350 6750
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H1
 U 1 1 5E8DD364
 P 700 6450
-F 0 "H?" H 800 6500 50  0000 L CNN
+F 0 "H1" H 800 6500 50  0000 L CNN
 F 1 "-BATT PAD" H 800 6407 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 700 6450 50  0001 C CNN
 F 3 "~" H 700 6450 50  0001 C CNN

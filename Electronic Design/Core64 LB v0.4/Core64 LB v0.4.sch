@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Core64 CB v0.4-cache
+LIBS:Core64 LB v0.4-cache
 EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
@@ -18,7 +18,7 @@ $Sheet
 S 6100 1000 1550 250 
 U 5E755AC8
 F0 "Core Array Driver" 50
-F1 "Core64 CB v0.4 Driver.sch" 50
+F1 "Core64 LB v0.4 Driver.sch" 50
 $EndSheet
 Text Notes 2650 750  0    118  ~ 0
 CORE 64 INTERACTIVE CORE MEMORY BADGE V0.4 DUAL BOARD (LOGIC)
@@ -26,13 +26,13 @@ $Sheet
 S 8750 1000 1500 250 
 U 5E75D6AB
 F0 "SENSE" 50
-F1 "Core64 CB v0.4 Sense.sch" 50
+F1 "Core64 LB v0.4 Sense.sch" 50
 $EndSheet
 $Sheet
 S 3300 1000 1500 250 
 U 5EA63449
 F0 "IO Expansion" 50
-F1 "Core64 CB v0.4 Expansion.sch" 50
+F1 "Core64 LB v0.4 Expansion.sch" 50
 $EndSheet
 $Comp
 L Teensy:Teensy-LC U?
@@ -179,7 +179,7 @@ $Sheet
 S 700  1000 1450 250 
 U 5E7548ED
 F0 "Power" 50
-F1 "Core64 CB v0.4 Power.sch" 50
+F1 "Core64 LB v0.4 Power.sch" 50
 $EndSheet
 Text GLabel 1900 2500 0    50   BiDi ~ 0
 SAO1_GPIO2(RX)
@@ -463,19 +463,6 @@ Text GLabel 7250 5600 0    50   Input ~ 0
 3V3_800mA
 Wire Wire Line
 	7650 5800 7650 6100
-$Comp
-L Jumper:SolderJumper_3_Bridged123 JP?
-U 1 1 5EA7ABDA
-P 7450 5800
-AR Path="/5EA63449/5EA7ABDA" Ref="JP?"  Part="1" 
-AR Path="/5EA7ABDA" Ref="JP2"  Part="1" 
-F 0 "JP2" H 7450 5915 50  0000 C CNN
-F 1 "SolderJumper_3_Bridged123" H 8050 5750 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged123_Pad1.0x1.5mm_NumberLabels" H 7450 5800 50  0001 C CNN
-F 3 "~" H 7450 5800 50  0001 C CNN
-	1    7450 5800
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	7150 6400 7650 6400
 Wire Wire Line
@@ -483,7 +470,7 @@ Wire Wire Line
 Wire Wire Line
 	7250 5800 7250 5900
 Wire Wire Line
-	7450 5600 7450 5650
+	7450 5600 7450 5800
 Wire Wire Line
 	4200 4200 4250 4200
 $Comp
@@ -604,4 +591,9 @@ Text GLabel 5100 3200 2    50   Input ~ 0
 TEENSY_GND
 Text GLabel 1150 2400 0    50   Input ~ 0
 TEENSY_GND
+Wire Wire Line
+	7250 5800 7450 5800
+Connection ~ 7450 5800
+Wire Wire Line
+	7450 5800 7650 5800
 $EndSCHEMATC

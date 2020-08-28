@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Core64 CB v0.4-cache
+LIBS:Core64 LB v0.4-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -100,10 +100,10 @@ SPARE_4
 Text GLabel 2900 4350 2    50   Input ~ 0
 SPARE_5
 $Comp
-L power:GNDD #PWR?
+L power:GNDD #PWR0150
 U 1 1 5E892DA1
 P 1950 5850
-F 0 "#PWR?" H 1950 5600 50  0001 C CNN
+F 0 "#PWR0150" H 1950 5600 50  0001 C CNN
 F 1 "GNDD" H 1954 5694 50  0000 C CNN
 F 2 "" H 1950 5850 50  0001 C CNN
 F 3 "" H 1950 5850 50  0001 C CNN
@@ -111,10 +111,10 @@ F 3 "" H 1950 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDD #PWR?
+L power:GNDD #PWR0153
 U 1 1 5E8936A9
 P 1900 3200
-F 0 "#PWR?" H 1900 2950 50  0001 C CNN
+F 0 "#PWR0153" H 1900 2950 50  0001 C CNN
 F 1 "GNDD" H 1904 3044 50  0000 C CNN
 F 2 "" H 1900 3200 50  0001 C CNN
 F 3 "" H 1900 3200 50  0001 C CNN
@@ -124,10 +124,10 @@ $EndComp
 Text Notes 700  6350 0    118  ~ 0
 OLED DISPLAY (OPTIONAL)
 $Comp
-L Connector:Conn_01x04_Female X?
+L Connector:Conn_01x04_Female X4
 U 1 1 5E830BC9
 P 2400 7300
-F 0 "X?" V 2300 6950 50  0000 L CNN
+F 0 "X4" V 2300 6950 50  0000 L CNN
 F 1 "SSW-104-22-L-S-VS" V 2500 6850 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2400 7300 50  0001 C CNN
 F 3 "~" H 2400 7300 50  0001 C CNN
@@ -149,10 +149,10 @@ Wire Wire Line
 Text Notes 750  6650 0    50   ~ 0
 0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!
 $Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X?
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
 U 1 1 5E88FF30
 P 7200 4950
-F 0 "X?" H 7379 4947 50  0000 L CNN
+F 0 "X1" H 7379 4947 50  0000 L CNN
 F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 7379 4854 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 7200 5150 50  0001 C CNN
 F 3 "" H 7200 5150 50  0001 C CNN
@@ -160,10 +160,10 @@ F 3 "" H 7200 5150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Interface_Expansion:MCP23017_SO U?
+L Interface_Expansion:MCP23017_SO U8
 U 1 1 5E900DF7
 P 2200 4750
-F 0 "U?" H 1750 5750 50  0000 C CNN
+F 0 "U8" H 1750 5750 50  0000 C CNN
 F 1 "MCP23017_SO" H 2100 5250 50  0000 C CNN
 F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 2400 3750 50  0001 L CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 2400 3650 50  0001 L CNN
@@ -238,10 +238,10 @@ Wire Wire Line
 Wire Wire Line
 	7100 5350 7100 5400
 $Comp
-L Jumper:SolderJumper_3_Open JP?
+L Jumper:SolderJumper_3_Open JP4
 U 1 1 5E81A96A
 P 1850 7250
-F 0 "JP?" V 1700 7300 50  0000 L CNN
+F 0 "JP4" V 1700 7300 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1450 6800 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1850 7250 50  0001 C CNN
 F 3 "~" H 1850 7250 50  0001 C CNN
@@ -307,10 +307,10 @@ Wire Wire Line
 Wire Wire Line
 	800  6800 850  6800
 $Comp
-L Connector:Conn_01x04_Male X?
+L Connector:Conn_01x04_Male X3
 U 1 1 5E87C9AB
 P 4750 5000
-F 0 "X?" H 4722 4881 50  0000 R CNN
+F 0 "X3" H 4722 4881 50  0000 R CNN
 F 1 "Conn_01x04_Male" H 4722 4974 50  0000 R CNN
 F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 4750 5000 50  0001 C CNN
 F 3 "~" H 4750 5000 50  0001 C CNN
@@ -386,10 +386,10 @@ Wire Wire Line
 Wire Wire Line
 	6950 5050 6950 5400
 $Comp
-L Connector:Conn_01x08_Female J?
+L Connector:Conn_01x08_Female J7
 U 1 1 5EB0C89C
 P 5450 2100
-F 0 "J?" H 5300 2650 50  0000 L CNN
+F 0 "J7" H 5300 2650 50  0000 L CNN
 F 1 "Conn_01x08_Female" H 5100 2550 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5450 2100 50  0001 C CNN
 F 3 "~" H 5450 2100 50  0001 C CNN
@@ -409,10 +409,10 @@ SPARE_4
 Text GLabel 5250 2200 0    50   Input ~ 0
 SPARE_5
 $Comp
-L Interface_Expansion:MCP23017_SO U?
+L Interface_Expansion:MCP23017_SO U6
 U 1 1 5E8CA59F
 P 2250 2100
-F 0 "U?" H 1850 3100 50  0000 C CNN
+F 0 "U6" H 1850 3100 50  0000 C CNN
 F 1 "MCP23017_SO" H 2150 2550 50  0000 C CNN
 F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 2450 1100 50  0001 L CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 2450 1000 50  0001 L CNN
@@ -515,10 +515,10 @@ Wire Wire Line
 Wire Wire Line
 	5250 7400 4600 7400
 $Comp
-L Jumper:SolderJumper_3_Open JP?
+L Jumper:SolderJumper_3_Open JP3
 U 1 1 5E82F3CE
 P 1550 7150
-F 0 "JP?" V 1650 7200 50  0000 L CNN
+F 0 "JP3" V 1650 7200 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 900 7050 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1550 7150 50  0001 C CNN
 F 3 "~" H 1550 7150 50  0001 C CNN
