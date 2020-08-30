@@ -268,7 +268,7 @@ Wire Wire Line
 Text Notes 1000 2700 0    50   ~ 0
 DNI
 $Comp
-L Device:CP1_Small C10
+L Device:C C10
 U 1 1 5E6F58E8
 P 3900 3900
 F 0 "C10" H 3991 3946 50  0000 L CNN
@@ -279,7 +279,7 @@ F 3 "~" H 3900 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP1_Small C11
+L Device:C C11
 U 1 1 5E6F8864
 P 4300 3900
 F 0 "C11" H 4391 3946 50  0000 L CNN
@@ -290,20 +290,20 @@ F 3 "~" H 4300 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4300 3600 4300 3800
+	4300 3600 4300 3750
 Wire Wire Line
 	3450 3600 3900 3600
 Wire Wire Line
-	3900 3600 3900 3800
+	3900 3600 3900 3750
 Connection ~ 3900 3600
 Wire Wire Line
 	3900 3600 4300 3600
 Wire Wire Line
 	3450 4200 3900 4200
 Wire Wire Line
-	4300 4200 4300 4000
+	4300 4200 4300 4050
 Wire Wire Line
-	3900 4000 3900 4200
+	3900 4050 3900 4200
 Connection ~ 3900 4200
 Wire Wire Line
 	3900 4200 4300 4200
@@ -417,7 +417,7 @@ SENSE_RESET
 Wire Wire Line
 	6100 2600 6300 2600
 $Comp
-L Device:CP1_Small C9
+L Device:C C9
 U 1 1 5E84C4A5
 P 6850 3700
 F 0 "C9" H 6941 3746 50  0000 L CNN
@@ -442,9 +442,9 @@ Wire Wire Line
 Wire Wire Line
 	3450 3600 3450 3450
 Wire Wire Line
-	6850 3150 6850 3600
+	6850 3150 6850 3550
 Wire Wire Line
-	6850 3800 6850 4200
+	6850 3850 6850 4200
 Wire Wire Line
 	6850 4200 6200 4200
 $Comp
@@ -564,4 +564,6 @@ Wire Wire Line
 Wire Wire Line
 	3900 1450 3650 1450
 Connection ~ 3650 1450
+Text Notes 6300 6750 0    50   ~ 0
+All non-polarized capacitors are ceramic unless otherwise noted.
 $EndSCHEMATC

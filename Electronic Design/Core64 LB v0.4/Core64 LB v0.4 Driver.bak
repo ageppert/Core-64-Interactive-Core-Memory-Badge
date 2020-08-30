@@ -1889,4 +1889,8 @@ Wire Wire Line
 	4300 4450 5000 4450
 Wire Wire Line
 	3950 2250 3950 2300
+Text Notes 6300 6750 0    50   ~ 0
+All non-polarized capacitors are ceramic unless otherwise noted.
+Text Notes -100 7450 0    157  ~ 31
+TO DO: Choose BIG CAP footprint
 $EndSCHEMATC

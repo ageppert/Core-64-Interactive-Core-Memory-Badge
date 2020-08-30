@@ -396,4 +396,27 @@ Wire Wire Line
 	800  7450 1550 7450
 Wire Wire Line
 	800  6950 1850 6950
+Text Notes 6300 6750 0    50   ~ 0
+All non-polarized capacitors are ceramic unless otherwise noted.
+$Comp
+L Device:C C6
+U 1 1 5F548531
+P 1150 1200
+F 0 "C6" H 1265 1247 50  0000 L CNN
+F 1 "0.1uF" H 1265 1154 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1188 1050 50  0001 C CNN
+F 3 "~" H 1150 1200 50  0001 C CNN
+	1    1150 1200
+	1    0    0    -1  
+$EndComp
+Text Notes 4400 7800 0    50   ~ 0
+Silkscreen: 3V3 ONLY
+Text Notes 1350 7750 0    50   ~ 0
+Silkscreen: 3V3 ONLY
+Text Notes 4650 5500 0    50   ~ 0
+Silkscreen: 3V3 ONLY
+Text Notes 8550 4650 0    50   ~ 0
+Silkscreen: 3V3 ONLY
+Text Notes 4950 2800 0    50   ~ 0
+Silkscreen: 3V3 ONLY
 $EndSCHEMATC
