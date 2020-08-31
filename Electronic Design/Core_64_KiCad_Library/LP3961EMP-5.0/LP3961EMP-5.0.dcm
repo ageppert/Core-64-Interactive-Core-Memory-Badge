@@ -2,8 +2,6 @@ EESchema-DOCLIB  Version 2.0
 #
 $CMP LP3961EMP-5.0
 D Fast Ultra Low Dropout Linear Regulators
-K
-F 
 $ENDCMP
 #
 #End Doc Library

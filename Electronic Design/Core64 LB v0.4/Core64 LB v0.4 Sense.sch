@@ -235,8 +235,8 @@ $Comp
 L Device:R R40
 U 1 1 5E62BEBD
 P 4300 3050
-F 0 "R40" H 4370 3096 50  0000 L CNN
-F 1 "10k" H 4370 3005 50  0000 L CNN
+F 0 "R40" V 4400 3000 50  0000 L CNN
+F 1 "10k" V 4500 3000 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 4230 3050 50  0001 C CNN
 F 3 "~" H 4300 3050 50  0001 C CNN
 	1    4300 3050
@@ -246,8 +246,8 @@ $Comp
 L Device:R R35
 U 1 1 5E631504
 P 4300 2050
-F 0 "R35" H 4370 2096 50  0000 L CNN
-F 1 "10k" H 4370 2005 50  0000 L CNN
+F 0 "R35" V 4400 2000 50  0000 L CNN
+F 1 "10k" V 4500 2000 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 4230 2050 50  0001 C CNN
 F 3 "~" H 4300 2050 50  0001 C CNN
 	1    4300 2050
@@ -428,9 +428,9 @@ F 3 "~" H 6850 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 1800 1450 0    50   Input ~ 0
-3V3_800mA
+3V3
 Text GLabel 3400 3450 0    50   Input ~ 0
-3V3_800mA
+3V3
 Wire Wire Line
 	1850 1450 1850 1550
 Wire Wire Line
@@ -459,7 +459,7 @@ F 3 "" H 6200 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6150 3050 0    50   Input ~ 0
-3V3_800mA
+3V3
 Wire Wire Line
 	6200 3050 6200 3150
 Connection ~ 6200 3150
@@ -495,7 +495,7 @@ SENSE_RESET
 Text GLabel 1400 5500 0    50   Input ~ 0
 SENSE_PULSE
 Text GLabel 1400 4900 0    50   Input ~ 0
-3V3_800mA
+3V3
 $Comp
 L power:GNDD #PWR0149
 U 1 1 5E86E945
@@ -565,5 +565,5 @@ Wire Wire Line
 	3900 1450 3650 1450
 Connection ~ 3650 1450
 Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are ceramic unless otherwise noted.
+All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 $EndSCHEMATC

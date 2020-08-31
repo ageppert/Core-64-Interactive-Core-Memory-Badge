@@ -1530,7 +1530,7 @@ Wire Wire Line
 Text Notes 1500 6750 0    50   ~ 0
 CORE MEMORY POWER
 Text GLabel 1050 7100 0    50   Input ~ 0
-3V3_800mA
+3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5E8ED59A
@@ -1814,45 +1814,6 @@ Wire Wire Line
 	1900 2800 1900 2750
 Wire Wire Line
 	1900 2800 2550 2800
-Wire Wire Line
-	1050 7100 1250 7100
-$Comp
-L Device:CP1_Small C?
-U 1 1 5E91F406
-P 1250 7300
-AR Path="/5E755787/5E91F406" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5E91F406" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5E91F406" Ref="C8"  Part="1" 
-F 0 "C8" H 1350 7400 50  0000 L CNN
-F 1 "1000uF" H 1350 7300 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_10x10" H 1250 7300 50  0001 C CNN
-F 3 "~" H 1250 7300 50  0001 C CNN
-	1    1250 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1250 7100 1250 7200
-Text Notes 550  7600 0    50   ~ 0
-PLACE\nCAPACITOR\nNEAR\nCORE DRIVERS
-Connection ~ 1250 7100
-$Comp
-L power:GND #PWR?
-U 1 1 5E94D2F4
-P 1250 7500
-AR Path="/5D254AE8/5E94D2F4" Ref="#PWR?"  Part="1" 
-AR Path="/5E94D2F4" Ref="#PWR?"  Part="1" 
-AR Path="/5E755AC8/5E94D2F4" Ref="#PWR0126"  Part="1" 
-F 0 "#PWR0126" H 1250 7250 50  0001 C CNN
-F 1 "GND" H 1255 7325 50  0000 C CNN
-F 2 "" H 1250 7500 50  0001 C CNN
-F 3 "" H 1250 7500 50  0001 C CNN
-	1    1250 7500
-	1    0    0    -1  
-$EndComp
-Text Notes 1250 7800 0    50   ~ 0
-SYSTEM POWER GROUND
-Wire Wire Line
-	1250 7400 1250 7500
 Text GLabel 850  2400 2    50   BiDi ~ 0
 I2C_CLOCK
 Text GLabel 850  2500 2    50   BiDi ~ 0
@@ -1876,8 +1837,6 @@ SAO3_GPIO2
 Wire Wire Line
 	1900 3000 1900 3050
 Wire Wire Line
-	1250 7100 1900 7100
-Wire Wire Line
 	1700 4400 1700 4450
 Connection ~ 1700 4450
 Wire Wire Line
@@ -1889,8 +1848,44 @@ Wire Wire Line
 	4300 4450 5000 4450
 Wire Wire Line
 	3950 2250 3950 2300
+Wire Wire Line
+	1050 7100 1900 7100
+Wire Wire Line
+	1250 7100 1250 7200
+$Comp
+L power:GND #PWR?
+U 1 1 5F6C52F2
+P 1250 7500
+AR Path="/5D254AE8/5F6C52F2" Ref="#PWR?"  Part="1" 
+AR Path="/5F6C52F2" Ref="#PWR?"  Part="1" 
+AR Path="/5E755AC8/5F6C52F2" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 1250 7250 50  0001 C CNN
+F 1 "GND" H 1255 7325 50  0000 C CNN
+F 2 "" H 1250 7500 50  0001 C CNN
+F 3 "" H 1250 7500 50  0001 C CNN
+	1    1250 7500
+	1    0    0    -1  
+$EndComp
+Text Notes 1250 7800 0    50   ~ 0
+SYSTEM POWER GROUND
+Wire Wire Line
+	1250 7400 1250 7500
+$Comp
+L Device:CP1_Small C?
+U 1 1 5F6C52FB
+P 1250 7300
+AR Path="/5E755787/5F6C52FB" Ref="C?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5F6C52FB" Ref="C?"  Part="1" 
+AR Path="/5E755AC8/5F6C52FB" Ref="C1"  Part="1" 
+AR Path="/5E7548ED/5F6C52FB" Ref="C?"  Part="1" 
+F 0 "C1" H 1350 7400 50  0000 L CNN
+F 1 "470uF" H 1350 7300 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_10x10" H 1250 7300 50  0001 C CNN
+F 3 "~" H 1250 7300 50  0001 C CNN
+F 4 "565-EMHL100ARA471MHA0GCT-ND" H 1250 7300 50  0001 C CNN "Digikey"
+	1    1250 7300
+	1    0    0    -1  
+$EndComp
 Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are ceramic unless otherwise noted.
-Text Notes -100 7450 0    157  ~ 31
-TO DO: Choose BIG CAP footprint
+All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 $EndSCHEMATC

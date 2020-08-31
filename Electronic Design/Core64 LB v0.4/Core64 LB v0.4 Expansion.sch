@@ -14,62 +14,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 2900 4850 2    50   Output ~ 0
-Q1P
-Text GLabel 2900 4950 2    50   Output ~ 0
-Q1N
-Text GLabel 2900 4650 2    50   Input ~ 0
-SENSE_PULSE
-Text GLabel 2900 5050 2    50   Output ~ 0
-Q2P
-Text GLabel 2900 5150 2    50   Output ~ 0
-Q2N
-Text GLabel 2950 1700 2    50   Output ~ 0
-Q3P
-Text GLabel 2950 1800 2    50   Output ~ 0
-Q3N
-Text GLabel 2950 1900 2    50   Output ~ 0
-Q4P
-Text GLabel 2950 2000 2    50   Output ~ 0
-Q4N
-Text GLabel 2950 2200 2    50   Output ~ 0
-Q5P
-Text GLabel 2950 2300 2    50   Output ~ 0
-Q5N
-Text GLabel 2950 2400 2    50   Output ~ 0
-Q6P
-Text GLabel 2950 2500 2    50   Output ~ 0
-Q6N
-Text GLabel 2950 2600 2    50   Output ~ 0
-Q7P
-Text GLabel 2950 1300 2    50   Output ~ 0
-Q9P
-Text GLabel 2950 2900 2    50   Output ~ 0
-Q8N
-Text GLabel 2950 2800 2    50   Output ~ 0
-Q8P
-Text GLabel 2950 2700 2    50   Output ~ 0
-Q7N
-Text GLabel 2950 1600 2    50   Output ~ 0
-Q10N
-Text GLabel 2950 1500 2    50   Output ~ 0
-Q10P
-Text GLabel 2950 1400 2    50   Output ~ 0
-Q9N
-Text GLabel 2900 5250 2    50   Input ~ 0
-HALL_SWITCH_1
-Text GLabel 2900 4550 2    50   Output ~ 0
-SENSE_RESET
 Text Notes 550  700  0    118  ~ 0
-WAS IO EXPANDER
-Text GLabel 2900 5350 2    50   Input ~ 0
-HALL_SWITCH_2
-Text GLabel 2900 5450 2    50   Input ~ 0
-HALL_SWITCH_3
-Text GLabel 2900 5550 2    50   Input ~ 0
-HALL_SWITCH_4
-Text GLabel 2900 4450 2    50   Output ~ 0
-WRITE_ENABLE
+CORE PLANE SELECT (OPTIONAL)
 Text GLabel 2650 6900 2    50   BiDi ~ 0
 I2C_CLOCK
 Text GLabel 2650 7050 2    50   BiDi ~ 0
@@ -93,12 +39,6 @@ F 3 "" H 800 7500 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	800  7500 800  7450
-Text GLabel 2900 4150 2    50   Input ~ 0
-SPARE_3
-Text GLabel 2900 4250 2    50   Input ~ 0
-SPARE_4
-Text GLabel 2900 4350 2    50   Input ~ 0
-SPARE_5
 Text Notes 700  6350 0    118  ~ 0
 OLED DISPLAY (OPTIONAL)
 $Comp
@@ -138,7 +78,7 @@ F 3 "" H 7200 5150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6900 4800 0    50   Input ~ 0
-3V3_800mA
+3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5E90735C
@@ -223,7 +163,7 @@ Wire Wire Line
 Wire Wire Line
 	1850 6950 1850 7050
 Text GLabel 850  6800 2    50   Input ~ 0
-3V3_800mA
+3V3
 Wire Wire Line
 	800  6950 800  6800
 Wire Wire Line
@@ -242,7 +182,7 @@ $EndComp
 Text Notes 4100 4400 0    118  ~ 0
 QWIIC (OPTIONAL)
 Text GLabel 5150 5000 2    50   Input ~ 0
-3V3_800mA
+3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5E8E126F
@@ -266,7 +206,7 @@ Wire Wire Line
 	4950 4900 5150 4900
 Wire Wire Line
 	4950 5100 5150 5100
-Text Notes 4850 1450 0    50   ~ 10
+Text Notes 9400 800  0    50   ~ 10
 IO Expansion header
 Wire Wire Line
 	6950 4800 6950 4600
@@ -275,25 +215,21 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x08_Female J7
 U 1 1 5EB0C89C
-P 5450 2100
-F 0 "J7" H 5300 2650 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 5100 2550 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5450 2100 50  0001 C CNN
-F 3 "~" H 5450 2100 50  0001 C CNN
-	1    5450 2100
+P 10000 1450
+F 0 "J7" H 9850 2000 50  0000 L CNN
+F 1 "Conn_01x08_Female" H 9650 1900 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 10000 1450 50  0001 C CNN
+F 3 "~" H 10000 1450 50  0001 C CNN
+	1    10000 1450
 	1    0    0    -1  
 $EndComp
-Text GLabel 5250 2300 0    50   Output ~ 0
+Text GLabel 9800 1650 0    50   Output ~ 0
 WRITE_ENABLE
-Text GLabel 2900 3950 2    50   Output ~ 0
-SPARE_1
-Text GLabel 2900 4050 2    50   Output ~ 0
-SPARE_2
-Text GLabel 5250 2000 0    50   Input ~ 0
+Text GLabel 9800 1350 0    50   Input ~ 0
 SPARE_3
-Text GLabel 5250 2100 0    50   Input ~ 0
+Text GLabel 9800 1450 0    50   Input ~ 0
 SPARE_4
-Text GLabel 5250 2200 0    50   Input ~ 0
+Text GLabel 9800 1550 0    50   Input ~ 0
 SPARE_5
 Wire Wire Line
 	4950 5000 5150 5000
@@ -373,40 +309,38 @@ F 3 "~" H 1550 7150 50  0001 C CNN
 	1    1550 7150
 	0    -1   -1   0   
 $EndComp
-Text GLabel 5250 1900 0    50   Input ~ 0
+Text GLabel 9800 1250 0    50   Input ~ 0
 SPARE_2
-Text GLabel 5250 1800 0    50   Input ~ 0
+Text GLabel 9800 1150 0    50   Input ~ 0
 SPARE_1
 $Comp
 L power:GND #PWR?
 U 1 1 5EC9F516
-P 5250 2500
+P 9800 1850
 AR Path="/5E755787/5EC9F516" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5EC9F516" Ref="#PWR0166"  Part="1" 
-F 0 "#PWR0166" H 5250 2250 50  0001 C CNN
-F 1 "GND" H 5255 2325 50  0000 C CNN
-F 2 "" H 5250 2500 50  0001 C CNN
-F 3 "" H 5250 2500 50  0001 C CNN
-	1    5250 2500
+F 0 "#PWR0166" H 9800 1600 50  0001 C CNN
+F 1 "GND" H 9805 1675 50  0000 C CNN
+F 2 "" H 9800 1850 50  0001 C CNN
+F 3 "" H 9800 1850 50  0001 C CNN
+	1    9800 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 5250 2400 0    50   Input ~ 0
-3V3_800mA
+Text GLabel 9800 1750 0    50   Input ~ 0
+3V3
 Wire Wire Line
 	800  7450 1550 7450
 Wire Wire Line
 	800  6950 1850 6950
-Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are ceramic unless otherwise noted.
 $Comp
 L Device:C C6
 U 1 1 5F548531
-P 1150 1200
-F 0 "C6" H 1265 1247 50  0000 L CNN
-F 1 "0.1uF" H 1265 1154 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1188 1050 50  0001 C CNN
-F 3 "~" H 1150 1200 50  0001 C CNN
-	1    1150 1200
+P 2900 3150
+F 0 "C6" H 3015 3197 50  0000 L CNN
+F 1 "0.1uF" H 3015 3104 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2938 3000 50  0001 C CNN
+F 3 "~" H 2900 3150 50  0001 C CNN
+	1    2900 3150
 	1    0    0    -1  
 $EndComp
 Text Notes 4400 7800 0    50   ~ 0
@@ -417,6 +351,49 @@ Text Notes 4650 5500 0    50   ~ 0
 Silkscreen: 3V3 ONLY
 Text Notes 8550 4650 0    50   ~ 0
 Silkscreen: 3V3 ONLY
-Text Notes 4950 2800 0    50   ~ 0
+Text Notes 9500 2150 0    50   ~ 0
 Silkscreen: 3V3 ONLY
+Text Notes 6300 6750 0    50   ~ 0
+All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
+$Comp
+L 74xx_IEEE:74HC238 U1
+U 1 1 5F6FED24
+P 3200 1850
+F 0 "U1" H 3200 2600 50  0000 C CNN
+F 1 "74HC238" H 3200 2500 50  0000 C CNN
+F 2 "Digikey:TSSOP-16-1EP_W4.40mm" H 3200 1850 50  0001 C CNN
+F 3 "" H 3200 1850 50  0001 C CNN
+	1    3200 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F702794
+P 3200 2450
+AR Path="/5E755787/5F702794" Ref="#PWR?"  Part="1" 
+AR Path="/5EA63449/5F702794" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3200 2200 50  0001 C CNN
+F 1 "GND" H 3205 2275 50  0000 C CNN
+F 2 "" H 3200 2450 50  0001 C CNN
+F 3 "" H 3200 2450 50  0001 C CNN
+	1    3200 2450
+	1    0    0    -1  
+$EndComp
+Text GLabel 3200 1550 1    50   Input ~ 0
+3V3
+Text GLabel 2900 3000 1    50   Input ~ 0
+3V3
+$Comp
+L power:GND #PWR?
+U 1 1 5F704E2E
+P 2900 3300
+AR Path="/5E755787/5F704E2E" Ref="#PWR?"  Part="1" 
+AR Path="/5EA63449/5F704E2E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2900 3050 50  0001 C CNN
+F 1 "GND" H 2905 3125 50  0000 C CNN
+F 2 "" H 2900 3300 50  0001 C CNN
+F 3 "" H 2900 3300 50  0001 C CNN
+	1    2900 3300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

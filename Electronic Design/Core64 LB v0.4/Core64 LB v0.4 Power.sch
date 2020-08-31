@@ -180,7 +180,7 @@ Wire Notes Line
 Connection ~ 3850 5250
 Text Notes 9300 6550 2    50   ~ 0
 HIGH POWER SYSTEM GROUND
-Text Notes 5650 4550 0    50   ~ 0
+Text Notes 5800 4550 0    50   ~ 0
 LED ARRAY, TEENSY VIN
 $Comp
 L Device:R R?
@@ -478,22 +478,22 @@ Text Notes 1050 4850 0    50   ~ 0
 SILKSCREEN: ON (BAT) / OFF (USB)
 Text GLabel 4100 5250 2    50   Output ~ 0
 +VSW
-Text GLabel 4900 4800 1    50   Input ~ 0
+Text GLabel 5000 4800 0    50   Input ~ 0
 +VSW
 $Comp
 L power:GND #PWR0113
 U 1 1 5F56E724
-P 5500 6400
+P 6050 5850
 AR Path="/5E7548ED/5F56E724" Ref="#PWR0113"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F56E724" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0113" H 5500 6150 50  0001 C CNN
-F 1 "GND" H 5505 6225 50  0000 C CNN
-F 2 "" H 5500 6400 50  0001 C CNN
-F 3 "" H 5500 6400 50  0001 C CNN
-	1    5500 6400
+F 0 "#PWR0113" H 6050 5600 50  0001 C CNN
+F 1 "GND" H 6055 5675 50  0000 C CNN
+F 2 "" H 6050 5850 50  0001 C CNN
+F 3 "" H 6050 5850 50  0001 C CNN
+	1    6050 5850
 	1    0    0    -1  
 $EndComp
-Text Notes 5850 6550 0    50   ~ 0
+Text Notes 5550 6150 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Connection ~ 3850 5550
 Text Notes 3500 2200 0    157  ~ 31
@@ -517,11 +517,11 @@ F 3 "~" H 3400 5250 50  0001 C CNN
 $EndComp
 Text Notes 2900 6050 0    50   ~ 0
 OPTIONAL CUR. MON.:\n1) Open Cur. Mon. SJ\n2) Insert 0.01 Ohm\n    -or-\n2) Ammeter current\nbetween RPP & +VSW 
-Text Notes 4850 4450 0    118  ~ 0
+Text Notes 5000 4450 0    118  ~ 0
 5V POWER SUPPLY
 Wire Wire Line
 	2900 4950 3000 4950
-Text GLabel 7150 4600 2    50   Output ~ 0
+Text GLabel 7200 4800 2    50   Output ~ 0
 5V0
 Text GLabel 5100 7450 1    50   Input ~ 0
 5V0
@@ -762,7 +762,7 @@ Wire Wire Line
 Wire Wire Line
 	6400 3300 6500 3300
 Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are ceramic unless otherwise noted.
+All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 $Comp
 L NCP176AMX330TCG:NCP176AMX330TCG IC1
 U 1 1 5F5A7E01
@@ -805,8 +805,6 @@ Text Notes 8250 5650 0    50   ~ 0
 Preferred, TINY
 Text Notes 8550 4650 0    50   ~ 0
 Alternate, larger
-Wire Wire Line
-	7900 5850 7900 5950
 $Comp
 L power:GND #PWR0119
 U 1 1 5F5C202C
@@ -897,8 +895,6 @@ Wire Wire Line
 	7750 5950 7900 5950
 Connection ~ 7900 5950
 Wire Wire Line
-	7900 5950 7900 6100
-Wire Wire Line
 	7750 6300 7750 6350
 Wire Wire Line
 	7750 6350 7900 6350
@@ -940,8 +936,6 @@ Wire Wire Line
 Wire Wire Line
 	8300 5200 8350 5200
 Connection ~ 8300 5000
-Wire Wire Line
-	8300 4700 8300 4800
 Connection ~ 8300 4800
 Wire Wire Line
 	8300 4800 8300 5000
@@ -962,7 +956,7 @@ U 1 1 5F67458E
 P 9850 5550
 F 0 "JP9" V 9750 5650 50  0000 L CNN
 F 1 "3V3_Select" V 9600 5100 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 9850 5550 50  0001 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 9850 5550 50  0001 C CNN
 F 3 "~" H 9850 5550 50  0001 C CNN
 	1    9850 5550
 	0    -1   -1   0   
@@ -979,71 +973,164 @@ Wire Wire Line
 	9550 6000 9850 6000
 Text Notes 10000 6150 0    50   ~ 0
 Must\nSelect\nOne
-Text GLabel 8300 4700 1    50   Input ~ 0
+Text GLabel 8200 4650 0    50   Input ~ 0
 5V0
-Text GLabel 7900 5850 1    50   Input ~ 0
+Text GLabel 7850 5750 0    50   Input ~ 0
 5V0
 $Comp
-L Device:C C?
+L Device:CP1 C?
 U 1 1 5F69BA6F
-P 7450 4850
+P 7100 5250
 AR Path="/5E755787/5F69BA6F" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5F69BA6F" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5F69BA6F" Ref="C?"  Part="1" 
 AR Path="/5E7548ED/5F69BA6F" Ref="C7"  Part="1" 
-F 0 "C7" H 7541 4896 50  0000 L CNN
-F 1 "?uF" H 7541 4805 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 7450 4850 50  0001 C CNN
-F 3 "~" H 7450 4850 50  0001 C CNN
-	1    7450 4850
-	-1   0    0    -1  
+F 0 "C7" H 7191 5296 50  0000 L CNN
+F 1 "470uF" H 7191 5205 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_10x10" H 7100 5250 50  0001 C CNN
+F 3 "" H 7100 5250 50  0001 C CNN
+F 4 "565-EMHL100ARA471MHA0GCT-ND" H 7100 5250 50  0001 C CNN "Digikey"
+	1    7100 5250
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 5F69C890
-P 4900 5150
+P 5100 5400
 AR Path="/5E755787/5F69C890" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5F69C890" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5F69C890" Ref="C?"  Part="1" 
 AR Path="/5E7548ED/5F69C890" Ref="C13"  Part="1" 
-F 0 "C13" H 4991 5196 50  0000 L CNN
-F 1 "?uF" H 4991 5105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 4900 5150 50  0001 C CNN
-F 3 "~" H 4900 5150 50  0001 C CNN
-	1    4900 5150
+F 0 "C13" H 5191 5446 50  0000 L CNN
+F 1 "68uF" H 5191 5355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 5100 5400 50  0001 C CNN
+F 3 "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=C3216X5R1A686M160AC" H 5100 5400 50  0001 C CNN
+	1    5100 5400
 	-1   0    0    -1  
 $EndComp
 $Comp
 L LP3961EMP-5.0:LP3961EMP-5.0 IC3
 U 1 1 5F69DC3B
-P 5700 5250
-F 0 "IC3" H 6300 5518 50  0000 C CNN
-F 1 "LP3961EMP-5.0" H 6300 5425 50  0000 C CNN
-F 2 "LP3961EMP-5.0:SOT150P696X180-5N" H 6750 5350 50  0001 L CNN
-F 3 "" H 6750 5250 50  0001 L CNN
-F 4 "Fast Ultra Low Dropout Linear Regulators" H 6750 5150 50  0001 L CNN "Description"
-F 5 "" H 6750 5050 50  0001 L CNN "Height"
-F 6 "Texas Instruments" H 6750 4950 50  0001 L CNN "Manufacturer_Name"
-F 7 "LP3961EMP-5.0" H 6750 4850 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "LP3961EMP-5.0" H 6750 4750 50  0001 L CNN "Arrow Part Number"
-F 9 "https://www.arrow.com/en/products/lp3961emp-5.0/texas-instruments" H 6750 4650 50  0001 L CNN "Arrow Price/Stock"
-F 10 "926-LP3961EMP-50" H 6750 4550 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=926-LP3961EMP-50" H 6750 4450 50  0001 L CNN "Mouser Price/Stock"
-	1    5700 5250
+P 5850 5250
+F 0 "IC3" H 6350 5550 50  0000 C CNN
+F 1 "LP3961EMP-5.0" H 6350 5450 50  0000 C CNN
+F 2 "LP3961EMP-5.0:SOT150P696X180-5N" H 6900 5350 50  0001 L CNN
+F 3 "https://4donline.ihs.com/images/VipMasterIC/IC/NATL/NATLS08520/NATLS08520-1.pdf?hkey=EC6BD57738AE6E33B588C5F9AD3CEFA7" H 6900 5250 50  0001 L CNN
+F 4 "Fast Ultra Low Dropout Linear Regulators" H 6900 5150 50  0001 L CNN "Description"
+F 5 "" H 6900 5050 50  0001 L CNN "Height"
+F 6 "Texas Instruments" H 6900 4950 50  0001 L CNN "Manufacturer_Name"
+F 7 "LP3961EMP-5.0" H 6900 4850 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "LP3961EMP-5.0" H 6900 4750 50  0001 L CNN "Arrow Part Number"
+F 9 "https://www.arrow.com/en/products/lp3961emp-5.0/texas-instruments" H 6900 4650 50  0001 L CNN "Arrow Price/Stock"
+F 10 "926-LP3961EMP-50" H 6900 4550 50  0001 L CNN "Mouser Part Number"
+F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=926-LP3961EMP-50" H 6900 4450 50  0001 L CNN "Mouser Price/Stock"
+	1    5850 5250
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5F6A75BC
-P 5200 5450
+P 5450 5200
 AR Path="/5E755787/5F6A75BC" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5F6A75BC" Ref="R?"  Part="1" 
-AR Path="/5E7548ED/5F6A75BC" Ref="R?"  Part="1" 
-F 0 "R?" H 5270 5496 50  0000 L CNN
-F 1 "10k" H 5270 5405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 5130 5450 50  0001 C CNN
-F 3 "~" H 5200 5450 50  0001 C CNN
-	1    5200 5450
+AR Path="/5E7548ED/5F6A75BC" Ref="R43"  Part="1" 
+F 0 "R43" H 5520 5246 50  0000 L CNN
+F 1 "100k" H 5520 5155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5380 5200 50  0001 C CNN
+F 3 "~" H 5450 5200 50  0001 C CNN
+	1    5450 5200
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5850 5400 5450 5400
+Wire Wire Line
+	5450 5400 5450 5350
+Wire Wire Line
+	6850 5500 7100 5500
+Wire Wire Line
+	6850 5300 6900 5300
+Wire Wire Line
+	6900 5300 6900 4800
+Wire Wire Line
+	6900 4800 7100 4800
+Wire Wire Line
+	5450 4800 5450 5050
+Wire Wire Line
+	7100 4800 7100 5100
+Wire Wire Line
+	7100 5400 7100 5500
+Connection ~ 7100 5500
+Wire Wire Line
+	7850 5750 7900 5750
+Wire Wire Line
+	7900 5750 7900 5950
+Wire Wire Line
+	8200 4650 8300 4650
+Wire Wire Line
+	8300 4650 8300 4800
+Wire Wire Line
+	7900 5950 7900 6100
+Wire Wire Line
+	7100 5500 7100 5750
+Wire Wire Line
+	5100 5550 5100 5750
+Wire Wire Line
+	5100 5750 5450 5750
+Wire Wire Line
+	6050 5750 6050 5850
+Wire Wire Line
+	5000 4800 5100 4800
+Connection ~ 5100 4800
+Wire Wire Line
+	5850 5250 5800 5250
+Wire Wire Line
+	5800 5250 5800 5150
+Wire Wire Line
+	5800 4800 5800 4850
+$Comp
+L Device:R R?
+U 1 1 5F535DE4
+P 5800 5000
+AR Path="/5E755787/5F535DE4" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5F535DE4" Ref="R?"  Part="1" 
+AR Path="/5E7548ED/5F535DE4" Ref="R1"  Part="1" 
+F 0 "R1" H 5870 5046 50  0000 L CNN
+F 1 "10k" H 5870 4955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5730 5000 50  0001 C CNN
+F 3 "~" H 5800 5000 50  0001 C CNN
+	1    5800 5000
+	-1   0    0    -1  
+$EndComp
+Connection ~ 5450 4800
+Wire Wire Line
+	5450 4800 5800 4800
+Wire Wire Line
+	5100 4800 5300 4800
+Wire Wire Line
+	5100 4800 5100 5250
+Wire Wire Line
+	5300 4800 5300 5550
+Wire Wire Line
+	5300 5550 5850 5550
+Connection ~ 5300 4800
+Wire Wire Line
+	5300 4800 5450 4800
+Connection ~ 7100 4800
+Wire Wire Line
+	7100 4800 7200 4800
+Connection ~ 6050 5750
+Wire Wire Line
+	6050 5750 7100 5750
+Wire Wire Line
+	5450 5400 5450 5750
+Connection ~ 5450 5400
+Connection ~ 5450 5750
+Wire Wire Line
+	5450 5750 6050 5750
+Text Notes 4650 5950 0    50   ~ 0
+CIN ESR (mΩ) / CIN (μF) ≤ 1.5\nX7R or X5R Ceramic
+Text Notes 6350 5900 0    50   ~ 0
+0.2Ω ≤ COUT ESR ≤ 5Ω
+Text Notes 5950 4900 0    50   ~ 0
+See data sheet for\ncapacitor requirements
 $EndSCHEMATC
