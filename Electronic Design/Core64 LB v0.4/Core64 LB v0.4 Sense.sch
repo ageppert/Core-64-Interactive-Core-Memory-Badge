@@ -308,7 +308,7 @@ Connection ~ 3900 4200
 Wire Wire Line
 	3900 4200 4300 4200
 Text Notes 5700 850  0    118  ~ 0
-SENSE SIGNAL RS LATCH
+SENSE SIGNAL LATCH
 Text GLabel 7200 1750 2    50   Output ~ 0
 SENSE_PULSE
 $Comp
@@ -566,4 +566,8 @@ Wire Wire Line
 Connection ~ 3650 1450
 Text Notes 6300 6750 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
+Text Notes 750  5750 0    50   ~ 0
+Silkscreen: 3V3 ONLY
+Text Notes 4800 2950 0    118  ~ 0
+NOR -> NOT -> RS LATCH
 $EndSCHEMATC

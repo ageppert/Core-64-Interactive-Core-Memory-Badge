@@ -1505,7 +1505,7 @@ AR Path="/5E8ED566" Ref="R?"  Part="1"
 AR Path="/5D254AE8/5E8ED566" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5E8ED566" Ref="R10"  Part="1" 
 F 0 "R10" V 3443 7200 50  0000 C CNN
-F 1 "470" V 3534 7200 50  0000 C CNN
+F 1 "220" V 3534 7200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 7200 50  0001 C CNN
 F 3 "~" H 3650 7200 50  0001 C CNN
 	1    3650 7200
@@ -1618,224 +1618,171 @@ Wire Wire Line
 	3800 4450 4300 4450
 Wire Wire Line
 	1200 4450 1700 4450
-Text GLabel 2450 2300 0    50   Output ~ 0
-XB3
-Text GLabel 2450 2200 0    50   Output ~ 0
-XB2
-Text GLabel 2450 2100 0    50   Output ~ 0
-XB1
-Text GLabel 2450 2000 0    50   Output ~ 0
-XB0
-Text GLabel 2450 2400 0    50   Output ~ 0
-XB4
-Text GLabel 2450 2500 0    50   Output ~ 0
-XB5
-Text GLabel 2450 2600 0    50   Output ~ 0
-XB6
-Text GLabel 2450 2700 0    50   Output ~ 0
-XB7
-Text GLabel 2450 1900 0    50   Output ~ 0
-XT0-4
 Text GLabel 2450 1800 0    50   Output ~ 0
-XT1-5
+XB3
 Text GLabel 2450 1700 0    50   Output ~ 0
-XT2-6
+XB2
 Text GLabel 2450 1600 0    50   Output ~ 0
+XB1
+Text GLabel 2450 1500 0    50   Output ~ 0
+XB0
+Text GLabel 2450 1900 0    50   Output ~ 0
+XB4
+Text GLabel 2450 2000 0    50   Output ~ 0
+XB5
+Text GLabel 2450 2100 0    50   Output ~ 0
+XB6
+Text GLabel 2450 2200 0    50   Output ~ 0
+XB7
+Text GLabel 2450 1400 0    50   Output ~ 0
+XT0-4
+Text GLabel 2450 1300 0    50   Output ~ 0
+XT1-5
+Text GLabel 2450 1200 0    50   Output ~ 0
+XT2-6
+Text GLabel 2450 1100 0    50   Output ~ 0
 XT3-7
 Wire Wire Line
-	2450 1600 2550 1600
+	2450 1100 2550 1100
 Wire Wire Line
-	2450 1700 2550 1700
+	2450 1200 2550 1200
 Wire Wire Line
-	2450 1800 2550 1800
+	2450 1300 2550 1300
 Wire Wire Line
-	2450 1900 2550 1900
-Text GLabel 1400 1700 2    50   Output ~ 0
+	2450 1400 2550 1400
+Text GLabel 1400 1200 2    50   Output ~ 0
 YL1
-Text GLabel 1400 1600 2    50   Output ~ 0
+Text GLabel 1400 1100 2    50   Output ~ 0
 YL0
-Text GLabel 1400 1800 2    50   Output ~ 0
+Text GLabel 1400 1300 2    50   Output ~ 0
 YL2
-Text GLabel 1400 1900 2    50   Output ~ 0
+Text GLabel 1400 1400 2    50   Output ~ 0
 YL3
-Text GLabel 1400 2300 2    50   Output ~ 0
+Text GLabel 1400 1800 2    50   Output ~ 0
 YL7
 Wire Wire Line
-	1350 2000 1350 2200
+	1350 1500 1350 1700
 Wire Wire Line
-	1350 2200 1400 2200
+	1350 1700 1400 1700
 Wire Wire Line
-	1400 1600 750  1600
+	1400 1100 750  1100
 Wire Wire Line
-	1400 1900 750  1900
+	1400 1400 750  1400
 Wire Wire Line
-	1400 2000 1350 2000
+	1400 1500 1350 1500
 Wire Wire Line
-	1350 2000 750  2000
-Connection ~ 1350 2000
+	1350 1500 750  1500
+Connection ~ 1350 1500
 Wire Wire Line
-	1300 2300 1400 2300
+	1300 1800 1400 1800
 Wire Wire Line
-	1300 2100 1300 2300
+	1300 1600 1300 1800
 Wire Wire Line
-	1400 2100 1300 2100
-Text Notes 550  1300 0    50   ~ 0
-YL: 6\nSENSE: 2\nSPARE: 2\nGND, 3V3: 2\nMHS: 4 (hall switches)\nTOTAL=16
+	1400 1600 1300 1600
 Wire Wire Line
-	1300 2100 750  2100
-Connection ~ 1300 2100
+	1300 1600 750  1600
+Connection ~ 1300 1600
 Wire Wire Line
-	2450 2700 2550 2700
+	2450 2200 2550 2200
 Wire Wire Line
-	2450 2600 2550 2600
+	2450 2100 2550 2100
 $Comp
 L Connector:Conn_01x16_Female J5
 U 1 1 5E78B5ED
-P 2750 2300
-F 0 "J5" H 1950 3250 50  0000 C CNN
-F 1 "SSW-116-22-F-S-VS‎" H 2350 3150 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2750 2300 50  0001 C CNN
-F 3 "~" H 2750 2300 50  0001 C CNN
-	1    2750 2300
+P 2750 1800
+F 0 "J5" H 1950 2750 50  0000 C CNN
+F 1 "SSW-116-22-F-S-VS‎" H 2350 2650 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2750 1800 50  0001 C CNN
+F 3 "~" H 2750 1800 50  0001 C CNN
+	1    2750 1800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x16_Female J1
 U 1 1 5E78B5F3
-P 550 2300
-F 0 "J1" H 500 3250 50  0000 C CNN
-F 1 "SSW-116-22-F-S-VS‎" H 100 3150 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 550 2300 50  0001 C CNN
-F 3 "~" H 550 2300 50  0001 C CNN
-	1    550  2300
+P 550 1800
+F 0 "J1" H 500 2750 50  0000 C CNN
+F 1 "SSW-116-22-F-S-VS‎" H 100 2650 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 550 1800 50  0001 C CNN
+F 3 "~" H 550 1800 50  0001 C CNN
+	1    550  1800
 	-1   0    0    -1  
 $EndComp
-Text Notes 1900 1300 0    50   ~ 0
-XT: 4\nXB :8\nLED MATRIX: 3\n    (V+, SIGNAL, GND)\nSPARE: 1 (SAO3)\nTOTAL=16
 Wire Wire Line
-	2450 2300 2550 2300
+	2450 1800 2550 1800
 Wire Wire Line
-	2450 2500 2550 2500
-Text GLabel 850  2200 2    50   Input ~ 0
+	2450 2000 2550 2000
+Text GLabel 850  1700 2    50   Input ~ 0
 SENSE1
-Text GLabel 850  2300 2    50   Input ~ 0
+Text GLabel 850  1800 2    50   Input ~ 0
 SENSE2
 Wire Wire Line
-	850  2300 750  2300
-Text GLabel 2500 2900 0    50   Input ~ 0
-LED_MATRIX_+VSW_SIG
-Wire Wire Line
-	2500 2900 2550 2900
+	850  1800 750  1800
 $Comp
 L power:GNDD #PWR0144
 U 1 1 5E78B651
-P 1550 3050
-F 0 "#PWR0144" H 1550 2800 50  0001 C CNN
-F 1 "GNDD" H 1554 2895 50  0000 C CNN
-F 2 "" H 1550 3050 50  0001 C CNN
-F 3 "" H 1550 3050 50  0001 C CNN
-	1    1550 3050
+P 1550 2550
+F 0 "#PWR0144" H 1550 2300 50  0001 C CNN
+F 1 "GNDD" H 1554 2395 50  0000 C CNN
+F 2 "" H 1550 2550 50  0001 C CNN
+F 3 "" H 1550 2550 50  0001 C CNN
+	1    1550 2550
 	1    0    0    -1  
 $EndComp
-Text GLabel 800  2800 2    50   Output ~ 0
-HALL_SWITCH_1
-Text GLabel 800  2900 2    50   Output ~ 0
-HALL_SWITCH_2
-Text GLabel 800  3000 2    50   Output ~ 0
-HALL_SWITCH_3
-Text GLabel 800  3100 2    50   Output ~ 0
-HALL_SWITCH_4
 Wire Wire Line
-	1550 2700 1550 3050
+	1550 2200 1550 2550
 Wire Wire Line
-	750  2600 850  2600
+	750  2100 850  2100
 Wire Wire Line
-	750  2700 1550 2700
+	750  2200 1550 2200
 Wire Wire Line
-	800  2900 750  2900
+	800  2400 750  2400
 Wire Wire Line
-	800  3100 750  3100
+	800  2600 750  2600
 Wire Wire Line
-	2550 2000 2450 2000
+	2550 1500 2450 1500
 Wire Wire Line
-	2550 2100 2450 2100
+	2550 1600 2450 1600
 Wire Wire Line
-	2550 2200 2450 2200
+	2550 1700 2450 1700
 Wire Wire Line
-	2550 2400 2450 2400
-Wire Wire Line
-	2550 3000 1900 3000
-Text Notes 550  3300 0    50   ~ 0
+	2550 1900 2450 1900
+Text Notes 800  2850 0    50   ~ 0
 DIGITAL LOGIC GROUND
 Text Notes 4200 7750 0    50   ~ 0
 SYSTEM POWER GROUND
-$Comp
-L power:GND #PWR?
-U 1 1 5E79F49F
-P 1900 3050
-AR Path="/5D254AE8/5E79F49F" Ref="#PWR?"  Part="1" 
-AR Path="/5E79F49F" Ref="#PWR?"  Part="1" 
-AR Path="/5E755AC8/5E79F49F" Ref="#PWR0165"  Part="1" 
-F 0 "#PWR0165" H 1900 2800 50  0001 C CNN
-F 1 "GND" H 1905 2875 50  0000 C CNN
-F 2 "" H 1900 3050 50  0001 C CNN
-F 3 "" H 1900 3050 50  0001 C CNN
-	1    1900 3050
-	1    0    0    -1  
-$EndComp
-Text GLabel 850  2600 2    50   Input ~ 0
-3V3_800mA
+Text GLabel 850  2100 2    50   Input ~ 0
+3V3
 Wire Wire Line
-	750  1700 1400 1700
+	750  1200 1400 1200
 Wire Wire Line
-	750  1800 1400 1800
+	750  1300 1400 1300
 Wire Wire Line
-	750  2200 850  2200
+	750  1700 850  1700
 Wire Wire Line
-	750  2800 800  2800
+	750  2300 800  2300
 Wire Wire Line
-	750  3000 800  3000
-Text Notes 2000 3300 0    50   ~ 0
-SYSTEM POWER GROUND
+	750  2500 800  2500
 Text Notes 550  750  0    118  ~ 0
 CORE BOARD INTERCONNECTS
-$Comp
-L power:+VSW #PWR0145
-U 1 1 5E76A192
-P 1900 2750
-F 0 "#PWR0145" H 1900 2600 50  0001 C CNN
-F 1 "+VSW" H 1915 2925 50  0000 C CNN
-F 2 "" H 1900 2750 50  0001 C CNN
-F 3 "" H 1900 2750 50  0001 C CNN
-	1    1900 2750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1900 2800 1900 2750
-Wire Wire Line
-	1900 2800 2550 2800
-Text GLabel 850  2400 2    50   BiDi ~ 0
+Text GLabel 850  1900 2    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 850  2500 2    50   BiDi ~ 0
+Text GLabel 850  2000 2    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 1400 2200 2    50   Output ~ 0
+Text GLabel 1400 1700 2    50   Output ~ 0
 YL6
-Text GLabel 1400 2100 2    50   Output ~ 0
+Text GLabel 1400 1600 2    50   Output ~ 0
 YL5
-Text GLabel 1400 2000 2    50   Output ~ 0
+Text GLabel 1400 1500 2    50   Output ~ 0
 YL4
 Wire Wire Line
-	750  2400 850  2400
+	750  1900 850  1900
 Wire Wire Line
-	750  2500 850  2500
+	750  2000 850  2000
 Wire Wire Line
 	4200 6850 5300 6850
 Wire Wire Line
 	3800 7200 3900 7200
-Text GLabel 2550 3100 0    50   BiDi ~ 0
-SAO3_GPIO2
-Wire Wire Line
-	1900 3000 1900 3050
 Wire Wire Line
 	1700 4400 1700 4450
 Connection ~ 1700 4450
@@ -1888,4 +1835,61 @@ F 4 "565-EMHL100ARA471MHA0GCT-ND" H 1250 7300 50  0001 C CNN "Digikey"
 $EndComp
 Text Notes 6300 6750 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
+Text Notes 1400 2050 0    50   ~ 0
+Silkscreen: 3V3 ONLY
+Text GLabel 2450 2300 0    50   Input ~ 0
+P1_EN
+Text GLabel 2450 2400 0    50   Input ~ 0
+P2_EN
+Text GLabel 2450 2500 0    50   Input ~ 0
+P3_EN
+Text GLabel 2450 2600 0    50   Input ~ 0
+P4_EN
+Text GLabel 800  2600 2    50   Input ~ 0
+P5_EN
+Text GLabel 800  2500 2    50   Input ~ 0
+P6_EN
+Text GLabel 800  2400 2    50   Input ~ 0
+P7_EN
+Text GLabel 800  2300 2    50   Input ~ 0
+P8_EN
+Wire Wire Line
+	2450 2300 2550 2300
+Wire Wire Line
+	2550 2400 2450 2400
+Wire Wire Line
+	2450 2500 2550 2500
+Wire Wire Line
+	2550 2600 2450 2600
+$Comp
+L Device:Q_NMOS_DGS Q?
+U 1 1 5F6BF8B4
+P 3250 7700
+F 0 "Q?" H 3455 7653 50  0000 L CNN
+F 1 "Q_NMOS_DGS" H 3455 7746 50  0000 L CNN
+F 2 "" H 3450 7800 50  0001 C CNN
+F 3 "~" H 3250 7700 50  0001 C CNN
+	1    3250 7700
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F6E9DAB
+P 3100 7950
+AR Path="/5F6E9DAB" Ref="R?"  Part="1" 
+AR Path="/5D254AE8/5F6E9DAB" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5F6E9DAB" Ref="R?"  Part="1" 
+F 0 "R?" V 2893 7950 50  0000 C CNN
+F 1 "10k" V 2984 7950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3030 7950 50  0001 C CNN
+F 3 "~" H 3100 7950 50  0001 C CNN
+	1    3100 7950
+	0    1    1    0   
+$EndComp
+Text Notes 3450 7550 0    50   ~ 0
+D
+Text Notes 3450 7950 0    50   ~ 0
+S
+Text Notes 3050 7650 0    50   ~ 0
+G
 $EndSCHEMATC

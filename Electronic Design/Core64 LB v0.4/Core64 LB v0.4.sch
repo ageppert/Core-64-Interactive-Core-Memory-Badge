@@ -40,14 +40,14 @@ Wire Wire Line
 	5250 4500 5100 4500
 Text Notes 6200 4850 0    50   ~ 0
 Reads 1/4 voltage of +VSW\n(after RPP)
-Text Notes 650  2000 0    50   ~ 10
+Text Notes 600  2150 0    50   ~ 10
 Teensy LC has incoming USB power/programming on board.
 Wire Wire Line
 	2950 5400 3100 5400
 Wire Wire Line
 	3100 5500 2950 5500
 Wire Wire Line
-	1200 3100 2150 3100
+	1150 3100 2150 3100
 Wire Wire Line
 	2950 3400 3100 3400
 Wire Wire Line
@@ -92,7 +92,7 @@ AR Path="/5E755787/5EA33CBB" Ref="R?"  Part="1"
 AR Path="/5E755AC8/5D2551FF/5EA33CBB" Ref="R?"  Part="1" 
 AR Path="/5EA33CBB" Ref="R5"  Part="1" 
 F 0 "R5" V 9300 2550 50  0000 L CNN
-F 1 "300" V 9200 2500 50  0000 L CNN
+F 1 "470" V 9200 2500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9330 2550 50  0001 C CNN
 F 3 "~" H 9400 2550 50  0001 C CNN
 	1    9400 2550
@@ -127,12 +127,10 @@ U 5E7548ED
 F0 "Power" 50
 F1 "Core64 LB v0.4 Power.sch" 50
 $EndSheet
-Text GLabel 1200 3100 0    50   BiDi ~ 0
-SAO1_GPIO2(RX)
 Wire Wire Line
 	1850 2550 1850 2600
-Text GLabel 1200 3400 0    50   BiDi ~ 0
-SAO1_GPIO1(TX)
+Text GLabel 1150 3100 0    50   BiDi ~ 0
+SAO_GPIO1
 $Comp
 L Logic_LevelTranslator:SN74LV1T125DBVR U4
 U 1 1 5E84BF19
@@ -153,9 +151,9 @@ Wire Wire Line
 Wire Wire Line
 	8850 2900 8750 2900
 Connection ~ 8750 2900
-Text Notes 7100 1850 0    118  ~ 0
+Text Notes 7100 1950 0    118  ~ 0
 LED ARRAY DRIVE AND LEVEL SHIFT
-Text Notes 650  1800 0    118  ~ 0
+Text Notes 600  1950 0    118  ~ 0
 TEENSY 3.2 MCU CONNECTIONS
 Text Notes 550  7950 0    50   ~ 0
 I2C ADDRESS TABLE\nRequired\n  AMBIENT LIGHT SENSOR: 0X29 (47 decimal)\n  HALL SENSOR 1: 0x30 (48 decimal)\n  HALL SENSOR 2: 0x31 (49 decimal)\n  HALL SENSOR 3: 0x32 (50 decimal)\n  HALL SENSOR 4: 0x33 (51 decimal)\n  EEPROM: 0b1010111, 0x57 (87 decimal)\nOptional\n  OLED: 0x3C (60 decimal)\n  AND!XOR GPIO Expander MCP23017 0x20 (32 decimal)\n  AND!XOR EEPROM AT24C32r 0x50 (80 decimal)\n\nAll 7-bit addresses should be greater than 0x07 and less than 0x78 (120).
@@ -206,10 +204,8 @@ NoConn ~ 11100 3150
 NoConn ~ 11100 3250
 Text GLabel 2550 3700 0    50   Output ~ 0
 SD_CS
-Text GLabel 2650 4300 0    50   Output ~ 0
-SD_DI
-Text GLabel 2650 4200 0    50   Input ~ 0
-SD_DO
+Text GLabel 2650 4300 0    50   Input ~ 0
+SPI_SDI
 Text GLabel 2650 4900 0    50   Output ~ 0
 SD_CLK
 Text GLabel 2650 4650 0    50   Input ~ 0
@@ -424,7 +420,7 @@ Wire Wire Line
 	9050 4450 9250 4450
 Wire Wire Line
 	3100 5300 2950 5300
-Text Notes 3250 1600 0    118  ~ 24
+Text Notes 1100 1700 0    236  ~ 47
 *** CUT THE USB-VIN bridge on TEENSY 3.2 ***
 Text Notes 6100 5150 0    50   ~ 0
 VIN must be supplied TO the Teensy\nbecause VIN-VUSB is cut. The \nLogic Board provides it here.
@@ -548,7 +544,7 @@ Text GLabel -600 2950 2    50   Output ~ 0
 Q10P
 Text GLabel -600 2850 2    50   Output ~ 0
 Q9N
-Text GLabel 2950 5050 0    50   Output ~ 0
+Text GLabel 1150 4650 0    50   Output ~ 0
 SENSE_RESET
 Text GLabel 5250 5400 2    50   Output ~ 0
 WRITE_ENABLE
@@ -576,7 +572,7 @@ Connection ~ 2150 3100
 Wire Wire Line
 	2150 3100 3100 3100
 Wire Wire Line
-	1200 3400 2150 3400
+	1150 3400 2150 3400
 Wire Wire Line
 	2200 3400 2200 3200
 Wire Wire Line
@@ -611,21 +607,24 @@ Wire Notes Line
 Wire Notes Line
 	4900 3950 4100 3950
 Wire Wire Line
-	3100 5000 3000 5000
-Wire Wire Line
 	2100 5100 2150 5100
 Wire Wire Line
 	2150 5100 2150 5000
 Connection ~ 2150 5000
 Wire Wire Line
 	2150 5000 1650 5000
-Text GLabel 2100 4200 0    50   BiDi ~ 0
+Text GLabel 2100 4100 0    50   BiDi ~ 0
 SPARE_6
+Text Notes 10400 3650 0    50   ~ 0
+Silkscreen: 5V0 ONLY
+Text GLabel 1150 3400 0    50   BiDi ~ 0
+SAO_GPIO2
 Wire Wire Line
-	2950 5050 3000 5050
-Wire Wire Line
-	3000 5050 3000 5000
-Connection ~ 3000 5000
-Wire Wire Line
-	3000 5000 2150 5000
+	2150 5000 3100 5000
+Text GLabel 2650 4200 0    50   Output ~ 0
+SPI_SDO
+Text GLabel 5250 3400 2    50   Output ~ 0
+TEENSY_3V3
+Text GLabel 1350 2900 0    50   BiDi ~ 0
+SP1_SAO1_CPA0
 $EndSCHEMATC
