@@ -15,6 +15,7 @@
 #endif // HALL_SENSOR_ENABLE
 
 // #define USE_ANALOG_INPUT_HALL_SWITCH_2     // Tested and works fine.
+// #define SWAP_HALL_SENSOR_FOR_HALL_SWITCH      // Using Hall Sensor to change modes instead of Hall Switch
 
 #ifdef HALL_SENSOR_ENABLE
   #define HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL      2     // Level of mT which registers as a button press
@@ -213,6 +214,12 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   // static uint8_t  state_test_b4 = 0;
   #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
     static uint16_t AnalogLevel = 0;
+  #endif
+
+  #ifdef HALL_SENSOR_ENABLE
+    #ifdef SWAP_HALL_SENSOR_FOR_HALL_SWITCH
+      if(button_number==1) {button_number = 5;}
+    #endif
   #endif
 
   if(clear_duration == 1) { duration_b1 = 0 ;}
