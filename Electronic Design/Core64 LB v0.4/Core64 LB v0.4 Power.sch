@@ -213,7 +213,7 @@ $EndComp
 Wire Wire Line
 	4100 5550 3850 5550
 Text GLabel 4100 5550 2    50   Output ~ 0
-V_MON
+VBAT_MON
 Text Notes 600  6850 0    118  ~ 0
 ALL SYSTEM STAR GROUNDING
 Text Notes 9200 2950 0    50   ~ 0
@@ -305,7 +305,7 @@ U 1 1 5E8DC4AA
 P 1700 7200
 F 0 "H2" H 1800 7250 50  0000 L CNN
 F 1 "GND PAD" H 1800 7157 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 1700 7200 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1700 7200 50  0001 C CNN
 F 3 "~" H 1700 7200 50  0001 C CNN
 	1    1700 7200
 	1    0    0    -1  
@@ -316,7 +316,7 @@ U 1 1 5E8DD364
 P 1200 7200
 F 0 "H1" H 1000 7250 50  0000 L CNN
 F 1 "GND PAD" H 800 7150 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 1200 7200 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1200 7200 50  0001 C CNN
 F 3 "~" H 1200 7200 50  0001 C CNN
 	1    1200 7200
 	1    0    0    -1  
@@ -498,8 +498,8 @@ HIGH POWER SYSTEM GROUND
 Connection ~ 3850 5550
 Text Notes 3500 2200 0    157  ~ 31
 7.5V MAX !!!
-Text Notes 3750 1900 0    50   ~ 0
-SILKSCREEN: +/- pins
+Text Notes 2200 2150 0    50   ~ 0
+SILKSCREEN: BAT. +/- pins
 Text GLabel 4800 7450 1    50   Input ~ 0
 RPP
 Wire Wire Line
@@ -558,11 +558,11 @@ Text Notes 4150 5450 0    50   ~ 0
 Text Notes 1950 5500 0    50   ~ 0
 P-FET
 Text Notes 750  4100 0    157  ~ 31
-*** ALL CONFIGURATIONS REQUIRED CUTTING VIN-VUSB TRACE ON TEENSY ***
+*** ALL CONFIGURATIONS REQUIRE CUTTING VIN-VUSB TRACE ON TEENSY ***
 Text GLabel 5400 7450 1    50   Output ~ 0
 V_MON
-Text Notes 8900 2200 0    157  ~ 31
-1S ONLY !!!
+Text Notes 8250 2150 0    157  ~ 31
+1S LIPO ONLY !!!
 Text Notes 6800 3050 0    50   ~ 0
 ALTERNATE CONNECTOR - JST-PH 2-PIN SMT\nAdafruit 1769 Right Angle Battery Cable Socket\nJST S2B-PH-SM4-TB(LF)(SN), Digi-Key 455-1749-1-ND
 $Comp
@@ -634,44 +634,44 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x02_Male J9
 U 1 1 5F5849A5
-P 7450 3350
-F 0 "J9" H 7450 3450 50  0000 C CNN
-F 1 "JST-PH 2-PIN" H 7500 3150 50  0000 C CNN
-F 2 "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal" H 7450 3350 50  0001 C CNN
-F 3 "~" H 7450 3350 50  0001 C CNN
-	1    7450 3350
+P 7950 3350
+F 0 "J9" H 7950 3450 50  0000 C CNN
+F 1 "JST-PH 2-PIN" H 8000 3150 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal" H 7950 3350 50  0001 C CNN
+F 3 "~" H 7950 3350 50  0001 C CNN
+	1    7950 3350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+BATT #PWR0156
 U 1 1 5F586B8B
-P 8200 3350
+P 8700 3350
 AR Path="/5E7548ED/5F586B8B" Ref="#PWR0156"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F586B8B" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0156" H 8200 3200 50  0001 C CNN
-F 1 "+BATT" H 8215 3523 50  0000 C CNN
-F 2 "" H 8200 3350 50  0001 C CNN
-F 3 "" H 8200 3350 50  0001 C CNN
-	1    8200 3350
+F 0 "#PWR0156" H 8700 3200 50  0001 C CNN
+F 1 "+BATT" H 8715 3523 50  0000 C CNN
+F 2 "" H 8700 3350 50  0001 C CNN
+F 3 "" H 8700 3350 50  0001 C CNN
+	1    8700 3350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:-BATT #PWR0159
 U 1 1 5F586B91
-P 8200 3450
+P 8700 3450
 AR Path="/5E7548ED/5F586B91" Ref="#PWR0159"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F586B91" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0159" H 8200 3300 50  0001 C CNN
-F 1 "-BATT" H 8215 3623 50  0000 C CNN
-F 2 "" H 8200 3450 50  0001 C CNN
-F 3 "" H 8200 3450 50  0001 C CNN
-	1    8200 3450
+F 0 "#PWR0159" H 8700 3300 50  0001 C CNN
+F 1 "-BATT" H 8715 3623 50  0000 C CNN
+F 2 "" H 8700 3450 50  0001 C CNN
+F 3 "" H 8700 3450 50  0001 C CNN
+	1    8700 3450
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	7650 3350 8200 3350
+	8150 3350 8700 3350
 Wire Wire Line
-	7650 3450 8200 3450
+	8150 3450 8700 3450
 Text Notes 1850 6550 0    50   ~ 0
 OPTIONAL FET PROTECT:\n1) .1uF Cap. on left\n2) 100k Res. on bottom\n3) 10V Zener on right
 Wire Wire Line
@@ -735,7 +735,7 @@ $EndComp
 Text Notes 9150 1900 0    50   ~ 0
 SILKSCREEN: +/- pins
 Text Notes 5300 2450 0    50   ~ 0
-TWO OPTIONS\n\n1) 1S LiPo + Charger (most convenient)\n     A) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended \n     B) Choose a charger. The logic board is designed to accept this one: https://www.adafruit.com/product/1904\n     C) 4-pin header to connector charger to the logic board. Or solder direct to logic board.\n\n2) 1S LiPo only (flexible, choose your own connector)\n     A) Choose a 1S LiPo with protection circuit, up to 50 x 55 x 12mm\n\nINSTRUCTIONS\nA) Remove the 4x “AAA” battery pack. Reuse the connector if you want to.\nB) Install the charge manager if you want to.\nC) Install the 1S LiPo with double-sided tape.\n\n* The LiPo charger 5V pin is also connected to the Teensy USB port.\n* Connecting a USB cable to the Teensy will power the board, charge the battery\n* and connect to the serial port of the Teensy. Connecting a USB cable to the LiPO\n* charger will ONLY charge the battery and power the logic board.
+TWO OPTIONS\n\n1) 1S LiPo + Charger (most convenient)\n     A) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended \n     B) Choose a charger. The logic board is designed to accept this one: https://www.adafruit.com/product/1904\n     C) 4-pin header to connector charger to the logic board. Or solder direct to logic board.\n\n2) 1S LiPo only (flexible, choose your own connector)\n     A) Choose a 1S LiPo with protection circuit, up to 50 x 55 x 12mm\n\nINSTRUCTIONS\nA) Remove the 4x “AAA” battery pack.\nB) Install the charge manager (optional).\nC) Install the 1S LiPo with double-sided tape.\n\n* The LiPo charger 5V pin is also connected to the Teensy USB port.\n* Connecting a USB cable to the Teensy will power the board, charge the battery\n* and connect to the serial port of the Teensy. Connecting a USB cable to the LiPO\n* charger will ONLY charge the battery and power the logic board.
 Wire Wire Line
 	4500 7650 4650 7650
 Wire Wire Line
@@ -756,7 +756,7 @@ F 3 "~" H 6250 3300 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Text Notes 6050 3700 0    50   ~ 0
-OPT: Open SJ to\ndisable charging\nfrom Teensy USB.
+OPT: Open SJ to disable charging\nfrom Teensy USB. The USB port\non the charge manager will still work.
 Wire Wire Line
 	5900 3300 6100 3300
 Wire Wire Line
@@ -971,7 +971,7 @@ Wire Wire Line
 	9850 6000 9850 5750
 Wire Wire Line
 	9550 6000 9850 6000
-Text Notes 10000 6150 0    50   ~ 0
+Text Notes 9900 6450 0    118  ~ 24
 Must\nSelect\nOne
 Text GLabel 8200 4650 0    50   Input ~ 0
 5V0
@@ -1133,4 +1133,16 @@ Text Notes 6350 5900 0    50   ~ 0
 0.2Ω ≤ COUT ESR ≤ 5Ω
 Text Notes 5950 4900 0    50   ~ 0
 See data sheet for\ncapacitor requirements
+Text Notes 750  7000 0    50   ~ 0
+GND PAD 3.2 mm (.125 in) thru-hole for M3 or #4 screw
+Text Notes 2200 7150 0    50   ~ 0
+SILKSCREEN: GND
+Text Notes 5300 2650 0    50   ~ 0
+SILKSCREEN: LIPO CHARGER
+Text Notes 8400 2700 0    50   ~ 0
+SILKSCREEN: BAT. + BAT. -
+Text Notes 4850 7000 0    50   ~ 0
+SILKSCREEN: POWER
+Text Notes 6000 3100 0    50   ~ 0
+Mounting\n4x 0.1” holes
 $EndSCHEMATC

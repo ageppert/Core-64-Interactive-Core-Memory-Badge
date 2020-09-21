@@ -5,7 +5,7 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 2 5
-Title "Core 64 - Core Array Driver"
+Title "Core 64 - Core Matrix Driver"
 Date "2020-08-27"
 Rev "0.4"
 Comp "Andy Geppert - Machine Ideas, LLC"
@@ -111,13 +111,13 @@ Q3P
 Wire Wire Line
 	3950 1150 3950 1200
 Text GLabel 3250 1750 0    50   Output ~ 0
-XT0-4
+XT0,4
 Text GLabel 5150 1750 0    50   Output ~ 0
-XT1-5
+XT1,5
 Text GLabel 7050 1750 0    50   Output ~ 0
-XT2-6
+XT2,6
 Text GLabel 8950 1750 0    50   Output ~ 0
-XT3-7
+XT3,7
 $Comp
 L Digikey-Transistors:MMBT4403LT1G Q1
 U 1 1 5D3EAB8E
@@ -152,49 +152,49 @@ $EndComp
 $Comp
 L Digikey-Transistors:MMBT4401LT1G Q6
 U 1 1 5D3EAB7F
-P 3850 2050
-F 0 "Q6" H 4038 2103 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 4038 1997 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 4050 2250 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4050 2350 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 4050 2450 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 4050 2550 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4050 2650 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4050 2750 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4050 2850 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 4050 2950 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 4050 3050 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 4050 3150 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4050 3250 60  0001 L CNN "Status"
-	1    3850 2050
+P 3850 2100
+F 0 "Q6" H 4038 2153 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 4038 2047 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 4050 2300 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4050 2400 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 4050 2500 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 4050 2600 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 4050 2700 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 4050 2800 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4050 2900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 4050 3000 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 4050 3100 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 4050 3200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4050 3300 60  0001 L CNN "Status"
+	1    3850 2100
 	1    0    0    -1  
 $EndComp
-Text GLabel 3200 2050 0    50   Input ~ 0
+Text GLabel 3200 2100 0    50   Input ~ 0
 Q3N
 Wire Wire Line
-	3200 2050 3250 2050
+	3200 2100 3250 2100
 $Comp
 L Device:R R14
 U 1 1 5D3EAB1C
-P 3400 2050
-F 0 "R14" V 3193 2050 50  0000 C CNN
-F 1 "470" V 3284 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3330 2050 50  0001 C CNN
-F 3 "~" H 3400 2050 50  0001 C CNN
-	1    3400 2050
+P 3400 2100
+F 0 "R14" V 3193 2100 50  0000 C CNN
+F 1 "470" V 3284 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3330 2100 50  0001 C CNN
+F 3 "~" H 3400 2100 50  0001 C CNN
+	1    3400 2100
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3550 2050 3650 2050
+	3550 2100 3650 2100
 $Comp
 L power:GNDPWR #PWR0122
 U 1 1 5D3EAB15
-P 3950 2300
-F 0 "#PWR0122" H 3950 2100 50  0001 C CNN
-F 1 "GNDPWR" H 3954 2146 50  0000 C CNN
-F 2 "" H 3950 2250 50  0001 C CNN
-F 3 "" H 3950 2250 50  0001 C CNN
-	1    3950 2300
+P 3950 2350
+F 0 "#PWR0122" H 3950 2150 50  0001 C CNN
+F 1 "GNDPWR" H 3954 2196 50  0000 C CNN
+F 2 "" H 3950 2300 50  0001 C CNN
+F 3 "" H 3950 2300 50  0001 C CNN
+	1    3950 2350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -418,69 +418,69 @@ $EndComp
 $Comp
 L Device:R R11
 U 1 1 5D5FAAB1
-P 5450 1750
-F 0 "R11" V 5243 1750 50  0000 C CNN
-F 1 "6R8" V 5334 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 5380 1750 50  0001 C CNN
-F 3 "~" H 5450 1750 50  0001 C CNN
-	1    5450 1750
+P 5550 1750
+F 0 "R11" V 5343 1750 50  0000 C CNN
+F 1 "6R8" V 5434 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5480 1750 50  0001 C CNN
+F 3 "~" H 5550 1750 50  0001 C CNN
+	1    5550 1750
 	0    -1   1    0   
 $EndComp
 $Comp
 L Digikey-Transistors:MMBT4401LT1G Q7
 U 1 1 5D5FAAC0
-P 5750 2050
-F 0 "Q7" H 5938 2103 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 5938 1997 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 5950 2250 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2350 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 5950 2450 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 5950 2550 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 5950 2650 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 5950 2750 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2850 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 5950 2950 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 5950 3050 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 5950 3150 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 5950 3250 60  0001 L CNN "Status"
-	1    5750 2050
+P 5750 2100
+F 0 "Q7" H 5938 2153 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 5938 2047 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 5950 2300 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2400 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 5950 2500 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 5950 2600 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 5950 2700 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 5950 2800 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 5950 3000 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 5950 3100 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 5950 3200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5950 3300 60  0001 L CNN "Status"
+	1    5750 2100
 	1    0    0    -1  
 $EndComp
-Text GLabel 5100 2050 0    50   Input ~ 0
+Text GLabel 5100 2100 0    50   Input ~ 0
 Q4N
 Wire Wire Line
-	5100 2050 5150 2050
+	5100 2100 5150 2100
 $Comp
 L Device:R R15
 U 1 1 5D5FAAC8
-P 5300 2050
-F 0 "R15" V 5093 2050 50  0000 C CNN
-F 1 "470" V 5184 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 5230 2050 50  0001 C CNN
-F 3 "~" H 5300 2050 50  0001 C CNN
-	1    5300 2050
+P 5300 2100
+F 0 "R15" V 5093 2100 50  0000 C CNN
+F 1 "470" V 5184 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5230 2100 50  0001 C CNN
+F 3 "~" H 5300 2100 50  0001 C CNN
+	1    5300 2100
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	5450 2050 5550 2050
+	5450 2100 5550 2100
 $Comp
 L power:GNDPWR #PWR0130
 U 1 1 5D5FAACF
-P 5850 2250
-F 0 "#PWR0130" H 5850 2050 50  0001 C CNN
-F 1 "GNDPWR" H 5854 2096 50  0000 C CNN
-F 2 "" H 5850 2200 50  0001 C CNN
-F 3 "" H 5850 2200 50  0001 C CNN
-	1    5850 2250
+P 5850 2300
+F 0 "#PWR0130" H 5850 2100 50  0001 C CNN
+F 1 "GNDPWR" H 5854 2146 50  0000 C CNN
+F 2 "" H 5850 2250 50  0001 C CNN
+F 3 "" H 5850 2250 50  0001 C CNN
+	1    5850 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	5850 1600 5850 1750
 Wire Wire Line
-	5600 1750 5850 1750
+	5700 1750 5850 1750
 Connection ~ 5850 1750
 Wire Wire Line
-	5850 1750 5850 1850
+	5850 1750 5850 1900
 $Comp
 L power:VMEM #PWR0131
 U 1 1 5D63435D
@@ -534,58 +534,58 @@ $EndComp
 $Comp
 L Digikey-Transistors:MMBT4401LT1G Q8
 U 1 1 5D63438B
-P 7650 2050
-F 0 "Q8" H 7838 2103 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 7838 1997 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 7850 2250 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7850 2350 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 7850 2450 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 7850 2550 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 7850 2650 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 7850 2750 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7850 2850 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 7850 2950 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 7850 3050 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 7850 3150 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7850 3250 60  0001 L CNN "Status"
-	1    7650 2050
+P 7650 2100
+F 0 "Q8" H 7838 2153 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 7838 2047 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 7850 2300 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7850 2400 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 7850 2500 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 7850 2600 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 7850 2700 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 7850 2800 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7850 2900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 7850 3000 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 7850 3100 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 7850 3200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7850 3300 60  0001 L CNN "Status"
+	1    7650 2100
 	1    0    0    -1  
 $EndComp
-Text GLabel 7000 2050 0    50   Input ~ 0
+Text GLabel 7000 2100 0    50   Input ~ 0
 Q5N
 Wire Wire Line
-	7000 2050 7050 2050
+	7000 2100 7050 2100
 $Comp
 L Device:R R16
 U 1 1 5D634393
-P 7200 2050
-F 0 "R16" V 6993 2050 50  0000 C CNN
-F 1 "470" V 7084 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 7130 2050 50  0001 C CNN
-F 3 "~" H 7200 2050 50  0001 C CNN
-	1    7200 2050
+P 7200 2100
+F 0 "R16" V 6993 2100 50  0000 C CNN
+F 1 "470" V 7084 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7130 2100 50  0001 C CNN
+F 3 "~" H 7200 2100 50  0001 C CNN
+	1    7200 2100
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7350 2050 7450 2050
+	7350 2100 7450 2100
 $Comp
 L power:GNDPWR #PWR0132
 U 1 1 5D63439A
-P 7750 2250
-F 0 "#PWR0132" H 7750 2050 50  0001 C CNN
-F 1 "GNDPWR" H 7754 2096 50  0000 C CNN
-F 2 "" H 7750 2200 50  0001 C CNN
-F 3 "" H 7750 2200 50  0001 C CNN
-	1    7750 2250
+P 7750 2300
+F 0 "#PWR0132" H 7750 2100 50  0001 C CNN
+F 1 "GNDPWR" H 7754 2146 50  0000 C CNN
+F 2 "" H 7750 2250 50  0001 C CNN
+F 3 "" H 7750 2250 50  0001 C CNN
+	1    7750 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	7750 1600 7750 1750
 Wire Wire Line
-	7500 1750 7750 1750
+	7600 1750 7750 1750
 Connection ~ 7750 1750
 Wire Wire Line
-	7750 1750 7750 1850
+	7750 1750 7750 1900
 $Comp
 L power:VMEM #PWR0133
 U 1 1 5D6343A4
@@ -639,90 +639,88 @@ $EndComp
 $Comp
 L Device:R R13
 U 1 1 5D6343C3
-P 9250 1750
-F 0 "R13" V 9043 1750 50  0000 C CNN
-F 1 "6R8" V 9134 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 9180 1750 50  0001 C CNN
-F 3 "~" H 9250 1750 50  0001 C CNN
-	1    9250 1750
+P 9350 1750
+F 0 "R13" V 9143 1750 50  0000 C CNN
+F 1 "6R8" V 9234 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9280 1750 50  0001 C CNN
+F 3 "~" H 9350 1750 50  0001 C CNN
+	1    9350 1750
 	0    -1   1    0   
 $EndComp
 $Comp
 L Digikey-Transistors:MMBT4401LT1G Q9
 U 1 1 5D6343D2
-P 9550 2050
-F 0 "Q9" H 9738 2103 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 9738 1997 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 9750 2250 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9750 2350 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 9750 2450 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 9750 2550 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 9750 2650 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 9750 2750 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9750 2850 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 9750 2950 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 9750 3050 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 9750 3150 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 9750 3250 60  0001 L CNN "Status"
-	1    9550 2050
+P 9550 2100
+F 0 "Q9" H 9738 2153 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 9738 2047 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 9750 2300 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9750 2400 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 9750 2500 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 9750 2600 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 9750 2700 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 9750 2800 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9750 2900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 9750 3000 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 9750 3100 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 9750 3200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 9750 3300 60  0001 L CNN "Status"
+	1    9550 2100
 	1    0    0    -1  
 $EndComp
-Text GLabel 8900 2050 0    50   Input ~ 0
+Text GLabel 8900 2100 0    50   Input ~ 0
 Q6N
 Wire Wire Line
-	8900 2050 8950 2050
+	8900 2100 8950 2100
 $Comp
 L Device:R R17
 U 1 1 5D6343DA
-P 9100 2050
-F 0 "R17" V 8893 2050 50  0000 C CNN
-F 1 "470" V 8984 2050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 9030 2050 50  0001 C CNN
-F 3 "~" H 9100 2050 50  0001 C CNN
-	1    9100 2050
+P 9100 2100
+F 0 "R17" V 8893 2100 50  0000 C CNN
+F 1 "470" V 8984 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9030 2100 50  0001 C CNN
+F 3 "~" H 9100 2100 50  0001 C CNN
+	1    9100 2100
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	9250 2050 9350 2050
+	9250 2100 9350 2100
 $Comp
 L power:GNDPWR #PWR0134
 U 1 1 5D6343E1
-P 9650 2250
-F 0 "#PWR0134" H 9650 2050 50  0001 C CNN
-F 1 "GNDPWR" H 9654 2096 50  0000 C CNN
-F 2 "" H 9650 2200 50  0001 C CNN
-F 3 "" H 9650 2200 50  0001 C CNN
-	1    9650 2250
+P 9650 2300
+F 0 "#PWR0134" H 9650 2100 50  0001 C CNN
+F 1 "GNDPWR" H 9654 2146 50  0000 C CNN
+F 2 "" H 9650 2250 50  0001 C CNN
+F 3 "" H 9650 2250 50  0001 C CNN
+	1    9650 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9400 1750 9650 1750
+	9500 1750 9650 1750
 Wire Wire Line
-	9650 1750 9650 1850
+	9650 1750 9650 1900
 Wire Wire Line
-	8950 1750 9100 1750
+	8950 1750 9200 1750
 Wire Wire Line
-	7200 1750 7050 1750
+	7300 1750 7050 1750
 $Comp
 L Device:R R12
 U 1 1 5D63437C
-P 7350 1750
-F 0 "R12" V 7143 1750 50  0000 C CNN
-F 1 "6R8" V 7234 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 7280 1750 50  0001 C CNN
-F 3 "~" H 7350 1750 50  0001 C CNN
-	1    7350 1750
+P 7450 1750
+F 0 "R12" V 7243 1750 50  0000 C CNN
+F 1 "6R8" V 7334 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7380 1750 50  0001 C CNN
+F 3 "~" H 7450 1750 50  0001 C CNN
+	1    7450 1750
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	5150 1750 5300 1750
+	5150 1750 5400 1750
 Wire Wire Line
 	3800 1750 3950 1750
 Connection ~ 3950 1750
 Wire Wire Line
-	3950 1750 3950 1850
-Wire Wire Line
-	3250 1750 3500 1750
+	3950 1750 3950 1900
 Wire Wire Line
 	9650 1600 9650 1750
 Connection ~ 9650 1750
@@ -1011,12 +1009,12 @@ $EndComp
 $Comp
 L Device:R R23
 U 1 1 5D6B8249
-P 6800 4400
-F 0 "R23" V 6593 4400 50  0000 C CNN
-F 1 "6R8" V 6684 4400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 6730 4400 50  0001 C CNN
-F 3 "~" H 6800 4400 50  0001 C CNN
-	1    6800 4400
+P 6900 4400
+F 0 "R23" V 6750 4400 50  0000 C CNN
+F 1 "6R8" V 7000 4400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 4400 50  0001 C CNN
+F 3 "~" H 6900 4400 50  0001 C CNN
+	1    6900 4400
 	0    -1   1    0   
 $EndComp
 $Comp
@@ -1047,8 +1045,8 @@ $Comp
 L Device:R R24
 U 1 1 5D6B8260
 P 7750 4650
-F 0 "R24" V 7543 4650 50  0000 C CNN
-F 1 "470" V 7634 4650 50  0000 C CNN
+F 0 "R24" V 7850 4650 50  0000 C CNN
+F 1 "470" V 7950 4650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7680 4650 50  0001 C CNN
 F 3 "~" H 7750 4650 50  0001 C CNN
 	1    7750 4650
@@ -1068,7 +1066,7 @@ F 3 "" H 7200 4800 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	6950 4400 7200 4400
+	7050 4400 7200 4400
 Wire Wire Line
 	7200 4400 7200 4450
 Wire Wire Line
@@ -1157,12 +1155,12 @@ $EndComp
 $Comp
 L Device:R R29
 U 1 1 5D87AEBB
-P 6800 6050
-F 0 "R29" V 6593 6050 50  0000 C CNN
-F 1 "6R8" V 6684 6050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 6730 6050 50  0001 C CNN
-F 3 "~" H 6800 6050 50  0001 C CNN
-	1    6800 6050
+P 6850 6050
+F 0 "R29" V 6700 6050 50  0000 C CNN
+F 1 "6R8" V 6950 6050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6780 6050 50  0001 C CNN
+F 3 "~" H 6850 6050 50  0001 C CNN
+	1    6850 6050
 	0    -1   1    0   
 $EndComp
 $Comp
@@ -1193,8 +1191,8 @@ $Comp
 L Device:R R30
 U 1 1 5D87AED2
 P 7700 6300
-F 0 "R30" V 7493 6300 50  0000 C CNN
-F 1 "470" V 7584 6300 50  0000 C CNN
+F 0 "R30" V 7800 6300 50  0000 C CNN
+F 1 "470" V 7900 6300 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7630 6300 50  0001 C CNN
 F 3 "~" H 7700 6300 50  0001 C CNN
 	1    7700 6300
@@ -1214,14 +1212,14 @@ F 3 "" H 7200 6450 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	6950 6050 7200 6050
+	7000 6050 7200 6050
 Wire Wire Line
 	7200 6050 7200 6100
 Wire Wire Line
 	7200 5850 7200 6050
 Connection ~ 7200 6050
 Wire Wire Line
-	6400 4400 6650 4400
+	6400 4400 6700 4400
 Wire Wire Line
 	6350 3650 6350 6050
 Wire Wire Line
@@ -1458,7 +1456,7 @@ Text Notes 5350 5150 0    50   ~ 0
 COL 7
 Text Notes 6400 4600 0    50   ~ 0
 ROW 0,4\nROW 2,6
-Text Notes 6400 6250 0    50   ~ 0
+Text Notes 6350 6250 0    50   ~ 0
 ROW 1,5\nROW 3,7
 Text Notes 8700 3400 0    50   ~ 0
 ROW 0,4
@@ -1468,65 +1466,28 @@ Text Notes 8700 3700 0    50   ~ 0
 ROW 1,5
 Text Notes 8700 5550 0    50   ~ 0
 ROW 2,6
-Text GLabel 3400 7200 0    50   Input ~ 0
+Text GLabel 3850 7000 0    50   Input ~ 0
 WRITE_ENABLE
-Text Notes 5250 7250 0    50   ~ 0
+Text Notes 5150 7100 0    50   ~ 0
 CORE MEMORY GROUND
-$Comp
-L Digikey-Transistors:MMBT4401LT1G Q?
-U 1 1 5E8ED55F
-P 4100 7200
-AR Path="/5E8ED55F" Ref="Q?"  Part="1" 
-AR Path="/5D254AE8/5E8ED55F" Ref="Q?"  Part="1" 
-AR Path="/5E755AC8/5E8ED55F" Ref="Q4"  Part="1" 
-F 0 "Q4" H 4288 7253 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 4288 7147 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 4300 7400 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4300 7500 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 4300 7600 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 4300 7700 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4300 7800 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4300 7900 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4300 8000 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 4300 8100 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 4300 8200 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 4300 8300 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4300 8400 60  0001 L CNN "Status"
-	1    4100 7200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	4200 6850 4200 7000
-$Comp
-L Device:R R?
-U 1 1 5E8ED566
-P 3650 7200
-AR Path="/5E8ED566" Ref="R?"  Part="1" 
-AR Path="/5D254AE8/5E8ED566" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5E8ED566" Ref="R10"  Part="1" 
-F 0 "R10" V 3443 7200 50  0000 C CNN
-F 1 "220" V 3534 7200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 7200 50  0001 C CNN
-F 3 "~" H 3650 7200 50  0001 C CNN
-	1    3650 7200
-	0    1    1    0   
-$EndComp
+	4450 6700 4450 6800
 $Comp
 L power:GNDPWR #PWR?
 U 1 1 5E8ED56D
-P 5300 6950
+P 5300 6800
 AR Path="/5E8ED56D" Ref="#PWR?"  Part="1" 
 AR Path="/5D254AE8/5E8ED56D" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5E8ED56D" Ref="#PWR0151"  Part="1" 
-F 0 "#PWR0151" H 5300 6750 50  0001 C CNN
-F 1 "GNDPWR" H 5304 6796 50  0000 C CNN
-F 2 "" H 5300 6900 50  0001 C CNN
-F 3 "" H 5300 6900 50  0001 C CNN
-	1    5300 6950
+F 0 "#PWR0151" H 5300 6600 50  0001 C CNN
+F 1 "GNDPWR" H 5304 6646 50  0000 C CNN
+F 2 "" H 5300 6750 50  0001 C CNN
+F 3 "" H 5300 6750 50  0001 C CNN
+	1    5300 6800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3400 7200 3500 7200
+	3850 7000 3950 7000
 Text Notes 1500 6750 0    50   ~ 0
 CORE MEMORY POWER
 Text GLabel 1050 7100 0    50   Input ~ 0
@@ -1534,19 +1495,19 @@ Text GLabel 1050 7100 0    50   Input ~ 0
 $Comp
 L power:GND #PWR?
 U 1 1 5E8ED59A
-P 4200 7450
+P 4450 7300
 AR Path="/5D254AE8/5E8ED59A" Ref="#PWR?"  Part="1" 
 AR Path="/5E8ED59A" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5E8ED59A" Ref="#PWR0152"  Part="1" 
-F 0 "#PWR0152" H 4200 7200 50  0001 C CNN
-F 1 "GND" H 4205 7275 50  0000 C CNN
-F 2 "" H 4200 7450 50  0001 C CNN
-F 3 "" H 4200 7450 50  0001 C CNN
-	1    4200 7450
+F 0 "#PWR0152" H 4450 7050 50  0001 C CNN
+F 1 "GND" H 4455 7125 50  0000 C CNN
+F 2 "" H 4450 7300 50  0001 C CNN
+F 3 "" H 4450 7300 50  0001 C CNN
+	1    4450 7300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4200 7400 4200 7450
+	4450 7250 4450 7300
 Wire Wire Line
 	2600 4000 2600 4200
 Wire Wire Line
@@ -1584,7 +1545,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 4200 5200 4200
 Wire Wire Line
-	5300 6850 5300 6950
+	5300 6700 5300 6800
 Connection ~ 6350 3650
 Wire Wire Line
 	6400 3550 6400 4400
@@ -1592,13 +1553,13 @@ Wire Wire Line
 	6250 3550 6400 3550
 Connection ~ 6250 3550
 Text Notes 550  6500 0    118  ~ 0
-CORE ARRAY POWER
+CORE MATRIX POWER
 Text Notes 550  3650 0    118  ~ 0
-CORE ARRAY BOTTOM COLUMN DRIVERS
+CORE MATRIX BOTTOM COLUMN DRIVERS
 Text Notes 4100 850  0    118  ~ 0
-CORE ARRAY TOP COLUMN DRIVERS
+CORE MATRIX TOP COLUMN DRIVERS
 Text Notes 5850 2800 0    118  ~ 0
-CORE ARRAY ROW DRIVERS
+CORE MATRIX ROW DRIVERS
 $Comp
 L power:VMEM #PWR0143
 U 1 1 5EC965BD
@@ -1613,7 +1574,7 @@ $EndComp
 Wire Wire Line
 	1900 7100 1900 7000
 Text Notes 3250 6500 0    118  ~ 0
-CORE ARRAY ENABLE
+CORE MATRIX WRITE ENABLE
 Wire Wire Line
 	3800 4450 4300 4450
 Wire Wire Line
@@ -1635,13 +1596,13 @@ XB6
 Text GLabel 2450 2200 0    50   Output ~ 0
 XB7
 Text GLabel 2450 1400 0    50   Output ~ 0
-XT0-4
+XT0,4
 Text GLabel 2450 1300 0    50   Output ~ 0
-XT1-5
+XT1,5
 Text GLabel 2450 1200 0    50   Output ~ 0
-XT2-6
+XT2,6
 Text GLabel 2450 1100 0    50   Output ~ 0
-XT3-7
+XT3,7
 Wire Wire Line
 	2450 1100 2550 1100
 Wire Wire Line
@@ -1749,7 +1710,7 @@ Wire Wire Line
 	2550 1900 2450 1900
 Text Notes 800  2850 0    50   ~ 0
 DIGITAL LOGIC GROUND
-Text Notes 4200 7750 0    50   ~ 0
+Text Notes 4000 7600 0    50   ~ 0
 SYSTEM POWER GROUND
 Text GLabel 850  2100 2    50   Input ~ 0
 3V3
@@ -1780,9 +1741,7 @@ Wire Wire Line
 Wire Wire Line
 	750  2000 850  2000
 Wire Wire Line
-	4200 6850 5300 6850
-Wire Wire Line
-	3800 7200 3900 7200
+	4450 6700 5300 6700
 Wire Wire Line
 	1700 4400 1700 4450
 Connection ~ 1700 4450
@@ -1794,7 +1753,7 @@ Connection ~ 4300 4450
 Wire Wire Line
 	4300 4450 5000 4450
 Wire Wire Line
-	3950 2250 3950 2300
+	3950 2300 3950 2350
 Wire Wire Line
 	1050 7100 1900 7100
 Wire Wire Line
@@ -1838,21 +1797,21 @@ All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Text Notes 1400 2050 0    50   ~ 0
 Silkscreen: 3V3 ONLY
 Text GLabel 2450 2300 0    50   Input ~ 0
-P1_EN
+CP1_EN
 Text GLabel 2450 2400 0    50   Input ~ 0
-P2_EN
+CP2_EN
 Text GLabel 2450 2500 0    50   Input ~ 0
-P3_EN
+CP3_EN
 Text GLabel 2450 2600 0    50   Input ~ 0
-P4_EN
+CP4_EN
 Text GLabel 800  2600 2    50   Input ~ 0
-P5_EN
+CP5_EN
 Text GLabel 800  2500 2    50   Input ~ 0
-P6_EN
+CP6_EN
 Text GLabel 800  2400 2    50   Input ~ 0
-P7_EN
+CP7_EN
 Text GLabel 800  2300 2    50   Input ~ 0
-P8_EN
+CP8_EN
 Wire Wire Line
 	2450 2300 2550 2300
 Wire Wire Line
@@ -1864,32 +1823,264 @@ Wire Wire Line
 $Comp
 L Device:Q_NMOS_DGS Q?
 U 1 1 5F6BF8B4
-P 3250 7700
-F 0 "Q?" H 3455 7653 50  0000 L CNN
-F 1 "Q_NMOS_DGS" H 3455 7746 50  0000 L CNN
-F 2 "" H 3450 7800 50  0001 C CNN
-F 3 "~" H 3250 7700 50  0001 C CNN
-	1    3250 7700
+P 4350 7000
+F 0 "Q?" H 4555 6953 50  0000 L CNN
+F 1 "Q_NMOS_DGS" H 4555 7046 50  0000 L CNN
+F 2 "" H 4550 7100 50  0001 C CNN
+F 3 "~" H 4350 7000 50  0001 C CNN
+	1    4350 7000
 	1    0    0    1   
 $EndComp
+Text Notes 4550 6850 0    50   ~ 0
+D
+Text Notes 4550 7250 0    50   ~ 0
+S
+Text Notes 4150 6950 0    50   ~ 0
+G
+Wire Wire Line
+	3950 7000 3950 7250
+Wire Wire Line
+	3950 7250 4000 7250
+Connection ~ 3950 7000
+Wire Wire Line
+	3950 7000 4150 7000
+Wire Wire Line
+	4450 7200 4450 7250
+Connection ~ 4450 7250
+Wire Wire Line
+	4300 7250 4450 7250
 $Comp
 L Device:R R?
 U 1 1 5F6E9DAB
-P 3100 7950
+P 4150 7250
 AR Path="/5F6E9DAB" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5F6E9DAB" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5F6E9DAB" Ref="R?"  Part="1" 
-F 0 "R?" V 2893 7950 50  0000 C CNN
-F 1 "10k" V 2984 7950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3030 7950 50  0001 C CNN
-F 3 "~" H 3100 7950 50  0001 C CNN
-	1    3100 7950
+F 0 "R?" V 4050 7250 50  0000 C CNN
+F 1 "10k" V 4250 7250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4080 7250 50  0001 C CNN
+F 3 "~" H 4150 7250 50  0001 C CNN
+	1    4150 7250
 	0    1    1    0   
 $EndComp
-Text Notes 3450 7550 0    50   ~ 0
-D
-Text Notes 3450 7950 0    50   ~ 0
-S
-Text Notes 3050 7650 0    50   ~ 0
-G
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FCDFD13
+P 4150 1700
+F 0 "TP?" H 4213 1819 50  0000 L CNN
+F 1 "TestPoint" H 4213 1726 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 4350 1700 50  0001 C CNN
+F 3 "~" H 4350 1700 50  0001 C CNN
+	1    4150 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FCE3594
+P 4150 1900
+F 0 "TP?" H 4213 2019 50  0000 L CNN
+F 1 "TestPoint" H 4213 1926 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 4350 1900 50  0001 C CNN
+F 3 "~" H 4350 1900 50  0001 C CNN
+	1    4150 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 1750 3500 1750
+Wire Wire Line
+	4150 1900 4050 1900
+Wire Wire Line
+	4050 1900 4050 1850
+Wire Wire Line
+	3500 1850 3500 1750
+Connection ~ 3500 1750
+Wire Wire Line
+	3950 1750 4050 1750
+Wire Wire Line
+	4050 1750 4050 1700
+Wire Wire Line
+	4050 1700 4150 1700
+Wire Wire Line
+	3500 1850 4050 1850
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FDC2F4B
+P 6050 1700
+F 0 "TP?" H 6113 1819 50  0000 L CNN
+F 1 "TestPoint" H 6113 1726 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 6250 1700 50  0001 C CNN
+F 3 "~" H 6250 1700 50  0001 C CNN
+	1    6050 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FDC2F51
+P 6050 1900
+F 0 "TP?" H 6113 2019 50  0000 L CNN
+F 1 "TestPoint" H 6113 1926 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 6250 1900 50  0001 C CNN
+F 3 "~" H 6250 1900 50  0001 C CNN
+	1    6050 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1900 5950 1900
+Wire Wire Line
+	5950 1900 5950 1850
+Wire Wire Line
+	5850 1750 5950 1750
+Wire Wire Line
+	5950 1750 5950 1700
+Wire Wire Line
+	5950 1700 6050 1700
+Wire Wire Line
+	5400 1850 5950 1850
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FDD3A8B
+P 7950 1700
+F 0 "TP?" H 8013 1819 50  0000 L CNN
+F 1 "TestPoint" H 8013 1726 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 8150 1700 50  0001 C CNN
+F 3 "~" H 8150 1700 50  0001 C CNN
+	1    7950 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FDD3A91
+P 7950 1900
+F 0 "TP?" H 8013 2019 50  0000 L CNN
+F 1 "TestPoint" H 8013 1926 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 8150 1900 50  0001 C CNN
+F 3 "~" H 8150 1900 50  0001 C CNN
+	1    7950 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 1900 7850 1900
+Wire Wire Line
+	7850 1900 7850 1850
+Wire Wire Line
+	7750 1750 7850 1750
+Wire Wire Line
+	7850 1750 7850 1700
+Wire Wire Line
+	7850 1700 7950 1700
+Wire Wire Line
+	7300 1850 7850 1850
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FDE4C7A
+P 9850 1700
+F 0 "TP?" H 9913 1819 50  0000 L CNN
+F 1 "TestPoint" H 9913 1726 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 10050 1700 50  0001 C CNN
+F 3 "~" H 10050 1700 50  0001 C CNN
+	1    9850 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FDE4C80
+P 9850 1900
+F 0 "TP?" H 9913 2019 50  0000 L CNN
+F 1 "TestPoint" H 9913 1926 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 10050 1900 50  0001 C CNN
+F 3 "~" H 10050 1900 50  0001 C CNN
+	1    9850 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9850 1900 9750 1900
+Wire Wire Line
+	9750 1900 9750 1850
+Wire Wire Line
+	9650 1750 9750 1750
+Wire Wire Line
+	9750 1750 9750 1700
+Wire Wire Line
+	9750 1700 9850 1700
+Wire Wire Line
+	9200 1850 9750 1850
+Wire Wire Line
+	5400 1850 5400 1750
+Connection ~ 5400 1750
+Wire Wire Line
+	7300 1850 7300 1750
+Connection ~ 7300 1750
+Wire Wire Line
+	9200 1850 9200 1750
+Connection ~ 9200 1750
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FE66091
+P 7600 4300
+F 0 "TP?" H 7663 4419 50  0000 L CNN
+F 1 "TestPoint" H 7663 4326 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7800 4300 50  0001 C CNN
+F 3 "~" H 7800 4300 50  0001 C CNN
+	1    7600 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FE66097
+P 7600 4500
+F 0 "TP?" H 7663 4619 50  0000 L CNN
+F 1 "TestPoint" H 7663 4526 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7800 4500 50  0001 C CNN
+F 3 "~" H 7800 4500 50  0001 C CNN
+	1    7600 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 4500 7500 4500
+Wire Wire Line
+	7500 4500 7500 4400
+Wire Wire Line
+	7500 4400 7200 4400
+Wire Wire Line
+	6700 4300 6700 4400
+Connection ~ 6700 4400
+Wire Wire Line
+	6700 4400 6750 4400
+Wire Wire Line
+	6700 4300 7600 4300
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FEFA1E9
+P 7550 5950
+F 0 "TP?" H 7613 6069 50  0000 L CNN
+F 1 "TestPoint" H 7613 5976 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7750 5950 50  0001 C CNN
+F 3 "~" H 7750 5950 50  0001 C CNN
+	1    7550 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FEFA1EF
+P 7550 6150
+F 0 "TP?" H 7613 6269 50  0000 L CNN
+F 1 "TestPoint" H 7613 6176 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7750 6150 50  0001 C CNN
+F 3 "~" H 7750 6150 50  0001 C CNN
+	1    7550 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 6150 7450 6150
+Wire Wire Line
+	6650 5950 7550 5950
+Wire Wire Line
+	7450 6150 7450 6050
+Wire Wire Line
+	7450 6050 7200 6050
+Wire Wire Line
+	6650 5950 6650 6050
+Connection ~ 6650 6050
+Wire Wire Line
+	6650 6050 6700 6050
 $EndSCHEMATC

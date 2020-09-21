@@ -1,4 +1,4 @@
-16716945894133507
+16718560626932507
 2829
 ADAFRUIT_2829
 
@@ -28908,6 +28908,13 @@ surface-mounted straight pin header, 2x07, 2.54mm pitch, double rows
 Surface mounted pin header SMD 2x07 2.54mm double row
 0
 14
+14
+Connector_PinHeader_2.54mm
+PinHeader_2x07_P2.54mm_Vertical_SMD_and_TH
+surface-mounted straight pin header, 2x06, 2.54mm pitch, double rows
+Surface mounted pin header SMD 2x06 2.54mm double row
+0
+28
 14
 Connector_PinHeader_2.54mm
 PinHeader_2x08_P2.54mm_Horizontal

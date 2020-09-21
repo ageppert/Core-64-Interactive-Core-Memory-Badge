@@ -14,8 +14,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 650  6450 0    118  ~ 0
-CORE PLANE & CB SAO GPIO SELECT (OPTIONAL)
+Text Notes 600  6500 0    118  ~ 0
+CORE PLANE & CORE BOARD SAO #2 GPIO SELECT (OPTIONAL)
 Text GLabel 2550 5250 2    50   BiDi ~ 0
 I2C_CLOCK
 Text GLabel 2550 5400 2    50   BiDi ~ 0
@@ -23,7 +23,7 @@ I2C_DATA
 Wire Wire Line
 	2550 5400 2500 5400
 Text Notes 6250 4850 0    118  ~ 0
-SUPERIOR ADD-ON SOCKET (OPTIONAL)
+SAO #1 : SUPERIOR ADD-ON SOCKET (OPTIONAL)
 $Comp
 L power:GND #PWR?
 U 1 1 5EAA9421
@@ -46,7 +46,7 @@ L Connector:Conn_01x04_Female X4
 U 1 1 5E830BC9
 P 2300 5650
 F 0 "X4" V 2200 5300 50  0000 L CNN
-F 1 "SSW-104-22-L-S-VS" V 2400 5200 50  0000 L CNN
+F 1 "SSW-104-22-L-S-VS" V 2400 5100 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2300 5650 50  0001 C CNN
 F 3 "~" H 2300 5650 50  0001 C CNN
 	1    2300 5650
@@ -64,8 +64,8 @@ Wire Wire Line
 	2300 5350 2300 5450
 Wire Wire Line
 	2200 5400 2200 5450
-Text Notes 650  5000 0    50   ~ 0
-0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!
+Text Notes 650  5050 0    50   ~ 0
+0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!\nMust choose power polarity by soldering SJS.
 $Comp
 L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X1
 U 1 1 5E88FF30
@@ -77,7 +77,7 @@ F 3 "" H 7200 5600 50  0001 C CNN
 	1    7200 5400
 	1    0    0    -1  
 $EndComp
-Text GLabel 6900 5250 0    50   Input ~ 0
+Text GLabel 6800 5100 0    50   Input ~ 0
 3V3
 $Comp
 L power:GND #PWR?
@@ -92,50 +92,26 @@ F 3 "" H 6750 5550 50  0001 C CNN
 	1    6750 5550
 	1    0    0    -1  
 $EndComp
-Text GLabel 7000 5950 0    50   BiDi ~ 0
+Text GLabel 7100 5950 0    50   BiDi ~ 0
 I2C_CLOCK
 Text GLabel 7000 4950 0    50   BiDi ~ 0
 I2C_DATA
 Text Notes 6250 6250 0    50   ~ 0
 SAO v1.69bis (https://hackaday.io/project/52950-shitty-add-ons) using Sullins SFH11-NBPC-D03-ST-BK female header\nhttps://www.digikey.com/product-detail/en/sullins-connector-solutions/SFH11-NBPC-D03-ST-BK/S9717-ND/4558818
 Wire Wire Line
-	6900 5250 6950 5250
-Wire Wire Line
-	6950 5050 7050 5050
-Wire Wire Line
 	6750 5550 6750 5500
 Wire Wire Line
-	6750 5500 6950 5500
+	6750 5500 6900 5500
 Wire Wire Line
-	6950 5850 7100 5850
+	6900 5800 7100 5800
 Wire Wire Line
 	7000 4950 7150 4950
 Wire Wire Line
 	7150 4950 7150 5100
 Wire Wire Line
-	7000 5950 7200 5950
+	7100 5950 7200 5950
 Wire Wire Line
 	7200 5950 7200 5800
-Wire Wire Line
-	7050 5050 7050 5100
-Text GLabel 7450 5750 2    50   BiDi ~ 0
-SAO_GPIO2
-Text GLabel 7450 5150 2    50   BiDi ~ 0
-SAO_GPIO1
-Wire Wire Line
-	7300 5800 7400 5800
-Wire Wire Line
-	7400 5800 7400 5750
-Wire Wire Line
-	7400 5750 7450 5750
-Wire Wire Line
-	7250 5100 7400 5100
-Wire Wire Line
-	7400 5100 7400 5150
-Wire Wire Line
-	7400 5150 7450 5150
-Wire Wire Line
-	7100 5800 7100 5850
 $Comp
 L Jumper:SolderJumper_3_Open JP4
 U 1 1 5E81A96A
@@ -162,25 +138,21 @@ Wire Wire Line
 	1450 5800 1750 5800
 Wire Wire Line
 	1750 5300 1750 5400
-Text GLabel 750  5150 2    50   Input ~ 0
+Text GLabel 850  5300 0    50   Input ~ 0
 3V3
-Wire Wire Line
-	700  5300 700  5150
-Wire Wire Line
-	700  5150 750  5150
 $Comp
 L Connector:Conn_01x04_Male X3
 U 1 1 5E87C9AB
 P 4750 5450
 F 0 "X3" H 4722 5331 50  0000 R CNN
-F 1 "Conn_01x04_Male" H 4722 5424 50  0000 R CNN
+F 1 "QWIIC" H 4722 5424 50  0000 R CNN
 F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 4750 5450 50  0001 C CNN
 F 3 "~" H 4750 5450 50  0001 C CNN
 	1    4750 5450
 	1    0    0    1   
 $EndComp
-Text Notes 4100 4850 0    118  ~ 0
-QWIIC I2C (OPTIONAL)
+Text Notes 4500 5050 0    118  ~ 0
+QWIIC I2C
 Text GLabel 5150 5450 2    50   Input ~ 0
 3V3
 $Comp
@@ -207,27 +179,23 @@ Wire Wire Line
 Wire Wire Line
 	4950 5550 5150 5550
 Wire Wire Line
-	6950 5250 6950 5050
-Wire Wire Line
-	6950 5500 6950 5850
+	6900 5500 6900 5800
 $Comp
 L Connector:Conn_01x08_Female J7
 U 1 1 5EB0C89C
-P 5650 7350
-F 0 "J7" H 5500 7900 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 5300 7800 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5650 7350 50  0001 C CNN
-F 3 "~" H 5650 7350 50  0001 C CNN
-	1    5650 7350
+P 6550 3650
+F 0 "J7" H 6400 4200 50  0000 L CNN
+F 1 "HEADER_8-PIN_0.1" H 6200 4100 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 6550 3650 50  0001 C CNN
+F 3 "~" H 6550 3650 50  0001 C CNN
+	1    6550 3650
 	1    0    0    -1  
 $EndComp
-Text GLabel 5450 7550 0    50   Output ~ 0
+Text GLabel 6350 3850 0    50   Output ~ 0
 WRITE_ENABLE
-Text GLabel 5450 7250 0    50   Input ~ 0
-SPARE_3
-Text GLabel 5450 7350 0    50   Input ~ 0
+Text GLabel 6350 3650 0    50   Input ~ 0
 SPARE_4
-Text GLabel 5450 7450 0    50   Input ~ 0
+Text GLabel 6350 3750 0    50   Input ~ 0
 SPARE_5
 Wire Wire Line
 	4950 5450 5150 5450
@@ -307,91 +275,72 @@ F 3 "~" H 1450 5500 50  0001 C CNN
 	1    1450 5500
 	0    -1   -1   0   
 $EndComp
-Text GLabel 5450 7150 0    50   Input ~ 0
-SPARE_2
-Text GLabel 5450 7050 0    50   Input ~ 0
-SPARE_1
 $Comp
 L power:GND #PWR?
 U 1 1 5EC9F516
-P 5450 7750
+P 6350 4050
 AR Path="/5E755787/5EC9F516" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5EC9F516" Ref="#PWR0166"  Part="1" 
-F 0 "#PWR0166" H 5450 7500 50  0001 C CNN
-F 1 "GND" H 5455 7575 50  0000 C CNN
-F 2 "" H 5450 7750 50  0001 C CNN
-F 3 "" H 5450 7750 50  0001 C CNN
-	1    5450 7750
+F 0 "#PWR0166" H 6350 3800 50  0001 C CNN
+F 1 "GND" H 6355 3875 50  0000 C CNN
+F 2 "" H 6350 4050 50  0001 C CNN
+F 3 "" H 6350 4050 50  0001 C CNN
+	1    6350 4050
 	1    0    0    -1  
 $EndComp
-Text GLabel 5450 7650 0    50   Input ~ 0
+Text GLabel 6350 3950 0    50   Input ~ 0
 3V3
 Wire Wire Line
 	700  5800 1450 5800
 Wire Wire Line
-	700  5300 1450 5300
+	850  5300 1450 5300
 $Comp
 L Device:C C6
 U 1 1 5F548531
-P 950 6900
-F 0 "C6" H 1065 6947 50  0000 L CNN
-F 1 "0.1uF" H 1065 6854 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 988 6750 50  0001 C CNN
-F 3 "~" H 950 6900 50  0001 C CNN
-	1    950  6900
+P 1650 6900
+F 0 "C6" H 1765 6947 50  0000 L CNN
+F 1 "0.1uF" H 1765 6854 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1688 6750 50  0001 C CNN
+F 3 "~" H 1650 6900 50  0001 C CNN
+	1    1650 6900
 	-1   0    0    -1  
 $EndComp
-Text Notes 3700 2250 0    50   ~ 0
-Silkscreen: 3V3 ONLY
-Text Notes 1250 6100 0    50   ~ 0
-Silkscreen: 3V3 ONLY
-Text Notes 4650 5950 0    50   ~ 0
-Silkscreen: 3V3 ONLY
-Text Notes 8550 5100 0    50   ~ 0
-Silkscreen: 3V3 ONLY
-Text Notes 4400 6950 0    50   ~ 0
-Silkscreen: 3V3 ONLY
+Text Notes 1050 6050 0    50   ~ 0
+SILKSCREEN: 3V3 ONLY, 3V3/GND sides of jumpers,\nI2C OLED and pin names
+Text Notes 7700 5350 0    50   ~ 0
+SILKSCREEN: 3V3 ONLY\nSAO#1 and pin names
+Text Notes 5300 3200 0    50   ~ 0
+Silkscreen: 3V3 ONLY\npin names
 Text Notes 6300 6700 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 $Comp
-L 74xx_IEEE:74HC238 U1
-U 1 1 5F6FED24
-P 1850 7150
-F 0 "U1" H 2100 7650 50  0000 C CNN
-F 1 "74HC238" H 2100 7550 50  0000 C CNN
-F 2 "Digikey:TSSOP-16-1EP_W4.40mm" H 1850 7150 50  0001 C CNN
-F 3 "" H 1850 7150 50  0001 C CNN
-	1    1850 7150
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5F702794
-P 1850 7800
+P 2550 7800
 AR Path="/5E755787/5F702794" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F702794" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 1850 7550 50  0001 C CNN
-F 1 "GND" H 1855 7625 50  0000 C CNN
-F 2 "" H 1850 7800 50  0001 C CNN
-F 3 "" H 1850 7800 50  0001 C CNN
-	1    1850 7800
+F 0 "#PWR?" H 2550 7550 50  0001 C CNN
+F 1 "GND" H 2555 7625 50  0000 C CNN
+F 2 "" H 2550 7800 50  0001 C CNN
+F 3 "" H 2550 7800 50  0001 C CNN
+	1    2550 7800
 	1    0    0    -1  
 $EndComp
-Text GLabel 1850 6750 1    50   Input ~ 0
+Text GLabel 2550 6750 1    50   Input ~ 0
 3V3
-Text GLabel 950  6750 1    50   Input ~ 0
+Text GLabel 1650 6750 1    50   Input ~ 0
 3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5F704E2E
-P 950 7050
+P 1650 7050
 AR Path="/5E755787/5F704E2E" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F704E2E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 950 6800 50  0001 C CNN
-F 1 "GND" H 955 6875 50  0000 C CNN
-F 2 "" H 950 7050 50  0001 C CNN
-F 3 "" H 950 7050 50  0001 C CNN
-	1    950  7050
+F 0 "#PWR?" H 1650 6800 50  0001 C CNN
+F 1 "GND" H 1655 6875 50  0000 C CNN
+F 2 "" H 1650 7050 50  0001 C CNN
+F 3 "" H 1650 7050 50  0001 C CNN
+	1    1650 7050
 	-1   0    0    -1  
 $EndComp
 Text Notes 600  800  0    118  ~ 0
@@ -421,126 +370,67 @@ Wire Wire Line
 	650  1750 1400 1750
 Wire Wire Line
 	650  1250 1700 1250
-Text Notes 1550 2200 0    50   ~ 0
-Silkscreen: 3V3 ONLY
-Text GLabel 1300 7500 0    50   Input ~ 0
-CP_ADDR_0
-Text GLabel 1300 7600 0    50   Input ~ 0
-CP_ADDR_1
 Wire Wire Line
-	1850 6750 1850 6800
+	2550 6750 2550 6800
 Wire Wire Line
-	1850 6800 1100 6800
+	2550 6800 1800 6800
 Wire Wire Line
-	1100 6800 1100 7250
+	1800 6800 1800 7250
 Wire Wire Line
-	1100 7250 1300 7250
-Connection ~ 1850 6800
+	1800 7250 2000 7250
+Connection ~ 2550 6800
 Wire Wire Line
-	1850 6800 1850 6850
+	2550 6800 2550 6850
 Wire Wire Line
-	1300 7100 1300 6950
-Text GLabel 3350 7150 2    50   Output ~ 0
-P1_EN
+	2000 7100 2000 6950
+Text GLabel 3850 6850 2    50   Output ~ 0
+CP1_EN
 $Comp
 L power:GND #PWR?
 U 1 1 5F530128
-P 1200 7000
+P 1900 7000
 AR Path="/5E755787/5F530128" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F530128" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 1200 6750 50  0001 C CNN
-F 1 "GND" H 1205 6825 50  0000 C CNN
-F 2 "" H 1200 7000 50  0001 C CNN
-F 3 "" H 1200 7000 50  0001 C CNN
-	1    1200 7000
+F 0 "#PWR?" H 1900 6750 50  0001 C CNN
+F 1 "GND" H 1905 6825 50  0000 C CNN
+F 2 "" H 1900 7000 50  0001 C CNN
+F 3 "" H 1900 7000 50  0001 C CNN
+	1    1900 7000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1850 7750 1850 7800
+	2550 7750 2550 7800
 Wire Wire Line
-	1200 7000 1200 6950
+	1900 7000 1900 6950
 Wire Wire Line
-	1200 6950 1300 6950
-Connection ~ 1300 6950
-Text GLabel 1300 7700 0    50   Input ~ 0
-CP_ADDR_2
-Text GLabel 3250 7550 2    50   Output ~ 0
-P2_EN
-Text GLabel 2400 7150 2    50   Output ~ 0
-P3_EN
-Text GLabel 2400 7250 2    50   Output ~ 0
-P4_EN
-Text GLabel 2400 7350 2    50   Output ~ 0
-P5_EN
-Text GLabel 2400 7450 2    50   Output ~ 0
-P6_EN
-Text GLabel 2400 7550 2    50   Output ~ 0
-P7_EN
-Text GLabel 2400 7650 2    50   Output ~ 0
-P8_EN
-Text GLabel 2800 6750 0    50   BiDi ~ 0
-SAO_GPIO2
-Text GLabel 2800 6600 0    50   BiDi ~ 0
-SAO_GPIO1
-$Comp
-L Jumper:SolderJumper_3_Open JP?
-U 1 1 5F5AEC4F
-P 2900 7550
-F 0 "JP?" V 3050 7300 50  0000 L CNN
-F 1 "SolderJumper_3_Open" V 2500 7100 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 2900 7550 50  0001 C CNN
-F 3 "~" H 2900 7550 50  0001 C CNN
-	1    2900 7550
-	0    -1   1    0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_3_Open JP?
-U 1 1 5F5B143C
-P 3100 7150
-F 0 "JP?" V 3250 6900 50  0000 L CNN
-F 1 "SolderJumper_3_Open" V 2700 6700 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 3100 7150 50  0001 C CNN
-F 3 "~" H 3100 7150 50  0001 C CNN
-	1    3100 7150
-	0    -1   1    0   
-$EndComp
+	1900 6950 2000 6950
+Text GLabel 3850 7200 2    50   Output ~ 0
+CP2_EN
+Text GLabel 3100 7150 2    50   Output ~ 0
+CP3_EN
+Text GLabel 3100 7250 2    50   Output ~ 0
+CP4_EN
+Text GLabel 3100 7350 2    50   Output ~ 0
+CP5_EN
+Text GLabel 3100 7450 2    50   Output ~ 0
+CP6_EN
+Text GLabel 3100 7550 2    50   Output ~ 0
+CP7_EN
+Text GLabel 3100 7650 2    50   Output ~ 0
+CP8_EN
 Wire Wire Line
-	3250 7150 3350 7150
-Wire Wire Line
-	3050 7550 3250 7550
-Wire Wire Line
-	3000 7350 3100 7350
-Wire Wire Line
-	2900 6750 2900 7350
-Wire Wire Line
-	2800 7750 2900 7750
+	3600 7200 3850 7200
 Text Notes 7600 800  0    118  ~ 0
 TFT LCD SPI (OPTIONAL)
-Text Notes 4450 6700 0    118  ~ 0
-GPIO EXPANSION
+Text Notes 5350 3000 0    118  ~ 0
+GPIO#1
 Connection ~ 1450 5300
 Wire Wire Line
 	1450 5300 1750 5300
 Wire Wire Line
-	2800 7750 2800 7050
+	3250 6700 3250 6950
 Wire Wire Line
-	2800 7050 2400 7050
-Wire Wire Line
-	2900 6750 2800 6750
-Wire Wire Line
-	3100 6600 3100 6950
-Wire Wire Line
-	2800 6600 3100 6600
-Wire Wire Line
-	3000 7350 3000 6950
-Wire Wire Line
-	3000 6950 2400 6950
-Text GLabel 700  7500 0    50   BiDi ~ 0
-SP1_SAO1_CPA0
-Text GLabel 2800 6500 0    50   BiDi ~ 0
-SP1_SAO1_CPA0
-Text GLabel 7450 5000 2    50   BiDi ~ 0
-SP1_SAO1_CPA0
+	3250 6950 3100 6950
 $Comp
 L Connector_Generic:Conn_02x20_Counter_Clockwise J?
 U 1 1 5F6B696F
@@ -574,4 +464,90 @@ F 3 "~" H 10150 2200 50  0001 C CNN
 	1    10150 2200
 	1    0    0    -1  
 $EndComp
+Text GLabel 2000 7500 0    50   BiDi ~ 0
+SAO_G1_or_SPARE_1_or_CP_ADDR_0
+Text GLabel 2000 7600 0    50   BiDi ~ 0
+SAO_G2_or_SPARE_2_or_CP_ADDR_1
+Text GLabel 3850 6700 2    50   BiDi ~ 0
+SAO_G1_or_SPARE_1_or_CP_ADDR_0
+Text GLabel 3850 7050 2    50   BiDi ~ 0
+SAO_G2_or_SPARE_2_or_CP_ADDR_1
+Connection ~ 2000 6950
+$Comp
+L 74xx_IEEE:74HC238 U1
+U 1 1 5F6FED24
+P 2550 7150
+F 0 "U1" H 2800 7650 50  0000 C CNN
+F 1 "74HC238" H 2800 7550 50  0000 C CNN
+F 2 "Digikey:TSSOP-16-1EP_W4.40mm" H 2550 7150 50  0001 C CNN
+F 3 "" H 2550 7150 50  0001 C CNN
+	1    2550 7150
+	1    0    0    -1  
+$EndComp
+Text GLabel 7400 5100 2    50   BiDi ~ 0
+SAO_1_or_SPARE_1_or_CP_ADDR_0
+Wire Wire Line
+	7250 5100 7400 5100
+Wire Wire Line
+	7300 5800 7400 5800
+Text GLabel 7400 5800 2    50   BiDi ~ 0
+SAO_2_or_SPARE_2_or_CP_ADDR_1
+Wire Wire Line
+	6800 5100 7050 5100
+Text Notes 2450 600  0    118  ~ 0
+EVERYTHING ON THIS SHEET IS USER-PROVIDED OPTIONAL ADD-ONS
+Text Notes 3500 8000 0    50   ~ 0
+To use more than 1 core plane:\n1) Add 3-to-8 decoder 74HC238 and decoupling capacitor.\n2) Cut both SJ pads 1-2 and solder pads 2-3.\n\nNOTES:\nSee Core Board schematic for other required CB changes.\nSAO#1 (LB) GPIO is still accessible as CP_ADDR_0 and 1, shared.\nSAO#2 (CB) GPIO becomes output [only] Y0 and Y1 of CP selector.\nSPARE GPIO 1-2-3 are used for Core Plane Addressing.
+Wire Wire Line
+	3600 6850 3850 6850
+Wire Wire Line
+	3800 6700 3850 6700
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP?
+U 1 1 5F5B143C
+P 3600 6700
+F 0 "JP?" H 3550 6800 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 3200 6250 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 3600 6700 50  0001 C CNN
+F 3 "~" H 3600 6700 50  0001 C CNN
+	1    3600 6700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 7050 3800 7050
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP?
+U 1 1 5F5AEC4F
+P 3600 7050
+F 0 "JP?" H 3550 7150 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 3200 6600 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 3600 7050 50  0001 C CNN
+F 3 "~" H 3600 7050 50  0001 C CNN
+	1    3600 7050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 6700 3400 6700
+Text Notes 650  6700 0    50   ~ 0
+Silkscreen: 3V3 ONLY\nCore Plane Select
+Wire Wire Line
+	3100 7050 3400 7050
+Text GLabel 2000 7700 0    50   BiDi ~ 0
+SPARE_3_or_CP_ADDR_2
+Text Notes 3000 4900 0    50   ~ 0
+4x holes 3/32” \n4-pin 0.1” header
+Text GLabel 6350 3350 0    50   BiDi ~ 0
+SAO_G1_or_SPARE_1_or_CP_ADDR_0
+Text GLabel 6350 3450 0    50   BiDi ~ 0
+SAO_G2_or_SPARE_2_or_CP_ADDR_1
+Text GLabel 6350 3550 0    50   BiDi ~ 0
+SPARE_3_or_CP_ADDR_2
+Text Notes 4600 5950 0    50   ~ 0
+SILKSCREEN: 3V3 ONLY\nQWIIC I2C and pin names
+Text Notes 650  2350 0    50   ~ 0
+SILKSCREEN: 3V3 ONLY, 3V3/GND sides of jumpers, SPI OLED
+Text Notes 3750 2500 0    50   ~ 0
+SILKSCREEN: 3V3 ONLY\nMICRO SD SPI
+Text Notes 7250 4950 0    50   ~ 0
+SAO#2 is on the Core Board
 $EndSCHEMATC

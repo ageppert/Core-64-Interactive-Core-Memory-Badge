@@ -567,7 +567,7 @@ Connection ~ 3650 1450
 Text Notes 6300 6750 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Text Notes 750  5750 0    50   ~ 0
-Silkscreen: 3V3 ONLY
+SILKSCREEN: 3V3 ONLY\nSENSE PORT
 Text Notes 4800 2950 0    118  ~ 0
 NOR -> NOT -> RS LATCH
 $EndSCHEMATC
