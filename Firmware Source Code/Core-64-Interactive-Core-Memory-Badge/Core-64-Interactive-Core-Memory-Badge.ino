@@ -23,10 +23,13 @@
     OR
     NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
     The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
-  OPTIONAL
-    SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
-    Adafruit ILI9341 Library                    1.5.6   by Adafruit
+      OPTIONAL
+        SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
+        Adafruit ILI9341 Library                    1.5.6   by Adafruit
 
+  LIBRARIES INCLUDED IN SRC DIR
+    src/Si7210/si7210.h
+    
 
  */
 
