@@ -33,7 +33,7 @@
                                                 // 3 = LTR-329
   uint8_t AmbientLightLevel8BIT = 0 ;           // Scaled 0 to 255, darkest to brightest lux range
   static uint8_t AmbientLightScalarBitShift = 7;        // 
-  static uint8_t AmbientLighttr329ScalarBitShift = 3;        // 
+  static uint8_t AmbientLightLtr329ScalarBitShift = 3;        // 
 
   void AmbientLightSetup() {
     Serial.println("\nTroubleshooting Light Sensor VEML6030..."); 
@@ -317,7 +317,7 @@
   void ReadAmbientLightLevel() {
     if (AmbientLightSensorType == 3)
     {
-      luxVal = GetLtrLux;
+      luxVal = (uint32_t) GetLtrLux;
       if(luxVal>=luxMax)   // If input lux level is saturated
       {
         AmbientLightLevel8BIT = 250;                  // assign max level to 8bit value to avoid rollover to lower level
