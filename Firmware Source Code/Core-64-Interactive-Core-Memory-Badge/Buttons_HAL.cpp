@@ -101,6 +101,8 @@ void Buttons_Setup() {
   }
   else if (HardwareVersionMinor == 3)
   {
+    pinMode(Pin_v030_SAO3_GPIO2, OUTPUT);
+    digitalWriteFast(Pin_v030_SAO3_GPIO2,1); // Always on to test core plane select of V0.4 CB on V0.3 LB.
     IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_1, INPUT);
     IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_1, HIGH);  // turn on a 100K pullup internally
     IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_2, INPUT);
