@@ -1,4 +1,4 @@
-16718560626932507
+16720231907618168
 2829
 ADAFRUIT_2829
 
@@ -41122,8 +41122,8 @@ Micro_LiPo_Charger
 
 
 0
-4
-4
+8
+5
 Core_Memory_8x8_Array
 OLED_Header_4PIN
 4-pin CPU fan Through hole pin header, e.g. for Wieson part number 2366C888-007 Molex 47053-1000, Foxconn HF27040-M1, Tyco 1470947-1 or equivalent, see http://www.formfactors.org/developer%5Cspecs%5Crev1_2_public.pdf
@@ -52492,6 +52492,13 @@ Integrated Circuit
 0
 5
 5
+MIKROE-971
+MIKROE-971_1
+MIKROE-971
+Undefined or Miscellaneous
+0
+16
+16
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet

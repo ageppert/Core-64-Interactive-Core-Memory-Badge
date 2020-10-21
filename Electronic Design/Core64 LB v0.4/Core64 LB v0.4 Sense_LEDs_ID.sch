@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text Notes 600  850  0    118  ~ 0
-SENSE SIGNAL PROCESSING
+SENSE SIGNAL DIFFERENTIAL AMPLIFIERS
 $Comp
 L Comparator:LM393 U?
 U 1 1 5D3DC9EC
@@ -480,44 +480,44 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x08 J6
 U 1 1 5E868B9C
-P 1600 5100
-F 0 "J6" H 1627 5077 50  0000 L CNN
-F 1 "Conn_01x08_Female" H 1627 4984 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 1600 5100 50  0001 C CNN
-F 3 "~" H 1600 5100 50  0001 C CNN
-	1    1600 5100
-	1    0    0    -1  
+P 9400 2050
+F 0 "J6" H 9500 2050 50  0000 L CNN
+F 1 "HEADER_8-PIN_0.1" H 9500 1900 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 9400 2050 50  0001 C CNN
+F 3 "~" H 9400 2050 50  0001 C CNN
+	1    9400 2050
+	1    0    0    1   
 $EndComp
-Text Notes 750  4500 0    50   ~ 0
-SENSE DEBUG SOCKET
-Text GLabel 1400 5400 0    50   Input ~ 0
+Text Notes 8650 850  0    118  ~ 0
+SENSE DEBUG
+Text GLabel 9200 1750 0    50   Input ~ 0
 SENSE_RESET
-Text GLabel 1400 5500 0    50   Input ~ 0
+Text GLabel 9200 1650 0    50   Input ~ 0
 SENSE_PULSE
-Text GLabel 1400 4900 0    50   Input ~ 0
+Text GLabel 9200 2250 0    50   Input ~ 0
 3V3
 $Comp
 L power:GNDD #PWR0149
 U 1 1 5E86E945
-P 1000 4600
-F 0 "#PWR0149" H 1000 4350 50  0001 C CNN
-F 1 "GNDD" H 1004 4445 50  0000 C CNN
-F 2 "" H 1000 4600 50  0001 C CNN
-F 3 "" H 1000 4600 50  0001 C CNN
-	1    1000 4600
-	1    0    0    -1  
+P 9050 2400
+F 0 "#PWR0149" H 9050 2150 50  0001 C CNN
+F 1 "GNDD" H 9054 2245 50  0000 C CNN
+F 2 "" H 9050 2400 50  0001 C CNN
+F 3 "" H 9050 2400 50  0001 C CNN
+	1    9050 2400
+	-1   0    0    -1  
 $EndComp
-Text GLabel 1400 5000 0    50   Input ~ 0
+Text GLabel 9200 2150 0    50   Input ~ 0
 SENSE1
-Text GLabel 1400 5100 0    50   Input ~ 0
+Text GLabel 9200 2050 0    50   Input ~ 0
 SENSE2
 Wire Wire Line
 	1250 3150 1850 3150
 Text GLabel 4000 2850 2    50   Output ~ 0
 SENSE_OUT_B
-Text GLabel 1400 5300 0    50   Input ~ 0
+Text GLabel 9200 1850 0    50   Input ~ 0
 SENSE_OUT_B
-Text GLabel 1400 5200 0    50   Input ~ 0
+Text GLabel 9200 1950 0    50   Input ~ 0
 SENSE_OUT_A
 Text GLabel 4100 1850 2    50   Output ~ 0
 SENSE_OUT_A
@@ -526,11 +526,9 @@ Wire Wire Line
 Wire Wire Line
 	3950 2850 4000 2850
 Wire Wire Line
-	1000 4600 1250 4600
+	9050 2400 9050 2350
 Wire Wire Line
-	1250 4600 1250 4800
-Wire Wire Line
-	1250 4800 1400 4800
+	9050 2350 9200 2350
 Wire Wire Line
 	6950 1750 7200 1750
 Connection ~ 1850 1450
@@ -566,8 +564,275 @@ Wire Wire Line
 Connection ~ 3650 1450
 Text Notes 6300 6750 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
-Text Notes 750  5750 0    50   ~ 0
-SILKSCREEN: 3V3 ONLY\nSENSE PORT
+Text Notes 8650 2950 0    50   ~ 0
+SILKSCREEN: 3V3 ONLY\nSENSE DEBUG
 Text Notes 4800 2950 0    118  ~ 0
 NOR -> NOT -> RS LATCH
+Text GLabel 2400 5500 2    50   Output ~ 0
+LED_ARRAY_5V0_SIG
+Wire Wire Line
+	2300 5500 2400 5500
+Text GLabel 1400 5500 0    50   Input ~ 0
+LED_ARRAY_3V3_SIG
+Wire Wire Line
+	1450 6000 1500 6000
+Wire Wire Line
+	1900 5700 1900 5600
+Wire Wire Line
+	1800 6300 1800 6350
+Wire Wire Line
+	1800 6350 1900 6350
+Wire Wire Line
+	2000 6300 2000 6350
+Wire Wire Line
+	2000 6350 1900 6350
+Connection ~ 1900 6350
+Text Notes 600  5250 0    118  ~ 0
+LED ARRAY DRIVE AND LEVEL SHIFT
+Wire Wire Line
+	2300 6000 2300 5950
+$Comp
+L Device:C C?
+U 1 1 5F7F821A
+P 700 6050
+AR Path="/5E755787/5F7F821A" Ref="C?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5F7F821A" Ref="C?"  Part="1" 
+AR Path="/5EA63449/5F7F821A" Ref="C?"  Part="1" 
+AR Path="/5F7F821A" Ref="C?"  Part="1" 
+AR Path="/5E75D6AB/5F7F821A" Ref="C4"  Part="1" 
+F 0 "C4" H 791 6096 50  0000 L CNN
+F 1 "0.1uF" H 791 6005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 700 6050 50  0001 C CNN
+F 3 "~" H 700 6050 50  0001 C CNN
+	1    700  6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  5900 700  5850
+Wire Wire Line
+	700  6250 700  6200
+Text GLabel 1900 5600 1    50   Input ~ 0
+5V0
+Text GLabel 700  5850 1    50   Input ~ 0
+5V0
+Wire Wire Line
+	1400 5500 1450 5500
+Wire Wire Line
+	1450 5500 1450 6000
+Wire Wire Line
+	1900 6400 1900 6350
+Wire Wire Line
+	2300 5650 2300 5500
+NoConn ~ 3750 5550
+NoConn ~ 4250 5550
+Text Notes 3550 6550 0    50   ~ 0
+TSM-106 (2x6) required\nTSM-107 (2x7) alternate
+Text Notes 2500 6200 0    50   ~ 0
+SILKSCREEN: \n5V0 ONLY\nLED ARRAY
+Wire Wire Line
+	3150 6050 3150 6150
+Text GLabel 3150 6050 1    50   Input ~ 0
+5V0
+NoConn ~ 4250 6150
+NoConn ~ 4250 6050
+NoConn ~ 4250 5950
+NoConn ~ 4250 5850
+NoConn ~ 4250 5650
+NoConn ~ 3750 5750
+NoConn ~ 3750 5850
+NoConn ~ 3750 5950
+NoConn ~ 3750 6050
+Wire Wire Line
+	4400 5750 4400 5850
+Wire Wire Line
+	4250 5750 4400 5750
+Wire Wire Line
+	3750 5650 3200 5650
+Wire Wire Line
+	3750 6150 3450 6150
+$Comp
+L power:GND #PWR?
+U 1 1 5F7F8247
+P 4400 5850
+AR Path="/5E755787/5F7F8247" Ref="#PWR?"  Part="1" 
+AR Path="/5F7F8247" Ref="#PWR?"  Part="1" 
+AR Path="/5E75D6AB/5F7F8247" Ref="#PWR0114"  Part="1" 
+F 0 "#PWR0114" H 4400 5600 50  0001 C CNN
+F 1 "GND" H 4405 5675 50  0000 C CNN
+F 2 "" H 4400 5850 50  0001 C CNN
+F 3 "" H 4400 5850 50  0001 C CNN
+	1    4400 5850
+	1    0    0    -1  
+$EndComp
+Text GLabel 3200 5650 0    50   Input ~ 0
+LED_ARRAY_5V0_SIG
+$Comp
+L Connector_Generic:Conn_02x07_Odd_Even J?
+U 1 1 5F7F824E
+P 4050 5850
+AR Path="/5F7F824E" Ref="J?"  Part="1" 
+AR Path="/5E75D6AB/5F7F824E" Ref="J10"  Part="1" 
+F 0 "J10" H 4100 5450 50  0000 C CNN
+F 1 "TSM-106-03-T-DV‎" H 4100 6300 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical_SMD_and_TH" H 4050 5850 50  0001 C CNN
+F 3 "~" H 4050 5850 50  0001 C CNN
+	1    4050 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Logic_LevelTranslator:SN74LV1T125DBVR U?
+U 1 1 5F7F8254
+P 1900 6000
+AR Path="/5F7F8254" Ref="U?"  Part="1" 
+AR Path="/5E75D6AB/5F7F8254" Ref="U3"  Part="1" 
+F 0 "U3" H 1600 6250 50  0000 L CNN
+F 1 "SN74LV1T125DBVR" H 1000 5750 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 1900 5300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf" H 1900 5400 50  0001 C CNN
+	1    1900 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F7F825A
+P 2300 5800
+AR Path="/5E755787/5F7F825A" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5F7F825A" Ref="R?"  Part="1" 
+AR Path="/5F7F825A" Ref="R?"  Part="1" 
+AR Path="/5E75D6AB/5F7F825A" Ref="R50"  Part="1" 
+F 0 "R50" H 2350 5850 50  0000 L CNN
+F 1 "470" H 2350 5750 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2230 5800 50  0001 C CNN
+F 3 "~" H 2300 5800 50  0001 C CNN
+	1    2300 5800
+	1    0    0    -1  
+$EndComp
+Text Notes 8200 5300 0    118  ~ 0
+BOARD ID AND S/N
+$Comp
+L Memory_EEPROM:M24C01-RMN U?
+U 1 1 5F823906
+P 9100 6000
+AR Path="/5F823906" Ref="U?"  Part="1" 
+AR Path="/5EA63449/5F823906" Ref="U?"  Part="1" 
+AR Path="/5E75D6AB/5F823906" Ref="U4"  Part="1" 
+F 0 "U4" H 8800 6300 50  0000 C CNN
+F 1 "M24C01-RMN" H 9450 6300 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 9100 6350 50  0001 C CNN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf" H 9150 5500 50  0001 C CNN
+	1    9100 6000
+	1    0    0    -1  
+$EndComp
+Text GLabel 9500 5900 2    50   BiDi ~ 0
+I2C_DATA
+Text GLabel 9500 6000 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 9500 5550 2    50   Input ~ 0
+3V3
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F82390F
+P 9100 6350
+AR Path="/5EA63449/5F82390F" Ref="#PWR?"  Part="1" 
+AR Path="/5F82390F" Ref="#PWR?"  Part="1" 
+AR Path="/5E75D6AB/5F82390F" Ref="#PWR0123"  Part="1" 
+F 0 "#PWR0123" H 9100 6100 50  0001 C CNN
+F 1 "GNDD" H 9104 6194 50  0000 C CNN
+F 2 "" H 9100 6350 50  0001 C CNN
+F 3 "" H 9100 6350 50  0001 C CNN
+	1    9100 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 5900 8700 6000
+Connection ~ 8700 6000
+Wire Wire Line
+	8700 6000 8700 6100
+Wire Wire Line
+	9100 6300 9100 6350
+Connection ~ 9100 6300
+Wire Wire Line
+	9500 6100 9500 6300
+Wire Wire Line
+	9500 6300 9100 6300
+Wire Wire Line
+	9100 5700 9100 5550
+Wire Wire Line
+	9100 5550 9500 5550
+$Comp
+L Device:C C?
+U 1 1 5F82391E
+P 8350 6050
+AR Path="/5E755787/5F82391E" Ref="C?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5F82391E" Ref="C?"  Part="1" 
+AR Path="/5EA63449/5F82391E" Ref="C?"  Part="1" 
+AR Path="/5F82391E" Ref="C?"  Part="1" 
+AR Path="/5E75D6AB/5F82391E" Ref="C5"  Part="1" 
+F 0 "C5" H 8441 6096 50  0000 L CNN
+F 1 "0.1uF" H 8441 6005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8350 6050 50  0001 C CNN
+F 3 "~" H 8350 6050 50  0001 C CNN
+	1    8350 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9100 5550 8700 5550
+Wire Wire Line
+	8350 5550 8350 5900
+Connection ~ 9100 5550
+Wire Wire Line
+	8350 6200 8350 6300
+Text Notes 8200 5450 0    50   ~ 0
+EEPROM I2C ADDRESS: 0b1010111, 0x57 (87)
+Wire Wire Line
+	8350 6300 9100 6300
+Wire Wire Line
+	8700 5900 8700 5550
+Connection ~ 8700 5900
+Connection ~ 8700 5550
+Wire Wire Line
+	8700 5550 8350 5550
+Text Notes 9500 1750 0    50   ~ 0
+Header not populated
+$Comp
+L power:GNDD #PWR0109
+U 1 1 5F7F0580
+P 1900 6400
+F 0 "#PWR0109" H 1900 6150 50  0001 C CNN
+F 1 "GNDD" H 1904 6245 50  0000 C CNN
+F 2 "" H 1900 6400 50  0001 C CNN
+F 3 "" H 1900 6400 50  0001 C CNN
+	1    1900 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0112
+U 1 1 5F7F2058
+P 700 6250
+F 0 "#PWR0112" H 700 6000 50  0001 C CNN
+F 1 "GNDD" H 704 6095 50  0000 C CNN
+F 2 "" H 700 6250 50  0001 C CNN
+F 3 "" H 700 6250 50  0001 C CNN
+	1    700  6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5F951C5C
+P 3350 5950
+AR Path="/5E7548ED/5F951C5C" Ref="J?"  Part="1" 
+AR Path="/5E75D6AB/5F951C5C" Ref="J17"  Part="1" 
+F 0 "J17" V 3450 5950 50  0000 R CNN
+F 1 "LED Cur. Mon." V 3550 6150 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 3350 5950 50  0001 C CNN
+F 3 "~" H 3350 5950 50  0001 C CNN
+	1    3350 5950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3350 6150 3450 6150
+Connection ~ 3350 6150
+Wire Wire Line
+	3350 6150 3150 6150
+Connection ~ 3450 6150
 $EndSCHEMATC

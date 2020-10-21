@@ -478,7 +478,7 @@ Wire Wire Line
 Wire Wire Line
 	2400 1450 1850 1450
 $Comp
-L Connector:Conn_01x08_Female J6
+L Connector_Generic:Conn_01x08 J6
 U 1 1 5E868B9C
 P 1600 5100
 F 0 "J6" H 1627 5077 50  0000 L CNN

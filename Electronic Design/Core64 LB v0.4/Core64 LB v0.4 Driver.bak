@@ -1468,27 +1468,27 @@ Text Notes 8700 5550 0    50   ~ 0
 ROW 2,6
 Text GLabel 3850 7000 0    50   Input ~ 0
 WRITE_ENABLE
-Text Notes 5150 7100 0    50   ~ 0
+Text Notes 4900 6700 0    50   ~ 0
 CORE MEMORY GROUND
 Wire Wire Line
 	4450 6700 4450 6800
 $Comp
 L power:GNDPWR #PWR?
 U 1 1 5E8ED56D
-P 5300 6800
+P 5300 6750
 AR Path="/5E8ED56D" Ref="#PWR?"  Part="1" 
 AR Path="/5D254AE8/5E8ED56D" Ref="#PWR?"  Part="1" 
 AR Path="/5E755AC8/5E8ED56D" Ref="#PWR0151"  Part="1" 
-F 0 "#PWR0151" H 5300 6600 50  0001 C CNN
-F 1 "GNDPWR" H 5304 6646 50  0000 C CNN
-F 2 "" H 5300 6750 50  0001 C CNN
-F 3 "" H 5300 6750 50  0001 C CNN
-	1    5300 6800
+F 0 "#PWR0151" H 5300 6550 50  0001 C CNN
+F 1 "GNDPWR" H 5304 6596 50  0000 C CNN
+F 2 "" H 5300 6700 50  0001 C CNN
+F 3 "" H 5300 6700 50  0001 C CNN
+	1    5300 6750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3850 7000 3950 7000
-Text Notes 1500 6750 0    50   ~ 0
+Text Notes 2000 6750 0    50   ~ 0
 CORE MEMORY POWER
 Text GLabel 1050 7100 0    50   Input ~ 0
 3V3
@@ -1545,7 +1545,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 4200 5200 4200
 Wire Wire Line
-	5300 6700 5300 6800
+	5300 6700 5300 6750
 Connection ~ 6350 3650
 Wire Wire Line
 	6400 3550 6400 4400
@@ -1563,16 +1563,16 @@ CORE MATRIX ROW DRIVERS
 $Comp
 L power:VMEM #PWR0143
 U 1 1 5EC965BD
-P 1900 7000
-F 0 "#PWR0143" H 1900 6850 50  0001 C CNN
-F 1 "VMEM" H 1915 7173 50  0000 C CNN
-F 2 "" H 1900 7000 50  0001 C CNN
-F 3 "" H 1900 7000 50  0001 C CNN
-	1    1900 7000
+P 2200 7000
+F 0 "#PWR0143" H 2200 6850 50  0001 C CNN
+F 1 "VMEM" H 2215 7173 50  0000 C CNN
+F 2 "" H 2200 7000 50  0001 C CNN
+F 3 "" H 2200 7000 50  0001 C CNN
+	1    2200 7000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1900 7100 1900 7000
+	2200 7100 2200 7000
 Text Notes 3250 6500 0    118  ~ 0
 CORE MATRIX WRITE ENABLE
 Wire Wire Line
@@ -1648,7 +1648,7 @@ Wire Wire Line
 Wire Wire Line
 	2450 2100 2550 2100
 $Comp
-L Connector:Conn_01x16_Female J5
+L Connector_Generic:Conn_01x16 J5
 U 1 1 5E78B5ED
 P 2750 1800
 F 0 "J5" H 1950 2750 50  0000 C CNN
@@ -1659,7 +1659,7 @@ F 3 "~" H 2750 1800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x16_Female J1
+L Connector_Generic:Conn_01x16 J1
 U 1 1 5E78B5F3
 P 550 1800
 F 0 "J1" H 500 2750 50  0000 C CNN
@@ -1755,9 +1755,7 @@ Wire Wire Line
 Wire Wire Line
 	3950 2300 3950 2350
 Wire Wire Line
-	1050 7100 1900 7100
-Wire Wire Line
-	1250 7100 1250 7200
+	1050 7100 1250 7100
 $Comp
 L power:GND #PWR?
 U 1 1 5F6C52F2
@@ -1821,12 +1819,12 @@ Wire Wire Line
 Wire Wire Line
 	2550 2600 2450 2600
 $Comp
-L Device:Q_NMOS_DGS Q?
+L Device:Q_PMOS_DGS Q4
 U 1 1 5F6BF8B4
 P 4350 7000
-F 0 "Q?" H 4555 6953 50  0000 L CNN
-F 1 "Q_NMOS_DGS" H 4555 7046 50  0000 L CNN
-F 2 "" H 4550 7100 50  0001 C CNN
+F 0 "Q4" H 4555 6953 50  0000 L CNN
+F 1 "Q_PMOS_DGS_BSS315PH6327XTSA1" H 4555 7046 50  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 4550 7100 50  0001 C CNN
 F 3 "~" H 4350 7000 50  0001 C CNN
 	1    4350 7000
 	1    0    0    1   
@@ -1855,8 +1853,8 @@ U 1 1 5F6E9DAB
 P 4150 7250
 AR Path="/5F6E9DAB" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5F6E9DAB" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5F6E9DAB" Ref="R?"  Part="1" 
-F 0 "R?" V 4050 7250 50  0000 C CNN
+AR Path="/5E755AC8/5F6E9DAB" Ref="R49"  Part="1" 
+F 0 "R49" V 4050 7250 50  0000 C CNN
 F 1 "10k" V 4250 7250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 4080 7250 50  0001 C CNN
 F 3 "~" H 4150 7250 50  0001 C CNN
@@ -1864,23 +1862,23 @@ F 3 "~" H 4150 7250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP1
 U 1 1 5FCDFD13
 P 4150 1700
-F 0 "TP?" H 4213 1819 50  0000 L CNN
+F 0 "TP1" H 4213 1819 50  0000 L CNN
 F 1 "TestPoint" H 4213 1726 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 4350 1700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 4350 1700 50  0001 C CNN
 F 3 "~" H 4350 1700 50  0001 C CNN
 	1    4150 1700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP5
 U 1 1 5FCE3594
 P 4150 1900
-F 0 "TP?" H 4213 2019 50  0000 L CNN
+F 0 "TP5" H 4213 2019 50  0000 L CNN
 F 1 "TestPoint" H 4213 1926 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 4350 1900 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 4350 1900 50  0001 C CNN
 F 3 "~" H 4350 1900 50  0001 C CNN
 	1    4150 1900
 	1    0    0    -1  
@@ -1903,23 +1901,23 @@ Wire Wire Line
 Wire Wire Line
 	3500 1850 4050 1850
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP2
 U 1 1 5FDC2F4B
 P 6050 1700
-F 0 "TP?" H 6113 1819 50  0000 L CNN
+F 0 "TP2" H 6113 1819 50  0000 L CNN
 F 1 "TestPoint" H 6113 1726 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 6250 1700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6250 1700 50  0001 C CNN
 F 3 "~" H 6250 1700 50  0001 C CNN
 	1    6050 1700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP6
 U 1 1 5FDC2F51
 P 6050 1900
-F 0 "TP?" H 6113 2019 50  0000 L CNN
+F 0 "TP6" H 6113 2019 50  0000 L CNN
 F 1 "TestPoint" H 6113 1926 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 6250 1900 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6250 1900 50  0001 C CNN
 F 3 "~" H 6250 1900 50  0001 C CNN
 	1    6050 1900
 	1    0    0    -1  
@@ -1937,23 +1935,23 @@ Wire Wire Line
 Wire Wire Line
 	5400 1850 5950 1850
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP3
 U 1 1 5FDD3A8B
 P 7950 1700
-F 0 "TP?" H 8013 1819 50  0000 L CNN
+F 0 "TP3" H 8013 1819 50  0000 L CNN
 F 1 "TestPoint" H 8013 1726 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 8150 1700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 8150 1700 50  0001 C CNN
 F 3 "~" H 8150 1700 50  0001 C CNN
 	1    7950 1700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP7
 U 1 1 5FDD3A91
 P 7950 1900
-F 0 "TP?" H 8013 2019 50  0000 L CNN
+F 0 "TP7" H 8013 2019 50  0000 L CNN
 F 1 "TestPoint" H 8013 1926 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 8150 1900 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 8150 1900 50  0001 C CNN
 F 3 "~" H 8150 1900 50  0001 C CNN
 	1    7950 1900
 	1    0    0    -1  
@@ -1971,23 +1969,23 @@ Wire Wire Line
 Wire Wire Line
 	7300 1850 7850 1850
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP4
 U 1 1 5FDE4C7A
 P 9850 1700
-F 0 "TP?" H 9913 1819 50  0000 L CNN
+F 0 "TP4" H 9913 1819 50  0000 L CNN
 F 1 "TestPoint" H 9913 1726 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 10050 1700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10050 1700 50  0001 C CNN
 F 3 "~" H 10050 1700 50  0001 C CNN
 	1    9850 1700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP8
 U 1 1 5FDE4C80
 P 9850 1900
-F 0 "TP?" H 9913 2019 50  0000 L CNN
+F 0 "TP8" H 9913 2019 50  0000 L CNN
 F 1 "TestPoint" H 9913 1926 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 10050 1900 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10050 1900 50  0001 C CNN
 F 3 "~" H 10050 1900 50  0001 C CNN
 	1    9850 1900
 	1    0    0    -1  
@@ -2014,23 +2012,23 @@ Wire Wire Line
 	9200 1850 9200 1750
 Connection ~ 9200 1750
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP9
 U 1 1 5FE66091
 P 7600 4300
-F 0 "TP?" H 7663 4419 50  0000 L CNN
+F 0 "TP9" H 7663 4419 50  0000 L CNN
 F 1 "TestPoint" H 7663 4326 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7800 4300 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7800 4300 50  0001 C CNN
 F 3 "~" H 7800 4300 50  0001 C CNN
 	1    7600 4300
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP10
 U 1 1 5FE66097
 P 7600 4500
-F 0 "TP?" H 7663 4619 50  0000 L CNN
+F 0 "TP10" H 7663 4619 50  0000 L CNN
 F 1 "TestPoint" H 7663 4526 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7800 4500 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7800 4500 50  0001 C CNN
 F 3 "~" H 7800 4500 50  0001 C CNN
 	1    7600 4500
 	1    0    0    -1  
@@ -2049,23 +2047,23 @@ Wire Wire Line
 Wire Wire Line
 	6700 4300 7600 4300
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP11
 U 1 1 5FEFA1E9
 P 7550 5950
-F 0 "TP?" H 7613 6069 50  0000 L CNN
+F 0 "TP11" H 7613 6069 50  0000 L CNN
 F 1 "TestPoint" H 7613 5976 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7750 5950 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7750 5950 50  0001 C CNN
 F 3 "~" H 7750 5950 50  0001 C CNN
 	1    7550 5950
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP12
 U 1 1 5FEFA1EF
 P 7550 6150
-F 0 "TP?" H 7613 6269 50  0000 L CNN
+F 0 "TP12" H 7613 6269 50  0000 L CNN
 F 1 "TestPoint" H 7613 6176 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 7750 6150 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7750 6150 50  0001 C CNN
 F 3 "~" H 7750 6150 50  0001 C CNN
 	1    7550 6150
 	1    0    0    -1  
@@ -2083,4 +2081,28 @@ Wire Wire Line
 Connection ~ 6650 6050
 Wire Wire Line
 	6650 6050 6700 6050
+Wire Wire Line
+	1250 7200 1250 7100
+Connection ~ 1250 7100
+Wire Wire Line
+	1250 7100 1600 7100
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5F97E8E3
+P 1600 6900
+AR Path="/5E7548ED/5F97E8E3" Ref="J?"  Part="1" 
+AR Path="/5E755AC8/5F97E8E3" Ref="J13"  Part="1" 
+F 0 "J13" V 1700 6900 50  0000 R CNN
+F 1 "Core Cur. Mon." V 1800 7200 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1600 6900 50  0001 C CNN
+F 3 "~" H 1600 6900 50  0001 C CNN
+	1    1600 6900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 7100 1700 7100
+Wire Wire Line
+	1700 7100 2200 7100
+Connection ~ 1600 7100
+Connection ~ 1700 7100
 $EndSCHEMATC

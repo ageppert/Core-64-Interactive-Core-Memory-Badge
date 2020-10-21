@@ -150,7 +150,7 @@ Text Notes 5200 750  0    100  ~ 0
 ALTERNATE 1S LIPO BATTERY - USER SUPPLIED
 Wire Wire Line
 	4100 5250 3850 5250
-Text GLabel 10100 5550 2    50   Output ~ 0
+Text GLabel 10200 5550 2    50   Output ~ 0
 3V3
 Text Notes 600  4450 0    118  ~ 0
 POWER SWITCH, RPP, V & I MONITOR
@@ -389,16 +389,16 @@ $EndComp
 $Comp
 L Device:C C?
 U 1 1 5EBB706E
-P 9550 5000
+P 9350 5000
 AR Path="/5E755787/5EBB706E" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EBB706E" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5EBB706E" Ref="C?"  Part="1" 
 AR Path="/5E7548ED/5EBB706E" Ref="C2"  Part="1" 
-F 0 "C2" H 9641 5046 50  0000 L CNN
-F 1 "1uF" H 9641 4955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 9550 5000 50  0001 C CNN
-F 3 "~" H 9550 5000 50  0001 C CNN
-	1    9550 5000
+F 0 "C2" H 9441 5046 50  0000 L CNN
+F 1 "1uF" H 9441 4955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 9350 5000 50  0001 C CNN
+F 3 "~" H 9350 5000 50  0001 C CNN
+	1    9350 5000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -473,7 +473,7 @@ Wire Wire Line
 Wire Wire Line
 	1100 5350 1250 5350
 Text Notes 600  6550 0    50   ~ 0
-OPTIONAL USB BYPASS:\nAs shipped, switch in\nOFF position connects\nto USB power through\nthe Teensy.\nOPTIONAL:\nCut SJ if you want the \nOFF position to not\nbe powered from\nTeensy USB connector.
+OPTIONAL USB BYPASS:\nAs shipped, power switch\nin OFF position connects\nto USB power through\nthe Teensy.\nOPTIONAL:\nCut SJ if you want the \nOFF position to not\nbe powered from\nTeensy USB connector.
 Text Notes 1050 4850 0    50   ~ 0
 SILKSCREEN: ON (BAT) / OFF (USB)
 Text GLabel 4100 5250 2    50   Output ~ 0
@@ -521,7 +521,7 @@ Text Notes 5000 4450 0    118  ~ 0
 5V POWER SUPPLY
 Wire Wire Line
 	2900 4950 3000 4950
-Text GLabel 7200 4800 2    50   Output ~ 0
+Text GLabel 7150 4900 2    50   Output ~ 0
 5V0
 Text GLabel 5100 7450 1    50   Input ~ 0
 5V0
@@ -560,7 +560,7 @@ P-FET
 Text Notes 750  4100 0    157  ~ 31
 *** ALL CONFIGURATIONS REQUIRE CUTTING VIN-VUSB TRACE ON TEENSY ***
 Text GLabel 5400 7450 1    50   Output ~ 0
-V_MON
+VBAT_MON
 Text Notes 8250 2150 0    157  ~ 31
 1S LIPO ONLY !!!
 Text Notes 6800 3050 0    50   ~ 0
@@ -785,40 +785,40 @@ $EndComp
 $Comp
 L TPS7A0533PDBVR:TPS7A0533PDBVR IC2
 U 1 1 5F5B23D2
-P 8350 5000
-F 0 "IC2" H 8850 5268 50  0000 C CNN
-F 1 "TPS7A0533PDBVR" H 8850 5175 50  0000 C CNN
-F 2 "TPS7A0533PDBVR:SOT95P280X145-5N" H 9200 5100 50  0001 L CNN
-F 3 "http://www.ti.com/lit/gpn/tps7a05" H 9200 5000 50  0001 L CNN
-F 4 "1-A, ultra-low-IQ, 200-mA low-dropout (LDO) regulator in a small-sized package" H 9200 4900 50  0001 L CNN "Description"
-F 5 "1.45" H 9200 4800 50  0001 L CNN "Height"
-F 6 "Texas Instruments" H 9200 4700 50  0001 L CNN "Manufacturer_Name"
-F 7 "TPS7A0533PDBVR" H 9200 4600 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "TPS7A0533PDBVR" H 9200 4500 50  0001 L CNN "Arrow Part Number"
-F 9 "https://www.arrow.com/en/products/tps7a0533pdbvr/texas-instruments" H 9200 4400 50  0001 L CNN "Arrow Price/Stock"
-F 10 "595-TPS7A0533PDBVR" H 9200 4300 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs=vdi0iO8H4N0h9F4GOtQJBA%3D%3D" H 9200 4200 50  0001 L CNN "Mouser Price/Stock"
-	1    8350 5000
+P 8150 5000
+F 0 "IC2" H 8650 5268 50  0000 C CNN
+F 1 "TPS7A0533PDBVR" H 8650 5175 50  0000 C CNN
+F 2 "TPS7A0533PDBVR:SOT95P280X145-5N" H 9000 5100 50  0001 L CNN
+F 3 "http://www.ti.com/lit/gpn/tps7a05" H 9000 5000 50  0001 L CNN
+F 4 "1-A, ultra-low-IQ, 200-mA low-dropout (LDO) regulator in a small-sized package" H 9000 4900 50  0001 L CNN "Description"
+F 5 "1.45" H 9000 4800 50  0001 L CNN "Height"
+F 6 "Texas Instruments" H 9000 4700 50  0001 L CNN "Manufacturer_Name"
+F 7 "TPS7A0533PDBVR" H 9000 4600 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "TPS7A0533PDBVR" H 9000 4500 50  0001 L CNN "Arrow Part Number"
+F 9 "https://www.arrow.com/en/products/tps7a0533pdbvr/texas-instruments" H 9000 4400 50  0001 L CNN "Arrow Price/Stock"
+F 10 "595-TPS7A0533PDBVR" H 9000 4300 50  0001 L CNN "Mouser Part Number"
+F 11 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs=vdi0iO8H4N0h9F4GOtQJBA%3D%3D" H 9000 4200 50  0001 L CNN "Mouser Price/Stock"
+	1    8150 5000
 	1    0    0    -1  
 $EndComp
 Text Notes 8250 5650 0    50   ~ 0
 Preferred, TINY
-Text Notes 8550 4650 0    50   ~ 0
+Text Notes 8350 4650 0    50   ~ 0
 Alternate, larger
 $Comp
 L power:GND #PWR0119
 U 1 1 5F5C202C
-P 8050 5300
+P 7850 5300
 AR Path="/5E7548ED/5F5C202C" Ref="#PWR0119"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F5C202C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0119" H 8050 5050 50  0001 C CNN
-F 1 "GND" H 8055 5125 50  0000 C CNN
-F 2 "" H 8050 5300 50  0001 C CNN
-F 3 "" H 8050 5300 50  0001 C CNN
-	1    8050 5300
+F 0 "#PWR0119" H 7850 5050 50  0001 C CNN
+F 1 "GND" H 7855 5125 50  0000 C CNN
+F 2 "" H 7850 5300 50  0001 C CNN
+F 3 "" H 7850 5300 50  0001 C CNN
+	1    7850 5300
 	1    0    0    -1  
 $EndComp
-Text Notes 8300 5400 0    50   ~ 0
+Text Notes 8100 5400 0    50   ~ 0
 HIGH POWER SYSTEM GROUND
 Wire Wire Line
 	9250 6100 9300 6100
@@ -845,16 +845,16 @@ $EndComp
 $Comp
 L Device:C C?
 U 1 1 5F5DC13F
-P 8050 5000
+P 7850 5000
 AR Path="/5E755787/5F5DC13F" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5F5DC13F" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5F5DC13F" Ref="C?"  Part="1" 
 AR Path="/5E7548ED/5F5DC13F" Ref="C12"  Part="1" 
-F 0 "C12" H 8141 5046 50  0000 L CNN
-F 1 "1uF" H 8141 4955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 8050 5000 50  0001 C CNN
-F 3 "~" H 8050 5000 50  0001 C CNN
-	1    8050 5000
+F 0 "C12" H 7941 5046 50  0000 L CNN
+F 1 "1uF" H 7941 4955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7850 5000 50  0001 C CNN
+F 3 "~" H 7850 5000 50  0001 C CNN
+	1    7850 5000
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -902,78 +902,78 @@ Connection ~ 7900 6350
 Wire Wire Line
 	7900 6350 7900 6400
 Wire Wire Line
-	9350 5100 9400 5100
+	9150 5100 9200 5100
 $Comp
 L power:GND #PWR0160
 U 1 1 5F5FF918
-P 9550 5250
+P 9350 5250
 AR Path="/5E7548ED/5F5FF918" Ref="#PWR0160"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F5FF918" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0160" H 9550 5000 50  0001 C CNN
-F 1 "GND" H 9555 5075 50  0000 C CNN
-F 2 "" H 9550 5250 50  0001 C CNN
-F 3 "" H 9550 5250 50  0001 C CNN
-	1    9550 5250
+F 0 "#PWR0160" H 9350 5000 50  0001 C CNN
+F 1 "GND" H 9355 5075 50  0000 C CNN
+F 2 "" H 9350 5250 50  0001 C CNN
+F 3 "" H 9350 5250 50  0001 C CNN
+	1    9350 5250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9400 5100 9400 4750
+	9200 5100 9200 4750
 Wire Wire Line
-	9400 4750 9550 4750
+	9200 4750 9350 4750
 Wire Wire Line
-	9550 4750 9550 4850
-Connection ~ 9550 4750
+	9350 4750 9350 4850
+Connection ~ 9350 4750
 Wire Wire Line
-	9550 5150 9550 5250
+	9350 5150 9350 5250
 Wire Wire Line
-	8050 4850 8050 4800
+	7850 4850 7850 4800
 Wire Wire Line
-	8050 4800 8300 4800
+	7850 4800 8100 4800
 Wire Wire Line
-	8300 5000 8350 5000
+	8100 5000 8150 5000
 Wire Wire Line
-	8300 5000 8300 5200
+	8100 5000 8100 5200
 Wire Wire Line
-	8300 5200 8350 5200
-Connection ~ 8300 5000
-Connection ~ 8300 4800
+	8100 5200 8150 5200
+Connection ~ 8100 5000
+Connection ~ 8100 4800
 Wire Wire Line
-	8300 4800 8300 5000
+	8100 4800 8100 5000
 Wire Wire Line
-	8350 5100 8200 5100
+	8150 5100 8000 5100
 Wire Wire Line
-	8200 5100 8200 5250
+	8000 5100 8000 5250
 Wire Wire Line
-	8050 5150 8050 5250
+	7850 5150 7850 5250
 Wire Wire Line
-	8200 5250 8050 5250
-Connection ~ 8050 5250
+	8000 5250 7850 5250
+Connection ~ 7850 5250
 Wire Wire Line
-	8050 5250 8050 5300
+	7850 5250 7850 5300
 $Comp
 L Jumper:SolderJumper_3_Open JP9
 U 1 1 5F67458E
-P 9850 5550
-F 0 "JP9" V 9750 5650 50  0000 L CNN
-F 1 "3V3_Select" V 9600 5100 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 9850 5550 50  0001 C CNN
-F 3 "~" H 9850 5550 50  0001 C CNN
-	1    9850 5550
+P 9700 5550
+F 0 "JP9" V 9600 5650 50  0000 L CNN
+F 1 "3V3_Select" V 9450 5100 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 9700 5550 50  0001 C CNN
+F 3 "~" H 9700 5550 50  0001 C CNN
+	1    9700 5550
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	10100 5550 10000 5550
+	10000 5550 9850 5550
 Wire Wire Line
-	9850 5350 9850 4750
+	9700 5350 9700 4750
 Wire Wire Line
-	9550 4750 9850 4750
+	9350 4750 9700 4750
 Wire Wire Line
-	9850 6000 9850 5750
+	9700 6000 9700 5750
 Wire Wire Line
-	9550 6000 9850 6000
+	9550 6000 9700 6000
 Text Notes 9900 6450 0    118  ~ 24
 Must\nSelect\nOne
-Text GLabel 8200 4650 0    50   Input ~ 0
+Text GLabel 8000 4650 0    50   Input ~ 0
 5V0
 Text GLabel 7850 5750 0    50   Input ~ 0
 5V0
@@ -1050,13 +1050,11 @@ Wire Wire Line
 Wire Wire Line
 	6850 5300 6900 5300
 Wire Wire Line
-	6900 5300 6900 4800
-Wire Wire Line
-	6900 4800 7100 4800
+	6900 4900 6900 5100
 Wire Wire Line
 	5450 4800 5450 5050
 Wire Wire Line
-	7100 4800 7100 5100
+	6900 5100 7100 5100
 Wire Wire Line
 	7100 5400 7100 5500
 Connection ~ 7100 5500
@@ -1065,9 +1063,9 @@ Wire Wire Line
 Wire Wire Line
 	7900 5750 7900 5950
 Wire Wire Line
-	8200 4650 8300 4650
+	8000 4650 8100 4650
 Wire Wire Line
-	8300 4650 8300 4800
+	8100 4650 8100 4800
 Wire Wire Line
 	7900 5950 7900 6100
 Wire Wire Line
@@ -1115,9 +1113,6 @@ Wire Wire Line
 Connection ~ 5300 4800
 Wire Wire Line
 	5300 4800 5450 4800
-Connection ~ 7100 4800
-Wire Wire Line
-	7100 4800 7200 4800
 Connection ~ 6050 5750
 Wire Wire Line
 	6050 5750 7100 5750
@@ -1141,8 +1136,47 @@ Text Notes 5300 2650 0    50   ~ 0
 SILKSCREEN: LIPO CHARGER
 Text Notes 8400 2700 0    50   ~ 0
 SILKSCREEN: BAT. + BAT. -
-Text Notes 4850 7000 0    50   ~ 0
+Text Notes 4750 6950 0    50   ~ 0
 SILKSCREEN: POWER
 Text Notes 6000 3100 0    50   ~ 0
 Mounting\n4x 0.1” holes
+Text Label 2250 7450 0    50   ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x02 J18
+U 1 1 5F8E6AE3
+P 6900 4700
+F 0 "J18" V 7000 4700 50  0000 R CNN
+F 1 "5V0 Cur. Mon." V 6900 4500 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 6900 4700 50  0001 C CNN
+F 3 "~" H 6900 4700 50  0001 C CNN
+	1    6900 4700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7000 4900 7150 4900
+Wire Wire Line
+	6900 4900 7000 4900
+Connection ~ 6900 4900
+Connection ~ 7000 4900
+Wire Wire Line
+	6900 5100 6900 5300
+Connection ~ 6900 5100
+$Comp
+L Connector_Generic:Conn_01x02 J19
+U 1 1 5F9393CC
+P 10000 5350
+F 0 "J19" V 10100 5350 50  0000 R CNN
+F 1 "3V3 Cur. Mon." V 10200 5550 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 10000 5350 50  0001 C CNN
+F 3 "~" H 10000 5350 50  0001 C CNN
+	1    10000 5350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10100 5550 10200 5550
+Wire Wire Line
+	10000 5550 10100 5550
+Connection ~ 10000 5550
+Connection ~ 10100 5550
 $EndSCHEMATC
