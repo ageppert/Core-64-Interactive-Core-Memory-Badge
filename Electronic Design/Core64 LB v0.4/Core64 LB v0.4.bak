@@ -297,8 +297,8 @@ Text Notes 800  2300 0    50   ~ 10
 QxP is normally high, goes low to activate matrix transistor.\nQxN is normally low, goes high to activate matrix transistor.
 Text GLabel 1750 3350 0    50   Output ~ 0
 TOUCH_SPI_CS
-Text GLabel 850  3450 0    50   Output ~ 0
-IR_MOD
+Text GLabel 1000 3550 0    50   Output ~ 0
+IR_MOD_OUT
 Text GLabel 2550 3750 0    50   Output ~ 0
 TFT_SPI_CS
 Text GLabel 2550 3850 0    50   Output ~ 0
@@ -906,4 +906,11 @@ Text Notes 550  7750 0    50   ~ 0
 1) Serial Number Sticker Zone\n2) Board name, version, date, Machine Ideas
 Text Notes 550  6500 0    50   ~ 0
 1) 
+Wire Wire Line
+	1000 3550 1050 3550
+Wire Wire Line
+	1050 3550 1050 3500
+Wire Wire Line
+	1050 3500 1800 3500
+Connection ~ 1800 3500
 $EndSCHEMATC

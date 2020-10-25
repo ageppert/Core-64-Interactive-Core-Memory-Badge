@@ -1,4 +1,4 @@
-16720231907618168
+16721835502816559
 2829
 ADAFRUIT_2829
 
@@ -6,6 +6,13 @@ ADAFRUIT_2829
 0
 32
 32
+Adafruit_3.2_TFT
+Adafruit_3.2_TFT_Dual_PinHeader_1x20_P2.54mm_Vertical_SMD_Pin1Left
+surface-mounted straight pin header, 1x20, 2.54mm pitch, single row, style 1 (pin 1 left)
+Surface mounted pin header SMD 1x20 2.54mm single row style1 pin1 left
+0
+40
+20
 badgelife_sao_v169bis
 Badgelife-SAOv169-BADGE-2x3
 Through hole straight IDC box header, 2x03, 2.54mm pitch, double rows

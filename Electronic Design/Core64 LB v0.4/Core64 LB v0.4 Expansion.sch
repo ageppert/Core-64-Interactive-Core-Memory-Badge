@@ -370,7 +370,7 @@ Text GLabel 3100 7650 2    50   Output ~ 0
 CP8_EN
 Wire Wire Line
 	3600 7200 3850 7200
-Text Notes 7700 1000 0    118  ~ 0
+Text Notes 7550 1000 0    118  ~ 0
 3.2” TFT LCD SPI w/MicroSD
 Text Notes 3500 2950 0    118  ~ 0
 GPIO#1
@@ -381,28 +381,6 @@ Wire Wire Line
 	3250 6700 3250 6950
 Wire Wire Line
 	3250 6950 3100 6950
-$Comp
-L Connector_Generic:Conn_01x20 J15
-U 1 1 5F6B696F
-P 9200 2100
-F 0 "J15" H 9250 3220 50  0000 C CNN
-F 1 "Conn_01x20" H 9250 3127 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 9200 2100 50  0001 C CNN
-F 3 "~" H 9200 2100 50  0001 C CNN
-	1    9200 2100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x20 J11
-U 1 1 5F6EC9B4
-P 9200 1600
-F 0 "J11" H 9250 2720 50  0000 C CNN
-F 1 "Conn_01x20" H 9250 2627 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 9200 1600 50  0001 C CNN
-F 3 "~" H 9200 1600 50  0001 C CNN
-	1    9200 1600
-	0    -1   -1   0   
-$EndComp
 Text GLabel 2000 7500 0    50   BiDi ~ 0
 SAO_G1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 2000 7600 0    50   BiDi ~ 0
@@ -489,15 +467,15 @@ Text Notes 7850 3850 0    50   ~ 0
 SILKSCREEN: 3V3 ONLY\nMICRO SD
 Text Notes 5950 4800 0    50   ~ 0
 SAO#2 is on the Core Board
-Text GLabel 8900 2500 3    50   Input ~ 0
+Text GLabel 8250 2600 3    50   Input ~ 0
 TFT_SPI_CS
-Text GLabel 9000 2500 3    50   Input ~ 0
+Text GLabel 8350 2600 3    50   Input ~ 0
 TFT_SPI_DC
-Text GLabel 9100 2500 3    50   Input ~ 0
+Text GLabel 8450 2600 3    50   Input ~ 0
 SPI_RESET
-Text GLabel 9200 2500 3    50   Input ~ 0
+Text GLabel 8550 2600 3    50   Input ~ 0
 TFT_BACKLIGHT
-Text GLabel 8800 2500 3    50   Input ~ 0
+Text GLabel 8150 2600 3    50   Input ~ 0
 SPI_SDI
 Text GLabel 6850 3300 0    50   Output ~ 0
 IR_MOD
@@ -534,65 +512,65 @@ Text GLabel 9000 4100 0    50   Output ~ 0
 SD_SPI_CS
 Text Notes 6150 2950 0    118  ~ 0
 GPIO#2
-Text Notes 7700 1250 0    50   ~ 0
+Text Notes 7550 1250 0    50   ~ 0
 Compatible with https://www.adafruit.com/product/1743\nMicroSD card standalone pins shared between TFT and OLED boards.\nHeaders 3.0 in. apart
-Text GLabel 10200 2500 3    50   Output ~ 0
+Text GLabel 9550 2600 3    50   Output ~ 0
 SD_SPI_CD
-Text GLabel 10100 2500 3    50   Input ~ 0
+Text GLabel 9450 2600 3    50   Input ~ 0
 SD_SPI_CS
 Wire Wire Line
-	8400 2600 8050 2600
-Text GLabel 8050 2600 0    50   Input ~ 0
+	7750 2500 7550 2500
+Text GLabel 7550 2500 0    50   Input ~ 0
 5V0
-NoConn ~ 9300 2300
-NoConn ~ 9400 2300
-NoConn ~ 9500 2300
-NoConn ~ 9600 2300
-NoConn ~ 10000 2300
+NoConn ~ 8650 2400
+NoConn ~ 8750 2400
+NoConn ~ 8850 2400
+NoConn ~ 8950 2400
+NoConn ~ 9350 2400
 Wire Wire Line
-	9800 2400 9700 2400
+	9150 2500 9050 2500
 Wire Wire Line
-	9800 2400 9800 2300
+	9150 2500 9150 2400
 Wire Wire Line
-	9800 2400 9900 2400
+	9150 2500 9250 2500
 Wire Wire Line
-	9900 2400 9900 2300
-Connection ~ 9800 2400
+	9250 2500 9250 2400
+Connection ~ 9150 2500
 Wire Wire Line
-	9700 2300 9700 2400
-Connection ~ 9700 2400
+	9050 2400 9050 2500
+Connection ~ 9050 2500
 Wire Wire Line
-	9700 2400 8500 2400
+	9050 2500 7850 2500
 Wire Wire Line
-	8500 2300 8500 2400
+	7850 2400 7850 2500
 Wire Wire Line
-	10100 2300 10100 2500
+	9450 2400 9450 2600
 Wire Wire Line
-	10200 2300 10200 2500
+	9550 2400 9550 2600
 Wire Wire Line
-	8400 2300 8400 2600
+	7750 2400 7750 2500
 Wire Wire Line
-	8300 2300 8300 2650
-NoConn ~ 8300 1800
-NoConn ~ 8400 1800
-NoConn ~ 8500 1800
-NoConn ~ 8600 1800
-NoConn ~ 8700 1800
-NoConn ~ 8800 1800
-NoConn ~ 8900 1800
-NoConn ~ 9000 1800
-NoConn ~ 9100 1800
-NoConn ~ 9200 1800
-NoConn ~ 9300 1800
-NoConn ~ 9400 1800
-NoConn ~ 9500 1800
-NoConn ~ 9600 1800
-NoConn ~ 9700 1800
-NoConn ~ 9800 1800
-NoConn ~ 9900 1800
-NoConn ~ 10000 1800
-NoConn ~ 10100 1800
-NoConn ~ 10200 1800
+	7650 2400 7650 2650
+NoConn ~ 7650 1400
+NoConn ~ 7750 1400
+NoConn ~ 7850 1400
+NoConn ~ 7950 1400
+NoConn ~ 8050 1400
+NoConn ~ 8150 1400
+NoConn ~ 8250 1400
+NoConn ~ 8350 1400
+NoConn ~ 8450 1400
+NoConn ~ 8550 1400
+NoConn ~ 8650 1400
+NoConn ~ 8750 1400
+NoConn ~ 8850 1400
+NoConn ~ 8950 1400
+NoConn ~ 9050 1400
+NoConn ~ 9150 1400
+NoConn ~ 9250 1400
+NoConn ~ 9350 1400
+NoConn ~ 9450 1400
+NoConn ~ 9550 1400
 Wire Wire Line
 	9150 4200 9050 4200
 Wire Wire Line
@@ -611,19 +589,19 @@ F 3 "~" H 7050 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8600 2500 8600 2300
+	7950 2600 7950 2400
 Wire Wire Line
-	8700 2500 8700 2300
+	8050 2600 8050 2400
 Wire Wire Line
-	8800 2500 8800 2300
+	8150 2600 8150 2400
 Wire Wire Line
-	9000 2500 9000 2300
+	8350 2600 8350 2400
 Wire Wire Line
-	9100 2500 9100 2300
+	8450 2600 8450 2400
 Wire Wire Line
-	9200 2500 9200 2300
+	8550 2600 8550 2400
 Wire Wire Line
-	8900 2300 8900 2500
+	8250 2400 8250 2600
 Wire Wire Line
 	8500 4700 9150 4700
 Text Notes 8600 6550 0    50   ~ 0
@@ -648,9 +626,9 @@ Text GLabel 1750 1800 0    50   Output ~ 0
 OLED_SPI_CS
 Text GLabel 1750 1600 0    50   Input ~ 0
 OLED_SPI_DC
-Text GLabel 8600 2500 3    50   Input ~ 0
+Text GLabel 7950 2600 3    50   Input ~ 0
 SPI_CLK
-Text GLabel 8700 2500 3    50   Output ~ 0
+Text GLabel 8050 2600 3    50   Output ~ 0
 SPI_SDO
 Text GLabel 1750 1400 0    50   Input ~ 0
 SPI_SDI
@@ -722,96 +700,96 @@ Wire Wire Line
 Wire Wire Line
 	1750 1400 1900 1400
 NoConn ~ 1900 2200
-Text Notes 4050 1000 0    118  ~ 0
+Text Notes 3650 1000 0    118  ~ 0
 MIKRO BUS
-Text GLabel 4800 1600 0    50   Input ~ 0
+Text GLabel 4400 1600 0    50   Input ~ 0
 SPI_RESET
-Text GLabel 4800 1800 0    50   Input ~ 0
+Text GLabel 4400 1800 0    50   Input ~ 0
 SPI_CLK
-Text GLabel 4800 1900 0    50   Output ~ 0
+Text GLabel 4400 1900 0    50   Output ~ 0
 SPI_SDO
-Text GLabel 4800 2100 0    50   Input ~ 0
+Text GLabel 4400 2100 0    50   Input ~ 0
 3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5F988303
-P 4800 2200
+P 4400 2200
 AR Path="/5E755787/5F988303" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F988303" Ref="#PWR0164"  Part="1" 
-F 0 "#PWR0164" H 4800 1950 50  0001 C CNN
-F 1 "GND" H 4805 2025 50  0000 C CNN
-F 2 "" H 4800 2200 50  0001 C CNN
-F 3 "" H 4800 2200 50  0001 C CNN
-	1    4800 2200
+F 0 "#PWR0164" H 4400 1950 50  0001 C CNN
+F 1 "GND" H 4405 2025 50  0000 C CNN
+F 2 "" H 4400 2200 50  0001 C CNN
+F 3 "" H 4400 2200 50  0001 C CNN
+	1    4400 2200
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5F988925
-P 6200 2200
+P 5800 2200
 AR Path="/5E755787/5F988925" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F988925" Ref="#PWR0165"  Part="1" 
-F 0 "#PWR0165" H 6200 1950 50  0001 C CNN
-F 1 "GND" H 6205 2025 50  0000 C CNN
-F 2 "" H 6200 2200 50  0001 C CNN
-F 3 "" H 6200 2200 50  0001 C CNN
-	1    6200 2200
+F 0 "#PWR0165" H 5800 1950 50  0001 C CNN
+F 1 "GND" H 5805 2025 50  0000 C CNN
+F 2 "" H 5800 2200 50  0001 C CNN
+F 3 "" H 5800 2200 50  0001 C CNN
+	1    5800 2200
 	1    0    0    -1  
 $EndComp
-Text GLabel 6200 2100 2    50   Input ~ 0
+Text GLabel 5800 2100 2    50   Input ~ 0
 5V0
-Text GLabel 6200 1900 2    50   BiDi ~ 0
+Text GLabel 5800 1900 2    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 6200 2000 2    50   BiDi ~ 0
+Text GLabel 5800 2000 2    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 4800 1500 0    50   BiDi ~ 0
+Text GLabel 4400 1500 0    50   BiDi ~ 0
 SPARE_ADC_DAC
-Text GLabel 4800 1700 0    50   Input ~ 0
+Text GLabel 4400 1700 0    50   Input ~ 0
 SPARE_SPI_CS
-Text GLabel 4800 2000 0    50   Input ~ 0
+Text GLabel 4400 2000 0    50   Input ~ 0
 SPI_SDI
 Text Notes 650  2050 0    50   ~ 0
 OLED ON\nTHIS SIDE\nOF HEADER
-Text GLabel 6200 1700 2    50   BiDi ~ 0
+Text GLabel 5800 1700 2    50   BiDi ~ 0
 SAO_1_or_SPARE_1_or_CP_ADDR_0
-Text GLabel 6200 1800 2    50   BiDi ~ 0
+Text GLabel 5800 1800 2    50   BiDi ~ 0
 SAO_2_or_SPARE_2_or_CP_ADDR_1
-Text GLabel 6200 1500 2    50   Input ~ 0
+Text GLabel 5800 1500 2    50   Input ~ 0
 SPARE_4
-Text GLabel 6200 1600 2    50   Input ~ 0
+Text GLabel 5800 1600 2    50   Input ~ 0
 SPARE_5
 Wire Wire Line
-	6100 1500 6200 1500
+	5700 1500 5800 1500
 Wire Wire Line
-	6100 1600 6200 1600
+	5700 1600 5800 1600
 Wire Wire Line
-	6100 1700 6200 1700
+	5700 1700 5800 1700
 Wire Wire Line
-	6100 1800 6200 1800
+	5700 1800 5800 1800
 Wire Wire Line
-	6100 1900 6200 1900
+	5700 1900 5800 1900
 Wire Wire Line
-	6100 2000 6200 2000
+	5700 2000 5800 2000
 Wire Wire Line
-	6100 2100 6200 2100
+	5700 2100 5800 2100
 Wire Wire Line
-	6100 2200 6200 2200
+	5700 2200 5800 2200
 Wire Wire Line
-	4900 2200 4800 2200
+	4500 2200 4400 2200
 Wire Wire Line
-	4800 2100 4900 2100
+	4400 2100 4500 2100
 Wire Wire Line
-	4800 2000 4900 2000
+	4400 2000 4500 2000
 Wire Wire Line
-	4800 1900 4900 1900
+	4400 1900 4500 1900
 Wire Wire Line
-	4800 1800 4900 1800
+	4400 1800 4500 1800
 Wire Wire Line
-	4800 1700 4900 1700
+	4400 1700 4500 1700
 Wire Wire Line
-	4800 1600 4900 1600
+	4400 1600 4500 1600
 Wire Wire Line
-	4800 1500 4900 1500
+	4400 1500 4500 1500
 $Comp
 L power:GND #PWR?
 U 1 1 5F9CAD96
@@ -827,7 +805,7 @@ F 3 "" H 6850 4000 50  0001 C CNN
 $EndComp
 Text GLabel 6850 3900 0    50   Input ~ 0
 3V3
-Text Notes 4050 1150 0    50   ~ 0
+Text Notes 3650 1150 0    50   ~ 0
 See specifications: https://www.mikroe.com/mikrobus\n8-pin 0.1 in. pitch headers spaced 0.9 in. apart
 Text GLabel 2800 3850 0    50   Input ~ 0
 SPI_RESET
@@ -839,14 +817,14 @@ TEENSY_3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5F7E7B70
-P 8300 2650
+P 7650 2650
 AR Path="/5E755787/5F7E7B70" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F7E7B70" Ref="#PWR0163"  Part="1" 
-F 0 "#PWR0163" H 8300 2400 50  0001 C CNN
-F 1 "GND" H 8305 2475 50  0000 C CNN
-F 2 "" H 8300 2650 50  0001 C CNN
-F 3 "" H 8300 2650 50  0001 C CNN
-	1    8300 2650
+F 0 "#PWR0163" H 7650 2400 50  0001 C CNN
+F 1 "GND" H 7655 2475 50  0000 C CNN
+F 2 "" H 7650 2650 50  0001 C CNN
+F 3 "" H 7650 2650 50  0001 C CNN
+	1    7650 2650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -874,25 +852,25 @@ Text GLabel 6850 3700 0    50   Output ~ 0
 SPARE_ANA_6
 Text GLabel 6850 3800 0    50   Input ~ 0
 SPARE_ANA_7
-Text Notes 5050 2400 0    50   ~ 0
+Text Notes 4650 2400 0    50   ~ 0
 Silkscreen: MikroBus(TM)
 $Comp
 L MIKROE-971:MIKROE-971 X8
 U 1 1 5F814F08
-P 4900 1500
-F 0 "X8" H 5500 1768 50  0000 C CNN
-F 1 "MIKROE-971" H 5500 1675 50  0000 C CNN
-F 2 "MIKROE-971:MIKROE-971_1" H 5950 1600 50  0001 L CNN
-F 3 "http://www.farnell.com/datasheets/1998794.pdf" H 5950 1500 50  0001 L CNN
-F 4 "MIKROELEKTRONIKA - MIKROE-971 - ADD-ON-BOARD, ETH CLICK MIKROBUS" H 5950 1400 50  0001 L CNN "Description"
-F 5 "" H 5950 1300 50  0001 L CNN "Height"
-F 6 "MIKROELEKTRONIKA" H 5950 1200 50  0001 L CNN "Manufacturer_Name"
-F 7 "MIKROE-971" H 5950 1100 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "MIKROE-971" H 5950 1000 50  0001 L CNN "Arrow Part Number"
-F 9 "" H 5950 900 50  0001 L CNN "Arrow Price/Stock"
-F 10 "932-MIKROE-971" H 5950 800 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 5950 700 50  0001 L CNN "Mouser Price/Stock"
-	1    4900 1500
+P 4500 1500
+F 0 "X8" H 5100 1768 50  0000 C CNN
+F 1 "MIKROE-971" H 5100 1675 50  0000 C CNN
+F 2 "MIKROE-971:MIKROE-971_1" H 5550 1600 50  0001 L CNN
+F 3 "http://www.farnell.com/datasheets/1998794.pdf" H 5550 1500 50  0001 L CNN
+F 4 "MIKROELEKTRONIKA - MIKROE-971 - ADD-ON-BOARD, ETH CLICK MIKROBUS" H 5550 1400 50  0001 L CNN "Description"
+F 5 "" H 5550 1300 50  0001 L CNN "Height"
+F 6 "MIKROELEKTRONIKA" H 5550 1200 50  0001 L CNN "Manufacturer_Name"
+F 7 "MIKROE-971" H 5550 1100 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "MIKROE-971" H 5550 1000 50  0001 L CNN "Arrow Part Number"
+F 9 "" H 5550 900 50  0001 L CNN "Arrow Price/Stock"
+F 10 "932-MIKROE-971" H 5550 800 50  0001 L CNN "Mouser Part Number"
+F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 5550 700 50  0001 L CNN "Mouser Price/Stock"
+	1    4500 1500
 	1    0    0    -1  
 $EndComp
 Text GLabel 4750 -950 0    50   Input ~ 0
@@ -1000,6 +978,25 @@ F 9 "" H 5900 -1650 50  0001 L CNN "Arrow Price/Stock"
 F 10 "932-MIKROE-971" H 5900 -1750 50  0001 L CNN "Mouser Part Number"
 F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 5900 -1850 50  0001 L CNN "Mouser Price/Stock"
 	1    4850 -1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Adafruit_3.2_TFT:Adafruit_3.2_TFT_1743 U?
+U 1 1 5F9189ED
+P 9200 1850
+AR Path="/5F9189ED" Ref="U?"  Part="1" 
+AR Path="/5EA63449/5F9189ED" Ref="U8"  Part="1" 
+F 0 "U8" H 9678 1847 50  0000 L CNN
+F 1 "Adafruit_3.2_TFT_1743" H 9678 1754 50  0000 L CNN
+F 2 "Adafruit_3.2_TFT:Adafruit_3.2_TFT_Dual_PinHeader_1x20_P2.54mm_Vertical_SMD_Pin1Left" H 9300 650 50  0001 L CNN
+F 3 "http://www.farnell.com/datasheets/1998794.pdf" H 9300 550 50  0001 L CNN
+F 4 "https://www.adafruit.com/product/1743" H 9300 450 50  0001 L CNN "Description"
+F 5 "MIKROELEKTRONIKA" H 9300 250 50  0001 L CNN "Manufacturer_Name"
+F 6 "MIKROE-971" H 9300 150 50  0001 L CNN "Manufacturer_Part_Number"
+F 7 "MIKROE-971" H 9300 50  50  0001 L CNN "Arrow Part Number"
+F 8 "932-MIKROE-971" H 9300 -150 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 9300 -250 50  0001 L CNN "Mouser Price/Stock"
+	1    9200 1850
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
