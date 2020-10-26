@@ -1,4 +1,4 @@
-16721835502816559
+16721846800271559
 2829
 ADAFRUIT_2829
 
@@ -11,8 +11,8 @@ Adafruit_3.2_TFT_Dual_PinHeader_1x20_P2.54mm_Vertical_SMD_Pin1Left
 surface-mounted straight pin header, 1x20, 2.54mm pitch, single row, style 1 (pin 1 left)
 Surface mounted pin header SMD 1x20 2.54mm single row style1 pin1 left
 0
+44
 40
-20
 badgelife_sao_v169bis
 Badgelife-SAOv169-BADGE-2x3
 Through hole straight IDC box header, 2x03, 2.54mm pitch, double rows
@@ -28921,7 +28921,7 @@ PinHeader_2x07_P2.54mm_Vertical_SMD_and_TH
 surface-mounted straight pin header, 2x06, 2.54mm pitch, double rows
 Surface mounted pin header SMD 2x06 2.54mm double row
 0
-28
+32
 14
 Connector_PinHeader_2.54mm
 PinHeader_2x08_P2.54mm_Horizontal
@@ -41130,7 +41130,7 @@ Micro_LiPo_Charger
 
 0
 8
-5
+4
 Core_Memory_8x8_Array
 OLED_Header_4PIN
 4-pin CPU fan Through hole pin header, e.g. for Wieson part number 2366C888-007 Molex 47053-1000, Foxconn HF27040-M1, Tyco 1470947-1 or equivalent, see http://www.formfactors.org/developer%5Cspecs%5Crev1_2_public.pdf

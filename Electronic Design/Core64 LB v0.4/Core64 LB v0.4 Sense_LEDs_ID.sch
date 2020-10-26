@@ -623,61 +623,61 @@ Wire Wire Line
 	1900 6400 1900 6350
 Wire Wire Line
 	2300 5650 2300 5500
-NoConn ~ 3750 5550
-NoConn ~ 4250 5550
-Text Notes 3550 6550 0    50   ~ 0
+NoConn ~ 4050 6350
+NoConn ~ 3550 6350
+Text Notes 4350 6700 2    50   ~ 0
 TSM-106 (2x6) required\nTSM-107 (2x7) alternate
 Text Notes 2500 6200 0    50   ~ 0
 SILKSCREEN: \n5V0 ONLY\nLED ARRAY
 Wire Wire Line
-	3150 6050 3150 6150
-Text GLabel 3150 6050 1    50   Input ~ 0
+	4650 5650 4650 5750
+Text GLabel 4650 5650 1    50   Input ~ 0
 5V0
-NoConn ~ 4250 6150
-NoConn ~ 4250 6050
-NoConn ~ 4250 5950
-NoConn ~ 4250 5850
-NoConn ~ 4250 5650
-NoConn ~ 3750 5750
-NoConn ~ 3750 5850
-NoConn ~ 3750 5950
-NoConn ~ 3750 6050
+NoConn ~ 3550 5750
+NoConn ~ 3550 5850
+NoConn ~ 3550 5950
+NoConn ~ 3550 6050
+NoConn ~ 3550 6250
+NoConn ~ 4050 6150
+NoConn ~ 4050 6050
+NoConn ~ 4050 5950
+NoConn ~ 4050 5850
 Wire Wire Line
-	4400 5750 4400 5850
+	3400 6150 3400 6250
 Wire Wire Line
-	4250 5750 4400 5750
+	3550 6150 3400 6150
 Wire Wire Line
-	3750 5650 3200 5650
+	4050 6250 4300 6250
 Wire Wire Line
-	3750 6150 3450 6150
+	4050 5750 4350 5750
 $Comp
 L power:GND #PWR?
 U 1 1 5F7F8247
-P 4400 5850
+P 3400 6250
 AR Path="/5E755787/5F7F8247" Ref="#PWR?"  Part="1" 
 AR Path="/5F7F8247" Ref="#PWR?"  Part="1" 
 AR Path="/5E75D6AB/5F7F8247" Ref="#PWR0114"  Part="1" 
-F 0 "#PWR0114" H 4400 5600 50  0001 C CNN
-F 1 "GND" H 4405 5675 50  0000 C CNN
-F 2 "" H 4400 5850 50  0001 C CNN
-F 3 "" H 4400 5850 50  0001 C CNN
-	1    4400 5850
+F 0 "#PWR0114" H 3400 6000 50  0001 C CNN
+F 1 "GND" H 3405 6075 50  0000 C CNN
+F 2 "" H 3400 6250 50  0001 C CNN
+F 3 "" H 3400 6250 50  0001 C CNN
+	1    3400 6250
 	1    0    0    -1  
 $EndComp
-Text GLabel 3200 5650 0    50   Input ~ 0
+Text GLabel 4300 6250 2    50   Input ~ 0
 LED_ARRAY_5V0_SIG
 $Comp
 L Connector_Generic:Conn_02x07_Odd_Even J?
 U 1 1 5F7F824E
-P 4050 5850
+P 3750 6050
 AR Path="/5F7F824E" Ref="J?"  Part="1" 
 AR Path="/5E75D6AB/5F7F824E" Ref="J10"  Part="1" 
-F 0 "J10" H 4100 5450 50  0000 C CNN
-F 1 "TSM-106-03-T-DV‎" H 4100 6300 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical_SMD_and_TH" H 4050 5850 50  0001 C CNN
-F 3 "~" H 4050 5850 50  0001 C CNN
-	1    4050 5850
-	-1   0    0    1   
+F 0 "J10" H 3800 5650 50  0000 C CNN
+F 1 "TSM-106-03-T-DV‎" H 3800 6500 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical_SMD_and_TH" H 3750 6050 50  0001 C CNN
+F 3 "~" H 3750 6050 50  0001 C CNN
+	1    3750 6050
+	1    0    0    -1  
 $EndComp
 $Comp
 L Logic_LevelTranslator:SN74LV1T125DBVR U?
@@ -819,20 +819,20 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J?
 U 1 1 5F951C5C
-P 3350 5950
+P 4450 5950
 AR Path="/5E7548ED/5F951C5C" Ref="J?"  Part="1" 
 AR Path="/5E75D6AB/5F951C5C" Ref="J17"  Part="1" 
-F 0 "J17" V 3450 5950 50  0000 R CNN
-F 1 "LED Cur. Mon." V 3550 6150 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 3350 5950 50  0001 C CNN
-F 3 "~" H 3350 5950 50  0001 C CNN
-	1    3350 5950
-	0    -1   -1   0   
+F 0 "J17" V 4550 5950 50  0000 R CNN
+F 1 "LED Cur. Mon." V 4450 6550 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4450 5950 50  0001 C CNN
+F 3 "~" H 4450 5950 50  0001 C CNN
+	1    4450 5950
+	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3350 6150 3450 6150
-Connection ~ 3350 6150
+	4450 5750 4350 5750
+Connection ~ 4450 5750
 Wire Wire Line
-	3350 6150 3150 6150
-Connection ~ 3450 6150
+	4450 5750 4650 5750
+Connection ~ 4350 5750
 $EndSCHEMATC

@@ -180,11 +180,11 @@ F 3 "~" H 5000 3600 50  0001 C CNN
 	1    5000 3600
 	1    0    0    -1  
 $EndComp
-Text GLabel 4800 3800 0    50   Output ~ 0
+Text GLabel 4800 3900 0    50   Output ~ 0
 WRITE_ENABLE
-Text GLabel 4800 3600 0    50   Input ~ 0
-SPARE_4
-Text GLabel 4800 3700 0    50   Input ~ 0
+Text GLabel 6850 3500 0    50   Input ~ 0
+SPARE_4_IR_IN
+Text GLabel 4800 3700 0    50   BiDi ~ 0
 SPARE_5
 Wire Wire Line
 	3900 5100 4100 5100
@@ -248,7 +248,7 @@ F 3 "" H 4800 4000 50  0001 C CNN
 	1    4800 4000
 	1    0    0    -1  
 $EndComp
-Text GLabel 4800 3900 0    50   Input ~ 0
+Text GLabel 4800 3300 0    50   Input ~ 0
 3V3
 Wire Wire Line
 	700  5800 1450 5800
@@ -453,11 +453,11 @@ Text GLabel 2000 7700 0    50   BiDi ~ 0
 SPARE_3_or_CP_ADDR_2
 Text Notes 2050 5950 0    50   ~ 0
 4x holes 3/32” \n4-pin 0.1” header
-Text GLabel 4800 3300 0    50   BiDi ~ 0
-SAO_G1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 4800 3400 0    50   BiDi ~ 0
-SAO_G2_or_SPARE_2_or_CP_ADDR_1
+SAO_G1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 4800 3500 0    50   BiDi ~ 0
+SAO_G2_or_SPARE_2_or_CP_ADDR_1
+Text GLabel 4800 3600 0    50   BiDi ~ 0
 SPARE_3_or_CP_ADDR_2
 Text Notes 3550 5600 0    50   ~ 0
 SILKSCREEN: 3V3 ONLY\nQWIIC I2C and pin names
@@ -477,11 +477,11 @@ Text GLabel 8550 2600 3    50   Input ~ 0
 TFT_BACKLIGHT
 Text GLabel 8150 2600 3    50   Input ~ 0
 SPI_SDI
-Text GLabel 6850 3300 0    50   Output ~ 0
-IR_MOD
-Text GLabel 6850 3500 0    50   Input ~ 0
+Text GLabel 6850 3400 0    50   Input ~ 0
+IR_OUT
+Text GLabel 6850 3700 0    50   Input ~ 0
 SPARE_SPI_DC
-Text GLabel 6850 3400 0    50   BiDi ~ 0
+Text GLabel 6850 3600 0    50   BiDi ~ 0
 SPARE_ADC_DAC
 $Comp
 L Connector_Generic:Conn_01x04 X3
@@ -620,7 +620,7 @@ Text Notes 9850 6350 0    50   ~ 0
 0x3C (60)\n0x20 (32)\n0x50 (80)\n0x50-53
 Text Notes 8550 5250 0    118  ~ 0
 I2C ADDRESS TABLE
-Text GLabel 6850 3600 0    50   Output ~ 0
+Text GLabel 6850 3800 0    50   Output ~ 0
 TOUCH_SPI_CS
 Text GLabel 1750 1800 0    50   Output ~ 0
 OLED_SPI_CS
@@ -754,8 +754,6 @@ Text GLabel 5800 1700 2    50   BiDi ~ 0
 SAO_1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 5800 1800 2    50   BiDi ~ 0
 SAO_2_or_SPARE_2_or_CP_ADDR_1
-Text GLabel 5800 1500 2    50   Input ~ 0
-SPARE_4
 Text GLabel 5800 1600 2    50   Input ~ 0
 SPARE_5
 Wire Wire Line
@@ -803,7 +801,7 @@ F 3 "" H 6850 4000 50  0001 C CNN
 	1    6850 4000
 	1    0    0    -1  
 $EndComp
-Text GLabel 6850 3900 0    50   Input ~ 0
+Text GLabel 6850 3300 0    50   Input ~ 0
 3V3
 Text Notes 3650 1150 0    50   ~ 0
 See specifications: https://www.mikroe.com/mikrobus\n8-pin 0.1 in. pitch headers spaced 0.9 in. apart
@@ -848,9 +846,9 @@ Wire Wire Line
 	2800 4050 2900 4050
 NoConn ~ 2900 3950
 NoConn ~ 2900 4050
-Text GLabel 6850 3700 0    50   Output ~ 0
+Text GLabel 4800 3800 0    50   Output ~ 0
 SPARE_ANA_6
-Text GLabel 6850 3800 0    50   Input ~ 0
+Text GLabel 6850 3900 0    50   Output ~ 0
 SPARE_ANA_7
 Text Notes 4650 2400 0    50   ~ 0
 Silkscreen: MikroBus(TM)
@@ -873,111 +871,109 @@ F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 5550 7
 	1    4500 1500
 	1    0    0    -1  
 $EndComp
-Text GLabel 4750 -950 0    50   Input ~ 0
+Text GLabel 4400 -450 0    50   Input ~ 0
 SPI_RESET
-Text GLabel 4750 -750 0    50   Input ~ 0
+Text GLabel 4400 -250 0    50   Input ~ 0
 SPI_CLK
-Text GLabel 4750 -650 0    50   Output ~ 0
+Text GLabel 4400 -150 0    50   Output ~ 0
 SPI_SDO
-Text GLabel 4750 -450 0    50   Input ~ 0
+Text GLabel 4400 50   0    50   Input ~ 0
 3V3
 $Comp
 L power:GND #PWR?
 U 1 1 5F8268DB
-P 4750 -350
+P 4400 150
 AR Path="/5E755787/5F8268DB" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F8268DB" Ref="#PWR0170"  Part="1" 
-F 0 "#PWR0170" H 4750 -600 50  0001 C CNN
-F 1 "GND" H 4755 -525 50  0000 C CNN
-F 2 "" H 4750 -350 50  0001 C CNN
-F 3 "" H 4750 -350 50  0001 C CNN
-	1    4750 -350
+F 0 "#PWR0170" H 4400 -100 50  0001 C CNN
+F 1 "GND" H 4405 -25 50  0000 C CNN
+F 2 "" H 4400 150 50  0001 C CNN
+F 3 "" H 4400 150 50  0001 C CNN
+	1    4400 150 
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5F8268E1
-P 6150 -350
+P 5800 150
 AR Path="/5E755787/5F8268E1" Ref="#PWR?"  Part="1" 
 AR Path="/5EA63449/5F8268E1" Ref="#PWR0171"  Part="1" 
-F 0 "#PWR0171" H 6150 -600 50  0001 C CNN
-F 1 "GND" H 6155 -525 50  0000 C CNN
-F 2 "" H 6150 -350 50  0001 C CNN
-F 3 "" H 6150 -350 50  0001 C CNN
-	1    6150 -350
+F 0 "#PWR0171" H 5800 -100 50  0001 C CNN
+F 1 "GND" H 5805 -25 50  0000 C CNN
+F 2 "" H 5800 150 50  0001 C CNN
+F 3 "" H 5800 150 50  0001 C CNN
+	1    5800 150 
 	1    0    0    -1  
 $EndComp
-Text GLabel 6150 -450 2    50   Input ~ 0
+Text GLabel 5800 50   2    50   Input ~ 0
 5V0
-Text GLabel 6150 -650 2    50   BiDi ~ 0
+Text GLabel 5800 -150 2    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 6150 -550 2    50   BiDi ~ 0
+Text GLabel 5800 -50  2    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 4750 -1050 0    50   BiDi ~ 0
+Text GLabel 4400 -550 0    50   BiDi ~ 0
 SPARE_ADC_DAC
-Text GLabel 4750 -850 0    50   Input ~ 0
+Text GLabel 4400 -350 0    50   Input ~ 0
 SPARE_SPI_CS
-Text GLabel 4750 -550 0    50   Input ~ 0
+Text GLabel 4400 -50  0    50   Input ~ 0
 SPI_SDI
-Text GLabel 6150 -850 2    50   BiDi ~ 0
+Text GLabel 5800 -350 2    50   BiDi ~ 0
 SAO_1_or_SPARE_1_or_CP_ADDR_0
-Text GLabel 6150 -750 2    50   BiDi ~ 0
+Text GLabel 5800 -250 2    50   BiDi ~ 0
 SAO_2_or_SPARE_2_or_CP_ADDR_1
-Text GLabel 6150 -1050 2    50   Input ~ 0
-SPARE_4
-Text GLabel 6150 -950 2    50   Input ~ 0
+Text GLabel 5800 -450 2    50   Input ~ 0
 SPARE_5
 Wire Wire Line
-	6050 -1050 6150 -1050
+	5700 -550 5800 -550
 Wire Wire Line
-	6050 -950 6150 -950
+	5700 -450 5800 -450
 Wire Wire Line
-	6050 -850 6150 -850
+	5700 -350 5800 -350
 Wire Wire Line
-	6050 -750 6150 -750
+	5700 -250 5800 -250
 Wire Wire Line
-	6050 -650 6150 -650
+	5700 -150 5800 -150
 Wire Wire Line
-	6050 -550 6150 -550
+	5700 -50  5800 -50 
 Wire Wire Line
-	6050 -450 6150 -450
+	5700 50   5800 50  
 Wire Wire Line
-	6050 -350 6150 -350
+	5700 150  5800 150 
 Wire Wire Line
-	4850 -350 4750 -350
+	4500 150  4400 150 
 Wire Wire Line
-	4750 -450 4850 -450
+	4400 50   4500 50  
 Wire Wire Line
-	4750 -550 4850 -550
+	4400 -50  4500 -50 
 Wire Wire Line
-	4750 -650 4850 -650
+	4400 -150 4500 -150
 Wire Wire Line
-	4750 -750 4850 -750
+	4400 -250 4500 -250
 Wire Wire Line
-	4750 -850 4850 -850
+	4400 -350 4500 -350
 Wire Wire Line
-	4750 -950 4850 -950
+	4400 -450 4500 -450
 Wire Wire Line
-	4750 -1050 4850 -1050
-Text Notes 5000 -150 0    50   ~ 0
+	4400 -550 4500 -550
+Text Notes 4650 350  0    50   ~ 0
 Silkscreen: MikroBus(TM)
 $Comp
 L MIKROE-971:MIKROE-971 X9
 U 1 1 5F82690A
-P 4850 -1050
-F 0 "X9" H 5450 -782 50  0000 C CNN
-F 1 "MIKROE-971" H 5450 -875 50  0000 C CNN
-F 2 "MIKROE-971:MIKROE-971_1" H 5900 -950 50  0001 L CNN
-F 3 "http://www.farnell.com/datasheets/1998794.pdf" H 5900 -1050 50  0001 L CNN
-F 4 "MIKROELEKTRONIKA - MIKROE-971 - ADD-ON-BOARD, ETH CLICK MIKROBUS" H 5900 -1150 50  0001 L CNN "Description"
-F 5 "" H 5900 -1250 50  0001 L CNN "Height"
-F 6 "MIKROELEKTRONIKA" H 5900 -1350 50  0001 L CNN "Manufacturer_Name"
-F 7 "MIKROE-971" H 5900 -1450 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "MIKROE-971" H 5900 -1550 50  0001 L CNN "Arrow Part Number"
-F 9 "" H 5900 -1650 50  0001 L CNN "Arrow Price/Stock"
-F 10 "932-MIKROE-971" H 5900 -1750 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 5900 -1850 50  0001 L CNN "Mouser Price/Stock"
-	1    4850 -1050
+P 4500 -550
+F 0 "X9" H 5100 -282 50  0000 C CNN
+F 1 "MIKROE-971" H 5100 -375 50  0000 C CNN
+F 2 "MIKROE-971:MIKROE-971_1" H 5550 -450 50  0001 L CNN
+F 3 "http://www.farnell.com/datasheets/1998794.pdf" H 5550 -550 50  0001 L CNN
+F 4 "MIKROELEKTRONIKA - MIKROE-971 - ADD-ON-BOARD, ETH CLICK MIKROBUS" H 5550 -650 50  0001 L CNN "Description"
+F 5 "" H 5550 -750 50  0001 L CNN "Height"
+F 6 "MIKROELEKTRONIKA" H 5550 -850 50  0001 L CNN "Manufacturer_Name"
+F 7 "MIKROE-971" H 5550 -950 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "MIKROE-971" H 5550 -1050 50  0001 L CNN "Arrow Part Number"
+F 9 "" H 5550 -1150 50  0001 L CNN "Arrow Price/Stock"
+F 10 "932-MIKROE-971" H 5550 -1250 50  0001 L CNN "Mouser Part Number"
+F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 5550 -1350 50  0001 L CNN "Mouser Price/Stock"
+	1    4500 -550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -999,4 +995,8 @@ F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 9300 -2
 	1    9200 1850
 	1    0    0    -1  
 $EndComp
+Text GLabel 5800 1500 2    50   Input ~ 0
+SPARE_4_IR_IN
+Text GLabel 5800 -550 2    50   Input ~ 0
+SPARE_4_IR_IN
 $EndSCHEMATC

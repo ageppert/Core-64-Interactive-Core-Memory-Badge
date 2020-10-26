@@ -297,8 +297,8 @@ Text Notes 800  2300 0    50   ~ 10
 QxP is normally high, goes low to activate matrix transistor.\nQxN is normally low, goes high to activate matrix transistor.
 Text GLabel 1750 3350 0    50   Output ~ 0
 TOUCH_SPI_CS
-Text GLabel 1000 3550 0    50   Output ~ 0
-IR_MOD_OUT
+Text GLabel 800  3450 0    50   Output ~ 0
+IR_OUT
 Text GLabel 2550 3750 0    50   Output ~ 0
 TFT_SPI_CS
 Text GLabel 2550 3850 0    50   Output ~ 0
@@ -381,12 +381,12 @@ Text GLabel 1750 3450 0    50   Output ~ 0
 TEENSYVIEW_SPI_DC
 Text GLabel 1750 3550 0    50   Output ~ 0
 SD_SPI_CS
-Text GLabel 1450 4650 0    50   BiDi ~ 0
+Text GLabel 1200 4650 0    50   BiDi ~ 0
 SPARE_ADC_DAC
 Text GLabel 900  4950 0    50   BiDi ~ 0
 SPARE_5
-Text GLabel 900  3950 0    50   BiDi ~ 0
-SPARE_4
+Text GLabel 1150 4050 0    50   BiDi ~ 0
+SPARE_4_IR_IN
 Wire Wire Line
 	3250 4850 4700 4850
 Wire Wire Line
@@ -462,7 +462,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 3150 1750 3150
 Wire Wire Line
-	4700 4650 1450 4650
+	4700 4650 1200 4650
 Wire Wire Line
 	7050 5450 7050 5500
 Wire Wire Line
@@ -789,12 +789,6 @@ Text GLabel 1800 3950 0    50   Output ~ 0
 TEENSYVIEW_SPI_CS
 Wire Wire Line
 	1850 3950 1850 4050
-Wire Wire Line
-	1850 4050 950  4050
-Wire Wire Line
-	950  4050 950  3950
-Wire Wire Line
-	950  3950 900  3950
 Connection ~ 1850 3950
 Wire Wire Line
 	1850 3950 1800 3950
@@ -907,10 +901,12 @@ Text Notes 550  7750 0    50   ~ 0
 Text Notes 550  6500 0    50   ~ 0
 1) 
 Wire Wire Line
-	1000 3550 1050 3550
+	800  3450 900  3450
 Wire Wire Line
-	1050 3550 1050 3500
+	900  3450 900  3500
 Wire Wire Line
-	1050 3500 1800 3500
+	900  3500 1800 3500
 Connection ~ 1800 3500
+Wire Wire Line
+	1150 4050 1850 4050
 $EndSCHEMATC
