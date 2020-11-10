@@ -623,25 +623,21 @@ Wire Wire Line
 	1900 6400 1900 6350
 Wire Wire Line
 	2300 5650 2300 5500
-NoConn ~ 4050 6350
 NoConn ~ 3550 6350
-Text Notes 4350 6700 2    50   ~ 0
-TSM-106 (2x6) required\nTSM-107 (2x7) alternate
+Text Notes 3350 7200 0    50   ~ 0
+TSM-106 (2x6) required\nTSM-107 (2x7) alternate\n\nSymbol view is looking down\non the front face of the Logic\nBoard, with the male header\npins pointing up at you.
 Text Notes 2500 6200 0    50   ~ 0
 SILKSCREEN: \n5V0 ONLY\nLED ARRAY
 Wire Wire Line
 	4650 5650 4650 5750
 Text GLabel 4650 5650 1    50   Input ~ 0
 5V0
-NoConn ~ 3550 5750
 NoConn ~ 3550 5850
 NoConn ~ 3550 5950
 NoConn ~ 3550 6050
 NoConn ~ 3550 6250
 NoConn ~ 4050 6150
 NoConn ~ 4050 6050
-NoConn ~ 4050 5950
-NoConn ~ 4050 5850
 Wire Wire Line
 	3400 6150 3400 6250
 Wire Wire Line
@@ -649,7 +645,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 6250 4300 6250
 Wire Wire Line
-	4050 5750 4350 5750
+	4050 5750 4150 5750
 $Comp
 L power:GND #PWR?
 U 1 1 5F7F8247
@@ -835,4 +831,36 @@ Connection ~ 4450 5750
 Wire Wire Line
 	4450 5750 4650 5750
 Connection ~ 4350 5750
+Text GLabel 3450 5750 0    50   Input ~ 0
+3V3
+Wire Wire Line
+	3450 5750 3550 5750
+Wire Wire Line
+	4050 5850 4150 5850
+Wire Wire Line
+	4150 5850 4150 5750
+Connection ~ 4150 5750
+Wire Wire Line
+	4150 5750 4350 5750
+Wire Wire Line
+	4050 5950 4150 5950
+Wire Wire Line
+	4150 5950 4150 6350
+Wire Wire Line
+	4150 6350 4050 6350
+$Comp
+L power:GND #PWR?
+U 1 1 5FB058FB
+P 4150 6350
+AR Path="/5E755787/5FB058FB" Ref="#PWR?"  Part="1" 
+AR Path="/5FB058FB" Ref="#PWR?"  Part="1" 
+AR Path="/5E75D6AB/5FB058FB" Ref="#PWR0107"  Part="1" 
+F 0 "#PWR0107" H 4150 6100 50  0001 C CNN
+F 1 "GND" H 4155 6175 50  0000 C CNN
+F 2 "" H 4150 6350 50  0001 C CNN
+F 3 "" H 4150 6350 50  0001 C CNN
+	1    4150 6350
+	1    0    0    -1  
+$EndComp
+Connection ~ 4150 6350
 $EndSCHEMATC

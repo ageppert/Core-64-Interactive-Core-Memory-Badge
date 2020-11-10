@@ -42,8 +42,8 @@ F 3 "" H 1450 7550 50  0001 C CNN
 	1    1450 7550
 	-1   0    0    1   
 $EndComp
-Text Notes 8650 4450 0    50   ~ 0
-CORES AND ACCESSORIES
+Text Notes 8100 4550 0    50   ~ 0
+CORES, ACCESSORIES, ALL LOGIC
 $Comp
 L Switch:SW_SPDT SW1
 U 1 1 5E9AF194
@@ -111,7 +111,7 @@ Text GLabel 10200 5550 2    50   Output ~ 0
 3V3
 Text Notes 750  4450 0    118  ~ 0
 POWER SWITCH, RPP, V & I MONITOR
-Text Notes 7800 4350 0    118  ~ 0
+Text Notes 7800 4450 0    118  ~ 0
 3.3V POWER SUPPLY
 $Comp
 L power:GND #PWR0116
@@ -135,8 +135,8 @@ Wire Notes Line
 Wire Notes Line
 	10350 850  5200 850 
 Connection ~ 3850 5250
-Text Notes 5800 4550 0    50   ~ 0
-LED ARRAY, TEENSY VIN
+Text Notes 5000 4550 0    50   ~ 0
+LED ARRAY, TEENSY VIN, OPTIONAL TFT & COLOR OLED
 $Comp
 L Device:R R?
 U 1 1 5E800BC1
@@ -360,17 +360,6 @@ Wire Wire Line
 	700  7450 1450 7450
 Wire Wire Line
 	700  7450 700  7550
-$Comp
-L Device:Q_PMOS_DGS Q22
-U 1 1 5F522D96
-P 2250 5350
-F 0 "Q22" V 2596 5350 50  0000 C CNN
-F 1 "BSS315PH6327XTSA1" V 2503 5350 50  0000 C CNN
-F 2 "Digikey:SOT-23-3" H 2450 5450 50  0001 C CNN
-F 3 "https://www.infineon.com/dgdl/BSS315P_Rev2.3.pdf?folderId=db3a304314dca38901154a72e3951a65&fileId=db3a304330f686060130ff61f31b7f06" H 2250 5350 50  0001 C CNN
-	1    2250 5350
-	0    -1   -1   0   
-$EndComp
 Text Notes 2050 5400 0    50   ~ 0
 D
 Text Notes 2300 5550 0    50   ~ 0
@@ -380,9 +369,9 @@ S
 Wire Wire Line
 	2250 5550 2250 5600
 Wire Wire Line
-	2250 5600 2600 5600
+	2250 5600 2550 5600
 Wire Wire Line
-	2600 5600 2600 5550
+	2550 5600 2550 5500
 Connection ~ 2250 5600
 Wire Wire Line
 	2250 5600 2250 5650
@@ -402,9 +391,9 @@ $EndComp
 Wire Wire Line
 	2250 5950 1900 5950
 Wire Wire Line
-	1900 5950 1900 5750
+	1900 5950 1900 5600
 Wire Wire Line
-	1900 5450 1900 5250
+	1900 5300 1900 5250
 Wire Wire Line
 	1900 5250 2050 5250
 Connection ~ 1900 5250
@@ -425,7 +414,7 @@ Wire Wire Line
 	1100 5350 1250 5350
 Text Notes 600  6550 0    50   ~ 0
 OPTIONAL USB BYPASS:\nAs shipped, power switch\nin OFF position connects\nto USB power through\nthe Teensy.\nOPTIONAL:\nCut SJ if you want the \nOFF position to not\nbe powered from\nTeensy USB connector.
-Text Notes 1050 4850 0    50   ~ 0
+Text Notes 1050 4800 0    79   ~ 0
 SILKSCREEN: ON (BAT) / OFF (USB)
 Text GLabel 4100 5250 2    50   Output ~ 0
 +VSW
@@ -504,8 +493,8 @@ Text Notes 4150 5750 0    50   ~ 0
 1%
 Text Notes 4150 5450 0    50   ~ 0
 1%
-Text Notes 1950 5500 0    50   ~ 0
-P-FET
+Text Notes 1900 5200 0    50   ~ 0
+P-CHNL
 Text Notes 750  4100 0    157  ~ 31
 *** ALL CONFIGURATIONS REQUIRE CUTTING VIN-VUSB TRACE ON TEENSY ***
 Text GLabel 5400 7450 1    50   Output ~ 0
@@ -577,46 +566,7 @@ Wire Wire Line
 Wire Wire Line
 	5600 3400 5600 3450
 Text Notes 1850 6550 0    50   ~ 0
-OPTIONAL FET PROTECT:\n1) .1uF Cap. on left\n2) 100k Res. on bottom\n3) 10V Zener on right
-Wire Wire Line
-	2450 5250 2600 5250
-$Comp
-L Jumper:SolderJumper_2_Bridged JP7
-U 1 1 5F5C5752
-P 2250 5800
-F 0 "JP7" V 2300 5650 50  0000 C CNN
-F 1 "Opt. Res." V 2200 5550 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2250 5800 50  0001 C CNN
-F 3 "~" H 2250 5800 50  0001 C CNN
-	1    2250 5800
-	0    -1   -1   0   
-$EndComp
-Connection ~ 2250 5950
-$Comp
-L Jumper:SolderJumper_2_Open JP5
-U 1 1 5F5C8845
-P 2600 5400
-F 0 "JP5" V 2553 5473 50  0000 L CNN
-F 1 "Opt. Zen." V 2646 5473 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 2600 5400 50  0001 C CNN
-F 3 "~" H 2600 5400 50  0001 C CNN
-	1    2600 5400
-	0    1    1    0   
-$EndComp
-Connection ~ 2600 5250
-Wire Wire Line
-	2600 5250 2900 5250
-$Comp
-L Jumper:SolderJumper_2_Open JP6
-U 1 1 5F5C90A9
-P 1900 5600
-F 0 "JP6" V 1800 5400 50  0000 L CNN
-F 1 "Opt. Cap." V 1900 5200 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 1900 5600 50  0001 C CNN
-F 3 "~" H 1900 5600 50  0001 C CNN
-	1    1900 5600
-	0    1    1    0   
-$EndComp
+OPTIONAL FET PROTECT:\n1) 10nF Cap. on left\n2) 10k Res. on bottom\n3) 10V Zener on right
 $Comp
 L S03B-PASK-2_LF__SN_:S03B-PASK-2_LF__SN_ J8
 U 1 1 5F4CF3FA
@@ -1130,4 +1080,67 @@ Text Notes 3500 1950 0    50   ~ 0
 SILKSCREEN:
 Text Notes 3500 2300 0    50   ~ 0
 Limitation of 5V0 regulator.
+Text Notes 1100 5250 0    50   ~ 0
+ON
+Text Notes 1100 5450 0    50   ~ 0
+OFF
+$Comp
+L Device:C C?
+U 1 1 5FB0B59C
+P 1900 5450
+AR Path="/5E755787/5FB0B59C" Ref="C?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5FB0B59C" Ref="C?"  Part="1" 
+AR Path="/5EA63449/5FB0B59C" Ref="C?"  Part="1" 
+AR Path="/5E7548ED/5FB0B59C" Ref="C8"  Part="1" 
+F 0 "C8" H 1991 5496 50  0000 L CNN
+F 1 "0.01uF" H 1991 5405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1900 5450 50  0001 C CNN
+F 3 "~" H 1900 5450 50  0001 C CNN
+	1    1900 5450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5FB0C27F
+P 2250 5800
+AR Path="/5E755787/5FB0C27F" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/5FB0C27F" Ref="R?"  Part="1" 
+AR Path="/5E7548ED/5FB0C27F" Ref="R48"  Part="1" 
+F 0 "R48" H 2320 5846 50  0000 L CNN
+F 1 "10k" H 2320 5755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2180 5800 50  0001 C CNN
+F 3 "~" H 2250 5800 50  0001 C CNN
+	1    2250 5800
+	1    0    0    -1  
+$EndComp
+Connection ~ 2250 5950
+$Comp
+L Device:D_Zener_Small Z1
+U 1 1 5FB1A9B0
+P 2550 5400
+F 0 "Z1" V 2503 5473 50  0000 L CNN
+F 1 "10V" V 2596 5473 50  0000 L CNN
+F 2 "Digikey:SOD-123" V 2550 5400 50  0001 C CNN
+F 3 "~" V 2550 5400 50  0001 C CNN
+	1    2550 5400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2450 5250 2550 5250
+Wire Wire Line
+	2550 5300 2550 5250
+Connection ~ 2550 5250
+Wire Wire Line
+	2550 5250 2900 5250
+$Comp
+L Device:Q_PMOS_DGS Q22
+U 1 1 5F522D96
+P 2250 5350
+F 0 "Q22" V 2596 5350 50  0000 C CNN
+F 1 "BSS315PH6327XTSA1" V 2503 5350 50  0000 C CNN
+F 2 "Digikey:SOT-23-3" H 2450 5450 50  0001 C CNN
+F 3 "https://www.infineon.com/dgdl/BSS315P_Rev2.3.pdf?folderId=db3a304314dca38901154a72e3951a65&fileId=db3a304330f686060130ff61f31b7f06" H 2250 5350 50  0001 C CNN
+	1    2250 5350
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

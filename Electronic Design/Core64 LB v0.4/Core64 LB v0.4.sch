@@ -226,8 +226,6 @@ Text GLabel 2400 3050 0    50   Output ~ 0
 OLED_SPI_CS
 Text GLabel 2400 3150 0    50   Output ~ 0
 OLED_SPI_DC
-Text Notes 600  6300 0    98   ~ 0
-QxP is normally high, low to activate matrix transistor.\nQxN is normally low, high to activate matrix transistor.
 Text GLabel 2400 3250 0    50   Output ~ 0
 TOUCH_SPI_CS
 Text GLabel 1350 3350 0    50   Output ~ 0
@@ -695,4 +693,6 @@ Wire Wire Line
 Connection ~ 8800 4450
 Wire Wire Line
 	8800 4450 7650 4450
+Text Notes 700  6250 0    79   ~ 0
+QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is normally low, high to activate matrix transistor.
 $EndSCHEMATC
