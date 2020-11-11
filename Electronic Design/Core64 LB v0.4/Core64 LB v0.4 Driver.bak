@@ -2109,4 +2109,6 @@ F 3 "http://www.onsemi.com/pub/Collateral/NTR4503N-D.PDF" H 4350 7000 50  0001 C
 	1    4350 7000
 	1    0    0    -1  
 $EndComp
+Text Notes 3300 6800 0    50   ~ 0
+Rds(ON)=0.1
 $EndSCHEMATC

@@ -42,8 +42,8 @@ F 3 "" H 1450 7550 50  0001 C CNN
 	1    1450 7550
 	-1   0    0    1   
 $EndComp
-Text Notes 8650 4450 0    50   ~ 0
-CORES AND ACCESSORIES
+Text Notes 8100 4550 0    50   ~ 0
+CORES, ACCESSORIES, ALL LOGIC
 $Comp
 L Switch:SW_SPDT SW1
 U 1 1 5E9AF194
@@ -60,7 +60,7 @@ $EndComp
 Text Notes 750  1700 0    50   ~ 0
 SOURCE 1 “ON (BAT)”\n  BUILT-IN BATTERY PACK (Keystone 2482CN) WITH 4X “AAA” Primary/Alkaline Cells\n  OK to use Energizer Ultimate Lithium (light weight!) with open cell 7.2V, loaded will be <7V.\n  Battery Pack includes wires and 3-pin plug.\n  \n  Socket: TH, Side Entry, JST PA S03B-PASK-2(LF)(SN), Digikey 455-1848-ND ($0.44/ea)\n  Socket: SMT, Top Entry, JST PA BM03B-PASS-1-TFT(LF)(SN), Digikey 455-2638-1-ND ($0.80)  \n  Socket: SMT, Side Entry, Keystone 976, Digikey 36-976CT-ND ($2.71/ea)
 Text Notes 750  2950 0    50   ~ 0
-SOURCE 2 “OFF (USB)”\n  USB 5V supplied through Teensy 3.2 \n  With the VIN-VUSB trace cut on the back of the Teensy, the TEENSY_5VUSB\n  is routed directly from the USB Port, to the VUSB pin on the back \n  of the Teensy, over to one side of the SPDT switch. In this position\n  the VUSB goes back to the Teensy through the 5V regulator.
+SOURCE 2 “OFF (USB)”\n  USB 5V supplied through Teensy 3.2 \n  With the VIN-VUSB trace cut on the back of the Teensy, the TEENSY_VUSB is taken off of the\n  Teensy Board and routed on the Core64 LB to the lower position of the power switch. From\n  here, it powers the whole Core64 system and routes back to the TEENSY_VIN after passing\n  through the 5V LDO regulator.
 $Comp
 L power:+BATT #PWR0105
 U 1 1 5E791B5B
@@ -111,7 +111,7 @@ Text GLabel 10200 5550 2    50   Output ~ 0
 3V3
 Text Notes 750  4450 0    118  ~ 0
 POWER SWITCH, RPP, V & I MONITOR
-Text Notes 7800 4350 0    118  ~ 0
+Text Notes 7800 4450 0    118  ~ 0
 3.3V POWER SUPPLY
 $Comp
 L power:GND #PWR0116
@@ -135,8 +135,8 @@ Wire Notes Line
 Wire Notes Line
 	10350 850  5200 850 
 Connection ~ 3850 5250
-Text Notes 5800 4550 0    50   ~ 0
-LED ARRAY, TEENSY VIN
+Text Notes 5000 4550 0    50   ~ 0
+LED ARRAY, TEENSY VIN, OPTIONAL TFT & COLOR OLED
 $Comp
 L Device:R R?
 U 1 1 5E800BC1
@@ -342,16 +342,16 @@ $EndComp
 $Comp
 L Device:C C?
 U 1 1 5EBB706E
-P 9350 5000
+P 9400 5000
 AR Path="/5E755787/5EBB706E" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5EBB706E" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5EBB706E" Ref="C?"  Part="1" 
 AR Path="/5E7548ED/5EBB706E" Ref="C2"  Part="1" 
-F 0 "C2" H 9441 5046 50  0000 L CNN
-F 1 "1uF" H 9441 4955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 9350 5000 50  0001 C CNN
-F 3 "~" H 9350 5000 50  0001 C CNN
-	1    9350 5000
+F 0 "C2" H 9491 5046 50  0000 L CNN
+F 1 "1uF" H 9491 4955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 9400 5000 50  0001 C CNN
+F 3 "~" H 9400 5000 50  0001 C CNN
+	1    9400 5000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -371,7 +371,7 @@ Wire Wire Line
 Wire Wire Line
 	2250 5600 2550 5600
 Wire Wire Line
-	2550 5600 2550 5500
+	2550 5600 2550 5550
 Connection ~ 2250 5600
 Wire Wire Line
 	2250 5600 2250 5650
@@ -391,9 +391,9 @@ $EndComp
 Wire Wire Line
 	2250 5950 1900 5950
 Wire Wire Line
-	1900 5950 1900 5600
+	1900 5950 1900 5650
 Wire Wire Line
-	1900 5300 1900 5250
+	1900 5350 1900 5250
 Wire Wire Line
 	1900 5250 2050 5250
 Connection ~ 1900 5250
@@ -447,13 +447,13 @@ L Jumper:SolderJumper_2_Bridged JP2
 U 1 1 5F4B1331
 P 3400 5250
 F 0 "JP2" H 3400 5350 50  0000 C CNN
-F 1 "Opt. Cur. Mon." H 3400 5100 50  0000 C CNN
+F 1 "Opt. Cur. Mon." H 3450 5450 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 3400 5250 50  0001 C CNN
 F 3 "~" H 3400 5250 50  0001 C CNN
 	1    3400 5250
 	1    0    0    -1  
 $EndComp
-Text Notes 2900 6050 0    50   ~ 0
+Text Notes 2900 6100 0    50   ~ 0
 OPTIONAL CUR. MON.:\n1) Open Cur. Mon. SJ\n2) Insert 0.01 Ohm\n    -or-\n2) Ammeter current\nbetween RPP & +VSW 
 Text Notes 5000 4450 0    118  ~ 0
 5V POWER SUPPLY
@@ -588,8 +588,8 @@ F 11 "" H 2200 1450 50  0001 L CNN "Mouser Price/Stock"
 $EndComp
 Text Notes 9150 1900 0    50   ~ 0
 SILKSCREEN: +/- pins
-Text Notes 5300 2450 0    50   ~ 0
-1) Remove the 4x “AAA” battery pack. You can leave \n\n2) Purchase and install a LiPo charge manager.\n     a) The logic board is designed to accept this one: https://www.adafruit.com/product/1904.\n     b) Solder the the charge manager directly to the board without headers to keep a low profile to allow the stylus to fit.\n\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 15mm. A maximum \n     a) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area.\n     b) Insulate it with Kapton tape or similar.\n\n* The LiPo charger 5V pin is also connected to the Teensy USB port.\n* Connecting a USB cable to the Teensy will power the board, charge the battery and connect to the serial port of the\n   Teensy. If you do NOT want the board to be powered from the USB port of the charger, cut the 5V solder jumper.\n* Connecting a USB cable to the LiPO charger will ONLY charge the battery and power the logic board.
+Text Notes 5300 2550 0    50   ~ 0
+1) Remove the 4x “AAA” battery pack AND the battery connector (so you don’t try to charge AAAs with a LiPo charger!).\n\n2) Purchase and install a LiPo charge manager.\n     a) The logic board is designed to accept this one: https://www.adafruit.com/product/1904.\n     b) Solder the the charge manager directly to the board without headers to keep a low profile to allow the stylus to fit.\n\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 15mm. A maximum \n     a) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area.\n     b) Insulate it with Kapton tape or similar.\n\n* The LiPo charger 5V pin and USB port are also connected to the Teensy USB port, through TEENSY_VUSB.\n* Connecting a USB cable to the Teensy will power the Core64 board, charge the battery and connect to the serial port of the\n   Teensy. If you do NOT want the Core64 board to be powered from the USB port of the charger, cut the Teensy_Charge_Enable \n   solder jumper. Then, connecting a USB cable to the LiPO charger will ONLY charge the battery and power the logic board,\n   when the power switch is ON (up position).
 Wire Wire Line
 	4500 7650 4650 7650
 Wire Wire Line
@@ -637,26 +637,26 @@ $EndComp
 $Comp
 L TPS7A0533PDBVR:TPS7A0533PDBVR IC2
 U 1 1 5F5B23D2
-P 8150 5000
-F 0 "IC2" H 8650 5268 50  0000 C CNN
-F 1 "TPS7A0533PDBVR" H 8650 5175 50  0000 C CNN
-F 2 "TPS7A0533PDBVR:SOT95P280X145-5N" H 9000 5100 50  0001 L CNN
-F 3 "http://www.ti.com/lit/gpn/tps7a05" H 9000 5000 50  0001 L CNN
-F 4 "1-A, ultra-low-IQ, 200-mA low-dropout (LDO) regulator in a small-sized package" H 9000 4900 50  0001 L CNN "Description"
-F 5 "1.45" H 9000 4800 50  0001 L CNN "Height"
-F 6 "Texas Instruments" H 9000 4700 50  0001 L CNN "Manufacturer_Name"
-F 7 "TPS7A0533PDBVR" H 9000 4600 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "TPS7A0533PDBVR" H 9000 4500 50  0001 L CNN "Arrow Part Number"
-F 9 "https://www.arrow.com/en/products/tps7a0533pdbvr/texas-instruments" H 9000 4400 50  0001 L CNN "Arrow Price/Stock"
-F 10 "595-TPS7A0533PDBVR" H 9000 4300 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs=vdi0iO8H4N0h9F4GOtQJBA%3D%3D" H 9000 4200 50  0001 L CNN "Mouser Price/Stock"
-	1    8150 5000
+P 8150 5050
+F 0 "IC2" H 8650 5318 50  0000 C CNN
+F 1 "TPS7A0533PDBVR" H 8650 5225 50  0000 C CNN
+F 2 "TPS7A0533PDBVR:SOT95P280X145-5N" H 9000 5150 50  0001 L CNN
+F 3 "http://www.ti.com/lit/gpn/tps7a05" H 9000 5050 50  0001 L CNN
+F 4 "1-A, ultra-low-IQ, 200-mA low-dropout (LDO) regulator in a small-sized package" H 9000 4950 50  0001 L CNN "Description"
+F 5 "1.45" H 9000 4850 50  0001 L CNN "Height"
+F 6 "Texas Instruments" H 9000 4750 50  0001 L CNN "Manufacturer_Name"
+F 7 "TPS7A0533PDBVR" H 9000 4650 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "TPS7A0533PDBVR" H 9000 4550 50  0001 L CNN "Arrow Part Number"
+F 9 "https://www.arrow.com/en/products/tps7a0533pdbvr/texas-instruments" H 9000 4450 50  0001 L CNN "Arrow Price/Stock"
+F 10 "595-TPS7A0533PDBVR" H 9000 4350 50  0001 L CNN "Mouser Part Number"
+F 11 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs=vdi0iO8H4N0h9F4GOtQJBA%3D%3D" H 9000 4250 50  0001 L CNN "Mouser Price/Stock"
+	1    8150 5050
 	1    0    0    -1  
 $EndComp
-Text Notes 8350 5700 0    50   ~ 0
-Preferred, TINY
-Text Notes 8350 4700 0    50   ~ 0
-Alternate, larger
+Text Notes 8250 5700 0    50   ~ 0
+Preferred, TINY XDFN6\n0.13V DROP @ 500mA
+Text Notes 8250 4750 0    50   ~ 0
+Alternate, SOT-23-5\n0.24V DROP @ 200mA
 $Comp
 L power:GND #PWR0119
 U 1 1 5F5C202C
@@ -752,47 +752,47 @@ Connection ~ 7900 6350
 Wire Wire Line
 	7900 6350 7900 6400
 Wire Wire Line
-	9150 5100 9200 5100
+	9150 5150 9250 5150
 $Comp
 L power:GND #PWR0160
 U 1 1 5F5FF918
-P 9350 5250
+P 9400 5250
 AR Path="/5E7548ED/5F5FF918" Ref="#PWR0160"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F5FF918" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0160" H 9350 5000 50  0001 C CNN
-F 1 "GND" H 9355 5075 50  0000 C CNN
-F 2 "" H 9350 5250 50  0001 C CNN
-F 3 "" H 9350 5250 50  0001 C CNN
-	1    9350 5250
+F 0 "#PWR0160" H 9400 5000 50  0001 C CNN
+F 1 "GND" H 9405 5075 50  0000 C CNN
+F 2 "" H 9400 5250 50  0001 C CNN
+F 3 "" H 9400 5250 50  0001 C CNN
+	1    9400 5250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9200 5100 9200 4750
+	9250 5150 9250 4800
 Wire Wire Line
-	9200 4750 9350 4750
+	9250 4800 9400 4800
 Wire Wire Line
-	9350 4750 9350 4850
-Connection ~ 9350 4750
+	9400 4800 9400 4850
+Connection ~ 9400 4800
 Wire Wire Line
-	9350 5150 9350 5250
+	9400 5150 9400 5250
 Wire Wire Line
 	7850 4850 7850 4800
 Wire Wire Line
 	7850 4800 8100 4800
 Wire Wire Line
-	8100 5000 8150 5000
+	8100 5050 8150 5050
 Wire Wire Line
-	8100 5000 8100 5200
+	8100 5050 8100 5250
 Wire Wire Line
-	8100 5200 8150 5200
-Connection ~ 8100 5000
+	8100 5250 8150 5250
+Connection ~ 8100 5050
 Connection ~ 8100 4800
 Wire Wire Line
-	8100 4800 8100 5000
+	8100 4800 8100 5050
 Wire Wire Line
-	8150 5100 8000 5100
+	8150 5150 8000 5150
 Wire Wire Line
-	8000 5100 8000 5250
+	8000 5150 8000 5250
 Wire Wire Line
 	7850 5150 7850 5250
 Wire Wire Line
@@ -814,15 +814,15 @@ $EndComp
 Wire Wire Line
 	10000 5550 9850 5550
 Wire Wire Line
-	9700 5350 9700 4750
+	9700 5350 9700 4800
 Wire Wire Line
-	9350 4750 9700 4750
+	9400 4800 9700 4800
 Wire Wire Line
 	9700 6000 9700 5750
 Wire Wire Line
 	9550 6000 9700 6000
-Text Notes 9900 6450 0    118  ~ 24
-Must\nSelect\nOne
+Text Notes 9850 5050 0    118  ~ 24
+Must\nSelect\nOne\nw/SJ
 Text GLabel 8000 4650 0    50   Input ~ 0
 5V0
 Text GLabel 7850 5750 0    50   Input ~ 0
@@ -972,11 +972,11 @@ Connection ~ 5450 5400
 Connection ~ 5450 5750
 Wire Wire Line
 	5450 5750 6050 5750
-Text Notes 4650 5950 0    50   ~ 0
+Text Notes 4700 5950 0    50   ~ 0
 CIN ESR (mΩ) / CIN (μF) ≤ 1.5\nX7R or X5R Ceramic
-Text Notes 6350 5900 0    50   ~ 0
+Text Notes 6350 5850 0    50   ~ 0
 0.2Ω ≤ COUT ESR ≤ 5Ω
-Text Notes 5950 4900 0    50   ~ 0
+Text Notes 6350 6050 0    50   ~ 0
 See data sheet for\ncapacitor requirements
 Text Notes 750  7000 0    50   ~ 0
 GND PAD 3.2 mm (.125 in) thru-hole for M3 or #4 screw
@@ -1087,16 +1087,16 @@ OFF
 $Comp
 L Device:C C?
 U 1 1 5FB0B59C
-P 1900 5450
+P 1900 5500
 AR Path="/5E755787/5FB0B59C" Ref="C?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FB0B59C" Ref="C?"  Part="1" 
 AR Path="/5EA63449/5FB0B59C" Ref="C?"  Part="1" 
 AR Path="/5E7548ED/5FB0B59C" Ref="C8"  Part="1" 
-F 0 "C8" H 1991 5496 50  0000 L CNN
-F 1 "0.01uF" H 1991 5405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1900 5450 50  0001 C CNN
-F 3 "~" H 1900 5450 50  0001 C CNN
-	1    1900 5450
+F 0 "C8" H 1991 5546 50  0000 L CNN
+F 1 "0.01uF" H 1991 5455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1900 5500 50  0001 C CNN
+F 3 "~" H 1900 5500 50  0001 C CNN
+	1    1900 5500
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -1117,18 +1117,18 @@ Connection ~ 2250 5950
 $Comp
 L Device:D_Zener_Small Z1
 U 1 1 5FB1A9B0
-P 2550 5400
-F 0 "Z1" V 2503 5473 50  0000 L CNN
-F 1 "10V" V 2596 5473 50  0000 L CNN
-F 2 "Digikey:SOD-123" V 2550 5400 50  0001 C CNN
-F 3 "~" V 2550 5400 50  0001 C CNN
-	1    2550 5400
+P 2550 5450
+F 0 "Z1" V 2503 5523 50  0000 L CNN
+F 1 "PDZ10BGWX_(10V)" V 2596 5523 50  0000 L CNN
+F 2 "Digikey:SOD-323" V 2550 5450 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PDZ-GW_SER.pdf" V 2550 5450 50  0001 C CNN
+	1    2550 5450
 	0    1    1    0   
 $EndComp
 Wire Wire Line
 	2450 5250 2550 5250
 Wire Wire Line
-	2550 5300 2550 5250
+	2550 5350 2550 5250
 Connection ~ 2550 5250
 Wire Wire Line
 	2550 5250 2900 5250
@@ -1137,10 +1137,18 @@ L Device:Q_PMOS_DGS Q22
 U 1 1 5F522D96
 P 2250 5350
 F 0 "Q22" V 2596 5350 50  0000 C CNN
-F 1 "BSS315PH6327XTSA1" V 2503 5350 50  0000 C CNN
+F 1 "MCC_SL3401A" V 2503 5350 50  0000 C CNN
 F 2 "Digikey:SOT-23-3" H 2450 5450 50  0001 C CNN
 F 3 "https://www.infineon.com/dgdl/BSS315P_Rev2.3.pdf?folderId=db3a304314dca38901154a72e3951a65&fileId=db3a304330f686060130ff61f31b7f06" H 2250 5350 50  0001 C CNN
 	1    2250 5350
 	0    -1   -1   0   
 $EndComp
+Text Notes 2300 5200 0    50   ~ 0
+Rds(on)0.06
+Text Notes 4500 5000 0    50   ~ 0
+VIN MAX 7.5V
+Text Notes 5700 6200 0    50   ~ 0
+0.24V DROP @ 800mA
+Text Notes 7650 5650 0    50   ~ 0
+IN MAX 5.5V
 $EndSCHEMATC
