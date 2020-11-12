@@ -719,9 +719,9 @@ F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/5
 	1    9100 6000
 	1    0    0    -1  
 $EndComp
-Text GLabel 9500 5900 2    50   BiDi ~ 0
+Text GLabel 9550 5900 2    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 9500 6000 2    50   BiDi ~ 0
+Text GLabel 9550 6000 2    50   BiDi ~ 0
 I2C_CLOCK
 Text GLabel 9500 5550 2    50   Input ~ 0
 3V3
@@ -863,4 +863,8 @@ F 3 "" H 4150 6350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4150 6350
+Wire Wire Line
+	9500 5900 9550 5900
+Wire Wire Line
+	9500 6000 9550 6000
 $EndSCHEMATC

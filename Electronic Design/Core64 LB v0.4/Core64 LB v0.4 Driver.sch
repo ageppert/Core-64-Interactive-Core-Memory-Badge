@@ -396,26 +396,6 @@ Q4P
 Wire Wire Line
 	5850 1150 5850 1200
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q2
-U 1 1 5D5FAAAB
-P 5750 1400
-F 0 "Q2" H 5938 1453 60  0000 L CNN
-F 1 "MMBT4403LT1G" H 5938 1347 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 5950 1600 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 5950 1700 60  0001 L CNN
-F 4 "MMBT4403LT1GOSCT-ND" H 5950 1800 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4403LT1G" H 5950 1900 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 5950 2000 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 5950 2100 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 5950 2200 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 5950 2300 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS PNP 40V 0.6A SOT23" H 5950 2400 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 5950 2500 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 5950 2600 60  0001 L CNN "Status"
-	1    5750 1400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R11
 U 1 1 5D5FAAB1
 P 5550 1750
@@ -425,26 +405,6 @@ F 2 "Resistor_SMD:R_0805_2012Metric" V 5480 1750 50  0001 C CNN
 F 3 "~" H 5550 1750 50  0001 C CNN
 	1    5550 1750
 	0    -1   1    0   
-$EndComp
-$Comp
-L Digikey-Transistors:MMBT4401LT1G Q7
-U 1 1 5D5FAAC0
-P 5750 2100
-F 0 "Q7" H 5938 2153 60  0000 L CNN
-F 1 "MMBT4401LT1G" H 5938 2047 60  0000 L CNN
-F 2 "Digikey:SOT-23-3" H 5950 2300 60  0001 L CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2400 60  0001 L CNN
-F 4 "MMBT4401LT1GOSCT-ND" H 5950 2500 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT4401LT1G" H 5950 2600 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 5950 2700 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 5950 2800 60  0001 L CNN "Family"
-F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2900 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 5950 3000 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SOT23" H 5950 3100 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 5950 3200 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 5950 3300 60  0001 L CNN "Status"
-	1    5750 2100
-	1    0    0    -1  
 $EndComp
 Text GLabel 5100 2100 0    50   Input ~ 0
 Q4N
@@ -1219,11 +1179,7 @@ Wire Wire Line
 	7200 5850 7200 6050
 Connection ~ 7200 6050
 Wire Wire Line
-	6400 4400 6700 4400
-Wire Wire Line
 	6350 3650 6350 6050
-Wire Wire Line
-	6350 6050 6650 6050
 Wire Wire Line
 	6350 3650 6050 3650
 Wire Wire Line
@@ -1850,226 +1806,8 @@ F 3 "~" H 4150 7250 50  0001 C CNN
 	1    4150 7250
 	0    1    1    0   
 $EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5FCDFD13
-P 4150 1700
-F 0 "TP1" H 4213 1819 50  0000 L CNN
-F 1 "TestPoint" H 4213 1726 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 4350 1700 50  0001 C CNN
-F 3 "~" H 4350 1700 50  0001 C CNN
-	1    4150 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP5
-U 1 1 5FCE3594
-P 4150 1900
-F 0 "TP5" H 4213 2019 50  0000 L CNN
-F 1 "TestPoint" H 4213 1926 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 4350 1900 50  0001 C CNN
-F 3 "~" H 4350 1900 50  0001 C CNN
-	1    4150 1900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3250 1750 3500 1750
-Wire Wire Line
-	4150 1900 4050 1900
-Wire Wire Line
-	4050 1900 4050 1850
-Wire Wire Line
-	3500 1850 3500 1750
-Connection ~ 3500 1750
-Wire Wire Line
-	3950 1750 4050 1750
-Wire Wire Line
-	4050 1750 4050 1700
-Wire Wire Line
-	4050 1700 4150 1700
-Wire Wire Line
-	3500 1850 4050 1850
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5FDC2F4B
-P 6050 1700
-F 0 "TP2" H 6113 1819 50  0000 L CNN
-F 1 "TestPoint" H 6113 1726 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6250 1700 50  0001 C CNN
-F 3 "~" H 6250 1700 50  0001 C CNN
-	1    6050 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP6
-U 1 1 5FDC2F51
-P 6050 1900
-F 0 "TP6" H 6113 2019 50  0000 L CNN
-F 1 "TestPoint" H 6113 1926 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6250 1900 50  0001 C CNN
-F 3 "~" H 6250 1900 50  0001 C CNN
-	1    6050 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6050 1900 5950 1900
-Wire Wire Line
-	5950 1900 5950 1850
-Wire Wire Line
-	5850 1750 5950 1750
-Wire Wire Line
-	5950 1750 5950 1700
-Wire Wire Line
-	5950 1700 6050 1700
-Wire Wire Line
-	5400 1850 5950 1850
-$Comp
-L Connector:TestPoint TP3
-U 1 1 5FDD3A8B
-P 7950 1700
-F 0 "TP3" H 8013 1819 50  0000 L CNN
-F 1 "TestPoint" H 8013 1726 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 8150 1700 50  0001 C CNN
-F 3 "~" H 8150 1700 50  0001 C CNN
-	1    7950 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP7
-U 1 1 5FDD3A91
-P 7950 1900
-F 0 "TP7" H 8013 2019 50  0000 L CNN
-F 1 "TestPoint" H 8013 1926 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 8150 1900 50  0001 C CNN
-F 3 "~" H 8150 1900 50  0001 C CNN
-	1    7950 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7950 1900 7850 1900
-Wire Wire Line
-	7850 1900 7850 1850
-Wire Wire Line
-	7750 1750 7850 1750
-Wire Wire Line
-	7850 1750 7850 1700
-Wire Wire Line
-	7850 1700 7950 1700
-Wire Wire Line
-	7300 1850 7850 1850
-$Comp
-L Connector:TestPoint TP4
-U 1 1 5FDE4C7A
-P 9850 1700
-F 0 "TP4" H 9913 1819 50  0000 L CNN
-F 1 "TestPoint" H 9913 1726 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10050 1700 50  0001 C CNN
-F 3 "~" H 10050 1700 50  0001 C CNN
-	1    9850 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP8
-U 1 1 5FDE4C80
-P 9850 1900
-F 0 "TP8" H 9913 2019 50  0000 L CNN
-F 1 "TestPoint" H 9913 1926 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10050 1900 50  0001 C CNN
-F 3 "~" H 10050 1900 50  0001 C CNN
-	1    9850 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9850 1900 9750 1900
-Wire Wire Line
-	9750 1900 9750 1850
-Wire Wire Line
-	9650 1750 9750 1750
-Wire Wire Line
-	9750 1750 9750 1700
-Wire Wire Line
-	9750 1700 9850 1700
-Wire Wire Line
-	9200 1850 9750 1850
-Wire Wire Line
-	5400 1850 5400 1750
-Connection ~ 5400 1750
-Wire Wire Line
-	7300 1850 7300 1750
-Connection ~ 7300 1750
-Wire Wire Line
-	9200 1850 9200 1750
-Connection ~ 9200 1750
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5FE66091
-P 7600 4300
-F 0 "TP9" H 7663 4419 50  0000 L CNN
-F 1 "TestPoint" H 7663 4326 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7800 4300 50  0001 C CNN
-F 3 "~" H 7800 4300 50  0001 C CNN
-	1    7600 4300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP10
-U 1 1 5FE66097
-P 7600 4500
-F 0 "TP10" H 7663 4619 50  0000 L CNN
-F 1 "TestPoint" H 7663 4526 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7800 4500 50  0001 C CNN
-F 3 "~" H 7800 4500 50  0001 C CNN
-	1    7600 4500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7600 4500 7500 4500
-Wire Wire Line
-	7500 4500 7500 4400
-Wire Wire Line
-	7500 4400 7200 4400
-Wire Wire Line
-	6700 4300 6700 4400
-Connection ~ 6700 4400
-Wire Wire Line
-	6700 4400 6750 4400
-Wire Wire Line
-	6700 4300 7600 4300
-$Comp
-L Connector:TestPoint TP11
-U 1 1 5FEFA1E9
-P 7550 5950
-F 0 "TP11" H 7613 6069 50  0000 L CNN
-F 1 "TestPoint" H 7613 5976 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7750 5950 50  0001 C CNN
-F 3 "~" H 7750 5950 50  0001 C CNN
-	1    7550 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5FEFA1EF
-P 7550 6150
-F 0 "TP12" H 7613 6269 50  0000 L CNN
-F 1 "TestPoint" H 7613 6176 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7750 6150 50  0001 C CNN
-F 3 "~" H 7750 6150 50  0001 C CNN
-	1    7550 6150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7550 6150 7450 6150
-Wire Wire Line
-	6650 5950 7550 5950
-Wire Wire Line
-	7450 6150 7450 6050
-Wire Wire Line
-	7450 6050 7200 6050
-Wire Wire Line
-	6650 5950 6650 6050
-Connection ~ 6650 6050
-Wire Wire Line
-	6650 6050 6700 6050
 Wire Wire Line
 	1250 7200 1250 7100
 Connection ~ 1250 7100
@@ -2111,4 +1849,48 @@ F 3 "http://www.onsemi.com/pub/Collateral/NTR4503N-D.PDF" H 4350 7000 50  0001 C
 $EndComp
 Text Notes 3300 6800 0    50   ~ 0
 Rds(ON)=0.1
+$Comp
+L Digikey-Transistors:MMBT4401LT1G Q7
+U 1 1 5D5FAAC0
+P 5750 2100
+F 0 "Q7" H 5938 2153 60  0000 L CNN
+F 1 "MMBT4401LT1G" H 5938 2047 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 5950 2300 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2400 60  0001 L CNN
+F 4 "MMBT4401LT1GOSCT-ND" H 5950 2500 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4401LT1G" H 5950 2600 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 5950 2700 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 5950 2800 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4401LT1G/MMBT4401LT1GOSCT-ND/1139819" H 5950 3000 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SOT23" H 5950 3100 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 5950 3200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5950 3300 60  0001 L CNN "Status"
+	1    5750 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Digikey-Transistors:MMBT4403LT1G Q2
+U 1 1 5D5FAAAB
+P 5750 1400
+F 0 "Q2" H 5938 1453 60  0000 L CNN
+F 1 "MMBT4403LT1G" H 5938 1347 60  0000 L CNN
+F 2 "Digikey:SOT-23-3" H 5950 1600 60  0001 L CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 5950 1700 60  0001 L CNN
+F 4 "MMBT4403LT1GOSCT-ND" H 5950 1800 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT4403LT1G" H 5950 1900 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 5950 2000 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 5950 2100 60  0001 L CNN "Family"
+F 8 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 5950 2200 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/MMBT4403LT1G/MMBT4403LT1GOSCT-ND/1139820" H 5950 2300 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS PNP 40V 0.6A SOT23" H 5950 2400 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 5950 2500 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5950 2600 60  0001 L CNN "Status"
+	1    5750 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 4400 6750 4400
+Wire Wire Line
+	6350 6050 6700 6050
 $EndSCHEMATC
