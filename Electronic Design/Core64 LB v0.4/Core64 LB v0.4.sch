@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2020-08-27"
+Date "2020-11-14"
 Rev "0.4"
-Comp "Andy Geppert - Machine Ideas, LLC"
-Comment1 ""
-Comment2 ""
+Comp "Core64.MachineIdeas.com"
+Comment1 "DRAFT - UNRELEASED"
+Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -45,8 +45,6 @@ Wire Wire Line
 Wire Wire Line
 	5650 5250 1400 5250
 Wire Wire Line
-	5250 3150 5300 3150
-Wire Wire Line
 	4250 4050 5650 4050
 Wire Wire Line
 	4250 3950 5650 3950
@@ -62,7 +60,7 @@ Wire Wire Line
 	7650 5050 7750 5050
 Text GLabel 1400 5150 0    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 5250 5050 0    50   Output ~ 0
+Text GLabel 5250 5350 0    50   Output ~ 0
 LED_ARRAY_3V3_SIG
 $Sheet
 S 750  850  1450 250 
@@ -72,11 +70,11 @@ F1 "Core64 LB v0.4 Power.sch" 50
 $EndSheet
 Text Notes 650  2400 0    236  ~ 0
 TEENSY 3.2 MCU\nCONNECTIONS
-Text Notes 6350 7100 0    50   ~ 10
+Text Notes 6350 6950 0    50   ~ 10
 BOM TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
 Text GLabel 4250 4650 0    50   Output ~ 0
 SPI_CLK
-Text GLabel 8900 4450 2    50   Input ~ 0
+Text GLabel 8850 4450 2    50   Input ~ 0
 SD_SPI_CD
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo L1
@@ -111,10 +109,8 @@ F 3 "" H 5300 7750 50  0001 C CNN
 	1    5300 7750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5650 5050 5300 5050
-Text Notes 550  1600 0    236  ~ 47
-*** MUST CUT THE USB-VIN bridge on TEENSY 3.2 ***
+Text Notes 800  1600 0    217  ~ 43
+*** MUST CUT THE USB-VIN on back of TEENSY 3.2 ***
 $Comp
 L power:GNDD #PWR?
 U 1 1 5F4EB827
@@ -161,7 +157,7 @@ Text GLabel 5250 3650 0    50   Output ~ 0
 Q4P
 Text GLabel 5250 3750 0    50   Output ~ 0
 Q4N
-Text GLabel 5250 5350 0    50   Output ~ 0
+Text GLabel 5250 4950 0    50   Output ~ 0
 Q5P
 Text GLabel 8050 4150 2    50   Output ~ 0
 Q6P
@@ -183,7 +179,7 @@ Text GLabel 8050 3350 2    50   Output ~ 0
 Q10P
 Text GLabel 8050 3450 2    50   Output ~ 0
 Q9N
-Text GLabel 5250 4950 0    50   Output ~ 0
+Text GLabel 8050 5350 2    50   Output ~ 0
 SENSE_RESET
 Text GLabel 8050 5150 2    50   Output ~ 0
 WRITE_ENABLE
@@ -224,7 +220,7 @@ Wire Wire Line
 	5650 4350 5600 4350
 Text GLabel 2400 3050 0    50   Output ~ 0
 OLED_SPI_CS
-Text GLabel 2400 3150 0    50   Output ~ 0
+Text GLabel 8850 5150 2    50   Output ~ 0
 OLED_SPI_DC
 Text GLabel 2400 3250 0    50   Output ~ 0
 TOUCH_SPI_CS
@@ -251,7 +247,7 @@ Wire Wire Line
 	7650 3150 7750 3150
 Text Notes 5900 2200 0    50   ~ 0
 Teensy 3V3 is only used for AREF and\nTeensyView. Current is limited, do not\nuse for anything else.
-Text GLabel 4250 5050 0    50   Output ~ 0
+Text GLabel 4250 5350 0    50   Output ~ 0
 TFT_BACKLIGHT
 Wire Wire Line
 	7800 4750 7800 2100
@@ -297,11 +293,7 @@ SPARE_4_IR_IN
 Wire Wire Line
 	3550 4750 5650 4750
 Wire Wire Line
-	5300 5050 5300 5100
-Wire Wire Line
-	4400 5100 4400 5050
-Wire Wire Line
-	5300 5050 5250 5050
+	4400 5400 4400 5350
 Wire Wire Line
 	5650 2850 4000 2850
 Wire Wire Line
@@ -331,11 +323,11 @@ Wire Wire Line
 Wire Wire Line
 	7650 4350 9650 4350
 Wire Wire Line
-	8900 4450 8800 4450
+	8850 4450 8800 4450
 Wire Wire Line
 	7650 5250 8050 5250
 Wire Wire Line
-	7650 5150 8050 5150
+	7650 5150 8000 5150
 Text GLabel 4000 2950 0    50   BiDi ~ 0
 SAO_G2_or_SPARE_2_or_CP_ADDR_1
 Text Notes 8100 2650 0    50   ~ 0
@@ -345,7 +337,7 @@ Text Notes 3600 5800 0    50   ~ 0
 Wire Notes Line
 	4350 3500 3600 3500
 Text Notes 2750 2650 0    50   ~ 0
-8 Core Plane Selector [OPTIONAL]\nRequires other modificaitons.
+8 Core Plane Selector [OPTIONAL]\nRequires other modifications.
 Wire Wire Line
 	5300 3050 5300 3100
 Wire Wire Line
@@ -363,7 +355,6 @@ SILKSCREEN UNDER TEENSY: CUT VIN-BUSB
 Connection ~ 5600 4350
 Wire Wire Line
 	5600 4350 5600 5500
-Connection ~ 5300 5050
 Wire Wire Line
 	5250 3350 5300 3350
 Wire Wire Line
@@ -481,17 +472,6 @@ Wire Wire Line
 	5300 3750 5250 3750
 Connection ~ 5300 3650
 Wire Wire Line
-	5300 3150 5300 3200
-Wire Wire Line
-	5300 3200 5000 3200
-Wire Wire Line
-	5000 3200 5000 3150
-Wire Wire Line
-	5000 3150 2400 3150
-Connection ~ 5300 3150
-Wire Wire Line
-	5300 3150 5650 3150
-Wire Wire Line
 	2400 3250 5000 3250
 Wire Wire Line
 	5000 3250 5000 3300
@@ -534,15 +514,13 @@ Text Notes 3300 6950 0    50   ~ 0
 Text Notes 550  6900 0    50   ~ 0
 1) 
 Wire Wire Line
-	1350 3350 1550 3350
-Wire Wire Line
 	1550 3900 2450 3900
 Wire Wire Line
-	5250 5350 5650 5350
-Text GLabel 8050 5350 2    50   Output ~ 0
+	5250 5350 5300 5350
+Text GLabel 5250 5050 0    50   Output ~ 0
 Q5N
 Wire Wire Line
-	7650 5350 8050 5350
+	7650 5350 8000 5350
 Wire Wire Line
 	9400 2400 9500 2400
 Connection ~ 9400 2400
@@ -550,9 +528,7 @@ Connection ~ 9500 2400
 Wire Wire Line
 	9500 2400 10350 2400
 Wire Notes Line
-	9550 2650 9550 5500
-Text Notes 8900 2650 0    50   ~ 0
-SD Card Detect\n[OPTIONAL]
+	9550 2650 9550 4600
 Wire Notes Line
 	10350 2650 10350 5500
 Text Notes 9700 2600 0    50   ~ 0
@@ -602,16 +578,12 @@ Wire Wire Line
 	4300 4850 5650 4850
 Wire Wire Line
 	4250 4650 5650 4650
-Wire Wire Line
-	5000 3350 2450 3350
-Text GLabel 2400 3350 0    50   Output ~ 0
+Text GLabel 8850 5350 2    50   Output ~ 0
 TEENSYVIEW_SPI_DC
 Wire Wire Line
 	5000 3400 5000 3350
 Wire Wire Line
 	5300 3400 5000 3400
-Wire Wire Line
-	1550 3350 1550 3400
 Wire Wire Line
 	5000 3500 5300 3500
 Wire Wire Line
@@ -621,16 +593,9 @@ Wire Wire Line
 Text GLabel 2400 3450 0    50   Output ~ 0
 SD_SPI_CS
 Wire Wire Line
-	2450 3350 2450 3400
+	4400 5350 4250 5350
 Wire Wire Line
-	2450 3400 1550 3400
-Connection ~ 2450 3350
-Wire Wire Line
-	2450 3350 2400 3350
-Wire Wire Line
-	4400 5050 4250 5050
-Wire Wire Line
-	5300 5100 4400 5100
+	5300 5400 4400 5400
 Wire Notes Line
 	650  5000 2550 5000
 Text Notes 1000 5650 0    50   ~ 0
@@ -670,8 +635,8 @@ Text GLabel 9200 2100 0    50   Input ~ 0
 TEENSY_VIN
 Text Notes 6250 2750 0    50   ~ 0
 Left Edge
-Text Notes 6200 4200 0    50   ~ 0
-Short Edge
+Text Notes 6150 4200 0    50   ~ 0
+Bottom Edge
 Text Notes 6650 4900 0    50   ~ 0
 Right Edge
 Text Notes 6650 4500 0    50   ~ 0
@@ -695,4 +660,47 @@ Wire Wire Line
 	8800 4450 7650 4450
 Text Notes 700  6250 0    79   ~ 0
 QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is normally low, high to activate matrix transistor.
+Text Notes 8700 2250 0    50   ~ 0
+3.6-6.0V
+Text Notes 9650 3850 0    50   ~ 0
+All analog-only\npins (A10-A14),\nAREF, Program\nand Reset are\n3.3V only.
+Text Notes 800  4450 0    50   ~ 0
+All analog-only\npins (A10-A14),\nAREF, Program\nand Reset are\n3.3V only.
+Wire Wire Line
+	5250 5050 5650 5050
+Wire Wire Line
+	5300 5400 5300 5350
+Connection ~ 5300 5350
+Wire Wire Line
+	5300 5350 5650 5350
+Wire Wire Line
+	1350 3350 5000 3350
+Wire Wire Line
+	8000 5350 8000 5400
+Wire Wire Line
+	8000 5400 8700 5400
+Wire Wire Line
+	8700 5400 8700 5350
+Wire Wire Line
+	8700 5350 8850 5350
+Connection ~ 8000 5350
+Wire Wire Line
+	8000 5350 8050 5350
+Text Notes 8900 2650 0    50   ~ 0
+SPI Devices\n[OPTIONAL]
+Wire Wire Line
+	8850 5150 8700 5150
+Wire Wire Line
+	8700 5150 8700 5200
+Wire Wire Line
+	8700 5200 8000 5200
+Wire Wire Line
+	8000 5200 8000 5150
+Connection ~ 8000 5150
+Wire Wire Line
+	8000 5150 8050 5150
+Wire Notes Line
+	9550 4600 10350 4600
+Wire Wire Line
+	5250 3150 5650 3150
 $EndSCHEMATC

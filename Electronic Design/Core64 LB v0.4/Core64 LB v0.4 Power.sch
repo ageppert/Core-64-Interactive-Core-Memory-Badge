@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 5 5
 Title "Core 64 - Power Schematic"
-Date "2020-08-27"
+Date "2020-11-14"
 Rev "0.4"
-Comp "Andy Geppert - Machine Ideas, LLC"
-Comment1 ""
-Comment2 ""
+Comp "Core64.MachineIdeas.com"
+Comment1 "DRAFT - UNRELEASED"
+Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -32,14 +32,14 @@ Wire Wire Line
 $Comp
 L power:-BATT #PWR0104
 U 1 1 5D30A5B6
-P 1450 7550
+P 1500 7550
 AR Path="/5E7548ED/5D30A5B6" Ref="#PWR0104"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5D30A5B6" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0104" H 1450 7400 50  0001 C CNN
-F 1 "-BATT" H 1465 7723 50  0000 C CNN
-F 2 "" H 1450 7550 50  0001 C CNN
-F 3 "" H 1450 7550 50  0001 C CNN
-	1    1450 7550
+F 0 "#PWR0104" H 1500 7400 50  0001 C CNN
+F 1 "-BATT" H 1515 7723 50  0000 C CNN
+F 2 "" H 1500 7550 50  0001 C CNN
+F 3 "" H 1500 7550 50  0001 C CNN
+	1    1500 7550
 	-1   0    0    1   
 $EndComp
 Text Notes 8100 4550 0    50   ~ 0
@@ -60,7 +60,7 @@ $EndComp
 Text Notes 750  1700 0    50   ~ 0
 SOURCE 1 “ON (BAT)”\n  BUILT-IN BATTERY PACK (Keystone 2482CN) WITH 4X “AAA” Primary/Alkaline Cells\n  OK to use Energizer Ultimate Lithium (light weight!) with open cell 7.2V, loaded will be <7V.\n  Battery Pack includes wires and 3-pin plug.\n  \n  Socket: TH, Side Entry, JST PA S03B-PASK-2(LF)(SN), Digikey 455-1848-ND ($0.44/ea)\n  Socket: SMT, Top Entry, JST PA BM03B-PASS-1-TFT(LF)(SN), Digikey 455-2638-1-ND ($0.80)  \n  Socket: SMT, Side Entry, Keystone 976, Digikey 36-976CT-ND ($2.71/ea)
 Text Notes 750  2950 0    50   ~ 0
-SOURCE 2 “OFF (USB)”\n  USB 5V supplied through Teensy 3.2 \n  With the VIN-VUSB trace cut on the back of the Teensy, the TEENSY_VUSB is taken off of the\n  Teensy Board and routed on the Core64 LB to the lower position of the power switch. From\n  here, it powers the whole Core64 system and routes back to the TEENSY_VIN after passing\n  through the 5V LDO regulator.
+SOURCE 2 “OFF (USB)”\n  USB 5V supplied through Teensy 3.2 and optional LiPo Charger USB port.\n  With the VIN-VUSB trace cut on the back of the Teensy, the TEENSY_VUSB is taken off of the\n  Teensy Board and routed on the Core64 LB to the lower position of the power switch. From\n  here, it powers the whole Core64 system and routes back to the TEENSY_VIN after passing\n  through the 5V LDO regulator.
 $Comp
 L power:+BATT #PWR0105
 U 1 1 5E791B5B
@@ -169,8 +169,8 @@ Wire Wire Line
 	4100 5550 3850 5550
 Text GLabel 4100 5550 2    50   Output ~ 0
 VBAT_MON
-Text Notes 600  6850 0    118  ~ 0
-ALL SYSTEM STAR GROUNDING
+Text Notes 650  6850 0    118  ~ 0
+ALL SYSTEM GROUND
 Wire Wire Line
 	1550 2050 2150 2050
 $Comp
@@ -204,7 +204,7 @@ F 3 "" H 4500 7450 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text GLabel 3000 4950 2    50   Output ~ 0
-RPP
++RPP
 Text GLabel 4950 7450 1    50   Output ~ 0
 +VSW
 Wire Wire Line
@@ -255,23 +255,23 @@ $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H2
 U 1 1 5E8DC4AA
-P 1700 7200
-F 0 "H2" H 1800 7250 50  0000 L CNN
-F 1 "GND PAD" H 1800 7157 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1700 7200 50  0001 C CNN
-F 3 "~" H 1700 7200 50  0001 C CNN
-	1    1700 7200
+P 1750 7200
+F 0 "H2" H 1850 7250 50  0000 L CNN
+F 1 "GND PAD" H 1850 7157 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1750 7200 50  0001 C CNN
+F 3 "~" H 1750 7200 50  0001 C CNN
+	1    1750 7200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H1
 U 1 1 5E8DD364
-P 1200 7200
-F 0 "H1" H 1000 7250 50  0000 L CNN
-F 1 "GND PAD" H 800 7150 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1200 7200 50  0001 C CNN
-F 3 "~" H 1200 7200 50  0001 C CNN
-	1    1200 7200
+P 1250 7200
+F 0 "H1" H 1050 7250 50  0000 L CNN
+F 1 "GND PAD" H 850 7150 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1250 7200 50  0001 C CNN
+F 3 "~" H 1250 7200 50  0001 C CNN
+	1    1250 7200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -286,29 +286,29 @@ Wire Wire Line
 Wire Wire Line
 	5100 7500 5100 7450
 Wire Wire Line
-	1450 7450 1450 7550
+	1500 7450 1500 7550
 Wire Wire Line
-	2250 7550 2250 7450
-Text Notes 1700 7950 0    50   ~ 0
+	2300 7550 2300 7450
+Text Notes 1750 7950 0    50   ~ 0
 HIGH POWER\nSYSTEM GROUND
 $Comp
 L power:GND #PWR0115
 U 1 1 5E8C20D5
-P 2250 7550
+P 2300 7550
 AR Path="/5E7548ED/5E8C20D5" Ref="#PWR0115"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E8C20D5" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0115" H 2250 7300 50  0001 C CNN
-F 1 "GND" H 2255 7375 50  0000 C CNN
-F 2 "" H 2250 7550 50  0001 C CNN
-F 3 "" H 2250 7550 50  0001 C CNN
-	1    2250 7550
+F 0 "#PWR0115" H 2300 7300 50  0001 C CNN
+F 1 "GND" H 2305 7375 50  0000 C CNN
+F 2 "" H 2300 7550 50  0001 C CNN
+F 3 "" H 2300 7550 50  0001 C CNN
+	1    2300 7550
 	1    0    0    -1  
 $EndComp
-Text Notes 600  7950 0    50   ~ 0
+Text Notes 650  7950 0    50   ~ 0
 DIGITAL\nLOGIC GROUND
-Connection ~ 1450 7450
+Connection ~ 1500 7450
 Wire Wire Line
-	1450 7450 2250 7450
+	1500 7450 2300 7450
 $Comp
 L power:GND #PWR0167
 U 1 1 5E93E34A
@@ -355,11 +355,11 @@ F 3 "~" H 9400 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1200 7300 1200 7350
+	1250 7300 1250 7350
 Wire Wire Line
-	700  7450 1450 7450
+	750  7450 1500 7450
 Wire Wire Line
-	700  7450 700  7550
+	750  7450 750  7550
 Text Notes 2050 5400 0    50   ~ 0
 D
 Text Notes 2300 5550 0    50   ~ 0
@@ -412,7 +412,7 @@ Wire Wire Line
 	650  5350 800  5350
 Wire Wire Line
 	1100 5350 1250 5350
-Text Notes 600  6550 0    50   ~ 0
+Text Notes 650  6550 0    50   ~ 0
 OPTIONAL USB BYPASS:\nAs shipped, power switch\nin OFF position connects\nto USB power through\nthe Teensy.\nOPTIONAL:\nCut SJ if you want the \nOFF position to not\nbe powered from\nTeensy USB connector.
 Text Notes 1050 4800 0    79   ~ 0
 SILKSCREEN: ON (BAT) / OFF (USB)
@@ -439,7 +439,7 @@ Text Notes 3500 2200 0    157  ~ 31
 Text Notes 2200 2150 0    50   ~ 0
 SILKSCREEN: BAT. +/- pins
 Text GLabel 4800 7450 1    50   Input ~ 0
-RPP
++RPP
 Wire Wire Line
 	3550 5250 3850 5250
 $Comp
@@ -465,38 +465,38 @@ Text GLabel 5100 7450 1    50   Input ~ 0
 5V0
 Text GLabel 4650 7450 1    50   Input ~ 0
 TEENSY_VUSB
-Text GLabel 1200 3300 0    50   Input ~ 0
+Text GLabel 1500 4100 2    50   Input ~ 0
 TEENSY_VUSB
 Wire Wire Line
-	1450 7350 1200 7350
+	1500 7350 1250 7350
 $Comp
 L power:GNDD #PWR0103
 U 1 1 5D31E05B
-P 700 7550
+P 750 7550
 AR Path="/5E7548ED/5D31E05B" Ref="#PWR0103"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5D31E05B" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0103" H 700 7300 50  0001 C CNN
-F 1 "GNDD" H 704 7395 50  0000 C CNN
-F 2 "" H 700 7550 50  0001 C CNN
-F 3 "" H 700 7550 50  0001 C CNN
-	1    700  7550
+F 0 "#PWR0103" H 750 7300 50  0001 C CNN
+F 1 "GNDD" H 754 7395 50  0000 C CNN
+F 2 "" H 750 7550 50  0001 C CNN
+F 3 "" H 750 7550 50  0001 C CNN
+	1    750  7550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1450 7350 1450 7450
+	1500 7350 1500 7450
 Wire Wire Line
-	1450 7350 1700 7350
+	1500 7350 1750 7350
 Wire Wire Line
-	1700 7350 1700 7300
-Connection ~ 1450 7350
+	1750 7350 1750 7300
+Connection ~ 1500 7350
 Text Notes 4150 5750 0    50   ~ 0
 1%
 Text Notes 4150 5450 0    50   ~ 0
 1%
 Text Notes 1900 5200 0    50   ~ 0
 P-CHNL
-Text Notes 750  4100 0    157  ~ 31
-*** ALL CONFIGURATIONS REQUIRE CUTTING VIN-VUSB TRACE ON TEENSY ***
+Text Notes 900  3950 0    146  ~ 29
+*** ALL CONFIGURATIONS REQUIRE\nCUTTING VIN-VUSB TRACE ON\nBACK OF TEENSY ***
 Text GLabel 5400 7450 1    50   Output ~ 0
 VBAT_MON
 Text Notes 7600 3150 0    157  ~ 31
@@ -805,14 +805,12 @@ L Jumper:SolderJumper_3_Open JP9
 U 1 1 5F67458E
 P 9700 5550
 F 0 "JP9" V 9600 5650 50  0000 L CNN
-F 1 "3V3_Select" V 9450 5100 50  0000 L CNN
+F 1 "3V3_Select" V 9950 5100 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 9700 5550 50  0001 C CNN
 F 3 "~" H 9700 5550 50  0001 C CNN
 	1    9700 5550
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	10000 5550 9850 5550
 Wire Wire Line
 	9700 5350 9700 4800
 Wire Wire Line
@@ -821,7 +819,7 @@ Wire Wire Line
 	9700 6000 9700 5750
 Wire Wire Line
 	9550 6000 9700 6000
-Text Notes 9850 5050 0    118  ~ 24
+Text Notes 9800 5200 0    118  ~ 24
 Must\nSelect\nOne\nw/SJ
 Text GLabel 8000 4650 0    50   Input ~ 0
 5V0
@@ -954,9 +952,9 @@ Text Notes 6350 5850 0    50   ~ 0
 0.2Ω ≤ COUT ESR ≤ 5Ω
 Text Notes 6350 6050 0    50   ~ 0
 See data sheet for\ncapacitor requirements
-Text Notes 750  7000 0    50   ~ 0
+Text Notes 800  7000 0    50   ~ 0
 GND PAD 3.2 mm (.125 in) thru-hole for M3 or #4 screw
-Text Notes 2200 7150 0    50   ~ 0
+Text Notes 2250 7150 0    50   ~ 0
 SILKSCREEN: GND
 Text Notes 6750 2750 0    50   ~ 0
 SILKSCREEN: LIPO CHARGER
@@ -989,20 +987,14 @@ Connection ~ 6900 5100
 $Comp
 L Connector_Generic:Conn_01x02 J19
 U 1 1 5F9393CC
-P 10000 5350
-F 0 "J19" V 10100 5350 50  0000 R CNN
-F 1 "3V3 Cur. Mon." V 10200 5550 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 10000 5350 50  0001 C CNN
-F 3 "~" H 10000 5350 50  0001 C CNN
-	1    10000 5350
-	0    -1   -1   0   
+P 10000 5750
+F 0 "J19" V 10100 5750 50  0000 R CNN
+F 1 "3V3 Cur. Mon." V 10200 5950 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 10000 5750 50  0001 C CNN
+F 3 "~" H 10000 5750 50  0001 C CNN
+	1    10000 5750
+	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	10100 5550 10200 5550
-Wire Wire Line
-	10000 5550 10100 5550
-Connection ~ 10000 5550
-Connection ~ 10100 5550
 Wire Wire Line
 	9250 6200 9300 6200
 Wire Wire Line
@@ -1016,33 +1008,21 @@ Wire Wire Line
 Connection ~ 7100 5000
 Wire Wire Line
 	7100 5000 7150 5000
-Text GLabel 2250 3300 2    50   Output ~ 0
+Text GLabel 4050 4100 0    50   Output ~ 0
 TEENSY_VIN
 NoConn ~ 1550 2150
 Wire Wire Line
-	1200 3300 1350 3300
+	1500 4100 650  4100
 Wire Wire Line
-	1350 3300 1350 3500
-Wire Wire Line
-	1350 3500 650  3500
-Wire Wire Line
-	650  3500 650  5350
-Wire Wire Line
-	2250 3300 2100 3300
-Wire Wire Line
-	2100 3300 2100 3500
-Wire Wire Line
-	2100 3500 4900 3500
-Wire Wire Line
-	4900 3500 4900 4650
+	4900 4100 4900 4650
 Wire Wire Line
 	4900 4650 7100 4650
 Wire Wire Line
 	7100 4650 7100 5000
 Wire Wire Line
-	1350 3300 1350 3150
+	650  4100 650  3150
 Wire Wire Line
-	1350 3150 5100 3150
+	650  3150 5100 3150
 Wire Wire Line
 	5100 3150 5100 2600
 Wire Wire Line
@@ -1051,7 +1031,7 @@ Wire Wire Line
 	6650 2600 6650 3300
 Wire Wire Line
 	6400 3300 6650 3300
-Connection ~ 1350 3300
+Connection ~ 650  4100
 Text Notes 3500 1950 0    50   ~ 0
 SILKSCREEN:
 Text Notes 3500 2300 0    50   ~ 0
@@ -1129,4 +1109,16 @@ Text Notes 7650 5650 0    50   ~ 0
 IN MAX 5.5V
 Wire Wire Line
 	5300 4800 5800 4800
+Wire Wire Line
+	650  4100 650  5350
+Wire Wire Line
+	4050 4100 4900 4100
+Wire Wire Line
+	9850 5550 10000 5550
+Wire Wire Line
+	10100 5550 10200 5550
+Wire Wire Line
+	10000 5550 10100 5550
+Connection ~ 10000 5550
+Connection ~ 10100 5550
 $EndSCHEMATC

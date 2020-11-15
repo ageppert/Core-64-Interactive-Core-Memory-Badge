@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 5
 Title "Core 64 - Core Matrix Driver"
-Date "2020-08-27"
+Date "2020-11-14"
 Rev "0.4"
-Comp "Andy Geppert - Machine Ideas, LLC"
-Comment1 ""
-Comment2 ""
+Comp "Core64.MachineIdeas.com"
+Comment1 "DRAFT - UNRELEASED"
+Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -1424,7 +1424,7 @@ Text Notes 8700 5550 0    50   ~ 0
 ROW 2,6
 Text GLabel 3850 7000 0    50   Input ~ 0
 WRITE_ENABLE
-Text Notes 4900 6700 0    50   ~ 0
+Text Notes 4900 6650 0    50   ~ 0
 CORE MEMORY GROUND
 Wire Wire Line
 	4450 6700 4450 6800
@@ -1444,7 +1444,7 @@ F 3 "" H 5300 6700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3850 7000 3950 7000
-Text Notes 2000 6750 0    50   ~ 0
+Text Notes 1300 6750 0    50   ~ 0
 CORE MEMORY POWER
 Text GLabel 1050 7100 0    50   Input ~ 0
 3V3
@@ -1519,16 +1519,16 @@ CORE MATRIX ROW DRIVERS
 $Comp
 L power:VMEM #PWR0143
 U 1 1 5EC965BD
-P 2200 7000
-F 0 "#PWR0143" H 2200 6850 50  0001 C CNN
-F 1 "VMEM" H 2215 7173 50  0000 C CNN
-F 2 "" H 2200 7000 50  0001 C CNN
-F 3 "" H 2200 7000 50  0001 C CNN
-	1    2200 7000
+P 1700 7000
+F 0 "#PWR0143" H 1700 6850 50  0001 C CNN
+F 1 "VMEM" H 1715 7173 50  0000 C CNN
+F 2 "" H 1700 7000 50  0001 C CNN
+F 3 "" H 1700 7000 50  0001 C CNN
+	1    1700 7000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2200 7100 2200 7000
+	1700 7100 1700 7000
 Text Notes 3250 6500 0    118  ~ 0
 CORE MATRIX WRITE ENABLE
 Wire Wire Line
@@ -1697,7 +1697,7 @@ Wire Wire Line
 Wire Wire Line
 	750  2000 850  2000
 Wire Wire Line
-	4450 6700 5300 6700
+	4450 6700 4950 6700
 Wire Wire Line
 	1700 4400 1700 4450
 Connection ~ 1700 4450
@@ -1726,7 +1726,7 @@ F 3 "" H 1250 7500 50  0001 C CNN
 	1    1250 7500
 	1    0    0    -1  
 $EndComp
-Text Notes 1250 7800 0    50   ~ 0
+Text Notes 800  7850 0    50   ~ 0
 SYSTEM POWER GROUND
 Wire Wire Line
 	1250 7400 1250 7500
@@ -1811,27 +1811,19 @@ Wire Wire Line
 Wire Wire Line
 	1250 7200 1250 7100
 Connection ~ 1250 7100
-Wire Wire Line
-	1250 7100 1600 7100
 $Comp
 L Connector_Generic:Conn_01x02 J?
 U 1 1 5F97E8E3
-P 1600 6900
+P 5050 6900
 AR Path="/5E7548ED/5F97E8E3" Ref="J?"  Part="1" 
 AR Path="/5E755AC8/5F97E8E3" Ref="J13"  Part="1" 
-F 0 "J13" V 1700 6900 50  0000 R CNN
-F 1 "Core Cur. Mon." V 1800 7200 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1600 6900 50  0001 C CNN
-F 3 "~" H 1600 6900 50  0001 C CNN
-	1    1600 6900
-	0    -1   -1   0   
+F 0 "J13" V 5150 6900 50  0000 R CNN
+F 1 "Core Cur. Mon." V 5250 7200 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 5050 6900 50  0001 C CNN
+F 3 "~" H 5050 6900 50  0001 C CNN
+	1    5050 6900
+	0    1    1    0   
 $EndComp
-Wire Wire Line
-	1600 7100 1700 7100
-Wire Wire Line
-	1700 7100 2200 7100
-Connection ~ 1600 7100
-Connection ~ 1700 7100
 Text Notes 600  3300 0    79   ~ 0
 QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is normally low, high to activate matrix transistor.
 Text Notes 3300 6650 0    50   ~ 0
@@ -1841,7 +1833,7 @@ L Device:Q_NMOS_DGS Q4
 U 1 1 5FABD474
 P 4350 7000
 F 0 "Q4" H 4555 7047 50  0000 L CNN
-F 1 "Q_NMOS_DGS_NVTR4503NT1G" H 4555 6954 50  0000 L CNN
+F 1 "Q_NMOS_DGS_NVTR4503NT1G" H 4550 6700 50  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 4550 7100 50  0001 C CNN
 F 3 "http://www.onsemi.com/pub/Collateral/NTR4503N-D.PDF" H 4350 7000 50  0001 C CNN
 	1    4350 7000
@@ -1893,4 +1885,12 @@ Wire Wire Line
 	6400 4400 6750 4400
 Wire Wire Line
 	6350 6050 6700 6050
+Wire Wire Line
+	5050 6700 5300 6700
+Wire Wire Line
+	4950 6700 5050 6700
+Wire Wire Line
+	1250 7100 1700 7100
+Connection ~ 4950 6700
+Connection ~ 5050 6700
 $EndSCHEMATC

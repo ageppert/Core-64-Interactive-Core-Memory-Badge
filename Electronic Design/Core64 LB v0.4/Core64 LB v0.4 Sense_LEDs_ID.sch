@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 3 5
 Title "Core 64 - Sense"
-Date "2020-08-27"
+Date "2020-11-14"
 Rev "0.4"
-Comp "Andy Geppert - Machine Ideas, LLC"
-Comment1 ""
-Comment2 ""
+Comp "Core64.MachineIdeas.com"
+Comment1 "DRAFT - UNRELEASED"
+Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
 $EndDescr
