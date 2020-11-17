@@ -689,8 +689,6 @@ Wire Wire Line
 Text Notes 8900 2650 0    50   ~ 0
 SPI Devices\n[OPTIONAL]
 Wire Wire Line
-	8850 5150 8700 5150
-Wire Wire Line
 	8700 5150 8700 5200
 Wire Wire Line
 	8700 5200 8000 5200
@@ -703,4 +701,6 @@ Wire Notes Line
 	9550 4600 10350 4600
 Wire Wire Line
 	5250 3150 5650 3150
+Wire Wire Line
+	8700 5150 8850 5150
 $EndSCHEMATC

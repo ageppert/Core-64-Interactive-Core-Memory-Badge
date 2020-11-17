@@ -937,15 +937,13 @@ Wire Wire Line
 	4400 1200 4250 1200
 Wire Wire Line
 	4650 1200 4400 1200
-Text GLabel 4150 1050 0    50   Input ~ 0
-3V3
 Wire Wire Line
-	4150 1050 4250 1050
+	4150 1100 4250 1100
 Connection ~ 4250 1200
 Wire Wire Line
 	4150 1200 3900 1200
 Wire Wire Line
-	4250 1050 4250 1200
+	4250 1100 4250 1200
 Text Notes 3600 1000 0    118  ~ 0
 SPI CS PULL-UPS
 Wire Wire Line
@@ -993,4 +991,6 @@ Text Notes 8750 2750 0    50   ~ 0
 IM1/2/3 HIGH\nSETS SPI MODE
 Text Notes 9450 4750 0    59   ~ 0
 CARD DETECT\nDAT2\nD1\nCS (or D3)\nSI (or CMD)\nSO (or D0)\nCLK\nGND\n3V
+Text GLabel 4150 1100 0    50   Input ~ 0
+TEENSY_3V3
 $EndSCHEMATC
