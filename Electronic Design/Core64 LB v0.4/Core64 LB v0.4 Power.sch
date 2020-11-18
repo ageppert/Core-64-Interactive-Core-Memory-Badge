@@ -566,7 +566,7 @@ Wire Wire Line
 Wire Wire Line
 	5600 3400 5600 3450
 Text Notes 1850 6550 0    50   ~ 0
-OPTIONAL FET PROTECT:\n1) 10nF Cap. on left\n2) 10k Res. on bottom\n3) 10V Zener on right
+OPTIONAL FET PROTECT:\n1) 10nF Cap. on left\n2) 10V Zener on right
 $Comp
 L S03B-PASK-2_LF__SN_:S03B-PASK-2_LF__SN_ J8
 U 1 1 5F4CF3FA
