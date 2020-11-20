@@ -6,10 +6,10 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 4 5
 Title "Core 64 - Expansion"
-Date "2020-11-14"
+Date "2020-11-19"
 Rev "0.4"
 Comp "Core64.MachineIdeas.com"
-Comment1 "DRAFT - UNRELEASED"
+Comment1 "As fabricated"
 Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
@@ -618,7 +618,7 @@ SPI_SDO
 Text Notes 600  3000 0    118  ~ 0
 OLED TEENSYVIEW SPI
 Text Notes 650  4050 0    50   ~ 0
-Monochrome 128x32\nThe TeensyView is designed to stack on the Teensy 3.2\nConfiguration: https://www.sparkfun.com/products/14048\n\nUse only these Teensy pins:\n 21: D/C (default is 5)\n 10: CS\n 11: MODI\n 13: SCLK\n 15: RESET\n 3.3V Power from Teensy next to pin 23\n GND at corner next to pin 0
+Monochrome 128x32\nThe TeensyView is designed to stack on the Teensy 3.2\nConfiguration: https://www.sparkfun.com/products/14048\n\nUse only these Teensy pins:\n 21: D/C (default is 5)\n 10: CS\n 11: MOSI\n 13: SCLK\n 15: RESET\n 3.3V Power from Teensy next to pin 23\n GND at corner next to pin 0
 Text GLabel 2800 3750 0    50   Input ~ 0
 SPI_CLK
 Text GLabel 2800 3450 0    50   Input ~ 0
@@ -980,8 +980,6 @@ Text Notes 2200 2100 0    50   ~ 0
 CIPO
 Text GLabel 2800 3650 0    50   Input ~ 0
 SPI_SDO
-Text Notes 2950 3700 0    50   ~ 0
-COPI
 Text Notes 9750 1750 0    50   ~ 0
 TFT BETWEEN ROWS\n-TOP VIEW OF LB
 Wire Wire Line

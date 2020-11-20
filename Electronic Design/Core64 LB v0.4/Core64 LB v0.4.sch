@@ -6,10 +6,10 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2020-11-14"
+Date "2020-11-19"
 Rev "0.4"
 Comp "Core64.MachineIdeas.com"
-Comment1 "DRAFT - UNRELEASED"
+Comment1 "As fabricated"
 Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
@@ -79,34 +79,23 @@ SD_SPI_CD
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo L1
 U 1 1 5EC1FCB7
-P 1550 6900
-F 0 "L1" H 1575 6947 50  0000 L CNN
-F 1 "Core_64_Logo" H 1600 6850 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo" H 1550 6900 50  0001 C CNN
-F 3 "" H 1550 6900 50  0001 C CNN
-	1    1550 6900
+P 1900 6850
+F 0 "L1" H 1925 6897 50  0000 L CNN
+F 1 "Core_64_Logo" H 2050 6900 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo" H 1900 6850 50  0001 C CNN
+F 3 "" H 1900 6850 50  0001 C CNN
+	1    1900 6850
 	1    0    0    -1  
 $EndComp
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo L2
 U 1 1 5EC30987
-P 5300 7450
-F 0 "L2" H 5325 7497 50  0000 L CNN
-F 1 "Core_64_Logo" H 5325 7404 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo" H 5300 7450 50  0001 C CNN
-F 3 "" H 5300 7450 50  0001 C CNN
-	1    5300 7450
-	1    0    0    -1  
-$EndComp
-$Comp
-L CORE_64_LIBRARY:Core_64_Github_Link L3
-U 1 1 5EC378E3
-P 5300 7750
-F 0 "L3" H 5325 7797 50  0000 L CNN
-F 1 "Core_64_Github_Link" H 5350 7700 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Github_Link_Large" H 5300 7750 50  0001 C CNN
-F 3 "" H 5300 7750 50  0001 C CNN
-	1    5300 7750
+P 1950 7850
+F 0 "L2" H 1975 7897 50  0000 L CNN
+F 1 "Core_64_Logo" H 2000 7800 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo" H 1950 7850 50  0001 C CNN
+F 3 "" H 1950 7850 50  0001 C CNN
+	1    1950 7850
 	1    0    0    -1  
 $EndComp
 Text Notes 800  1600 0    217  ~ 43
@@ -509,10 +498,10 @@ Wire Wire Line
 	7850 2400 9400 2400
 Text Notes 550  6700 0    118  ~ 0
 SILKSCREEN FRONT
-Text Notes 3300 6950 0    50   ~ 0
-1) Serial Number Sticker Zone\n2) Board name, version, date, Machine Ideas
+Text Notes 3300 7800 0    50   ~ 0
+Core 64 Logo\nInteractive Core Memory\nQR Code\nMaker\nWebsite\nRTC Battery CR2032\nPCB Maker\nAssembler\nSerial Number\nP/N\nREV
 Text Notes 550  6900 0    50   ~ 0
-1) 
+Interactive Core Memory\nAll logic is 3V3 Level\n
 Wire Wire Line
 	1550 3900 2450 3900
 Wire Wire Line
@@ -617,12 +606,12 @@ Wire Wire Line
 $Comp
 L Graphic:Logo_Open_Hardware_Small L4
 U 1 1 60308F85
-P 5750 7200
-F 0 "L4" H 5750 7475 50  0001 C CNN
-F 1 "Logo_Open_Hardware_Small" H 5750 6975 50  0001 C CNN
-F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 5750 7200 50  0001 C CNN
-F 3 "~" H 5750 7200 50  0001 C CNN
-	1    5750 7200
+P 2350 7650
+F 0 "L4" H 2350 7925 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 2350 7425 50  0001 C CNN
+F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 2350 7650 50  0001 C CNN
+F 3 "~" H 2350 7650 50  0001 C CNN
+	1    2350 7650
 	1    0    0    -1  
 $EndComp
 Text Notes 7950 2000 0    50   ~ 0
@@ -703,4 +692,15 @@ Wire Wire Line
 	5250 3150 5650 3150
 Wire Wire Line
 	8700 5150 8850 5150
+$Comp
+L CORE_64_LIBRARY:Core_64_MachineIdeas_Link L3
+U 1 1 5FC1C28E
+P 5150 7200
+F 0 "L3" H 5175 7247 50  0000 L CNN
+F 1 "Core_64_MachineIdeas_Link" H 5175 7154 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_QR_Link_MachineIdeas" H 5150 7200 50  0001 C CNN
+F 3 "" H 5150 7200 50  0001 C CNN
+	1    5150 7200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
