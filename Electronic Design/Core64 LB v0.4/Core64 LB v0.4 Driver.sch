@@ -143,7 +143,7 @@ L Device:R R9
 U 1 1 5D406468
 P 3650 1750
 F 0 "R9" V 3443 1750 50  0000 C CNN
-F 1 "6R8" V 3534 1750 50  0000 C CNN
+F 1 "6R8-1%" V 3534 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 1750 50  0001 C CNN
 F 3 "~" H 3650 1750 50  0001 C CNN
 	1    3650 1750
@@ -400,7 +400,7 @@ L Device:R R11
 U 1 1 5D5FAAB1
 P 5550 1750
 F 0 "R11" V 5343 1750 50  0000 C CNN
-F 1 "6R8" V 5434 1750 50  0000 C CNN
+F 1 "6R8-1%" V 5434 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 5480 1750 50  0001 C CNN
 F 3 "~" H 5550 1750 50  0001 C CNN
 	1    5550 1750
@@ -601,7 +601,7 @@ L Device:R R13
 U 1 1 5D6343C3
 P 9350 1750
 F 0 "R13" V 9143 1750 50  0000 C CNN
-F 1 "6R8" V 9234 1750 50  0000 C CNN
+F 1 "6R8-1%" V 9234 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9280 1750 50  0001 C CNN
 F 3 "~" H 9350 1750 50  0001 C CNN
 	1    9350 1750
@@ -668,7 +668,7 @@ L Device:R R12
 U 1 1 5D63437C
 P 7450 1750
 F 0 "R12" V 7243 1750 50  0000 C CNN
-F 1 "6R8" V 7334 1750 50  0000 C CNN
+F 1 "6R8-1%" V 7334 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7380 1750 50  0001 C CNN
 F 3 "~" H 7450 1750 50  0001 C CNN
 	1    7450 1750
@@ -971,7 +971,7 @@ L Device:R R23
 U 1 1 5D6B8249
 P 6900 4400
 F 0 "R23" V 6750 4400 50  0000 C CNN
-F 1 "6R8" V 7000 4400 50  0000 C CNN
+F 1 "6R8-1%" V 7000 4400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 4400 50  0001 C CNN
 F 3 "~" H 6900 4400 50  0001 C CNN
 	1    6900 4400
@@ -1117,7 +1117,7 @@ L Device:R R29
 U 1 1 5D87AEBB
 P 6850 6050
 F 0 "R29" V 6700 6050 50  0000 C CNN
-F 1 "6R8" V 6950 6050 50  0000 C CNN
+F 1 "6R8-1%" V 6950 6050 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6780 6050 50  0001 C CNN
 F 3 "~" H 6850 6050 50  0001 C CNN
 	1    6850 6050
@@ -1384,8 +1384,8 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 	1    9400 3750
 	1    0    0    -1  
 $EndComp
-Text Notes 7950 7050 0    50   ~ 0
-Drive Transistor current: 3.3/470=7mA (too much for Teensy LC)\nMatrix 1/2 select current: 3.3/6.8= 485 mA (does not acccount \nfor voltage drop in transistors)
+Text Notes 2200 7450 0    50   ~ 0
+Matrix 1/2 select current: \n3.3/6.8= 485 mA\n(does not acccount for \nvoltage drop in transistors)
 Text Notes 2950 1700 0    50   ~ 0
 COL 0,4
 Text Notes 4850 1700 0    50   ~ 0
@@ -1893,4 +1893,6 @@ Wire Wire Line
 	1250 7100 1700 7100
 Connection ~ 4950 6700
 Connection ~ 5050 6700
+Text Notes 7950 800  0    50   ~ 0
+Drive Transistor current: 3.3/470=7mA
 $EndSCHEMATC
