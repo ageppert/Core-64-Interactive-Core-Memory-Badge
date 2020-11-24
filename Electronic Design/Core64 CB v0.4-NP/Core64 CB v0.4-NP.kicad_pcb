@@ -776,7 +776,7 @@
   )
 
   (module Core_Memory_8x8_Array:Core64_Logo_9mm_tall (layer F.Cu) (tedit 5F3F1D27) (tstamp 5FBB377D)
-    (at -9.035 -37.57)
+    (at -5.3266 -37.6208)
     (path /5FC25016)
     (fp_text reference L1 (at 0 -27) (layer F.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)))
@@ -1437,7 +1437,7 @@
   (gr_line (start 26.67 30.48) (end -26.67 30.48) (layer Edge.Cuts) (width 0.05))
   (gr_line (start 30.48 -26.67) (end 30.48 26.67) (layer Edge.Cuts) (width 0.05))
   (gr_line (start -26.67 -30.48) (end 26.67 -30.48) (layer Edge.Cuts) (width 0.05))
-  (gr_text "NEON\nPIXEL\nEDITION" (at 12.265 -37.45) (layer F.SilkS) (tstamp 5FBC55FD)
+  (gr_text "NEON\nPIXEL\nEDITION" (at 14.4526 -37.5412) (layer F.SilkS) (tstamp 5FBC55FD)
     (effects (font (size 1.7 1.7) (thickness 0.4)) (justify left))
   )
   (gr_text 0x30 (at -24.135 36.607) (layer B.SilkS) (tstamp 5F40F69C)
