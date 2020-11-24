@@ -684,7 +684,7 @@ SILKSCREEN:\n<-bit 7-0
 Text Notes 2800 2250 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
 Text Notes 550  7250 0    50   ~ 0
-CORE BOARD   V0.4   [REL. DATE].  ANDY GEPPERT   \nCore64.MachineIdeas.com\nInteractive Core Memory
+CORE BOARD   V0.4-NP   [REL. DATE].  ANDY GEPPERT   \nCore64.MachineIdeas.com\nInteractive Core Memory
 $Comp
 L power:GNDD #PWR0102
 U 1 1 5F5DFB1F
