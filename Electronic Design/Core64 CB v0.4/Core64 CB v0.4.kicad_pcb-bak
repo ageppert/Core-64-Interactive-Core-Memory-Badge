@@ -71,7 +71,7 @@
     (visible_elements FFFFEFFF)
     (pcbplotparams
       (layerselection 0x010f0_ffffffff)
-      (usegerberextensions false)
+      (usegerberextensions true)
       (usegerberattributes false)
       (usegerberadvancedattributes false)
       (creategerberjobfile false)
@@ -236,7 +236,7 @@
     (fp_text value SFH11-NBPC-D03-ST-BK (at 0 -8.509) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text user SAO (at 0.1 -5) (layer F.SilkS)
+    (fp_text user SAO#2 (at 0.1 -5) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text user 3V3 (at -2.5 4.4) (layer F.SilkS)

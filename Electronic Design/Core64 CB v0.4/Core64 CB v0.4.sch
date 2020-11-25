@@ -8,9 +8,9 @@ Sheet 1 1
 Title "Core64 CB (Core Board)"
 Date "2020-08-22"
 Rev "0.4"
-Comp "Andy Geppert - Machine Ideas, LLC"
-Comment1 ""
-Comment2 ""
+Comp "Core64.MachineIdeas.com"
+Comment1 "As prototyped 22AUG2020"
+Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -639,8 +639,8 @@ Wire Wire Line
 Connection ~ 8150 6450
 Text Notes 600  700  0    100  ~ 0
 CORE MATRIX
-Text Notes 8250 1200 0    100  ~ 0
-[OPTIONAL] SAO EXPANSION
+Text Notes 8100 1050 0    100  ~ 0
+[OPTIONAL] SAO #2 EXPANSION
 Text Notes 1600 3200 0    50   ~ 0
 SILKSCREEN: 0x30
 Text Notes 4000 3200 0    50   ~ 0
@@ -1233,4 +1233,6 @@ Text Notes 5250 5150 0    50   ~ 0
 STEP 4 (LOGIC BOARD):\nSee instructions on Logic Board.
 Text Notes 6350 6900 0    50   ~ 0
 AS PROTOTYPED 22AUG2020
+Text Notes 8150 1250 0    50   ~ 0
+SIMPLE ADD ONS see:\nhttps://hackaday.io/project/175182-simple-add-ons-sao
 $EndSCHEMATC

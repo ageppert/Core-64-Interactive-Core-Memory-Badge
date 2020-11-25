@@ -22,8 +22,8 @@ Text GLabel 2250 5150 0    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
 	2250 5150 2500 5150
-Text Notes 5150 4700 0    118  ~ 0
-SAO #1 SUPERIOR ADD-ON
+Text Notes 5250 4700 0    118  ~ 0
+SAO #1 SIMPLE ADD ONS
 $Comp
 L power:GND #PWR?
 U 1 1 5EAA9421
@@ -97,7 +97,7 @@ I2C_CLOCK
 Text GLabel 5700 4800 0    50   BiDi ~ 0
 I2C_DATA
 Text Notes 5300 6200 0    50   ~ 0
-SAO v1.69bis (https://hackaday.io/project/52950-shitty-add-ons)\nusing Sullins SFH11-NBPC-D03-ST-BK female header\nhttps://www.digikey.com/product-detail/en/sullins-connector-solutions/\nSFH11-NBPC-D03-ST-BK/S9717-ND/4558818
+https://hackaday.io/project/175182-simple-add-ons-sao\nusing Sullins SFH11-NBPC-D03-ST-BK female header\nhttps://www.digikey.com/product-detail/en/sullins-connector-solutions/\nSFH11-NBPC-D03-ST-BK/S9717-ND/4558818
 Wire Wire Line
 	5450 5400 5450 5350
 Wire Wire Line

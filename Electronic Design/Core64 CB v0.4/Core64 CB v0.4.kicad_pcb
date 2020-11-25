@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 42)
+    (drawings 43)
     (tracks 706)
     (zones 0)
     (modules 36)
@@ -236,7 +236,7 @@
     (fp_text value SFH11-NBPC-D03-ST-BK (at 0 -8.509) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text user SAO (at 0.1 -5) (layer F.SilkS)
+    (fp_text user SAO#2 (at 0.1 -5) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text user 3V3 (at -2.5 4.4) (layer F.SilkS)
@@ -2368,6 +2368,9 @@
       (net 35 H_XT3-7))
   )
 
+  (gr_text SAO#2 (at 33.015 -39.15) (layer B.SilkS) (tstamp 5FBED668)
+    (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
+  )
   (gr_text "IO1\nIO2\n" (at 30.115 12.75) (layer B.SilkS) (tstamp 5F41C70B)
     (effects (font (size 1.58 0.8) (thickness 0.16)) (justify right mirror))
   )

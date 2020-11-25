@@ -533,7 +533,7 @@ $EndComp
 Wire Wire Line
 	6700 2350 6950 2350
 Text Notes 8850 1200 0    50   ~ 0
-SILKSCREEN FRONT AND BACK: \nSAO, GNDD, 3V3, SDA,SCL\nGPIO1, GPIO2
+SILKSCREEN FRONT AND BACK: \nSAO#2, GNDD, 3V3, SDA,SCL\nGPIO1, GPIO2
 $Comp
 L Device:C C5
 U 1 1 5F432D69
@@ -596,8 +596,8 @@ Wire Wire Line
 Connection ~ 8150 6450
 Text Notes 600  700  0    100  ~ 0
 CORE MATRIX
-Text Notes 7950 800  0    100  ~ 0
-[OPTIONAL] SAO EXPANSION
+Text Notes 7900 700  0    100  ~ 0
+[OPTIONAL] SAO #2 EXPANSION
 Text Notes 1600 3200 0    50   ~ 0
 SILKSCREEN: 0x30
 Text Notes 4000 3200 0    50   ~ 0
@@ -762,4 +762,6 @@ NoConn ~ 1500 2500
 NoConn ~ 1500 2600
 Text Notes 5600 7250 0    50   ~ 0
 NEON\nPIXELS\nEDITION
+Text Notes 7950 900  0    50   ~ 0
+SIMPLE ADD ONS see:\nhttps://hackaday.io/project/175182-simple-add-ons-sao
 $EndSCHEMATC
