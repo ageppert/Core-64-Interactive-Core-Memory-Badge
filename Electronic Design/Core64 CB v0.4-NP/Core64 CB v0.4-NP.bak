@@ -8,11 +8,11 @@ Sheet 1 1
 Title "Core64 CB (Core Board)"
 Date "2020-11-23"
 Rev "0.4-NP"
-Comp "Andy Geppert - Machine Ideas, LLC"
-Comment1 ""
-Comment2 ""
+Comp "Core64.MachineIdeas.com"
+Comment1 "Final Review before prototype fabrication"
+Comment2 "Andy Geppert"
 Comment3 ""
-Comment4 ""
+Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
 Text GLabel 3950 2500 3    50   Input ~ 0
 XB0
