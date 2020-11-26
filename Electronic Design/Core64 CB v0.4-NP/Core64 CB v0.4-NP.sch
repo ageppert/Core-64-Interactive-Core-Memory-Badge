@@ -6,10 +6,10 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Core64 CB (Core Board)"
-Date "2020-11-24"
+Date "2020-11-25"
 Rev "0.4-NP"
 Comp "Core64.MachineIdeas.com"
-Comment1 "As fabricated"
+Comment1 "As prototyped"
 Comment2 "Andy Geppert"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
