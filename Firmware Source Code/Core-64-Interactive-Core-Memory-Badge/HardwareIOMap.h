@@ -38,7 +38,7 @@ extern "C" {
 // #define SDCARD_ENABLE                  	// Save program memory (6K) with Teensy LC by commenting this out.
 // #define AMBIENT_LIGHT_SENSOR_ENABLE   	// Save program memory (14K) with Teensy LC by commenting this out.
 // #define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE
-// #define HALL_SENSOR_ENABLE				// Save program memory (10K)
+#define HALL_SENSOR_ENABLE				// Save program memory (10K)
 
 void DetectHardwareVersion ();		// Use once to detect and set the hardware version variables.
 
@@ -56,7 +56,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include whole string.
-	#define FIRMWAREVERSION "1128.2135" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "1129.1328" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************

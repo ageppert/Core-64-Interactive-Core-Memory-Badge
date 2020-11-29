@@ -50,6 +50,7 @@
 #include "SD_Card_Manager.h"
 #include "Ambient_Light_Sensor.h"
 
+#include "Core_Driver.h"
 // #define DEBUG 1
 
 uint32_t SerialNumber = 0;          // Default value is 0 and should be non-zero if the Serial Number is valid.
@@ -59,19 +60,19 @@ enum TopLevelState                  // Master State Machine
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
   STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
   STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        //  3 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        //  4 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   //  5 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  //  6 Testing LED Driver with matrix array and multi-color symbols
+  STATE_LED_TEST_ALL_BINARY,        // y 3 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        // y 4 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   // y 5 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  // n  6 Testing LED Driver with matrix array and multi-color symbols
   STATE_TEST_EEPROM,                //  7
-  STATE_LED_TEST_ALL_COLOR,         //  8 Test LED Driver with all pixels and all colors
+  STATE_LED_TEST_ALL_COLOR,         // n 8 Test LED Driver with all pixels and all colors
   STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
   STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
   STATE_CORE_TEST_MANY,             //  11 Testing multiple cores and displaying core state
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_LED_TEST_ALL_COLOR; // STATE_SCROLLING_TEXT;
+static uint8_t TopLevelState = STATE_SCROLLING_TEXT; // STATE_CORE_TOGGLE_BIT; // 
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -152,6 +153,7 @@ void loop() {
   // MODE SWITCHING
   // If button is pressed, go to next mode.
   // Must be released and pressed again for subsequent action.
+
   Button1HoldTime = ButtonState(1,0);
   if ( (ButtonReleased == true) && (Button1HoldTime >= 500) ){
     ButtonState(1,1); // Force a "release" after press by clearing the button hold down timer
@@ -160,12 +162,13 @@ void loop() {
     if(ColorFontSymbolToDisplay>3) { ColorFontSymbolToDisplay = 0; }
     TopLevelState++;
     TopLevelStateChanged = true; // User application has one time to use this before it is reset.
+
   }
   else {
     if (Button1HoldTime == 0) {
       ButtonReleased = true;
       TopLevelStateChanged = false;
-      }
+    }
   }
 
   // IOESpare2_Off();
@@ -284,22 +287,23 @@ void loop() {
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
     coreToTest=0;
     LED_Array_Monochrome_Set_Color(50,255,255);
-
+Serial.println("Tracing Pulses 5"); // Need to abstract this debug stuff
+TracingPulses(5);
     // DebugWithReedSwitchOutput();
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
-        IOESpare1_On();
+        // IOESpare1_On();
         Core_Mem_Bit_Write(bit,0);
         LED_Array_String_Write(bit,0);
         LED_Array_String_Display();
-        IOESpare1_Off();
+        // IOESpare1_Off();
         delay(1);
 
-        IOESpare1_On();
+        // IOESpare1_On();
         Core_Mem_Bit_Write(bit,1);
         LED_Array_String_Write(bit,1);
         LED_Array_String_Display();
-        IOESpare1_Off();
+        // IOESpare1_Off();
         // delay(50);
       }
     // DebugWithReedSwitchInput();

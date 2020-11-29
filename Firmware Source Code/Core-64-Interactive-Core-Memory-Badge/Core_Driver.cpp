@@ -472,16 +472,9 @@ void tempDebugPin25InputMode () {
 }
 
 void TracingPulses(uint8_t numberOfPulses) {
-  if (HardwareVersionMinor == 2)   { 
-    for (uint8_t i = 1; i <= numberOfPulses; i++) {
-      tempDebugPin25Twiddle ();
-    }
-  }
-  else if (HardwareVersionMinor == 3)
-  {
-    for (uint8_t i = 1; i <= numberOfPulses; i++) {
-      tempDebugPin10Twiddle ();
-    }
+  for (uint8_t i = 1; i <= numberOfPulses; i++) {
+    DebugIOESpare2_On();
+    DebugIOESpare2_Off();
   }
 }
 

@@ -171,7 +171,7 @@ void DrawOneFrame( byte startHue8, int8_t yHueDelta8, int8_t xHueDelta8)
 
 void LED_Array_Test_Rainbow_Demo() {
     uint32_t ms = millis();
-    ms = (ms>>1) ; // Andy change, slow it down
+    ms = (ms>>8) ; // Andy change, slow it down
     int32_t yHueDelta32 = ((int32_t)cos16( ms * (27/1) ) * (350 / kMatrixWidth));
     int32_t xHueDelta32 = ((int32_t)cos16( ms * (39/1) ) * (310 / kMatrixHeight));
     DrawOneFrame( ms / 65536, yHueDelta32 / 32768, xHueDelta32 / 32768);

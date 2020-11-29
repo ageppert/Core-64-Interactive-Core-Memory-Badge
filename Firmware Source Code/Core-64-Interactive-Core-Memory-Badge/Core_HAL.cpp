@@ -121,10 +121,11 @@ void Core_Mem_Monitor() {
 }
 
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
-  Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
+
+  // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   // Turn off all of the matrix signals
-  cli();                                            // Testing for consistent timing.
-  // TracingPulses(1);
+  // cli();                                            // Testing for consistent timing.
+  TracingPulses(1);
   // DebugPin10_On();
   CoreSenseReset();                                 // Reset sense pulse flip-flop in case this write is called from read.
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
@@ -144,11 +145,11 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // TracingPulses(4);
   // DebugPin10_Off();
   CoreSenseReset();
-  sei();                                            // Testing for consistent timing.
+  // sei();                                            // Testing for consistent timing.
 }
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
-  Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
+  // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   static bool value = 0;
    cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
   DebugWithReedSwitchOutput();
