@@ -71,7 +71,7 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_SCROLLING_TEXT;
+static uint8_t TopLevelState = STATE_LED_TEST_ALL_COLOR; // STATE_SCROLLING_TEXT;
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -91,7 +91,7 @@ void setup() {
   I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
     delay(1500); // Wait for the serial port to connect if it's there. Otherwise, move on.
-    Serial.println("\nCore64 - Interactice Core Memory Badge");
+    Serial.println("\nCore64 - Interactive Core Memory Badge");
     Serial.println("Andy Geppert at Core64.MachineIdeas.com");
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed

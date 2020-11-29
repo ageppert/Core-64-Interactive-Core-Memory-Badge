@@ -73,9 +73,7 @@ uint8_t LEDArrayMonochromeColorHSV  [3] = {DEFAULTLEDArrayMonochromeColorH,DEFAU
 uint8_t LEDArrayBrightness = BRIGHTNESS;
 
 void LED_Array_Auto_Brightness() {
-  if(HardwareVersionMinor==2)
-    {return;}
-  else
+  if(HardwareVersionMinor==4)
     {
       if(AmbientLightAvaible()==0) {LEDArrayBrightness = BRIGHTNESS;}
       else {LEDArrayBrightness = GetAmbientLightLevel8BIT();}

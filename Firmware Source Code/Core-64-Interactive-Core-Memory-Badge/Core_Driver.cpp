@@ -12,10 +12,11 @@
 
 // Array from 1-20 with MCU pin # associated to verbose transitor drive line name. Ex: PIN_MATRIX_DRIVE_Q1P
 // Array position number 0 is not used in the matrix pin numbering
-// Matrix Drive Line array position :    Unused, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20
+// Matrix Drive Line array position :    Unused, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33
 // Look out for these!              :                                                               *  *  *
-// MCU PIN #                        :       N/A, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,20,21,22
-static uint8_t MatrixDrivePinNumber[23] = {
+// V0.3 MCU PIN #                   :       N/A, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17, -, -,20,21,22
+// V0.4 MCU PIN #                   :       N/A, -, 1, 2, 3, 4, 5, 6, 7, 8, -, -, -, -, -, -, 9,10, -, -, -, -, -, -,11,12,13,14,15,16,17,20,21,22
+static uint8_t MatrixDrivePinNumber[34] = {
   0,
   PIN_MATRIX_DRIVE_Q1P ,
   PIN_MATRIX_DRIVE_Q1N ,
@@ -25,8 +26,20 @@ static uint8_t MatrixDrivePinNumber[23] = {
   PIN_MATRIX_DRIVE_Q3N ,
   PIN_MATRIX_DRIVE_Q4P ,
   PIN_MATRIX_DRIVE_Q4N ,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
   PIN_MATRIX_DRIVE_Q5P ,
   PIN_MATRIX_DRIVE_Q5N ,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
   PIN_MATRIX_DRIVE_Q6P ,
   PIN_MATRIX_DRIVE_Q6N ,
   PIN_MATRIX_DRIVE_Q7P ,
@@ -34,8 +47,6 @@ static uint8_t MatrixDrivePinNumber[23] = {
   PIN_MATRIX_DRIVE_Q8P ,
   PIN_MATRIX_DRIVE_Q8N ,
   PIN_MATRIX_DRIVE_Q9P ,
-  0,
-  0,
   PIN_MATRIX_DRIVE_Q9N ,
   PIN_MATRIX_DRIVE_Q10P,
   PIN_MATRIX_DRIVE_Q10N
@@ -44,35 +55,27 @@ static uint8_t MatrixDrivePinNumber[23] = {
 // All QxN transistors are Active High.
 // All QxP transistors are Active Low.
 
-// V0.1.x and V0.2.x hardware (direct MCU pin control)
+// V0.4 hardware (direct MCU pin control)
 // Look up the drive line number by knowing where it is in the array by it's own number.
 // In other words, the pin # has to be the same as the array position.
 // Array needs to be as big as the largest used pin number.
 // Ex:
-//                             array position:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22
-//                             usable pins   :  -, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,--,--,20,21,22
+//                             array position:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33
+// V0.4 MCU PIN #              usable pins   :  x, x, 1, 2, 3, 4, 5, 6, 7, 8, x, x, x, x, x, x, 9,10, x, x, x, x, x, x,11,12,13,14,15,16,17,20,21,22
 // MCU output pins are set to these states to correspond to activation of the transistor needed to achieve on/off state.
-const bool MatrixDrivePinInactiveState[23] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0}; // logic level to turn off transistor
-const bool MatrixDrivePinActiveState[23]   = { 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1}; // logic level to turn on transistor
+const bool MatrixDrivePinInactiveState[34] =  { 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0}; // logic level to turn off transistor
+const bool MatrixDrivePinActiveState[34]   =  { 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1}; // logic level to turn on transistor
 
-// V0.3.x hardware (through IO Expanders)
-//                                 array position:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
-//                            usable IOE38 pins  :  -, -, -, -, -, -, -, 7, 8, 9, 10, 11
-//                           IOE38_MATRIX_DRIVE_Q:  -, -, -, -,7P,7N,8P,8N,9P,9N,10P,10N
-// IO Expander output pins are set to these states to correspond to activation of the transistor needed to achieve on/off state.
-const bool IOE38MatrixDrivePinActiveState[12]   = { 0, 0, 0, 0, 0, 1, 0, 1, 0, 1,  0,  1}; // logic level to turn on transistor
-
-const uint16_t IOE38CoresOnlyMatrixDriveTransistorsInactive       = 0b0101010101010101;
-const uint16_t IOE39CoresSenseHallsMatrixDriveTransistorsInactive = 0b0000000000000101;
 
 // MCU output pin is set to these states to correspond to activation of the transistor needed to achieve active/inactive state.
 #define WRITE_ENABLE_ACTIVE   1 // logic level to turn on transistor
 #define WRITE_ENABLE_INACTIVE 0 // logic level to turn off transistor
 
 void Core_Driver_Setup() {
-  if (HardwareVersionMinor == 2)
+  if (HardwareVersionMinor == 4)
   {
-    pinMode(Pin_v020_Sense_Pulse, INPUT);
+    pinMode(Pin_Sense_Pulse, INPUT);
+    pinMode(Pin_Sense_Reset, OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q1P,  OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q1N,  OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q2P,  OUTPUT);
@@ -94,41 +97,13 @@ void Core_Driver_Setup() {
     pinMode(PIN_MATRIX_DRIVE_Q10P, OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
     pinMode(PIN_WRITE_ENABLE, OUTPUT);
+    pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
+    pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
   }
-  else if (HardwareVersionMinor == 3)
+  else
   {
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q5P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q5N           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q6P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q6N           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q7P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q7N           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q8P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q8N           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q9P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q9N           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q10P          , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q10N          , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q3P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q3N           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q4P           , OUTPUT);
-    IOE38CoresOnly.pinMode(IOE38_MATRIX_DRIVE_Q4N           , OUTPUT);
-
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q1P           , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q1N           , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q2P           , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Q2N           , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Spare_1       , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Spare_2       , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Spare_3       , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Spare_4       , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Spare_5       , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Write_Enable  , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Sense_Reset   , OUTPUT);
-    IOE39CoresSenseHalls.pinMode(IOE39_MATRIX_DRIVE_Sense_Pulse   , INPUT);
-    IOE39CoresSenseHalls.pullUp (IOE39_MATRIX_DRIVE_Sense_Pulse   , HIGH);  // turn on a 100K pullup internally
-
-    pinMode(PIN_SD_CS, OUTPUT);
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
@@ -205,7 +180,7 @@ columns, to make the circuit simpler. A new row set and clear array are required
 account that every other bit needs to have the current direction reversed in order to compensate 
 if all of the cores are to be physically addressed in an orderly sequence. 
 */
-// V0.1.x and V0.2.x hardware (direct MCU pin control)
+// V0.1.x and V0.2.x and V0.4.x hardware (direct MCU pin control)
 uint8_t CMMDSetRowByBit[][2] = {
   { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Bit  0    ROW 0
   { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Bit  1    ROW 0
@@ -356,202 +331,48 @@ uint8_t CMMDClearRowByBit[][2] = {
 
 };
 
-// V0.3.x hardware (through IO Expanders)
-uint8_t IOE38CMMDSetRowByBit[][2] = {
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 0     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 1     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 2     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 3     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 4     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 5     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 6     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 7     ROW 0 
-
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit  8    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit  9    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 10    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 11    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 12    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 13    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 14    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 15    ROW 1
-
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 16    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 17    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 18    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 19    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 20    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 21    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 22    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 23    ROW 2
-
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 24    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 25    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 26    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 27    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 28    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 29    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 30    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 31    ROW 3
-
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 32    ROW 4 P/N swapped from ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 33    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 34    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 35    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 36    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 37    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 38    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 39    ROW 4
-
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 40    ROW 5 P/N swapped from ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 41    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 42    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 43    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 44    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 45    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 46    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 47    ROW 5
-
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 48    ROW 6 P/N swapped from ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 49    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 50    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 51    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 52    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 53    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 54    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 55    ROW 6
-
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 56    ROW 7 P/N swapped from ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 57    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 58    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 59    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 60    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 61    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 62    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P }   // Bit 63    ROW 7
-
-}; 
-
-uint8_t IOE38CMMDClearRowByBit[][2] = {
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 0     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 1     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 2     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 3     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 4     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 5     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 6     ROW 0
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 7     ROW 0 
-
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit  8    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit  9    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 10    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 11    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 12    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 13    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 14    ROW 1
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 15    ROW 1
-
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 16    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 17    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 18    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 19    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 20    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 21    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 22    ROW 2
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 23    ROW 2
-
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 24    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 25    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 26    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 27    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 28    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 29    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 30    ROW 3
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 31    ROW 3
-
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 32    ROW 4 P/N swapped from ROW 0
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 33    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 34    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 35    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 36    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 37    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 38    ROW 4
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 39    ROW 4
-
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 40    ROW 5 P/N swapped from ROW 1
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 41    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 42    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 43    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 44    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 45    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 46    ROW 5
-  { IOE38_MATRIX_DRIVE_Q7P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 47    ROW 5
-
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 48    ROW 6 P/N swapped from ROW 2
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 49    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 50    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 51    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 52    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 53    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q9N  },  // Bit 54    ROW 6
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q9P  },  // Bit 55    ROW 6
-
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 56    ROW 7 P/N swapped from ROW 3
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 57    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 58    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 59    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 60    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N },  // Bit 61    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8N , IOE38_MATRIX_DRIVE_Q10P },  // Bit 62    ROW 7
-  { IOE38_MATRIX_DRIVE_Q8P , IOE38_MATRIX_DRIVE_Q10N }   // Bit 63    ROW 7
-
-};
-
 void MatrixEnableTransistorInactive() { 
-  if (HardwareVersionMinor == 2)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE); }
-  else if (HardwareVersionMinor == 3)
-  { 
-    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Write_Enable, WRITE_ENABLE_INACTIVE);
+  if (HardwareVersionMinor == 4)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE); }
+  else
+  {
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
 void MatrixEnableTransistorActive()   { 
-  if (HardwareVersionMinor == 2)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE); }
-  else if (HardwareVersionMinor == 3)
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1); // Assume and activate Core Plane 1 for all testing now.
+  if (HardwareVersionMinor == 4)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE); }
+  else
   {
-    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Write_Enable, WRITE_ENABLE_ACTIVE);
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
 void MatrixDriveTransistorsInactive() {
   // Set all the matrix lines to the safe state, all transistors inactive.
-  if (HardwareVersionMinor == 2)   { 
-    for (uint8_t i = 1; i < 23; i++) {
+  if (HardwareVersionMinor == 4)   { 
+    for (uint8_t i = 2; i < 34; i++) {
       digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
     }  
   }
-  else if (HardwareVersionMinor == 3)
+  else
   {
-    // For Rev 0.3, MCP23017, can write all pins at once with .writeGPIOAB which is faster.
-    IOE38CoresOnly.writeGPIOAB(IOE38CoresOnlyMatrixDriveTransistorsInactive);
-    // IOE39CoresSenseHalls.writeGPIOAB(IOE39CoresSenseHallsMatrixDriveTransistorsInactive);
-    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1P,1);
-    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1N,0);
-    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2P,1);
-    IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2N,0);
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
 void ReturnMatrixQ9NtoLowForLEDArray() {
        if (HardwareVersionMinor == 2) { digitalWriteFast(PIN_MATRIX_DRIVE_Q9P, 0); }
-  else if (HardwareVersionMinor == 3) { } // no need to do anything since the pin isn't shared in V0.3
 }
 
 // Configure four transistors to activate the specified core.
 void SetRowAndCol (uint8_t row, uint8_t col) {
   // decode bit # from row and col data to resolve the correct row drive polarity
   uint8_t bit = col + (row*8);
-  if (HardwareVersionMinor == 2)   { 
+  if (HardwareVersionMinor == 4)   { 
     digitalWriteFast( (CMMDSetRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [0] ] );
     digitalWriteFast( (CMMDSetRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [1] ] );
     // Use col to select the proper place in the look up table
@@ -559,50 +380,10 @@ void SetRowAndCol (uint8_t row, uint8_t col) {
     digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] );
     digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] );
   }
-  else if (HardwareVersionMinor == 3)   {
-    // All QxN transistors are Active High.
-    // All QxP transistors are Active Low.
-    IOE38CoresOnly.digitalWrite( (IOE38CMMDSetRowByBit[bit] [0] ), IOE38MatrixDrivePinActiveState[ IOE38CMMDSetRowByBit[bit] [0] ] );
-    IOE38CoresOnly.digitalWrite( (IOE38CMMDSetRowByBit[bit] [1] ), IOE38MatrixDrivePinActiveState[ IOE38CMMDSetRowByBit[bit] [1] ] );
-    // Column polarity is the same for all bits in the column, so this case is easier than select row polarity
-    // Instead of making an array above, like CMMDSetCol or CMMDClearCol, just drive the pins directly.
-    switch(col)
-    {
-    case 0:  // Column 0
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q3P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1N, 1);
-      break;
-    case 1:  // Column 1
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q4P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1N, 1);
-      break;
-    case 2:  // Column 2
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q5P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1N, 1);
-      break;
-    case 3:  // Column 3
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q6P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1N, 1);
-      break;
-    case 4:  // Column 4
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q3P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2N, 1);
-      break;
-    case 5:  // Column 5
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q4P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2N, 1);
-      break;
-    case 6:  // Column 6
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q5P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2N, 1);
-      break;
-    case 7:  // Column 7
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q6P, 0);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2N, 1);
-      break;
-    default:
-      Serial.println("Invalid Set Column");
-    }
+  else
+  {
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
@@ -611,58 +392,17 @@ void SetRowAndCol (uint8_t row, uint8_t col) {
 void ClearRowAndCol (uint8_t row, uint8_t col) {
   // decode bit # from row and col data to resolve the correct row drive polarity
   uint8_t bit = col + (row*8);
-  if (HardwareVersionMinor == 2)   { 
+  if (HardwareVersionMinor == 4)   { 
     digitalWriteFast( (CMMDClearRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[bit] [0] ] ); // for bit 0, pin 
     digitalWriteFast( (CMMDClearRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[bit] [1] ] ); // for bit 0, pin 
     // columns are easier to decode with the simpler CMMDSetCol look-up table.
     digitalWriteFast( (CMMDClearCol[col] [0] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [0] ] ); // for bit 0, pin 
     digitalWriteFast( (CMMDClearCol[col] [1] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [1] ] ); // for bit 0, pin    
   }
-  else if (HardwareVersionMinor == 3)
+  else
   {
-    // All QxN transistors are Active High.
-    // All QxP transistors are Active Low.
-    IOE38CoresOnly.digitalWrite( (IOE38CMMDClearRowByBit[bit] [0] ), IOE38MatrixDrivePinActiveState[ IOE38CMMDClearRowByBit[bit] [0] ] );
-    IOE38CoresOnly.digitalWrite( (IOE38CMMDClearRowByBit[bit] [1] ), IOE38MatrixDrivePinActiveState[ IOE38CMMDClearRowByBit[bit] [1] ] );
-    // Column polarity is the same for all bits in the column, so this case is easier than select row polarity
-    // Instead of making an array above, like CMMDSetCol or CMMDClearCol, just drive the pins directly.
-    switch(col)
-    {
-    case 0:  // Column 0
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q3N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1P, 0);
-      break;
-    case 1:  // Column 1
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q4N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1P, 0);
-      break;
-    case 2:  // Column 2
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q5N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1P, 0);
-      break;
-    case 3:  // Column 3
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q6N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q1P, 0);
-      break;
-    case 4:  // Column 4
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q3N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2P, 0);
-      break;
-    case 5:  // Column 5
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q4N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2P, 0);
-      break;
-    case 6:  // Column 6
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q5N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2P, 0);
-      break;
-    case 7:  // Column 7
-      IOE38CoresOnly.digitalWrite(IOE38_MATRIX_DRIVE_Q6N, 1);
-      IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Q2P, 0);
-      break;
-    default:
-      Serial.println("Invalid Clear Column");
-    }
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
@@ -681,32 +421,34 @@ void SetRowZeroAndColZero () {
 }
 
 void CoreSenseReset() {
-  if (HardwareVersionMinor == 2)   { 
-    // Nothing to do since because there is no flip-flop to reset in this hardware.
+  if (HardwareVersionMinor == 4)   { 
+    digitalWriteFast( Pin_Sense_Reset, 1);
+    digitalWriteFast( Pin_Sense_Reset, 0);    
   }
-  else if (HardwareVersionMinor == 3)
+  else
   {
-    IOE39CoresSenseHalls.digitalWrite( IOE39_MATRIX_DRIVE_Sense_Reset, 1);
-    IOE39CoresSenseHalls.digitalWrite( IOE39_MATRIX_DRIVE_Sense_Reset, 0);
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
 }
 
 bool SenseWirePulse() {
   bool temp = 0;
-  if (HardwareVersionMinor == 2)   { 
-    temp = digitalReadFast(Pin_v020_Sense_Pulse);
+  if (HardwareVersionMinor == 4)   { 
+    temp = digitalReadFast(Pin_Sense_Pulse);
     // TracingPulses(temp);
   }
-  else if (HardwareVersionMinor == 3)
+  else
   {
-    temp = IOE39CoresSenseHalls.digitalRead(IOE39_MATRIX_DRIVE_Sense_Pulse);
+    Serial.print("Unsupported configuration. Hardware Version Minor: ");
+    Serial.println(HardwareVersionMinor);
   }
   return temp;
 }
 
 void tempDebugPin10Twiddle () {
-  digitalWriteFast(PIN_SD_CS, 1);
-  digitalWriteFast(PIN_SD_CS, 0);
+  digitalWriteFast(Pin_SPI_SD_CS, 1);
+  digitalWriteFast(Pin_SPI_SD_CS, 0);
 }
 
 void tempDebugPin17Twiddle () {
@@ -715,18 +457,18 @@ void tempDebugPin17Twiddle () {
 }
 
 void tempDebugPin25Twiddle () {
-  digitalWriteFast(Pin_Reed_Switch, 1);
-  digitalWriteFast(Pin_Reed_Switch, 0);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
 }
 
 void tempDebugPin25OutputMode () {
-  pinMode(Pin_Reed_Switch, OUTPUT);
-  digitalWriteFast(Pin_Reed_Switch, 0);
+  pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
 }
 
 void tempDebugPin25InputMode () {
-  digitalWriteFast(Pin_Reed_Switch, 0);
-  pinMode(Pin_Reed_Switch, INPUT);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
+  pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, INPUT);
 }
 
 void TracingPulses(uint8_t numberOfPulses) {
@@ -752,25 +494,25 @@ void DebugWithReedSwitchInput() {
 }
 
 void DebugIOESpare1_On() {
-  IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Spare_1, 1);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1);
 }
 
 void DebugIOESpare1_Off() {
-  IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Spare_1, 0);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
 }
 
 void DebugIOESpare2_On() {
-  IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Spare_2, 1);
+  digitalWriteFast(Pin_SAO_G1_SPARE_2_CP_ADDR_1, 1);
 }
 
 void DebugIOESpare2_Off() {
-  IOE39CoresSenseHalls.digitalWrite(IOE39_MATRIX_DRIVE_Spare_2, 0);
+  digitalWriteFast(Pin_SAO_G1_SPARE_2_CP_ADDR_1, 0);
 }
 
 void DebugPin10_On() {
-  digitalWriteFast(PIN_SD_CS, 1);
+  digitalWriteFast(Pin_SPI_SD_CS, 1);
 }
 
 void DebugPin10_Off() {
-  digitalWriteFast(PIN_SD_CS, 0);
+  digitalWriteFast(Pin_SPI_SD_CS, 0);
 }

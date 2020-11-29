@@ -355,8 +355,8 @@ void SDCardWriteVoltageLine()
   {
     if ((HardwareVersionMajor == 0) && (HardwareVersionMinor == 3))
     {
-      pinMode(PIN_SD_CS, OUTPUT);
-      digitalWriteFast(PIN_SD_CS, 1);
+      pinMode(Pin_SPI_SD_CS, OUTPUT);
+      digitalWriteFast(Pin_SPI_SD_CS, 1);
     }
   }
   void SDCardVoltageLog(uint32_t UpdatePeriodms)

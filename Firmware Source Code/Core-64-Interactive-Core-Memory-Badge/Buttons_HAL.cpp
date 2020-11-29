@@ -94,26 +94,8 @@
 
 
 void Buttons_Setup() {
-  if (HardwareVersionMinor == 2)
+  if (HardwareVersionMinor == 4)
   {
-    pinMode(Pin_Hall_Switch, INPUT);
-    pinMode(Pin_Reed_Switch, INPUT);
-  }
-  else if (HardwareVersionMinor == 3)
-  {
-    pinMode(Pin_v030_SAO3_GPIO2, OUTPUT);
-    digitalWriteFast(Pin_v030_SAO3_GPIO2,1); // Always on to test core plane select of V0.4 CB on V0.3 LB.
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_1, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_1, HIGH);  // turn on a 100K pullup internally
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_2, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_2, HIGH);  // turn on a 100K pullup internally
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_3, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_3, HIGH);  // turn on a 100K pullup internally
-    IOE39CoresSenseHalls.pinMode(IOE39_Hall_Switch_4, INPUT);
-    IOE39CoresSenseHalls.pullUp(IOE39_Hall_Switch_4, HIGH);  // turn on a 100K pullup internally
-    #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
-    // No setup required
-    #endif
     #ifdef HALL_SENSOR_ENABLE
       if((rslt = si7210_init(&HallSensor1)) != SI7210_OK)
           {
@@ -229,11 +211,7 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   thistime = millis();
   delta = thistime - lasttime ;
 
-  if (HardwareVersionMinor == 2)
-  {
-    state_b1 = digitalReadFast(Pin_Hall_Switch);
-  }
-  else if (HardwareVersionMinor == 3)
+  if (HardwareVersionMinor == 4)
   {
     #ifdef HALL_SENSOR_ENABLE    
       float field_strength;
@@ -279,36 +257,6 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
         // Serial.println(state);
         }
     #endif // HALL_SENSOR_ENABLE
-          
-    #ifdef USE_ANALOG_INPUT_HALL_SWITCH_2
-      AnalogLevel = analogRead(Pin_v030_Hall_Switch_2);
-      if(AnalogLevel <= 512) {state_b2 = 0;}
-      else {state_b2 = 1;}
-    #else
-      // TO DO: Why do I have to read  twice in a row to get a good read for the first one?
-      // TO DO: Read all inputs at once with .readGPIOAB()
-      state_test_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
-      switch (button_number) {
-        case 1:
-          state_b1 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_1));
-          break;
-        case 2:
-          state_b2 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_2));
-          break;
-        case 3:
-          state_b3 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_3));
-          break;
-        case 4:
-          state_b4 = (IOE39CoresSenseHalls.digitalRead(IOE39_Hall_Switch_4));
-          break;
-
-        default:
-          //Serial.println("Invalid Button");
-          break;
-        // Serial.print(state_test);
-        // Serial.println(state);
-        }
-      #endif
   }
 
   if(state_b1 != 1) { duration_b1 = duration_b1 + delta ; }
