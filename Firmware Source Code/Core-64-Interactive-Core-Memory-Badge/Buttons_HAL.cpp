@@ -240,10 +240,10 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   lasttime = thistime;
 
           // DEBUG
-          Serial.print("Hall 1 Field / On Duration: ");
-          Serial.print(field_strength);
-          Serial.print(" / ");
-          Serial.println(duration_b1);
+          // Serial.print("Hall 1 Field / On Duration: ");
+          // Serial.print(field_strength);
+          // Serial.print(" / ");
+          // Serial.println(duration_b1);
   
   switch (button_number) {
     case 1:

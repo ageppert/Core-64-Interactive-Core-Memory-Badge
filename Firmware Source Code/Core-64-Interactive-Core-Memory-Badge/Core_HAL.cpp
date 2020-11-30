@@ -124,14 +124,15 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
 
   // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   // Turn off all of the matrix signals
-  // cli();                                            // Testing for consistent timing.
+  cli();                                            // Testing for consistent timing.
+  // Serial.print("Tracing Pulses Follow.\n");
   TracingPulses(1);
   // DebugPin10_On();
   CoreSenseReset();                                 // Reset sense pulse flip-flop in case this write is called from read.
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   // Enable the matrix drive transistors
-  // TracingPulses(2);
+  TracingPulses(2);
   // TracingPulses(3);
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
   if (value == 1) { AllDriveIoSetBit(bit); } 
@@ -142,10 +143,10 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   ReturnMatrixQ9NtoLowForLEDArray();
-  // TracingPulses(4);
+  TracingPulses(4);
   // DebugPin10_Off();
   CoreSenseReset();
-  // sei();                                            // Testing for consistent timing.
+  sei();                                            // Testing for consistent timing.
 }
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
@@ -333,7 +334,6 @@ void AllDriveIoDisable() {
 
 bool CoreStateChangeFlag(bool clearFlag) {                    // Send this function a 0 to poll it, 1 to clear the flag
   static bool CoreStateChangeFlag = 0;
-  if (HardwareVersionMinor == 2)   { 
     if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
     if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
     if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
@@ -343,11 +343,6 @@ bool CoreStateChangeFlag(bool clearFlag) {                    // Send this funct
     if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
     if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }
     // TracingPulses(2);     
-  }
-  else if (HardwareVersionMinor == 3)
-  {
-    if (SenseWirePulse() == true) { CoreStateChangeFlag = 1; }    
-  }
   if (clearFlag == true) { CoreStateChangeFlag = 0; }           // Override detected state when user requests to clear the flag
   return CoreStateChangeFlag;
 }

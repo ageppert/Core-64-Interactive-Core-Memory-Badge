@@ -35,7 +35,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <HardwareSerial.h>
+#include <HardwareSerial.h> // Temp, debugging why Digital Pin 1 won't respond
 
 #include "HardwareIOMap.h"
 #include "Heart_Beat.h"
@@ -72,7 +72,7 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_CORE_TOGGLE_BIT; // STATE_SCROLLING_TEXT; // 
+static uint8_t TopLevelState = STATE_LED_TEST_ALL_COLOR; // STATE_SCROLLING_TEXT; // 
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -288,11 +288,8 @@ void loop() {
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
-    coreToTest=0;
+    coreToTest=1;
     LED_Array_Monochrome_Set_Color(50,255,255);
-Serial.println("Tracing Pulses 5"); // Need to abstract this debug stuff
-TracingPulses(5);
-    // DebugWithReedSwitchOutput();
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
         // IOESpare1_On();
@@ -300,7 +297,7 @@ TracingPulses(5);
         LED_Array_String_Write(bit,0);
         LED_Array_String_Display();
         // IOESpare1_Off();
-        delay(1);
+        delay(5);
 
         // IOESpare1_On();
         Core_Mem_Bit_Write(bit,1);
@@ -309,8 +306,8 @@ TracingPulses(5);
         // IOESpare1_Off();
         // delay(50);
       }
-    // DebugWithReedSwitchInput();
-    delay(50);
+
+    delay(5);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     break;
@@ -336,7 +333,6 @@ TracingPulses(5);
     LED_Array_String_Display();
     //  DebugWithReedSwitchInput();
     // IOESpare1_Off();
-
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     IOESpare1_Off();

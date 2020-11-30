@@ -72,8 +72,6 @@ const bool MatrixDrivePinActiveState[34]   =  { 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0,
 #define WRITE_ENABLE_INACTIVE 0 // logic level to turn off transistor
 
 void Core_Driver_Setup() {
-  if (HardwareVersionMinor == 4)
-  {
     pinMode(Pin_Sense_Pulse, INPUT);
     pinMode(Pin_Sense_Reset, OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q1P,  OUTPUT);
@@ -99,12 +97,7 @@ void Core_Driver_Setup() {
     pinMode(PIN_WRITE_ENABLE, OUTPUT);
     pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
     pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
-  }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
+    pinMode(Pin_SPARE_3_CP_ADDR_2, OUTPUT);
 }
 
 
@@ -332,78 +325,53 @@ uint8_t CMMDClearRowByBit[][2] = {
 };
 
 void MatrixEnableTransistorInactive() { 
-  if (HardwareVersionMinor == 4)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE); }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
+  digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE);
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0); // Assume and activate Core Plane 1 for all testing now.
 }
 
 void MatrixEnableTransistorActive()   { 
+  digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE);
   digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1); // Assume and activate Core Plane 1 for all testing now.
-  if (HardwareVersionMinor == 4)   { digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE); }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
 }
 
 void MatrixDriveTransistorsInactive() {
   // Set all the matrix lines to the safe state, all transistors inactive.
-  if (HardwareVersionMinor == 4)   { 
-    for (uint8_t i = 2; i < 34; i++) {
-      digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
-    }  
+  for (uint8_t i = 2; i <= 9; i++) {
+    digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
   }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
+  for (uint8_t i = 16; i <= 17; i++) {
+    digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
+  }
+  for (uint8_t i = 24; i <= 33; i++) {
+    digitalWriteFast(MatrixDrivePinNumber[i], MatrixDrivePinInactiveState[i]);
   }
 }
 
 void ReturnMatrixQ9NtoLowForLEDArray() {
-       if (HardwareVersionMinor == 2) { digitalWriteFast(PIN_MATRIX_DRIVE_Q9P, 0); }
+  // if (HardwareVersionMinor == 2) { digitalWriteFast(PIN_MATRIX_DRIVE_Q9P, 0); }
 }
 
 // Configure four transistors to activate the specified core.
 void SetRowAndCol (uint8_t row, uint8_t col) {
   // decode bit # from row and col data to resolve the correct row drive polarity
   uint8_t bit = col + (row*8);
-  if (HardwareVersionMinor == 4)   { 
     digitalWriteFast( (CMMDSetRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [0] ] );
     digitalWriteFast( (CMMDSetRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [1] ] );
     // Use col to select the proper place in the look up table
     // columns are easier to decode with the simpler CMMDSetCol look-up table.
     digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] );
     digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] );
-  }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
 }
-
 
 // Use col to selection the proper place in the look up table
 void ClearRowAndCol (uint8_t row, uint8_t col) {
   // decode bit # from row and col data to resolve the correct row drive polarity
   uint8_t bit = col + (row*8);
-  if (HardwareVersionMinor == 4)   { 
     digitalWriteFast( (CMMDClearRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[bit] [0] ] ); // for bit 0, pin 
     digitalWriteFast( (CMMDClearRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[bit] [1] ] ); // for bit 0, pin 
     // columns are easier to decode with the simpler CMMDSetCol look-up table.
     digitalWriteFast( (CMMDClearCol[col] [0] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [0] ] ); // for bit 0, pin 
     digitalWriteFast( (CMMDClearCol[col] [1] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [1] ] ); // for bit 0, pin    
-  }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
 }
 
 void ClearRowZeroAndColZero () {
@@ -421,28 +389,14 @@ void SetRowZeroAndColZero () {
 }
 
 void CoreSenseReset() {
-  if (HardwareVersionMinor == 4)   { 
     digitalWriteFast( Pin_Sense_Reset, 1);
     digitalWriteFast( Pin_Sense_Reset, 0);    
-  }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
 }
 
 bool SenseWirePulse() {
   bool temp = 0;
-  if (HardwareVersionMinor == 4)   { 
-    temp = digitalReadFast(Pin_Sense_Pulse);
-    // TracingPulses(temp);
-  }
-  else
-  {
-    Serial.print("Unsupported configuration. Hardware Version Minor: ");
-    Serial.println(HardwareVersionMinor);
-  }
+  temp = digitalReadFast(Pin_Sense_Pulse);
+  // TracingPulses(temp);
   return temp;
 }
 
@@ -471,13 +425,6 @@ void tempDebugPin25InputMode () {
   pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, INPUT);
 }
 
-void TracingPulses(uint8_t numberOfPulses) {
-  for (uint8_t i = 1; i <= numberOfPulses; i++) {
-    DebugIOESpare2_On();
-    DebugIOESpare2_Off();
-  }
-}
-
 void DebugWithReedSwitchOutput() {
   tempDebugPin25OutputMode();
 }
@@ -502,10 +449,20 @@ void DebugIOESpare2_Off() {
   digitalWriteFast(Pin_SAO_G1_SPARE_2_CP_ADDR_1, 0);
 }
 
-void DebugPin10_On() {
-  digitalWriteFast(Pin_SPI_SD_CS, 1);
+void DebugPin14_On() {
+  digitalWriteFast(Pin_SPARE_3_CP_ADDR_2, 1);
 }
 
-void DebugPin10_Off() {
-  digitalWriteFast(Pin_SPI_SD_CS, 0);
+void DebugPin14_Off() {
+  digitalWriteFast(Pin_SPARE_3_CP_ADDR_2, 0);
+}
+
+void TracingPulses(uint8_t numberOfPulses) {
+  for (uint8_t i = 1; i <= numberOfPulses; i++) {
+    DebugPin14_On();
+    // Teensy 3.2 either runs too fast or optimizes out multiple pulses if this delay is not included.
+    // The delay is also useful to see the # of traces pulses on the scope or they are too narrow.
+    delayMicroseconds(1); 
+    DebugPin14_Off();
+  }
 }
