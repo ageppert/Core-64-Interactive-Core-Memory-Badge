@@ -133,8 +133,18 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Enable the matrix drive transistors
   TracingPulses(2);
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
-  if (value == 1) { AllDriveIoSetBit(bit); } 
-  else { AllDriveIoClearBit(bit); }
+  // if (value == 1) { AllDriveIoSetBit(bit); } 
+ // else { AllDriveIoClearBit(bit); }
+
+  // 11-30 Debugging matrix drive signals that aren't flipping to the correct position during writing.
+  // Hard-coded testing of pixel 0.
+  if (value == 1) { 
+    SetRowZeroAndColZero(); 
+  } 
+  else {
+    ClearRowZeroAndColZero();
+  }
+
   TracingPulses(3);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
   delayMicroseconds(20);                             // give the core time to change state

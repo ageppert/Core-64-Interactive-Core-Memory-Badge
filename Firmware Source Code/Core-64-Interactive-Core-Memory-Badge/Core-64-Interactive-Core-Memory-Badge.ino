@@ -288,7 +288,7 @@ void loop() {
     break;
 
   case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
-    coreToTest=1;
+    coreToTest=0;
     LED_Array_Monochrome_Set_Color(50,255,255);
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)
       {
