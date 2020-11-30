@@ -126,25 +126,23 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Turn off all of the matrix signals
   cli();                                            // Testing for consistent timing.
   // Serial.print("Tracing Pulses Follow.\n");
-  TracingPulses(1);
-  // DebugPin10_On();
   CoreSenseReset();                                 // Reset sense pulse flip-flop in case this write is called from read.
+  TracingPulses(1);
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   // Enable the matrix drive transistors
   TracingPulses(2);
-  // TracingPulses(3);
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
   if (value == 1) { AllDriveIoSetBit(bit); } 
   else { AllDriveIoClearBit(bit); }
+  TracingPulses(3);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
-  delayMicroseconds(8);                             // give the core time to change state
+  delayMicroseconds(20);                             // give the core time to change state
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
   ReturnMatrixQ9NtoLowForLEDArray();
   TracingPulses(4);
-  // DebugPin10_Off();
   CoreSenseReset();
   sei();                                            // Testing for consistent timing.
 }
@@ -153,7 +151,6 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
   // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   static bool value = 0;
    cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
-  DebugWithReedSwitchOutput();
   CoreStateChangeFlag(1);                           // Clear the sense flag
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
@@ -170,7 +167,6 @@ MatrixEnableTransistorActive();                   // Enable the matrix drive tra
   // Turn off all of the matrix signals
 MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
-  ReturnMatrixQ9NtoLowForLEDArray();
   if (CoreStateChangeFlag(0) == true)               // If the core changed state, then it was a 0, and is now 1...
   {
     //Core_Mem_Bit_Write(bit,0);                      // ...so return the core to 0
@@ -183,44 +179,10 @@ MatrixEnableTransistorInactive();                 // Make sure the whole matrix 
     value = 1;                                      // ...update value to represent the core state
   // TracingPulses(3); 
   }
-  // DebugWithReedSwitchInput();
   CoreSenseReset();
    sei();                                            // Testing for consistent timing. Enable interrupts when done poling for sense pulse.
   return (value);                                   // Return the value of the core
 }
-
-/*
-bool CoreReadBit(uint8_t bit) {
-  static bool value;
-  DebugWithReedSwitchOutput();
-  AllDriveIoSafe();
-  AllDriveIoSetBit(bit);
-  //TracingPulses(1);
-  AllDriveIoEnable();
-  // loop around this to detect it - not sure on timing needs
-  for (uint8_t i = 0; i <=4; i++)
-  {
-    CoreStateChangeFlag(0); 
-  }
-  AllDriveIoDisable(); 
-  AllDriveIoSafe();
-  //TracingPulses(2);
-  value = 1;
-  if (CoreStateChangeFlag(0) == true)
-  {
-    // CoreWriteBit(bit,0);
-    AllDriveIoClearBit(bit);
-    AllDriveIoEnable();  
-    delayMicroseconds(3);
-    AllDriveIoDisable();
-    AllDriveIoSafe(); 
-    value = 0;
-  }
-  CoreStateChangeFlag(1);
-  DebugWithReedSwitchInput();
-  return (value);
-}
-*/
 
 void CoreWriteLongInt(uint64_t value) {
 

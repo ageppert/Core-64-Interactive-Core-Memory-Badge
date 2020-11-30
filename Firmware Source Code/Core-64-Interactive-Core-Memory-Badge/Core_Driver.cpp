@@ -356,11 +356,19 @@ void SetRowAndCol (uint8_t row, uint8_t col) {
   // decode bit # from row and col data to resolve the correct row drive polarity
   uint8_t bit = col + (row*8);
     digitalWriteFast( (CMMDSetRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [0] ] );
+    delayMicroseconds(1); 
+  TracingPulses(1);
     digitalWriteFast( (CMMDSetRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDSetRowByBit[bit] [1] ] );
     // Use col to select the proper place in the look up table
     // columns are easier to decode with the simpler CMMDSetCol look-up table.
+    delayMicroseconds(1); 
+  TracingPulses(1);
     digitalWriteFast( (CMMDSetCol[col] [0] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [0] ] );
+    delayMicroseconds(1); 
+  TracingPulses(1);
     digitalWriteFast( (CMMDSetCol[col] [1] ), MatrixDrivePinActiveState[ CMMDSetCol[col] [1] ] );
+    delayMicroseconds(1); 
+  TracingPulses(1);
 }
 
 // Use col to selection the proper place in the look up table
@@ -368,10 +376,18 @@ void ClearRowAndCol (uint8_t row, uint8_t col) {
   // decode bit # from row and col data to resolve the correct row drive polarity
   uint8_t bit = col + (row*8);
     digitalWriteFast( (CMMDClearRowByBit[bit] [0] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[bit] [0] ] ); // for bit 0, pin 
+    delayMicroseconds(1); 
+  TracingPulses(1);
     digitalWriteFast( (CMMDClearRowByBit[bit] [1] ), MatrixDrivePinActiveState[ CMMDClearRowByBit[bit] [1] ] ); // for bit 0, pin 
+    delayMicroseconds(1); 
+  TracingPulses(1);
     // columns are easier to decode with the simpler CMMDSetCol look-up table.
     digitalWriteFast( (CMMDClearCol[col] [0] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [0] ] ); // for bit 0, pin 
+    delayMicroseconds(1); 
+  TracingPulses(1);
     digitalWriteFast( (CMMDClearCol[col] [1] ), MatrixDrivePinActiveState[ CMMDClearCol[col] [1] ] ); // for bit 0, pin    
+    delayMicroseconds(1); 
+  TracingPulses(1);
 }
 
 void ClearRowZeroAndColZero () {
@@ -390,6 +406,9 @@ void SetRowZeroAndColZero () {
 
 void CoreSenseReset() {
     digitalWriteFast( Pin_Sense_Reset, 1);
+    // Teensy 3.2 either runs too fast or optimizes out the pulses if this delay is not included.
+    // The delay is also useful to see the pulse on the scope.
+    delayMicroseconds(1); 
     digitalWriteFast( Pin_Sense_Reset, 0);    
 }
 
@@ -398,39 +417,6 @@ bool SenseWirePulse() {
   temp = digitalReadFast(Pin_Sense_Pulse);
   // TracingPulses(temp);
   return temp;
-}
-
-void tempDebugPin10Twiddle () {
-  digitalWriteFast(Pin_SPI_SD_CS, 1);
-  digitalWriteFast(Pin_SPI_SD_CS, 0);
-}
-
-void tempDebugPin17Twiddle () {
-  digitalWriteFast(Pin_RGB_LED_Array, 0);
-  digitalWriteFast(Pin_RGB_LED_Array, 1);
-}
-
-void tempDebugPin25Twiddle () {
-  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1);
-  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
-}
-
-void tempDebugPin25OutputMode () {
-  pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
-  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
-}
-
-void tempDebugPin25InputMode () {
-  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0);
-  pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, INPUT);
-}
-
-void DebugWithReedSwitchOutput() {
-  tempDebugPin25OutputMode();
-}
-
-void DebugWithReedSwitchInput() {
-  tempDebugPin25InputMode();
 }
 
 void DebugIOESpare1_On() {

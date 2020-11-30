@@ -31,10 +31,6 @@ extern void SetRowAndCol (uint8_t row, uint8_t col);
 extern void ClearRowAndCol (uint8_t row, uint8_t col);
 void CoreSenseReset();
 bool SenseWirePulse();
-void tempDebugPin17Twiddle ();
-void tempDebugPin25Twiddle ();
-void tempDebugPin25OutputMode ();
-void tempDebugPin25InputMode ();
 
 void ClearRowZeroAndColZero (); // temp test function
 void SetRowZeroAndColZero ();   // temp test function

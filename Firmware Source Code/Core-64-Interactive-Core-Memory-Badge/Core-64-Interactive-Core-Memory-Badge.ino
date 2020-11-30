@@ -72,7 +72,7 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_LED_TEST_ALL_COLOR; // STATE_SCROLLING_TEXT; // 
+static uint8_t TopLevelState = STATE_CORE_TOGGLE_BIT; // STATE_SCROLLING_TEXT; // 
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -314,11 +314,6 @@ void loop() {
 
   case STATE_CORE_TEST_ONE:
     coreToTest=0;
-
-    IOESpare1_On();
-    // coreToTest=3;
-    //  DebugWithReedSwitchOutput();
-    // IOESpare1_On();
     LED_Array_Monochrome_Set_Color(100,255,255);
     LED_Array_Memory_Clear();
     //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
@@ -331,11 +326,7 @@ void loop() {
     //  TracingPulses(1);
     // delay(10);
     LED_Array_String_Display();
-    //  DebugWithReedSwitchInput();
-    // IOESpare1_Off();
     OLEDSetTopLevelState(TopLevelState);
-    OLEDScreenUpdate();
-    IOESpare1_Off();
     OLEDScreenUpdate();
     delay(10);
     break;
@@ -344,10 +335,6 @@ void loop() {
     coreToTest=0;
     for (uint8_t bit = coreToTest; bit<(64); bit++)
       {
-      IOESpare1_On();
-
-      //  DebugWithReedSwitchOutput();
-      // IOESpare1_On();
       LED_Array_Monochrome_Set_Color(100,255,255);
       LED_Array_Memory_Clear();
       //LED_Array_String_Write(coreToTest,1);               // Default to pixel on
@@ -360,10 +347,6 @@ void loop() {
       //  TracingPulses(1);
       // delay(10);
       LED_Array_String_Display();
-      //  DebugWithReedSwitchInput();
-      // IOESpare1_Off();
-
-      IOESpare1_Off();
       }
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
