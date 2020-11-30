@@ -72,7 +72,7 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_SCROLLING_TEXT; // STATE_CORE_TOGGLE_BIT; // 
+static uint8_t TopLevelState = STATE_CORE_TOGGLE_BIT; // STATE_SCROLLING_TEXT; // 
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -192,6 +192,7 @@ void loop() {
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     // IOESpare1_Off();
+    TopLevelStateChanged = false;
     break;
 
   case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
@@ -210,6 +211,7 @@ void loop() {
     //DebugWithReedSwitchInput();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
+    TopLevelStateChanged = false;
     break;
 
   case STATE_MONOCHROME_DRAW:       // Simple drawing mode
@@ -237,6 +239,7 @@ void loop() {
     LED_Array_Matrix_Mono_Display();                  // Show the updated LED array.
     LED_Array_Matrix_Mono_to_Binary();                // Convert whatever is in the LED Matrix Array to a 64-bit binary value...
     OLED_Show_Matrix_Mono_Hex();                      // ...and display it on the OLED.
+    TopLevelStateChanged = false;
     break;
 
   case STATE_LED_TEST_ALL_BINARY: // Counts from lower right and left/up in binary.
@@ -379,10 +382,6 @@ TracingPulses(5);
     if(ButtonState(2,0)) { LED_Array_String_Write(59,1); }
     if(ButtonState(3,0)) { LED_Array_String_Write(61,1); }
     if(ButtonState(4,0)) { LED_Array_String_Write(63,1); }
-    if(ButtonState(5,0)) { LED_Array_String_Write(1,1); }
-    if(ButtonState(6,0)) { LED_Array_String_Write(3,1); }
-    if(ButtonState(7,0)) { LED_Array_String_Write(5,1); }
-    if(ButtonState(8,0)) { LED_Array_String_Write(7,1); }
     IOESpare1_Off();
 
     LED_Array_String_Display();

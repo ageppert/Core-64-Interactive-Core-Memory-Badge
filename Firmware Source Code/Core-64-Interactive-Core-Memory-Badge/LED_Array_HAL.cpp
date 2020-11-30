@@ -38,16 +38,6 @@
 
 // Look up tables to translate the 1D and 2D user representations of the array to the LED positions used by the LED Array Driver, FastLED.
 const uint8_t ScreenPixelPositionBinaryLUT [64] = { // Maps Screen Pixel Position to LED Binary Display position.
-   7, 6, 5, 4, 3, 2, 1, 0,
-   8, 9,10,11,12,13,14,15,
-  23,22,21,20,19,18,17,16,
-  24,25,26,27,28,29,30,31,
-  39,38,37,36,35,34,33,32,
-  40,41,42,43,44,45,46,47,
-  55,54,53,52,51,50,49,48,
-  56,57,58,59,60,61,62,63
-  };
-const uint8_t ScreenPixelPosition1DLUT [64] = { // Maps Screen Pixel Position to LED 1D array position.
   63,62,61,60,59,58,57,56, 
   48,49,50,51,52,53,54,55, 
   47,46,45,44,43,42,41,40,
@@ -57,15 +47,25 @@ const uint8_t ScreenPixelPosition1DLUT [64] = { // Maps Screen Pixel Position to
   15,14,13,12,11,10, 9, 8,
    0, 1, 2, 3, 4, 5, 6, 7  
   };
+const uint8_t ScreenPixelPosition1DLUT [64] = { // Maps Screen Pixel Position to LED 1D array position.
+   7, 6, 5, 4, 3, 2, 1, 0,
+   8, 9,10,11,12,13,14,15,
+  23,22,21,20,19,18,17,16,
+  24,25,26,27,28,29,30,31,
+  39,38,37,36,35,34,33,32,
+  40,41,42,43,44,45,46,47,
+  55,54,53,52,51,50,49,48,
+  56,57,58,59,60,61,62,63
+  };
 const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position to LED 2D array position.
-  {63,62,61,60,59,58,57,56}, 
-  {48,49,50,51,52,53,54,55}, 
-  {47,46,45,44,43,42,41,40},
-  {32,33,34,35,36,37,38,39},
-  {31,30,29,28,27,26,25,24},
-  {16,17,18,19,20,21,22,23},
-  {15,14,13,12,11,10, 9, 8},
-  { 0, 1, 2, 3, 4, 5, 6, 7}  
+  { 7, 6, 5, 4, 3, 2, 1, 0},
+  { 8, 9,10,11,12,13,14,15},
+  {23,22,21,20,19,18,17,16},
+  {24,25,26,27,28,29,30,31},
+  {39,38,37,36,35,34,33,32},
+  {40,41,42,43,44,45,46,47},
+  {55,54,53,52,51,50,49,48},
+  {56,57,58,59,60,61,62,63}
   };
 
 // Default monochrome color (135,255,255 = OLED aqua)
