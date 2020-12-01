@@ -58,7 +58,7 @@ bool TopLevelStateChanged = false;
 enum TopLevelState                  // Master State Machine
 {
   STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_CORE_TEST_ALL,              //  1 Testing all cores and displaying core state
+  STATE_CORE_FLUX_DETECTOR,         //  1 Testing all cores and displaying core state
   STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
   STATE_LED_TEST_ALL_BINARY,        // y 3 Test LED Driver with binary values
   STATE_LED_TEST_ONE_STRING,        // y 4 Testing LED Driver
@@ -72,7 +72,8 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_SCROLLING_TEXT; // 
+static uint8_t TopLevelStateDefault = STATE_SCROLLING_TEXT;
+static uint8_t TopLevelState = TopLevelStateDefault; // 
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -195,7 +196,7 @@ void loop() {
     TopLevelStateChanged = false;
     break;
 
-  case STATE_CORE_TEST_ALL:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
+  case STATE_CORE_FLUX_DETECTOR:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
     LED_Array_Monochrome_Set_Color(50,255,255);
     LED_Array_Memory_Clear();
     //DebugWithReedSwitchOutput();
@@ -227,7 +228,7 @@ void loop() {
       }
     }
     // Quick touch of the hall sensor clears the screen.
-    if (ButtonState(1,0)) { LED_Array_Memory_Clear(); }
+    if ( (ButtonReleased) && (ButtonState(1,0) > 50 ) ) { LED_Array_Memory_Clear(); }
     // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
     if (TopLevelStateChanged)
     {
@@ -375,7 +376,7 @@ void loop() {
     LED_Array_Monochrome_Set_Color(125,255,255);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    TopLevelState = STATE_SCROLLING_TEXT;   
+    TopLevelState = TopLevelStateDefault;   
     break;
 
   default:
