@@ -133,17 +133,17 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Enable the matrix drive transistors
   TracingPulses(2);
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
-  // if (value == 1) { AllDriveIoSetBit(bit); } 
- // else { AllDriveIoClearBit(bit); }
+  if (value == 1) { AllDriveIoSetBit(bit); } 
+  else { AllDriveIoClearBit(bit); }
 
   // 11-30 Debugging matrix drive signals that aren't flipping to the correct position during writing.
   // Hard-coded testing of pixel 0.
-  if (value == 1) { 
-    SetRowZeroAndColZero(); 
-  } 
-  else {
-    ClearRowZeroAndColZero();
-  }
+  // if (value == 1) { 
+  //   SetRowZeroAndColZero(); 
+  // } 
+  // else {
+  //   ClearRowZeroAndColZero();
+  // }
 
   TracingPulses(3);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
@@ -151,7 +151,7 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
-  ReturnMatrixQ9NtoLowForLEDArray();
+
   TracingPulses(4);
   CoreSenseReset();
   sei();                                            // Testing for consistent timing.

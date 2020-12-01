@@ -72,7 +72,7 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
   STATE_LAST,                       //  13 last one, return to 0.
 } ;
-static uint8_t TopLevelState = STATE_CORE_TOGGLE_BIT; // STATE_SCROLLING_TEXT; // 
+static uint8_t TopLevelState = STATE_SCROLLING_TEXT; // 
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -297,7 +297,7 @@ void loop() {
         LED_Array_String_Write(bit,0);
         LED_Array_String_Display();
         // IOESpare1_Off();
-        delay(5);
+        // delay(5);
 
         // IOESpare1_On();
         Core_Mem_Bit_Write(bit,1);
@@ -307,7 +307,7 @@ void loop() {
         // delay(50);
       }
 
-    delay(5);
+    //delay(5);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     break;
