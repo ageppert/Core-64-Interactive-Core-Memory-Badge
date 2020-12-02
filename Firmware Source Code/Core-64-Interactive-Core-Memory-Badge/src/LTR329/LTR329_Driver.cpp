@@ -1,8 +1,20 @@
 /*
-	LTR303 illumination sensor library for Arduino
-	Lovelesh, thingTronics
+	This library/driver is hacked from: https://github.com/automote/LTR303
+	and updated to work with LTR-329 from this advice:	
+		Fixes needed https://github.com/automote/LTR303/issues/2
+		And also here https://forum.arduino.cc/index.php?topic=563507.15
+	TO DO:
+		There is an odd glitch that causes ALS LTR329 CH1 to be 1024 intermittently and that throws of the calculation. 
+		See LTR329_Driver.cpp line 460. Need to track that down and fix it.
+		Review LTR-329 datasheets (in Datasheets folder) and Appendix A (Lite-On_LTR-303 329_Appendix A Ver_1.0_22 Feb 2013.pdf).
+		This might be of limited help: https://github.com/watterott/LTR329ALS01-Breakout
+*/
+
+/*
+LTR303 illumination sensor library for Arduino
+Lovelesh, thingTronics
 	
-	MODIFIED to work better by Neil Emiro, Sep 2019
+MODIFIED to work better by Neil Emiro, Sep 2019
 	
 The MIT License (MIT)
 
@@ -253,7 +265,19 @@ boolean LTR303::getData(unsigned int &CH0, unsigned int &CH1) {
 	// Returns true (1) if successful, false (0) if there was an I2C error
 	// (Also see getError() below)
 	
-	return(readUInt(LTR303_DATA_CH0_0,CH0) && readUInt(LTR303_DATA_CH1_0,CH1));
+//	return(readUInt(LTR303_DATA_CH0_0,CH0) && readUInt(LTR303_DATA_CH1_0,CH1));
+/* 	2020-12-01 Andy testing getting LSB from 8A and MSB from 8B, so low and high bytes from channel 0.
+	The return above this comment seems to be getting low bytes from two channels, and no high bytes.
+	From https://github.com/watterott/LTR329ALS01-Breakout/blob/master/software/LTR329ALS01.ino it looks like I want 
+	just one channel, low and high bytes.
+	#define LTR303_DATA_CH0_0    0x8A
+	#define LTR303_DATA_CH0_1    0x8B
+	Maybe not... those readUInt functions should be getting two bytes.
+	Not sure on these data types in the Teensy environment?
+*/
+	return(readUInt(LTR303_DATA_CH0_0,CH0) && readUInt(LTR303_DATA_CH0_1,CH1));
+
+
 }
 
 boolean LTR303::getStatus(boolean valid, byte &gain, boolean intrStatus, boolean dataStatus) {
@@ -437,99 +461,98 @@ boolean LTR303::getLux(byte gain, unsigned char IntTime, unsigned int CH0, unsig
 
 	double ratio, ALS_INT;
 	int ALS_GAIN;
-	
+
 	// Determine if either sensor saturated (0xFFFF)
 	// If so, abandon ship (calculation will not be accurate)
 	if ((CH0 == 0xFFFF) || (CH1 == 0xFFFF)) {
 		lux = 0.0;
 		return(false);
 	}
-
+	
+	// There is an odd glitch that causes ALS LTR329 CH1 to be 1024 intermittently and that throws of the calculation.
+	if (CH1 == 1024) {
+		CH1 = 0;
+	}
 
 
 	// We will need the ratio for subsequent calculations
 	ratio = CH1 / (CH0 + CH1);
 
+	// Gain can take any value from 0-7, except 4 & 5
+	// If gain = 4, invalid
+	// If gain = 5, invalid
+	switch (gain) {
+	case 0:			   // If gain = 0, device is set to 1X gain (default)
+		ALS_GAIN = 1;
+		break;
+	case 1:			   // If gain = 1, device is set to 2X gain
+		ALS_GAIN = 2;
+		break;
+	case 2:			  // If gain = 2, device is set to 4X gain	 
+		ALS_GAIN = 4;
+		break;
+	case 3:			  // If gain = 3, device is set to 8X gain	  
+		ALS_GAIN = 8;
+		break;
+	case 6:		     // If gain = 6, device is set to 48X gain
+		ALS_GAIN = 48;
+		break;
+	case 7:			  // If gain = 7, device is set to 96X gain  
+		ALS_GAIN = 96;
+		break;
+	default:		  // If gain = 0, device is set to 1X gain (default)	 	 
+		ALS_GAIN = 1;
+		break;
+	}
 
-  // Gain can take any value from 0-7, except 4 & 5
-  // If gain = 4, invalid
-  // If gain = 5, invalid
-switch(gain){
-		case 0:			   // If gain = 0, device is set to 1X gain (default)
-			ALS_GAIN = 1;
-			break;
-		case 1:			   // If gain = 1, device is set to 2X gain
-			ALS_GAIN = 2;
-			break;
-		case 2:			  // If gain = 2, device is set to 4X gain	 
-			ALS_GAIN = 4;
-			break;
-		case 3:			  // If gain = 3, device is set to 8X gain	  
-			ALS_GAIN = 8;
-			break;
-		case 6:		     // If gain = 6, device is set to 48X gain
-			ALS_GAIN = 48;
-			break;	
-		case 7:			  // If gain = 7, device is set to 96X gain  
-			ALS_GAIN = 96;
-			break;
-		default:		  // If gain = 0, device is set to 1X gain (default)	 	 
-			ALS_GAIN = 1;
-			break;
-}
-
-
-switch(IntTime){
-		case 0:				 // If integrationTime = 0, integrationTime will be 100ms (default)
-			ALS_INT = 1;
-			break;
-		case 1:			 	 // If integrationTime = 1, integrationTime will be 50ms
-			ALS_INT = 0.5;
-			break;
-		case 2:				 // If integrationTime = 2, integrationTime will be 200ms
-			ALS_INT = 2;
-			break;
-		case 3:				  // If integrationTime = 3, integrationTime will be 400ms
-			ALS_INT = 4;
-			break;
-		case 4:				  // If integrationTime = 4, integrationTime will be 150ms
-			ALS_INT = 1.5;
-			break;
-		case 5:				  // If integrationTime = 5, integrationTime will be 250ms
-			ALS_INT = 2.5;
-			break;
-		case 6:				  // If integrationTime = 6, integrationTime will be 300ms
-			ALS_INT = 3;
-			break;	
-		case 7:				  // If integrationTime = 7, integrationTime will be 350ms
-			ALS_INT = 3.5;
-			break;
-		default:		 	 // If integrationTime = 0, integrationTime will be 100ms (default)
-			ALS_INT = 1;
-			break;
-}
-
-		
-
+	switch (IntTime) {
+	case 0:				 // If integrationTime = 0, integrationTime will be 100ms (default)
+		ALS_INT = 1;
+		break;
+	case 1:			 	 // If integrationTime = 1, integrationTime will be 50ms
+		ALS_INT = 0.5;
+		break;
+	case 2:				 // If integrationTime = 2, integrationTime will be 200ms
+		ALS_INT = 2;
+		break;
+	case 3:				  // If integrationTime = 3, integrationTime will be 400ms
+		ALS_INT = 4;
+		break;
+	case 4:				  // If integrationTime = 4, integrationTime will be 150ms
+		ALS_INT = 1.5;
+		break;
+	case 5:				  // If integrationTime = 5, integrationTime will be 250ms
+		ALS_INT = 2.5;
+		break;
+	case 6:				  // If integrationTime = 6, integrationTime will be 300ms
+		ALS_INT = 3;
+		break;
+	case 7:				  // If integrationTime = 7, integrationTime will be 350ms
+		ALS_INT = 3.5;
+		break;
+	default:		 	 // If integrationTime = 0, integrationTime will be 100ms (default)
+		ALS_INT = 1;
+		break;
+	}
 
 	// Determine lux per datasheet equations:
 	if (ratio < 0.45) {
-		lux = ((1.7743 * CH0) + (1.1059 * CH1))/ALS_GAIN/ALS_INT;
+		lux = ((1.7743 * CH0) + (1.1059 * CH1)) / ALS_GAIN / ALS_INT;
 		return(true);
 	}
 
-	if ((ratio < 0.64) && (ratio >= 0.45)){
-		lux = ((4.2785 * CH0) + (1.9548 * CH1))/ALS_GAIN/ALS_INT;
+	if ((ratio < 0.64) && (ratio >= 0.45)) {
+		lux = ((4.2785 * CH0) + (1.9548 * CH1)) / ALS_GAIN / ALS_INT;
 		return(true);
 	}
 
-	if ((ratio < 0.85) && (ratio >= 0.64)){
-		lux = ((0.5926 * CH0) + (0.1185 * CH1))/ALS_GAIN/ALS_INT;
+	if ((ratio < 0.85) && (ratio >= 0.64)) {
+		lux = ((0.5926 * CH0) + (0.1185 * CH1)) / ALS_GAIN / ALS_INT;
 		return(true);
 	}
 
 	// if (ratio >= 0.85)
-	else {	
+	else {
 		lux = 0.0;
 		return(true);
 	}	

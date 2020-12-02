@@ -7,122 +7,6 @@
 #endif
 #include "HardwareIOMap.h"
 
-#ifdef AMBIENT_LIGHT_SENSOR_ENABLE
-  #include "Ambient_Light_Sensor.h"
-  #include "I2C_Manager.h"
-  #include <Wire.h>
-
-  #include <SparkFun_VEML6030_Ambient_Light_Sensor.h>
-    #define AL_ADDR 0x48
-    SparkFun_Ambient_Light light(AL_ADDR);
-    // Possible values: .125, .25, 1, 2
-    // Both .125 and .25 should be used in most cases except darker rooms.
-    // A gain of 2 should only be used if the sensor will be covered by a dark
-    // glass.
-    float gain = .125;
-    // Possible integration times in milliseconds: 800, 400, 200, 100, 50, 25
-    // Higher times give higher resolutions and should be used in darker light. 
-    int time = 100;
-    // These demo settings yield maximum lux reading = 30199 so that can be >>7 (aka /128) to yield 236 max.
-    uint32_t luxMax = 30199;
-    uint32_t luxVal = 0; 
-
-  uint8_t AmbientLightSensorType = 0;           // 0 = no sensor available
-                                                // 1 = SparkFun Ambient Light Sensor VEML6030 QWIIC SEN-15436
-                                                // 2 = SparkFun Proximity + Ambient Light VCNL4040 QWIIC SEN-15177
-                                                // 3 = LTR-329
-  uint8_t AmbientLightLevel8BIT = 0 ;           // Scaled 0 to 255, darkest to brightest lux range
-  static uint8_t AmbientLightScalarBitShift = 7;        // 
-  static uint8_t AmbientLightLtr329ScalarBitShift = 3;        // 
-
-  void AmbientLightSetup() {
-    Serial.println("\nTroubleshooting Light Sensor VEML6030..."); 
-    // Determine which, if any, light sensor is available and configure it for readings
-    if (I2CDetectExternalEEPROM(AL_ADDR)) { 
-      AmbientLightSensorType = 1;
-      Wire.begin();
-      if(light.begin())
-      {
-        Serial.print("\nReady to sense some light! SensorType: "); 
-      }
-      else
-      {
-        Serial.print("\nCould not communicate with the sensor! SensorType: ");
-      }
-      Serial.println(AmbientLightSensorType); 
-      light.setGain(gain);
-      light.setIntegTime(time);
-    }
-    else if (I2CDetectExternalEEPROM(0x60)) { 
-      AmbientLightSensorType = 2; 
-    }
-    if(AmbientLightSensorType==0)
-    {
-      Serial.println("No light sensor found.");      
-    } 
-  }
-
-  bool AmbientLightAvaible() {
-    // Return 0 of not available, 1 if it is.
-    if (AmbientLightSensorType)
-    { 
-      return 1;
-    }
-    else
-    {
-      return 0; 
-    }
-  }
-
-  uint8_t GetAmbientLightLevel8BIT() {
-    return (AmbientLightLevel8BIT);
-  }
-
-  void ReadAmbientLightLevel() {
-    if (AmbientLightSensorType == 1)
-    {
-      luxVal = light.readLight();
-      if(luxVal>=luxMax)   // If input lux level is saturated
-      {
-        AmbientLightLevel8BIT = 250;                  // assign max level to 8bit value to avoid rollover to lower level
-      }
-      else
-      {
-        AmbientLightLevel8BIT = (uint8_t) (luxVal >> AmbientLightScalarBitShift);  // Simple linear scaling of lux to 0-255    
-      }
-      if(AmbientLightLevel8BIT > 250) {AmbientLightLevel8BIT = 250;}
-    }
-    if (AmbientLightSensorType == 2)
-    {
-
-
-    }
-  }
-
-  void AmbientLightUpdate() {
-    static unsigned long Periodms = 100; // 1000;
-    static unsigned long NowTimems = 0;
-    static unsigned long Timerms = 0;
-    if(AmbientLightAvaible())
-      {
-        NowTimems = millis();
-        if ((NowTimems - Timerms) >= Periodms)
-        {
-          Timerms = NowTimems;
-          ReadAmbientLightLevel();
-          // /*
-          Serial.print("Light: ");
-          Serial.print(luxVal);
-          Serial.print(" Lux || ");
-          Serial.print(GetAmbientLightLevel8BIT());
-          Serial.println(" 8BIT LEVEL");
-          // */
-        }
-      }
-    else
-      {return;}
-  }
-#endif // AMBIENT_LIGHT_SENSOR_ENABLE
 
 #ifdef AMBIENT_LIGHT_SENSOR_LTR329_ENABLE
   #include "Ambient_Light_Sensor.h"
@@ -136,22 +20,22 @@
   unsigned char gain;     // Gain setting, values = 0-7 
   unsigned char integrationTime;  // Integration ("shutter") time in milliseconds
   unsigned char measurementRate;  // Interval between DATA_REGISTERS update
-  unsigned char intTime = 0;
-  unsigned char Rate = 0;
+  unsigned char intTime;
+  unsigned char Rate;
 
   // These demo settings yield maximum lux reading = 30199 so that can be >>7 (aka /128) to yield 236 max.
   uint32_t luxMax = 30199;
-  uint32_t luxVal = 0; 
+  static uint32_t luxVal = 0; 
 
   uint8_t AmbientLightSensorType = 0;           // 0 = no sensor available
                                                 // 1 = SparkFun Ambient Light Sensor VEML6030 QWIIC SEN-15436
                                                 // 2 = SparkFun Proximity + Ambient Light VCNL4040 QWIIC SEN-15177
                                                 // 3 = LTR-329
   uint8_t AmbientLightLevel8BIT = 0 ;           // Scaled 0 to 255, darkest to brightest lux range
-  static uint8_t AmbientLightScalarBitShift = 7;        // 
+  static uint8_t AmbientLightLtr329ScalarBitShift = 3;        // 
 
   void AmbientLightSetup() {
-    Serial.println("\nTroubleshooting Light Sensor LTR-329..."); 
+    Serial.println("\nTesting Light Sensor LTR-329..."); 
  
     light.begin();
 
@@ -208,7 +92,7 @@
       // If integrationTime = 6, integrationTime will be 300ms
       // If integrationTime = 7, integrationTime will be 350ms
 
-      intTime = 1;
+      intTime = 0;
 
       // If measurementRate = 0, measurementRate will be 50ms
       // If measurementRate = 1, measurementRate will be 100ms
@@ -252,16 +136,12 @@
     return (AmbientLightLevel8BIT);
   }
 
-  uint16_t GetLtrLux () {
+ bool GetLtrLux () {
     // Wait between measurements before retrieving the result
     // You can also configure the sensor to issue an interrupt 
     // when measurements are complete)
     
     // This sketch uses the LTR303's built-in integration timer.
-    
-   
-    
-    
     // Once integration is complete, we'll retrieve the data.
     
     // There are two light sensors on the device, one for visible light
@@ -272,10 +152,10 @@
     if (light.getData(data0,data1)) {
       // getData() returned true, communication was successful
       
-      Serial.print("data0: ");
-      Serial.println(data0);
-      Serial.print("data1: ");
-      Serial.println(data1);
+      // Serial.print(" data0: ");
+      // Serial.print(data0);
+      // Serial.print(" data1: ");
+      // Serial.print(data1);
     
       // To calculate lux, pass all your settings and readings
       // to the getLux() function.
@@ -291,19 +171,19 @@
       // Perform lux calculation:
 
       good = light.getLux(gain,intTime,data0,data1,lux);
-      
+      luxVal = lux;
       // Print out the results:
     
-      Serial.print(" lux: ");
-      Serial.println(lux);
+      // Serial.print(" lux: ");
+      // Serial.print(lux);
       if (good) 
         {
-          Serial.println(" (good)");
+          // Serial.println(" (good)");
           return (good);
         }
       else 
         {
-          Serial.println(" (BAD)");
+          // Serial.println(" (BAD)");
         }
     }
     else {
@@ -317,7 +197,7 @@
   void ReadAmbientLightLevel() {
     if (AmbientLightSensorType == 3)
     {
-      luxVal = (uint32_t) GetLtrLux;
+      GetLtrLux();
       if(luxVal>=luxMax)   // If input lux level is saturated
       {
         AmbientLightLevel8BIT = 250;                  // assign max level to 8bit value to avoid rollover to lower level
@@ -331,7 +211,7 @@
   }
 
   void AmbientLightUpdate() {
-    static unsigned long Periodms = 100; // 1000;
+    static unsigned long Periodms = 250;
     static unsigned long NowTimems = 0;
     static unsigned long Timerms = 0;
     if(AmbientLightAvaible())
@@ -348,6 +228,7 @@
           Serial.print(GetAmbientLightLevel8BIT());
           Serial.println(" 8BIT LEVEL");
           // */
+          // GetLtrLux ();
         }
       }
     else
