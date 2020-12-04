@@ -9,6 +9,8 @@
 #include "Analog_Input_Test.h"
 #include "Ambient_Light_Sensor.h"
 
+#define DEBUG_SDCARD
+
 #ifdef SDCARD_ENABLE
   #include "SD_Card_Manager.h"
   #include <SD.h>
@@ -19,7 +21,8 @@
   SdVolume volume;
   SdFile root;
 
-  const int chipSelect = 10;  // BUILTIN_SDCARD;
+  const int chipSelect = Pin_SPI_SD_CS;  // A11 BUILTIN_SDCARD;
+  const int PIN_SD_CD = Pin_SAO_G1_SPARE_2_CP_ADDR_1;  // Pin 1, GPIO2
   // Log file base name.  Must be six characters or less.
   #define FILE_BASE_NAME "Data"
 
@@ -62,9 +65,9 @@
     {
       pinMode(PIN_SD_CD, INPUT_PULLUP);
 
-      SPI.setMISO(12);
-      SPI.setMOSI(11);
-      SPI.setSCK(14);
+      SPI.setMISO(Pin_SPI_SDI); // 12
+      SPI.setMOSI(Pin_SPI_SDO); // 11
+      SPI.setSCK(Pin_SPI_CLK);  // 13
       SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THEY setCLK assignment work!!!
 
       Serial.print("\nInitializing SD card...");
@@ -77,7 +80,7 @@
   }
   Serial.println("card initialized.");
 
-  /*
+  
       // we'll use the initialization code from the utility libraries
       // since we're just testing if the card is working!
       if (!card.init(SPI_HALF_SPEED, chipSelect)) {
@@ -149,7 +152,7 @@
       
       // list all files in the card with date and size
       root.ls(LS_R | LS_DATE | LS_SIZE);
-*/
+
     }
   }
 
