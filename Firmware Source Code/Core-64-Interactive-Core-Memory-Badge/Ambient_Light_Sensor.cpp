@@ -7,6 +7,7 @@
 #endif
 #include "HardwareIOMap.h"
 
+// #define DEBUG_ALS
 
 #ifdef AMBIENT_LIGHT_SENSOR_LTR329_ENABLE
   #include "Ambient_Light_Sensor.h"
@@ -221,13 +222,13 @@
         {
           Timerms = NowTimems;
           ReadAmbientLightLevel();
-          // /*
+          #ifdef DEBUG_ALS
           Serial.print("Light: ");
           Serial.print(luxVal);
           Serial.print(" Lux || ");
           Serial.print(GetAmbientLightLevel8BIT());
           Serial.println(" 8BIT LEVEL");
-          // */
+          #endif
           // GetLtrLux ();
         }
       }
