@@ -41,6 +41,7 @@
 #include "Heart_Beat.h"
 #include "Serial_Debug.h"
 #include "LED_Array_HAL.h"
+#include "Neon_Pixel_HAL.h"
 #include "OLED_Screen.h"
 #include "Analog_Input_Test.h"
 #include "Buttons_HAL.h"
@@ -84,6 +85,7 @@ uint8_t a = 0;
 void setup() {
   HeartBeatSetup();
   LED_Array_Init();
+  Neon_Pixel_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.

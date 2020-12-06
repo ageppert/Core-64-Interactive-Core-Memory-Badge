@@ -68,7 +68,7 @@
       SPI.setMISO(Pin_SPI_SDI); // 12
       SPI.setMOSI(Pin_SPI_SDO); // 11
       SPI.setSCK(Pin_SPI_CLK);  // 13
-      SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THEY setCLK assignment work!!!
+      SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
 
       Serial.print("\nInitializing SD card...");
 
