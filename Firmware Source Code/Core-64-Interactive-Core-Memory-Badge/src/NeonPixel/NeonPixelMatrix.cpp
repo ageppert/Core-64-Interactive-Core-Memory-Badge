@@ -1,4 +1,5 @@
 
+// #include "HardwareIOMap.h"
 #include <Adafruit_GFX.h>
 #include "NeonPixelMatrix.h"
 #include <SPI.h>
@@ -7,24 +8,21 @@
 #define CLOCKPIN        13
 #define DATA_OUT        11
 #define DATA_IN         12
-#define CHIP_SELECT      8
+#define CHIP_SELECT      8 // already available as Pin_SPI_LCD_CS
 
-static const int spiClk = 480000; 
+static const int spiClk = 100000; 
 
 NeonPixelMatrix::NeonPixelMatrix(int16_t w, int16_t h) : 
     Adafruit_GFX(w, h) {
 
-    // SPI init
-    // hspi = new SPIClass(HSPI);
-    // hspi->begin(CLOCKPIN, 12, DATAPIN, 14); //SCLK, MISO, MOSI, SS
-      pinMode(CHIP_SELECT, OUTPUT);
+    pinMode(CHIP_SELECT, OUTPUT);
 
-      SPI.setMISO(DATA_IN); // 12
-      SPI.setMOSI(DATA_OUT); // 11
-      SPI.setSCK(CLOCKPIN);  // 13
-      SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
+    SPI.setMOSI(DATA_OUT); // 11
+    SPI.setMISO(DATA_IN); // 12
+    SPI.setSCK(CLOCKPIN);  // 13
+    SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
 
-      Serial.print("\nInitializing Neon Pixel Matrix...");
+    Serial.print("\nInitializing Neon Pixel Matrix...");
 
 }
 
@@ -71,32 +69,19 @@ void NeonPixelMatrix::display() {
     uint16_t i=0;
     uint8_t  dataToSend;
 
-    SPI.setSCK(CLOCKPIN);  // 13
+    SPI.setSCK(CLOCKPIN);
     SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
-    SPI.beginTransaction(SPISettings(480000, MSBFIRST, SPI_MODE0));
-    
-    digitalWrite(CHIP_SELECT, LOW);
+
+    digitalWriteFast(CHIP_SELECT, 0);
+    SPI.beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));   
     for(int x=viewOriginX; x<viewOriginX+pixelWidth; x++) {
         for(int y=viewOriginY; y<viewOriginY+pixelHeight; y++){
           dataToSend = frameBuffer[((y%HEIGHT)*WIDTH) + (x%WIDTH)];
-          SPI.transfer(dataToSend); //Send register location
+          SPI.transfer(dataToSend);
         }
     }
-    // take the chip select high to de-select:
-    digitalWrite(CHIP_SELECT, HIGH);
     SPI.endTransaction();
-
-    /*
-    for(int x=viewOriginX; x<viewOriginX+pixelWidth; x++) {
-        for(int y=viewOriginY; y<viewOriginY+pixelHeight; y++){
-            displayBuffer[((pixelWidth*pixelHeight)-1)-i++] = frameBuffer[((y%HEIGHT)*WIDTH) + (x%WIDTH)];
-        }
-    }
-    */
-
-    // hspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
-    // hspi->transferBytes(displayBuffer , NULL, (pixelWidth*pixelHeight));
-    // hspi->endTransaction();
+    digitalWriteFast(CHIP_SELECT, 1);
 }
 
 uint8_t *NeonPixelMatrix::getBuffer() { return frameBuffer; }

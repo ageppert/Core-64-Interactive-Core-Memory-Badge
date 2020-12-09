@@ -8,8 +8,8 @@
 
 #include "HardwareIOMap.h"
 #include "Core_HAL.h"       // ToDo This core_api shouldn't be directly accessed from this files. interaction should be through higher level application
-#include "CharacterMap.h"
-#include "Ambient_Light_Sensor.h"
+// #include "CharacterMap.h"
+// #include "Ambient_Light_Sensor.h"
 
 #include "src/NeonPixel/NeonPixelMatrix.h"
 
@@ -66,7 +66,7 @@
     {56,57,58,59,60,61,62,63}
     };
 
-  uint8_t NeonPixelBrightnessOn  = 0x60;
+  uint8_t NeonPixelBrightnessOn  = 0x77;
   uint8_t NeonPixelBrightnessOff = 0x00;
   uint8_t MatrixHeight = 8;
   uint8_t MatrixWidth = 8;
