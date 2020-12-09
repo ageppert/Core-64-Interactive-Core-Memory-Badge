@@ -85,7 +85,6 @@ uint8_t a = 0;
 void setup() {
   HeartBeatSetup();
   LED_Array_Init();
-  Neon_Pixel_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     //while (!Serial) { ; }  // wait for serial port to connect.
@@ -125,6 +124,7 @@ void setup() {
   CoreSetup();
   SDCardSetup();
   AmbientLightSetup();
+  Neon_Pixel_Array_Init();
 }
 
 void loop() {
@@ -146,6 +146,7 @@ void loop() {
   #ifdef DEBUG
     Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
   #endif
+
   //I2CIOEScan(); // temporary debug
 
   /*                      ************************
@@ -195,6 +196,10 @@ void loop() {
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     // IOESpare1_Off();
+    #ifdef NEON_PIXEL_ARRAY
+      Neon_Pixel_Array_Matrix_Mono_Display();
+      CopyCoreMemoryToMonochromeNeonPixelArrayMemory();
+    #endif
     TopLevelStateChanged = false;
     break;
 
@@ -226,11 +231,21 @@ void loop() {
     {
       for (uint8_t x=0; x<8; x++)
       {
-        if (CoreArrayMemory [y][x]) { LED_Array_Matrix_Mono_Write(y, x, 1); }
+        if (CoreArrayMemory [y][x]) { 
+          LED_Array_Matrix_Mono_Write(y, x, 1);
+          #ifdef NEON_PIXEL_ARRAY
+            Neon_Pixel_Array_Matrix_Mono_Write(y, x, 1);
+          #endif
+        }
       }
     }
     // Quick touch of the hall sensor clears the screen.
-    if ( (ButtonReleased) && (ButtonState(1,0) > 50 ) ) { LED_Array_Memory_Clear(); }
+    if ( (ButtonReleased) && (ButtonState(1,0) > 50 ) ) { 
+      LED_Array_Memory_Clear(); 
+      #ifdef NEON_PIXEL_ARRAY
+        Neon_Pixel_Array_Memory_Clear();
+      #endif
+    }
     // If this was the first time into this state, set default screen to be 0xDEADBEEF and 0xC0D3C4FE
     if (TopLevelStateChanged)
     {
@@ -242,6 +257,9 @@ void loop() {
     LED_Array_Matrix_Mono_Display();                  // Show the updated LED array.
     LED_Array_Matrix_Mono_to_Binary();                // Convert whatever is in the LED Matrix Array to a 64-bit binary value...
     OLED_Show_Matrix_Mono_Hex();                      // ...and display it on the OLED.
+    #ifdef NEON_PIXEL_ARRAY
+      Neon_Pixel_Array_Matrix_Mono_Display();
+    #endif
     TopLevelStateChanged = false;
     break;
 

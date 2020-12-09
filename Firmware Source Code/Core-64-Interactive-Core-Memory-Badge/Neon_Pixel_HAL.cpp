@@ -14,34 +14,27 @@
 #include "src/NeonPixel/NeonPixelMatrix.h"
 
 #ifdef NEON_PIXEL_ARRAY
+  #define NUM_PIXELS 64
 
   NeonPixelMatrix neonPixelMatrix = NeonPixelMatrix(8, 8); // This sets of the size of the screen buffer. Can be larger than display size to make scrolling easier.
-
-  // FastLED.show() takes a little less than 2ms (measured) to update 64 LEDs. Good to have it delay 1/2 ms after core matrix twiddles the data pin.
-
-  /*
-
-  #define MONOCHROMECOLORCHANGER 1
+  // May need to force a 1ms delay between Neon Pixel updates or the values won't latch.
 
   // LED Array Memory Buffers for user representations of the LED Array.
   // Interaction with the abstract memory buffers which define the LED Array for the user to view:
   // BINARY [64 bit data word, monochrome]
     // 0 is lower right (LSb), 63 is upper left (MSb), counting right to left, then up to the next row. Each row up is a higher Byte.
-    static uint64_t LedArrayMemoryBinary = 0;
-    static uint64_t LedArrayMemoryBinaryDefault = 0xDEADBEEFC0D3C4FE;
+    static uint64_t NeonPixelArrayMemoryBinary = 0;
+    static uint64_t NeonPixelArrayMemoryBinaryDefault = 0xDEADBEEFC0D3C4FE;
   // STRING [1D 64 pixel string, monochrome]
     // 0 is upper left, 63 is lower right, counting left to right, then down to next row
-    static bool LedArrayMemoryString [64];  
+    static bool NeonPixelArrayMemoryString [64];  
   // MATRIX MONOCHROME [2D 8x8 pixel matrix, monochrome]
     // order y,x : 0,0 is upper left, 7,7 is lower right, counting left to right and top to bottom.
-    static bool LedScreenMemoryMatrixMono [8][8];      
-  // MATRIX COLOR [2D 8x8 pixel matrix, 1 byte HUE in HSV color space]
-    // order y,x : 0,0 is upper left, 7,7 is lower right, counting left to right and top to bottom.
-    // Exception for HSV color encoding is 0 is interpreted as off, which will be substituted when displayed.
-    static uint8_t LedScreenMemoryMatrixColor [8][8];
+    static bool NeonPixelScreenMemoryMatrixMono [8][8];      
+
 
   // Look up tables to translate the 1D and 2D user representations of the array to the LED positions used by the LED Array Driver, FastLED.
-  const uint8_t ScreenPixelPositionBinaryLUT [64] = { // Maps Screen Pixel Position to LED Binary Display position.
+  const uint8_t NeonPixelPositionBinaryLUT [64] = { // Maps Screen Pixel Position to LED Binary Display position.
     63,62,61,60,59,58,57,56, 
     48,49,50,51,52,53,54,55, 
     47,46,45,44,43,42,41,40,
@@ -51,7 +44,7 @@
     15,14,13,12,11,10, 9, 8,
      0, 1, 2, 3, 4, 5, 6, 7  
     };
-  const uint8_t ScreenPixelPosition1DLUT [64] = { // Maps Screen Pixel Position to LED 1D array position.
+  const uint8_t NeonPixelPosition1DLUT [64] = { // Maps Screen Pixel Position to LED 1D array position.
      7, 6, 5, 4, 3, 2, 1, 0,
      8, 9,10,11,12,13,14,15,
     23,22,21,20,19,18,17,16,
@@ -61,7 +54,8 @@
     55,54,53,52,51,50,49,48,
     56,57,58,59,60,61,62,63
     };
-  const uint8_t ScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position to LED 2D array position.
+
+  const uint8_t NeonScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position to LED 2D array position.
     { 7, 6, 5, 4, 3, 2, 1, 0},
     { 8, 9,10,11,12,13,14,15},
     {23,22,21,20,19,18,17,16},
@@ -72,10 +66,12 @@
     {56,57,58,59,60,61,62,63}
     };
 
-  // Default monochrome color (135,255,255 = OLED aqua)
-  uint8_t LEDArrayMonochromeColorHSV  [3] = {DEFAULTLEDArrayMonochromeColorH,DEFAULTLEDArrayMonochromeColorS,DEFAULTLEDArrayMonochromeColorV};             // Hue, Saturation, Value. Allowable range 0-255.
-  uint8_t LEDArrayBrightness = BRIGHTNESS;
+  uint8_t NeonPixelBrightnessOn  = 0x60;
+  uint8_t NeonPixelBrightnessOff = 0x00;
+  uint8_t MatrixHeight = 8;
+  uint8_t MatrixWidth = 8;
 
+/*
   void Neon_Pixel_Array_Auto_Brightness() {
     if(HardwareVersionMinor==4)
       {
@@ -87,22 +83,22 @@
         // Serial.println(LEDArrayBrightness);
       }
   }
-
+*/
   void Neon_Pixel_Array_Memory_Clear() {
-    LedArrayMemoryBinary = 0;
-    for( uint8_t i = 0; i < NUM_LEDS; i++) {
-      LedArrayMemoryString[i] = 0;
+    NeonPixelArrayMemoryBinary = 0;
+    for( uint8_t i = 0; i < NUM_PIXELS; i++) {
+      NeonPixelArrayMemoryString[i] = 0;
     }
-    for( uint8_t y = 0; y < kMatrixHeight; y++) 
+    for( uint8_t y = 0; y < MatrixHeight; y++) 
     {
-      for( uint8_t x = 0; x < kMatrixWidth; x++) 
+      for( uint8_t x = 0; x < MatrixWidth; x++) 
       {
-        LedScreenMemoryMatrixMono[y][x] = 0;
-        LedScreenMemoryMatrixColor[y][x] = 0;
+        NeonPixelScreenMemoryMatrixMono[y][x] = 0;
+        //LedScreenMemoryMatrixColor[y][x] = 0;
       }
     }
   }
-
+/*
   void Neon_Pixel_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t value) {
     LEDArrayMonochromeColorHSV[0] = hue;
     LEDArrayMonochromeColorHSV[1] = saturation;
@@ -186,19 +182,19 @@
       }
       FastLED.show();
   }
-
+*/
   //
   // Copy Core Memory Array bits into monochrome LED Array memory
   //
-    void CopyCoreMemoryToMonochromeLEDArrayMemory() {
-      for( uint8_t y = 0; y < kMatrixHeight; y++) {
-        for( uint8_t x = 0; x < kMatrixWidth; x++) {
-          LedScreenMemoryMatrixMono[y][x] = CoreArrayMemory[y][x];
-          LedScreenMemoryMatrixMono[y][x] = CoreArrayMemory[y][x];
+    void CopyCoreMemoryToMonochromeNeonPixelArrayMemory() {
+      for( uint8_t y = 0; y < MatrixHeight; y++) {
+        for( uint8_t x = 0; x < MatrixWidth; x++) {
+          NeonPixelScreenMemoryMatrixMono[y][x] = CoreArrayMemory[y][x];
+          NeonPixelScreenMemoryMatrixMono[y][x] = CoreArrayMemory[y][x];
         }
       }
     }
-
+/*
   //
   // Copy Color Font Symbol into monochrome LED Array memory
   //
@@ -224,14 +220,14 @@
         }
       }
     }
-
+*/
   //
   // Write one bit into monochrome LED Array memory
   //
   void Neon_Pixel_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value) {
-    LedScreenMemoryMatrixMono[y][x] = value;
+    NeonPixelScreenMemoryMatrixMono[y][x] = value;
   }
-
+/*
   //
   // Read one bit from monochrome LED Array memory
   //
@@ -246,13 +242,23 @@
     LedScreenMemoryMatrixColor[y][x] = hue;
   }
 
-
+*/
   void Neon_Pixel_Array_Matrix_Mono_Display() {
     uint8_t LEDPixelPosition = 0;
-    for( uint8_t y = 0; y < kMatrixHeight; y++) 
+    uint8_t PixelBrightness = 0;
+    for( uint8_t y = 0; y < MatrixHeight; y++) 
     {
-      for( uint8_t x = 0; x < kMatrixWidth; x++) 
+      for( uint8_t x = 0; x < MatrixWidth; x++) 
       {
+        LEDPixelPosition = NeonScreenPixelPosition2DLUT [y][x];
+        if (NeonPixelScreenMemoryMatrixMono[y][x]) {
+          PixelBrightness = NeonPixelBrightnessOn;
+        }
+        else {
+          PixelBrightness = NeonPixelBrightnessOff;
+        }
+        neonPixelMatrix.drawPixel(x, y, PixelBrightness);
+        /*
         LEDPixelPosition = ScreenPixelPosition2DLUT [y][x];
         if ( LedScreenMemoryMatrixMono [y][x] ) {
           leds[LEDPixelPosition] = CHSV(LEDArrayMonochromeColorHSV[0],LEDArrayMonochromeColorHSV[1],LEDArrayMonochromeColorHSV[2]);
@@ -260,12 +266,12 @@
         else {
           leds[LEDPixelPosition] = 0;
         }
+        */
       }
     }
-    Neon_Pixel_Array_Auto_Brightness();
-    FastLED.show();
+    neonPixelMatrix.display();
   }
-
+/*
   void Neon_Pixel_Array_Matrix_Color_Display() {
     uint8_t LEDPixelPosition = 0;
     for( uint8_t y = 0; y < kMatrixHeight; y++) 
@@ -485,6 +491,7 @@
   */
 
   void Neon_Pixel_Array_Init() {
+    Serial.print("\nrun Neon_Pixel_Array_Init");
     // Minimum configuration to display single pixels.
     neonPixelMatrix.setDisplayPixelSize(8,8); // Set the size of the viewable display area.
     neonPixelMatrix.setViewOrigin(0,8);
@@ -506,6 +513,10 @@
   }
 
 #else // NEON_PIXEL_ARRAY
-  void Neon_Pixel_Array_Init() { }
+  void Neon_Pixel_Array_Matrix_Mono_Display() { }
+  void CopyCoreMemoryToMonochromeNeonPixelArrayMemory() { }
+  void Neon_Pixel_Array_Init() {
+    Serial.print("\nDid not run Neon_Pixel_Array_Init");
+  }
 
 #endif // NEON_PIXEL_ARRAY

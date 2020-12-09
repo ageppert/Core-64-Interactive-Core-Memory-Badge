@@ -69,11 +69,30 @@ void NeonPixelMatrix::drawPixel(int16_t x, int16_t y, uint16_t color) {
 
 void NeonPixelMatrix::display() {
     uint16_t i=0;
+    uint8_t  dataToSend;
+
+    SPI.setSCK(CLOCKPIN);  // 13
+    SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
+    SPI.beginTransaction(SPISettings(480000, MSBFIRST, SPI_MODE0));
+    
+    digitalWrite(CHIP_SELECT, LOW);
+    for(int x=viewOriginX; x<viewOriginX+pixelWidth; x++) {
+        for(int y=viewOriginY; y<viewOriginY+pixelHeight; y++){
+          dataToSend = frameBuffer[((y%HEIGHT)*WIDTH) + (x%WIDTH)];
+          SPI.transfer(dataToSend); //Send register location
+        }
+    }
+    // take the chip select high to de-select:
+    digitalWrite(CHIP_SELECT, HIGH);
+    SPI.endTransaction();
+
+    /*
     for(int x=viewOriginX; x<viewOriginX+pixelWidth; x++) {
         for(int y=viewOriginY; y<viewOriginY+pixelHeight; y++){
             displayBuffer[((pixelWidth*pixelHeight)-1)-i++] = frameBuffer[((y%HEIGHT)*WIDTH) + (x%WIDTH)];
         }
     }
+    */
 
     // hspi->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
     // hspi->transferBytes(displayBuffer , NULL, (pixelWidth*pixelHeight));

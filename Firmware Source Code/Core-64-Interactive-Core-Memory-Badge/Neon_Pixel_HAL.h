@@ -21,8 +21,12 @@ USAGE: Init, Clear, Write to one of the buffers in monochrome or color mode, upd
 
 
 // The API 
-void Neon_Pixel_Array_Init();				// Called once from Setup. Set up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h, and clear the array.
-
+void Neon_Pixel_Array_Init();					// Called once from Setup. Set up the LED array with the driver using chipset, data pin, color order, correction, brightness from FastLED_Config.h, and clear the array.
+void Neon_Pixel_Array_Matrix_Mono_Display();	// Update Neon Pixels from Matrix Array.
+void CopyCoreMemoryToMonochromeNeonPixelArrayMemory(); 
+void CopyCoreMemoryToMonochromeNeonPixelArrayMemory();
+void Neon_Pixel_Array_Matrix_Mono_Write(uint8_t y, uint8_t x, bool value);
+void Neon_Pixel_Array_Memory_Clear();
 /*
 	void Neon_Pixel_Array_Memory_Clear(); 		// Clears all of the LED Array memory buffers.
 	void Neon_Pixel_Array_Monochrome_Set_Color(uint8_t hue, uint8_t saturation, uint8_t value); // Overide the default monochrome color for next pixel to be written to the any monochrome memory buffer.
