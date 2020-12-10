@@ -66,7 +66,7 @@
     {56,57,58,59,60,61,62,63}
     };
 
-  uint8_t NeonPixelBrightnessOn  = 0x77;
+  uint8_t NeonPixelBrightnessOn  = 0x0F;
   uint8_t NeonPixelBrightnessOff = 0x00;
   uint8_t MatrixHeight = 8;
   uint8_t MatrixWidth = 8;

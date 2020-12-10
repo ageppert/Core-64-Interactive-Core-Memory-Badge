@@ -8,9 +8,11 @@
 #define CLOCKPIN        13
 #define DATA_OUT        11
 #define DATA_IN         12
-#define CHIP_SELECT      8 // already available as Pin_SPI_LCD_CS
+//#define CHIP_SELECT      8 // already available as Pin_SPI_LCD_CS
+#define CHIP_SELECT      2 // alredy available as #define Pin_SPI_OLED_CS  2
 
-static const int spiClk = 100000; 
+
+static const int spiClk = 480000; 
 
 NeonPixelMatrix::NeonPixelMatrix(int16_t w, int16_t h) : 
     Adafruit_GFX(w, h) {
