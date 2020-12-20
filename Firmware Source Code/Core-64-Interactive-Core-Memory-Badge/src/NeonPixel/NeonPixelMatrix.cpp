@@ -67,6 +67,13 @@ void NeonPixelMatrix::drawPixel(int16_t x, int16_t y, uint16_t color) {
 
 }
 
+void NeonPixelMatrix::drawPixelin1DArray(int16_t position, uint16_t color) {
+    if (position >= (WIDTH*HEIGHT)) return;
+    if (position < 0) return;
+    frameBuffer[ position ] = color;
+
+}
+
 void NeonPixelMatrix::display() {
     uint16_t i=0;
     uint8_t  dataToSend;

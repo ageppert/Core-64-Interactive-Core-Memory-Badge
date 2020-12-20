@@ -7,6 +7,7 @@ class NeonPixelMatrix : public Adafruit_GFX {
         NeonPixelMatrix(int16_t w, int16_t h);
         boolean begin();
         void drawPixel(int16_t x, int16_t y, uint16_t color);
+        void drawPixelin1DArray(int16_t position, uint16_t color);
         void clear(void);
         uint8_t *getBuffer(void);
         void display(void);

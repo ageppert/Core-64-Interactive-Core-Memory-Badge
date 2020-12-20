@@ -54,7 +54,7 @@
     55,54,53,52,51,50,49,48,
     56,57,58,59,60,61,62,63
     };
-
+/*
   const uint8_t NeonScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position to LED 2D array position.
     { 7, 6, 5, 4, 3, 2, 1, 0},
     { 8, 9,10,11,12,13,14,15},
@@ -64,6 +64,17 @@
     {40,41,42,43,44,45,46,47},
     {55,54,53,52,51,50,49,48},
     {56,57,58,59,60,61,62,63}
+    };
+*/
+  const uint8_t NeonScreenPixelPosition2DLUT [8][8] = { // Maps Screen Pixel Position to LED 2D array position.
+    { 7,15,23,31,39,47,55,63},
+    { 6,14,22,30,38,46,54,62},
+    { 5,13,21,29,37,45,53,61},
+    { 4,12,20,28,36,44,52,60},
+    { 3,11,19,27,35,43,51,59},
+    { 2,10,18,26,34,42,50,58},
+    { 1, 9,17,25,33,41,49,57},
+    { 0, 8,16,24,32,40,48,56}
     };
 
   // PWM Neon Pixel brightness is only in the range 0x00 to 0x7F, while 0x80 to 0xFF is full brightness.
@@ -259,7 +270,8 @@
         else {
           PixelBrightness = NeonPixelBrightnessOff;
         }
-        neonPixelMatrix.drawPixel(x, y, PixelBrightness);
+//        neonPixelMatrix.drawPixel(x, y, PixelBrightness);
+        neonPixelMatrix.drawPixelin1DArray(LEDPixelPosition, PixelBrightness);
         /*
         LEDPixelPosition = ScreenPixelPosition2DLUT [y][x];
         if ( LedScreenMemoryMatrixMono [y][x] ) {
