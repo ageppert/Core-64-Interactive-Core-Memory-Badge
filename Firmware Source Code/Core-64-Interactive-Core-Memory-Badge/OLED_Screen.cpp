@@ -48,16 +48,14 @@ void OLEDScreenSplash() {
 // Long
   display.setTextSize(1);
   display.clearDisplay();
-  display.setCursor(0, 9);     // Start at top-left corner
-  // display.println(F("   Core64  "));
-  display.println(F("Hackaday.io"));
-  display.print(F("h:"));
+  display.setCursor(0, 10);     // Start at top-left corner
+  display.println(F(" Core64.io"));
+  display.print(F("HV:"));
   display.print(HardwareVersionMajor);
   display.print(F("."));
   display.print(HardwareVersionMinor);
   display.print(F("."));
   display.println(HardwareVersionPatch);
-  display.print(F("f:"));
   display.println(FIRMWAREVERSION);
   display.print(F("S:"));
   display.print(TopLevelStateLocal,DEC);  

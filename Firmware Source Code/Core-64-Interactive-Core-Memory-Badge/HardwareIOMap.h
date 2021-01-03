@@ -56,7 +56,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 */
 
 	// #define FIRMWAREVERSION "0.3.0-0530.1340" // TO DO: update OLED UI to include whole string.
-	#define FIRMWAREVERSION "1219.2151" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210102.2118" // Testing without the hall switch requires manual over ride of HALL_1 input state
 
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************

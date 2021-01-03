@@ -94,8 +94,9 @@ void setup() {
   I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
     delay(1500); // Wait for the serial port to connect if it's there. Otherwise, move on.
-    Serial.println("\nCore64 - Interactive Core Memory Badge");
-    Serial.println("Andy Geppert at Core64.MachineIdeas.com");
+    Serial.println("\nCore64 - Interactive Core Memory Badge Kit");
+    Serial.println("By Andy Geppert");
+    Serial.println("More information at Core64.io");
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   I2CManagerBusScan();
@@ -118,7 +119,7 @@ void setup() {
     Serial.print("Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
-  delay(100);     // A little time to print all that serial data from above.
+  delay(200);     // A little time to print all that serial data from above.
   AnalogSetup();
   Buttons_Setup();
   CoreSetup();
