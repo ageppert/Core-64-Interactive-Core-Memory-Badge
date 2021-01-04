@@ -12,7 +12,7 @@
 #define CHIP_SELECT      2 // alredy available as #define Pin_SPI_OLED_CS  2
 
 
-static const int spiClk = 480000; 
+static const int spiClk =  480000; 
 
 NeonPixelMatrix::NeonPixelMatrix(int16_t w, int16_t h) : 
     Adafruit_GFX(w, h) {

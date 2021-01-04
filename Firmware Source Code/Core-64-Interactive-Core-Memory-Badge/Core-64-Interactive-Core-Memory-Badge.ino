@@ -193,7 +193,7 @@ void loop() {
     CopyCoreMemoryToMonochromeLEDArrayMemory();
     // delay(25);
     LED_Array_Matrix_Mono_Display();
-    // delay(25);
+    delay(25);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     // IOESpare1_Off();

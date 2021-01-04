@@ -79,7 +79,7 @@
 
   // PWM Neon Pixel brightness is only in the range 0x00 to 0x7F, while 0x80 to 0xFF is full brightness.
   // High brightness pulls down USB/BAT power available and system becomes instable.
-  uint8_t NeonPixelBrightnessOn  = 0x40;
+  uint8_t NeonPixelBrightnessOn  = 0XFF;
   uint8_t NeonPixelBrightnessOff = 0x00;
   uint8_t MatrixHeight = 8;
   uint8_t MatrixWidth = 8;

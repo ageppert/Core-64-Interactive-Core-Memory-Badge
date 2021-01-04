@@ -23,6 +23,4 @@ class NeonPixelMatrix : public Adafruit_GFX {
         uint16_t pixelHeight = 8;
         uint16_t viewOriginX = 0;
         uint16_t viewOriginY = 0;
-        
-
 };
