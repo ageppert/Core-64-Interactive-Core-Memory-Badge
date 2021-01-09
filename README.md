@@ -7,7 +7,7 @@ Follow this project at: https://hackaday.io/project/166155-core-64-interactive-c
 
 Provide me feedback at: https://www.Core64.io
 
-Documentation at: https://github.com/ageppert/Core-64-Interactive-Core-Memory-Badge/tree/master/Documentation
+Documentation at: https://ageppert.gitbook.io/core64/
 
 
 # Hardware Version History (latest on top)
