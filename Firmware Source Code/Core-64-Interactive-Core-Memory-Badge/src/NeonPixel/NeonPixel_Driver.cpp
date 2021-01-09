@@ -8,9 +8,7 @@
 #define CLOCKPIN        13
 #define DATA_OUT        11
 #define DATA_IN         12
-//#define CHIP_SELECT      8 // already available as Pin_SPI_LCD_CS
-#define CHIP_SELECT      2 // alredy available as #define Pin_SPI_OLED_CS  2
-
+#define CHIP_SELECT      8 // already available as Pin_SPI_LCD_CS in HardwareIOMap
 
 static const int spiClk =  480000; 
 
@@ -19,9 +17,9 @@ NeonPixelMatrix::NeonPixelMatrix(int16_t w, int16_t h) :
 
     pinMode(CHIP_SELECT, OUTPUT);
 
-    SPI.setMOSI(DATA_OUT); // 11
-    SPI.setMISO(DATA_IN); // 12
-    SPI.setSCK(CLOCKPIN);  // 13
+    SPI.setMOSI(DATA_OUT);
+    SPI.setMISO(DATA_IN);
+    SPI.setSCK(CLOCKPIN);
     SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
 
     Serial.print("\nInitializing Neon Pixel Matrix...");

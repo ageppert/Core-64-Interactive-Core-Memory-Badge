@@ -28,9 +28,8 @@
         Adafruit ILI9341 Library                    1.5.6   by Adafruit
 
   LIBRARIES INCLUDED IN SRC DIR
-    src/Si7210/si7210.h
+    Si7210, LTR329, NeonPixel
     
-
  */
 
 #include <stdint.h>
