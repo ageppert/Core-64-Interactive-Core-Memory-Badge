@@ -58,22 +58,23 @@ uint32_t SerialNumber = 0;          // Default value is 0 and should be non-zero
 bool TopLevelStateChanged = false;
 enum TopLevelState                  // Master State Machine
 {
-  STATE_SCROLLING_TEXT = 0,         //  0 Scrolling text at power on
-  STATE_CORE_FLUX_DETECTOR,         //  1 Testing all cores and displaying core state
-  STATE_MONOCHROME_DRAW,            //  2 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        // y 3 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        // y 4 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   // y 5 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  // n  6 Testing LED Driver with matrix array and multi-color symbols
-  STATE_TEST_EEPROM,                //  7
-  STATE_LED_TEST_ALL_COLOR,         // n 8 Test LED Driver with all pixels and all colors
-  STATE_CORE_TOGGLE_BIT,            //  9 Test one core with one function
-  STATE_CORE_TEST_ONE,              //  10 Testing core #coreToTest and displaying core state
-  STATE_CORE_TEST_MANY,             //  11 Testing multiple cores and displaying core state
-  STATE_HALL_TEST,                  //  12 Testing hall switch and sensor response
-  STATE_LAST,                       //  13 last one, return to 0.
+  STATE_STARTUP = 0,                //  0 Start-up
+  STATE_SCROLLING_TEXT,             //  1 Scrolling text at power on
+  STATE_CORE_FLUX_DETECTOR,         //  2 Testing all cores and displaying core state
+  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        // y 4 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        // y 5 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   // y 6 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  // n 7 Testing LED Driver with matrix array and multi-color symbols
+  STATE_TEST_EEPROM,                //  8
+  STATE_LED_TEST_ALL_COLOR,         // n 9 Test LED Driver with all pixels and all colors
+  STATE_CORE_TOGGLE_BIT,            //  10 Test one core with one function
+  STATE_CORE_TEST_ONE,              //  11 Testing core #coreToTest and displaying core state
+  STATE_CORE_TEST_MANY,             //  12 Testing multiple cores and displaying core state
+  STATE_HALL_TEST,                  //  13 Testing hall switch and sensor response
+  STATE_LAST,                       //  14 last one, return to 0.
 } ;
-static uint8_t TopLevelStateDefault = STATE_SCROLLING_TEXT;
+static uint8_t TopLevelStateDefault = STATE_STARTUP;
 static uint8_t TopLevelState = TopLevelStateDefault; // 
 uint8_t value = 0;
 uint8_t a = 0;
@@ -118,8 +119,9 @@ void setup() {
     Serial.println(EEPROMExtReadBornOnDay());    
     Serial.print("Firmware Version: ");
     Serial.println(FIRMWAREVERSION);
+    Serial.println();
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
-  delay(200);     // A little time to print all that serial data from above.
+  delay(250);     // A little time to print all that serial data from above.
   AnalogSetup();
   Buttons_Setup();
   CoreSetup();
@@ -180,6 +182,10 @@ void loop() {
 
   switch(TopLevelState)
   {
+  case STATE_STARTUP:
+    TopLevelState++;
+    break;
+
   case STATE_SCROLLING_TEXT:
     // IOESpare1_On();
     LED_Array_Monochrome_Set_Color(140,255,255);

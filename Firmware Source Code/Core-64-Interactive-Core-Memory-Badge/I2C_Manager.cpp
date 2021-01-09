@@ -185,7 +185,7 @@ void I2CManagerBusScan() {
     Serial.println(F("  No I2C devices found.\n"));
   } else {
     Serial.println(F("I2C_Manager: Scan complete.\n"));
-    delay(10);
+    delay(100);
   }
 }
 
