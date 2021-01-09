@@ -41,7 +41,6 @@ extern "C" {
 #define NEON_PIXEL_ARRAY
 
 void DetectHardwareVersion ();		// Use once to detect and set the hardware version variables.
-
 /*
 	****************************************** HARDWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -54,10 +53,8 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
 	------------------------------------------------------------------------------------------------------------
 */
-
-	// #define FIRMWAREVERSION "0.3.0-210530.1340" // TO DO: update OLED UI to include whole string.
-	#define FIRMWAREVERSION "210109.1230" // Testing without the hall switch requires manual over ride of HALL_1 input state
-
+	// #define FIRMWAREVERSION "0.3.0-210530.1340"
+	#define FIRMWAREVERSION "210109.1333" // Testing without the hall switch requires manual over ride of HALL_1 input state
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |

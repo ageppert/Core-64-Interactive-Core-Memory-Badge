@@ -216,12 +216,25 @@ void loop() {
     for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   
       //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
       Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
-      if (Core_Mem_Bit_Read(coreToTest)==true) {LED_Array_String_Write(coreToTest, 1);}
-      else { LED_Array_String_Write(coreToTest, 0); }
+      if (Core_Mem_Bit_Read(coreToTest)==true) {
+        LED_Array_String_Write(coreToTest, 1);
+        #ifdef NEON_PIXEL_ARRAY
+          Neon_Pixel_Array_String_Write(coreToTest, 1);
+        #endif
+        }
+      else { 
+        LED_Array_String_Write(coreToTest, 0); 
+        #ifdef NEON_PIXEL_ARRAY
+          Neon_Pixel_Array_String_Write(coreToTest, 0);
+        #endif
+        }
       delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!??
     }
     //TracingPulses(1);
     LED_Array_String_Display();
+    #ifdef NEON_PIXEL_ARRAY
+      Neon_Pixel_Array_Matrix_String_Display();
+    #endif
     //DebugWithReedSwitchInput();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
@@ -258,6 +271,10 @@ void loop() {
       LED_Array_Monochrome_Set_Color(0,255,255);      // Hue 0 = RED
       LED_Array_Binary_Write_Default();
       LED_Array_Binary_To_Matrix_Mono();
+      #ifdef NEON_PIXEL_ARRAY
+        Neon_Pixel_Array_Binary_Write_Default();
+        Neon_Pixel_Array_Binary_To_Matrix_Mono();
+      #endif
       OLEDScreenClear();
     }
     LED_Array_Matrix_Mono_Display();                  // Show the updated LED array.
