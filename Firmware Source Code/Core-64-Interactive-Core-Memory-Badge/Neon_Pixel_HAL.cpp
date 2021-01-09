@@ -11,7 +11,7 @@
 // #include "CharacterMap.h"
 // #include "Ambient_Light_Sensor.h"
 
-#include "src/NeonPixel/NeonPixelMatrix.h"
+#include "src/NeonPixel/NeonPixel_Driver.h"
 
 #ifdef NEON_PIXEL_ARRAY
   #define NUM_PIXELS 64

@@ -1,7 +1,7 @@
 
 // #include "HardwareIOMap.h"
 #include <Adafruit_GFX.h>
-#include "NeonPixelMatrix.h"
+#include "NeonPixel_Driver.h"
 #include <SPI.h>
 
 // Teensy 3.2
