@@ -16,11 +16,11 @@ PLANNED v0.4.1 Minor board tweaks, planned for Beta Test batch.
 
 v0.4 Core Board - Neon Pixel Edition. Expanded Core Grid Array to work with [Neon Pixels](https://pierremuth.wordpress.com/2020/07/08/neon-pixel/)!
 
-![](Images/Core64_V0.4_Neon_Pixel_Heart.jpeg)
+![](Images/Core64_v0.4_Neon_Pixel_Heart.jpeg)
 
 IN PROGRESS v0.4 Dual Boards (Blue LB + Yellow CB), moved up to Teensy 3.2, removed IO Expanders, added more expansion/hacking headers.
 
-![](Images/Core64_V0.4_Desk_Stand.jpeg)
+![](Images/Core64_v0.4_Desk_Stand.jpeg)
 
 v0.3.1 Hand re-worked v0.3 with 5V0 and 3V3 regulators each seperately sourced after power switch to provide improved power supplies.
 
