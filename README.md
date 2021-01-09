@@ -16,23 +16,23 @@ PLANNED v0.4.1 Minor board tweaks, planned for Beta Test batch.
 
 v0.4 Core Board - Neon Pixel Edition. Expanded Core Grid Array to work with [Neon Pixels](https://pierremuth.wordpress.com/2020/07/08/neon-pixel/)!
 
-<img src="Images/Core64_v0.4_Neon_Pixel_Heart.jpeg" height="200">
+<img src="Images/Core64_v0.4_Neon_Pixel_Heart.jpeg" height="300">
 
 IN PROGRESS v0.4 Dual Boards (Blue LB + Yellow CB), moved up to Teensy 3.2, removed IO Expanders, added more expansion/hacking headers.
 
-![](Images/Core64_v0.4_Desk_Stand.jpeg)
+<img src="Images/Core64_v0.4_Desk_Stand.jpeg" height="500">
 
 v0.3.1 Hand re-worked v0.3 with 5V0 and 3V3 regulators each seperately sourced after power switch to provide improved power supplies.
 
 v0.3 Dual Boards (both Red) with Teensy LC. One core board, one logic board. Used IO Expanders to drive the Core matrix, which ended up being way too slow.
 
-![](Images/Core64_v0.3_Dual_Red_Board.jpeg)
+<img src="Images/Core64_v0.3_Dual_Red_Board.jpeg" height="300">
 
 v0.2 Bug fixes learned from v0.1 applied. This version has not been made or tested, but should work.
 
 v0.1.1 Single Green Board worked after I added missing OR gate circuitry!
 
-![](Images/Core64_v0.1.1_Single_Green_Board.jpeg)
+<img src="Images/Core64_v0.1.1_Single_Green_Board.jpeg" height="300">
 
 v0.1 Single Green Board with Teensy LC. The first hand assembled prototype. Made one and it worked after I added missing circuitry!
 
