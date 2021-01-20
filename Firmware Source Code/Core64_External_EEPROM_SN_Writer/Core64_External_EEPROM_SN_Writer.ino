@@ -90,8 +90,8 @@ uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes
                             V1 some basic config TBD
      17, 1  NFMC:           V0 not populated
                             V1 some basic config TBD
-     18, 1  RTC BATTERY:    V0 not populated
-                            V1 populated
+     18, 1  RTC READY:      V0 not populated
+                            V1 populated crystal and battery
   */
 
 void EEPROMExtWriteByte(int deviceaddress, unsigned int eeaddress, byte data ) 
