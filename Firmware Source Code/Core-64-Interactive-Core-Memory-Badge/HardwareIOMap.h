@@ -35,7 +35,7 @@
 extern "C" {
 #endif
 
-// #define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
+#define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
 #define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// Program memory (14K) with Teensy LC
 #define HALL_SENSOR_ENABLE							// Program memory (10K)
 #define NEON_PIXEL_ARRAY
@@ -54,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	------------------------------------------------------------------------------------------------------------
 */
 	// #define FIRMWAREVERSION "0.3.0-210530.1340"
-	#define FIRMWAREVERSION "210109.1333" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210119.2110" // Testing without the hall switch requires manual over ride of HALL_1 input state
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |

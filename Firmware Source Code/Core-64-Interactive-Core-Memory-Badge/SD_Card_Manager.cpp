@@ -21,8 +21,10 @@
   SdVolume volume;
   SdFile root;
 
-  const int chipSelect = Pin_SPI_SD_CS;  // A11 BUILTIN_SDCARD;
-  const int PIN_SD_CD = Pin_SAO_G1_SPARE_2_CP_ADDR_1;  // Pin 1, GPIO2
+  const int chipSelect = Pin_SPI_SD_CS;
+  const int cardDetect = Pin_SPARE_3_CP_ADDR_2 ; // Pin_SPI_SD_CD; // This is analog A11, and the code below needs to be adapted from expecting a digital pin, to an analog pin.
+  // #define cardDetect_OVERRIDE 1         // If this is defined, it will over ride card detect as ALWAYS PRESENT.
+
   // Log file base name.  Must be six characters or less.
   #define FILE_BASE_NAME "Data"
 
@@ -53,6 +55,7 @@
     {
       digitalWriteFast(chipSelect, 0);
       number--;
+      delay(1);
       digitalWriteFast(chipSelect, 1);
     }
   }
@@ -63,7 +66,7 @@
       {return;}
     else
     {
-      pinMode(PIN_SD_CD, INPUT_PULLUP);
+      pinMode(cardDetect, INPUT_PULLUP);
 
       SPI.setMISO(Pin_SPI_SDI); // 12
       SPI.setMOSI(Pin_SPI_SDO); // 11
@@ -73,11 +76,19 @@
       Serial.print("\nInitializing SD card...");
 
   // see if the card is present and can be initialized:
-  if (!SD.begin(chipSelect)) {
-    Serial.println("Card failed, or not present");
-    // don't do anything more:
-    return;
-  }
+  #ifdef cardDetect_OVERRIDE
+    // don't run the card detection code
+  #else
+    SDCardSelectTwiddle(1);
+    // digitalWriteFast(chipSelect, 0);  // Testing, will I see this on the scope to confirm this line is going low?
+
+    if (!SD.begin(chipSelect)) {
+      Serial.println("Card failed, or not present");
+      // don't do anything more:
+      // digitalWriteFast(chipSelect, 1);  // Testing, will I see this on the scope to confirm this line is going low?
+      return;
+    }
+  #endif
   Serial.println("card initialized.");
 
   
@@ -88,7 +99,7 @@
         Serial.println("* is a card inserted?");
         Serial.println("* is your wiring correct?");
         Serial.println("* did you change the chipSelect pin to match your shield or module?");
-        if (digitalReadFast(PIN_SD_CD)==0)
+        if (digitalReadFast(cardDetect)==0)
          {
            SDCardPresent = 0; 
            Serial.println("SDCardPresent = 0");
@@ -97,7 +108,7 @@
       } 
       else {
         Serial.println("Wiring is correct and a card is present.");
-        if (digitalReadFast(PIN_SD_CD)==1)
+        if (digitalReadFast(cardDetect)==1)
         {
           SDCardPresent = 1;
           Serial.println("SDCardPresent = 1");
@@ -170,7 +181,7 @@ void SDCardWriteVoltageLine()
 
       case STATE_CARD_DETECT:
         Serial.println("SDCardState CARD_DETECT");
-        if (digitalReadFast(PIN_SD_CD)==1)
+        if (digitalReadFast(cardDetect)==1)
         {
           SDCardPresent = 1;
           Serial.println("SDCardPresent = 1");
