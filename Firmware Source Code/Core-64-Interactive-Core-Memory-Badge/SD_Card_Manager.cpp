@@ -22,8 +22,14 @@
   SdFile root;
 
   const int chipSelect = Pin_SPI_SD_CS;
-  const int cardDetect = Pin_SPARE_3_CP_ADDR_2 ; // Pin_SPI_SD_CD; // This is analog A11, and the code below needs to be adapted from expecting a digital pin, to an analog pin.
-  // #define cardDetect_OVERRIDE 1         // If this is defined, it will over ride card detect as ALWAYS PRESENT.
+  
+  // The SD library does not seem to care about the Card Detect input to work or not. It's more of a user nicety.
+  // The SD library just goes by the communication response on the SPI bus. 
+  #ifdef Pin_SPARE_3_Assigned_To_SPI_SD_CD_Input
+  const int cardDetect = Pin_SPARE_3_CP_ADDR_2;
+  #else
+  const int cardDetect = Pin_Sense_Pulse;  // A safe pin to use since it already set as an input pin in the Core_Driver
+  #endif
 
   // Log file base name.  Must be six characters or less.
   #define FILE_BASE_NAME "Data"
@@ -73,24 +79,35 @@
       SPI.setSCK(Pin_SPI_CLK);  // 13
       SPI.begin();                  //   <<<--- THE MISSING KEY TO MAKING THE setCLK assignment work!!!
 
-      Serial.print("\nInitializing SD card...");
+      Serial.println("\nInitializing SD card...");
+      Serial.print("SPI CLK PIN:");
+      Serial.println(Pin_SPI_CLK);
+      Serial.print("SPI SDO PIN:");
+      Serial.println(Pin_SPI_SDO);
+      Serial.print("SPI SDI PIN:");
+      Serial.println(Pin_SPI_SDI);
+      Serial.print("SPI CS PIN:");
+      Serial.println(Pin_SPI_SD_CS);
+      Serial.print("SPI CD PIN:");
+      Serial.println(cardDetect);
 
   // see if the card is present and can be initialized:
-  #ifdef cardDetect_OVERRIDE
-    // don't run the card detection code
-  #else
     SDCardSelectTwiddle(1);
-    // digitalWriteFast(chipSelect, 0);  // Testing, will I see this on the scope to confirm this line is going low?
-
     if (!SD.begin(chipSelect)) {
-      Serial.println("Card failed, or not present");
-      // don't do anything more:
-      // digitalWriteFast(chipSelect, 1);  // Testing, will I see this on the scope to confirm this line is going low?
+      Serial.println("Card communication failed.");
+      if (digitalReadFast(cardDetect)==1)
+      {
+        SDCardPresent = 1;
+        Serial.println("SDCardPresent = 1");
+      }
+      else
+      {
+         SDCardPresent = 0; 
+         Serial.println("SDCardPresent = 0");          
+      }
       return;
     }
-  #endif
-  Serial.println("card initialized.");
-
+    Serial.println("card initialized.");
   
       // we'll use the initialization code from the utility libraries
       // since we're just testing if the card is working!
@@ -107,13 +124,19 @@
         return;
       } 
       else {
-        Serial.println("Wiring is correct and a card is present.");
+        Serial.println("Wiring (CLK, SDO, SDI, CS) is correct.");
         if (digitalReadFast(cardDetect)==1)
         {
           SDCardPresent = 1;
           Serial.println("SDCardPresent = 1");
         }
+        else
+        {
+           SDCardPresent = 0; 
+           Serial.println("SDCardPresent = 0");          
+        }
       }
+
 
       // print the type of card
       Serial.print("\nCard type: ");
@@ -157,13 +180,13 @@
       volumesize /= 1024;
       Serial.println(volumesize);
 
-      
+      /*
       Serial.println("\nFiles found on the card (name, date and size in bytes): ");
       root.openRoot(volume);
       
       // list all files in the card with date and size
       root.ls(LS_R | LS_DATE | LS_SIZE);
-
+      */
     }
   }
 

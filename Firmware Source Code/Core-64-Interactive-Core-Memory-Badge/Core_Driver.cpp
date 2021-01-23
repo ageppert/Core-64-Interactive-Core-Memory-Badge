@@ -73,7 +73,7 @@ const bool MatrixDrivePinActiveState[34]   =  { 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0,
 #define WRITE_ENABLE_INACTIVE 0 // logic level to turn off transistor
 
 void Core_Driver_Setup() {
-    pinMode(Pin_Sense_Pulse, INPUT);
+    pinMode(Pin_Sense_Pulse, INPUT_PULLUP);
     pinMode(Pin_Sense_Reset, OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q1P,  OUTPUT);
     pinMode(PIN_MATRIX_DRIVE_Q1N,  OUTPUT);
@@ -98,7 +98,9 @@ void Core_Driver_Setup() {
     pinMode(PIN_WRITE_ENABLE, OUTPUT);
     pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
     pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
+    #ifdef Pin_SPARE_3_Assigned_To_Spare_3_Output
     pinMode(Pin_SPARE_3_CP_ADDR_2, OUTPUT);
+    #endif
 }
 
 
@@ -437,11 +439,15 @@ void DebugIOESpare2_Off() {
 }
 
 void DebugPin14_On() {
+  #ifdef Pin_SPARE_3_Assigned_To_Spare_3_Output
   digitalWriteFast(Pin_SPARE_3_CP_ADDR_2, 1);
+  #endif
 }
 
 void DebugPin14_Off() {
+  #ifdef Pin_SPARE_3_Assigned_To_Spare_3_Output
   digitalWriteFast(Pin_SPARE_3_CP_ADDR_2, 0);
+  #endif
 }
 
 void TracingPulses(uint8_t numberOfPulses) {

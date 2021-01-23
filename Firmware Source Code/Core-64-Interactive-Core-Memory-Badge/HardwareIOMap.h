@@ -54,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	------------------------------------------------------------------------------------------------------------
 */
 	// #define FIRMWAREVERSION "0.3.0-210530.1340"
-	#define FIRMWAREVERSION "210119.2110" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210123.1632" // Testing without the hall switch requires manual over ride of HALL_1 input state
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -123,7 +123,10 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define Pin_IR_OUT					 5
     #define Pin_Spare_4_IR_IN			10
     #define Pin_Spare_ADC_DAC			A14
-	#define Pin_SPARE_3_CP_ADDR_2		14  //
+	#define Pin_SPARE_3_CP_ADDR_2		14  // Multipurpose use, choose one #define to uncomment
+		#define Pin_SPARE_3_Assigned_To_Spare_3_Output
+		// #define Pin_SPARE_3_Assigned_To_Spare_3_Input
+		// #define Pin_SPARE_3_Assigned_To_SPI_SD_CD_Input
 	#define Pin_SPARE_ANA_6				A11
 	#define Pin_SPARE_ANA_7				A12
 	#define Pin_SPARE_ANA_8				A13

@@ -9,13 +9,15 @@
 
   LIBRARY DEPENDENCIES:
   Arduino > Tools > Manage Libraries > Install
-    Adafruit_SSD1306                            2.2.1   by Adafruit
+    Adafruit_SSD1306                            2.2.1   by Adafruit for Monochrome OLED 128x64 and 128x32
+    Adafruit_SSD1351                            1.2.7   by Adafruit for Color OLED 1.27" and 1.5" in the Adafruit shop
     Adafruit GFX Library                        1.8.3   by Adafruit
     Adafruit_BusIO                              1.3.1   by Adafruit
     Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
     FastLED                                     3.3.3   by Daniel Garcia
-    Wire.h
     SdFat - Adafruit Fork                       1.2.3   by Bill Greiman (fork of SdFat)
+    TeensyView                                  1.1.0   by Sparkfun for monochrome OLED 128x32 in the Sparkfun store
+    Wire.h
 
     DigitalIO                                   1.0.0   by Bill Greiman
     OR
