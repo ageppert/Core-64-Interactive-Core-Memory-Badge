@@ -21,6 +21,7 @@ extern "C" {
 #endif
 
 // Functions coverted to support V0.2 and V0.3 hardware are prefixed with Core_Driver_
+// TODO: Add core plane select
 void Core_Driver_Setup();
 void ReturnMatrixQ9NtoLowForLEDArray();
 
@@ -44,8 +45,12 @@ void DebugIOESpare1_Off();
 void DebugIOESpare2_On();
 void DebugIOESpare2_Off();
 
+void DebugPin10_On();
+void DebugPin10_Off();
 void DebugPin14_On();
 void DebugPin14_Off();
+void DebugPin15_On();
+void DebugPin15_Off();
 
 #ifdef __cplusplus
 } // extern "C"

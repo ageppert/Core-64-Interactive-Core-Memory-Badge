@@ -99,7 +99,26 @@ void Core_Driver_Setup() {
     pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
     pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
     #ifdef Pin_SPARE_3_Assigned_To_Spare_3_Output
-    pinMode(Pin_SPARE_3_CP_ADDR_2, OUTPUT);
+      pinMode(Pin_SPARE_3_CP_ADDR_2, OUTPUT);
+    #endif
+    #ifdef Pin_SPARE_5_Assigned_To_Spare_5_Output
+      pinMode(Pin_SPI_Reset_Spare_5, OUTPUT);
+    #endif
+    #ifdef Pin_Spare_4_IR_IN_Assigned_To_Spare_4_Output
+      pinMode(Pin_Spare_4_IR_IN, OUTPUT);
+    #endif
+
+    #ifdef Pin_SAO_G1_SPARE_1_CP_ADDR_0_Assigned_To_CP_ADDR_0_Output
+     pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
+     #define CORE_PLANE_SELECT_ACTIVE
+    #endif
+    #ifdef Pin_SAO_G1_SPARE_2_CP_ADDR_1_Assigned_To_CP_ADDR_1_Output
+     pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
+     #define CORE_PLANE_SELECT_ACTIVE
+    #endif
+    #ifdef Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
+      pinMode(Pin_SPARE_3_CP_ADDR_2, OUTPUT);
+     #define CORE_PLANE_SELECT_ACTIVE
     #endif
 }
 
@@ -329,12 +348,20 @@ uint8_t CMMDClearRowByBit[][2] = {
 
 void MatrixEnableTransistorInactive() { 
   digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE);
-  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0); // Assume and activate Core Plane 1 for all testing now.
+  #ifdef CORE_PLANE_SELECT_ACTIVE
+    // TODO: Add core plane select
+  #else
+    digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0); // Assume and activate Core Plane 1 for all testing now.
+  #endif
 }
 
 void MatrixEnableTransistorActive()   { 
   digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE);
-  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1); // Assume and activate Core Plane 1 for all testing now.
+  #ifdef CORE_PLANE_SELECT_ACTIVE
+
+  #else
+    digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1); // Assume and activate Core Plane 1 for all testing now.
+  #endif
 }
 
 void MatrixDriveTransistorsInactive() {
@@ -444,18 +471,46 @@ void DebugPin14_On() {
   #endif
 }
 
+void DebugPin10_On() {
+  #ifdef Pin_Spare_4_IR_IN_Assigned_To_Spare_4_Output
+  digitalWriteFast(Pin_Spare_4_IR_IN, 1);
+  #endif
+}
+
+void DebugPin10_Off() {
+  #ifdef Pin_Spare_4_IR_IN_Assigned_To_Spare_4_Output
+  digitalWriteFast(Pin_Spare_4_IR_IN, 0);
+  #endif
+}
+
 void DebugPin14_Off() {
   #ifdef Pin_SPARE_3_Assigned_To_Spare_3_Output
   digitalWriteFast(Pin_SPARE_3_CP_ADDR_2, 0);
   #endif
 }
 
+void DebugPin15_On() {
+  #ifdef Pin_SPARE_5_Assigned_To_Spare_5_Output
+  digitalWriteFast(Pin_SPI_Reset_Spare_5, 1);
+  #endif
+}
+
+void DebugPin15_Off() {
+  #ifdef Pin_SPARE_5_Assigned_To_Spare_5_Output
+  digitalWriteFast(Pin_SPI_Reset_Spare_5, 0);
+  #endif
+}
+
 void TracingPulses(uint8_t numberOfPulses) {
   for (uint8_t i = 1; i <= numberOfPulses; i++) {
+    DebugPin10_On();
     DebugPin14_On();
+    DebugPin15_On();
     // Teensy 3.2 either runs too fast or optimizes out multiple pulses if this delay is not included.
     // The delay is also useful to see the # of traces pulses on the scope or they are too narrow.
     delayMicroseconds(1); 
+    DebugPin10_Off();
     DebugPin14_Off();
+    DebugPin15_Off();
   }
 }

@@ -27,6 +27,7 @@ SETUP:
 extern bool CoreArrayMemory [8][8];
 
 // NEW API Command List
+// TODO: Add core plane select
 void Core_Mem_Bit_Write(uint8_t bit, bool value); 	// bit 0-63, 0 or 1
 bool Core_Mem_Bit_Read(uint8_t bit); 				// bit 0-63, return 0 or 1
 void CoreSetup();
