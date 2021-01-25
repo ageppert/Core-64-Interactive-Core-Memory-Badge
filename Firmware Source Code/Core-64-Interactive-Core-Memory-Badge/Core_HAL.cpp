@@ -121,7 +121,6 @@ void Core_Mem_Monitor() {
 }
 
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
-
   // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   // Turn off all of the matrix signals
   cli();                                            // Testing for consistent timing.

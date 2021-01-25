@@ -54,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	------------------------------------------------------------------------------------------------------------
 */
 	// #define FIRMWAREVERSION "0.3.0-210530.1340"
-	#define FIRMWAREVERSION "210123.2043" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210124.1719" // Testing without the hall switch requires manual over ride of HALL_1 input state
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -119,16 +119,16 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define Pin_I2C_Bus_Clock        	19  // Default Teensy. #define not needed, as Wire.h library takes care of this pin configuration.
 // MISC
 	#define Pin_SAO_G1_SPARE_1_CP_ADDR_0 0	// * Shared, multipurpose use, choose one #define below to uncomment and activate
-		// #define Pin_SAO_G1_SPARE_1_CP_ADDR_0_Assigned_To_CP_ADDR_0_Output
-	#define Pin_SAO_G1_SPARE_2_CP_ADDR_1 1	// * Shared, multipurpose use, choose one #define below to uncomment and activate
-		// #define Pin_SAO_G1_SPARE_2_CP_ADDR_1_Assigned_To_CP_ADDR_1_Output
+		#define Pin_SAO_G1_SPARE_1_CP_ADDR_0_Assigned_To_CP_ADDR_0_Output
+	#define Pin_SAO_G2_SPARE_2_CP_ADDR_1 1	// * Shared, multipurpose use, choose one #define below to uncomment and activate
+		#define Pin_SAO_G2_SPARE_2_CP_ADDR_1_Assigned_To_CP_ADDR_1_Output
 	#define Pin_IR_OUT					 5	// * Shared, digital output, multipurpose use, choose one #define below to uncomment and activate
     #define Pin_Spare_4_IR_IN			10	// * Shared
 		#define Pin_Spare_4_IR_IN_Assigned_To_Spare_4_Output
 	#define Pin_Built_In_LED         	13  // * Shared with SPI CLOCK
 	#define Pin_SPARE_3_CP_ADDR_2		14	// * Shared, multipurpose use, choose one #define below to uncomment and activate
 		// #define Pin_SPARE_3_Assigned_To_Spare_3_Output
-		// #define Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
+		#define Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
 		// #define Pin_SPARE_3_Assigned_To_Spare_3_Input
 		// #define Pin_SPARE_3_Assigned_To_SPI_SD_CD_Input
 	#define Pin_Battery_Voltage        A10  // 1/2 the battery voltage (otherwise known as Digital pin 24)

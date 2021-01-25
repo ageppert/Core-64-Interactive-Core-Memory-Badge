@@ -72,6 +72,19 @@ const bool MatrixDrivePinActiveState[34]   =  { 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0,
 #define WRITE_ENABLE_ACTIVE   1 // logic level to turn on transistor
 #define WRITE_ENABLE_INACTIVE 0 // logic level to turn off transistor
 
+static uint8_t CorePlane = 1;           // Default Core Plane if it is not specified by the user application.
+const bool CorePlaneAddr[9][3] = {
+  { 0,0,0 },  // not used
+  { 0,0,0 },  // Plane 1 (MSB to LSB)
+  { 0,0,1 },  // Plane 2
+  { 0,1,0 },  // Plane 3
+  { 0,1,1 },  // Plane 4
+  { 1,0,0 },  // Plane 5
+  { 1,0,1 },  // Plane 6
+  { 1,1,0 },  // Plane 7
+  { 1,1,1 }   // Plane 8     
+};
+
 void Core_Driver_Setup() {
     pinMode(Pin_Sense_Pulse, INPUT_PULLUP);
     pinMode(Pin_Sense_Reset, OUTPUT);
@@ -97,7 +110,7 @@ void Core_Driver_Setup() {
     pinMode(PIN_MATRIX_DRIVE_Q10N, OUTPUT);
     pinMode(PIN_WRITE_ENABLE, OUTPUT);
     pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
-    pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
+    pinMode(Pin_SAO_G2_SPARE_2_CP_ADDR_1, OUTPUT);
     #ifdef Pin_SPARE_3_Assigned_To_Spare_3_Output
       pinMode(Pin_SPARE_3_CP_ADDR_2, OUTPUT);
     #endif
@@ -112,8 +125,8 @@ void Core_Driver_Setup() {
      pinMode(Pin_SAO_G1_SPARE_1_CP_ADDR_0, OUTPUT);
      #define CORE_PLANE_SELECT_ACTIVE
     #endif
-    #ifdef Pin_SAO_G1_SPARE_2_CP_ADDR_1_Assigned_To_CP_ADDR_1_Output
-     pinMode(Pin_SAO_G1_SPARE_2_CP_ADDR_1, OUTPUT);
+    #ifdef Pin_SAO_G2_SPARE_2_CP_ADDR_1_Assigned_To_CP_ADDR_1_Output
+     pinMode(Pin_SAO_G2_SPARE_2_CP_ADDR_1, OUTPUT);
      #define CORE_PLANE_SELECT_ACTIVE
     #endif
     #ifdef Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
@@ -121,7 +134,6 @@ void Core_Driver_Setup() {
      #define CORE_PLANE_SELECT_ACTIVE
     #endif
 }
-
 
 // CMMD = Core Memory Matrix Drive
 // Given a Core Memory Matrix Column 0 to 7 the array below specifies which 2 pins connected to transistors are required to set the column.
@@ -159,35 +171,6 @@ uint8_t CMMDClearCol[8][2] = {
 // CMM front (user) view is with Row 0 on top, 7 on bottom.
 // Each row of the array corresponds to rows 0 to 7 of the CMM.
 // Each row is sequence of 2 transitors, first one connects to top four rows and second one connects to the bottom four rows.
-
-/* These arrays are no longer needed, replaced by CMMDSetRowByBit
-    // Set is given the arbitrary definition of current flow rightward in the top four rows.
-    // Top four rows connected to VMEM and bottom four rows connected to GNDPWR.
-    uint8_t CMMDSetRow[8][2] = {
-      { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q9N  },  // Row 0
-      { PIN_MATRIX_DRIVE_Q7P , PIN_MATRIX_DRIVE_Q10N },  // Row 1
-      { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q9N  },  // Row 2
-      { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N },  // Row 3
-      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 4
-      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 5
-      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 6
-      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P }   // Row 7      
-    };
-
-    // Clear is given the arbitrary definition of current flow leftward in that column.
-    // Top of column connected to GNDPWR and bottom of column connected to VMEM.
-    uint8_t CMMDClearRow[8][2] = {
-      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q9P  },  // Row 0 
-      { PIN_MATRIX_DRIVE_Q7N , PIN_MATRIX_DRIVE_Q10P },  // Row 1
-      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q9P  },  // Row 2
-      { PIN_MATRIX_DRIVE_Q8N , PIN_MATRIX_DRIVE_Q10P },  // Row 3
-      { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 4
-      { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  },  // Row 5
-      { PIN_MATRIX_DRIVE_Q9N , PIN_MATRIX_DRIVE_Q7P  },  // Row 6
-      { PIN_MATRIX_DRIVE_Q10N, PIN_MATRIX_DRIVE_Q8P  }   // Row 7      
-    };
-*/
-
 /* 
 The original assumption of current going left to right in a row does not work because the cores
 are not all placed in the same orientation. The cores alternate back and forth in a row, and in 
@@ -346,22 +329,32 @@ uint8_t CMMDClearRowByBit[][2] = {
   { PIN_MATRIX_DRIVE_Q8P , PIN_MATRIX_DRIVE_Q10N }  // Bit 31    ROW 3
 };
 
+void Core_Plane_Select(uint8_t plane) {
+  CorePlane = plane;
+}
+
+void Core_Plane_Set_Addr(uint8_t plane) {
+  digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0,  CorePlaneAddr [plane] [2] );
+  digitalWriteFast(Pin_SAO_G2_SPARE_2_CP_ADDR_1,  CorePlaneAddr [plane] [1] );
+  digitalWriteFast(Pin_SPARE_3_CP_ADDR_2,         CorePlaneAddr [plane] [0] );
+}
+
 void MatrixEnableTransistorInactive() { 
   digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_INACTIVE);
   #ifdef CORE_PLANE_SELECT_ACTIVE
-    // TODO: Add core plane select
+    // No need to clear the Core Plane Addr
   #else
-    digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0); // Assume and activate Core Plane 1 for all testing now.
+    // digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 0); // Assume and activate Core Plane 1 for all testing now.
   #endif
 }
 
 void MatrixEnableTransistorActive()   { 
-  digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE);
   #ifdef CORE_PLANE_SELECT_ACTIVE
-
+    Core_Plane_Set_Addr(CorePlane);
   #else
-    digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1); // Assume and activate Core Plane 1 for all testing now.
+    // digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0, 1); // Assume and activate Core Plane 1 for all testing now.
   #endif
+  digitalWriteFast(PIN_WRITE_ENABLE, WRITE_ENABLE_ACTIVE);
 }
 
 void MatrixDriveTransistorsInactive() {
@@ -458,11 +451,11 @@ void DebugIOESpare1_Off() {
 }
 
 void DebugIOESpare2_On() {
-  digitalWriteFast(Pin_SAO_G1_SPARE_2_CP_ADDR_1, 1);
+  digitalWriteFast(Pin_SAO_G2_SPARE_2_CP_ADDR_1, 1);
 }
 
 void DebugIOESpare2_Off() {
-  digitalWriteFast(Pin_SAO_G1_SPARE_2_CP_ADDR_1, 0);
+  digitalWriteFast(Pin_SAO_G2_SPARE_2_CP_ADDR_1, 0);
 }
 
 void DebugPin14_On() {

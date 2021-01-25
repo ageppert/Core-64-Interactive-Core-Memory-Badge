@@ -21,8 +21,8 @@ extern "C" {
 #endif
 
 // Functions coverted to support V0.2 and V0.3 hardware are prefixed with Core_Driver_
-// TODO: Add core plane select
 void Core_Driver_Setup();
+void Core_Plane_Select(uint8_t plane);		// Select 1 through 8.
 void ReturnMatrixQ9NtoLowForLEDArray();
 
 void MatrixEnableTransistorInactive();
