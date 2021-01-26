@@ -54,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	------------------------------------------------------------------------------------------------------------
 */
 	// #define FIRMWAREVERSION "0.3.0-210530.1340"
-	#define FIRMWAREVERSION "210124.1719" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210125.1954" // Testing without the hall switch requires manual over ride of HALL_1 input state
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -111,6 +111,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
     #define Pin_SPI_CLK                 13	// * Shared, digital output
 	#define Pin_SPI_Reset_Spare_5		15	// * Shared, digital output, multipurpose use, choose one #define below to uncomment and activate
 		// #define Pin_SPARE_5_Assigned_To_Spare_5_Output
+		#define Pin_SPARE_5_Assigned_To_Spare_5_Analog
     #define Pin_SPI_LCD_BACKLIGHT		20	// * Shared, digital output
 	#define Pin_SPI_TeensyView_DC		21	// * Shared, digital output
 	#define Pin_SPI_OLED_DC				23	// * Shared, digital output
