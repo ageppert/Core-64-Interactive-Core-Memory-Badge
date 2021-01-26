@@ -281,6 +281,7 @@ void loop() {
     }
     LED_Array_Matrix_Mono_Display();                  // Show the updated LED array.
     LED_Array_Matrix_Mono_to_Binary();                // Convert whatever is in the LED Matrix Array to a 64-bit binary value...
+    OLEDSetTopLevelState(TopLevelState);
     OLED_Show_Matrix_Mono_Hex();                      // ...and display it on the OLED.
     #ifdef NEON_PIXEL_ARRAY
       Neon_Pixel_Array_Matrix_Mono_Display();

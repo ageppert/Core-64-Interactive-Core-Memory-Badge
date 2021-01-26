@@ -19,6 +19,7 @@ SETUP:
 //extern "C" {
 //#endif
 uint16_t GetBatteryVoltagemV();
+float 	 GetBatteryVoltageV();
 void AnalogSetup();
 void AnalogUpdate();
 

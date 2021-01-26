@@ -54,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	------------------------------------------------------------------------------------------------------------
 */
 	// #define FIRMWAREVERSION "0.3.0-210530.1340"
-	#define FIRMWAREVERSION "210125.1954" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210126.0815" // Testing without the hall switch requires manual over ride of HALL_1 input state
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |

@@ -60,8 +60,8 @@ void OLEDScreenSplash() {
   display.print(F("S:"));
   display.print(TopLevelStateLocal,DEC);  
   display.print(F(" "));
-  // display.print(F("Bat:"));
-  display.println(GetBatteryVoltagemV(),DEC);
+  display.print(F("V:"));
+  display.println(GetBatteryVoltageV(),2);
   // display.println(F("mV"));
   OLED_Display_Stability_Work_Around();
 }
@@ -126,7 +126,7 @@ void OLED_Show_Matrix_Mono_Hex() {
     UpdateTimer = NowTime;
     display.clearDisplay();
     display.setTextSize(1);      // Normal 1:1 pixel scale
-    display.setCursor(0, 0);     // Start at top-left corner
+    display.setCursor(0,9);     // Start at top-left corner
     display.println(F("Hex View: "));
     Full64BitValue = LED_Array_Binary_Read();
     display.print(F(" "));
@@ -138,6 +138,12 @@ void OLED_Show_Matrix_Mono_Hex() {
       else {display.print(HexValue,HEX);}
       if (i==32) {display.println(); display.print(F(" "));}
     }
+    display.println();
+    display.print(F("S:"));
+    display.print(TopLevelStateLocal,DEC);  
+    display.print(F(" "));
+    display.print(F("V:"));
+    display.println(GetBatteryVoltageV(),2);
     OLED_Display_Stability_Work_Around();
   }
 }
