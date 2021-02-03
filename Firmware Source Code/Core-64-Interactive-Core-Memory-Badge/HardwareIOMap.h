@@ -35,7 +35,7 @@
 extern "C" {
 #endif
 
-#define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
+// #define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
 #define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// Program memory (14K) with Teensy LC
 #define HALL_SENSOR_ENABLE							// Program memory (10K)
 #define NEON_PIXEL_ARRAY
@@ -53,8 +53,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
 	------------------------------------------------------------------------------------------------------------
 */
-	// #define FIRMWAREVERSION "0.3.0-210530.1340"
-	#define FIRMWAREVERSION "210126.0815" // Testing without the hall switch requires manual over ride of HALL_1 input state
+	#define FIRMWAREVERSION "210202.2042"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -132,6 +131,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 		#define Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
 		// #define Pin_SPARE_3_Assigned_To_Spare_3_Input
 		// #define Pin_SPARE_3_Assigned_To_SPI_SD_CD_Input
+		// #define Pin_SPARE_3_Assigned_To_Spare_3_Analog_Input
 	#define Pin_Battery_Voltage        A10  // 1/2 the battery voltage (otherwise known as Digital pin 24)
 	#define Pin_SPARE_ANA_6			   A11
 	#define Pin_SPARE_ANA_7			   A12

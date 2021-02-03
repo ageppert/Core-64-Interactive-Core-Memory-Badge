@@ -9,7 +9,7 @@
 #include "Analog_Input_Test.h"
 #include "HardwareIOMap.h"
 
-#define SEND_ANALOG_TO_SERIAL_PORT
+// #define SEND_ANALOG_TO_SERIAL_PORT
 #define BATTERY_FILTER_SIZE  8 // 
 #define BATTERY_FILTER_SHIFT 3 // bit shift 3 is divide by 8
 
@@ -22,25 +22,28 @@ static float    BatteryAvgV  = 0 ;
   // 3300 mV per 1023 counts = 3.226 milliVolts/count [1/4 battery voltage]
   // Multiply above result by 4 = 12.904 milliVolts/count [full battery voltage] 
   // ADC reading * 12.904 = battery voltage in milliVolts
-static float BatteryScalarADCtomV = 12.903;
+static float BatteryScalarADCtomV = 12.903; // 1:4
 static uint16_t Analog_A10 = 0 ;
 static uint16_t BatteryVoltageFilterArray[BATTERY_FILTER_SIZE];
 static uint16_t BatteryVoltageFilterArrayTotal;
 static uint8_t BatteryVoltageFilterArrayPosition = 0;
 static bool BatteryVoltageFilterLoaded = 0;
 
+static float Bus_5V0      = 0 ;
 static float Core_Col0_Q5  = 0 ;
 static float Core_Col0_R9  = 0 ;
 static float Core_Col0_U7  = 0 ;
 static float Core_Col0_Q2  = 0 ;
 static float Core_Col0_Q21 = 0 ;
 
+static uint16_t Analog_A0  = 0 ;
+static float    Bus_5V0_ADCtomV = 6.452; // 1:2
 static uint16_t Analog_A1  = 0 ;
 static uint16_t Analog_A11 = 0 ;
 static uint16_t Analog_A12 = 0 ;
 static uint16_t Analog_A13 = 0 ;
 static uint16_t Analog_A14 = 0 ;
-static float Core_Col0_ADCtomV = 3.226;
+static float    Core_Col0_ADCtomV = 3.226; // 1:1
 
 uint16_t GetBatteryVoltagemV() {
   return (BatteryAvgmV);
@@ -54,12 +57,13 @@ void ReadAnalogVoltage() {
 
   if (HardwareVersionMinor == 4)
   {
-    Analog_A10 = analogRead ( Pin_Battery_Voltage   );  //  
-    Analog_A1  = analogRead ( Pin_SPI_Reset_Spare_5 );  //  Q5 / 3V3  (Red)
-    Analog_A11 = analogRead ( Pin_SPARE_ANA_6       );  //  R9        (Yel)
-    Analog_A12 = analogRead ( Pin_SPARE_ANA_7       );  //  U7        (Grn)
-    Analog_A13 = analogRead ( Pin_SPARE_ANA_8       );  //  Q2        (Blu)
-    Analog_A14 = analogRead ( Pin_Spare_ADC_DAC     );  //  Q21       (Wht)
+    Analog_A10 = analogRead ( Pin_Battery_Voltage   );  //  VBAT_MON
+    Analog_A0  = analogRead ( Pin_SPARE_3_CP_ADDR_2 );  //  5V0       // TO DO: Test with serial
+    Analog_A1  = analogRead ( Pin_SPI_Reset_Spare_5 );  //  VMEM (3V3 or "top of upper drive transitor, emitter")
+    Analog_A11 = analogRead ( Pin_SPARE_ANA_6       );  //  R9 ("top of COL0 resistor" between Q3P and Q3N transistors)
+    Analog_A12 = analogRead ( Pin_SPARE_ANA_7       );  //  D7 ("bottom of COL0 resistor" or "top of diode" before it enters the diode drop)
+    Analog_A13 = analogRead ( Pin_SPARE_ANA_8       );  //  Q2 ("top of bottom drive transistor, collector")
+    Analog_A14 = analogRead ( Pin_Spare_ADC_DAC     );  //  Q21 ("top of Enable FET, drain")
   }
   
   if(!BatteryVoltageFilterLoaded)
@@ -91,6 +95,7 @@ void ReadAnalogVoltage() {
   BatteryAvgmV        = (uint16_t)(BatteryQuarterAvgmV * BatteryScalarADCtomV);
   BatteryAvgV         = (float)(BatteryAvgmV / 1000.0) ;
 
+  Bus_5V0       = Analog_A0  * Bus_5V0_ADCtomV   / 1000.0 ;
   Core_Col0_Q5  = Analog_A1  * Core_Col0_ADCtomV / 1000.0 ;
   Core_Col0_R9  = Analog_A11 * Core_Col0_ADCtomV / 1000.0 ;
   Core_Col0_U7  = Analog_A12 * Core_Col0_ADCtomV / 1000.0 ;
@@ -120,6 +125,8 @@ void AnalogUpdate() {
     */
     #ifdef SEND_ANALOG_TO_SERIAL_PORT
       Serial.print((BatteryAvgV),2);
+      Serial.print(", ");
+      Serial.print(Bus_5V0,2);
       Serial.print(", ");
       Serial.print(Core_Col0_Q5,2);
       Serial.print(", ");
