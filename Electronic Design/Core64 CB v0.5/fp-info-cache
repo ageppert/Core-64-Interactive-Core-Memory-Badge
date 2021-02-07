@@ -1,4 +1,4 @@
-16725355372483559
+16726993434594559
 2829
 ADAFRUIT_2829
 
@@ -28131,6 +28131,13 @@ Through hole straight pin header, 1x18, 2.54mm pitch, single row
 Through hole pin header THT 1x18 2.54mm single row
 0
 18
+18
+Connector_PinHeader_2.54mm
+PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right
+surface-mounted straight pin header, 1x16, 2.54mm pitch, single row, style 2 (pin 1 right)
+Surface mounted pin header SMD 1x16 2.54mm single row style2 pin1 right
+0
+36
 18
 Connector_PinHeader_2.54mm
 PinHeader_1x18_P2.54mm_Vertical_SMD_Pin1Left

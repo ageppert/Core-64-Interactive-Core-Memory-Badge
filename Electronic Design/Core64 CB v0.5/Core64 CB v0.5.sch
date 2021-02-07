@@ -6,13 +6,13 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Core64 CB (Core Board)"
-Date "2021-02-04"
+Date "2021-02-05"
 Rev "0.5"
-Comp "www.Core64.io"
-Comment1 "Work in progress"
-Comment2 "Andy Geppert"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
 Text GLabel 3950 2500 3    50   Input ~ 0
 XB0
@@ -38,29 +38,29 @@ Text GLabel 4050 900  1    50   Input ~ 0
 XT1-5
 Text GLabel 3950 900  1    50   Input ~ 0
 XT0-4
-Text GLabel 6700 1750 0    50   Output ~ 0
-XB3
-Text GLabel 6700 1650 0    50   Output ~ 0
-XB2
-Text GLabel 6700 1550 0    50   Output ~ 0
-XB1
-Text GLabel 6700 1450 0    50   Output ~ 0
-XB0
 Text GLabel 6700 1850 0    50   Output ~ 0
-XB4
+XB3
+Text GLabel 6700 1750 0    50   Output ~ 0
+XB2
+Text GLabel 6700 1650 0    50   Output ~ 0
+XB1
+Text GLabel 6700 1550 0    50   Output ~ 0
+XB0
 Text GLabel 6700 1950 0    50   Output ~ 0
-XB5
+XB4
 Text GLabel 6700 2050 0    50   Output ~ 0
-XB6
+XB5
 Text GLabel 6700 2150 0    50   Output ~ 0
+XB6
+Text GLabel 6700 2250 0    50   Output ~ 0
 XB7
-Text GLabel 6700 1350 0    50   Output ~ 0
+Text GLabel 6700 1450 0    50   Output ~ 0
 H_XT0-4
-Text GLabel 6700 1250 0    50   Output ~ 0
+Text GLabel 6700 1350 0    50   Output ~ 0
 H_XT1-5
-Text GLabel 6700 1150 0    50   Output ~ 0
+Text GLabel 6700 1250 0    50   Output ~ 0
 H_XT2-6
-Text GLabel 6700 1050 0    50   Output ~ 0
+Text GLabel 6700 1150 0    50   Output ~ 0
 H_XT3-7
 Wire Wire Line
 	3950 1150 4350 1150
@@ -99,13 +99,13 @@ Wire Wire Line
 	4250 1000 4250 900 
 Connection ~ 4250 1000
 Wire Wire Line
-	6700 1050 6950 1050
-Wire Wire Line
 	6700 1150 6950 1150
 Wire Wire Line
 	6700 1250 6950 1250
 Wire Wire Line
 	6700 1350 6950 1350
+Wire Wire Line
+	6700 1450 6950 1450
 Text GLabel 3600 2200 0    50   Input ~ 0
 YL7
 Text GLabel 3600 2100 0    50   Input ~ 0
@@ -122,39 +122,39 @@ Text GLabel 3600 1600 0    50   Input ~ 0
 YL1
 Text GLabel 3600 1500 0    50   Input ~ 0
 YL0
-Text GLabel 2150 1200 2    50   Output ~ 0
-H_YL1
-Text GLabel 2150 1100 2    50   Output ~ 0
-H_YL0
 Text GLabel 2150 1300 2    50   Output ~ 0
-H_YL2
+H_YL1
+Text GLabel 2150 1200 2    50   Output ~ 0
+H_YL0
 Text GLabel 2150 1400 2    50   Output ~ 0
-H_YL3
+H_YL2
 Text GLabel 2150 1500 2    50   Output ~ 0
-YL4
+H_YL3
 Text GLabel 2150 1600 2    50   Output ~ 0
-YL5
+YL4
 Text GLabel 2150 1700 2    50   Output ~ 0
-YL6
+YL5
 Text GLabel 2150 1800 2    50   Output ~ 0
+YL6
+Text GLabel 2150 1900 2    50   Output ~ 0
 YL7
 Wire Wire Line
-	2100 1500 2100 1700
+	2100 1600 2100 1800
 Wire Wire Line
-	2100 1700 2150 1700
+	2100 1800 2150 1800
 Wire Wire Line
-	2150 1100 1500 1100
-Wire Wire Line
-	1500 1200 2150 1200
+	2150 1200 1500 1200
 Wire Wire Line
 	1500 1300 2150 1300
 Wire Wire Line
-	2150 1400 1500 1400
+	1500 1400 2150 1400
 Wire Wire Line
-	2150 1500 2100 1500
+	2150 1500 1500 1500
 Wire Wire Line
-	2100 1500 1500 1500
-Connection ~ 2100 1500
+	2150 1600 2100 1600
+Wire Wire Line
+	2100 1600 1500 1600
+Connection ~ 2100 1600
 Wire Wire Line
 	5350 1900 5000 1900
 Wire Wire Line
@@ -180,44 +180,33 @@ Wire Wire Line
 Wire Wire Line
 	5000 2200 5050 2200
 Wire Wire Line
-	2050 1800 2150 1800
+	2050 1900 2150 1900
 Wire Wire Line
-	2050 1600 2050 1800
+	2050 1700 2050 1900
 Wire Wire Line
-	2150 1600 2050 1600
+	2150 1700 2050 1700
 Text Notes 1150 2550 2    50   ~ 0
-SILKSCREEN:\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nP8\nP7\nP6\nP5
+SILKSCREEN:\nLSIG\nUSER\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nP8\nP7\nP6\nP5
 Wire Wire Line
-	2050 1600 1500 1600
-Connection ~ 2050 1600
+	2050 1700 1500 1700
+Connection ~ 2050 1700
+Wire Wire Line
+	6700 2250 6950 2250
 Wire Wire Line
 	6700 2150 6950 2150
-Wire Wire Line
-	6700 2050 6950 2050
 $Comp
-L Connector:Conn_01x16_Male J2
+L Connector:Conn_01x18_Male J2
 U 1 1 5E723F12
 P 7150 1750
-F 0 "J2" H 7258 2635 50  0000 C CNN
-F 1 "TSM-116-03-T-SV‎" H 7258 2542 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 7150 1750 50  0001 C CNN
+F 0 "J2" H 7150 2700 50  0000 C CNN
+F 1 "Digi-Key 77311-420-36LF-ND" H 8000 2700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 7150 1750 50  0001 C CNN
 F 3 "~" H 7150 1750 50  0001 C CNN
 	1    7150 1750
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x16_Male J1
-U 1 1 5E72894A
-P 1300 1800
-F 0 "J1" H 1408 2685 50  0000 C CNN
-F 1 "TSM-116-03-T-SV‎" H 1408 2592 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1300 1800 50  0001 C CNN
-F 3 "~" H 1300 1800 50  0001 C CNN
-	1    1300 1800
-	1    0    0    -1  
-$EndComp
 Text Notes 7300 2500 0    50   ~ 0
-SILKSCREEN:\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nP1/IO1\nP2/IO2\nP3\nP4
+SILKSCREEN:\n5V0\nGND\nXT3,7\nXT2,6\nXT1,5\nXT0,4\nXB0\nXB1\nXB2\nXB3\nXB4\nXB5\nXB6\nXB7\nP1/IO1\nP2/IO2\nP3\nP4
 $Comp
 L CORE_64_LIBRARY:Core_Memory_8x8_Array_Front_Facing CM1
 U 1 1 5E79BDE1
@@ -238,20 +227,20 @@ Wire Wire Line
 Wire Wire Line
 	3850 2550 3850 2500
 Wire Wire Line
-	6950 1450 6700 1450
-Wire Wire Line
 	6950 1550 6700 1550
 Wire Wire Line
 	6950 1650 6700 1650
 Wire Wire Line
-	6700 1750 6950 1750
+	6950 1750 6700 1750
 Wire Wire Line
-	6950 1850 6700 1850
+	6700 1850 6950 1850
 Wire Wire Line
-	6700 1950 6950 1950
-Text GLabel 1650 1800 2    50   Input ~ 0
+	6950 1950 6700 1950
+Wire Wire Line
+	6700 2050 6950 2050
+Text GLabel 1650 1900 2    50   Input ~ 0
 SENSE1
-Text GLabel 1650 1700 2    50   Input ~ 0
+Text GLabel 1650 1800 2    50   Input ~ 0
 SENSE2
 Wire Wire Line
 	3600 2300 3550 2300
@@ -260,32 +249,32 @@ Wire Wire Line
 Wire Wire Line
 	3550 2450 3500 2450
 Wire Wire Line
-	1650 1800 1500 1800
+	1650 1900 1500 1900
 Wire Wire Line
-	2450 2200 2450 2300
+	2450 2300 2450 2400
 Wire Wire Line
-	1500 2100 1650 2100
+	1500 2200 1650 2200
 Wire Wire Line
-	1500 2200 2450 2200
+	1500 2300 2450 2300
 Wire Wire Line
-	1500 2300 1900 2300
+	1500 2400 1900 2400
 Wire Wire Line
-	1900 2400 1500 2400
+	1900 2500 1500 2500
 Wire Wire Line
-	1500 2500 1900 2500
+	1500 2600 1900 2600
 Wire Wire Line
-	1900 2600 1500 2600
+	1900 2700 1500 2700
 Wire Wire Line
-	1500 1700 1650 1700
-Text GLabel 1650 1900 2    50   BiDi ~ 0
-I2C_CLOCK
+	1500 1800 1650 1800
 Text GLabel 1650 2000 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 1650 2100 2    50   BiDi ~ 0
 I2C_DATA
 Wire Wire Line
-	1500 1900 1650 1900
-Wire Wire Line
 	1500 2000 1650 2000
-Text GLabel 1650 2100 2    50   Input ~ 0
+Wire Wire Line
+	1500 2100 1650 2100
+Text GLabel 1650 2200 2    50   Input ~ 0
 3V3_800mA
 Text Notes 1650 4500 0    50   ~ 0
 DIGITAL LOGIC GROUND
@@ -318,9 +307,9 @@ Text GLabel 1150 3250 0    50   Input ~ 0
 Wire Wire Line
 	1700 4000 1450 4000
 Wire Wire Line
-	2600 4100 2600 3800
+	2600 4100 2600 3900
 Wire Wire Line
-	2600 3250 1150 3250
+	2800 3250 1150 3250
 $Comp
 L Sensor_Magnetic:SI7210 U2
 U 1 1 5E8F8CC9
@@ -367,20 +356,7 @@ Wire Wire Line
 Wire Wire Line
 	6350 4000 6350 4300
 Connection ~ 6350 4300
-Wire Wire Line
-	5000 4100 5000 3800
-Wire Wire Line
-	5000 3250 2600 3250
-Connection ~ 2600 3250
-Wire Wire Line
-	5000 3250 7550 3250
-Wire Wire Line
-	7550 3250 7550 3800
-Wire Wire Line
-	9750 4100 9750 3750
-Wire Wire Line
-	9750 3250 7550 3250
-Connection ~ 7550 3250
+Connection ~ 2800 3250
 Wire Wire Line
 	1650 3900 1700 3900
 Text GLabel 1150 3400 0    50   BiDi ~ 0
@@ -397,7 +373,6 @@ Wire Wire Line
 Connection ~ 1550 3550
 Wire Wire Line
 	1150 3400 1650 3400
-Connection ~ 5000 3250
 Wire Wire Line
 	8850 3900 8800 3900
 Wire Wire Line
@@ -441,107 +416,70 @@ Wire Wire Line
 $Comp
 L Device:C C1
 U 1 1 5EACD96D
-P 2800 4050
-F 0 "C1" H 2891 4096 50  0000 L CNN
-F 1 "0.1uF" H 2891 4005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2800 4050 50  0001 C CNN
-F 3 "~" H 2800 4050 50  0001 C CNN
-	1    2800 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 5EAEAD4B
-P 5200 4050
-F 0 "C2" H 5291 4096 50  0000 L CNN
-F 1 "0.1uF" H 5291 4005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 5200 4050 50  0001 C CNN
-F 3 "~" H 5200 4050 50  0001 C CNN
-	1    5200 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C3
-U 1 1 5EAEBDAE
-P 7750 4050
-F 0 "C3" H 7841 4096 50  0000 L CNN
-F 1 "0.1uF" H 7841 4005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 7750 4050 50  0001 C CNN
-F 3 "~" H 7750 4050 50  0001 C CNN
-	1    7750 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C4
-U 1 1 5EAEC952
-P 9950 4050
-F 0 "C4" H 10041 4096 50  0000 L CNN
-F 1 "0.1uF" H 10041 4005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 9950 4050 50  0001 C CNN
-F 3 "~" H 9950 4050 50  0001 C CNN
-	1    9950 4050
+P 2800 4100
+F 0 "C1" H 2891 4146 50  0000 L CNN
+F 1 "0.1uF" H 2891 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2800 4100 50  0001 C CNN
+F 3 "~" H 2800 4100 50  0001 C CNN
+	1    2800 4100
 	1    0    0    -1  
 $EndComp
 Connection ~ 8600 4300
 Text Notes 3300 4700 0    50   ~ 0
 I2C configurable hall sensors, not just a switch.\nSilicon Labs SI7210-B-01-IVR through 04-IVR\nLow (push-pull) up to 20 mT, SOT23-5\nhttps://www.digikey.com/product-detail/en/silicon-labs/SI7210-B-04-IVR/336-4129-1-ND/7648844
-Text Notes 2350 2750 0    50   ~ 0
+Text Notes 2350 2850 0    50   ~ 0
 DIGITAL\nLOGIC\nGROUND
 $Comp
 L Core64-CB-v0.5-rescue:Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis-Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue-Core64-CB-v0.4-rescue X1
 U 1 1 5E90E5F7
-P 9100 2100
-F 0 "X1" H 9279 2097 50  0000 L CNN
-F 1 "SFH11-NBPC-D03-ST-BK" H 9279 2004 50  0000 L CNN
-F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 9100 2300 50  0001 C CNN
-F 3 "" H 9100 2300 50  0001 C CNN
-	1    9100 2100
+P 9000 1800
+F 0 "X1" H 9179 1797 50  0000 L CNN
+F 1 "SFH11-NBPC-D03-ST-BK" H 9179 1704 50  0000 L CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 9000 2000 50  0001 C CNN
+F 3 "" H 9000 2000 50  0001 C CNN
+	1    9000 1800
 	1    0    0    -1  
 $EndComp
-Text GLabel 9300 1700 2    50   Input ~ 0
+Text GLabel 9200 1400 2    50   Input ~ 0
 SAO_GPIO1
-Text GLabel 9300 2850 2    50   Input ~ 0
+Text GLabel 9200 2550 2    50   Input ~ 0
 SAO_GPIO2
-Text GLabel 8850 1700 0    50   Input ~ 0
+Text GLabel 8750 1400 0    50   Input ~ 0
 3V3_800mA
-Text GLabel 8850 1450 0    50   BiDi ~ 0
+Text GLabel 8750 1150 0    50   BiDi ~ 0
 I2C_DATA
-Text GLabel 8900 2850 0    50   BiDi ~ 0
+Text GLabel 8800 2550 0    50   BiDi ~ 0
 I2C_CLOCK
 Wire Wire Line
-	9100 2500 9100 2850
+	9000 2200 9000 2550
 Wire Wire Line
-	9100 2850 8900 2850
+	9000 2550 8800 2550
 Wire Wire Line
-	9200 2500 9200 2850
+	9100 2200 9100 2550
 Wire Wire Line
-	9200 2850 9300 2850
+	9100 2550 9200 2550
 Wire Wire Line
-	9150 1800 9150 1700
+	9050 1500 9050 1400
 Wire Wire Line
-	9050 1800 9050 1450
+	8950 1500 8950 1150
 Wire Wire Line
-	9050 1450 8850 1450
+	8950 1150 8750 1150
 Wire Wire Line
-	8850 1700 8950 1700
+	8750 1400 8850 1400
 Wire Wire Line
-	8950 1700 8950 1800
+	8850 1400 8850 1500
 Wire Wire Line
-	9150 1700 9300 1700
-Text GLabel 6950 2700 2    50   Input ~ 0
+	9050 1400 9200 1400
+Text GLabel 6950 2800 2    50   Input ~ 0
 SAO_GPIO2
-Text GLabel 6950 2850 2    50   Input ~ 0
+Text GLabel 6950 2950 2    50   Input ~ 0
 SAO_GPIO1
 Wire Wire Line
-	6850 2700 6950 2700
+	6850 2800 6950 2800
 Wire Wire Line
-	6850 2350 6850 2700
+	6850 2450 6850 2800
 Wire Wire Line
-	6950 2850 6650 2850
-NoConn ~ 9600 3900
-NoConn ~ 7350 3900
-NoConn ~ 4850 3900
-NoConn ~ 2450 3900
+	6950 2950 6650 2950
 $Comp
 L LiteOn_LTR-329ALS:LTR-329ALS-01 U5
 U 1 1 5F39A969
@@ -558,34 +496,34 @@ SILKSCREEN: ALS I2C 0x29
 $Comp
 L power:GNDD #PWR05
 U 1 1 5E880DFA
-P 2450 2300
-F 0 "#PWR05" H 2450 2050 50  0001 C CNN
-F 1 "GNDD" H 2454 2145 50  0000 C CNN
-F 2 "" H 2450 2300 50  0001 C CNN
-F 3 "" H 2450 2300 50  0001 C CNN
-	1    2450 2300
+P 2450 2400
+F 0 "#PWR05" H 2450 2150 50  0001 C CNN
+F 1 "GNDD" H 2454 2245 50  0000 C CNN
+F 2 "" H 2450 2400 50  0001 C CNN
+F 3 "" H 2450 2400 50  0001 C CNN
+	1    2450 2400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6350 2450 6950 2450
-Wire Wire Line
-	6350 2350 6850 2350
-Connection ~ 6850 2350
-Wire Wire Line
-	6850 2350 6950 2350
-Wire Wire Line
 	6350 2550 6950 2550
-Text Notes 9150 1600 0    50   ~ 0
+Wire Wire Line
+	6350 2450 6850 2450
+Connection ~ 6850 2450
+Wire Wire Line
+	6850 2450 6950 2450
+Wire Wire Line
+	6350 2650 6950 2650
+Text Notes 9050 1300 0    50   ~ 0
 SILKSCREEN FRONT AND BACK: \nSAO, GNDD, 3V3, SDA,SCL\nGPIO1, GPIO2
 $Comp
 L Device:C C5
 U 1 1 5F432D69
-P 7900 6200
-F 0 "C5" H 8015 6247 50  0000 L CNN
-F 1 "1uF" H 8015 6154 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 7938 6050 50  0001 C CNN
-F 3 "~" H 7900 6200 50  0001 C CNN
-	1    7900 6200
+P 8150 6200
+F 0 "C5" H 7900 6250 50  0000 L CNN
+F 1 "0.1uF" H 7800 6150 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8188 6050 50  0001 C CNN
+F 3 "~" H 8150 6200 50  0001 C CNN
+	1    8150 6200
 	1    0    0    -1  
 $EndComp
 Text Notes 8350 6700 0    50   ~ 0
@@ -602,7 +540,7 @@ F 3 "" H 8150 6550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7550 5550 0    100  ~ 0
-AUTOMATIC LIGHT SENSOR I2C 0x29
+AMBIENT LIGHT SENSOR I2C 0x29
 Text Notes 3900 7650 0    100  ~ 0
 SILKSCREEN GRAPHICS
 Wire Wire Line
@@ -616,7 +554,7 @@ Wire Wire Line
 Wire Wire Line
 	8400 5950 8150 5950
 Wire Wire Line
-	7900 5950 7900 6050
+	8150 5950 8150 6050
 Text GLabel 8050 5800 0    50   Input ~ 0
 3V3_800mA
 Text GLabel 10000 6250 2    50   BiDi ~ 0
@@ -628,18 +566,14 @@ Wire Wire Line
 Wire Wire Line
 	8150 5800 8050 5800
 Connection ~ 8150 5950
-Wire Wire Line
-	8150 5950 7900 5950
 Text Notes 600  3100 0    100  ~ 0
 HALL SENSORS
 Wire Wire Line
-	8150 6450 7900 6450
-Wire Wire Line
-	7900 6450 7900 6350
+	8150 6450 8150 6350
 Connection ~ 8150 6450
-Text Notes 600  700  0    100  ~ 0
+Text Notes 600  750  0    100  ~ 0
 CORE MATRIX
-Text Notes 8100 1050 0    100  ~ 0
+Text Notes 8000 750  0    100  ~ 0
 [OPTIONAL] SAO #2 EXPANSION
 Text Notes 1600 3200 0    50   ~ 0
 SILKSCREEN: 0x30
@@ -659,63 +593,13 @@ Connection ~ 3850 4300
 Connection ~ 1450 4300
 Wire Wire Line
 	1450 4300 1450 4350
-Wire Wire Line
-	2800 4200 2800 4300
 Connection ~ 2800 4300
 Wire Wire Line
 	2800 4300 1450 4300
 Wire Wire Line
-	2800 3900 2800 3800
+	2800 3950 2800 3900
 Wire Wire Line
-	2800 3800 2600 3800
-Connection ~ 2600 3800
-Wire Wire Line
-	2600 3800 2600 3250
-Wire Wire Line
-	3850 4300 5200 4300
-Wire Wire Line
-	4850 4100 5000 4100
-Wire Wire Line
-	5200 4200 5200 4300
-Connection ~ 5200 4300
-Wire Wire Line
-	5200 4300 6350 4300
-Wire Wire Line
-	5200 3900 5200 3800
-Wire Wire Line
-	5200 3800 5000 3800
-Connection ~ 5000 3800
-Wire Wire Line
-	5000 3800 5000 3250
-Text Notes 2900 3900 0    50   ~ 0
-Ceramic
-Wire Wire Line
-	6350 4300 7750 4300
-Wire Wire Line
-	7350 4100 7550 4100
-Wire Wire Line
-	7750 4200 7750 4300
-Connection ~ 7750 4300
-Wire Wire Line
-	7750 4300 8600 4300
-Wire Wire Line
-	7750 3900 7750 3800
-Wire Wire Line
-	7750 3800 7550 3800
-Connection ~ 7550 3800
-Wire Wire Line
-	7550 3800 7550 4100
-Wire Wire Line
-	9600 4100 9750 4100
-Wire Wire Line
-	9950 3900 9950 3750
-Wire Wire Line
-	9950 3750 9750 3750
-Connection ~ 9750 3750
-Wire Wire Line
-	9750 3750 9750 3250
-Wire Wire Line
-	9950 4200 9950 4300
+	2800 3900 2600 3900
 Wire Wire Line
 	8600 4300 9950 4300
 Text Notes 550  5400 0    100  ~ 0
@@ -733,12 +617,12 @@ CORE BOARD   V0.4   [REL. DATE].  ANDY GEPPERT   \nCore64.MachineIdeas.com\nInte
 $Comp
 L power:GNDD #PWR0102
 U 1 1 5F5DFB1F
-P 9000 2500
-F 0 "#PWR0102" H 9000 2250 50  0001 C CNN
-F 1 "GNDD" H 9004 2345 50  0000 C CNN
-F 2 "" H 9000 2500 50  0001 C CNN
-F 3 "" H 9000 2500 50  0001 C CNN
-	1    9000 2500
+P 8900 2200
+F 0 "#PWR0102" H 8900 1950 50  0001 C CNN
+F 1 "GNDD" H 8904 2045 50  0000 C CNN
+F 2 "" H 8900 2200 50  0001 C CNN
+F 3 "" H 8900 2200 50  0001 C CNN
+	1    8900 2200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -763,37 +647,29 @@ F 3 "~" H 2300 5950 50  0001 C CNN
 	1    2300 5950
 	1    0    0    -1  
 $EndComp
-Text Notes 5300 3900 0    50   ~ 0
-Ceramic
-Text Notes 7850 3900 0    50   ~ 0
-Ceramic
-Text Notes 10050 3850 0    50   ~ 0
-Ceramic
-Text Notes 8000 6400 0    50   ~ 0
-Ceramic
-Text GLabel 1900 2300 2    50   Output ~ 0
-PLANE_8
 Text GLabel 1900 2400 2    50   Output ~ 0
-PLANE_7
+PLANE_8
 Text GLabel 1900 2500 2    50   Output ~ 0
-PLANE_6
+PLANE_7
 Text GLabel 1900 2600 2    50   Output ~ 0
+PLANE_6
+Text GLabel 1900 2700 2    50   Output ~ 0
 PLANE_5
-Text GLabel 6350 2550 0    50   Output ~ 0
+Text GLabel 6350 2650 0    50   Output ~ 0
 PLANE_4
-Text GLabel 6350 2450 0    50   Output ~ 0
+Text GLabel 6350 2550 0    50   Output ~ 0
 PLANE_3
-Text GLabel 6350 2350 0    50   Output ~ 0
+Text GLabel 6350 2450 0    50   Output ~ 0
 PLANE_2
-Text GLabel 6350 2250 0    50   Output ~ 0
+Text GLabel 6350 2350 0    50   Output ~ 0
 PLANE_1
 Wire Wire Line
-	6950 2250 6650 2250
+	6950 2350 6650 2350
 Wire Wire Line
-	6650 2850 6650 2250
-Connection ~ 6650 2250
+	6650 2950 6650 2350
+Connection ~ 6650 2350
 Wire Wire Line
-	6650 2250 6350 2250
+	6650 2350 6350 2350
 $Comp
 L Device:C C6
 U 1 1 5F3B6DC2
@@ -805,8 +681,6 @@ F 3 "~" H 4100 5900 50  0001 C CNN
 	1    4100 5900
 	1    0    0    -1  
 $EndComp
-Text Notes 4150 6050 0    50   ~ 0
-Ceramic
 Text GLabel 3750 5750 0    50   Input ~ 0
 3V3_800mA
 $Comp
@@ -1155,8 +1029,6 @@ F 3 "~" H 5950 5900 50  0001 C CNN
 	1    5950 5900
 	1    0    0    -1  
 $EndComp
-Text Notes 6000 6050 0    50   ~ 0
-Ceramic
 Text GLabel 5600 5750 0    50   Input ~ 0
 3V3_800mA
 $Comp
@@ -1189,16 +1061,16 @@ Text GLabel 4900 6750 0    50   Input ~ 0
 ENABLE
 Text Notes 550  7650 0    100  ~ 0
 SILKSCREEN MISC.
-Text Notes 8500 2700 0    50   ~ 0
+Text Notes 8400 2400 0    50   ~ 0
 DIGITAL\nLOGIC\nGROUND
 Text Notes 550  5600 0    50   ~ 0
 STEP 1: Do NOT solder\nany JP1 through JP8.
-Text Notes 1950 5600 0    50   ~ 0
+Text Notes 1850 5600 0    50   ~ 0
 STEP 2: Solder ONE \nplane JP9 to JP16.
-Text Notes 3050 5600 0    50   ~ 0
-STEP 3:\nInstall two quad switches and two decoupling caps.
-Text Notes 5250 5600 0    50   ~ 0
-STEP 4 (LOGIC BOARD):\nSee instructions on Logic Board.
+Text Notes 2950 5600 0    50   ~ 0
+STEP 3: Install two quad switches\nand two decoupling caps.
+Text Notes 5850 5600 0    50   ~ 0
+STEP 5 (LOGIC BOARD):\nSee instructions on Logic Board.
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo_9mm_tall L1
 U 1 1 5F3DC9AF
@@ -1222,7 +1094,7 @@ F 3 "" H 4950 7800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 550  4950 0    100  ~ 0
-DEFAULT FOR ONE CORE PLANE ONLY
+REQUIRED: CONFIGURE FOR ONE CORE PLANE
 Text Notes 550  5150 0    50   ~ 0
 STEP 1: Solder all eight header-to-matrix SJs.\nJP1 through JP8.
 Text Notes 2600 5150 0    50   ~ 0
@@ -1231,6 +1103,208 @@ Text Notes 3700 5150 0    50   ~ 0
 STEP 3:\nNo additional components needed.
 Text Notes 5250 5150 0    50   ~ 0
 STEP 4 (LOGIC BOARD):\nSee instructions on Logic Board.
-Text Notes 8150 1250 0    50   ~ 0
+Text Notes 8050 950  0    50   ~ 0
 SIMPLE ADD ONS see:\nhttps://hackaday.io/project/175182-simple-add-ons-sao
+Text Notes 9250 2350 0    50   ~ 0
+NOTE: These GPIO will be\nused by Core Plane Select\nif that option is enabled.
+Text Notes 4500 5600 0    50   ~ 0
+STEP 4: Modify sense wire\nrouting through connectors.
+$Comp
+L Device:R_Small R1
+U 1 1 6020F18B
+P 2500 3750
+F 0 "R1" H 2559 3797 50  0000 L CNN
+F 1 "10K" H 2559 3704 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 2500 3750 50  0001 C CNN
+F 3 "~" H 2500 3750 50  0001 C CNN
+	1    2500 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 3650 2500 3600
+Wire Wire Line
+	2500 3600 2800 3600
+Wire Wire Line
+	2800 3600 2800 3250
+Wire Wire Line
+	2500 3850 2500 3900
+Wire Wire Line
+	2500 3900 2450 3900
+Wire Wire Line
+	2800 4250 2800 4300
+Wire Wire Line
+	2800 3600 2800 3900
+Connection ~ 2800 3600
+Connection ~ 2800 3900
+Wire Wire Line
+	3850 4300 5200 4300
+Wire Wire Line
+	5000 4100 5000 3900
+$Comp
+L Device:C C2
+U 1 1 602AD09E
+P 5200 4100
+F 0 "C2" H 5291 4146 50  0000 L CNN
+F 1 "0.1uF" H 5291 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 5200 4100 50  0001 C CNN
+F 3 "~" H 5200 4100 50  0001 C CNN
+	1    5200 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 4100 5000 4100
+Wire Wire Line
+	5200 3950 5200 3900
+Wire Wire Line
+	5200 3900 5000 3900
+$Comp
+L Device:R_Small R2
+U 1 1 602AD0A7
+P 4900 3750
+F 0 "R2" H 4959 3797 50  0000 L CNN
+F 1 "10K" H 4959 3704 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 4900 3750 50  0001 C CNN
+F 3 "~" H 4900 3750 50  0001 C CNN
+	1    4900 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3650 4900 3600
+Wire Wire Line
+	4900 3600 5200 3600
+Wire Wire Line
+	5200 3600 5200 3250
+Wire Wire Line
+	4900 3850 4900 3900
+Wire Wire Line
+	4900 3900 4850 3900
+Wire Wire Line
+	5200 3600 5200 3900
+Connection ~ 5200 3600
+Connection ~ 5200 3900
+Wire Wire Line
+	2800 3250 5200 3250
+Wire Wire Line
+	6350 4300 7700 4300
+Wire Wire Line
+	7500 4100 7500 3900
+$Comp
+L Device:C C3
+U 1 1 602CA142
+P 7700 4100
+F 0 "C3" H 7791 4146 50  0000 L CNN
+F 1 "0.1uF" H 7791 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7700 4100 50  0001 C CNN
+F 3 "~" H 7700 4100 50  0001 C CNN
+	1    7700 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 4100 7500 4100
+Wire Wire Line
+	7700 3950 7700 3900
+Wire Wire Line
+	7700 3900 7500 3900
+$Comp
+L Device:R_Small R3
+U 1 1 602CA14B
+P 7400 3750
+F 0 "R3" H 7459 3797 50  0000 L CNN
+F 1 "10K" H 7459 3704 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7400 3750 50  0001 C CNN
+F 3 "~" H 7400 3750 50  0001 C CNN
+	1    7400 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 3650 7400 3600
+Wire Wire Line
+	7400 3600 7700 3600
+Wire Wire Line
+	7700 3600 7700 3250
+Wire Wire Line
+	7400 3850 7400 3900
+Wire Wire Line
+	7400 3900 7350 3900
+Wire Wire Line
+	7700 3600 7700 3900
+Connection ~ 7700 3600
+Connection ~ 7700 3900
+Wire Wire Line
+	9750 4100 9750 3900
+$Comp
+L Device:C C4
+U 1 1 602D4D5C
+P 9950 4100
+F 0 "C4" H 10041 4146 50  0000 L CNN
+F 1 "0.1uF" H 10041 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 9950 4100 50  0001 C CNN
+F 3 "~" H 9950 4100 50  0001 C CNN
+	1    9950 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 4100 9750 4100
+Wire Wire Line
+	9950 3950 9950 3900
+Wire Wire Line
+	9950 3900 9750 3900
+$Comp
+L Device:R_Small R4
+U 1 1 602D4D65
+P 9650 3750
+F 0 "R4" H 9709 3797 50  0000 L CNN
+F 1 "10K" H 9709 3704 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 9650 3750 50  0001 C CNN
+F 3 "~" H 9650 3750 50  0001 C CNN
+	1    9650 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 3650 9650 3600
+Wire Wire Line
+	9650 3600 9950 3600
+Wire Wire Line
+	9950 3600 9950 3250
+Wire Wire Line
+	9650 3850 9650 3900
+Wire Wire Line
+	9650 3900 9600 3900
+Wire Wire Line
+	9950 4250 9950 4300
+Wire Wire Line
+	9950 3600 9950 3900
+Connection ~ 9950 3600
+Connection ~ 9950 3900
+Connection ~ 5200 3250
+Wire Wire Line
+	5200 3250 7700 3250
+Connection ~ 7700 3250
+Wire Wire Line
+	7700 3250 9950 3250
+Wire Wire Line
+	5200 4250 5200 4300
+Connection ~ 5200 4300
+Wire Wire Line
+	5200 4300 6350 4300
+Wire Wire Line
+	7700 4250 7700 4300
+Connection ~ 7700 4300
+Wire Wire Line
+	7700 4300 8600 4300
+NoConn ~ 1500 1100
+$Comp
+L Connector:Conn_01x18_Male J1
+U 1 1 5E72894A
+P 1300 1800
+F 0 "J1" H 1300 2750 50  0000 C CNN
+F 1 "Digi-Key 77311-420-36LF-ND" H 2150 2750 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1300 1800 50  0001 C CNN
+F 3 "~" H 1300 1800 50  0001 C CNN
+	1    1300 1800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6950 1050
+NoConn ~ 6950 950 
+NoConn ~ 1500 1000
 $EndSCHEMATC
