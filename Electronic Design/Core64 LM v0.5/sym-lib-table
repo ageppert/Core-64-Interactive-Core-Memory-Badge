@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name CORE_64_LIBRARY)(type Legacy)(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/Core_64_symbols/Core_64_KiCad_Library.lib")(options "")(descr ""))
+  (lib (name "Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue")(type Legacy)(uri "${KIPRJMOD}/Core64 CB v0.4-rescue.lib")(options "")(descr ""))
+  (lib (name Core64-CB-v0.4-rescue)(type Legacy)(uri "${KIPRJMOD}/Core64 CB v0.4-rescue.lib")(options "")(descr ""))
+  (lib (name Core64-CB-v0.5-rescue)(type Legacy)(uri "${KIPRJMOD}/Core64 CB v0.5-rescue.lib")(options "")(descr ""))
+  (lib (name Core64-LM-v0.5-rescue)(type Legacy)(uri "${KIPRJMOD}/Core64 LM v0.5-rescue.lib")(options "")(descr ""))
+)
