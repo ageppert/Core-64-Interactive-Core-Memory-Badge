@@ -16,8 +16,8 @@ Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
 Text GLabel 750  7450 2    50   Output ~ 0
 LED_MATRIX_5V0_SIG
-Text Notes 2950 7950 2    50   ~ 0
-SILKSCREEN:\nLSIG\nUSER
+Text Notes 1850 7600 0    50   ~ 0
+SILKSCREEN:\nLSIG\nUSER\n5V0\nGND
 $Comp
 L Connector:Conn_01x18_Male J2
 U 1 1 5E723F12
@@ -29,35 +29,31 @@ F 3 "~" H 1500 6900 50  0001 C CNN
 	1    1500 6900
 	0    -1   1    0   
 $EndComp
-Text Notes 2500 7050 0    50   ~ 0
-SILKSCREEN:\n5V0\nGND
 Text Notes 1550 7350 2    50   ~ 0
 POWER\nGROUND
-Text Notes 4450 7750 0    100  ~ 0
-SILKSCREEN GRAPHICS
 Text Notes 5000 650  0    100  ~ 0
 LED MATRIX
-Text Notes 3050 7250 0    50   ~ 0
+Text Notes 2550 7000 0    50   ~ 0
 SILKSCREEN:\nPixel 0-7 ->
-Text Notes 3750 7250 0    50   ~ 0
+Text Notes 3250 7000 0    50   ~ 0
 SILKSCREEN:\n<-bit 63-56
-Text Notes 3750 7450 0    50   ~ 0
+Text Notes 3250 7200 0    50   ~ 0
 SILKSCREEN:\n<-bit 7-0
-Text Notes 3050 7450 0    50   ~ 0
+Text Notes 2550 7200 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
-Text Notes 4500 7200 0    50   ~ 0
-CORE BOARD   V0.4   [REL. DATE].  ANDY GEPPERT   \nCore64.MachineIdeas.com\nInteractive Core Memory
-Text Notes 4450 6900 0    100  ~ 0
+Text Notes 4100 7250 0    50   ~ 0
+LED MATRIX   V0.5   [REL. DATE].  ANDY GEPPERT   \nwww.Core64.io\nInteractive Core Memory
+Text Notes 4100 6950 0    100  ~ 0
 SILKSCREEN MISC.
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo_9mm_tall L1
 U 1 1 5F3DC9AF
-P 4450 7900
-F 0 "L1" H 4475 7947 50  0000 L CNN
-F 1 "Core_64_Logo_9mm_tall" H 4475 7854 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 4450 7900 50  0001 C CNN
-F 3 "" H 4450 7900 50  0001 C CNN
-	1    4450 7900
+P 5250 7850
+F 0 "L1" H 5300 7900 50  0000 L CNN
+F 1 "Core_64_Logo_9mm_tall" H 5300 7800 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 5250 7850 50  0001 C CNN
+F 3 "" H 5250 7850 50  0001 C CNN
+	1    5250 7850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2707,4 +2703,36 @@ Wire Wire Line
 	2750 2850 1650 2850
 Connection ~ 2750 2850
 Connection ~ 1650 2850
+$Comp
+L Connector:Conn_01x03_Male J3
+U 1 1 606660CA
+P 3650 7650
+F 0 "J3" H 3623 7581 50  0000 R CNN
+F 1 "Conn_01x03_Male" H 3623 7674 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3650 7650 50  0001 C CNN
+F 3 "~" H 3650 7650 50  0001 C CNN
+	1    3650 7650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 606661A7
+P 3300 7750
+F 0 "#PWR0110" H 3300 7500 50  0001 C CNN
+F 1 "GND" H 3305 7573 50  0000 C CNN
+F 2 "" H 3300 7750 50  0001 C CNN
+F 3 "" H 3300 7750 50  0001 C CNN
+	1    3300 7750
+	1    0    0    -1  
+$EndComp
+Text GLabel 3350 7650 0    50   Output ~ 0
+LED_MATRIX_5V0_SIG
+Text GLabel 3350 7550 0    50   Output ~ 0
+5V0
+Wire Wire Line
+	3350 7550 3450 7550
+Wire Wire Line
+	3350 7650 3450 7650
+Wire Wire Line
+	3300 7750 3450 7750
 $EndSCHEMATC
