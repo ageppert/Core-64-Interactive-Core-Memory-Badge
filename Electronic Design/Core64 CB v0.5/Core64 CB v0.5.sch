@@ -213,7 +213,7 @@ U 1 1 5E79BDE1
 P 4300 1850
 F 0 "CM1" H 3650 2500 50  0000 C CNN
 F 1 "Core_Memory_8x8_Array_Front_Facing" H 4300 900 50  0000 C CNN
-F 2 "Core_Memory_8x8_Array:core_64_x6.7_y6.5mm_v0.3_front_facing" H 4350 1900 50  0001 C CNN
+F 2 "Core_Memory_8x8_Array:core_64_6.75mm_square_v0.5_front_facing" H 4350 1900 50  0001 C CNN
 F 3 "" H 4350 1900 50  0001 C CNN
 	1    4300 1850
 	1    0    0    -1  
