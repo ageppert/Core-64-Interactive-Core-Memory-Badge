@@ -1,4 +1,4 @@
-16730219381437559
+16733445938016559
 2829
 ADAFRUIT_2829
 
@@ -28196,6 +28196,13 @@ Through hole pin header THT 1x20 2.54mm single row
 20
 20
 Connector_PinHeader_2.54mm
+PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right
+surface-mounted straight pin header, 1x16, 2.54mm pitch, single row, style 2 (pin 1 right)
+Surface mounted pin header SMD 1x16 2.54mm single row style2 pin1 right
+0
+40
+20
+Connector_PinHeader_2.54mm
 PinHeader_1x20_P2.54mm_Vertical_SMD_Pin1Left
 surface-mounted straight pin header, 1x20, 2.54mm pitch, single row, style 1 (pin 1 left)
 Surface mounted pin header SMD 1x20 2.54mm single row style1 pin1 left
@@ -41165,6 +41172,13 @@ Micro_LiPo_Charger
 
 0
 8
+4
+Core_Memory_8x8_Array
+Micro_LiPo_Charger_CornerSMD
+
+
+0
+6
 4
 Core_Memory_8x8_Array
 OLED_Header_4PIN

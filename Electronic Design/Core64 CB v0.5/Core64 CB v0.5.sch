@@ -38,29 +38,29 @@ Text GLabel 4050 900  1    50   Input ~ 0
 XT1-5
 Text GLabel 3950 900  1    50   Input ~ 0
 XT0-4
-Text GLabel 6700 1850 0    50   Output ~ 0
-XB3
 Text GLabel 6700 1750 0    50   Output ~ 0
-XB2
+XB3
 Text GLabel 6700 1650 0    50   Output ~ 0
-XB1
+XB2
 Text GLabel 6700 1550 0    50   Output ~ 0
-XB0
-Text GLabel 6700 1950 0    50   Output ~ 0
-XB4
-Text GLabel 6700 2050 0    50   Output ~ 0
-XB5
-Text GLabel 6700 2150 0    50   Output ~ 0
-XB6
-Text GLabel 6700 2250 0    50   Output ~ 0
-XB7
+XB1
 Text GLabel 6700 1450 0    50   Output ~ 0
-H_XT0-4
+XB0
+Text GLabel 6700 1850 0    50   Output ~ 0
+XB4
+Text GLabel 6700 1950 0    50   Output ~ 0
+XB5
+Text GLabel 6700 2050 0    50   Output ~ 0
+XB6
+Text GLabel 6700 2150 0    50   Output ~ 0
+XB7
 Text GLabel 6700 1350 0    50   Output ~ 0
-H_XT1-5
+H_XT0-4
 Text GLabel 6700 1250 0    50   Output ~ 0
-H_XT2-6
+H_XT1-5
 Text GLabel 6700 1150 0    50   Output ~ 0
+H_XT2-6
+Text GLabel 6700 1050 0    50   Output ~ 0
 H_XT3-7
 Wire Wire Line
 	3950 1150 4350 1150
@@ -99,13 +99,13 @@ Wire Wire Line
 	4250 1000 4250 900 
 Connection ~ 4250 1000
 Wire Wire Line
+	6700 1050 6950 1050
+Wire Wire Line
 	6700 1150 6950 1150
 Wire Wire Line
 	6700 1250 6950 1250
 Wire Wire Line
 	6700 1350 6950 1350
-Wire Wire Line
-	6700 1450 6950 1450
 Text GLabel 3600 2200 0    50   Input ~ 0
 YL7
 Text GLabel 3600 2100 0    50   Input ~ 0
@@ -122,39 +122,39 @@ Text GLabel 3600 1600 0    50   Input ~ 0
 YL1
 Text GLabel 3600 1500 0    50   Input ~ 0
 YL0
-Text GLabel 2150 1300 2    50   Output ~ 0
-H_YL1
 Text GLabel 2150 1200 2    50   Output ~ 0
+H_YL1
+Text GLabel 2150 1100 2    50   Output ~ 0
 H_YL0
-Text GLabel 2150 1400 2    50   Output ~ 0
+Text GLabel 2150 1300 2    50   Output ~ 0
 H_YL2
-Text GLabel 2150 1500 2    50   Output ~ 0
+Text GLabel 2150 1400 2    50   Output ~ 0
 H_YL3
-Text GLabel 2150 1600 2    50   Output ~ 0
+Text GLabel 2150 1500 2    50   Output ~ 0
 YL4
-Text GLabel 2150 1700 2    50   Output ~ 0
+Text GLabel 2150 1600 2    50   Output ~ 0
 YL5
-Text GLabel 2150 1800 2    50   Output ~ 0
+Text GLabel 2150 1700 2    50   Output ~ 0
 YL6
-Text GLabel 2150 1900 2    50   Output ~ 0
+Text GLabel 2150 1800 2    50   Output ~ 0
 YL7
 Wire Wire Line
-	2100 1600 2100 1800
+	2100 1500 2100 1700
 Wire Wire Line
-	2100 1800 2150 1800
+	2100 1700 2150 1700
 Wire Wire Line
-	2150 1200 1500 1200
+	2150 1100 1500 1100
+Wire Wire Line
+	1500 1200 2150 1200
 Wire Wire Line
 	1500 1300 2150 1300
 Wire Wire Line
-	1500 1400 2150 1400
+	2150 1400 1500 1400
 Wire Wire Line
-	2150 1500 1500 1500
+	2150 1500 2100 1500
 Wire Wire Line
-	2150 1600 2100 1600
-Wire Wire Line
-	2100 1600 1500 1600
-Connection ~ 2100 1600
+	2100 1500 1500 1500
+Connection ~ 2100 1500
 Wire Wire Line
 	5350 1900 5000 1900
 Wire Wire Line
@@ -180,27 +180,27 @@ Wire Wire Line
 Wire Wire Line
 	5000 2200 5050 2200
 Wire Wire Line
-	2050 1900 2150 1900
+	2050 1800 2150 1800
 Wire Wire Line
-	2050 1700 2050 1900
+	2050 1600 2050 1800
 Wire Wire Line
-	2150 1700 2050 1700
+	2150 1600 2050 1600
 Text Notes 1150 2550 2    50   ~ 0
 SILKSCREEN:\nLSIG\nUSER\nYL0\nYL1\nYL2\nYL3\nYL4,6\nYL5,7\nSEN1\nSEN2\nSCL\nSDA\n3V3\nGNDD\nP8\nP7\nP6\nP5
 Wire Wire Line
-	2050 1700 1500 1700
-Connection ~ 2050 1700
-Wire Wire Line
-	6700 2250 6950 2250
+	2050 1600 1500 1600
+Connection ~ 2050 1600
 Wire Wire Line
 	6700 2150 6950 2150
+Wire Wire Line
+	6700 2050 6950 2050
 $Comp
-L Connector:Conn_01x18_Male J2
+L Connector:Conn_01x20_Male J2
 U 1 1 5E723F12
 P 7150 1750
 F 0 "J2" H 7150 2700 50  0000 C CNN
 F 1 "Digi-Key 77311-420-36LF-ND" H 8000 2700 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 7150 1750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 7150 1750 50  0001 C CNN
 F 3 "~" H 7150 1750 50  0001 C CNN
 	1    7150 1750
 	-1   0    0    -1  
@@ -227,20 +227,20 @@ Wire Wire Line
 Wire Wire Line
 	3850 2550 3850 2500
 Wire Wire Line
+	6950 1450 6700 1450
+Wire Wire Line
 	6950 1550 6700 1550
 Wire Wire Line
 	6950 1650 6700 1650
 Wire Wire Line
-	6950 1750 6700 1750
+	6700 1750 6950 1750
 Wire Wire Line
-	6700 1850 6950 1850
+	6950 1850 6700 1850
 Wire Wire Line
-	6950 1950 6700 1950
-Wire Wire Line
-	6700 2050 6950 2050
-Text GLabel 1650 1900 2    50   Input ~ 0
-SENSE1
+	6700 1950 6950 1950
 Text GLabel 1650 1800 2    50   Input ~ 0
+SENSE1
+Text GLabel 1650 1700 2    50   Input ~ 0
 SENSE2
 Wire Wire Line
 	3600 2300 3550 2300
@@ -249,32 +249,32 @@ Wire Wire Line
 Wire Wire Line
 	3550 2450 3500 2450
 Wire Wire Line
-	1650 1900 1500 1900
+	1650 1800 1500 1800
 Wire Wire Line
-	2450 2300 2450 2400
-Wire Wire Line
-	1500 2200 1650 2200
-Wire Wire Line
-	1500 2300 2450 2300
-Wire Wire Line
-	1500 2400 1900 2400
-Wire Wire Line
-	1900 2500 1500 2500
-Wire Wire Line
-	1500 2600 1900 2600
-Wire Wire Line
-	1900 2700 1500 2700
-Wire Wire Line
-	1500 1800 1650 1800
-Text GLabel 1650 2000 2    50   BiDi ~ 0
-I2C_CLOCK
-Text GLabel 1650 2100 2    50   BiDi ~ 0
-I2C_DATA
-Wire Wire Line
-	1500 2000 1650 2000
+	2450 2200 2450 2300
 Wire Wire Line
 	1500 2100 1650 2100
-Text GLabel 1650 2200 2    50   Input ~ 0
+Wire Wire Line
+	1500 2200 2450 2200
+Wire Wire Line
+	1500 2300 1900 2300
+Wire Wire Line
+	1900 2400 1500 2400
+Wire Wire Line
+	1500 2500 1900 2500
+Wire Wire Line
+	1900 2600 1500 2600
+Wire Wire Line
+	1500 1700 1650 1700
+Text GLabel 1650 1900 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 1650 2000 2    50   BiDi ~ 0
+I2C_DATA
+Wire Wire Line
+	1500 1900 1650 1900
+Wire Wire Line
+	1500 2000 1650 2000
+Text GLabel 1650 2100 2    50   Input ~ 0
 3V3_800mA
 Text Notes 1650 4500 0    50   ~ 0
 DIGITAL LOGIC GROUND
@@ -427,7 +427,7 @@ $EndComp
 Connection ~ 8600 4300
 Text Notes 3300 4700 0    50   ~ 0
 I2C configurable hall sensors, not just a switch.\nSilicon Labs SI7210-B-01-IVR through 04-IVR\nLow (push-pull) up to 20 mT, SOT23-5\nhttps://www.digikey.com/product-detail/en/silicon-labs/SI7210-B-04-IVR/336-4129-1-ND/7648844
-Text Notes 2350 2850 0    50   ~ 0
+Text Notes 2350 2750 0    50   ~ 0
 DIGITAL\nLOGIC\nGROUND
 $Comp
 L Core64-CB-v0.5-rescue:Badgelife_sao_connector_v169bis-badgelife_shitty_addon_v169bis-Interactive-Core-Memory-Badge-(Cores)-v0.3-rescue-Core64-CB-v0.4-rescue X1
@@ -470,14 +470,14 @@ Wire Wire Line
 	8850 1400 8850 1500
 Wire Wire Line
 	9050 1400 9200 1400
-Text GLabel 6950 2800 2    50   Input ~ 0
+Text GLabel 6950 2850 2    50   Input ~ 0
 SAO_GPIO2
 Text GLabel 6950 2950 2    50   Input ~ 0
 SAO_GPIO1
 Wire Wire Line
-	6850 2800 6950 2800
+	6850 2850 6950 2850
 Wire Wire Line
-	6850 2450 6850 2800
+	6850 2350 6850 2850
 Wire Wire Line
 	6950 2950 6650 2950
 $Comp
@@ -496,23 +496,23 @@ SILKSCREEN: ALS I2C 0x29
 $Comp
 L power:GNDD #PWR05
 U 1 1 5E880DFA
-P 2450 2400
-F 0 "#PWR05" H 2450 2150 50  0001 C CNN
-F 1 "GNDD" H 2454 2245 50  0000 C CNN
-F 2 "" H 2450 2400 50  0001 C CNN
-F 3 "" H 2450 2400 50  0001 C CNN
-	1    2450 2400
+P 2450 2300
+F 0 "#PWR05" H 2450 2050 50  0001 C CNN
+F 1 "GNDD" H 2454 2145 50  0000 C CNN
+F 2 "" H 2450 2300 50  0001 C CNN
+F 3 "" H 2450 2300 50  0001 C CNN
+	1    2450 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
+	6350 2450 6950 2450
+Wire Wire Line
+	6350 2350 6850 2350
+Connection ~ 6850 2350
+Wire Wire Line
+	6850 2350 6950 2350
+Wire Wire Line
 	6350 2550 6950 2550
-Wire Wire Line
-	6350 2450 6850 2450
-Connection ~ 6850 2450
-Wire Wire Line
-	6850 2450 6950 2450
-Wire Wire Line
-	6350 2650 6950 2650
 Text Notes 9050 1300 0    50   ~ 0
 SILKSCREEN FRONT AND BACK: \nSAO, GNDD, 3V3, SDA,SCL\nGPIO1, GPIO2
 $Comp
@@ -647,29 +647,29 @@ F 3 "~" H 2300 5950 50  0001 C CNN
 	1    2300 5950
 	1    0    0    -1  
 $EndComp
-Text GLabel 1900 2400 2    50   Output ~ 0
+Text GLabel 1900 2300 2    50   Output ~ 0
 PLANE_8
-Text GLabel 1900 2500 2    50   Output ~ 0
+Text GLabel 1900 2400 2    50   Output ~ 0
 PLANE_7
-Text GLabel 1900 2600 2    50   Output ~ 0
+Text GLabel 1900 2500 2    50   Output ~ 0
 PLANE_6
-Text GLabel 1900 2700 2    50   Output ~ 0
+Text GLabel 1900 2600 2    50   Output ~ 0
 PLANE_5
-Text GLabel 6350 2650 0    50   Output ~ 0
-PLANE_4
 Text GLabel 6350 2550 0    50   Output ~ 0
-PLANE_3
+PLANE_4
 Text GLabel 6350 2450 0    50   Output ~ 0
-PLANE_2
+PLANE_3
 Text GLabel 6350 2350 0    50   Output ~ 0
+PLANE_2
+Text GLabel 6350 2250 0    50   Output ~ 0
 PLANE_1
 Wire Wire Line
-	6950 2350 6650 2350
+	6950 2250 6650 2250
 Wire Wire Line
-	6650 2950 6650 2350
-Connection ~ 6650 2350
+	6650 2950 6650 2250
+Connection ~ 6650 2250
 Wire Wire Line
-	6650 2350 6350 2350
+	6650 2250 6350 2250
 $Comp
 L Device:C C6
 U 1 1 5F3B6DC2
@@ -1292,19 +1292,19 @@ Wire Wire Line
 Connection ~ 7700 4300
 Wire Wire Line
 	7700 4300 8600 4300
-NoConn ~ 1500 1100
+NoConn ~ 1500 1000
 $Comp
-L Connector:Conn_01x18_Male J1
+L Connector:Conn_01x20_Male J1
 U 1 1 5E72894A
 P 1300 1800
 F 0 "J1" H 1300 2750 50  0000 C CNN
 F 1 "Digi-Key 77311-420-36LF-ND" H 2150 2750 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1300 1800 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1300 1800 50  0001 C CNN
 F 3 "~" H 1300 1800 50  0001 C CNN
 	1    1300 1800
 	1    0    0    -1  
 $EndComp
-NoConn ~ 6950 1050
 NoConn ~ 6950 950 
-NoConn ~ 1500 1000
+NoConn ~ 6950 850 
+NoConn ~ 1500 900 
 $EndSCHEMATC
