@@ -1,91 +1,91 @@
 EESchema Schematic File Version 4
-LIBS:Core64 LM v0.5-cache
+LIBS:Core64 LM v0.1-cache
 EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title "Core64 LM (LED MATRIX)"
-Date "2021-02-06"
-Rev "0.5"
+Date "2021-02-12"
+Rev "0.1"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
 Comment2 "*** Work in progress ***"
 Comment3 ""
 Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
-Text GLabel 750  7450 2    50   Output ~ 0
+Text GLabel 600  7550 2    50   Output ~ 0
 LED_MATRIX_5V0_SIG
-Text Notes 1650 7550 0    50   ~ 0
-SILKSCREEN F/B:\nLSIG, USER\n5V0, GND
+Text Notes 2750 7250 0    50   ~ 0
+SILKSCREEN F/B:\nLSIG, USER\n5V0, GND\n3V3, GNDD, SCL, SDA\n5VUSB, +BATT 
 $Comp
-L Connector:Conn_01x18_Male J2
+L Connector:Conn_01x20_Male J2
 U 1 1 5E723F12
-P 1500 6900
-F 0 "J2" V 1450 7700 50  0000 C CNN
-F 1 "Digi-Key 77311-420-36LF-ND" V 1450 6600 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1500 6900 50  0001 C CNN
-F 3 "~" H 1500 6900 50  0001 C CNN
-	1    1500 6900
+P 1450 6900
+F 0 "J2" V 1400 7700 50  0000 C CNN
+F 1 "PASS THROUGH BOARD" V 1400 6600 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1450 6900 50  0001 C CNN
+F 3 "~" H 1450 6900 50  0001 C CNN
+	1    1450 6900
 	0    -1   1    0   
 $EndComp
-Text Notes 1550 7350 2    50   ~ 0
+Text Notes 1450 7400 2    50   ~ 0
 POWER\nGROUND
 Text Notes 5000 650  0    100  ~ 0
 LED MATRIX
-Text Notes 2550 7000 0    50   ~ 0
+Text Notes 5000 7800 0    50   ~ 0
 SILKSCREEN:\nPixel 0-7 ->
-Text Notes 3250 7000 0    50   ~ 0
+Text Notes 5700 7800 0    50   ~ 0
 SILKSCREEN:\n<-bit 63-56
-Text Notes 3250 7200 0    50   ~ 0
+Text Notes 5700 8000 0    50   ~ 0
 SILKSCREEN:\n<-bit 7-0
-Text Notes 2550 7200 0    50   ~ 0
+Text Notes 5000 8000 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
-Text Notes 3900 7350 0    50   ~ 0
-CORE64 LED MATRIX (LM)    V0.5    [DESIGN RELEASE DATE]\nProject information at www.Core64.io\nDesigned by Andy Geppert at www.MachineIdeas.com\nWS2813 LEDs
-Text Notes 3900 6950 0    100  ~ 0
+Text Notes 3750 7350 0    50   ~ 0
+CORE64 LED MATRIX (LM)    V[version]    [Design Release Date]\nProject information at www.Core64.io\nDesigned by Andy Geppert at www.MachineIdeas.com\nWS2813 LEDs
+Text Notes 3750 6950 0    100  ~ 0
 SILKSCREEN MISC.
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo_9mm_tall L1
 U 1 1 5F3DC9AF
-P 5250 7850
-F 0 "L1" H 5300 7900 50  0000 L CNN
-F 1 "Core_64_Logo_9mm_tall" H 5300 7800 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 5250 7850 50  0001 C CNN
-F 3 "" H 5250 7850 50  0001 C CNN
-	1    5250 7850
+P 5300 6850
+F 0 "L1" H 5350 6900 50  0000 L CNN
+F 1 "Core_64_Logo_9mm_tall" H 5350 6800 50  0000 L CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 5300 6850 50  0001 C CNN
+F 3 "" H 5300 6850 50  0001 C CNN
+	1    5300 6850
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x18_Male J1
+L Connector:Conn_01x20_Male J1
 U 1 1 5E72894A
-P 1500 7900
-F 0 "J1" V 1450 8700 50  0000 C CNN
-F 1 "Digi-Key 77311-420-36LF-ND" V 1450 7600 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x18_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1500 7900 50  0001 C CNN
-F 3 "~" H 1500 7900 50  0001 C CNN
-	1    1500 7900
+P 1450 7900
+F 0 "J1" V 1400 8700 50  0000 C CNN
+F 1 "PASS THROUGH BOARD" V 1400 7600 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1450 7900 50  0001 C CNN
+F 3 "~" H 1450 7900 50  0001 C CNN
+	1    1450 7900
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0101
 U 1 1 60224D94
-P 1100 7150
-F 0 "#PWR0101" H 1100 6900 50  0001 C CNN
-F 1 "GND" H 1105 6973 50  0000 C CNN
-F 2 "" H 1100 7150 50  0001 C CNN
-F 3 "" H 1100 7150 50  0001 C CNN
-	1    1100 7150
+P 1000 7200
+F 0 "#PWR0101" H 1000 6950 50  0001 C CNN
+F 1 "GND" H 1005 7023 50  0000 C CNN
+F 2 "" H 1000 7200 50  0001 C CNN
+F 3 "" H 1000 7200 50  0001 C CNN
+	1    1000 7200
 	1    0    0    -1  
 $EndComp
-Text GLabel 750  7300 2    50   Output ~ 0
+Text GLabel 600  7400 2    50   Output ~ 0
 5V0
 Wire Wire Line
-	700  7100 700  7300
+	550  7100 550  7400
 Wire Wire Line
-	800  7100 800  7150
+	650  7100 650  7200
 Wire Wire Line
-	800  7150 1100 7150
+	650  7200 1000 7200
 $Comp
 L LED:WS2813 D3
 U 1 1 6024A15C
@@ -2427,11 +2427,11 @@ Wire Wire Line
 	1300 850  1300 1050
 Connection ~ 1300 1050
 Wire Wire Line
-	750  7450 700  7450
+	600  7550 550  7550
 Wire Wire Line
-	700  7450 700  7700
+	550  7550 550  7700
 Wire Wire Line
-	700  7300 750  7300
+	550  7400 600  7400
 NoConn ~ 9750 6300
 Wire Wire Line
 	8650 6300 9150 6300
@@ -2635,39 +2635,35 @@ Wire Wire Line
 Wire Wire Line
 	9700 6600 9700 6450
 Connection ~ 9450 6600
-NoConn ~ 900  7100
-NoConn ~ 1000 7100
-NoConn ~ 1100 7100
-NoConn ~ 1200 7100
-NoConn ~ 1300 7100
-NoConn ~ 1400 7100
-NoConn ~ 1500 7100
-NoConn ~ 1600 7100
-NoConn ~ 1700 7100
-NoConn ~ 1800 7100
-NoConn ~ 1900 7100
-NoConn ~ 2000 7100
-NoConn ~ 2100 7100
-NoConn ~ 2200 7100
-NoConn ~ 2400 7100
-NoConn ~ 2300 7100
-NoConn ~ 2400 7700
-NoConn ~ 2300 7700
-NoConn ~ 2200 7700
-NoConn ~ 2100 7700
-NoConn ~ 2000 7700
-NoConn ~ 1900 7700
-NoConn ~ 1800 7700
-NoConn ~ 1700 7700
-NoConn ~ 1600 7700
-NoConn ~ 1500 7700
-NoConn ~ 1400 7700
-NoConn ~ 1300 7700
-NoConn ~ 1200 7700
-NoConn ~ 1100 7700
-NoConn ~ 1000 7700
-NoConn ~ 900  7700
-NoConn ~ 800  7700
+NoConn ~ 750  7100
+NoConn ~ 850  7100
+NoConn ~ 950  7100
+NoConn ~ 1050 7100
+NoConn ~ 1150 7100
+NoConn ~ 1250 7100
+NoConn ~ 1350 7100
+NoConn ~ 1450 7100
+NoConn ~ 1550 7100
+NoConn ~ 1650 7100
+NoConn ~ 1750 7100
+NoConn ~ 1850 7100
+NoConn ~ 1950 7100
+NoConn ~ 2050 7100
+NoConn ~ 2250 7100
+NoConn ~ 2150 7100
+NoConn ~ 2250 7700
+NoConn ~ 2150 7700
+NoConn ~ 2050 7700
+NoConn ~ 1950 7700
+NoConn ~ 1450 7700
+NoConn ~ 1350 7700
+NoConn ~ 1250 7700
+NoConn ~ 1150 7700
+NoConn ~ 1050 7700
+NoConn ~ 950  7700
+NoConn ~ 850  7700
+NoConn ~ 750  7700
+NoConn ~ 650  7700
 Wire Wire Line
 	1300 2200 1550 2200
 Wire Wire Line
@@ -2693,38 +2689,6 @@ Wire Wire Line
 	2750 2850 1650 2850
 Connection ~ 2750 2850
 Connection ~ 1650 2850
-$Comp
-L Connector:Conn_01x03_Male J3
-U 1 1 606660CA
-P 3650 7650
-F 0 "J3" H 3623 7581 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 3623 7674 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3650 7650 50  0001 C CNN
-F 3 "~" H 3650 7650 50  0001 C CNN
-	1    3650 7650
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR0110
-U 1 1 606661A7
-P 3300 7750
-F 0 "#PWR0110" H 3300 7500 50  0001 C CNN
-F 1 "GND" H 3305 7573 50  0000 C CNN
-F 2 "" H 3300 7750 50  0001 C CNN
-F 3 "" H 3300 7750 50  0001 C CNN
-	1    3300 7750
-	1    0    0    -1  
-$EndComp
-Text GLabel 3350 7650 0    50   Output ~ 0
-LED_MATRIX_5V0_SIG
-Text GLabel 3350 7550 0    50   Output ~ 0
-5V0
-Wire Wire Line
-	3350 7550 3450 7550
-Wire Wire Line
-	3350 7650 3450 7650
-Wire Wire Line
-	3300 7750 3450 7750
 Connection ~ 9450 5100
 Wire Wire Line
 	9450 5100 9700 5100
@@ -2735,6 +2699,63 @@ Wire Wire Line
 Connection ~ 6000 4450
 Wire Wire Line
 	6000 4450 7100 4450
-Text Notes 2550 7550 0    50   ~ 0
-SILKSCREEN F/B:\n5V0, LSIG, GND
+Text GLabel 2500 7600 2    50   Output ~ 0
+5VUSB
+Text GLabel 2500 7500 2    50   Output ~ 0
++BATT
+NoConn ~ 2350 7100
+NoConn ~ 2450 7100
+Text GLabel 1950 7400 2    50   Output ~ 0
+3V3
+Wire Wire Line
+	1850 7700 1850 7600
+Wire Wire Line
+	1750 7700 1750 7400
+Wire Wire Line
+	1750 7400 1950 7400
+Wire Wire Line
+	1650 7700 1650 7300
+Wire Wire Line
+	1650 7300 1950 7300
+Wire Wire Line
+	1550 7700 1550 7200
+Wire Wire Line
+	1550 7200 1950 7200
+Wire Wire Line
+	2450 7700 2450 7600
+Wire Wire Line
+	2450 7600 2500 7600
+Wire Wire Line
+	2350 7700 2350 7500
+Wire Wire Line
+	2350 7500 2500 7500
+$Sheet
+S 3300 7600 1350 200 
+U 603A0E05
+F0 "LED MATRIX EXPANSION" 50
+F1 "Core64 LM v0.1 Expansion.sch" 50
+$EndSheet
+Text GLabel 1950 7200 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 1950 7300 2    50   BiDi ~ 0
+I2C_DATA
+$Comp
+L power:GNDD #PWR01
+U 1 1 607AD129
+P 2900 7750
+F 0 "#PWR01" H 2900 7500 50  0001 C CNN
+F 1 "GNDD" H 2905 7594 50  0000 C CNN
+F 2 "" H 2900 7750 50  0001 C CNN
+F 3 "" H 2900 7750 50  0001 C CNN
+	1    2900 7750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 7750 2900 7400
+Wire Wire Line
+	2900 7400 2250 7400
+Wire Wire Line
+	2250 7400 2250 7600
+Wire Wire Line
+	1850 7600 2250 7600
 $EndSCHEMATC
