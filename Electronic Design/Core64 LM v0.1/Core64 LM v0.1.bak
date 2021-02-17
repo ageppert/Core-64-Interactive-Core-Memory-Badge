@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Core64 LM v0.5-cache
+LIBS:Core64 LM v0.1-cache
 EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
@@ -16,8 +16,8 @@ Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
 Text GLabel 600  7550 2    50   Output ~ 0
 LED_MATRIX_5V0_SIG
-Text Notes 2750 7250 0    50   ~ 0
-SILKSCREEN F/B:\nLSIG, USER\n5V0, GND\n3V3, GNDD, SCL, SDA\n5VUSB, +BATT 
+Text Notes 2750 7300 0    50   ~ 0
+SILKSCREEN F/B:\nL: LSIG, USER\nL: SCL, SDA, 3V3, GNDD\nL: N/C, N/C \nR: 5V0, GND\nR: +BATT, 5VUSB
 $Comp
 L Connector:Conn_01x20_Male J2
 U 1 1 5E723F12
@@ -2699,63 +2699,61 @@ Wire Wire Line
 Connection ~ 6000 4450
 Wire Wire Line
 	6000 4450 7100 4450
-Text GLabel 2500 7600 2    50   Output ~ 0
+Text GLabel 2500 7400 2    50   Output ~ 0
 5VUSB
-Text GLabel 2500 7500 2    50   Output ~ 0
+Text GLabel 2500 7550 2    50   Output ~ 0
 +BATT
-NoConn ~ 2350 7100
-NoConn ~ 2450 7100
-Text GLabel 1950 7400 2    50   Output ~ 0
+NoConn ~ 2350 7700
+NoConn ~ 2450 7700
+Text GLabel 1800 7400 2    50   Output ~ 0
 3V3
 Wire Wire Line
 	1850 7700 1850 7600
 Wire Wire Line
 	1750 7700 1750 7400
 Wire Wire Line
-	1750 7400 1950 7400
+	1750 7400 1800 7400
 Wire Wire Line
 	1650 7700 1650 7300
 Wire Wire Line
-	1650 7300 1950 7300
+	1650 7300 1800 7300
 Wire Wire Line
 	1550 7700 1550 7200
 Wire Wire Line
-	1550 7200 1950 7200
+	1550 7200 1800 7200
 Wire Wire Line
-	2450 7700 2450 7600
+	2450 7100 2450 7400
 Wire Wire Line
-	2450 7600 2500 7600
+	2450 7400 2500 7400
 Wire Wire Line
-	2350 7700 2350 7500
+	2350 7100 2350 7550
 Wire Wire Line
-	2350 7500 2500 7500
+	2350 7550 2500 7550
 $Sheet
 S 3300 7600 1350 200 
 U 603A0E05
 F0 "LED MATRIX EXPANSION" 50
-F1 "Core64 LM v0.5 Expansion.sch" 50
+F1 "Core64 LM v0.1 Expansion.sch" 50
 $EndSheet
-Text GLabel 1950 7200 2    50   BiDi ~ 0
+Text GLabel 1800 7200 2    50   BiDi ~ 0
 I2C_CLOCK
-Text GLabel 1950 7300 2    50   BiDi ~ 0
+Text GLabel 1800 7300 2    50   BiDi ~ 0
 I2C_DATA
 $Comp
 L power:GNDD #PWR01
 U 1 1 607AD129
-P 2900 7750
-F 0 "#PWR01" H 2900 7500 50  0001 C CNN
-F 1 "GNDD" H 2905 7594 50  0000 C CNN
-F 2 "" H 2900 7750 50  0001 C CNN
-F 3 "" H 2900 7750 50  0001 C CNN
-	1    2900 7750
+P 2200 7400
+F 0 "#PWR01" H 2200 7150 50  0001 C CNN
+F 1 "GNDD" H 2205 7244 50  0000 C CNN
+F 2 "" H 2200 7400 50  0001 C CNN
+F 3 "" H 2200 7400 50  0001 C CNN
+	1    2200 7400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 7750 2900 7400
+	2200 7400 2050 7400
 Wire Wire Line
-	2900 7400 2250 7400
+	2050 7400 2050 7600
 Wire Wire Line
-	2250 7400 2250 7600
-Wire Wire Line
-	1850 7600 2250 7600
+	1850 7600 2050 7600
 $EndSCHEMATC
