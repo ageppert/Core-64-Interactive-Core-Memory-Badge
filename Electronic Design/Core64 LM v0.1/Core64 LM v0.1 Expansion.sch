@@ -5,14 +5,14 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 2 2
-Title "Core 64 LED Matrix - Expansion"
-Date "2021-02-12"
+Title "Core64 LM (LED MATRIX)"
+Date "2021-02-17"
 Rev "0.1"
-Comp "www.Core64.io"
-Comment1 "Work in progress"
-Comment2 "Andy Geppert"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
 Text GLabel 2450 1850 0    50   BiDi ~ 0
 I2C_CLOCK
@@ -97,8 +97,6 @@ Wire Wire Line
 	1050 1900 1650 1900
 Text Notes 900  2900 0    50   ~ 0
 SILKSCREEN: 3V3 ONLY, 3V3/GNDD sides of jumpers,\nI2C OLED and pin names
-Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Connection ~ 1650 1900
 Wire Wire Line
 	1650 1900 1950 1900
@@ -246,7 +244,7 @@ Connection ~ 6700 4600
 Wire Wire Line
 	6700 4600 7300 4600
 Text Notes 4300 4800 0    50   ~ 0
-SILKSCREEN:\n1S ONLY\nADAFRUIT #1904 MICROUSB\nADAFRUIT #4410 TYPE C USB
+SILKSCREEN:\n1S ONLY\nADAFRUIT #1904 MICRO USB\nADAFRUIT #4410 USB C
 $Comp
 L Jumper:SolderJumper_2_Open JP3
 U 1 1 60311F75
@@ -275,5 +273,5 @@ SILKSCREEN: BAT. + BAT. -
 Text Notes 5500 4700 0    50   ~ 0
 Mounting\n4x 0.1” holes
 Text Notes 4300 3900 0    50   ~ 0
-* Do not connect AAAs to a LiPo charger! You will destroy it.\n\n1) Remove the 4x “AAA” battery pack.\n\n2) Purchase and install a LiPo charge manager.\n     a) The logic board is designed to accept this one: https://www.adafruit.com/product/1904 (Micro USB) or 4410 (USB C).\n     b) Solder the the charge manager directly to the board without headers to keep a low profile.\n\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 15mm.\n     a) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate it with Kapton tape or similar.\n\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n       If you do NOT want the system to be powered from the USB port of the charger, leave the Teensy_Charge_Enable SJ open.\n       Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is ON (up position).\n       Connecting a USB cable to the Teensy will NOT charge the battery.\n\nB) OPTIONAL SJ CLOSED:\n       The LiPo charger 5V pin (Lipo Charger USB port) may be connected to the Teensy USB port through TEENSY_VUSB. Close the SJ to connect them.\n       Connecting a USB cable to the LiPo charger will charge the battery and power the system \n       Connecting a USB cable to the Teensy will power the Core64 board, charge the battery and connect to the serial port of the Teensy.\n   
+* Do not connect AAAs to a LiPo charger! You will destroy it.\n\n1) Remove the 4x “AAA” battery pack.\n\n2) Purchase and install a LiPo charge manager.\n     a) The logic board is designed to accept this one: https://www.adafruit.com/product/1904 (Micro USB) or 4410 (USB C).\n     b) Solder the the charge manager directly to the board without headers to keep a low profile.\n\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate it with Kapton tape or similar.\n\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n       If you do NOT want the system to be powered from the USB port of the charger, leave the Teensy_Charge_Enable SJ open.\n       Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is ON (up position).\n       Connecting a USB cable to the Teensy will NOT charge the battery.\n\nB) OPTIONAL SJ CLOSED:\n       The LiPo charger 5V pin (Lipo Charger USB port) may be connected to the Teensy USB port through TEENSY_VUSB. Close the SJ to connect them.\n       Connecting a USB cable to the LiPo charger will charge the battery and power the system \n       Connecting a USB cable to the Teensy will power the Core64 board, charge the battery and connect to the serial port of the Teensy.\n   
 $EndSCHEMATC
