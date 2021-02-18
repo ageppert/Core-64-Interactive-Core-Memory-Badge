@@ -465,8 +465,6 @@ Text GLabel 5100 7450 1    50   Input ~ 0
 5V0
 Text GLabel 4650 7450 1    50   Input ~ 0
 TEENSY_VUSB
-Text GLabel 1500 4100 2    50   Input ~ 0
-TEENSY_VUSB
 Wire Wire Line
 	1500 7350 1250 7350
 $Comp
@@ -1121,4 +1119,6 @@ Wire Wire Line
 	10000 5550 10100 5550
 Connection ~ 10000 5550
 Connection ~ 10100 5550
+Text GLabel 1500 4100 2    50   Input ~ 0
+TEENSY_VUSB
 $EndSCHEMATC

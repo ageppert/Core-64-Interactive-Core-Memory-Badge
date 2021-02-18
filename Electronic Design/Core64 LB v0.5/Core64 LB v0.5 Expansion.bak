@@ -42,10 +42,10 @@ Wire Wire Line
 Text Notes 600  4700 0    118  ~ 0
 OLED MONOCHROME I2C
 $Comp
-L Connector_Generic:Conn_01x04 X?
+L Connector_Generic:Conn_01x04 X4
 U 1 1 5E830BC9
 P 2300 5650
-F 0 "X?" V 2200 5300 50  0000 L CNN
+F 0 "X4" V 2200 5300 50  0000 L CNN
 F 1 "SSW-104-22-L-S-VS" V 2400 5100 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2300 5650 50  0001 C CNN
 F 3 "~" H 2300 5650 50  0001 C CNN
@@ -67,10 +67,10 @@ Wire Wire Line
 Text Notes 650  5050 0    50   ~ 0
 0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!\nMust choose power polarity by soldering SJS.
 $Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X?
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X3
 U 1 1 5E88FF30
 P 5900 5250
-F 0 "X?" H 6079 5247 50  0000 L CNN
+F 0 "X3" H 6079 5247 50  0000 L CNN
 F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 6079 5154 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 5900 5450 50  0001 C CNN
 F 3 "" H 5900 5450 50  0001 C CNN
@@ -113,10 +113,10 @@ Wire Wire Line
 Wire Wire Line
 	5900 5800 5900 5650
 $Comp
-L Jumper:SolderJumper_3_Open JP?
+L Jumper:SolderJumper_3_Open JP2
 U 1 1 5E81A96A
 P 1750 5600
-F 0 "JP?" V 1600 5650 50  0000 L CNN
+F 0 "JP2" V 1600 5650 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1350 5150 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1750 5600 50  0001 C CNN
 F 3 "~" H 1750 5600 50  0001 C CNN
@@ -170,10 +170,10 @@ Wire Wire Line
 Wire Wire Line
 	5600 5350 5600 5650
 $Comp
-L Connector_Generic:Conn_01x08 J?
+L Connector_Generic:Conn_01x08 J5
 U 1 1 5EB0C89C
 P 5000 3600
-F 0 "J?" H 4850 4150 50  0000 L CNN
+F 0 "J5" H 4850 4150 50  0000 L CNN
 F 1 "HEADER_8-PIN_0.1" H 4650 4050 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5000 3600 50  0001 C CNN
 F 3 "~" H 5000 3600 50  0001 C CNN
@@ -221,10 +221,10 @@ Wire Wire Line
 Wire Wire Line
 	8750 4600 9150 4600
 $Comp
-L Jumper:SolderJumper_3_Open JP?
+L Jumper:SolderJumper_3_Open JP1
 U 1 1 5E82F3CE
 P 1450 5500
-F 0 "JP?" V 1550 5550 50  0000 L CNN
+F 0 "JP1" V 1550 5550 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 800 5400 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1450 5500 50  0001 C CNN
 F 3 "~" H 1450 5500 50  0001 C CNN
@@ -251,10 +251,10 @@ Wire Wire Line
 Wire Wire Line
 	850  5300 1450 5300
 $Comp
-L Device:C C?
+L Device:C C11
 U 1 1 5F548531
 P 1650 6900
-F 0 "C?" H 1765 6947 50  0000 L CNN
+F 0 "C11" H 1765 6947 50  0000 L CNN
 F 1 "0.1uF" H 1765 6854 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 1688 6750 50  0001 C CNN
 F 3 "~" H 1650 6900 50  0001 C CNN
@@ -387,10 +387,10 @@ Text GLabel 3850 7050 2    50   BiDi ~ 0
 SAO_G2_or_SPARE_2_or_CP_ADDR_1
 Connection ~ 2000 6950
 $Comp
-L 74xx_IEEE:74HC238 U?
+L 74xx_IEEE:74HC238 U5
 U 1 1 5F6FED24
 P 2550 7150
-F 0 "U?" H 2800 7650 50  0000 C CNN
+F 0 "U5" H 2800 7650 50  0000 C CNN
 F 1 "74HC238" H 2800 7550 50  0000 C CNN
 F 2 "Digikey:TSSOP-16-1EP_W4.40mm" H 2550 7150 50  0001 C CNN
 F 3 "" H 2550 7150 50  0001 C CNN
@@ -412,10 +412,10 @@ Wire Wire Line
 Wire Wire Line
 	3800 6700 3850 6700
 $Comp
-L Jumper:SolderJumper_3_Bridged12 JP?
+L Jumper:SolderJumper_3_Bridged12 JP3
 U 1 1 5F5B143C
 P 3600 6700
-F 0 "JP?" H 3550 6800 50  0000 L CNN
+F 0 "JP3" H 3550 6800 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3200 6250 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 6700 50  0001 C CNN
 F 3 "~" H 3600 6700 50  0001 C CNN
@@ -425,10 +425,10 @@ $EndComp
 Wire Wire Line
 	3850 7050 3800 7050
 $Comp
-L Jumper:SolderJumper_3_Bridged12 JP?
+L Jumper:SolderJumper_3_Bridged12 JP4
 U 1 1 5F5AEC4F
 P 3600 7050
-F 0 "JP?" H 3550 7150 50  0000 L CNN
+F 0 "JP4" H 3550 7150 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3200 6600 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 7050 50  0001 C CNN
 F 3 "~" H 3600 7050 50  0001 C CNN
@@ -468,10 +468,10 @@ IR_OUT
 Text GLabel 6850 3600 0    50   BiDi ~ 0
 SPARE_ADC_DAC
 $Comp
-L Connector_Generic:Conn_01x04 X?
+L Connector_Generic:Conn_01x04 X1
 U 1 1 5E87C9AB
 P 3700 5100
-F 0 "X?" H 3900 4950 50  0000 R CNN
+F 0 "X1" H 3900 4950 50  0000 R CNN
 F 1 "QWIIC" H 4000 5100 50  0000 R CNN
 F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 3700 5100 50  0001 C CNN
 F 3 "~" H 3700 5100 50  0001 C CNN
@@ -557,10 +557,10 @@ Wire Wire Line
 Wire Wire Line
 	9050 4100 9050 4200
 $Comp
-L Connector_Generic:Conn_01x08 J?
+L Connector_Generic:Conn_01x08 J6
 U 1 1 5F896B67
 P 7050 3600
-F 0 "J?" H 6900 4150 50  0000 L CNN
+F 0 "J6" H 6900 4150 50  0000 L CNN
 F 1 "HEADER_8-PIN_0.1" H 6700 4050 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 7050 3600 50  0001 C CNN
 F 3 "~" H 7050 3600 50  0001 C CNN
@@ -642,10 +642,10 @@ Compatible: https://www.adafruit.com/product/1431\n1.5” 128x128, 16-bit color 
 Text GLabel 1750 2350 0    50   Input ~ 0
 5V0
 $Comp
-L Connector_Generic:Conn_01x11 J?
+L Connector_Generic:Conn_01x11 J2
 U 1 1 5F949D97
 P 2100 1950
-F 0 "J?" H 2250 1450 50  0000 L CNN
+F 0 "J2" H 2250 1450 50  0000 L CNN
 F 1 "HEADER_11-PIN_0.1" H 2250 1550 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x11_P2.54mm_Vertical" H 2100 1950 50  0001 C CNN
 F 3 "~" H 2100 1950 50  0001 C CNN
