@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 2
 Title "Core64 LM (LED MATRIX)"
-Date "2021-02-17"
+Date "2021-02-18"
 Rev "0.1"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As released 2021-02-18 ***"
 Comment3 ""
 Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
@@ -262,8 +262,8 @@ Wire Wire Line
 	7800 4500 8200 4500
 Text Notes 4300 1300 0    118  ~ 0
 ALTERNATE 1S LIPO BATTERY - USER SUPPLIED
-Text Notes 5800 5800 0    157  ~ 31
-1S LIPO ONLY !!!
+Text Notes 5000 6100 0    157  ~ 31
+1S LIPO ONLY !!!\n7.5V ABSOLUTE MAXIMUM !!!
 Text Notes 5500 5350 0    50   ~ 0
 SILKSCREEN: +/- pins
 Text Notes 5500 5050 0    50   ~ 0

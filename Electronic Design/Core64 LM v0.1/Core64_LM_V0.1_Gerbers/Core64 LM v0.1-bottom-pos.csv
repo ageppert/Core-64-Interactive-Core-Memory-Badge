@@ -1,0 +1,4 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"J1","PASS THROUGH BOARD","PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right",-35.560000,5.080000,180.000000,bottom
+"J2","PASS THROUGH BOARD","PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right",35.560000,5.080000,180.000000,bottom
+"XLM3","QWIIC","JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal",-29.000000,-35.550000,270.000000,bottom
