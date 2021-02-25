@@ -30,8 +30,8 @@ F1 "Core64 LB v0.5 Expansion.sch" 50
 $EndSheet
 Wire Wire Line
 	5250 3050 5300 3050
-Text Notes 8900 5750 0    50   ~ 0
-Reads 1/4 voltage of +VSW\n(after RPP) before regulators.
+Text Notes 8450 5800 0    50   ~ 0
+Reads 1/4 voltage of\n+VSW (after RPP) \nbefore regulators.
 Text Notes 7950 1750 0    50   ~ 10
 Teensy LC has incoming USB power/programming on board.
 Wire Wire Line
@@ -44,7 +44,7 @@ Wire Wire Line
 	4250 3950 5650 3950
 Wire Wire Line
 	7650 4550 7900 4550
-Text GLabel 8400 5700 2    50   Input ~ 0
+Text GLabel 7950 5700 2    50   Input ~ 0
 VBAT_MON
 Wire Wire Line
 	7650 4750 7800 4750
@@ -239,7 +239,7 @@ Wire Wire Line
 Wire Wire Line
 	7900 4550 7900 5700
 Wire Wire Line
-	7900 5700 8400 5700
+	7900 5700 7950 5700
 Connection ~ 7750 3150
 Wire Wire Line
 	7750 3150 7750 1800
@@ -302,9 +302,9 @@ Wire Wire Line
 Wire Wire Line
 	7650 3250 8050 3250
 Wire Wire Line
-	7650 3050 9650 3050
+	7650 3050 9600 3050
 Wire Wire Line
-	7650 4350 9650 4350
+	7650 4350 9600 4350
 Wire Wire Line
 	8850 4450 8800 4450
 Wire Wire Line
@@ -330,7 +330,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 3050 2400 3050
 Wire Wire Line
-	5650 4550 1400 4550
+	5650 4550 2250 4550
 Text Notes 3300 6700 0    118  ~ 0
 SILKSCREEN BACK
 Text Notes 5800 2400 0    50   ~ 0
@@ -377,7 +377,7 @@ Wire Wire Line
 Connection ~ 5450 2200
 Wire Wire Line
 	5450 2200 5450 2150
-Text Notes 6500 6400 0    50   ~ 0
+Text Notes 5900 6400 0    50   ~ 0
 To use the Teensy 3.2 RTC you must add two things:\n1) Crystal: 32.768 kHz, 12.5 pF Citizen CFS-206, Digi-Key 300-8763-ND (5ppm)\n     (on bottom side of the Teensy board, not shown in this schematic)\n2) Battery Holder: MPD BC-2003, Digi-Key BC-2003-TR-CT-ND\n3) Battery: 3V CR2032 Digi-Key P189-ND\n     (battery and holder on backside of logic board)\n
 Connection ~ 7700 5500
 Wire Wire Line
@@ -509,8 +509,6 @@ Connection ~ 9500 2400
 Wire Wire Line
 	9500 2400 10350 2400
 Wire Notes Line
-	9550 2650 9550 4600
-Wire Notes Line
 	10350 2650 10350 5500
 Text Notes 9700 2600 0    50   ~ 0
 Spare Analog
@@ -544,12 +542,6 @@ Connection ~ 5750 5500
 Wire Wire Line
 	5750 5500 7700 5500
 Wire Notes Line
-	5150 5850 9800 5850
-Wire Notes Line
-	9800 5850 9800 6450
-Wire Notes Line
-	9800 6450 5150 6450
-Wire Notes Line
 	5150 6450 5150 5850
 Text Notes 5900 5800 0    50   ~ 0
 RTC CLOCK BATTERY [OPTIONAL]
@@ -577,7 +569,7 @@ Wire Wire Line
 	5300 5400 4400 5400
 Wire Notes Line
 	650  5000 2550 5000
-Text Notes 1000 5650 0    50   ~ 0
+Text Notes 700  5450 0    50   ~ 0
 I2C here, there, and everywhere.
 Wire Notes Line
 	2550 2650 2550 5500
@@ -633,15 +625,15 @@ Wire Wire Line
 Wire Wire Line
 	9400 4500 9400 4450
 Wire Wire Line
-	9400 4450 9650 4450
+	9400 4450 9500 4450
 Connection ~ 8800 4450
 Wire Wire Line
 	8800 4450 7650 4450
-Text Notes 700  6250 0    79   ~ 0
+Text Notes 700  6400 0    79   ~ 0
 QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is normally low, high to activate matrix transistor.
 Text Notes 8700 2250 0    50   ~ 0
 3.6-6.0V
-Text Notes 9650 3850 0    50   ~ 0
+Text Notes 9650 4200 0    50   ~ 0
 All analog-only\npins (A10-A14),\nAREF, Program\nand Reset are\n3.3V only.
 Text Notes 800  4450 0    50   ~ 0
 All analog-only\npins (A10-A14),\nAREF, Program\nand Reset are\n3.3V only.
@@ -676,8 +668,6 @@ Wire Wire Line
 Connection ~ 8000 5150
 Wire Wire Line
 	8000 5150 8050 5150
-Wire Notes Line
-	9550 4600 10350 4600
 Wire Wire Line
 	5250 3150 5650 3150
 Wire Wire Line
@@ -739,11 +729,11 @@ Connection ~ 1450 3850
 Wire Wire Line
 	1450 3850 1400 3850
 Wire Wire Line
-	3750 4850 1400 4850
+	3750 4850 2350 4850
 Wire Wire Line
 	3650 4750 3650 4800
 Wire Wire Line
-	3650 4800 1450 4800
+	3650 4800 2450 4800
 Wire Wire Line
 	1450 4800 1450 4750
 Wire Wire Line
@@ -751,4 +741,160 @@ Wire Wire Line
 Connection ~ 3650 4750
 Wire Wire Line
 	3650 4750 5650 4750
+Text GLabel 2950 5600 2    50   Input ~ 0
+5V0_MON
+Text GLabel 2950 5750 2    50   Input ~ 0
+3V3_MON
+Wire Wire Line
+	2450 4800 2450 5600
+Connection ~ 2450 4800
+Wire Wire Line
+	2450 4800 1450 4800
+Wire Wire Line
+	2350 4850 2350 5750
+Wire Wire Line
+	2350 5750 2550 5750
+Connection ~ 2350 4850
+Wire Wire Line
+	2350 4850 1400 4850
+Text GLabel 10150 5050 0    50   Input ~ 0
+TC0_MON
+Text GLabel 10150 4750 0    50   Input ~ 0
+BC0_MON
+Wire Notes Line
+	9550 5150 10350 5150
+Wire Notes Line
+	9550 5150 9550 2650
+Wire Wire Line
+	9600 4350 9600 4600
+Wire Wire Line
+	9600 4600 9800 4600
+Connection ~ 9600 4350
+Wire Wire Line
+	9600 4350 9650 4350
+Wire Wire Line
+	9500 4450 9500 4900
+Connection ~ 9500 4450
+Wire Wire Line
+	9500 4450 9650 4450
+Text GLabel 10150 3350 0    50   Input ~ 0
+LR0_MON
+Wire Wire Line
+	9600 3050 9600 3200
+Connection ~ 9600 3050
+Wire Wire Line
+	9600 3050 9650 3050
+Text GLabel 2950 5900 2    50   Input ~ 0
+RR0_MON
+Wire Wire Line
+	2550 5900 2250 5900
+Wire Wire Line
+	2250 5900 2250 4550
+Connection ~ 2250 4550
+Wire Wire Line
+	2250 4550 1400 4550
+$Comp
+L Device:R R?
+U 1 1 60646D8E
+P 2700 5750
+AR Path="/5E755787/60646D8E" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/60646D8E" Ref="R?"  Part="1" 
+AR Path="/60646D8E" Ref="R43"  Part="1" 
+F 0 "R43" V 2650 5850 50  0000 L CNN
+F 1 "10k" V 2650 5500 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2630 5750 50  0001 C CNN
+F 3 "~" H 2700 5750 50  0001 C CNN
+	1    2700 5750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60648F4B
+P 2700 5900
+AR Path="/5E755787/60648F4B" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/60648F4B" Ref="R?"  Part="1" 
+AR Path="/60648F4B" Ref="R53"  Part="1" 
+F 0 "R53" V 2650 6000 50  0000 L CNN
+F 1 "10k" V 2650 5650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2630 5900 50  0001 C CNN
+F 3 "~" H 2700 5900 50  0001 C CNN
+	1    2700 5900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2850 5900 2950 5900
+Wire Wire Line
+	2850 5750 2950 5750
+Wire Wire Line
+	2450 5600 2950 5600
+$Comp
+L Device:R R?
+U 1 1 60683EFC
+P 9950 4600
+AR Path="/5E755787/60683EFC" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/60683EFC" Ref="R?"  Part="1" 
+AR Path="/60683EFC" Ref="R55"  Part="1" 
+F 0 "R55" V 9900 4700 50  0000 L CNN
+F 1 "10k" V 9900 4350 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9880 4600 50  0001 C CNN
+F 3 "~" H 9950 4600 50  0001 C CNN
+	1    9950 4600
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	9200 5850 9200 6450
+Wire Notes Line
+	5150 5850 9200 5850
+Wire Notes Line
+	9200 6450 5150 6450
+$Comp
+L Device:R R?
+U 1 1 606B32F6
+P 9950 3200
+AR Path="/5E755787/606B32F6" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/606B32F6" Ref="R?"  Part="1" 
+AR Path="/606B32F6" Ref="R54"  Part="1" 
+F 0 "R54" V 9900 3300 50  0000 L CNN
+F 1 "10k" V 9900 2950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9880 3200 50  0001 C CNN
+F 3 "~" H 9950 3200 50  0001 C CNN
+	1    9950 3200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10100 3200 10250 3200
+Wire Wire Line
+	10250 3200 10250 3350
+Wire Wire Line
+	10250 3350 10150 3350
+Wire Wire Line
+	9600 3200 9800 3200
+Wire Wire Line
+	10100 4600 10250 4600
+Wire Wire Line
+	10250 4600 10250 4750
+Wire Wire Line
+	10250 4750 10150 4750
+$Comp
+L Device:R R?
+U 1 1 606EF222
+P 9950 4900
+AR Path="/5E755787/606EF222" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/606EF222" Ref="R?"  Part="1" 
+AR Path="/606EF222" Ref="R56"  Part="1" 
+F 0 "R56" V 9900 5000 50  0000 L CNN
+F 1 "10k" V 9900 4650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9880 4900 50  0001 C CNN
+F 3 "~" H 9950 4900 50  0001 C CNN
+	1    9950 4900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9500 4900 9800 4900
+Wire Wire Line
+	10100 4900 10250 4900
+Wire Wire Line
+	10250 4900 10250 5050
+Wire Wire Line
+	10250 5050 10150 5050
 $EndSCHEMATC

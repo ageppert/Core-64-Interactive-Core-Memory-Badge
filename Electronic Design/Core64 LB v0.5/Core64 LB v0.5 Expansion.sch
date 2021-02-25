@@ -406,7 +406,7 @@ Wire Wire Line
 Text Notes 2450 650  0    118  ~ 0
 EVERYTHING ON THIS SHEET IS USER-PROVIDED OPTIONAL ADD-ONS
 Text Notes 3500 8000 0    50   ~ 0
-To use more than 1 core plane:\n1) Add 3-to-8 decoder 74HC238 and decoupling capacitor.\n2) Cut both SJ pads 1-2 and solder pads 2-3.\n\nNOTES:\nSee Core Board schematic for other required CB changes.\nSAO#1 (LB) GPIO is still accessible as CP_ADDR_0 and 1, shared.\nSAO#2 (CB) GPIO becomes output [only] Y0 and Y1 of CP selector.\nSPARE GPIO 1-2-3 are used for Core Plane Addressing.
+To use more than 1 core plane:\n1) Add 3-to-8 decoder 74HC238 and decoupling capacitor.\n2) Cut both SJ pads 1-2 and solder pads 2-3.\n3) Cut 4 SJs 9-12 on DRIVER Sheet near left 20p socket for CP5-8.\nNOTES:\nSee Core Board schematic for other required CB changes.\nSAO#1 (LB) GPIO is still accessible as CP_ADDR_0 and 1, shared.\nSAO#2 (CB) GPIO becomes output [only] Y0 and Y1 of CP selector.\nSPARE GPIO 1-2-3 are used for Core Plane Addressing.
 Wire Wire Line
 	3600 6850 3850 6850
 Wire Wire Line

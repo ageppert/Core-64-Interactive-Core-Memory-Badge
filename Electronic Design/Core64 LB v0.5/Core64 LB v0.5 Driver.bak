@@ -350,8 +350,6 @@ Wire Wire Line
 	4700 4950 4700 5250
 Wire Wire Line
 	2750 4850 2750 4200
-Wire Wire Line
-	900  4850 900  5250
 Connection ~ 900  4850
 Wire Wire Line
 	900  4750 900  4850
@@ -969,12 +967,12 @@ $EndComp
 $Comp
 L Device:R R34
 U 1 1 5D6B8249
-P 6900 4400
-F 0 "R34" V 6750 4400 50  0000 C CNN
-F 1 "6R8-1%" V 7000 4400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 4400 50  0001 C CNN
-F 3 "~" H 6900 4400 50  0001 C CNN
-	1    6900 4400
+P 6900 4350
+F 0 "R34" V 6800 4350 50  0000 C CNN
+F 1 "6R8-1%" V 7000 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 4350 50  0001 C CNN
+F 3 "~" H 6900 4350 50  0001 C CNN
+	1    6900 4350
 	0    -1   1    0   
 $EndComp
 $Comp
@@ -1025,13 +1023,6 @@ F 3 "" H 7200 4800 50  0001 C CNN
 	1    7200 4850
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	7050 4400 7200 4400
-Wire Wire Line
-	7200 4400 7200 4450
-Wire Wire Line
-	7200 4200 7200 4400
-Connection ~ 7200 4400
 Wire Wire Line
 	6050 3350 6250 3350
 Wire Wire Line
@@ -1115,12 +1106,12 @@ $EndComp
 $Comp
 L Device:R R40
 U 1 1 5D87AEBB
-P 6850 6050
-F 0 "R40" V 6700 6050 50  0000 C CNN
-F 1 "6R8-1%" V 6950 6050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 6780 6050 50  0001 C CNN
-F 3 "~" H 6850 6050 50  0001 C CNN
-	1    6850 6050
+P 6850 6000
+F 0 "R40" V 6750 6000 50  0000 C CNN
+F 1 "6R8-1%" V 6950 6000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6780 6000 50  0001 C CNN
+F 3 "~" H 6850 6000 50  0001 C CNN
+	1    6850 6000
 	0    -1   1    0   
 $EndComp
 $Comp
@@ -1172,14 +1163,14 @@ F 3 "" H 7200 6450 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7000 6050 7200 6050
+	7000 6000 7200 6000
 Wire Wire Line
-	7200 6050 7200 6100
+	7200 6000 7200 6100
 Wire Wire Line
-	7200 5850 7200 6050
-Connection ~ 7200 6050
+	7200 5850 7200 6000
+Connection ~ 7200 6000
 Wire Wire Line
-	6350 3650 6350 6050
+	6350 3650 6350 6000
 Wire Wire Line
 	6350 3650 6050 3650
 Wire Wire Line
@@ -1410,7 +1401,7 @@ Text Notes 4450 5150 0    50   ~ 0
 COL 6
 Text Notes 5350 5150 0    50   ~ 0
 COL 7
-Text Notes 6400 4600 0    50   ~ 0
+Text Notes 6400 4550 0    50   ~ 0
 ROW 0,4\nROW 2,6
 Text Notes 6350 6250 0    50   ~ 0
 ROW 1,5\nROW 3,7
@@ -1465,7 +1456,7 @@ $EndComp
 Wire Wire Line
 	4450 7250 4450 7300
 Wire Wire Line
-	2600 4000 2600 4200
+	2600 4000 2600 4100
 Wire Wire Line
 	2600 4200 2750 4200
 Wire Wire Line
@@ -1504,7 +1495,7 @@ Wire Wire Line
 	5300 6700 5300 6750
 Connection ~ 6350 3650
 Wire Wire Line
-	6400 3550 6400 4400
+	6400 3550 6400 4350
 Wire Wire Line
 	6250 3550 6400 3550
 Connection ~ 6250 3550
@@ -1807,8 +1798,6 @@ F 3 "~" H 4150 7250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3250 1750 3500 1750
-Wire Wire Line
 	1250 7200 1250 7100
 Connection ~ 1250 7100
 $Comp
@@ -1882,9 +1871,9 @@ F 12 "Active" H 5950 2600 60  0001 L CNN "Status"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6400 4400 6750 4400
+	6400 4350 6750 4350
 Wire Wire Line
-	6350 6050 6700 6050
+	6350 6000 6700 6000
 Wire Wire Line
 	5050 6700 5300 6700
 Wire Wire Line
@@ -1956,45 +1945,45 @@ CP7_EN
 Text GLabel 4950 3250 2    50   Input ~ 0
 CP8_EN
 $Comp
-L Jumper:SolderJumper_2_Open JP12
+L Jumper:SolderJumper_2_Bridged JP12
 U 1 1 60397BD0
 P 4800 3250
 F 0 "JP12" H 4800 3150 50  0000 C CNN
 F 1 "Hall Switch 4" H 4800 3350 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4800 3250 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 3250 50  0001 C CNN
 F 3 "~" H 4800 3250 50  0001 C CNN
 	1    4800 3250
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Open JP11
+L Jumper:SolderJumper_2_Bridged JP11
 U 1 1 603B8476
 P 4800 2950
 F 0 "JP11" H 4800 2850 50  0000 C CNN
 F 1 "Hall Switch 3" H 4800 3050 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4800 2950 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 2950 50  0001 C CNN
 F 3 "~" H 4800 2950 50  0001 C CNN
 	1    4800 2950
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Open JP9
+L Jumper:SolderJumper_2_Bridged JP9
 U 1 1 6040AAB4
 P 3700 2950
 F 0 "JP9" H 3700 2850 50  0000 C CNN
 F 1 "Hall Switch 1" H 3700 3050 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3700 2950 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 2950 50  0001 C CNN
 F 3 "~" H 3700 2950 50  0001 C CNN
 	1    3700 2950
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Open JP10
+L Jumper:SolderJumper_2_Bridged JP10
 U 1 1 6041B0A8
 P 3700 3250
 F 0 "JP10" H 3700 3150 50  0000 C CNN
 F 1 "Hall Switch 2" H 3700 3350 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3700 3250 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 3250 50  0001 C CNN
 F 3 "~" H 3700 3250 50  0001 C CNN
 	1    3700 3250
 	1    0    0    1   
@@ -2009,4 +1998,34 @@ Wire Notes Line
 	3200 2600 3200 3400
 Text Notes 3300 2800 0    98   ~ 0
 HALL SWITCHES (PLAN B…)
+Text GLabel 4150 1750 2    50   Output ~ 0
+TC0_MON
+Text GLabel 2500 4100 0    50   Output ~ 0
+BC0_MON
+Wire Wire Line
+	900  4850 900  5250
+Text GLabel 7450 4350 2    50   Output ~ 0
+RR0_MON
+Text GLabel 9900 3450 2    50   Output ~ 0
+LR0_MON
+Wire Wire Line
+	2500 4100 2600 4100
+Connection ~ 2600 4100
+Wire Wire Line
+	2600 4100 2600 4200
+Wire Wire Line
+	3250 1750 3500 1750
+Wire Wire Line
+	3950 1750 4150 1750
+Wire Wire Line
+	9700 3450 9900 3450
+Wire Wire Line
+	7200 4200 7200 4350
+Wire Wire Line
+	7200 4350 7200 4450
+Connection ~ 7200 4350
+Wire Wire Line
+	7050 4350 7200 4350
+Wire Wire Line
+	7200 4350 7450 4350
 $EndSCHEMATC

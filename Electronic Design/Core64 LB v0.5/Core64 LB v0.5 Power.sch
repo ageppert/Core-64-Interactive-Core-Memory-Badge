@@ -113,19 +113,6 @@ Text Notes 750  4450 0    118  ~ 0
 POWER SWITCH, RPP, V & I MONITOR
 Text Notes 7800 4450 0    118  ~ 0
 3.3V POWER SUPPLY
-$Comp
-L power:GND #PWR0116
-U 1 1 5E8C4F56
-P 9550 6400
-AR Path="/5E7548ED/5E8C4F56" Ref="#PWR0116"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5E8C4F56" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0116" H 9550 6150 50  0001 C CNN
-F 1 "GND" H 9555 6225 50  0000 C CNN
-F 2 "" H 9550 6400 50  0001 C CNN
-F 3 "" H 9550 6400 50  0001 C CNN
-	1    9550 6400
-	-1   0    0    -1  
-$EndComp
 Wire Notes Line
 	5200 850  5200 3750
 Wire Notes Line
@@ -324,21 +311,6 @@ F 3 "" H 3850 5900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3850 5850 3850 5900
-$Comp
-L Device:C C?
-U 1 1 5EBB7068
-P 7750 6150
-AR Path="/5E755787/5EBB7068" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5EBB7068" Ref="C?"  Part="1" 
-AR Path="/5EA63449/5EBB7068" Ref="C?"  Part="1" 
-AR Path="/5E7548ED/5EBB7068" Ref="C3"  Part="1" 
-F 0 "C3" H 7841 6196 50  0000 L CNN
-F 1 "1uF" H 7841 6105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 7750 6150 50  0001 C CNN
-F 3 "~" H 7750 6150 50  0001 C CNN
-	1    7750 6150
-	-1   0    0    -1  
-$EndComp
 $Comp
 L Device:C C?
 U 1 1 5EBB706E
@@ -614,25 +586,6 @@ Wire Wire Line
 Text Notes 6300 6750 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 $Comp
-L NCP176AMX330TCG:NCP176AMX330TCG IC3
-U 1 1 5F5A7E01
-P 9250 6000
-F 0 "IC3" H 9850 6268 50  0000 C CNN
-F 1 "NCP176AMX330TCG" H 9850 6175 50  0000 C CNN
-F 2 "NCP176AMX330TCG:NCP176AMX330TCG" H 10300 6100 50  0001 L CNN
-F 3 "https://www.mouser.com/datasheet/2/308/NCP176-D-1551588.pdf" H 10300 6000 50  0001 L CNN
-F 4 "ON Semiconductor NCP176AMX330TCG, LDO Voltage Regulator, 500mA, 3.3 V +/-0.8%, 1.4  5.5 Vin, 6-Pin XDFN" H 10300 5900 50  0001 L CNN "Description"
-F 5 "0.45" H 10300 5800 50  0001 L CNN "Height"
-F 6 "ON Semiconductor" H 10300 5700 50  0001 L CNN "Manufacturer_Name"
-F 7 "NCP176AMX330TCG" H 10300 5600 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "NCP176AMX330TCG" H 10300 5500 50  0001 L CNN "Arrow Part Number"
-F 9 "https://www.arrow.com/en/products/ncp176amx330tcg/on-semiconductor" H 10300 5400 50  0001 L CNN "Arrow Price/Stock"
-F 10 "863-NCP176AMX330TCG" H 10300 5300 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=863-NCP176AMX330TCG" H 10300 5200 50  0001 L CNN "Mouser Price/Stock"
-	1    9250 6000
-	-1   0    0    -1  
-$EndComp
-$Comp
 L TPS7A0533PDBVR:TPS7A0533PDBVR IC1
 U 1 1 5F5B23D2
 P 8150 5050
@@ -651,8 +604,6 @@ F 11 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs
 	1    8150 5050
 	1    0    0    -1  
 $EndComp
-Text Notes 8250 5700 0    50   ~ 0
-Preferred, TINY XDFN6\n0.13V DROP @ 500mA
 Text Notes 8250 4750 0    50   ~ 0
 Alternate, SOT-23-5\n0.24V DROP @ 200mA
 $Comp
@@ -666,28 +617,6 @@ F 1 "GND" H 7855 5125 50  0000 C CNN
 F 2 "" H 7850 5300 50  0001 C CNN
 F 3 "" H 7850 5300 50  0001 C CNN
 	1    7850 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9250 6100 9300 6100
-Wire Wire Line
-	9300 6100 9300 6000
-Wire Wire Line
-	9300 6000 9250 6000
-Connection ~ 9300 6000
-$Comp
-L Device:C C?
-U 1 1 5F5D4D85
-P 9550 6200
-AR Path="/5E755787/5F5D4D85" Ref="C?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/5F5D4D85" Ref="C?"  Part="1" 
-AR Path="/5EA63449/5F5D4D85" Ref="C?"  Part="1" 
-AR Path="/5E7548ED/5F5D4D85" Ref="C14"  Part="1" 
-F 0 "C14" H 9641 6246 50  0000 L CNN
-F 1 "1uF" H 9641 6155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 9550 6200 50  0001 C CNN
-F 3 "~" H 9550 6200 50  0001 C CNN
-	1    9550 6200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -705,50 +634,6 @@ F 3 "~" H 7850 5000 50  0001 C CNN
 	1    7850 5000
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	9250 6300 9400 6300
-Wire Wire Line
-	9400 6300 9400 5850
-Wire Wire Line
-	9300 6000 9550 6000
-Text GLabel 9400 5850 1    50   Input ~ 0
-5V0
-Wire Wire Line
-	9550 6000 9550 6050
-Connection ~ 9550 6000
-Wire Wire Line
-	9550 6350 9550 6400
-$Comp
-L power:GND #PWR0125
-U 1 1 5F5EF2E5
-P 7900 6400
-AR Path="/5E7548ED/5F5EF2E5" Ref="#PWR0125"  Part="1" 
-AR Path="/5E755AC8/5D254AE8/5F5EF2E5" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0125" H 7900 6150 50  0001 C CNN
-F 1 "GND" H 7905 6225 50  0000 C CNN
-F 2 "" H 7900 6400 50  0001 C CNN
-F 3 "" H 7900 6400 50  0001 C CNN
-	1    7900 6400
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8050 6100 7900 6100
-Wire Wire Line
-	8050 6200 7900 6200
-Wire Wire Line
-	7900 6200 7900 6350
-Wire Wire Line
-	7750 6000 7750 5950
-Wire Wire Line
-	7750 5950 7900 5950
-Connection ~ 7900 5950
-Wire Wire Line
-	7750 6300 7750 6350
-Wire Wire Line
-	7750 6350 7900 6350
-Connection ~ 7900 6350
-Wire Wire Line
-	7900 6350 7900 6400
 Wire Wire Line
 	9150 5150 9250 5150
 $Comp
@@ -798,30 +683,9 @@ Wire Wire Line
 Connection ~ 7850 5250
 Wire Wire Line
 	7850 5250 7850 5300
-$Comp
-L Jumper:SolderJumper_3_Open JP8
-U 1 1 5F67458E
-P 9700 5550
-F 0 "JP8" V 9600 5650 50  0000 L CNN
-F 1 "3V3_Select" V 9950 5100 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 9700 5550 50  0001 C CNN
-F 3 "~" H 9700 5550 50  0001 C CNN
-	1    9700 5550
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	9700 5350 9700 4800
 Wire Wire Line
 	9400 4800 9700 4800
-Wire Wire Line
-	9700 6000 9700 5750
-Wire Wire Line
-	9550 6000 9700 6000
-Text Notes 9800 5200 0    118  ~ 24
-Must\nSelect\nOne\nw/SJ
 Text GLabel 8000 4650 0    50   Input ~ 0
-5V0
-Text GLabel 7850 5750 0    50   Input ~ 0
 5V0
 $Comp
 L Device:CP1 C?
@@ -887,15 +751,9 @@ Wire Wire Line
 	7100 5400 7100 5500
 Connection ~ 7100 5500
 Wire Wire Line
-	7850 5750 7900 5750
-Wire Wire Line
-	7900 5750 7900 5950
-Wire Wire Line
 	8000 4650 8100 4650
 Wire Wire Line
 	8100 4650 8100 4800
-Wire Wire Line
-	7900 5950 7900 6100
 Wire Wire Line
 	7100 5500 7100 5750
 Wire Wire Line
@@ -993,16 +851,6 @@ F 3 "~" H 10000 5750 50  0001 C CNN
 	1    10000 5750
 	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	9250 6200 9300 6200
-Wire Wire Line
-	9300 6200 9300 6450
-Wire Wire Line
-	9300 6450 8050 6450
-Wire Wire Line
-	8050 6450 8050 6350
-Wire Wire Line
-	8050 6350 7900 6350
 Connection ~ 7100 5000
 Wire Wire Line
 	7100 5000 7150 5000
@@ -1021,8 +869,6 @@ Wire Wire Line
 	650  4100 650  3150
 Wire Wire Line
 	650  3150 5100 3150
-Wire Wire Line
-	5100 3150 5100 2600
 Wire Wire Line
 	5100 2600 6650 2600
 Wire Wire Line
@@ -1103,7 +949,7 @@ Text Notes 4500 5000 0    50   ~ 0
 VIN MAX 7.5V
 Text Notes 5700 6200 0    50   ~ 0
 0.24V DROP @ 800mA
-Text Notes 7650 5650 0    50   ~ 0
+Text Notes 7550 4550 0    50   ~ 0
 IN MAX 5.5V
 Wire Wire Line
 	5300 4800 5800 4800
@@ -1112,8 +958,6 @@ Wire Wire Line
 Wire Wire Line
 	4050 4100 4900 4100
 Wire Wire Line
-	9850 5550 10000 5550
-Wire Wire Line
 	10100 5550 10200 5550
 Wire Wire Line
 	10000 5550 10100 5550
@@ -1121,4 +965,74 @@ Connection ~ 10000 5550
 Connection ~ 10100 5550
 Text GLabel 1500 4100 2    50   Input ~ 0
 TEENSY_VUSB
+$Comp
+L Device:R R?
+U 1 1 603A6799
+P 7550 5850
+AR Path="/5E755787/603A6799" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/603A6799" Ref="R?"  Part="1" 
+AR Path="/5E7548ED/603A6799" Ref="R57"  Part="1" 
+F 0 "R57" H 7620 5896 50  0000 L CNN
+F 1 "11k" H 7620 5805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7480 5850 50  0001 C CNN
+F 3 "~" H 7550 5850 50  0001 C CNN
+	1    7550 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 603A679F
+P 7550 6150
+AR Path="/5E755787/603A679F" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/603A679F" Ref="R?"  Part="1" 
+AR Path="/5E7548ED/603A679F" Ref="R58"  Part="1" 
+F 0 "R58" H 7620 6196 50  0000 L CNN
+F 1 "11k" H 7620 6105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7480 6150 50  0001 C CNN
+F 3 "~" H 7550 6150 50  0001 C CNN
+	1    7550 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 6000 7550 6000
+Text GLabel 7800 6000 2    50   Output ~ 0
+5V0_MON
+$Comp
+L power:GND #PWR0159
+U 1 1 603A67A7
+P 7550 6350
+AR Path="/5E7548ED/603A67A7" Ref="#PWR0159"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/603A67A7" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0159" H 7550 6100 50  0001 C CNN
+F 1 "GND" H 7555 6175 50  0000 C CNN
+F 2 "" H 7550 6350 50  0001 C CNN
+F 3 "" H 7550 6350 50  0001 C CNN
+	1    7550 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 6300 7550 6350
+Connection ~ 7550 6000
+Text Notes 7850 6200 0    50   ~ 0
+1%
+Text Notes 7850 5900 0    50   ~ 0
+1%
+Text GLabel 7500 5600 0    50   Output ~ 0
+5V0
+Wire Wire Line
+	7500 5600 7550 5600
+Wire Wire Line
+	7550 5600 7550 5700
+Wire Wire Line
+	9000 6000 8750 6000
+Text GLabel 9000 6000 2    50   Output ~ 0
+3V3_MON
+Text GLabel 8750 6000 0    50   Output ~ 0
+3V3
+Wire Wire Line
+	9700 4800 9700 5550
+Wire Wire Line
+	9700 5550 10000 5550
+Wire Wire Line
+	5100 3150 5100 2600
 $EndSCHEMATC
