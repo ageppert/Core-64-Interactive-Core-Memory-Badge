@@ -274,13 +274,13 @@ SPARE_5
 Text GLabel 1400 3850 0    50   BiDi ~ 0
 SPARE_4_IR_IN
 Wire Wire Line
-	3550 4750 5650 4750
+	3550 4750 3650 4750
 Wire Wire Line
 	4400 5400 4400 5350
 Wire Wire Line
-	5650 2850 4000 2850
+	5650 2850 4300 2850
 Wire Wire Line
-	5650 2950 4000 2950
+	5650 2950 4300 2950
 Wire Wire Line
 	7650 4150 8050 4150
 Wire Wire Line
@@ -422,8 +422,6 @@ Wire Wire Line
 	4300 4850 4250 4850
 Wire Wire Line
 	3750 4900 3750 4850
-Wire Wire Line
-	3750 4850 1400 4850
 Text GLabel 6450 1900 2    50   Output ~ 0
 TEENSY_3V3
 Wire Wire Line
@@ -533,8 +531,6 @@ Wire Wire Line
 Wire Wire Line
 	5300 3650 5300 3700
 Wire Wire Line
-	5000 3650 4250 3650
-Wire Wire Line
 	5300 3700 5000 3700
 Wire Wire Line
 	5000 3700 5000 3650
@@ -596,7 +592,7 @@ I2C_CLOCK
 Wire Wire Line
 	1550 3900 1550 3850
 Wire Wire Line
-	1550 3850 1400 3850
+	1550 3850 1450 3850
 $Comp
 L Graphic:Logo_Open_Hardware_Small L4
 U 1 1 60308F85
@@ -703,4 +699,56 @@ U 5E755AC8
 F0 "Driver" 50
 F1 "Core64 LB v0.5 Driver.sch" 50
 $EndSheet
+Text GLabel 900  2850 0    50   Input ~ 0
+HS1
+Text GLabel 900  2950 0    50   Input ~ 0
+HS2
+Text GLabel 900  4750 0    50   Input ~ 0
+HS3
+Text GLabel 900  3750 0    50   Input ~ 0
+HS4
+Wire Wire Line
+	4300 2850 4300 2900
+Wire Wire Line
+	4300 2900 1450 2900
+Wire Wire Line
+	1450 2900 1450 2850
+Wire Wire Line
+	1450 2850 900  2850
+Connection ~ 4300 2850
+Wire Wire Line
+	4300 2850 4000 2850
+Wire Wire Line
+	900  2950 1450 2950
+Wire Wire Line
+	1450 2950 1450 3000
+Wire Wire Line
+	1450 3000 4300 3000
+Wire Wire Line
+	4300 3000 4300 2950
+Connection ~ 4300 2950
+Wire Wire Line
+	4300 2950 4000 2950
+Wire Wire Line
+	5000 3650 4250 3650
+Wire Wire Line
+	1450 3850 1450 3750
+Wire Wire Line
+	1450 3750 900  3750
+Connection ~ 1450 3850
+Wire Wire Line
+	1450 3850 1400 3850
+Wire Wire Line
+	3750 4850 1400 4850
+Wire Wire Line
+	3650 4750 3650 4800
+Wire Wire Line
+	3650 4800 1450 4800
+Wire Wire Line
+	1450 4800 1450 4750
+Wire Wire Line
+	1450 4750 900  4750
+Connection ~ 3650 4750
+Wire Wire Line
+	3650 4750 5650 4750
 $EndSCHEMATC

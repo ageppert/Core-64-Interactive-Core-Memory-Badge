@@ -1939,4 +1939,74 @@ Text GLabel 900  1100 2    50   Output ~ 0
 LED_ARRAY_5V0_SIG
 Wire Wire Line
 	800  1100 900  1100
+Text GLabel 3550 2950 0    50   Input ~ 0
+HS1
+Text GLabel 3550 3250 0    50   Input ~ 0
+HS2
+Text GLabel 4650 2950 0    50   Input ~ 0
+HS3
+Text GLabel 4650 3250 0    50   Input ~ 0
+HS4
+Text GLabel 3850 2950 2    50   Input ~ 0
+CP5_EN
+Text GLabel 3850 3250 2    50   Input ~ 0
+CP6_EN
+Text GLabel 4950 2950 2    50   Input ~ 0
+CP7_EN
+Text GLabel 4950 3250 2    50   Input ~ 0
+CP8_EN
+$Comp
+L Jumper:SolderJumper_2_Bridged JP12
+U 1 1 60397BD0
+P 4800 3250
+F 0 "JP12" H 4800 3150 50  0000 C CNN
+F 1 "Hall Switch 4" H 4800 3350 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 3250 50  0001 C CNN
+F 3 "~" H 4800 3250 50  0001 C CNN
+	1    4800 3250
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP11
+U 1 1 603B8476
+P 4800 2950
+F 0 "JP11" H 4800 2850 50  0000 C CNN
+F 1 "Hall Switch 3" H 4800 3050 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 2950 50  0001 C CNN
+F 3 "~" H 4800 2950 50  0001 C CNN
+	1    4800 2950
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP9
+U 1 1 6040AAB4
+P 3700 2950
+F 0 "JP9" H 3700 2850 50  0000 C CNN
+F 1 "Hall Switch 1" H 3700 3050 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 2950 50  0001 C CNN
+F 3 "~" H 3700 2950 50  0001 C CNN
+	1    3700 2950
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP10
+U 1 1 6041B0A8
+P 3700 3250
+F 0 "JP10" H 3700 3150 50  0000 C CNN
+F 1 "Hall Switch 2" H 3700 3350 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 3250 50  0001 C CNN
+F 3 "~" H 3700 3250 50  0001 C CNN
+	1    3700 3250
+	1    0    0    1   
+$EndComp
+Wire Notes Line
+	3200 3400 5450 3400
+Wire Notes Line
+	5450 3400 5450 2600
+Wire Notes Line
+	5450 2600 3200 2600
+Wire Notes Line
+	3200 2600 3200 3400
+Text Notes 3300 2800 0    98   ~ 0
+HALL SWITCHES (PLAN B…)
 $EndSCHEMATC
