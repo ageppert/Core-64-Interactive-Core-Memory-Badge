@@ -1,4 +1,4 @@
-16741525765808219
+16741538819727219
 2829
 ADAFRUIT_2829
 
@@ -11,8 +11,8 @@ Adafruit_3.2_TFT_Dual_PinHeader_1x20_P2.54mm_Vertical_SMD_Pin1Left
 surface-mounted straight pin header, 1x20, 2.54mm pitch, single row, style 1 (pin 1 left)
 Surface mounted pin header SMD 1x20 2.54mm single row style1 pin1 left
 0
-44
-40
+32
+28
 ALS_BH1730
 BH1730
 
@@ -70207,7 +70207,7 @@ Teensy30_31_32_LC_SMD_SOCKETS
 
 
 0
-85
+87
 52
 Teensy
 Teensy35_36

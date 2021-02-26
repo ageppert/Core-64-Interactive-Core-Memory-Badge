@@ -477,7 +477,7 @@ U 1 1 5F54D780
 P 5800 3000
 F 0 "U6" V 5650 3200 50  0000 L CNN
 F 1 "Micro_LiPo_Charger" V 5500 2650 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Micro_LiPo_Charger" H 5800 3000 50  0001 C CNN
+F 2 "Core_Memory_8x8_Array:Micro_LiPo_Charger_CornerSMD" H 5800 3000 50  0001 C CNN
 F 3 "" H 5800 3000 50  0001 C CNN
 	1    5800 3000
 	0    1    1    0   
