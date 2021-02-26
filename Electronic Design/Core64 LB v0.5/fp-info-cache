@@ -1,4 +1,4 @@
-16738286498959219
+16741525765808219
 2829
 ADAFRUIT_2829
 
@@ -1219,6 +1219,13 @@ Ultraminiature Surface Mount Slide Switch
 4
 Button_Switch_SMD
 SW_SPDT_CK-JS102011SAQN
+http://www.ckswitches.com/media/1422/js.pdf
+switch spdt
+0
+3
+3
+Button_Switch_SMD
+SW_SPDT_CK-JS102011SAQN_Core64_Recessed
 http://www.ckswitches.com/media/1422/js.pdf
 switch spdt
 0
@@ -45177,6 +45184,13 @@ TSSOP-16-1EP_W4.40mm
 0
 25
 17
+Digikey
+TSSOP-16-W4.40mm
+
+
+0
+16
+16
 Digikey
 TSSOP-20-1EP_W4.4mm
 

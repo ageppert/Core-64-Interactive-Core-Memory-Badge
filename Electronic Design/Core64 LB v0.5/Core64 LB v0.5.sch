@@ -45,7 +45,7 @@ Wire Wire Line
 Wire Wire Line
 	7650 4550 7900 4550
 Text GLabel 7950 5700 2    50   Input ~ 0
-VBAT_MON
+BAT_MON
 Wire Wire Line
 	7650 4750 7800 4750
 Wire Wire Line
