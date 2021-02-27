@@ -8,11 +8,11 @@ Sheet 1 5
 Title "Core 64 - Main Sheet Index"
 Date "2021-02-04"
 Rev "0.5"
-Comp "www.Core64.io"
-Comment1 "Work in progress"
-Comment2 "Andy Geppert"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
 Text Notes 2650 700  0    118  ~ 0
 CORE 64 INTERACTIVE CORE MEMORY BADGE V0.5 LOGIC BOARD
@@ -55,7 +55,7 @@ Wire Wire Line
 Text GLabel 1400 5150 0    50   BiDi ~ 0
 I2C_DATA
 Text GLabel 5250 5350 0    50   Output ~ 0
-LED_ARRAY_3V3_SIG
+LED_MATRIX_3V3_SIG
 $Sheet
 S 750  850  1450 250 
 U 5E7548ED
@@ -68,7 +68,7 @@ Text Notes 6350 6950 0    50   ~ 10
 BOM TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
 Text GLabel 4250 4650 0    50   Output ~ 0
 SPI_CLK
-Text GLabel 8850 4450 2    50   Input ~ 0
+Text GLabel 2150 4050 0    50   Input ~ 0
 SD_SPI_CD
 $Comp
 L CORE_64_LIBRARY:Core_64_Logo L1
@@ -305,8 +305,6 @@ Wire Wire Line
 	7650 3050 9600 3050
 Wire Wire Line
 	7650 4350 9600 4350
-Wire Wire Line
-	8850 4450 8800 4450
 Wire Wire Line
 	7650 5250 8050 5250
 Wire Wire Line
@@ -618,17 +616,6 @@ Text Notes 6650 2950 0    50   ~ 0
 Back R7
 Text GLabel 9650 4450 2    50   Input ~ 0
 SPARE_ANA_6
-Wire Wire Line
-	8800 4450 8800 4500
-Wire Wire Line
-	8800 4500 9400 4500
-Wire Wire Line
-	9400 4500 9400 4450
-Wire Wire Line
-	9400 4450 9500 4450
-Connection ~ 8800 4450
-Wire Wire Line
-	8800 4450 7650 4450
 Text Notes 700  6400 0    79   ~ 0
 QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is normally low, high to activate matrix transistor.
 Text Notes 8700 2250 0    50   ~ 0
@@ -733,8 +720,6 @@ Wire Wire Line
 Wire Wire Line
 	3650 4750 3650 4800
 Wire Wire Line
-	3650 4800 2450 4800
-Wire Wire Line
 	1450 4800 1450 4750
 Wire Wire Line
 	1450 4750 900  4750
@@ -745,11 +730,6 @@ Text GLabel 2950 5600 2    50   Input ~ 0
 5V0_MON
 Text GLabel 2950 5750 2    50   Input ~ 0
 3V3_MON
-Wire Wire Line
-	2450 4800 2450 5600
-Connection ~ 2450 4800
-Wire Wire Line
-	2450 4800 1450 4800
 Wire Wire Line
 	2350 4850 2350 5750
 Wire Wire Line
@@ -897,4 +877,45 @@ Wire Wire Line
 	10250 4900 10250 5050
 Wire Wire Line
 	10250 5050 10150 5050
+Wire Wire Line
+	2500 4750 2450 4750
+Wire Wire Line
+	3650 4800 2500 4800
+Wire Wire Line
+	2500 4800 2500 4750
+Wire Wire Line
+	2450 4750 2450 5600
+Connection ~ 2450 4750
+Wire Wire Line
+	2450 4750 2100 4750
+Wire Wire Line
+	2100 4750 2100 4800
+Wire Wire Line
+	2100 4800 1450 4800
+Connection ~ 2100 4750
+Wire Wire Line
+	7650 4450 9500 4450
+$Comp
+L Jumper:SolderJumper_2_Open JP8
+U 1 1 604A327B
+P 2000 4400
+F 0 "JP8" H 2000 4611 50  0000 C CNN
+F 1 "SD CARD DETECT" H 2000 4518 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2000 4400 50  0001 C CNN
+F 3 "~" H 2000 4400 50  0001 C CNN
+	1    2000 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 4050 2400 4050
+Wire Wire Line
+	2400 4050 2400 4400
+Wire Wire Line
+	2400 4400 2150 4400
+Wire Wire Line
+	1850 4400 1700 4400
+Wire Wire Line
+	1700 4400 1700 4750
+Wire Wire Line
+	1700 4750 2100 4750
 $EndSCHEMATC

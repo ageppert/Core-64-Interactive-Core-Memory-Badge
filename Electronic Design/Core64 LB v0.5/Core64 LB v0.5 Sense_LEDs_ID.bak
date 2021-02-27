@@ -8,11 +8,11 @@ Sheet 2 5
 Title "Core 64 - Sense"
 Date "2021-02-04"
 Rev "0.5"
-Comp "www.Core64.io"
-Comment1 "Work in progress"
-Comment2 "Andy Geppert"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
 Text Notes 600  850  0    118  ~ 0
 SENSE SIGNAL DIFFERENTIAL AMPLIFIERS
@@ -569,11 +569,11 @@ SILKSCREEN: 3V3 ONLY\nSENSE DEBUG
 Text Notes 4800 2950 0    118  ~ 0
 NOR -> NOT -> RS LATCH
 Text GLabel 2400 5500 2    50   Output ~ 0
-LED_ARRAY_5V0_SIG
+LED_MATRIX_5V0_SIG
 Wire Wire Line
 	2300 5500 2400 5500
 Text GLabel 1400 5500 0    50   Input ~ 0
-LED_ARRAY_3V3_SIG
+LED_MATRIX_3V3_SIG
 Wire Wire Line
 	1450 6000 1500 6000
 Wire Wire Line
@@ -588,7 +588,7 @@ Wire Wire Line
 	2000 6350 1900 6350
 Connection ~ 1900 6350
 Text Notes 600  5250 0    118  ~ 0
-LED ARRAY DRIVE AND LEVEL SHIFT
+LED MATRIX DRIVE AND LEVEL SHIFT
 Wire Wire Line
 	2300 6000 2300 5950
 $Comp
@@ -627,7 +627,7 @@ NoConn ~ 3550 6350
 Text Notes 3350 7200 0    50   ~ 0
 TSM-106 (2x6) required\nTSM-107 (2x7) alternate\n\nSymbol view is looking down\non the front face of the Logic\nBoard, with the male header\npins pointing up at you.
 Text Notes 2500 6200 0    50   ~ 0
-SILKSCREEN: \n5V0 ONLY\nLED ARRAY
+SILKSCREEN: \n5V0 ONLY\nLED MATRIX
 Wire Wire Line
 	4650 5650 4650 5750
 Text GLabel 4650 5650 1    50   Input ~ 0
@@ -661,7 +661,7 @@ F 3 "" H 3400 6250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4300 6250 2    50   Input ~ 0
-LED_ARRAY_5V0_SIG
+LED_MATRIX_5V0_SIG
 $Comp
 L Connector_Generic:Conn_02x07_Odd_Even J?
 U 1 1 5F7F824E

@@ -8,11 +8,11 @@ Sheet 3 5
 Title "Core 64 - Expansion"
 Date "2021-02-04"
 Rev "0.5"
-Comp "www.Core64.io"
-Comment1 "Work in progress"
-Comment2 "Andy Geppert"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
 Text Notes 600  6500 0    118  ~ 0
 CORE PLANE & CORE BOARD SAO #2 GPIO SELECT
@@ -65,18 +65,7 @@ Wire Wire Line
 Wire Wire Line
 	2200 5400 2200 5450
 Text Notes 650  5050 0    50   ~ 0
-0.96” (128x64)\nI2C 4-pins, ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!\nMust choose power polarity by soldering SJS.
-$Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X3
-U 1 1 5E88FF30
-P 5900 5250
-F 0 "X3" H 6079 5247 50  0000 L CNN
-F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 6079 5154 50  0000 L CNN
-F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 5900 5450 50  0001 C CNN
-F 3 "" H 5900 5450 50  0001 C CNN
-	1    5900 5250
-	1    0    0    -1  
-$EndComp
+Generic 0.96” (128x64) or 1.5” (128x128)\nI2C 4-pins, often ADDRESS: 0x3C (60 decimal)\nAlternate is 0x3D, not 0x7A or 0x78 (wrong 8-bit)!\nMust choose power polarity by soldering SJS.
 Text GLabel 5500 4950 0    50   Input ~ 0
 3V3
 $Comp
@@ -203,19 +192,6 @@ F 3 "" H 8750 4750 50  0001 C CNN
 	1    8750 4750
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_01x09 X2
-U 1 1 5EAA1F67
-P 9350 4300
-AR Path="/5EA63449/5EAA1F67" Ref="X2"  Part="1" 
-AR Path="/5EAA1F67" Ref="X?"  Part="1" 
-F 0 "X2" H 9250 3650 50  0000 L CNN
-F 1 "Header_9-PIN_0.1" H 8950 3750 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x09_P2.54mm_Vertical" H 9350 4300 50  0001 C CNN
-F 3 "~" H 9350 4300 50  0001 C CNN
-	1    9350 4300
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	8750 4750 8750 4600
 Wire Wire Line
@@ -269,19 +245,6 @@ Text Notes 3450 3150 0    50   ~ 0
 Silkscreen: 3V3 ONLY\npin names
 Text Notes 6300 6750 0    50   ~ 0
 All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
-$Comp
-L power:GND #PWR?
-U 1 1 5F702794
-P 2550 7800
-AR Path="/5E755787/5F702794" Ref="#PWR?"  Part="1" 
-AR Path="/5EA63449/5F702794" Ref="#PWR0126"  Part="1" 
-F 0 "#PWR0126" H 2550 7550 50  0001 C CNN
-F 1 "GND" H 2555 7625 50  0000 C CNN
-F 2 "" H 2550 7800 50  0001 C CNN
-F 3 "" H 2550 7800 50  0001 C CNN
-	1    2550 7800
-	1    0    0    -1  
-$EndComp
 Text GLabel 2550 6750 1    50   Input ~ 0
 3V3
 Text GLabel 1650 6750 1    50   Input ~ 0
@@ -329,8 +292,6 @@ Wire Wire Line
 	2550 6800 2550 6850
 Wire Wire Line
 	2000 7100 2000 6950
-Text GLabel 3850 6850 2    50   Output ~ 0
-CP1_EN
 $Comp
 L power:GND #PWR?
 U 1 1 5F530128
@@ -381,8 +342,6 @@ Text GLabel 2000 7500 0    50   BiDi ~ 0
 SAO_G1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 2000 7600 0    50   BiDi ~ 0
 SAO_G2_or_SPARE_2_or_CP_ADDR_1
-Text GLabel 3850 6700 2    50   BiDi ~ 0
-SAO_G1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 3850 7050 2    50   BiDi ~ 0
 SAO_G2_or_SPARE_2_or_CP_ADDR_1
 Connection ~ 2000 6950
@@ -407,21 +366,6 @@ Text Notes 2450 650  0    118  ~ 0
 EVERYTHING ON THIS SHEET IS USER-PROVIDED OPTIONAL ADD-ONS
 Text Notes 3500 8000 0    50   ~ 0
 To use more than 1 core plane:\n1) Add 3-to-8 decoder 74HC238 and decoupling capacitor.\n2) Cut both SJ pads 1-2 and solder pads 2-3.\n3) Cut 4 SJs 9-12 on DRIVER Sheet near left 20p socket for CP5-8.\nNOTES:\nSee Core Board schematic for other required CB changes.\nSAO#1 (LB) GPIO is still accessible as CP_ADDR_0 and 1, shared.\nSAO#2 (CB) GPIO becomes output [only] Y0 and Y1 of CP selector.\nSPARE GPIO 1-2-3 are used for Core Plane Addressing.
-Wire Wire Line
-	3600 6850 3850 6850
-Wire Wire Line
-	3800 6700 3850 6700
-$Comp
-L Jumper:SolderJumper_3_Bridged12 JP3
-U 1 1 5F5B143C
-P 3600 6700
-F 0 "JP3" H 3550 6800 50  0000 L CNN
-F 1 "SolderJumper_3_Open" V 3200 6250 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 6700 50  0001 C CNN
-F 3 "~" H 3600 6700 50  0001 C CNN
-	1    3600 6700
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	3850 7050 3800 7050
 $Comp
@@ -534,18 +478,6 @@ NoConn ~ 7650 1400
 NoConn ~ 7750 1400
 NoConn ~ 7850 1400
 NoConn ~ 7950 1400
-NoConn ~ 8050 1400
-NoConn ~ 8150 1400
-NoConn ~ 8250 1400
-NoConn ~ 8350 1400
-NoConn ~ 8450 1400
-NoConn ~ 8550 1400
-NoConn ~ 8650 1400
-NoConn ~ 8750 1400
-NoConn ~ 8850 1400
-NoConn ~ 8950 1400
-NoConn ~ 9050 1400
-NoConn ~ 9150 1400
 NoConn ~ 9250 1400
 NoConn ~ 9350 1400
 NoConn ~ 9450 1400
@@ -952,8 +884,8 @@ Wire Wire Line
 	6750 1550 6750 1750
 Wire Wire Line
 	6750 1750 6250 1750
-Text Notes 4400 1150 0    50   ~ 0
-Might not need these…
+Text Notes 4900 1250 0    50   ~ 0
+DNI
 Text GLabel 6850 3700 0    50   Output ~ 0
 SPARE_ANA_7
 Text GLabel 4800 3800 0    50   Output ~ 0
@@ -991,4 +923,60 @@ Text Notes 9450 4750 0    59   ~ 0
 CARD DETECT\nDAT2\nD1\nCS (or D3)\nSI (or CMD)\nSO (or D0)\nCLK\nGND\n3V
 Text GLabel 4150 1100 0    50   Input ~ 0
 TEENSY_3V3
+$Comp
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X3
+U 1 1 5E88FF30
+P 5900 5250
+F 0 "X3" H 6079 5247 50  0000 L CNN
+F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 6079 5154 50  0000 L CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 5900 5450 50  0001 C CNN
+F 3 "" H 5900 5450 50  0001 C CNN
+	1    5900 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x09 X2
+U 1 1 5EAA1F67
+P 9350 4300
+AR Path="/5EA63449/5EAA1F67" Ref="X2"  Part="1" 
+AR Path="/5EAA1F67" Ref="X?"  Part="1" 
+F 0 "X2" H 9250 3650 50  0000 L CNN
+F 1 "Header_9-PIN_0.1" H 8950 3750 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x09_P2.54mm_Vertical" H 9350 4300 50  0001 C CNN
+F 3 "~" H 9350 4300 50  0001 C CNN
+	1    9350 4300
+	1    0    0    1   
+$EndComp
+Text Notes 5350 2400 0    50   ~ 0
+TFT LCD SOCKETS FOR LOGIC BOARD:\n1x SAMTEC 20-pin SMD Header SSW-120-22-F-S-VS\n2x SAMTEC  4-pin SMD Header SSW-104-22-F-S-VS
+$Comp
+L power:GNDD #PWR?
+U 1 1 604FF352
+P 2550 7800
+F 0 "#PWR?" H 2550 7550 50  0001 C CNN
+F 1 "GNDD" H 2555 7644 50  0000 C CNN
+F 2 "" H 2550 7800 50  0001 C CNN
+F 3 "" H 2550 7800 50  0001 C CNN
+	1    2550 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP3
+U 1 1 5F5B143C
+P 3600 6700
+F 0 "JP3" H 3550 6800 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 3200 6250 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 6700 50  0001 C CNN
+F 3 "~" H 3600 6700 50  0001 C CNN
+	1    3600 6700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 6700 3850 6700
+Wire Wire Line
+	3600 6850 3850 6850
+Text GLabel 3850 6700 2    50   BiDi ~ 0
+SAO_G1_or_SPARE_1_or_CP_ADDR_0
+Text GLabel 3850 6850 2    50   Output ~ 0
+CP1_EN
 $EndSCHEMATC

@@ -8,11 +8,11 @@ Sheet 5 5
 Title "Core 64 - Core Matrix Driver"
 Date "2021-02-04"
 Rev "0.5"
-Comp "www.Core64.io"
-Comment1 "Work in progress"
-Comment2 "Andy Geppert"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
 Wire Wire Line
 	2400 4450 2400 4550
@@ -1818,7 +1818,7 @@ QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is nor
 Text Notes 3300 6650 0    50   ~ 0
 N-CHNL FET as low-side switch
 $Comp
-L Device:Q_NMOS_DGS Q22
+L Device:Q_NMOS_GSD Q22
 U 1 1 5FABD474
 P 4350 7000
 F 0 "Q22" H 4555 7047 50  0000 L CNN
@@ -1925,7 +1925,7 @@ Text GLabel 2550 1100 0    50   Input ~ 0
 Wire Wire Line
 	2550 1100 2650 1100
 Text GLabel 900  1100 2    50   Output ~ 0
-LED_ARRAY_5V0_SIG
+LED_MATRIX_5V0_SIG
 Wire Wire Line
 	800  1100 900  1100
 Text GLabel 3550 2950 0    50   Input ~ 0
