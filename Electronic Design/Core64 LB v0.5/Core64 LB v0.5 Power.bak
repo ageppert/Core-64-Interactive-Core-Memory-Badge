@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 4 5
 Title "Core 64 - Power Schematic"
-Date "2021-02-26"
+Date "2021-02-27"
 Rev "0.5"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As prototyped. ***"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -57,10 +57,10 @@ F 3 "~" H 1450 5250 50  0001 C CNN
 	1    1450 5250
 	-1   0    0    -1  
 $EndComp
-Text Notes 750  1700 0    50   ~ 0
-SOURCE 1 “ON (BAT)”\n  BUILT-IN BATTERY PACK (Keystone 2482CN) WITH 4X “AAA” Primary/Alkaline Cells\n  OK to use Energizer Ultimate Lithium (light weight!) with open cell 7.2V, loaded will be <7V.\n  Battery Pack includes wires and 3-pin plug.\n  \n  Socket: TH, Side Entry, JST PA S03B-PASK-2(LF)(SN), Digikey 455-1848-ND ($0.44/ea)\n  Socket: SMT, Top Entry, JST PA BM03B-PASS-1-TFT(LF)(SN), Digikey 455-2638-1-ND ($0.80)  \n  Socket: SMT, Side Entry, Keystone 976, Digikey 36-976CT-ND ($2.71/ea)
+Text Notes 750  1550 0    50   ~ 0
+SOURCE 1 “ON (BAT)”\n  BUILT-IN BATTERY PACK (Keystone 2482 or 2482CN) WITH 4X “AAA” primary/Alkaline Cells\n  OK to use Energizer Ultimate Lithium (light weight!) with open cell 7.2V, loaded will be <7V.\n  Battery Pack includes wires and may or may not have a 3-pin plug.\n    \n  Optional Socket: TH, Side Entry, JST PA S03B-PASK-2(LF)(SN), Digikey 455-1848-ND\n
 Text Notes 750  2950 0    50   ~ 0
-SOURCE 2 “OFF (USB)”\n  USB 5V supplied through Teensy 3.2 and optional LiPo Charger USB port.\n  With the VIN-VUSB trace cut on the back of the Teensy, the TEENSY_VUSB is taken off of the\n  Teensy Board and routed on the Core64 LB to the lower position of the power switch. From\n  here, it powers the whole Core64 system and routes back to the TEENSY_VIN after passing\n  through the 5V LDO regulator.
+SOURCE 2 “OFF (USB)”\n  USB 5V supplied through Teensy and optional LiPo Charger USB port.\n  With the VIN-VUSB trace cut on the back of the Teensy, the TEENSY_VUSB is taken off of the\n  Teensy Board and routed on the Core64 LB to the lower position of the power switch. From\n  here, it powers the whole Core64 system and routes back to the TEENSY_VIN after passing\n  through the 5V LDO regulator.
 $Comp
 L power:+BATT #PWR0105
 U 1 1 5E791B5B
@@ -371,7 +371,7 @@ U 1 1 5F553296
 P 950 5350
 F 0 "JP7" H 950 5500 50  0000 C CNN
 F 1 "USB_Power_Enable" H 850 5600 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 950 5350 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 950 5350 50  0001 C CNN
 F 3 "~" H 950 5350 50  0001 C CNN
 	1    950  5350
 	-1   0    0    1   

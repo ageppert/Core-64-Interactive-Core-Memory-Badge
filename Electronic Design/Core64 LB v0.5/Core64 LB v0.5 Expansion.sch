@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 3 5
 Title "Core 64 - Expansion"
-Date "2021-02-04"
+Date "2021-02-27"
 Rev "0.5"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As prototyped. ***"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -243,8 +243,6 @@ Text Notes 6400 5200 0    50   ~ 0
 SILKSCREEN: 3V3 ONLY\nSAO#1 and pin names
 Text Notes 3450 3150 0    50   ~ 0
 Silkscreen: 3V3 ONLY\npin names
-Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Text GLabel 2550 6750 1    50   Input ~ 0
 3V3
 Text GLabel 1650 6750 1    50   Input ~ 0
@@ -979,4 +977,6 @@ Text GLabel 3850 6700 2    50   BiDi ~ 0
 SAO_G1_or_SPARE_1_or_CP_ADDR_0
 Text GLabel 3850 6850 2    50   Output ~ 0
 CP1_EN
+Text Notes 650  4500 0    50   ~ 0
+OLED SOCKET FOR LOGIC BOARD:\nSAMTEC 4-pin SMD Header SSW-104-22-F-S-VS
 $EndSCHEMATC

@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 5
 Title "Core 64 - Sense"
-Date "2021-02-04"
+Date "2021-02-27"
 Rev "0.5"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As prototyped. ***"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -562,8 +562,6 @@ Wire Wire Line
 Wire Wire Line
 	3900 1450 3650 1450
 Connection ~ 3650 1450
-Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Text Notes 8650 2950 0    50   ~ 0
 SILKSCREEN: 3V3 ONLY\nSENSE DEBUG
 Text Notes 4800 2950 0    118  ~ 0

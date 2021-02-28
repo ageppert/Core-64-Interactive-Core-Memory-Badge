@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2021-02-04"
+Date "2021-02-27"
 Rev "0.5"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As prototyped. ***"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -64,8 +64,6 @@ F1 "Core64 LB v0.5 Power.sch" 50
 $EndSheet
 Text Notes 650  2400 0    236  ~ 0
 TEENSY 3.2 MCU\nCONNECTIONS
-Text Notes 6350 6950 0    50   ~ 10
-BOM TO DO: TEENSY requires at least three headers\nthat do not get auto populated in the BOM from KiCAD.
 Text GLabel 4250 4650 0    50   Output ~ 0
 SPI_CLK
 Text GLabel 2150 4050 0    50   Input ~ 0
@@ -120,8 +118,6 @@ F 3 "" H 6650 3250 60  0000 C CNN
 $EndComp
 Text GLabel 7950 2100 2    50   Output ~ 0
 TEENSY_VUSB
-Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Text GLabel 5250 3050 0    50   Output ~ 0
 Q1P
 Text GLabel 5250 3150 0    50   Output ~ 0
@@ -659,17 +655,6 @@ Wire Wire Line
 	5250 3150 5650 3150
 Wire Wire Line
 	8700 5150 8850 5150
-$Comp
-L CORE_64_LIBRARY:Core_64_MachineIdeas_Link L3
-U 1 1 5FC1C28E
-P 5150 7200
-F 0 "L3" H 5175 7247 50  0000 L CNN
-F 1 "Core_64_MachineIdeas_Link" H 5175 7154 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_QR_Link_MachineIdeas" H 5150 7200 50  0001 C CNN
-F 3 "" H 5150 7200 50  0001 C CNN
-	1    5150 7200
-	1    0    0    -1  
-$EndComp
 $Sheet
 S 3450 850  1550 250 
 U 5E755AC8

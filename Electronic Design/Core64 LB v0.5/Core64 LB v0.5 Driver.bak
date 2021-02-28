@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 5 5
 Title "Core 64 - Core Matrix Driver"
-Date "2021-02-04"
+Date "2021-02-27"
 Rev "0.5"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As prototyped. ***"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -1375,8 +1375,6 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 	1    9400 3750
 	1    0    0    -1  
 $EndComp
-Text Notes 2200 7450 0    50   ~ 0
-Matrix 1/2 select current: \n3.3/6.8= 485 mA\n(does not acccount for \nvoltage drop in transistors)
 Text Notes 2950 1700 0    50   ~ 0
 COL 0,4
 Text Notes 4850 1700 0    50   ~ 0
@@ -1600,7 +1598,7 @@ U 1 1 5E78B5ED
 P 2850 2000
 F 0 "J14" H 2050 3150 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 2400 3050 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical" H 2850 2000 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 2850 2000 50  0001 C CNN
 F 3 "~" H 2850 2000 50  0001 C CNN
 	1    2850 2000
 	1    0    0    -1  
@@ -1611,7 +1609,7 @@ U 1 1 5E78B5F3
 P 600 2000
 F 0 "J11" H 550 3150 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 150 3050 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical" H 600 2000 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 600 2000 50  0001 C CNN
 F 3 "~" H 600 2000 50  0001 C CNN
 	1    600  2000
 	-1   0    0    -1  
@@ -1737,8 +1735,6 @@ F 4 "565-EMHL100ARA471MHA0GCT-ND" H 1250 7300 50  0001 C CNN "Digikey"
 	1    1250 7300
 	1    0    0    -1  
 $EndComp
-Text Notes 6300 6750 0    50   ~ 0
-All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted.
 Text Notes 1450 2250 0    50   ~ 0
 Silkscreen: 3V3 ONLY
 Text GLabel 2550 2500 0    50   Input ~ 0

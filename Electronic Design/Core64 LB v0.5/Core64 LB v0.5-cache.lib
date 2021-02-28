@@ -161,17 +161,6 @@ DRAW
 ENDDRAW
 ENDDEF
 #
-# CORE_64_LIBRARY_Core_64_MachineIdeas_Link
-#
-DEF CORE_64_LIBRARY_Core_64_MachineIdeas_Link L 0 40 Y Y 1 F N
-F0 "L" 0 0 50 H V C CNN
-F1 "CORE_64_LIBRARY_Core_64_MachineIdeas_Link" 50 -100 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-ENDDRAW
-ENDDEF
-#
 # CORE_64_LIBRARY_Micro_LiPo_Charger
 #
 DEF CORE_64_LIBRARY_Micro_LiPo_Charger U 0 40 Y Y 1 F N

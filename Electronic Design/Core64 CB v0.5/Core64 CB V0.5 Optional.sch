@@ -5,14 +5,14 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
-Title ""
-Date "2021-02-15"
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
+Title "Core64 CB (Core Board)"
+Date "2021-02-27"
+Rev "0.5"
+Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comment1 "Visit www.Core64.io for information on assembly and optional features."
+Comment2 "*** Work in progress ***"
 Comment3 ""
-Comment4 ""
+Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
 $Comp
 L Device:C C?
@@ -168,10 +168,10 @@ Wire Wire Line
 	6950 4500 7050 4500
 Text Notes 8600 4050 0    50   ~ 0
 SILKSCREEN: ALS I2C 0x29
-Text Notes 7800 3950 0    100  ~ 0
-AMBIENT LIGHT SENSOR I2C 0x29
+Text Notes 7300 3950 0    100  ~ 0
+[ALTERNATE] AMBIENT LIGHT SENSORS I2C 0x29
 Text Notes 750  3950 0    100  ~ 0
-[OPTIONAL] CORE PLANE SELECT
+[OPTIONAL] MULTI CORE PLANE SELECT
 $Comp
 L Jumper:SolderJumper_2_Open JP?
 U 1 1 60572362
@@ -403,8 +403,8 @@ L TI_TS3A4751PWR:TS3A4751PWR U?
 U 1 1 605723D0
 P 4950 4800
 AR Path="/605723D0" Ref="U?"  Part="1" 
-AR Path="/604D6360/605723D0" Ref="U9"  Part="1" 
-F 0 "U9" H 5550 5050 60  0000 C CNN
+AR Path="/604D6360/605723D0" Ref="U10"  Part="1" 
+F 0 "U10" H 5550 5050 60  0000 C CNN
 F 1 "TS3A4751PWR" H 5550 4950 60  0000 C CNN
 F 2 "TI_TS3A4751PWR:TS3A4751PWR" H 6150 5040 60  0001 C CNN
 F 3 "" H 4950 4800 60  0000 C CNN
@@ -891,18 +891,74 @@ Wire Wire Line
 Wire Wire Line
 	4050 3050 4050 2950
 Text Notes 750  850  0    100  ~ 0
-HALL SWITCH ALTERNATES
+[ALTERNATE] HALL SWITCH ALTERNATES
 $Comp
 L TI_TS3A4751PWR:TS3A4751PWR U?
 U 1 1 60572422
 P 3100 4800
 AR Path="/60572422" Ref="U?"  Part="1" 
-AR Path="/604D6360/60572422" Ref="U8"  Part="1" 
-F 0 "U8" H 3650 5050 60  0000 C CNN
+AR Path="/604D6360/60572422" Ref="U9"  Part="1" 
+F 0 "U9" H 3650 5050 60  0000 C CNN
 F 1 "TS3A4751PWR" H 3650 4950 60  0000 C CNN
 F 2 "TI_TS3A4751PWR:TS3A4751PWR" H 4300 5040 60  0001 C CNN
 F 3 "" H 3100 4800 60  0000 C CNN
 	1    3100 4800
 	1    0    0    -1  
 $EndComp
+Text Notes 7750 4400 0    50   ~ 0
+TOP MOUNTED
+Text Notes 9900 4400 0    50   ~ 0
+TOP MOUNTED
+$Comp
+L LiteOn_LTR-329ALS:LTR-329ALS-01 U8
+U 1 1 603B38C5
+P 8250 6050
+F 0 "U8" H 8600 6350 60  0000 C CNN
+F 1 "LTR-329ALS-01" H 9200 6350 60  0000 C CNN
+F 2 "LiteOn_LTR-329ALS:LTR-329ALS-01" H 9050 6290 60  0001 C CNN
+F 3 "" H 8250 6050 60  0000 C CNN
+	1    8250 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 603B52BC
+P 8150 6150
+AR Path="/603B52BC" Ref="#PWR?"  Part="1" 
+AR Path="/604D6360/603B52BC" Ref="#PWR0112"  Part="1" 
+F 0 "#PWR0112" H 8150 5900 50  0001 C CNN
+F 1 "GNDD" H 8154 5995 50  0000 C CNN
+F 2 "" H 8150 6150 50  0001 C CNN
+F 3 "" H 8150 6150 50  0001 C CNN
+	1    8150 6150
+	1    0    0    -1  
+$EndComp
+Text GLabel 8150 6050 0    50   Input ~ 0
+3V3_800mA
+Text GLabel 9950 6050 2    50   BiDi ~ 0
+I2C_CLOCK
+Text GLabel 9950 6150 2    50   BiDi ~ 0
+I2C_DATA
+Wire Wire Line
+	9850 6050 9950 6050
+Wire Wire Line
+	9850 6150 9950 6150
+Wire Wire Line
+	8150 6050 8250 6050
+Wire Wire Line
+	8150 6150 8250 6150
+Text Notes 8900 5550 0    50   ~ 0
+-OR-
+Text Notes 8750 5650 0    50   ~ 0
+TOP MOUNTED
+Text Notes 1800 1000 0    50   ~ 0
+To use Hall Switches, solder four SJs JP21-24.
+Text Notes 2000 1300 0    50   ~ 0
+HS1
+Text Notes 2000 2350 0    50   ~ 0
+HS2
+Text Notes 4350 1300 0    50   ~ 0
+HS3
+Text Notes 4400 2350 0    50   ~ 0
+HS4
 $EndSCHEMATC
