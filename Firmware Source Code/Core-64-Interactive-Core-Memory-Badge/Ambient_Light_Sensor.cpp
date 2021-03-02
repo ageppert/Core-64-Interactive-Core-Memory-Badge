@@ -208,6 +208,9 @@
         AmbientLightLevel8BIT = (uint8_t) (luxVal >> AmbientLightLtr329ScalarBitShift);  // Simple linear scaling of lux to 0-255    
       }
       if(AmbientLightLevel8BIT > 250) {AmbientLightLevel8BIT = 250;}
+      #ifdef CORE64_LED_MATRIX
+      if(AmbientLightLevel8BIT <  15) {AmbientLightLevel8BIT =  15;}
+      #endif
     }
   }
 

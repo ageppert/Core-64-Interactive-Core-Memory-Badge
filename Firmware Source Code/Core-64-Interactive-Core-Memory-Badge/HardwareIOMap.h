@@ -38,7 +38,8 @@ extern "C" {
 // #define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
 #define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// Program memory (14K) with Teensy LC
 #define HALL_SENSOR_ENABLE							// Program memory (10K)
-#define NEON_PIXEL_ARRAY
+#define NEON_PIXEL_ARRAY							// Serpentine, like Pimoroni Unicorn Hat
+#define CORE64_LED_MATRIX							// Row Major, Progressive layout. Just like an array in C.
 
 void DetectHardwareVersion ();		// Use once to detect and set the hardware version variables.
 /*
@@ -53,7 +54,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210202.2042"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210301.2028"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |

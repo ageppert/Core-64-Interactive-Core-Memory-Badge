@@ -13,13 +13,18 @@ Pimoroni Unicorn Hat: https://shop.pimoroni.com/products/unicorn-hat
 #endif
 
 #include <stdint.h>
+#include "HardwareIOMap.h"
 
 //#ifdef __cplusplus
 //extern "C" {
 //#endif
 
 #define COLOR_ORDER GRB
-#define CHIPSET     WS2812B			// Used in Pimoroni Unicorn Hat. Limited to a data rate of about 800Kbps, hard coded in FastLED library. 
+#ifdef CORE64_LED_MATRIX
+	#define CHIPSET     WS2813			// Used in Core64 LED MATRIX
+#else
+	#define CHIPSET     WS2812B			// Used in Pimoroni Unicorn Hat. Limited to a data rate of about 800Kbps, hard coded in FastLED library. 
+#endif
 #define BRIGHTNESS       75			// Initial brightness level
 #define BRIGHTNESS_MIN	  5			// Lowest useable brightness
 #define BRIGHTNESS_MAX	255			// Highest useable brightness
@@ -33,7 +38,11 @@ Pimoroni Unicorn Hat: https://shop.pimoroni.com/products/unicorn-hat
 
 const uint8_t kMatrixWidth = 8;
 const uint8_t kMatrixHeight = 8;
-const bool    kMatrixSerpentineLayout = true;
+#ifdef CORE64_LED_MATRIX
+	const bool    kMatrixSerpentineLayout = false;	
+#else
+	const bool    kMatrixSerpentineLayout = true;
+#endif
 
 #define NUM_LEDS (kMatrixWidth * kMatrixHeight)
 CRGB leds_plus_safety_pixel[ NUM_LEDS + 1];
