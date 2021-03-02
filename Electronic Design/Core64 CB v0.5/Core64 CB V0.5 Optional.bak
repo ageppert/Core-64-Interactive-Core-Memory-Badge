@@ -953,4 +953,12 @@ Text Notes 8750 5650 0    50   ~ 0
 TOP MOUNTED
 Text Notes 1800 1000 0    50   ~ 0
 To use Hall Switches, solder four SJs JP21-24.
+Text Notes 2000 1300 0    50   ~ 0
+HS1
+Text Notes 2000 2350 0    50   ~ 0
+HS2
+Text Notes 4350 1300 0    50   ~ 0
+HS3
+Text Notes 4400 2350 0    50   ~ 0
+HS4
 $EndSCHEMATC

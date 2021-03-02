@@ -6,11 +6,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
 Title "Core64 CB (Core Board)"
-Date "2021-02-27"
+Date "2021-02-28"
 Rev "0.5"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** Work in progress ***"
+Comment2 "*** As prototyped ***"
 Comment3 ""
 Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
