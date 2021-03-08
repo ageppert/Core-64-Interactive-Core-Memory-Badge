@@ -58,16 +58,17 @@ uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes
                             V5 1S LiPo and mini charger
       2, 1  CORE MEMORY:    V1 A single Standard 8x8
                             V2 A full stack of 8 planes
-      3, 1  HALL SENSORS:   V1 SILABS I2C 0x30-0x33
-                            V2 Alternate
+      3, 1  HALL SENSORS:   V1 Hall Sensor SI7210 I2C 0x30-0x33
+                            V2 Hall Switch TCS40DPR.LF (Uses CP5-8 pins SJ to HS1-4)
       4, 1  AMBIENT LIGHT:  V1 LTR-329 at 0x29
-                            V2 Alternate
+                            V2 LTR-303 at 0x29
+                            V3 BH1730FVC-TR
       5, 1  SAO PORT X2:    V1 fully accessible I2C and 2 GPIO pins.
                             V2 limited access, I2C only.
       6, 1  CP1-8 PINS:     V1 1,2 used by SAO#2, 3-8 available.
                             V2 1-8 used by 8 core planes.
-      7, 1  LED Array:      V1 Pimoroni Unicorn Hat 8x8 NeoPixel style. 
-                            V2 could be Unicorn hat HD.
+      7, 2  LED Array:      V1 Pimoroni Unicorn Hat 8x8 NeoPixel style. 
+                            V2 Core64 LED MATRIX.
       8, 1  NEON PIXELS:    V1 SPI w/o CS, connected to SPI TFT LCD port
                             V2 -
       9, 1  LCD:            V1 color SPI 3.2"
