@@ -14,17 +14,29 @@
 #include "LED_Array_HAL.h"
 
 #include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
 #include <Fonts/FreeMono9pt7b.h>  // https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 #define CLK_DURING   2000000   // I2C frequency during OLED write, like Wire.setClock(). Default was 400 kHz if not specified.
 #define CLK_AFTER    2000000   // I2C frequency during OLED write, like Wire.setClock(). Default was 100 kHz if not specified.
 
-
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET, CLK_DURING, CLK_AFTER);
+#if defined OLED_64X128
+  #include <Adafruit_SSD1306.h>
+  #define SCREEN_WIDTH 128 // OLED display width, in pixels
+  #define SCREEN_HEIGHT 64 // OLED display height, in pixels
+  Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET, CLK_DURING, CLK_AFTER);
+#elif defined OLED_128X128
+  #include <Adafruit_SSD1327.h>
+  #define SCREEN_WIDTH  128 // OLED display width, in pixels
+  #define SCREEN_HEIGHT 128 // OLED display height, in pixels
+  Adafruit_SSD1327 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET, CLK_DURING, CLK_AFTER);
+#else
+  #include <Adafruit_SSD1306.h>
+  #define SCREEN_WIDTH 128 // OLED display width, in pixels
+  #define SCREEN_HEIGHT 64 // OLED display height, in pixels
+  Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET, CLK_DURING, CLK_AFTER);
+#endif
 
 uint8_t TopLevelStateLocal = 0;
 
@@ -67,13 +79,38 @@ void OLEDScreenSplash() {
 }
 
 void OLEDScreenSetup() {
+#if defined OLED_64X128
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x64 
     Serial.println(F("SSD1306 allocation failed"));
   }
+  else
+  {
+    Serial.println(F("SSD1306 allocation did not fail"));
+  }
+  display.setTextColor(WHITE); // Draw white text
+#elif defined OLED_128X128
+  if(!display.begin(0x3C, 1)) { // Address 0x3C for 128x128 
+    Serial.println(F("SSD1327 allocation failed"));
+  }
+  else
+  {
+    Serial.println(F("SSD1327 allocation did not fail"));
+  }
+  display.setTextColor(SSD1327_WHITE); // Draw white text
+#else
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x64 (default)
+    Serial.println(F("SSD1306 allocation failed"));
+  }
+  else
+  {
+    Serial.println(F("SSD1306 allocation did not fail"));
+  }
+  display.setTextColor(WHITE); // Draw white text
+#endif
+
   display.clearDisplay();
   display.display();
   display.setTextSize(2);      // Normal 1:1 pixel scale
-  display.setTextColor(WHITE); // Draw white text
   display.setCursor(0, 0);     // Start at top-left corner
   display.cp437(true);         // Use full 256 char 'Code Page 437' font
   display.setFont(&FreeMono9pt7b);

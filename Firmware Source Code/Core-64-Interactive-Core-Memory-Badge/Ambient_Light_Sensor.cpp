@@ -7,7 +7,7 @@
 #endif
 #include "HardwareIOMap.h"
 
-// #define DEBUG_ALS
+#define DEBUG_ALS
 
 #ifdef AMBIENT_LIGHT_SENSOR_LTR329_ENABLE
   #include "Ambient_Light_Sensor.h"

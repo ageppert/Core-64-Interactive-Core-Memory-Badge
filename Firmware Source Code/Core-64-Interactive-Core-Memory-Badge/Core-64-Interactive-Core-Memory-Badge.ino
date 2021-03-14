@@ -10,8 +10,9 @@
   LIBRARY DEPENDENCIES:
   Arduino > Tools > Manage Libraries > Install
     Adafruit_SSD1306                            2.2.1   by Adafruit for Monochrome OLED 128x64 and 128x32
+    Adafruit_SSD1327                            1.0.0   by Adafruit for Monochrome OLED 128x128
     Adafruit_SSD1351                            1.2.7   by Adafruit for Color OLED 1.27" and 1.5" in the Adafruit shop
-    Adafruit GFX Library                        1.8.3   by Adafruit
+    Adafruit GFX Library                        1.10.6 / 1.8.3   by Adafruit
     Adafruit_BusIO                              1.3.1   by Adafruit
     Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
     FastLED                                     3.3.3   by Daniel Garcia
@@ -89,9 +90,10 @@ void setup() {
   LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
-    //while (!Serial) { ; }  // wait for serial port to connect.
+    // while (!Serial) { ; }  // wait for serial port to connect.
     LED_Array_Test_Pixel_Matrix_Color();
   EEPROM_Setup();
+  delay(1500);
   OLEDScreenSetup();
   I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
