@@ -163,12 +163,17 @@ void Buttons_Setup() {
       rslt = si7210_self_test(&HallSensor1);
       Serial.print("H1 SELF TEST Result Code: ");
       Serial.println(rslt,DEC);
-
     #endif // HALL_SENSOR_ENABLE
+
+    #ifdef HALL_SWITCH_ENABLE
+      pinMode(PIN_HALL_SWITCH_1, INPUT_PULLUP);
+      pinMode(PIN_HALL_SWITCH_2, INPUT_PULLUP);
+      pinMode(PIN_HALL_SWITCH_3, INPUT_PULLUP);
+      pinMode(PIN_HALL_SWITCH_4, INPUT_PULLUP);
+    #endif // HALL_SWITCH_ENABLE
   }
 }
 
-// TO DO: Abstract to ButtonState and send Button # to this function so it can return state for any requested button.
 uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a 1 or more to clear, 0 to use normally)
   static uint32_t lasttime;
   static uint32_t thistime = 0;
@@ -194,6 +199,9 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
           if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
              || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
             { duration_b1 = duration_b1 + delta ; }
+          #ifdef HALL_SWITCH_ENABLE
+          else if(!PIN_HALL_SWITCH_1) { duration_b1 = duration_b1 + delta ; }
+          #endif
           else { duration_b1 = 0; }
           break;
         case 2:
@@ -201,6 +209,9 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
           if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
              || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
             { duration_b2 = duration_b2 + delta ; }
+          #ifdef HALL_SWITCH_ENABLE
+          else if(!PIN_HALL_SWITCH_2) { duration_b2 = duration_b2 + delta ; }
+          #endif
           else { duration_b2 = 0; }
           break;
         case 3:
@@ -208,6 +219,9 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
           if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
              || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
             { duration_b3 = duration_b3 + delta ; }
+          #ifdef HALL_SWITCH_ENABLE
+          else if(!PIN_HALL_SWITCH_3) { duration_b3 = duration_b3 + delta ; }
+          #endif
           else { duration_b3 = 0; }
           break;
         case 4:
@@ -215,6 +229,9 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
           if(   ((int)field_strength > HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL) 
              || ((int)field_strength < HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL) )
             { duration_b4 = duration_b4 + delta ; }
+          #ifdef HALL_SWITCH_ENABLE
+          else if(!PIN_HALL_SWITCH_4) { duration_b4 = duration_b4 + delta ; }
+          #endif
           else { duration_b4 = 0; }
           break;
 
@@ -224,7 +241,7 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
         // Serial.print(state_test);
         // Serial.println(state);
         }
-  /*
+#if defined DEBUG_HALL_SENSORS  
   Serial.print("state,duration, delta, thistime, lasttime ");
   Serial.print(state);
   Serial.print(", ");
@@ -236,7 +253,8 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
   Serial.print(", ");
   Serial.print(lasttime);
   Serial.println(" ms");
-  */
+#endif
+
   lasttime = thistime;
 
           // DEBUG

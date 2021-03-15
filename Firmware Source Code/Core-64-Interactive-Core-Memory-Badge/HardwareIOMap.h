@@ -38,6 +38,7 @@ extern "C" {
 // #define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
 #define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// Program memory (14K) with Teensy LC
 #define HALL_SENSOR_ENABLE							// Program memory (10K)
+#define HALL_SWITCH_ENABLE
 #define NEON_PIXEL_ARRAY							// Serpentine, like Pimoroni Unicorn Hat
 #define CORE64_LED_MATRIX							// Row Major, Progressive layout. Just like an array in C.
 #define OLED_64X128
@@ -57,7 +58,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210313.1254"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210315.1526"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -141,6 +142,12 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	#define Pin_SPARE_ANA_7			   A12
 	#define Pin_SPARE_ANA_8			   A13
     #define Pin_Spare_ADC_DAC		   A14
+    #ifdef HALL_SWITCH_ENABLE
+		#define PIN_HALL_SWITCH_1		 1
+		#define PIN_HALL_SWITCH_2		 2
+		#define PIN_HALL_SWITCH_3		14
+		#define PIN_HALL_SWITCH_4		10		
+    #endif
 
 #ifdef __cplusplus
 } // extern "C"

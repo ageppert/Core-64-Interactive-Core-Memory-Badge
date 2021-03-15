@@ -76,7 +76,7 @@ enum TopLevelState                  // Master State Machine
   STATE_HALL_TEST,                  //  13 Testing hall switch and sensor response
   STATE_LAST,                       //  14 last one, return to 0.
 } ;
-static uint8_t TopLevelStateDefault = STATE_STARTUP;
+static uint8_t TopLevelStateDefault = STATE_HALL_TEST; // STATE_STARTUP;
 static uint8_t TopLevelState = TopLevelStateDefault; // 
 uint8_t value = 0;
 uint8_t a = 0;
