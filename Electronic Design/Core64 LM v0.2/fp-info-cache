@@ -1,4 +1,4 @@
-16746385459958219
+16755963641875481
 2829
 ADAFRUIT_2829
 
@@ -65267,6 +65267,34 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+Panelization
+mouse-bite-1mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2.54mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot
+
+
+0
+0
+0
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -73752,7 +73780,21 @@ test point SMD pad rectangle square
 1
 1
 TestPoint
+TestPoint_Pad_1.0x1.0mm_no_silk_screen
+SMD rectangular pad as test Point, square 1.5mm side length
+test point SMD pad rectangle square
+0
+1
+1
+TestPoint
 TestPoint_Pad_1.5x1.5mm
+SMD rectangular pad as test Point, square 1.5mm side length
+test point SMD pad rectangle square
+0
+1
+1
+TestPoint
+TestPoint_Pad_1.5x1.5mm_no_silk_screen
 SMD rectangular pad as test Point, square 1.5mm side length
 test point SMD pad rectangle square
 0
