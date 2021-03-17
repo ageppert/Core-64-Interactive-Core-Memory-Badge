@@ -58,7 +58,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210315.1526"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210315.2117"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |

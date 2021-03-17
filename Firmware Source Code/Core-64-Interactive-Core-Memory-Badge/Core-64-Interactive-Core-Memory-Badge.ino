@@ -424,7 +424,7 @@ void loop() {
     LED_Array_Monochrome_Set_Color(125,255,255);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    TopLevelState = TopLevelStateDefault;   
+    TopLevelState = STATE_STARTUP;   
     break;
 
   default:
