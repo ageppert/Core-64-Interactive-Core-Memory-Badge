@@ -55,7 +55,7 @@ float GetBatteryVoltageV() {
 
 void ReadAnalogVoltage() {
 
-  if (HardwareVersionMinor == 4)
+  if ( (HardwareVersionMinor == 4) || (HardwareVersionMinor == 5) ) 
   {
     Analog_A10 = analogRead ( Pin_Battery_Voltage   );  //  VBAT_MON
     Analog_A0  = analogRead ( Pin_SPARE_3_CP_ADDR_2 );  //  5V0       // TO DO: Test with serial

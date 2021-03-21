@@ -40,7 +40,7 @@ extern "C" {
 #define HALL_SENSOR_ENABLE							// Program memory (10K)
 #define HALL_SWITCH_ENABLE
 #define NEON_PIXEL_ARRAY							// Serpentine, like Pimoroni Unicorn Hat
-// #define CORE64_LED_MATRIX							// Row Major, Progressive layout. Just like an array in C.
+#define CORE64_LED_MATRIX							// Row Major, Progressive layout. Just like an array in C.
 #define OLED_64X128
 // #define OLED_128X128
 
@@ -56,9 +56,10 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.3.0  | 2020-05-30 | Dual board, hardware version detection for 0.2.x (includes v0.1.x) and v0.3.x
 	| v0.3.1  | 2020-05-30 | Two voltage regulators, 5V0 and 3V3, powered from common switch point
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
+	| v0.5.0  | 2021-03-20 | Tri-board, Black LB/CB/CM
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210320.1947"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210320.2030"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -68,6 +69,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.2.0  | 2020-      | 
 	| v0.3.x  | 2020-      | 
 	| v0.4.x  | 2020-11-28 | 
+	| v0.5.x  | 2021-03-20 | Accept V0.5.x hardware, manual default to the custom-fit LED Matrix.
 	------------------------------------------------------------------------------------------------------------
 */
 	extern uint8_t HardwareVersionMajor  ;

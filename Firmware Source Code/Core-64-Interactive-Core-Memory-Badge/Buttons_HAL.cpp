@@ -91,7 +91,7 @@
 
 
 void Buttons_Setup() {
-  if (HardwareVersionMinor == 4)
+  if ( (HardwareVersionMinor == 4) || (HardwareVersionMinor == 5) )
   {
     #ifdef HALL_SENSOR_ENABLE
       if((rslt = si7210_init(&HallSensor1)) != SI7210_OK)
