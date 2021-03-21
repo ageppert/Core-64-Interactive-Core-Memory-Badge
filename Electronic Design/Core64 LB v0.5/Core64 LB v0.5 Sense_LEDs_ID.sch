@@ -711,7 +711,7 @@ AR Path="/5F823906" Ref="U?"  Part="1"
 AR Path="/5EA63449/5F823906" Ref="U?"  Part="1" 
 AR Path="/5E75D6AB/5F823906" Ref="U4"  Part="1" 
 F 0 "U4" H 8800 6300 50  0000 C CNN
-F 1 "M24C01-RMN" H 9450 6300 50  0000 C CNN
+F 1 "M24C02-RMN" H 9450 6300 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 9100 6350 50  0001 C CNN
 F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf" H 9150 5500 50  0001 C CNN
 	1    9100 6000
