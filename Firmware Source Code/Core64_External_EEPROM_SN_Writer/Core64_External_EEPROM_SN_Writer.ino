@@ -14,11 +14,19 @@
 
 #include <Wire.h>    
 
-#define EEPROM_ST_M24C01_1KBIT
+// #define EEPROM_ST_M24C01_1KBIT
+#define EEPROM_ST_M24C02_2KBIT
 
 #ifdef EEPROM_ST_M24C01_1KBIT
   #define EEPROM_ADDRESS    0b1010111       // 0b1010+A2_A1_A0): Core64 BOARD ID EEPROM is 0x57 (87 dec) 1010+111
   #define MEM_SIZE_BYTES          128
+  #define PAGE_SIZE_BYTES          16
+  #define MAX_WRITE_TIME_MS         5
+#endif
+
+#ifdef EEPROM_ST_M24C02_2KBIT
+  #define EEPROM_ADDRESS    0b1010111       // 0b1010+A2_A1_A0): Core64 BOARD ID EEPROM is 0x57 (87 dec) 1010+111
+  #define MEM_SIZE_BYTES          256
   #define PAGE_SIZE_BYTES          16
   #define MAX_WRITE_TIME_MS         5
 #endif
@@ -30,19 +38,19 @@ const uint8_t page_one_two_checksum_position = 31;
 const uint8_t page_three_four_checksum_position = 63;
 uint8_t checksum = 0;
 uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes) Description
-  0,0,0,0,0,4,                                          // 0  ( 6) Serial Number  
-  21, 1, 1,                                             // 6  ( 3) Born on Date:  Year, Month, Day
-  0, 4, 0,                                              // 9  ( 3) Born as Version: Major.Minor.Revision
-  0,                                                    // 12 ( 1) Manufacturer ID
+  0,0,0,0,0,5,                                          // 0  ( 6) Serial Number  
+  21, 3,20,                                             // 6  ( 3) Born on Date:  Year, Month, Day
+  0, 5, 0,                                              // 9  ( 3) Born as Version: Major.Minor.Revision
+  0,                                                    // 12 ( 1) Manufacturer ID (0 = Andy!)
   1,                                                    // 13 ( 1) Hardware ID Format Version
-  80,73,69,82,82,69,0,0, 0,0,0,0,0,0,0,0, 0,            // 14 (17) Owner name
-// P  I  E  R  R  E  
+  0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0, 0,            // 14 (17) Owner name
+//   
   0,                                                    // 31 ( 1) Page 1&2 XOR Checksum (calculated below)
 
-  0,0,0,0,0,0,0,0,                                      // 32 ( 8) Hardware configuration reserved
-  0,0,0,0,0,0,0,0,                                      // 40 ( 8) reserved
-  0,0,0,0,0,0,0,0,                                      // 48 ( 8) reserved
-  0,0,0,0,0,0,0,                                        // 56 ( 7) reserved
+  0,0,0,0,0,0,0,0,                                      // 32 ( 8) Hardware configuration reserved...
+  0,0,0,0,0,0,0,0,                                      // 40 ( 8) ...reserved...
+  0,0,0,0,0,0,0,0,                                      // 48 ( 8) ...reserved...
+  0,0,0,0,0,0,0,                                        // 56 ( 7) ...reserved
   0  };                                                 // 63 ( 1) Page 3&4 XOR Checksum (calculated below)
 
   // TO DO: Implement the table below and expand the reserved space another 32 bytes.
@@ -50,7 +58,7 @@ uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes
   /* Hardware Configuration use is intended to specify the as-shipped hardware configuration so the firmware can operate accordingly.
   // Hardware Item #, Version #, both 8-bit fields. Example:
       0, 1  LB EEPROM:      V1 M24C01, 128 Bytes
-                            V2 -
+                            V2 M24C02, 256 Bytes
       1, 1  POWER:          V1 Stock 4 "AAA" Generic Alkalines
                             V2 4 "AAA" Long life lithium primary
                             V3 3 "AA" generic
