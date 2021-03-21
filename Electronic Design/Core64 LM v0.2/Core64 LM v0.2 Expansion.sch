@@ -325,7 +325,6 @@ Wire Wire Line
 	6550 4800 7300 4800
 NoConn ~ 6550 4600
 NoConn ~ 6550 4700
-NoConn ~ 9050 4300
 $Comp
 L Connector:Conn_01x01_Male J6
 U 1 1 60516F1B
@@ -422,4 +421,6 @@ F 3 "" H 4400 7300 50  0001 C CNN
 	1    4400 7300
 	1    0    0    -1  
 $EndComp
+Text Notes 7700 4750 0    50   ~ 0
+SILKSCREEN:\nTEENSY CHARGE ENABLE
 $EndSCHEMATC
