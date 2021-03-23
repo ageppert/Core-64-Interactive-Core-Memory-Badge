@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 2
 Title "Core64 LM (LED MATRIX)"
-Date "2021-03-08"
+Date "2021-03-21"
 Rev "0.2"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** As released 2021-03-xx ***"
+Comment2 "*** As released 2021-03-21 ***"
 Comment3 ""
 Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
@@ -325,101 +325,104 @@ Wire Wire Line
 	6550 4800 7300 4800
 NoConn ~ 6550 4600
 NoConn ~ 6550 4700
-NoConn ~ 9050 4300
 $Comp
 L Connector:Conn_01x01_Male J6
 U 1 1 60516F1B
-P 4200 7300
-F 0 "J6" H 4309 7487 50  0000 C CNN
-F 1 "Conn_01x01_Male" H 4309 7394 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 4200 7300 50  0001 C CNN
-F 3 "~" H 4200 7300 50  0001 C CNN
-	1    4200 7300
+P 4200 7550
+F 0 "J6" H 4309 7737 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 4309 7644 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 4200 7550 50  0001 C CNN
+F 3 "~" H 4200 7550 50  0001 C CNN
+	1    4200 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x01_Male J4
 U 1 1 6051423B
-P 2500 7300
-F 0 "J4" H 2609 7487 50  0000 C CNN
-F 1 "Conn_01x01_Male" H 2609 7394 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 2500 7300 50  0001 C CNN
-F 3 "~" H 2500 7300 50  0001 C CNN
-	1    2500 7300
+P 2500 7550
+F 0 "J4" H 2609 7737 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 2609 7644 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 2500 7550 50  0001 C CNN
+F 3 "~" H 2500 7550 50  0001 C CNN
+	1    2500 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x01_Male J3
 U 1 1 6051203C
-P 1650 7300
-F 0 "J3" H 1759 7487 50  0000 C CNN
-F 1 "Conn_01x01_Male" H 1759 7394 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 1650 7300 50  0001 C CNN
-F 3 "~" H 1650 7300 50  0001 C CNN
-	1    1650 7300
+P 1650 7550
+F 0 "J3" H 1759 7737 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 1759 7644 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 1650 7550 50  0001 C CNN
+F 3 "~" H 1650 7550 50  0001 C CNN
+	1    1650 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x01_Male J5
 U 1 1 60515800
-P 3350 7300
-F 0 "J5" H 3459 7487 50  0000 C CNN
-F 1 "Conn_01x01_Male" H 3459 7394 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 3350 7300 50  0001 C CNN
-F 3 "~" H 3350 7300 50  0001 C CNN
-	1    3350 7300
+P 3350 7550
+F 0 "J5" H 3459 7737 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 3459 7644 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 3350 7550 50  0001 C CNN
+F 3 "~" H 3350 7550 50  0001 C CNN
+	1    3350 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 607ECE86
-P 1850 7300
+P 1850 7550
 AR Path="/607ECE86" Ref="#PWR?"  Part="1" 
 AR Path="/603A0E05/607ECE86" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 1850 7050 50  0001 C CNN
-F 1 "GND" H 1855 7123 50  0000 C CNN
-F 2 "" H 1850 7300 50  0001 C CNN
-F 3 "" H 1850 7300 50  0001 C CNN
-	1    1850 7300
+F 0 "#PWR0111" H 1850 7300 50  0001 C CNN
+F 1 "GND" H 1855 7373 50  0000 C CNN
+F 2 "" H 1850 7550 50  0001 C CNN
+F 3 "" H 1850 7550 50  0001 C CNN
+	1    1850 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 607EDA9C
-P 2700 7300
+P 2700 7550
 AR Path="/607EDA9C" Ref="#PWR?"  Part="1" 
 AR Path="/603A0E05/607EDA9C" Ref="#PWR0112"  Part="1" 
-F 0 "#PWR0112" H 2700 7050 50  0001 C CNN
-F 1 "GND" H 2705 7123 50  0000 C CNN
-F 2 "" H 2700 7300 50  0001 C CNN
-F 3 "" H 2700 7300 50  0001 C CNN
-	1    2700 7300
+F 0 "#PWR0112" H 2700 7300 50  0001 C CNN
+F 1 "GND" H 2705 7373 50  0000 C CNN
+F 2 "" H 2700 7550 50  0001 C CNN
+F 3 "" H 2700 7550 50  0001 C CNN
+	1    2700 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 607EE7C2
-P 3550 7300
+P 3550 7550
 AR Path="/607EE7C2" Ref="#PWR?"  Part="1" 
 AR Path="/603A0E05/607EE7C2" Ref="#PWR0113"  Part="1" 
-F 0 "#PWR0113" H 3550 7050 50  0001 C CNN
-F 1 "GND" H 3555 7123 50  0000 C CNN
-F 2 "" H 3550 7300 50  0001 C CNN
-F 3 "" H 3550 7300 50  0001 C CNN
-	1    3550 7300
+F 0 "#PWR0113" H 3550 7300 50  0001 C CNN
+F 1 "GND" H 3555 7373 50  0000 C CNN
+F 2 "" H 3550 7550 50  0001 C CNN
+F 3 "" H 3550 7550 50  0001 C CNN
+	1    3550 7550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 607EF44F
-P 4400 7300
+P 4400 7550
 AR Path="/607EF44F" Ref="#PWR?"  Part="1" 
 AR Path="/603A0E05/607EF44F" Ref="#PWR0114"  Part="1" 
-F 0 "#PWR0114" H 4400 7050 50  0001 C CNN
-F 1 "GND" H 4405 7123 50  0000 C CNN
-F 2 "" H 4400 7300 50  0001 C CNN
-F 3 "" H 4400 7300 50  0001 C CNN
-	1    4400 7300
+F 0 "#PWR0114" H 4400 7300 50  0001 C CNN
+F 1 "GND" H 4405 7373 50  0000 C CNN
+F 2 "" H 4400 7550 50  0001 C CNN
+F 3 "" H 4400 7550 50  0001 C CNN
+	1    4400 7550
 	1    0    0    -1  
 $EndComp
+Text Notes 7700 4750 0    50   ~ 0
+SILKSCREEN:\nTEENSY CHARGE ENABLE
+Text Notes 800  7200 0    118  ~ 0
+Diffuser layer alignment or mounting points
 $EndSCHEMATC

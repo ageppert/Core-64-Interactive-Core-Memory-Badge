@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 2
 Title "Core64 LM (LED MATRIX)"
-Date "2021-03-08"
+Date "2021-03-21"
 Rev "0.2"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** As released 2021-03-xx ***"
+Comment2 "*** As released 2021-03-21 ***"
 Comment3 ""
 Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
