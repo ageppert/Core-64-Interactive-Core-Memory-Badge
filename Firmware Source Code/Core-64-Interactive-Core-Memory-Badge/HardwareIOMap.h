@@ -38,7 +38,7 @@ extern "C" {
 // #define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
 #define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// Program memory (14K) with Teensy LC
 #define HALL_SENSOR_ENABLE							// Program memory (10K)
-#define HALL_SWITCH_ENABLE
+// #define HALL_SWITCH_ENABLE
 #define NEON_PIXEL_ARRAY							// Serpentine, like Pimoroni Unicorn Hat
 #define CORE64_LED_MATRIX							// Row Major, Progressive layout. Just like an array in C.
 #define OLED_64X128
@@ -59,7 +59,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.5.0  | 2021-03-20 | Tri-board, Black LB/CB/CM
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210320.2030"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210325.0837"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -133,12 +133,12 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
     #define Pin_Spare_4_IR_IN			10	// * Shared
 		#define Pin_Spare_4_IR_IN_Assigned_To_Spare_4_Output
 	#define Pin_Built_In_LED         	13  // * Shared with SPI CLOCK
-	#define Pin_SPARE_3_CP_ADDR_2		14	// * Shared, multipurpose use, choose one #define below to uncomment and activate
+	//#define Pin_SPARE_3_CP_ADDR_2		14	// * Shared, multipurpose use, choose one #define below to uncomment and activate
 		// #define Pin_SPARE_3_Assigned_To_Spare_3_Output
-		#define Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
+		// #define Pin_SPARE_3_CP_ADDR_2_Assigned_To_CP_ADDR_2_Output
 		// #define Pin_SPARE_3_Assigned_To_Spare_3_Input
 		// #define Pin_SPARE_3_Assigned_To_SPI_SD_CD_Input
-		// #define Pin_SPARE_3_Assigned_To_Spare_3_Analog_Input
+		#define Pin_SPARE_3_Assigned_To_Spare_3_Analog_Input A0
 	#define Pin_Battery_Voltage        A10  // 1/2 the battery voltage (otherwise known as Digital pin 24)
 	#define Pin_SPARE_ANA_6			   A11
 	#define Pin_SPARE_ANA_7			   A12

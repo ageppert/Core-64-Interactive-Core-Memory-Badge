@@ -336,7 +336,9 @@ void Core_Plane_Select(uint8_t plane) {
 void Core_Plane_Set_Addr(uint8_t plane) {
   digitalWriteFast(Pin_SAO_G1_SPARE_1_CP_ADDR_0,  CorePlaneAddr [plane] [2] );
   digitalWriteFast(Pin_SAO_G2_SPARE_2_CP_ADDR_1,  CorePlaneAddr [plane] [1] );
-  digitalWriteFast(Pin_SPARE_3_CP_ADDR_2,         CorePlaneAddr [plane] [0] );
+  #ifdef Pin_SPARE_3_CP_ADDR_2
+    digitalWriteFast(Pin_SPARE_3_CP_ADDR_2,         CorePlaneAddr [plane] [0] );
+  #endif
 }
 
 void MatrixEnableTransistorInactive() { 
