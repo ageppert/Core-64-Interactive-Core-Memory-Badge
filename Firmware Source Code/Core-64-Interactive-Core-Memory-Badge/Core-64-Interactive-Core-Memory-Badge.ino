@@ -77,7 +77,7 @@ enum TopLevelState                  // Master State Machine
   STATE_LAST,                       //  14 last one, return to 0.
 } ;
 static uint8_t TopLevelStateDefault = STATE_STARTUP;
-static uint8_t TopLevelState = TopLevelStateDefault; // 
+static uint8_t TopLevelState = TopLevelStateDefault;
 uint8_t value = 0;
 uint8_t a = 0;
 
@@ -336,7 +336,7 @@ void loop() {
     OLEDScreenUpdate();
     break;
 
-  case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off.
+  case STATE_CORE_TOGGLE_BIT:     // Just toggle a single bit on and off. Or just pulse on.
     coreToTest=0;
     LED_Array_Monochrome_Set_Color(50,255,255);
     for (uint8_t bit = coreToTest; bit<(coreToTest+1); bit++)

@@ -12,6 +12,8 @@
 #include "CharacterMap.h"
 #include "HardwareIOMap.h"
 
+#include "Analog_Input_Test.h"
+
 // TO DO: The CoreArrayMemory should not be written to and read from outside of the Core HAL.
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
 // The CoreArrayMemory is only accurate after all real core memory bits have been read once.
@@ -146,11 +148,11 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
 
   TracingPulses(3);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
-  delayMicroseconds(20);                             // give the core time to change state
+  delayMicroseconds(20);                            // give the core time to change state
+  // AnalogUpdate();                                   // Testing analog updates only during active core time.
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
   // Turn off all of the matrix signals
   MatrixDriveTransistorsInactive();                 // De-activate all of the individual matrix drive transistors
-
   TracingPulses(4);
   CoreSenseReset();
   sei();                                            // Testing for consistent timing.
@@ -167,7 +169,7 @@ bool Core_Mem_Bit_Read(uint8_t bit) {
   // TracingPulses(1); 
   // AllDriveIoSetBit(bit);
   CoreSenseReset();
-MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
+  MatrixEnableTransistorActive();                   // Enable the matrix drive transistor
   AllDriveIoClearBit(bit);
   // TO DO *** When ENABLE is moved here, the flux detection mode on V0.2 has jittery LEDs. Not sure why, but it doesn't look good.
   // loop around this to detect it - not sure on timing needs

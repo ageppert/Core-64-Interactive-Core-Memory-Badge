@@ -9,7 +9,7 @@
 #include "Analog_Input_Test.h"
 #include "HardwareIOMap.h"
 
-#define SEND_ANALOG_TO_SERIAL_PORT
+// #define SEND_ANALOG_TO_SERIAL_PORT
 #define BATTERY_FILTER_SIZE  8 // 
 #define BATTERY_FILTER_SHIFT 3 // bit shift 3 is divide by 8
 
