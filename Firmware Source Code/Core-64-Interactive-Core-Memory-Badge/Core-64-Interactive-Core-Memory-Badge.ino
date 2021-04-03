@@ -406,10 +406,10 @@ void loop() {
     LED_Array_Memory_Clear();
 
     // IOESpare1_On();
-    if(ButtonState(1,0)) { LED_Array_String_Write(57,1); }
-    if(ButtonState(2,0)) { LED_Array_String_Write(59,1); }
-    if(ButtonState(3,0)) { LED_Array_String_Write(61,1); }
-    if(ButtonState(4,0)) { LED_Array_String_Write(63,1); }
+    if(ButtonState(1,0)) { LED_Array_String_Write(57,1); Serial.println(ButtonState(1,0)); }
+    if(ButtonState(2,0)) { LED_Array_String_Write(59,1); Serial.println(ButtonState(2,0)); }
+    if(ButtonState(3,0)) { LED_Array_String_Write(61,1); Serial.println(ButtonState(3,0)); }
+    if(ButtonState(4,0)) { LED_Array_String_Write(63,1); Serial.println(ButtonState(4,0)); }
     // IOESpare1_Off();
 
     LED_Array_String_Display();

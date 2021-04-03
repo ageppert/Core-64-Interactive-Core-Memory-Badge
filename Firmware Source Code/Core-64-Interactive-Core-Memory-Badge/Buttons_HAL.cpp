@@ -14,6 +14,8 @@
   #include "src/Si7210/si7210_defs.h"
 #endif // HALL_SENSOR_ENABLE
 
+// #define DEBUG_HALL_SENSORS  
+
 #ifdef HALL_SENSOR_ENABLE
   #define HALL_SENSOR_FIELD_STRENGTH_ON_POS_LEVEL      2     // Level of mT which registers as a button press
   #define HALL_SENSOR_FIELD_STRENGTH_ON_NEG_LEVEL     -2     // Level of mT which registers as a button press
@@ -242,17 +244,15 @@ uint32_t ButtonState(uint8_t button_number, uint32_t clear_duration) { // send a
         // Serial.println(state);
         }
 #if defined DEBUG_HALL_SENSORS  
-  Serial.print("state,duration, delta, thistime, lasttime ");
-  Serial.print(state);
+  Serial.print("HALL 1,2,3,4: ");
+  Serial.print(duration_b1);
   Serial.print(", ");
-  Serial.print(duration);
+  Serial.print(duration_b2);
   Serial.print(", ");
-  Serial.print(delta);
+  Serial.print(duration_b3);
   Serial.print(", ");
-  Serial.print(thistime);
-  Serial.print(", ");
-  Serial.print(lasttime);
-  Serial.println(" ms");
+  Serial.print(duration_b4);
+  Serial.println("");
 #endif
 
   lasttime = thistime;

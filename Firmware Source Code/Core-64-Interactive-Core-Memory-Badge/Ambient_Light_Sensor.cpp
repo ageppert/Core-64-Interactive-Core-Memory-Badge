@@ -226,7 +226,7 @@
           Timerms = NowTimems;
           ReadAmbientLightLevel();
           #ifdef DEBUG_ALS
-          Serial.print("Light: ");
+          Serial.print("Light:                        ");
           Serial.print(luxVal);
           Serial.print(" Lux || ");
           Serial.print(GetAmbientLightLevel8BIT());
