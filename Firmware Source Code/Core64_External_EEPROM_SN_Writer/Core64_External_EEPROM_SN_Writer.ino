@@ -1,5 +1,6 @@
 /*  Core64 Hardware Identification - External 128 Byte EEPROM
- *   Andy Geppert, January 9, 2021
+ *   Andy Geppert, April 7, 2021
+ *    Version 2 (update Hardware ID Format Type if this changes)
  *    First and second pages, bytes 0-31, provides unique ID (Serial Number) and baseline version info for each board
  *    Third and fourth pages, bytes 32-63, are reserved for custom configuration data used when hacking Core64 hardware
  *  User can use other pages as desired. 
@@ -40,14 +41,14 @@ uint8_t checksum = 0;
 uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes) Description
   0,0,0,0,0,5,                                          // 0  ( 6) Serial Number  
   21, 3,20,                                             // 6  ( 3) Born on Date:  Year, Month, Day
-  0, 5, 0,                                              // 9  ( 3) Born as Version: Major.Minor.Revision
-  0,                                                    // 12 ( 1) Manufacturer ID (0 = Andy!)
-  1,                                                    // 13 ( 1) Hardware ID Format Version
+  0, 5, 0,                                              // 9  ( 3) Born PCBA Version: Major.Minor.Revision
+  1,                                                    // 12 ( 1) Manufacturer ID (0,1 = Andy!)
+  2,                                                    // 13 ( 1) Hardware ID Format Type (identifies this whole table configuration)
   0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0, 0,            // 14 (17) Owner name
 //   
   0,                                                    // 31 ( 1) Page 1&2 XOR Checksum (calculated below)
 
-  0,0,0,0,0,0,0,0,                                      // 32 ( 8) Hardware configuration reserved...
+  0,0,0,0,0,0,0,0,                                      // 32 ( 8) Hardware configuration ...reserved...
   0,0,0,0,0,0,0,0,                                      // 40 ( 8) ...reserved...
   0,0,0,0,0,0,0,0,                                      // 48 ( 8) ...reserved...
   0,0,0,0,0,0,0,                                        // 56 ( 7) ...reserved
@@ -56,54 +57,50 @@ uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes
   // TO DO: Implement the table below and expand the reserved space another 32 bytes.
 
   /* Hardware Configuration use is intended to specify the as-shipped hardware configuration so the firmware can operate accordingly.
-  // Hardware Item #, Version #, both 8-bit fields. Example:
-      0, 1  LB EEPROM:      V1 M24C01, 128 Bytes
-                            V2 M24C02, 256 Bytes
-      1, 1  POWER:          V1 Stock 4 "AAA" Generic Alkalines
-                            V2 4 "AAA" Long life lithium primary
-                            V3 3 "AA" generic
-                            V4 3 "AA" long life lithium primary
-                            V5 1S LiPo and mini charger
-      2, 1  CORE MEMORY:    V1 A single Standard 8x8
-                            V2 A full stack of 8 planes
-      3, 1  HALL SENSORS:   V1 Hall Sensor SI7210 I2C 0x30-0x33
-                            V2 Hall Switch TCS40DPR.LF (Uses CP5-8 pins SJ to HS1-4)
-      4, 1  AMBIENT LIGHT:  V1 LTR-329 at 0x29
-                            V2 LTR-303 at 0x29
-                            V3 BH1730FVC-TR
-      5, 1  SAO PORT X2:    V1 fully accessible I2C and 2 GPIO pins.
-                            V2 limited access, I2C only.
-      6, 1  CP1-8 PINS:     V1 1,2 used by SAO#2, 3-8 available.
-                            V2 1-8 used by 8 core planes.
-      7, 2  LED Array:      V1 Pimoroni Unicorn Hat 8x8 NeoPixel style. 
-                            V2 Core64 LED MATRIX.
-      8, 1  NEON PIXELS:    V1 SPI w/o CS, connected to SPI TFT LCD port
-                            V2 -
-      9, 1  LCD:            V1 color SPI 3.2"
-                            V2 color SPI ???
-     10, 1  OLED Display:   V1 monochrome I2C 128x64
-                            V2 color SPI
-                            V3 TeensyView 128x32
-     11, 1  SD CARD:        V1 Dedicated SD Card Expansion Header
-                            V2 connected to LCD Header
-                            V3 connected to OLED Header
-     12, 1  QWIIC PORT:     V1 open
-                            V2 -
-     13, 1  SAO PORT X1:    V1 fully accessible I2C and 2 GPIO pins.
-                            V2 limited access, I2C only.
-     14, 1  GPIO#1:         V1 Available generic use
-                            V2 Test config
-     15, 1  GPIO#2:         V1 Available generic use
-                            V2 Test config
-     16, 1  IR COMM:        V0 not populated
-                            V1 some basic config TBD
-     17, 1  NFMC:           V0 not populated
-                            V1 some basic config TBD
-     18, 1  RTC READY:      V0 not populated
-                            V1 populated crystal and battery
+  // Hardware Item #, Version #, both 8-bit fields. Version 0 = not present. Example:
+    101,  LB EEPROM:        1 = M24C01, 128 Bytes
+                            2 = M24C02, 256 Bytes
+    102,  POWER:            1 = Stock 4 "AAA" Generic Alkalines
+                            2 = 4 "AAA" Long life lithium primary
+                            3 = 3 "AA" generic
+                            4 = 3 "AA" long life lithium primary
+                            5 = 1S LiPo and mini charger
+    103,  CORE MEMORY:      1 = Stock, single 8x8
+                            2 = Full stack of eight 8x8 planes
+    104,  HALL SENSORS:     1 = Hall Sensor SI7210 I2C 0x30-0x33
+                            2 = Hall Switch TCS40DPR.LF (Using CP5-8 pins SJ to HS1-4)
+    105,  AMBIENT LIGHT:    1 = LTR-329 at 0x29
+                            2 = LTR-303 at 0x29
+                            3 = BH1730FVC-TR
+    106,  SAO PORT X2:      1 = fully accessible I2C and 2 GPIO pins.
+                            2 = limited access, I2C only.
+    107,  CP1-8 PINS:       1 = 1,2 used by SAO#2, 3-8 available.
+                            2 = 1-8 used by 8 core planes.
+    108,  LED Array:        1 = Pimoroni Unicorn Hat 8x8 NeoPixel style. 
+                            2 = Core64 LED MATRIX.
+    109,  NEON PIXELS:      1 = SPI w/o CS, connected to SPI TFT LCD port
+    110,  LCD:              1 = color SPI 3.2"
+                            2 = color SPI ???
+    111,  OLED Display:     1 = monochrome I2C 128x64
+                            2 = color SPI
+                            3 = TeensyView 128x32
+    112,  SD CARD:          1 = Dedicated SD Card Expansion Header
+                            2 = connected to LCD Header
+                            3 = connected to OLED Header
+    113,  QWIIC PORT:       1 = available
+                            2 = -
+    114,  SAO PORT X1:      1 = fully accessible I2C and 2 GPIO pins.
+                            2 = limited access, I2C only.
+    115,  GPIO#1:           1 = Available generic use
+                            2 = Test config
+    116,  GPIO#2:           1 = Available generic use
+                            2 = Test config
+    117,  IR COMM:          1 = some basic config TBD
+    118,  NFMC:             1 = some basic config TBD
+    119,  RTC READY:        1 = populated crystal and battery
   */
 
-void EEPROMExtWriteByte(int deviceaddress, unsigned int eeaddress, byte data ) 
+void EEPROMExtWrite= Byte(int deviceaddress, unsigned int eeaddress, byte data ) 
 {
   Wire.beginTransmission(deviceaddress);
   Wire.write((int)(eeaddress));
