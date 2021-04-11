@@ -7,7 +7,7 @@
 #endif
 #include "HardwareIOMap.h"
 
-// #define DEBUG_ALS
+#define DEBUG_ALS
 
 #ifdef AMBIENT_LIGHT_SENSOR_LTR329_ENABLE
   #include "Ambient_Light_Sensor.h"
@@ -33,7 +33,7 @@
                                                 // 2 = SparkFun Proximity + Ambient Light VCNL4040 QWIIC SEN-15177
                                                 // 3 = LTR-329
   uint8_t AmbientLightLevel8BIT = 0 ;           // Scaled 0 to 255, darkest to brightest lux range
-  static uint8_t AmbientLightLtr329ScalarBitShift = 3;        // 
+  static uint8_t AmbientLightLtr329ScalarBitShift = 7;        // 
 
   void AmbientLightSetup() {
     Serial.println("\nTesting Light Sensor LTR-329..."); 
@@ -205,7 +205,19 @@
       }
       else
       {
-        AmbientLightLevel8BIT = (uint8_t) (luxVal >> AmbientLightLtr329ScalarBitShift);  // Simple linear scaling of lux to 0-255    
+        // This simple linear scaling of lux to 0-255 doesn't work well because LUX to LED brightness is not linear.
+        // AmbientLightLevel8BIT = (uint8_t) (luxVal >> AmbientLightLtr329ScalarBitShift);
+        // So I'll create some steps that seem "about right" for now.
+        AmbientLightLevel8BIT = 0;
+        if (luxVal >   100) { AmbientLightLevel8BIT =  20;}
+        if (luxVal >   400) { AmbientLightLevel8BIT =  30;}
+        if (luxVal >   800) { AmbientLightLevel8BIT =  50;}
+        if (luxVal >  1200) { AmbientLightLevel8BIT =  80;}
+        if (luxVal >  2000) { AmbientLightLevel8BIT = 100;}
+        if (luxVal >  4000) { AmbientLightLevel8BIT = 120;}
+        if (luxVal >  8000) { AmbientLightLevel8BIT = 160;}
+        if (luxVal > 16000) { AmbientLightLevel8BIT = 200;}
+        if (luxVal > 30000) { AmbientLightLevel8BIT = 255;}
       }
       if(AmbientLightLevel8BIT > 250) {AmbientLightLevel8BIT = 250;}
       #ifdef CORE64_LED_MATRIX
