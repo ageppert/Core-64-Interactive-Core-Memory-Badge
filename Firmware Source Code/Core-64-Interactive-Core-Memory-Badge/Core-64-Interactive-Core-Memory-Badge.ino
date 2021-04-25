@@ -1,38 +1,46 @@
 /*
-  Core64 Interactive Core Memory Badge
-  2019, 2020, 2021 - Andy Geppert
-  Teensy 3.2, i2C on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
-  ... more in HardwareIOMap.h
-  
-  Arduino IDE 1.8.9               https://www.arduino.cc/en/Main/Software
-  TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
 
-  LIBRARY DEPENDENCIES:
+  Core64 Interactive Core Memory - Project website: www.Core64.io
+  2019-2021 Concept and Design by Andy Geppert at www.MachineIdeas.com
+  Microcontroller Board Teensy 3.2 with hardware details in in HardwareIOMap.h
+  This source code: https://www.github.com/ageppert/Core64
+  
+  DEVELOPMENT ENVIRONMENT
+    Arduino IDE 1.8.9               https://www.arduino.cc/en/Main/Software
+    TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
+
+  LIBRARY DEPENDENCIES - USER INSTALLED:
   Arduino > Tools > Manage Libraries > Install
-    Adafruit_SSD1306                            2.2.1   by Adafruit for Monochrome OLED 128x64 and 128x32
+    The libraries should end up being in your "Libraries" folder in your default Arduino Sketchbook location.
+    Adafruit_SSD1306                            2.2.0   by Adafruit for Monochrome OLED 128x64 and 128x32
+    Adafruit_GFX_Library                        1.10.6 / 1.8.3   by Adafruit
+    Adafruit_BusIO                              1.3.1   by Adafruit
+    Adafruit_MCP23017_Arduino_Library           1.0.6   by Adafruit
+    FastLED                                     3.3.3   by Daniel Garcia
+
+  LIBRARY DEPENDENCIES - TEENSYDUINO INSTALLED:
+    Wire.h                                      Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/Wire/
+    EEPROM                                      Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/EEPROM/
+    SPI                                          Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/SPI/
+
+  LIBRARY DEPENDENCIES - INCLUDED IN THIS PROJECT'S SRC DIRECTORY
+    Si7210
+    LTR329
+    NeonPixel
+
+  LIBRARIES - OPTIONAL STUFF IF YOU ADD THIS HARDWARE
+    Adafruit ILI9341 Library                    1.5.6   by Adafruit
     Adafruit_SSD1327                            1.0.0   by Adafruit for Monochrome OLED 128x128
     Adafruit_SSD1351                            1.2.7   by Adafruit for Color OLED 1.27" and 1.5" in the Adafruit shop
-    Adafruit GFX Library                        1.10.6 / 1.8.3   by Adafruit
-    Adafruit_BusIO                              1.3.1   by Adafruit
-    Adafruit_MCP23017 Arduino LIbrary           1.0.6   by Adafruit
-    FastLED                                     3.3.3   by Daniel Garcia
     SdFat - Adafruit Fork                       1.2.3   by Bill Greiman (fork of SdFat)
+    SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
     TeensyView                                  1.1.0   by Sparkfun for monochrome OLED 128x32 in the Sparkfun store
-    Wire.h
-
     DigitalIO                                   1.0.0   by Bill Greiman
     OR
-    maybe <DigitalFastWrite.h> code by John Rains http://code.google.com/p/digitalwritefast (in DIY drones directory)
+    maybe <DigitalWriteFast.h> code by John Rains http://code.google.com/p/digitalwritefast (in DIY drones directory)
     OR
     NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
-    The libraries should end up being in your a "Libraries" folder in your default Sketchbook location.
-      OPTIONAL
-        SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
-        Adafruit ILI9341 Library                    1.5.6   by Adafruit
 
-  LIBRARIES INCLUDED IN SRC DIR
-    Si7210, LTR329, NeonPixel
-    
  */
 
 #include <stdint.h>

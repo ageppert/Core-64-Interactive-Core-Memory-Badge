@@ -56,7 +56,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.3.0  | 2020-05-30 | Dual board, hardware version detection for 0.2.x (includes v0.1.x) and v0.3.x
 	| v0.3.1  | 2020-05-30 | Two voltage regulators, 5V0 and 3V3, powered from common switch point
 	| v0.4.0  | 2020-11-28 | Blue LB, Yellow CB with Plane 4 set, as-built bring-up
-	| v0.5.0  | 2021-03-20 | Tri-board, Black LB/CB/CM
+	| v0.5.0  | 2021-03-20 | Triple-board, Black LB/CB/CM
 	------------------------------------------------------------------------------------------------------------
 */
 	#define FIRMWAREVERSION "210424.1603"	// TO DO: Expand to be "0.4.0-210530.1340"
