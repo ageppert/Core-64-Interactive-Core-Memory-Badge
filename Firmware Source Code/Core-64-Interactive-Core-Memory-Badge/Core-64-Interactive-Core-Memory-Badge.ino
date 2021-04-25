@@ -8,14 +8,15 @@
   DEVELOPMENT ENVIRONMENT
     Arduino IDE 1.8.9               https://www.arduino.cc/en/Main/Software
     TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
+      Select ALL additional libraries during installation of Teensyduino Loader and associate with the Arduino 1.8.9 installation.
 
   LIBRARY DEPENDENCIES - USER INSTALLED:
   Arduino > Tools > Manage Libraries > Install
     The libraries should end up being in your "Libraries" folder in your default Arduino Sketchbook location.
     Adafruit_SSD1306                            2.2.0   by Adafruit for Monochrome OLED 128x64 and 128x32
-    Adafruit_GFX_Library                        1.10.6 / 1.8.3   by Adafruit
+    Adafruit_GFX_Library                        1.10.6  by Adafruit
     Adafruit_BusIO                              1.3.1   by Adafruit
-    Adafruit_MCP23017_Arduino_Library           1.0.6   by Adafruit
+x    Adafruit_MCP23017_Arduino_Library           1.0.6   by Adafruit
     FastLED                                     3.3.3   by Daniel Garcia
 
   LIBRARY DEPENDENCIES - TEENSYDUINO INSTALLED:
@@ -103,7 +104,7 @@ void setup() {
   EEPROM_Setup();
   delay(1500);
   OLEDScreenSetup();
-  I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
+//  I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
     delay(1500); // Wait a little bit for the serial port to connect if it's there.
     Serial.println("\nCore64 - Interactive Core Memory Badge Kit");

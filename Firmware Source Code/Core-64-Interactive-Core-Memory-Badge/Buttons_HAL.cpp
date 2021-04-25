@@ -6,6 +6,7 @@
 #include <WProgram.h>
 #endif
 
+#include <Wire.h>
 #include "Buttons_HAL.h"
 #include "HardwareIOMap.h"
 #include "I2C_Manager.h"
