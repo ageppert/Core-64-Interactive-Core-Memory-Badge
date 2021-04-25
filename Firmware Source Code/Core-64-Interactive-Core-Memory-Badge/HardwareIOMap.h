@@ -59,7 +59,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.5.0  | 2021-03-20 | Tri-board, Black LB/CB/CM
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210410.2159"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210424.1603"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |

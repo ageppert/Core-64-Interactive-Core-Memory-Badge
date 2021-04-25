@@ -1,7 +1,7 @@
 /*
-  Core 64 Interactive Core Memory Badge
-  2019 and beyond - Andy Geppert
-  Teensy LC, i2C OLED on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
+  Core64 Interactive Core Memory Badge
+  2019, 2020, 2021 - Andy Geppert
+  Teensy 3.2, i2C on pins 18 and 19, LED pixel array on pin 17 (Vin buffered)... 
   ... more in HardwareIOMap.h
   
   Arduino IDE 1.8.9               https://www.arduino.cc/en/Main/Software
@@ -60,16 +60,16 @@ uint32_t SerialNumber = 0;          // Default value is 0 and should be non-zero
 bool TopLevelStateChanged = false;
 enum TopLevelState                  // Master State Machine
 {
-  STATE_STARTUP = 0,                //  0 Start-up
-  STATE_SCROLLING_TEXT,             //  1 Scrolling text at power on
-  STATE_CORE_FLUX_DETECTOR,         //  2 Testing all cores and displaying core state
-  STATE_MONOCHROME_DRAW,            //  3 Test LED Driver with binary values
-  STATE_LED_TEST_ALL_BINARY,        // y 4 Test LED Driver with binary values
-  STATE_LED_TEST_ONE_STRING,        // y 5 Testing LED Driver
-  STATE_LED_TEST_ONE_MATRIX_MONO,   // y 6 Testing LED Driver with matrix array and monochrome color
-  STATE_LED_TEST_ONE_MATRIX_COLOR,  // n 7 Testing LED Driver with matrix array and multi-color symbols
-  STATE_TEST_EEPROM,                //  8
-  STATE_LED_TEST_ALL_COLOR,         // n 9 Test LED Driver with all pixels and all colors
+  STATE_STARTUP = 0,                //   0 Start-up
+  STATE_SCROLLING_TEXT,             //   1 Scrolling text at power on
+  STATE_CORE_FLUX_DETECTOR,         //   2 Testing all cores and displaying core state
+  STATE_MONOCHROME_DRAW,            //   3 Test LED Driver with binary values
+  STATE_LED_TEST_ALL_BINARY,        //   4 Test LED Driver with binary values
+  STATE_LED_TEST_ONE_STRING,        //   5 Testing LED Driver
+  STATE_LED_TEST_ONE_MATRIX_MONO,   //   6 Testing LED Driver with matrix array and monochrome color
+  STATE_LED_TEST_ONE_MATRIX_COLOR,  //   7 Testing LED Driver with matrix array and multi-color symbols
+  STATE_TEST_EEPROM,                //   8
+  STATE_LED_TEST_ALL_COLOR,         //   9 Test LED Driver with all pixels and all colors
   STATE_CORE_TOGGLE_BIT,            //  10 Test one core with one function
   STATE_CORE_TEST_ONE,              //  11 Testing core #coreToTest and displaying core state
   STATE_CORE_TEST_MANY,             //  12 Testing multiple cores and displaying core state
@@ -81,23 +81,23 @@ static uint8_t TopLevelState = TopLevelStateDefault;
 uint8_t value = 0;
 uint8_t a = 0;
 
-  /*                      *********************
-                          ***     Setup     ***
-                          *********************
-  */
+/*                      
+                        *********************
+                        ***     Setup     ***
+                        *********************
+*/
 void setup() {
   HeartBeatSetup();
   LED_Array_Init();
   SerialDebugSetup();
     Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
-    // while (!Serial) { ; }  // wait for serial port to connect.
     LED_Array_Test_Pixel_Matrix_Color();
   EEPROM_Setup();
   delay(1500);
   OLEDScreenSetup();
   I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
-    delay(1500); // Wait for the serial port to connect if it's there. Otherwise, move on.
+    delay(1500); // Wait a little bit for the serial port to connect if it's there.
     Serial.println("\nCore64 - Interactive Core Memory Badge Kit");
     Serial.println("By Andy Geppert");
     Serial.println("More information at Core64.io");
@@ -124,7 +124,7 @@ void setup() {
     Serial.println(FIRMWAREVERSION);
     Serial.println();
   // TO DO: Most of this setup should occur after the hardware version is determined, so setup is configured appropriately
-  delay(250);     // A little time to print all that serial data from above.
+  delay(250);     // Wait a little bit to print all that serial data from above.
   AnalogSetup();
   Buttons_Setup();
   CoreSetup();
@@ -143,7 +143,6 @@ void loop() {
                           *** Housekeepting ***
                           *********************
   */
-  // IOESpare2_On();
   HeartBeat(); 
   AnalogUpdate();
   AmbientLightUpdate();
@@ -152,8 +151,6 @@ void loop() {
   #ifdef DEBUG
     Serial.println("DEBUG enabled."); // Need to abstract this debug stuff
   #endif
-
-  //I2CIOEScan(); // temporary debug
 
   /*                      ************************
                           *** User Interaction ***
@@ -181,8 +178,6 @@ void loop() {
     }
   }
 
-  // IOESpare2_Off();
-
   switch(TopLevelState)
   {
   case STATE_STARTUP:
@@ -190,22 +185,15 @@ void loop() {
     break;
 
   case STATE_SCROLLING_TEXT:
-    // IOESpare1_On();
     LED_Array_Monochrome_Set_Color(140,255,255);
     ScrollTextToCoreMemory();   // This writes directly to the RAM core memory array and bypasses reading it.
-    // delay(25);
     Core_Mem_Array_Write();     // Transfer from RAM Core Memory Array to physical core memory
-    // Core_Mem_Array_Write_Test_Pattern();
-    // delay(25);
     Core_Mem_Array_Read();      // Transfer from physical core memory to RAM Core Memory Array
-    // delay(25);
     CopyCoreMemoryToMonochromeLEDArrayMemory();
-    // delay(25);
     LED_Array_Matrix_Mono_Display();
     delay(25);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    // IOESpare1_Off();
     #ifdef NEON_PIXEL_ARRAY
       Neon_Pixel_Array_Matrix_Mono_Display();
       CopyCoreMemoryToMonochromeNeonPixelArrayMemory();
@@ -216,9 +204,7 @@ void loop() {
   case STATE_CORE_FLUX_DETECTOR:                         // Read 64 cores 10ms (110us 3x core write, with 40us delay 64 times), update LEDs 2ms
     LED_Array_Monochrome_Set_Color(50,255,255);
     LED_Array_Memory_Clear();
-    //DebugWithReedSwitchOutput();
     for (coreToTest = 0; coreToTest < 64 ; coreToTest++) {   
-      //Core_Mem_Bit_Write(coreToTest,0);                     // default to bit set
       Core_Mem_Bit_Write(coreToTest,1);                     // default to bit set
       if (Core_Mem_Bit_Read(coreToTest)==true) {
         LED_Array_String_Write(coreToTest, 1);
@@ -234,12 +220,10 @@ void loop() {
         }
       delayMicroseconds(40); // This 40us delay is required or LED array, first 3-4 pixels in the electronic string, get weird! RF?!??
     }
-    //TracingPulses(1);
     LED_Array_String_Display();
     #ifdef NEON_PIXEL_ARRAY
       Neon_Pixel_Array_Matrix_String_Display();
     #endif
-    //DebugWithReedSwitchInput();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     TopLevelStateChanged = false;
@@ -295,8 +279,8 @@ void loop() {
     LED_Array_Test_Count_Binary();
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
-    // Skip out of this test state immediately.
-    TopLevelState = STATE_LAST;
+    // Uncomment next line to skip out of this test state immediately
+    // TopLevelState = STATE_LAST;
     break;
 
   case STATE_LED_TEST_ONE_STRING: // Turns on 1 pixel, sequentially, from left to right, top to bottom using 1D string addressing
@@ -327,7 +311,7 @@ void loop() {
     if (a == 128) {
       a = 0;
     }
-    delay(10);
+    delay(100);
     break;
     
   case STATE_LED_TEST_ALL_COLOR: // FastLED Demo of all color
@@ -356,7 +340,6 @@ void loop() {
         // delay(50);
       }
 
-    //delay(5);
     OLEDSetTopLevelState(TopLevelState);
     OLEDScreenUpdate();
     break;
@@ -435,6 +418,7 @@ void loop() {
 }
 
 void coreTesting() {
+  static uint8_t BitToTest = 63;
   /*
   static uint8_t c = 0;
   for (uint8_t i = 1; i <=2; i++)
@@ -445,8 +429,13 @@ void coreTesting() {
   if (c == 64) {c=0;}
   */
   // Read testing
-   Core_Mem_Bit_Write(3,1);
-   Core_Mem_Bit_Write(3,0);
+  Core_Mem_Bit_Write(BitToTest,1);
+  LED_Array_String_Write(BitToTest,1);
+  LED_Array_String_Display();
+  delay(1000);
+  Core_Mem_Bit_Write(BitToTest,0);
+  LED_Array_String_Write(BitToTest,0);
+  LED_Array_String_Display();
   // CoreArrayMemory [0][3] = CoreReadBit(3);
   // Whole Array Testing
   //  for (uint8_t i = 0; i <= 63; i++ ) { CoreWriteBit(i,1); }
@@ -479,6 +468,8 @@ void CheckForSerialCommand() {
     switch(c)
     {
     case 'c':
+      Serial.println();
+      Serial.println("coreTest");
       coreTesting();
       break;
 
