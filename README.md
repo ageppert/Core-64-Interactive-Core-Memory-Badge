@@ -3,23 +3,23 @@ Weave your own 64 bits of core memory over the top of LEDs to interact with dire
 
 <img src="Images/Core64v0.4_Draw_HI_Neon_Pixels.gif" height="400">
 
+Purchase: https://www.Core64.io
 
 Follow this project at: https://hackaday.io/project/166155-core-64-interactive-core-memory-badge
 
-Provide me feedback at: https://www.Core64.io
-
-Documentation at: https://ageppert.gitbook.io/core64/
-
+You are in the development repository. Beta Kits and production version firmware is at https://github.com/ageppert/Core64/
 
 # Hardware Version History (latest on top)
 
-PLANNED v0.4.1 Minor board tweaks, planned for Beta Test batch.
+v0.5 Triple Board (added custom LED Matrix) - Beta Test Kits. Beta Kit Repo at https://github.com/ageppert/Core64/
+
+<img src="Images/Core64v0.5_Completed_Beta_Kit.JPG" height="300">
 
 v0.4 Core Board - Neon Pixel Edition. Expanded Core Grid Array to work with [Neon Pixels](https://pierremuth.wordpress.com/2020/07/08/neon-pixel/)!
 
 <img src="Images/Core64_v0.4_Neon_Pixel_Heart.jpeg" height="300">
 
-IN PROGRESS v0.4 Dual Boards (Blue LB + Yellow CB), moved up to Teensy 3.2, removed IO Expanders, added more expansion/hacking headers.
+v0.4 Dual Boards (Blue LB + Yellow CB), moved up to Teensy 3.2, removed IO Expanders, added more expansion/hacking headers.
 
 <img src="Images/Core64_v0.4_Desk_Stand.jpeg" height="500">
 
