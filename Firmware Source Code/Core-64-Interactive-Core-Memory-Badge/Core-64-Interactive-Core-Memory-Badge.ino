@@ -15,42 +15,33 @@
     TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
       Select ALL additional libraries during installation of Teensyduino Loader and associate with the Arduino 1.8.9 installation.
 
-  LIBRARY DEPENDENCIES - USER MUST INSTALL MANUALLY IN ARDUINO:
-  Arduino > Tools > Manage Libraries > Install
-    The libraries should end up being in your "Libraries" folder in your default Arduino Sketchbook location.
-    Adafruit_SSD1306                            2.2.0   by Adafruit for Monochrome OLED 128x64 and 128x32
-    Adafruit_GFX_Library                        1.10.6  by Adafruit
-    Adafruit_BusIO                              1.3.1   by Adafruit
-
-  LIBRARY DEPENDENCIES - TEENSYDUINO LOADER 1.53 INSTALLED THESE:
-    Wire                                        1.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/Wire/
-    EEPROM                                      2.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/EEPROM/
-    FastLED                                     3.3.3   in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/FastLED by Daniel Garcia
-    SPI                                         1.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/SPI/
-
-  LIBRARY DEPENDENCIES - INCLUDED IN THIS PROJECT'S SRC DIRECTORY
-    Si7210
-    LTR329
-    NeonPixel
-
-  LIBRARIES - OPTIONAL STUFF IF YOU ADD THIS HARDWARE
-    Adafruit ILI9341 Library                    1.5.6   by Adafruit
-    Adafruit_SSD1327                            1.0.0   by Adafruit for Monochrome OLED 128x128
-    Adafruit_SSD1351                            1.2.7   by Adafruit for Color OLED 1.27" and 1.5" in the Adafruit shop
-    SdFat - Adafruit Fork                       1.2.3   by Bill Greiman (fork of SdFat)
-    SparkFun Ambient Light Sensor Arduino Library 1.0.3 by Ellas Santistevan
-    TeensyView                                  1.1.0   by Sparkfun for monochrome OLED 128x32 in the Sparkfun store
-    DigitalIO                                   1.0.0   by Bill Greiman
-    OR
-    maybe <DigitalWriteFast.h> code by John Rains http://code.google.com/p/digitalwritefast (in DIY drones directory)
-    OR
-    NOT <FastDigitalPin.h> Romans Audio FastDigitalPinLibrary by Michael Romans 1.0.1
-
+  LIBRARY DEPENDENCIES
+    USER MUST INSTALL MANUALLY IN ARDUINO
+      Arduino > Tools > Manage Libraries > Install
+      The libraries should end up being in your "Libraries" folder in your default Arduino Sketchbook location.
+      Adafruit_SSD1306                              2.2.0   by Adafruit for Monochrome OLED 128x64 and 128x32
+      Adafruit_GFX_Library                          1.10.6  by Adafruit
+      Adafruit_BusIO                                1.3.1   by Adafruit
+    TEENSYDUINO LOADER 1.53 INSTALLED THESE
+      Wire                                          1.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/Wire/
+      EEPROM                                        2.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/EEPROM/
+      FastLED                                       3.3.3   in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/FastLED by Daniel Garcia
+      SPI                                           1.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/SPI/
+    INCLUDED IN THIS PROJECT'S SRC DIRECTORY
+      Si7210
+      LTR329
+      NeonPixel
+    OPTIONAL STUFF IF YOU ADD THIS HARDWARE
+      Adafruit ILI9341 Library                      1.5.6   by Adafruit
+      Adafruit_SSD1327                              1.0.0   by Adafruit for Monochrome OLED 128x128
+      Adafruit_SSD1351                              1.2.7   by Adafruit for Color OLED 1.27" and 1.5" in the Adafruit shop
+      SdFat - Adafruit Fork                         1.2.3   by Bill Greiman (fork of SdFat)
+      SparkFun Ambient Light Sensor Arduino Library 1.0.3   by Ellas Santistevan
+      TeensyView                                    1.1.0   by Sparkfun for monochrome OLED 128x32 in the Sparkfun store
  */
 
 #include <stdint.h>
 #include <stdbool.h>
-// #include <HardwareSerial.h> // Temp, debugging why Digital Pin 1 won't respond
 
 #include "HardwareIOMap.h"
 #include "Heart_Beat.h"
@@ -95,9 +86,9 @@ uint8_t value = 0;
 uint8_t a = 0;
 
 /*                      
-                        *********************
-                        ***     Setup     ***
-                        *********************
+                          *********************
+                          ***     Setup     ***
+                          *********************
 */
 void setup() {
   HeartBeatSetup();
@@ -106,11 +97,7 @@ void setup() {
     Serial.begin(SERIAL_PORT_SPEED);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     LED_Array_Test_Pixel_Matrix_Color();
   EEPROM_Setup();
-  delay(1500);
-  OLEDScreenSetup();
-//  I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
-  I2CManagerSetup();
-    delay(1500); // Wait a little bit for the serial port to connect if it's there.
+  delay(1500); // Wait a little bit for the serial port to connect if it's there.
     Serial.println("  ____                __   _  _   ");
     Serial.println(" / ___|___  _ __ ___ / /_ | || |  ");
     Serial.println("| |   / _ \\| '__/ _ \\ '_ \\| || |_ ");
@@ -123,6 +110,9 @@ void setup() {
     Serial.println("This source code: https://www.github.com/ageppert/Core64");
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
+  OLEDScreenSetup();
+  I2CManagerSetup();
+    delay(1000);
   I2CManagerBusScan();
   DetectHardwareVersion();
   SerialNumber = EEPROMExtReadSerialNumber();
@@ -152,6 +142,12 @@ void setup() {
   AmbientLightSetup();
   Neon_Pixel_Array_Init();
 }
+
+/*                      
+                          *********************
+                          ***   MAIN LOOP   ***
+                          *********************
+*/
 
 void loop() {
   static uint8_t ColorFontSymbolToDisplay = 2;

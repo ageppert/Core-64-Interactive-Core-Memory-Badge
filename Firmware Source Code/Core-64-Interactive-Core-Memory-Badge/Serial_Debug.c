@@ -7,10 +7,10 @@
 #include <WProgram.h>
 #endif
 
-// Consider using a <FastSerial.h> library?
+// TO DO: Consider using a <FastSerial.h> library?
 
 void SerialDebugSetup() {
-  // Serial.begin(115200);
+  // Serial.begin(SERIAL_PORT_SPEED);
   // Serial.println();
   // Serial.println("Serial Debug Port Started in Serial_Debug.c");
 }
