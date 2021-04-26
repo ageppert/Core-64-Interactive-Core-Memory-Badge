@@ -19,6 +19,8 @@ SETUP:
 extern "C" {
 #endif
 
+#define SERIAL_PORT_SPEED   15200
+
 void SerialDebugSetup();
 void SerialDebugProcess();
 

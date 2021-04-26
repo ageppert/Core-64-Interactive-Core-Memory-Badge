@@ -1,8 +1,13 @@
 /*
-
+    ____                __   _  _   
+   / ___|___  _ __ ___ / /_ | || |  
+  | |   / _ \| '__/ _ \ '_ \| || |_ 
+  | |__| (_) | | |  __/ (_) |__   _|
+   \____\___/|_|  \___|\___/   |_|  
+                                  
   Core64 Interactive Core Memory - Project website: www.Core64.io
-  2019-2021 Concept and Design by Andy Geppert at www.MachineIdeas.com
-  Microcontroller Board Teensy 3.2 with hardware details in in HardwareIOMap.h
+  2019-2021 Concept and Design by Andy Geppert of www.MachineIdeas.com
+  Microcontroller Board is Teensy 3.2 with hardware version and details in HardwareIOMap.h
   This source code: https://www.github.com/ageppert/Core64
   
   DEVELOPMENT ENVIRONMENT
@@ -10,19 +15,18 @@
     TEENSYDUINO LOADER 1.53         https://www.pjrc.com/teensy/td_download.html
       Select ALL additional libraries during installation of Teensyduino Loader and associate with the Arduino 1.8.9 installation.
 
-  LIBRARY DEPENDENCIES - USER INSTALLED:
+  LIBRARY DEPENDENCIES - USER MUST INSTALL MANUALLY IN ARDUINO:
   Arduino > Tools > Manage Libraries > Install
     The libraries should end up being in your "Libraries" folder in your default Arduino Sketchbook location.
     Adafruit_SSD1306                            2.2.0   by Adafruit for Monochrome OLED 128x64 and 128x32
     Adafruit_GFX_Library                        1.10.6  by Adafruit
     Adafruit_BusIO                              1.3.1   by Adafruit
-x    Adafruit_MCP23017_Arduino_Library           1.0.6   by Adafruit
-    FastLED                                     3.3.3   by Daniel Garcia
 
-  LIBRARY DEPENDENCIES - TEENSYDUINO INSTALLED:
-    Wire.h                                      Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/Wire/
-    EEPROM                                      Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/EEPROM/
-    SPI                                          Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/SPI/
+  LIBRARY DEPENDENCIES - TEENSYDUINO LOADER 1.53 INSTALLED THESE:
+    Wire                                        1.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/Wire/
+    EEPROM                                      2.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/EEPROM/
+    FastLED                                     3.3.3   in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/FastLED by Daniel Garcia
+    SPI                                         1.0     in Arduino1.8.9.app/Contents/Java/hardware/teensy/avr/libraries/SPI/
 
   LIBRARY DEPENDENCIES - INCLUDED IN THIS PROJECT'S SRC DIRECTORY
     Si7210
@@ -46,7 +50,7 @@ x    Adafruit_MCP23017_Arduino_Library           1.0.6   by Adafruit
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <HardwareSerial.h> // Temp, debugging why Digital Pin 1 won't respond
+// #include <HardwareSerial.h> // Temp, debugging why Digital Pin 1 won't respond
 
 #include "HardwareIOMap.h"
 #include "Heart_Beat.h"
@@ -99,7 +103,7 @@ void setup() {
   HeartBeatSetup();
   LED_Array_Init();
   SerialDebugSetup();
-    Serial.begin(115200);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
+    Serial.begin(SERIAL_PORT_SPEED);  // Need to move this serial stuff into the Serial_Debug.c file out of here!
     LED_Array_Test_Pixel_Matrix_Color();
   EEPROM_Setup();
   delay(1500);
@@ -107,9 +111,16 @@ void setup() {
 //  I2CIOESafeInput();  // Keep this before any other IO Expander usage/configuration.
   I2CManagerSetup();
     delay(1500); // Wait a little bit for the serial port to connect if it's there.
-    Serial.println("\nCore64 - Interactive Core Memory Badge Kit");
-    Serial.println("By Andy Geppert");
-    Serial.println("More information at Core64.io");
+    Serial.println("  ____                __   _  _   ");
+    Serial.println(" / ___|___  _ __ ___ / /_ | || |  ");
+    Serial.println("| |   / _ \\| '__/ _ \\ '_ \\| || |_ ");
+    Serial.println("| |__| (_) | | |  __/ (_) |__   _|");
+    Serial.println(" \\____\\___/|_|  \\___|\\___/   |_|  ");
+    Serial.println();
+    Serial.println("Core64 Interactive Core Memory - Project website: www.Core64.io");
+    Serial.println("2019-2021 Concept and Design by Andy Geppert of www.MachineIdeas.com");
+    Serial.println("Microcontroller Board is Teensy 3.2 with hardware version and details in HardwareIOMap.h");
+    Serial.println("This source code: https://www.github.com/ageppert/Core64");
     Serial.println();
     Serial.println("Serial Debug Port Started at 115200"); // TO DO: automatically update speed
   I2CManagerBusScan();
