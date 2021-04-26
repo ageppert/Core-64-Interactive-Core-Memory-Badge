@@ -26,12 +26,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-version 0.1
-*/
+version 0.2
 
-/*
-  Modified by Andy Geppert 2020 to work for LTR-329 instead of LTR-303
-  Verified Lux Calculations
+Modified by Andy Geppert 2020 to work for LTR-329 instead of LTR-303
+Verified Lux Calculations
 */
 
 #ifndef LTR329_h

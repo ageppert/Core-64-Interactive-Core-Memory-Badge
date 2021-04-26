@@ -18,6 +18,8 @@
 // The CoreArrayMemory is used as a buffer between external API calls and the real state of the core memory.
 // The CoreArrayMemory is only accurate after all real core memory bits have been read once.
 // It us up to the user to request CoreReadArray() in order provide an initial update to the CoreArrayMemory array.
+
+// Symbol "64" numbers
 bool CoreArrayMemory [8][8] = {
                                   {1,1,1,0,1,0,1,0},
                                   {1,0,0,0,1,0,1,0},
@@ -27,6 +29,7 @@ bool CoreArrayMemory [8][8] = {
                                   {0,0,0,0,0,0,0,0},
                                   {0,0,0,0,0,0,0,0},
                                   {0,0,0,0,0,0,0,0}  };
+// Symbol "CORE" letters
 //bool    CoreArrayMemory [8][8] = {
 //                                  {1,1,1,0,1,1,1,0},
 //                                  {1,0,0,0,1,0,1,0},
@@ -123,10 +126,8 @@ void Core_Mem_Monitor() {
 }
 
 void Core_Mem_Bit_Write(uint8_t bit, bool value) {
-  // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   // Turn off all of the matrix signals
   cli();                                            // Testing for consistent timing.
-  // Serial.print("Tracing Pulses Follow.\n");
   CoreSenseReset();                                 // Reset sense pulse flip-flop in case this write is called from read.
   TracingPulses(1);
   MatrixEnableTransistorInactive();                 // Make sure the whole matrix is off by de-activating the enable transistor
@@ -136,16 +137,6 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
   // Activate the selected matrix drive transistors according to bit position and the set/clear request
   if (value == 1) { AllDriveIoSetBit(bit); } 
   else { AllDriveIoClearBit(bit); }
-
-  // 11-30 Debugging matrix drive signals that aren't flipping to the correct position during writing.
-  // Hard-coded testing of pixel 0.
-  // if (value == 1) { 
-  //   SetRowZeroAndColZero(); 
-  // } 
-  // else {
-  //   ClearRowZeroAndColZero();
-  // }
-
   TracingPulses(3);
   MatrixEnableTransistorActive();                   // Enable the matrix drive transistor (V0.3 takes .8ms to do this)
   delayMicroseconds(20);                            // give the core time to change state
@@ -159,7 +150,6 @@ void Core_Mem_Bit_Write(uint8_t bit, bool value) {
 }
 
 bool Core_Mem_Bit_Read(uint8_t bit) {
-  // Wire.setClock(3400000);  // Default is too slow at 100000 at 100 kHz (https://www.arduino.cc/en/Reference/WireSetClock)
   static bool value = 0;
    cli();                                            // Testing for consistent timing. Disable interrupts while poling for sense pulse.
   CoreStateChangeFlag(1);                           // Clear the sense flag

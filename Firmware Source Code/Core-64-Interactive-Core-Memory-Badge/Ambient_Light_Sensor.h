@@ -1,7 +1,6 @@
 /*
 PURPOSE: Test the AMBIENT_LIGHT_SENSOR
-SETUP:
-- Configure in 
+SETUP: See source file
 */
  
 #ifndef AMBIENT_LIGHT_SENSOR_H

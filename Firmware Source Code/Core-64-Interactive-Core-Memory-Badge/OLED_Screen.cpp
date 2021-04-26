@@ -8,8 +8,9 @@
 
 #include "HardwareIOMap.h"
 #include <Wire.h>   // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC
-//#define Pin_I2C_Bus_Data       18    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
-//#define Pin_I2C_Bus_Clock      19    // Default is SCL0 and SDA0 on pins 19/18 of Teensy LC. #define not needed, as Wire.h library takes care of this pin configuration.
+// #define not needed, as Wire.h library takes care of this pin configuration.
+// #define Pin_I2C_Bus_Data       18
+// #define Pin_I2C_Bus_Clock      19
 #include "Analog_Input_Test.h"
 #include "LED_Array_HAL.h"
 
@@ -120,8 +121,7 @@ void OLEDScreenSetup() {
   display.setTextColor(WHITE); // Draw white text
   display.setCursor(0, 0);     // Start at top-left corner
   display.cp437(true);         // Use full 256 char 'Code Page 437' font
-  display.println(F("  Core 64 "));
-  display.println(F("   2019   "));
+  display.println(F(" Core64.io"));
   display.println(F("   Andy   "));
   display.println(F("  Geppert "));
   display.display();

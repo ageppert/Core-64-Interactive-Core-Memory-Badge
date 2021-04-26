@@ -47,13 +47,6 @@ extern void CoreWriteArray(); 		// TO DO Add a pointer to the array
 // extern uint64_t CoreReadArray(); 	// TO DO Add a pointer to the array
 void ScrollTextToCoreMemory();
 
-/* Delete these functions
-void CoreZeroSet();
-void CoreZeroClear();
-void CoreOneSet();
-void CoreOneClear();
-*/
-
 void AllDriveIoSafe();
 void AllDriveIoReadAndStore();
 void AllDriveIoRecallAndWrite();

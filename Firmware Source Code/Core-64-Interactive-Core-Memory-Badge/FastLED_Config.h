@@ -15,9 +15,9 @@ Pimoroni Unicorn Hat: https://shop.pimoroni.com/products/unicorn-hat
 #include <stdint.h>
 #include "HardwareIOMap.h"
 
-//#ifdef __cplusplus
-//extern "C" {
-//#endif
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define COLOR_ORDER GRB
 #ifdef CORE64_LED_MATRIX
@@ -48,8 +48,8 @@ const uint8_t kMatrixHeight = 8;
 CRGB leds_plus_safety_pixel[ NUM_LEDS + 1];
 CRGB* const leds( leds_plus_safety_pixel + 1);
 
-//#ifdef __cplusplus
-//} // extern "C"
-//#endif
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

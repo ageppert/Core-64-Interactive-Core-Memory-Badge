@@ -4,7 +4,7 @@ PURPOSE:
 // Character Map
 // Characters could be 4*5 (w*h) to save space or full 8*8.
 // A full alphabet table is 26 x 5 x 4 bits = 65 bytes (if stored maximum efficiently)
-// Array arranged directly as " CORE MEMORY!" = 13 elements, numbered 0 to 12
+// Array arranged directly as "I [heart] CORE MEMORY!" = 16 elements, numbered 0 to 15
 
 SETUP:
 - none

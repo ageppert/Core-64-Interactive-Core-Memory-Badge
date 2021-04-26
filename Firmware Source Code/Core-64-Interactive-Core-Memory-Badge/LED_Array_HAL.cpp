@@ -509,7 +509,7 @@ void LED_Array_Test_Pixel_Matrix_Color() {
       WriteColorFontSymbolToLedScreenMemoryMatrixColor(FontSymbolNumber);
       LED_Array_Matrix_Color_Display();
       FontSymbolNumber++;
-      if(FontSymbolNumber==2){FontSymbolNumber=0;}
+      if(FontSymbolNumber==4){FontSymbolNumber=0;}
     }
 }
 

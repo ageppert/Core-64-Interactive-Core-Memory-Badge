@@ -35,9 +35,9 @@
 extern "C" {
 #endif
 
-// #define SDCARD_ENABLE                  			// Program memory (6K) with Teensy LC
-#define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// Program memory (14K) with Teensy LC
-#define HALL_SENSOR_ENABLE							// Program memory (10K)
+// #define SDCARD_ENABLE                  			// 
+#define AMBIENT_LIGHT_SENSOR_LTR329_ENABLE   		// 
+#define HALL_SENSOR_ENABLE							// 
 // #define HALL_SWITCH_ENABLE
 #define NEON_PIXEL_ARRAY							// Serpentine, like Pimoroni Unicorn Hat
 #define CORE64_LED_MATRIX							// Row Major, Progressive layout. Just like an array in C.
@@ -59,7 +59,7 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.5.0  | 2021-03-20 | Triple-board, Black LB/CB/CM
 	------------------------------------------------------------------------------------------------------------
 */
-	#define FIRMWAREVERSION "210425.1924"	// TO DO: Expand to be "0.4.0-210530.1340"
+	#define FIRMWAREVERSION "210425.2003"	// TO DO: Expand to be "0.4.0-210530.1340"
 /*
 	****************************************** FIRMWARE VERSION TABLE ******************************************
 	| VERSION |  DATE      | DESCRIPTION                                                                       |
@@ -70,13 +70,14 @@ void DetectHardwareVersion ();		// Use once to detect and set the hardware versi
 	| v0.3.x  | 2020-      | 
 	| v0.4.x  | 2020-11-28 | 
 	| v0.5.x  | 2021-03-20 | Accept V0.5.x hardware, manual default to the custom-fit LED Matrix.
+	| v0.5.x  | 2021-04-25 | Beta Kit Release
 	------------------------------------------------------------------------------------------------------------
 */
 	extern uint8_t HardwareVersionMajor  ;
 	extern uint8_t HardwareVersionMinor  ;
 	extern uint8_t HardwareVersionPatch  ;
 
-// HARDWARE v0.4.0
+// HARDWARE v0.5.0
 // MATRIX DRIVE
 	#define PIN_MATRIX_DRIVE_Q1P     	 2	// * Shared
 	#define PIN_MATRIX_DRIVE_Q1N     	 3
