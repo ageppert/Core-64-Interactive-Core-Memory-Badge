@@ -80,6 +80,32 @@ DRAW
 ENDDRAW
 ENDDEF
 #
+# Core_64c_Logo_7mm_tall
+#
+DEF Core_64c_Logo_7mm_tall L 0 40 Y Y 1 F N
+F0 "L" 0 0 50 H V C CNN
+F1 "Core_64c_Logo_7mm_tall" 50 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+T 0 -50 200 50 0 0 0 Core64c_7mm Normal 0 C C
+S -400 350 500 100 0 1 0 N
+ENDDRAW
+ENDDEF
+#
+# Core_64c_Logo_9mm_tall
+#
+DEF Core_64c_Logo_9mm_tall L 0 40 Y Y 1 F N
+F0 "L" 0 0 50 H V C CNN
+F1 "Core_64c_Logo_9mm_tall" 50 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+T 0 -50 200 50 0 0 0 Core64c_9mm Normal 0 C C
+S -400 350 500 100 0 1 0 N
+ENDDRAW
+ENDDEF
+#
 # Core_Memory_8x8_Array
 #
 DEF Core_Memory_8x8_Array CM 0 40 Y Y 1 F N
