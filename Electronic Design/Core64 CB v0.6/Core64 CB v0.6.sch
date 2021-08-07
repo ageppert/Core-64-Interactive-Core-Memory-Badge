@@ -199,9 +199,13 @@ L Connector:Conn_01x20_Male J2
 U 1 1 5E723F12
 P 8550 1800
 F 0 "J2" H 8550 2850 50  0000 C CNN
-F 1 "Digi-Key 77311-420-36LF-ND" H 9400 2850 50  0000 C CNN
+F 1 "929834-04-36-RK" H 9400 2850 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 8550 1800 50  0001 C CNN
 F 3 "~" H 8550 1800 50  0001 C CNN
+F 4 "Amphenol ICC (FCI)" H 8550 1800 50  0001 C CNN "Alt. Manufacturer"
+F 5 "77311-420-36LF" H 8550 1800 50  0001 C CNN "Alt. Mfg P/N"
+F 6 "3M" H 8550 1800 50  0001 C CNN "Manufacturer"
+F 7 "929834-04-36-RK" H 8550 1800 50  0001 C CNN "Mfg P/N"
 	1    8550 1800
 	-1   0    0    -1  
 $EndComp
@@ -758,9 +762,13 @@ L Connector:Conn_01x20_Male J1
 U 1 1 5E72894A
 P 2700 1850
 F 0 "J1" H 2700 2950 50  0000 C CNN
-F 1 "Digi-Key 77311-420-36LF-ND" H 3550 2950 50  0000 C CNN
+F 1 "929834-04-36-RK" H 3550 2950 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 2700 1850 50  0001 C CNN
 F 3 "~" H 2700 1850 50  0001 C CNN
+F 4 "Amphenol ICC (FCI)" H 2700 1850 50  0001 C CNN "Alt. Manufacturer"
+F 5 "77311-420-36LF" H 2700 1850 50  0001 C CNN "Alt. Mfg P/N"
+F 6 "3M" H 2700 1850 50  0001 C CNN "Manufacturer"
+F 7 "929834-04-36-RK" H 2700 1850 50  0001 C CNN "Mfg P/N"
 	1    2700 1850
 	1    0    0    -1  
 $EndComp
@@ -885,4 +893,6 @@ Wire Notes Line
 	2150 1100 2150 2250
 Text Notes 7300 5600 0    50   ~ 0
 BOTTOM MOUNTED
+Text Notes 650  1250 0    50   ~ 0
+Cut header 36-pin into\ntwo 16-pin headers,\ninstall centered with two\npins on each end not inserted.
 $EndSCHEMATC

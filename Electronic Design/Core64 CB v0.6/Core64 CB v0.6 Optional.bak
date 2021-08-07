@@ -759,10 +759,10 @@ F 3 "~" H 4800 1600 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Sensor_Magnetic:SM353LT U?
+L Sensor_Magnetic:SM353LT U8
 U 1 1 60643263
 P 1900 1600
-F 0 "U?" H 1570 1647 50  0000 R CNN
+F 0 "U8" H 1570 1647 50  0000 R CNN
 F 1 "SM353LT" H 1570 1554 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 1850 1600 50  0001 C CNN
 F 3 "https://sensing.honeywell.com/honeywell-sensing-nanopower-series-product-sheet-50095501-a-en.pdf" H 1850 1600 50  0001 C CNN
@@ -793,10 +793,10 @@ $EndComp
 Text Notes 1850 3150 0    50   ~ 0
 DIGITAL LOGIC GROUND
 $Comp
-L Sensor_Magnetic:SM353LT U?
+L Sensor_Magnetic:SM353LT U11
 U 1 1 6065FC7B
 P 1900 2650
-F 0 "U?" H 1570 2697 50  0000 R CNN
+F 0 "U11" H 1570 2697 50  0000 R CNN
 F 1 "SM353LT" H 1570 2604 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 1850 2650 50  0001 C CNN
 F 3 "https://sensing.honeywell.com/honeywell-sensing-nanopower-series-product-sheet-50095501-a-en.pdf" H 1850 2650 50  0001 C CNN
@@ -827,10 +827,10 @@ $EndComp
 Text Notes 4200 2100 0    50   ~ 0
 DIGITAL LOGIC GROUND
 $Comp
-L Sensor_Magnetic:SM353LT U?
+L Sensor_Magnetic:SM353LT U12
 U 1 1 60663056
 P 4250 1600
-F 0 "U?" H 3920 1647 50  0000 R CNN
+F 0 "U12" H 3920 1647 50  0000 R CNN
 F 1 "SM353LT" H 3920 1554 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 4200 1600 50  0001 C CNN
 F 3 "https://sensing.honeywell.com/honeywell-sensing-nanopower-series-product-sheet-50095501-a-en.pdf" H 4200 1600 50  0001 C CNN
@@ -861,10 +861,10 @@ $EndComp
 Text Notes 4200 3150 0    50   ~ 0
 DIGITAL LOGIC GROUND
 $Comp
-L Sensor_Magnetic:SM353LT U?
+L Sensor_Magnetic:SM353LT U13
 U 1 1 606657C5
 P 4250 2650
-F 0 "U?" H 3920 2697 50  0000 R CNN
+F 0 "U13" H 3920 2697 50  0000 R CNN
 F 1 "SM353LT" H 3920 2604 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 4200 2650 50  0001 C CNN
 F 3 "https://sensing.honeywell.com/honeywell-sensing-nanopower-series-product-sheet-50095501-a-en.pdf" H 4200 2650 50  0001 C CNN
@@ -897,10 +897,10 @@ TOP MOUNTED
 Text Notes 9900 4400 0    50   ~ 0
 TOP MOUNTED
 $Comp
-L LiteOn_LTR-329ALS:LTR-329ALS-01 U?
+L LiteOn_LTR-329ALS:LTR-329ALS-01 U14
 U 1 1 603B38C5
 P 8250 6050
-F 0 "U?" H 8600 6350 60  0000 C CNN
+F 0 "U14" H 8600 6350 60  0000 C CNN
 F 1 "LTR-329ALS-01" H 9200 6350 60  0000 C CNN
 F 2 "LiteOn_LTR-329ALS:LTR-329ALS-01" H 9050 6290 60  0001 C CNN
 F 3 "" H 8250 6050 60  0000 C CNN
@@ -954,7 +954,7 @@ U 1 1 60C04175
 P 9500 2150
 F 0 "X1" H 9681 2147 50  0000 L CNN
 F 1 "SFH11-NBPC-D03-ST-BK" H 9681 2054 50  0000 L CNN
-F 2 "" H 9500 2350 50  0001 C CNN
+F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 9500 2350 50  0001 C CNN
 F 3 "" H 9500 2350 50  0001 C CNN
 	1    9500 2150
 	1    0    0    -1  
