@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 2
 Title "Core64 LM (LED MATRIX)"
-Date "2021-05-17"
+Date "2021-08-07"
 Rev "0.3"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
@@ -23,9 +23,11 @@ L Connector:Conn_01x20_Male J2
 U 1 1 5E723F12
 P 1450 6900
 F 0 "J2" V 1400 7700 50  0000 C CNN
-F 1 "MOST CONNECTIONS PASS THROUGH" V 1400 6600 50  0000 C CNN
+F 1 "TSW-108-15-T-S" V 1400 6600 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1450 6900 50  0001 C CNN
 F 3 "~" H 1450 6900 50  0001 C CNN
+F 4 "Samtec Inc." H 1450 6900 50  0001 C CNN "Manufacturer"
+F 5 "TSW-108-15-T-S" H 1450 6900 50  0001 C CNN "Mfr P/N"
 	1    1450 6900
 	0    -1   1    0   
 $EndComp
@@ -55,9 +57,11 @@ L Connector:Conn_01x20_Male J1
 U 1 1 5E72894A
 P 1450 7900
 F 0 "J1" V 1400 8700 50  0000 C CNN
-F 1 "MOST CONNECTIONS PASS THROUGH" V 1400 7600 50  0000 C CNN
+F 1 "TSW-108-15-T-S" V 1400 7600 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical_SMD_and_TH_Pin1Right" H 1450 7900 50  0001 C CNN
 F 3 "~" H 1450 7900 50  0001 C CNN
+F 4 "Samtec Inc." H 1450 7900 50  0001 C CNN "Manufacturer"
+F 5 "TSW-108-15-T-S" H 1450 7900 50  0001 C CNN "Mfr P/N"
 	1    1450 7900
 	0    -1   -1   0   
 $EndComp
@@ -2757,4 +2761,6 @@ Connection ~ 9350 3700
 Connection ~ 9350 4450
 Connection ~ 9350 5200
 Connection ~ 9350 5950
+Text Notes 2550 7950 0    50   ~ 0
+Male headers 1x8 pins,\ncut into 4 pairs and\ninstall at four corners.
 $EndSCHEMATC

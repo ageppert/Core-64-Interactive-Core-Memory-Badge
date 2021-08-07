@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 2
 Title "Core64 LM (LED MATRIX)"
-Date "2021-05-17"
+Date "2021-08-07"
 Rev "0.3"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
@@ -175,13 +175,13 @@ F 3 "" H 1600 6150 50  0001 C CNN
 	1    1600 6150
 	1    0    0    -1  
 $EndComp
-Text Notes 4400 5800 0    118  ~ 24
+Text Notes 4300 5800 0    118  ~ 24
 LIPO BATTERY CONNECTION AND USB CHARGER
 Text Notes 3150 850  0    157  ~ 31
 USER-PROVIDED OPTIONAL ADD-ONS
 Wire Wire Line
 	7400 6400 7400 6500
-Text Notes 4400 6400 0    50   ~ 0
+Text Notes 4300 6400 0    50   ~ 0
 SILKSCREEN:\n1S ONLY\nADAFRUIT #4410 USB C
 $Comp
 L Jumper:SolderJumper_2_Open JP5
@@ -198,9 +198,9 @@ Wire Wire Line
 	6650 6100 7600 6100
 Wire Wire Line
 	7900 6100 8300 6100
-Text Notes 4350 2800 0    118  ~ 24
+Text Notes 4250 2800 0    118  ~ 24
 OPTIONAL 1S LIPO BATTERY - USER SUPPLIED
-Text Notes 4350 3350 0    157  Italic 31
+Text Notes 4250 3350 0    157  Italic 31
 !!! 1S LIPO ONLY !!!\n!!! 7.5V ABSOLUTE MAXIMUM !!!
 Text Notes 9250 6350 0    50   ~ 0
 SILKSCREEN: +/- pins
@@ -210,7 +210,7 @@ Text Notes 9250 6200 0    50   ~ 0
 SILKSCREEN: BAT. + BAT. -
 Text Notes 5600 6300 0    50   ~ 0
 Mounting\n5x 0.1” holes
-Text Notes 4400 5550 0    50   ~ 0
+Text Notes 4300 5550 0    50   ~ 0
 * Do not connect AAAs to a LiPo charger! You will destroy it.\n\n1) Remove the 4x “AAA” battery pack from the Logic Board or LED Matrix Board. It is no longer needed.\n\n2) Purchase and install a LiPo charge manager.\n     a) The logic board is designed to accept this one: https://www.adafruit.com/product/4410 (USB C).\n     b) Solder the the charge manager directly to the board without headers to keep a low profile.\n\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Largest recommended:\n          2500mAh https://www.adafruit.com/product/328   2.0” x 2.4” x 0.3” (50mm x 61mm x 7mm)\n     b) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate it with Kapton tape or similar.\n\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n       If you do NOT want the system to be powered from the USB port of the charger, leave the Teensy_Charge_Enable SJ open.\n       Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is ON (up position).\n       Connecting a USB cable to the Teensy will NOT charge the battery.\n\nB) OPTIONAL SJ CLOSED:\n       The LiPo charger 5V pin (Lipo Charger USB port) may be connected to the Teensy USB port through TEENSY_VUSB. Close the SJ to connect them.\n       Connecting a USB cable to the LiPo charger will charge the battery and power the system \n       Connecting a USB cable to the Teensy will power the Core64 board, charge the battery and connect to the serial port of the Teensy.\n   
 Text Notes 800  3400 0    118  ~ 24
 OLED MONOCHROME I2C - BOTTOM
@@ -369,104 +369,88 @@ F 3 "~" H 3350 7550 50  0001 C CNN
 	1    3350 7550
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 607ECE86
-P 1850 7550
-AR Path="/607ECE86" Ref="#PWR?"  Part="1" 
-AR Path="/603A0E05/607ECE86" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 1850 7300 50  0001 C CNN
-F 1 "GND" H 1855 7373 50  0000 C CNN
-F 2 "" H 1850 7550 50  0001 C CNN
-F 3 "" H 1850 7550 50  0001 C CNN
-	1    1850 7550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 607EDA9C
-P 2700 7550
-AR Path="/607EDA9C" Ref="#PWR?"  Part="1" 
-AR Path="/603A0E05/607EDA9C" Ref="#PWR0112"  Part="1" 
-F 0 "#PWR0112" H 2700 7300 50  0001 C CNN
-F 1 "GND" H 2705 7373 50  0000 C CNN
-F 2 "" H 2700 7550 50  0001 C CNN
-F 3 "" H 2700 7550 50  0001 C CNN
-	1    2700 7550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 607EE7C2
-P 3550 7550
-AR Path="/607EE7C2" Ref="#PWR?"  Part="1" 
-AR Path="/603A0E05/607EE7C2" Ref="#PWR0113"  Part="1" 
-F 0 "#PWR0113" H 3550 7300 50  0001 C CNN
-F 1 "GND" H 3555 7373 50  0000 C CNN
-F 2 "" H 3550 7550 50  0001 C CNN
-F 3 "" H 3550 7550 50  0001 C CNN
-	1    3550 7550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 607EF44F
-P 4400 7550
-AR Path="/607EF44F" Ref="#PWR?"  Part="1" 
-AR Path="/603A0E05/607EF44F" Ref="#PWR0114"  Part="1" 
-F 0 "#PWR0114" H 4400 7300 50  0001 C CNN
-F 1 "GND" H 4405 7373 50  0000 C CNN
-F 2 "" H 4400 7550 50  0001 C CNN
-F 3 "" H 4400 7550 50  0001 C CNN
-	1    4400 7550
-	1    0    0    -1  
-$EndComp
 Text Notes 7800 6350 0    50   ~ 0
 SILKSCREEN:\nTEENSY CHARGE ENABLE
 Text Notes 800  7200 0    118  ~ 24
 Diffuser layer alignment or mounting points
-Text Notes 4350 1300 0    118  ~ 24
+Text Notes 4250 1300 0    118  ~ 24
 ALTERNATE “AAA” BATTERY PACK LOCATION
-Text Notes 4400 1850 0    50   ~ 0
-The 4x “AAA” battery pack (or 3x “AA”) can be installed to the back side of the LED Matrix.\nThis configuration is not compatible with the 1S LiPo option described below.\nThis configuration is not recommended because the batteries are more likely to fall out in normal use.\nIf this configuration is needed, solder the battery pack wires to the B- and B+ position on the board where the 1S LiPo Charger would go. \nThread the wires from the backside so the insulated part of the wire is strain-relieved in the holes adjacent to the solder pads.\nIn this schematic GND (Ground Power) and +BATT correspond to the silk screen B- and B+ labels.
+Text Notes 4300 1850 0    50   ~ 0
+The 4x “AAA” battery pack (or 3x “AA”) can be installed to the back side of the LED Matrix.\nThis configuration is not compatible with the 1S LiPo option described below.\nThis configuration is not recommended because the batteries are more likely to fall out in normal use.\nIf this configuration is desired, solder the battery pack wires to the B- and B+ position on the board where the 1S LiPo Charger would go. \nThread the wires from the backside so the insulated part of the wire is strain-relieved in the holes adjacent to the solder pads.\nIn this schematic GND (Ground Power) and +BATT correspond to the silk screen B- and B+ labels.
 $Comp
 L power:GND #PWR?
 U 1 1 60AC7B04
-P 7150 2250
+P 7050 2250
 AR Path="/60AC7B04" Ref="#PWR?"  Part="1" 
 AR Path="/603A0E05/60AC7B04" Ref="#PWR0115"  Part="1" 
-F 0 "#PWR0115" H 7150 2000 50  0001 C CNN
-F 1 "GND" H 7155 2073 50  0000 C CNN
-F 2 "" H 7150 2250 50  0001 C CNN
-F 3 "" H 7150 2250 50  0001 C CNN
-	1    7150 2250
+F 0 "#PWR0115" H 7050 2000 50  0001 C CNN
+F 1 "GND" H 7055 2073 50  0000 C CNN
+F 2 "" H 7050 2250 50  0001 C CNN
+F 3 "" H 7050 2250 50  0001 C CNN
+	1    7050 2250
 	1    0    0    -1  
 $EndComp
-Text GLabel 7250 2050 0    50   Output ~ 0
+Text GLabel 7150 2050 0    50   Output ~ 0
 5V0
-Text Notes 4350 2200 0    118  ~ 24
+Text Notes 4250 2200 0    118  ~ 24
 OPTIONAL 5V0 BUFFER CAPS
-Text Notes 4400 2350 0    50   ~ 0
+Text Notes 4300 2350 0    50   ~ 0
 Optional 5V0 buffer capacitor locations - just in case…
 $Comp
 L Device:CP1_Small C9
 U 1 1 60AD3B01
-P 7400 2150
-F 0 "C9" H 7491 2197 50  0000 L CNN
-F 1 "470uF" H 7491 2104 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 7400 2150 50  0001 C CNN
-F 3 "~" H 7400 2150 50  0001 C CNN
-	1    7400 2150
+P 7300 2150
+F 0 "C9" H 7391 2197 50  0000 L CNN
+F 1 "470uF" H 7391 2104 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 7300 2150 50  0001 C CNN
+F 3 "~" H 7300 2150 50  0001 C CNN
+	1    7300 2150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7150 2250 7400 2250
+	7050 2250 7300 2250
 Wire Wire Line
-	7250 2050 7400 2050
-Text Notes 7350 2450 0    50   ~ 0
-SMD\n(6.3x7.7mm)
-Text Notes 8150 2450 0    50   ~ 0
-THRU HOLE RADIAL\n(2.5mm lead spacing, 6.3mm dia, 12.5mm tall)
-Text Notes 8150 2250 0    50   ~ 0
-A thru-hole radial 470uF capacitor is another option.\nSolder directly to J2 5VO and GND pads on either side\nof the male header.
+	7150 2050 7300 2050
+Text Notes 8600 2400 0    50   ~ 0
+1) SMD: 6.3mm dia x 7.7mm tall\n2) Solder directly to J2 5VO and GND pads on\n   either side of the male header.\n3) Thru hole radial lead: 2.5mm lead spacing, \n   6.3mm dia, 12.5mm tall
+$Comp
+L Connector:Conn_01x01_Male J7
+U 1 1 61180BD1
+P 8250 2150
+F 0 "J7" H 8359 2337 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 8359 2244 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 8250 2150 50  0001 C CNN
+F 3 "~" H 8250 2150 50  0001 C CNN
+	1    8250 2150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J8
+U 1 1 61180BD7
+P 8250 2400
+F 0 "J8" H 8359 2587 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 8359 2494 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 8250 2400 50  0001 C CNN
+F 3 "~" H 8250 2400 50  0001 C CNN
+	1    8250 2400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 2050 7700 2050
+Wire Wire Line
+	7700 2050 7700 2150
+Wire Wire Line
+	7700 2150 8050 2150
+Connection ~ 7300 2050
+Wire Wire Line
+	7300 2250 7700 2250
+Wire Wire Line
+	7700 2250 7700 2400
+Wire Wire Line
+	7700 2400 8050 2400
+Connection ~ 7300 2250
+Text Notes 8300 2200 0    50   ~ 0
++
+Text Notes 8300 2450 0    50   ~ 0
+GND
 $EndSCHEMATC
