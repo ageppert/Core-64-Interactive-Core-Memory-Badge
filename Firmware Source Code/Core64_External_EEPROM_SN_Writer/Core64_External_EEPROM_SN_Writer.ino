@@ -45,16 +45,16 @@ const uint8_t page_three_four_checksum_position = 63;
 uint8_t checksum = 0;
 uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes) Description
 // PAGE 1&2 (32 BYTES) UNIQUE IDENTIFICATION
-  0,0,0,0,1,9,                                          // 0  ( 6) Serial Number  
+  0,0,0,0,0,7,                                          // 0  ( 6) Serial Number  
   21,04,24,                                             // 6  ( 3) Born on Date:  Year, Month, Day
   0, 5, 0,                                              // 9  ( 3) Born PCBA Version: Major.Minor.Revision
   1,                                                    // 12 ( 1) Manufacturer ID (0,1 = Andy!)
-  2,                                                    // 13 ( 1) Hardware ID Format Type (identifies this whole table configuration)
+  2,                                                    // 13 ( 1) Hardware ID Format Version # (identifies this whole table configuration)
   0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0, 0,            // 14 (17) Owner name
 //
   0,                                              // 31 ( 1) Page 1&2 XOR Checksum
 // PAGE 3&4 (32 BYTES) HARDWARE CONFIGURATION
-    1,  2,  2,  1,  1,  2,  1,  1,                // 32 ( 8) ...reserved...
+    1,  2,  2,  1,  1,  1,  1,  1,                // 32 ( 8) ...reserved...
     1,  1,  1,  3,  0,  0,  0,  0,                // 40 ( 8) ...reserved...
     1,  0,  0,  0,  0,  0,  0,  0,                // 48 ( 8) ...reserved...
     0,  0,  0,  0,  0,  0,  0,                    // 56 ( 7) ...reserved
