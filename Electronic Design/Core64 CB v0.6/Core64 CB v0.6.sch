@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 2
 Title "Core64 CB (Core Board)"
-Date "2021-06-07"
+Date "2021-08-08"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
@@ -508,7 +508,7 @@ SILKSCREEN:\n<-bit 7-0
 Text Notes 4200 2300 0    50   ~ 0
 SILKSCREEN:\nPixel 56-63->
 Text Notes 600  7850 0    50   ~ 0
-CORE BOARD   V0.5   [REL. DATE].  ANDY GEPPERT   \nCore64.MachineIdeas.com\nInteractive Core Memory
+CORE BOARD   VERSION   [REL. DATE].  ANDY GEPPERT   \nwww.MachineIdeas.com\nInteractive Core Memory\nwww.Core64.io
 Text GLabel 3300 2350 2    50   Output ~ 0
 PLANE_8
 Text GLabel 3300 2450 2    50   Output ~ 0
@@ -835,10 +835,10 @@ Wire Wire Line
 	7900 6350 7900 6300
 Connection ~ 7900 6350
 $Comp
-L Device:R_Small R5
+L Device:R_Small R6
 U 1 1 602E2405
 P 8200 6150
-F 0 "R5" V 8100 6150 50  0000 C CNN
+F 0 "R6" V 8100 6150 50  0000 C CNN
 F 1 "0" V 8300 6150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 8200 6150 50  0001 C CNN
 F 3 "~" H 8200 6150 50  0001 C CNN
@@ -874,7 +874,7 @@ Connection ~ 8350 6150
 Wire Wire Line
 	8350 6150 8300 6150
 $Sheet
-S 5050 5550 1350 900 
+S 5050 5600 1350 900 
 U 604D6360
 F0 "Core64 CB v0.6 Optional" 50
 F1 "Core64 CB v0.6 Optional.sch" 50
