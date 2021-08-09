@@ -54,13 +54,13 @@ uint8_t StringToWrite[string_len] = {
 /*  000  ( 6) SERIAL NUMBER:      Each byte is a decimal value of a 6 digit decimal number
                                   0XXXXX = Core64 Logic Boards
                                   1XXXXX = Core64c Logic Boards                           */
-              21,8,8,                                             
+              21,6,15,                                             
 /*  006  ( 3) Born on Date:       Year, Month, Day                                          */
               0, 2, 0,                                              
 /*  009  ( 3) Born Version PCBA:  Major.Minor.Revision                                  */
               1,                                                    
 /*  012  ( 1) Manufacturer ID:    0,1 = Andy!                                            */
-              2,                                                    
+              3,                                                    
 /*  013  ( 1) Hardware Table Format: Version # (identifies this whole table configuration) */
               0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0, 0,            
 /*  014  (17) Owner name:         Conventional 8 bit ASCII values                            */
@@ -71,9 +71,9 @@ uint8_t StringToWrite[string_len] = {
 // Hardware Configuration use is intended to specify the as-shipped hardware configuration so the firmware can operate accordingly.
 // Memory Location #, configuration # is 8-bit value. Value 0 = not applicable/present/defined. 
               128,
-/*  032,      MODEL:            1 => Core64 Beta Kit
+/*  032,      MODEL:            1 = Core64 Beta Kit
                                 2 = Core64 Pre-Production                                             
-                              128 = Core64c protoype, V0.2.0, without modification                    */
+                              128 => Core64c protoype, V0.2.0, without modification                    */
               2,
 /*  033,      LB EEPROM:        1 = M24C01, 128 Bytes
                                 2 => M24C02, 256 BYTES                                                */
