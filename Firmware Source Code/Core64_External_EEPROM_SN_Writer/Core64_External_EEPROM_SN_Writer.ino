@@ -62,7 +62,7 @@ uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes
   // TO DO: Implement the table below and expand the reserved space another 32 bytes.
 
   /* Hardware Configuration use is intended to specify the as-shipped hardware configuration so the firmware can operate accordingly.
-  // Memory Location #, configuration #, 8-bit field. Version 0 = not applicable or not present. 
+  // Memory Location #, configuration #, 8-bit field. Version 0 = not applicable/present/defined. 
     032,  MODEL:            1 => Core64 Beta Kit
                             2 = Core64 Pre-Production
     033,  LB EEPROM:        1 = M24C01, 128 Bytes
@@ -112,7 +112,8 @@ uint8_t StringToWrite[string_len] = {                   // Start Byte # (# Bytes
     049,  IR COMM:          1 = some basic config TBD
     050,  NFMC:             1 = some basic config TBD
     051,  RTC READY:        1 = populated crystal and battery
-    052,
+    052,  CORE PATTERN:     1 => Core Alignment Normal bit 7 \ ... bit 0 /
+                            2 = Core Alignment Opposite bit 7 / ... bit 0 \
     053,
     054,
     055,
