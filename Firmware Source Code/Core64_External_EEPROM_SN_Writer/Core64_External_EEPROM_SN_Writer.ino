@@ -69,7 +69,7 @@ uint8_t StringToWrite[string_len] = {
 
 // PAGE 3&4 (32 BYTES) HARDWARE CONFIGURATION
 // Hardware Configuration use is intended to specify the as-shipped hardware configuration so the firmware can operate accordingly.
-// Memory Location #, configuration # is 8-bit value. Value 0 = not applicable/present/defined. 
+// Memory Location #, configuration # is 8-bit value. Value 0 = not applicable/present. Value 255 = undefined (blank EEPROM value). 
               128,
 /*  032,      MODEL:            1 = Core64 Beta Kit
                                 2 = Core64 Pre-Production                                             
@@ -139,7 +139,7 @@ uint8_t StringToWrite[string_len] = {
               0,
 /*  051,      RTC READY:        1 = populated crystal and battery                                                */
               1,
-/*  052,      CORE PATTERN:     1 => Core Alignment Normal bit 7 \ ... bit 0 /
+/*  052,      CORE PATTERN:     0,1 => Core Alignment Normal bit 7 \ ... bit 0 /
                                 2 = Core Alignment Opposite bit 7 / ... bit 0 \                                                */
               0,
 /*  053,      not used yet                                                                                */
