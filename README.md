@@ -1,4 +1,4 @@
-# Core64-Interactive-Core-Memory-Badge
+# Core-64-Interactive-Core-Memory-Badge
 Weave your own 64 bits of core memory over the top of LEDs to interact with directly using a magnetic wand.
 
 <img src="Images/Core64v0.4_Draw_HI_Neon_Pixels.gif" height="400">
