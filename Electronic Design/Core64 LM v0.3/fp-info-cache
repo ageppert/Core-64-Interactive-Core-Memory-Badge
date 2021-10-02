@@ -1,4 +1,4 @@
-16764104244383377
+16759268390322377
 2829
 ADAFRUIT_2829
 
@@ -25,15 +25,15 @@ BH1730-backside
 
 
 0
-7
-7
+6
+6
 ALS_BH1730
 REG_BD00IC0WHFV-GTR
 
 
 0
-7
-7
+6
+6
 badgelife_sao_v169bis
 Badgelife-SAOv169-BADGE-2x3
 Through hole straight IDC box header, 2x03, 2.54mm pitch, double rows
@@ -66219,27 +66219,6 @@ Potentiometer vertical Vishay T73YP
 0
 3
 3
-Raspberry_Pico_SC0915
-Pico_SC0915_Functional
-
-
-0
-53
-53
-Raspberry_Pico_SC0915
-Pico_SC0915_Sequential
-
-
-0
-53
-53
-Raspberry_Pico_SC0915
-Pico_SC0915_THRUHOLE_CUTOUTS
-
-
-0
-86
-43
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf

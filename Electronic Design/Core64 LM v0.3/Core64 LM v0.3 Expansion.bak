@@ -5,12 +5,12 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 2 2
-Title "Core64 LM (LED MATRIX)"
-Date "2021-08-07"
+Title "Core64 LED MATRIX (LM)"
+Date "2021-10-02"
 Rev "0.3"
-Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
+Comp "Concept and design by Andy Geppert | www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "*** WIP ***"
+Comment2 "As released 2021-10-02"
 Comment3 ""
 Comment4 "All capacitors ceramic X7R unless otherwise noted."
 $EndDescr
@@ -44,6 +44,7 @@ F 0 "JP2" V 1800 4400 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1550 3900 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1950 4350 50  0001 C CNN
 F 3 "~" H 1950 4350 50  0001 C CNN
+F 4 "NO" H 1950 4350 50  0001 C CNN "INSERT?"
 	1    1950 4350
 	0    -1   -1   0   
 $EndComp
@@ -88,6 +89,7 @@ F 0 "JP1" V 1750 4300 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1000 4150 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1650 4250 50  0001 C CNN
 F 3 "~" H 1650 4250 50  0001 C CNN
+F 4 "NO" H 1650 4250 50  0001 C CNN "INSERT?"
 	1    1650 4250
 	0    -1   -1   0   
 $EndComp
@@ -112,6 +114,7 @@ F 0 "XLM4" H 1500 5900 50  0000 R CNN
 F 1 "QWIIC" H 1500 6050 50  0000 R CNN
 F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 1200 6050 50  0001 C CNN
 F 3 "~" H 1200 6050 50  0001 C CNN
+F 4 "NO" H 1200 6050 50  0001 C CNN "INSERT?"
 	1    1200 6050
 	-1   0    0    1   
 $EndComp
@@ -125,6 +128,7 @@ F 0 "XLM2" V 2450 4650 50  0000 R CNN
 F 1 "Conn_01x04_Male" V 2350 4650 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 2500 4400 50  0001 C CNN
 F 3 "~" H 2500 4400 50  0001 C CNN
+F 4 "NO" H 2500 4400 50  0001 C CNN "INSERT?"
 	1    2500 4400
 	0    -1   -1   0   
 $EndComp
@@ -191,6 +195,7 @@ F 0 "JP5" H 7750 6311 50  0000 C CNN
 F 1 "Teensy_Charge_Enable" H 7750 6218 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 7750 6100 50  0001 C CNN
 F 3 "~" H 7750 6100 50  0001 C CNN
+F 4 "NO" H 7750 6100 50  0001 C CNN "INSERT?"
 	1    7750 6100
 	1    0    0    -1  
 $EndComp
@@ -242,6 +247,7 @@ F 0 "JP4" V 1800 2300 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1550 1800 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1950 2250 50  0001 C CNN
 F 3 "~" H 1950 2250 50  0001 C CNN
+F 4 "NO" H 1950 2250 50  0001 C CNN "INSERT?"
 	1    1950 2250
 	0    -1   -1   0   
 $EndComp
@@ -270,6 +276,7 @@ F 0 "JP3" V 1750 2200 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1000 2050 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1650 2150 50  0001 C CNN
 F 3 "~" H 1650 2150 50  0001 C CNN
+F 4 "NO" H 1650 2150 50  0001 C CNN "INSERT?"
 	1    1650 2150
 	0    -1   -1   0   
 $EndComp
@@ -294,6 +301,7 @@ F 0 "XLM3" V 2450 2550 50  0000 R CNN
 F 1 "Conn_01x04_Male" V 2350 2550 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 2500 2300 50  0001 C CNN
 F 3 "~" H 2500 2300 50  0001 C CNN
+F 4 "NO" H 2500 2300 50  0001 C CNN "INSERT?"
 	1    2500 2300
 	0    -1   -1   0   
 $EndComp
@@ -318,6 +326,7 @@ F 0 "XLM1" H 6408 6531 50  0000 C CNN
 F 1 "Micro_LiPo_Charger-USB-C" H 6408 6438 50  0000 C CNN
 F 2 "Core_Memory_8x8_Array:Micro_LiPo_Charger_USB-C_CornerSMD" H 6350 6200 50  0001 C CNN
 F 3 "" H 6350 6200 50  0001 C CNN
+F 4 "NO" H 6350 6200 50  0001 C CNN "INSERT?"
 	1    6350 6200
 	1    0    0    -1  
 $EndComp
@@ -333,6 +342,7 @@ F 0 "J6" H 4309 7737 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 4309 7644 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 4200 7550 50  0001 C CNN
 F 3 "~" H 4200 7550 50  0001 C CNN
+F 4 "NO" H 4200 7550 50  0001 C CNN "INSERT?"
 	1    4200 7550
 	1    0    0    -1  
 $EndComp
@@ -344,6 +354,7 @@ F 0 "J4" H 2609 7737 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 2609 7644 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 2500 7550 50  0001 C CNN
 F 3 "~" H 2500 7550 50  0001 C CNN
+F 4 "NO" H 2500 7550 50  0001 C CNN "INSERT?"
 	1    2500 7550
 	1    0    0    -1  
 $EndComp
@@ -355,6 +366,7 @@ F 0 "J3" H 1759 7737 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 1759 7644 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 1650 7550 50  0001 C CNN
 F 3 "~" H 1650 7550 50  0001 C CNN
+F 4 "NO" H 1650 7550 50  0001 C CNN "INSERT?"
 	1    1650 7550
 	1    0    0    -1  
 $EndComp
@@ -366,6 +378,7 @@ F 0 "J5" H 3459 7737 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 3459 7644 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 3350 7550 50  0001 C CNN
 F 3 "~" H 3350 7550 50  0001 C CNN
+F 4 "NO" H 3350 7550 50  0001 C CNN "INSERT?"
 	1    3350 7550
 	1    0    0    -1  
 $EndComp
@@ -376,7 +389,7 @@ Diffuser layer alignment or mounting points
 Text Notes 4250 1300 0    118  ~ 24
 ALTERNATE “AAA” BATTERY PACK LOCATION
 Text Notes 4300 1850 0    50   ~ 0
-The 4x “AAA” battery pack (or 3x “AA”) can be installed to the back side of the LED Matrix.\nThis configuration is not compatible with the 1S LiPo option described below.\nThis configuration is not recommended because the batteries are more likely to fall out in normal use.\nIf this configuration is needed, solder the battery pack wires to the B- and B+ position on the board where the 1S LiPo Charger would go. \nThread the wires from the backside so the insulated part of the wire is strain-relieved in the holes adjacent to the solder pads.\nIn this schematic GND (Ground Power) and +BATT correspond to the silk screen B- and B+ labels.
+The 4x “AAA” battery pack (or 3x “AA”) can be installed to the back side of the LED Matrix.\nThis configuration is not compatible with the 1S LiPo option described below.\nThis configuration is not recommended because the batteries are more likely to fall out in normal use.\nIf this configuration is desired, solder the battery pack wires to the B- and B+ position on the board where the 1S LiPo Charger would go. \nThread the wires from the backside so the insulated part of the wire is strain-relieved in the holes adjacent to the solder pads.\nIn this schematic GND (Ground Power) and +BATT correspond to the silk screen B- and B+ labels.
 $Comp
 L power:GND #PWR?
 U 1 1 60AC7B04
@@ -404,6 +417,7 @@ F 0 "C9" H 7391 2197 50  0000 L CNN
 F 1 "470uF" H 7391 2104 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 7300 2150 50  0001 C CNN
 F 3 "~" H 7300 2150 50  0001 C CNN
+F 4 "NO" H 7300 2150 50  0001 C CNN "INSERT?"
 	1    7300 2150
 	1    0    0    -1  
 $EndComp
@@ -421,6 +435,7 @@ F 0 "J7" H 8359 2337 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 8359 2244 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 8250 2150 50  0001 C CNN
 F 3 "~" H 8250 2150 50  0001 C CNN
+F 4 "NO" H 8250 2150 50  0001 C CNN "INSERT?"
 	1    8250 2150
 	-1   0    0    -1  
 $EndComp
@@ -432,6 +447,7 @@ F 0 "J8" H 8359 2587 50  0000 C CNN
 F 1 "Conn_01x01_Male" H 8359 2494 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 8250 2400 50  0001 C CNN
 F 3 "~" H 8250 2400 50  0001 C CNN
+F 4 "NO" H 8250 2400 50  0001 C CNN "INSERT?"
 	1    8250 2400
 	-1   0    0    -1  
 $EndComp
@@ -453,4 +469,22 @@ Text Notes 8300 2200 0    50   ~ 0
 +
 Text Notes 8300 2450 0    50   ~ 0
 GND
+Text Notes 7400 2050 0    50   ~ 0
+DNI
+Text Notes 7900 2250 0    50   ~ 0
+DNI
+Text Notes 7900 2000 0    50   ~ 0
+DNI
+Text Notes 1700 7700 0    50   ~ 0
+DNI
+Text Notes 2550 7700 0    50   ~ 0
+DNI
+Text Notes 3400 7700 0    50   ~ 0
+DNI
+Text Notes 4250 7700 0    50   ~ 0
+DNI
+NoConn ~ 4400 7550
+NoConn ~ 3550 7550
+NoConn ~ 2700 7550
+NoConn ~ 1850 7550
 $EndSCHEMATC
