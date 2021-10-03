@@ -1,4 +1,4 @@
-16764119353567377
+16765767686909532
 2829
 ADAFRUIT_2829
 
@@ -25,8 +25,8 @@ BH1730-backside
 
 
 0
-7
-7
+6
+6
 ALS_BH1730
 REG_BD00IC0WHFV-GTR
 
@@ -68816,6 +68816,13 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
+Rohm_RPR-0521RS
+RPR0521RS
+RPR-0521RS-2
+Integrated Circuit
+0
+8
+8
 Rotary_Encoder
 RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html

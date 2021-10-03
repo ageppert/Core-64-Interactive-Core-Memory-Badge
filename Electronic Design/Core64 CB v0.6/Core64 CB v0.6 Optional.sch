@@ -161,11 +161,11 @@ Wire Wire Line
 Wire Wire Line
 	7600 4900 6950 4900
 Wire Wire Line
-	6950 4900 6950 4500
-Text GLabel 7050 4500 2    50   Input ~ 0
+	6950 4900 6950 5600
+Text GLabel 7450 5600 2    50   Input ~ 0
 ALS_INT
 Wire Wire Line
-	6950 4500 7050 4500
+	6950 5600 7050 5600
 Text Notes 8600 4050 0    50   ~ 0
 SILKSCREEN: ALS I2C 0x29
 Text Notes 7300 3950 0    100  ~ 0
@@ -668,45 +668,6 @@ Text Notes 8550 1050 0    50   ~ 0
 SIMPLE ADD ONS see:\nhttps://hackaday.io/project/175182-simple-add-ons-sao
 Text Notes 9750 2700 0    50   ~ 0
 NOTE: These GPIO will be\nused by Core Plane Select\nif that option is enabled.
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 6063DED0
-P 2450 1600
-AR Path="/6063DED0" Ref="JP?"  Part="1" 
-AR Path="/604D6360/6063DED0" Ref="JP21"  Part="1" 
-F 0 "JP21" H 2450 1700 50  0000 C CNN
-F 1 "SolderJumper_2_Open" H 2450 1720 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 2450 1600 50  0001 C CNN
-F 3 "~" H 2450 1600 50  0001 C CNN
-	1    2450 1600
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 6063DED6
-P 2450 2650
-AR Path="/6063DED6" Ref="JP?"  Part="1" 
-AR Path="/604D6360/6063DED6" Ref="JP22"  Part="1" 
-F 0 "JP22" H 2450 2750 50  0000 C CNN
-F 1 "SolderJumper_2_Open" H 2450 2770 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 2450 2650 50  0001 C CNN
-F 3 "~" H 2450 2650 50  0001 C CNN
-	1    2450 2650
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 6063DEE2
-P 4800 2650
-AR Path="/6063DEE2" Ref="JP?"  Part="1" 
-AR Path="/604D6360/6063DEE2" Ref="JP24"  Part="1" 
-F 0 "JP24" H 4800 2750 50  0000 C CNN
-F 1 "SolderJumper_2_Open" H 4800 2770 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 4800 2650 50  0001 C CNN
-F 3 "~" H 4800 2650 50  0001 C CNN
-	1    4800 2650
-	-1   0    0    -1  
-$EndComp
 Text GLabel 2600 1600 2    50   Output ~ 0
 PLANE_5
 Text GLabel 2600 2650 2    50   Output ~ 0
@@ -732,19 +693,6 @@ F 3 "" H 1700 2000 50  0001 C CNN
 $EndComp
 Text Notes 1850 2100 0    50   ~ 0
 DIGITAL LOGIC GROUND
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 6063DEDC
-P 4800 1600
-AR Path="/6063DEDC" Ref="JP?"  Part="1" 
-AR Path="/604D6360/6063DEDC" Ref="JP23"  Part="1" 
-F 0 "JP23" H 4800 1700 50  0000 C CNN
-F 1 "SolderJumper_2_Open" H 4800 1720 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 4800 1600 50  0001 C CNN
-F 3 "~" H 4800 1600 50  0001 C CNN
-	1    4800 1600
-	-1   0    0    -1  
-$EndComp
 $Comp
 L Sensor_Magnetic:SM353LT U9
 U 1 1 60643263
@@ -866,10 +814,6 @@ Wire Wire Line
 	4050 3050 4050 2950
 Text Notes 750  850  0    100  ~ 0
 [ALTERNATE] HALL SWITCH ALTERNATES
-Text Notes 7750 4400 0    50   ~ 0
-TOP MOUNTED
-Text Notes 9900 4400 0    50   ~ 0
-TOP MOUNTED
 $Comp
 L LiteOn_LTR-329ALS:LTR-329ALS-01 U8
 U 1 1 603B38C5
@@ -910,8 +854,6 @@ Wire Wire Line
 	8150 6150 8250 6150
 Text Notes 8900 5550 0    50   ~ 0
 -OR-
-Text Notes 8750 5650 0    50   ~ 0
-TOP MOUNTED
 Text Notes 1800 1000 0    50   ~ 0
 To use Hall Switches, solder four SJs JP21-24.
 Text Notes 2000 1300 0    50   ~ 0
@@ -959,4 +901,27 @@ F 3 "" H 3100 4800 60  0000 C CNN
 	1    3100 4800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7350 5600 7450 5600
+$Comp
+L Jumper:SolderJumper_2_Open JP?
+U 1 1 617672C1
+P 7200 5600
+AR Path="/617672C1" Ref="JP?"  Part="1" 
+AR Path="/604D6360/617672C1" Ref="JP17"  Part="1" 
+F 0 "JP17" H 7200 5700 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 7200 5720 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 7200 5600 50  0001 C CNN
+F 3 "~" H 7200 5600 50  0001 C CNN
+	1    7200 5600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1600 2600 1600
+Wire Wire Line
+	2300 2650 2600 2650
+Wire Wire Line
+	4650 2650 4950 2650
+Wire Wire Line
+	4650 1600 4950 1600
 $EndSCHEMATC

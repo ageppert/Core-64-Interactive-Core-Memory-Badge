@@ -442,8 +442,8 @@ Wire Wire Line
 	8250 2400 8250 2900
 Wire Wire Line
 	8350 3000 8050 3000
-Text Notes 9350 5600 0    50   ~ 0
-SILKSCREEN: ALS I2C 0x29
+Text Notes 7150 5600 0    50   ~ 0
+SILKSCREEN: ALS+PROX I2C 0x38
 $Comp
 L power:GNDD #PWR05
 U 1 1 5E880DFA
@@ -464,7 +464,7 @@ Wire Wire Line
 	8250 2400 8350 2400
 Wire Wire Line
 	7750 2600 8350 2600
-Text Notes 7300 5450 0    100  ~ 0
+Text Notes 7100 5450 0    100  ~ 0
 AMBIENT LIGHT SENSOR I2C 0x29\n(SEE SECOND SHEET FOR ALTERNATIVES)
 Text Notes 3950 7500 0    100  ~ 0
 SILKSCREEN GRAPHICS
@@ -780,106 +780,48 @@ NoConn ~ 8350 2700
 NoConn ~ 2900 2750
 NoConn ~ 2900 2850
 $Comp
-L Core_64_KiCad_Library:BH1730FVC U5
-U 1 1 604130EC
-P 8800 6150
-F 0 "U5" H 8550 6600 50  0000 C CNN
-F 1 "BH1730FVC" H 8950 6600 50  0000 C CNN
-F 2 "ALS_BH1730:BH1730-backside" H 8800 6600 50  0001 C CNN
-F 3 "http://optoelectronics.liteon.com/upload/download/DS86-2013-0004/LTR-303ALS-01_DS_V1.pdf" H 8500 6500 50  0001 C CNN
-F 4 "C79616" H 8800 6150 50  0001 C CNN "LCSC"
-	1    8800 6150
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C5
 U 1 1 60495262
-P 7900 6150
-F 0 "C5" H 7650 6200 50  0000 L CNN
-F 1 "0.1uF" H 7550 6100 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 7938 6000 50  0001 C CNN
-F 3 "~" H 7900 6150 50  0001 C CNN
-F 4 "C396718" H 7900 6150 50  0001 C CNN "LCSC"
-	1    7900 6150
+P 8200 6150
+F 0 "C5" H 7950 6200 50  0000 L CNN
+F 1 "0.1uF" H 7850 6100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8238 6000 50  0001 C CNN
+F 3 "~" H 8200 6150 50  0001 C CNN
+F 4 "C396718" H 8200 6150 50  0001 C CNN "LCSC"
+	1    8200 6150
 	1    0    0    -1  
 $EndComp
-Text Notes 8400 6600 0    50   ~ 0
+Text Notes 7850 6650 0    50   ~ 0
 DIGITAL LOGIC GROUND
 $Comp
 L power:GNDD #PWR01
 U 1 1 60495269
-P 7900 6400
-F 0 "#PWR01" H 7900 6150 50  0001 C CNN
-F 1 "GNDD" H 7904 6245 50  0000 C CNN
-F 2 "" H 7900 6400 50  0001 C CNN
-F 3 "" H 7900 6400 50  0001 C CNN
-	1    7900 6400
+P 7700 6500
+F 0 "#PWR01" H 7700 6250 50  0001 C CNN
+F 1 "GNDD" H 7704 6345 50  0000 C CNN
+F 2 "" H 7700 6500 50  0001 C CNN
+F 3 "" H 7700 6500 50  0001 C CNN
+	1    7700 6500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7900 6350 8050 6350
-Wire Wire Line
-	7900 6350 7900 6400
-Wire Wire Line
-	7900 5950 7900 6000
-Text GLabel 7800 5950 0    50   Input ~ 0
+	8200 5950 8200 6000
+Text GLabel 7600 5950 0    50   Input ~ 0
 3V3_800mA
-Text GLabel 9200 5950 2    50   BiDi ~ 0
-I2C_DATA
-Text GLabel 9200 6350 2    50   BiDi ~ 0
+Text GLabel 9900 5700 2    50   BiDi ~ 0
 I2C_CLOCK
 Wire Wire Line
-	7900 5950 7800 5950
-Connection ~ 7900 5950
+	8200 5950 7700 5950
+Connection ~ 8200 5950
 Wire Wire Line
-	7900 6350 7900 6300
-Connection ~ 7900 6350
-$Comp
-L Device:R_Small R6
-U 1 1 602E2405
-P 8200 6150
-F 0 "R6" V 8100 6150 50  0000 C CNN
-F 1 "0" V 8300 6150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 8200 6150 50  0001 C CNN
-F 3 "~" H 8200 6150 50  0001 C CNN
-F 4 "C115306" V 8200 6150 50  0001 C CNN "LCSC"
-	1    8200 6150
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8400 6150 8350 6150
-Wire Wire Line
-	8100 6150 8050 6150
-Wire Wire Line
-	8250 5950 8250 5800
-Wire Wire Line
-	8250 5800 9700 5800
-Wire Wire Line
-	9700 5800 9700 6150
-Connection ~ 8250 5950
-Wire Wire Line
-	8250 5950 8400 5950
-Wire Wire Line
-	9200 6150 9700 6150
-Wire Wire Line
-	7900 5950 8250 5950
-Wire Wire Line
-	8050 6150 8050 6350
-Connection ~ 8050 6350
-Wire Wire Line
-	8050 6350 8400 6350
-Wire Wire Line
-	8350 6150 8350 6650
-Connection ~ 8350 6150
-Wire Wire Line
-	8350 6150 8300 6150
+	8200 6400 8200 6300
 $Sheet
 S 5050 5600 1350 900 
 U 604D6360
 F0 "Core64 CB v0.6 Optional" 50
 F1 "Core64 CB v0.6 Optional.sch" 50
 $EndSheet
-Text GLabel 8350 6650 0    50   Input ~ 0
+Text GLabel 9900 6050 2    50   Input ~ 0
 ALS_INT
 Wire Notes Line
 	9050 1050 9050 2400
@@ -891,8 +833,91 @@ Text Notes 1400 1700 0    50   ~ 0
 Required 12 pins
 Wire Notes Line
 	2150 1100 2150 2250
-Text Notes 7300 5600 0    50   ~ 0
-BOTTOM MOUNTED
 Text Notes 650  1250 0    50   ~ 0
 Cut header 36-pin into\ntwo 16-pin headers,\ninstall centered with two\npins on each end not inserted.
+Wire Wire Line
+	8650 6050 8450 6050
+Wire Wire Line
+	8200 5950 8550 5950
+Wire Wire Line
+	9900 5700 9850 5700
+Wire Wire Line
+	9850 5700 9850 5600
+Wire Wire Line
+	8450 5600 8450 6050
+Wire Wire Line
+	8650 6150 8450 6150
+Wire Wire Line
+	8450 6150 8450 6400
+Wire Wire Line
+	8450 5600 9850 5600
+Wire Wire Line
+	9750 6250 9850 6250
+Wire Wire Line
+	9850 6150 9750 6150
+Wire Wire Line
+	8650 6250 8550 6250
+Wire Wire Line
+	8550 6250 8550 5950
+Connection ~ 8550 5950
+Wire Wire Line
+	8550 5950 8650 5950
+Wire Wire Line
+	8200 6400 8450 6400
+$Comp
+L Device:C C9
+U 1 1 6164A6E2
+P 7700 6150
+F 0 "C9" H 7450 6200 50  0000 L CNN
+F 1 "10uF" H 7350 6100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7738 6000 50  0001 C CNN
+F 3 "~" H 7700 6150 50  0001 C CNN
+F 4 "C396718" H 7700 6150 50  0001 C CNN "LCSC"
+	1    7700 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 6000 7700 5950
+Wire Wire Line
+	7600 5950 7700 5950
+Connection ~ 7700 5950
+Wire Wire Line
+	9850 6250 9850 6150
+$Comp
+L RPR-0521RS:RPR-0521RS U5
+U 1 1 61599E59
+P 8650 5950
+F 0 "U5" H 9200 6218 50  0000 C CNN
+F 1 "RPR-0521RS" H 9200 6125 50  0000 C CNN
+F 2 "Rohm_RPR-0521RS:RPR0521RS" H 9600 6050 50  0001 L CNN
+F 3 "http://rohmfs.rohm.com/en/products/databook/datasheet/opto/optical_sensor/opto_module/rpr-0521rs-e.pdf" H 9600 5950 50  0001 L CNN
+F 4 " ALS w/prx 1.8V logic w/ IrLED driver" H 9600 5850 50  0001 L CNN "Description"
+F 5 "1.35" H 9600 5750 50  0001 L CNN "Height"
+F 6 "ROHM Semiconductor" H 9600 5650 50  0001 L CNN "Manufacturer_Name"
+F 7 "RPR-0521RS" H 9600 5550 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "755-RPR-0521RS" H 9600 5450 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/RPR-0521RS/?qs=pn%2Fzyis3XjF8Rw%252BiP8XjBQ%3D%3D" H 9600 5350 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 9600 5250 50  0001 L CNN "Arrow Part Number"
+F 11 "" H 9600 5150 50  0001 L CNN "Arrow Price/Stock"
+	1    8650 5950
+	1    0    0    -1  
+$EndComp
+Text GLabel 9900 5800 2    50   BiDi ~ 0
+I2C_DATA
+Wire Wire Line
+	9750 5950 9850 5950
+Wire Wire Line
+	9850 5950 9850 5800
+Wire Wire Line
+	9850 5800 9900 5800
+Wire Wire Line
+	9750 6050 9900 6050
+Wire Wire Line
+	8200 6400 7700 6400
+Wire Wire Line
+	7700 6400 7700 6300
+Connection ~ 8200 6400
+Wire Wire Line
+	7700 6500 7700 6400
+Connection ~ 7700 6400
 $EndSCHEMATC
