@@ -32,9 +32,9 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3250 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 950  2350 0    50   Input ~ 0
-SENSE1
-Text GLabel 950  3150 0    50   Input ~ 0
 SENSE2
+Text GLabel 950  3150 0    50   Input ~ 0
+SENSE1
 $Comp
 L Device:R R6
 U 1 1 5D39C2B1
@@ -179,7 +179,7 @@ L Device:R R13
 U 1 1 5D3F592D
 P 3650 1700
 F 0 "R13" H 3720 1746 50  0000 L CNN
-F 1 "10k" H 3720 1655 50  0000 L CNN
+F 1 "1K2" H 3720 1655 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 1700 50  0001 C CNN
 F 3 "~" H 3650 1700 50  0001 C CNN
 	1    3650 1700
@@ -218,7 +218,7 @@ L Device:R R14
 U 1 1 5E624389
 P 3650 2600
 F 0 "R14" H 3720 2646 50  0000 L CNN
-F 1 "10k" H 3720 2555 50  0000 L CNN
+F 1 "1K2" H 3720 2555 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 2600 50  0001 C CNN
 F 3 "~" H 3650 2600 50  0001 C CNN
 	1    3650 2600
@@ -231,38 +231,12 @@ Wire Wire Line
 	3650 3050 3950 3050
 Wire Wire Line
 	3650 2050 4050 2050
-$Comp
-L Device:R R16
-U 1 1 5E62BEBD
-P 4300 3050
-F 0 "R16" V 4400 3000 50  0000 L CNN
-F 1 "10k" V 4500 3000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 4230 3050 50  0001 C CNN
-F 3 "~" H 4300 3050 50  0001 C CNN
-	1    4300 3050
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R15
-U 1 1 5E631504
-P 4300 2050
-F 0 "R15" V 4400 2000 50  0000 L CNN
-F 1 "10k" V 4500 2000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 4230 2050 50  0001 C CNN
-F 3 "~" H 4300 2050 50  0001 C CNN
-	1    4300 2050
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4050 1850 4050 2050
 Connection ~ 4050 2050
 Wire Wire Line
-	4050 2050 4150 2050
-Wire Wire Line
 	3950 2850 3950 3050
 Connection ~ 3950 3050
-Wire Wire Line
-	3950 3050 4150 3050
 Wire Wire Line
 	2400 2950 2950 2950
 Text Notes 1000 2700 0    50   ~ 0
@@ -371,13 +345,9 @@ Wire Wire Line
 Wire Wire Line
 	4650 2500 4800 2500
 Wire Wire Line
-	4450 2050 4650 2050
-Wire Wire Line
 	4800 2700 4650 2700
 Wire Wire Line
 	4650 2700 4650 3050
-Wire Wire Line
-	4450 3050 4650 3050
 Wire Wire Line
 	5400 2600 5450 2600
 Wire Wire Line
@@ -508,9 +478,9 @@ F 3 "" H 9050 2400 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text GLabel 9200 2150 0    50   Input ~ 0
-SENSE1
-Text GLabel 9200 2050 0    50   Input ~ 0
 SENSE2
+Text GLabel 9200 2050 0    50   Input ~ 0
+SENSE1
 Wire Wire Line
 	1250 3150 1850 3150
 Text GLabel 4000 2850 2    50   Output ~ 0
@@ -621,58 +591,8 @@ Wire Wire Line
 	1900 6400 1900 6350
 Wire Wire Line
 	2300 5650 2300 5500
-NoConn ~ 3550 6350
-Text Notes 3350 7200 0    50   ~ 0
-TSM-106 (2x6) required\nTSM-107 (2x7) alternate\n\nSymbol view is looking down\non the front face of the Logic\nBoard, with the male header\npins pointing up at you.
 Text Notes 2500 6200 0    50   ~ 0
 SILKSCREEN: \n5V0 ONLY\nLED MATRIX
-Wire Wire Line
-	4650 5650 4650 5750
-Text GLabel 4650 5650 1    50   Input ~ 0
-5V0
-NoConn ~ 3550 5850
-NoConn ~ 3550 5950
-NoConn ~ 3550 6050
-NoConn ~ 3550 6250
-NoConn ~ 4050 6150
-NoConn ~ 4050 6050
-Wire Wire Line
-	3400 6150 3400 6250
-Wire Wire Line
-	3550 6150 3400 6150
-Wire Wire Line
-	4050 6250 4300 6250
-Wire Wire Line
-	4050 5750 4150 5750
-$Comp
-L power:GND #PWR?
-U 1 1 5F7F8247
-P 3400 6250
-AR Path="/5E755787/5F7F8247" Ref="#PWR?"  Part="1" 
-AR Path="/5F7F8247" Ref="#PWR?"  Part="1" 
-AR Path="/5E75D6AB/5F7F8247" Ref="#PWR0114"  Part="1" 
-F 0 "#PWR0114" H 3400 6000 50  0001 C CNN
-F 1 "GND" H 3405 6075 50  0000 C CNN
-F 2 "" H 3400 6250 50  0001 C CNN
-F 3 "" H 3400 6250 50  0001 C CNN
-	1    3400 6250
-	1    0    0    -1  
-$EndComp
-Text GLabel 4300 6250 2    50   Input ~ 0
-LED_MATRIX_5V0_SIG
-$Comp
-L Connector_Generic:Conn_02x07_Odd_Even J?
-U 1 1 5F7F824E
-P 3750 6050
-AR Path="/5F7F824E" Ref="J?"  Part="1" 
-AR Path="/5E75D6AB/5F7F824E" Ref="J10"  Part="1" 
-F 0 "J10" H 3800 5650 50  0000 C CNN
-F 1 "TSM-106-03-T-DV‎" H 3800 6500 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical_SMD_and_TH" H 3750 6050 50  0001 C CNN
-F 3 "~" H 3750 6050 50  0001 C CNN
-	1    3750 6050
-	1    0    0    -1  
-$EndComp
 $Comp
 L Logic_LevelTranslator:SN74LV1T125DBVR U?
 U 1 1 5F7F8254
@@ -810,59 +730,12 @@ F 3 "" H 700 6250 50  0001 C CNN
 	1    700  6250
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J?
-U 1 1 5F951C5C
-P 4450 5950
-AR Path="/5E7548ED/5F951C5C" Ref="J?"  Part="1" 
-AR Path="/5E75D6AB/5F951C5C" Ref="J17"  Part="1" 
-F 0 "J17" V 4550 5950 50  0000 R CNN
-F 1 "LED Cur. Mon." V 4450 6550 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4450 5950 50  0001 C CNN
-F 3 "~" H 4450 5950 50  0001 C CNN
-	1    4450 5950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4450 5750 4350 5750
-Connection ~ 4450 5750
-Wire Wire Line
-	4450 5750 4650 5750
-Connection ~ 4350 5750
-Text GLabel 3450 5750 0    50   Input ~ 0
-3V3
-Wire Wire Line
-	3450 5750 3550 5750
-Wire Wire Line
-	4050 5850 4150 5850
-Wire Wire Line
-	4150 5850 4150 5750
-Connection ~ 4150 5750
-Wire Wire Line
-	4150 5750 4350 5750
-Wire Wire Line
-	4050 5950 4150 5950
-Wire Wire Line
-	4150 5950 4150 6350
-Wire Wire Line
-	4150 6350 4050 6350
-$Comp
-L power:GND #PWR?
-U 1 1 5FB058FB
-P 4150 6350
-AR Path="/5E755787/5FB058FB" Ref="#PWR?"  Part="1" 
-AR Path="/5FB058FB" Ref="#PWR?"  Part="1" 
-AR Path="/5E75D6AB/5FB058FB" Ref="#PWR0107"  Part="1" 
-F 0 "#PWR0107" H 4150 6100 50  0001 C CNN
-F 1 "GND" H 4155 6175 50  0000 C CNN
-F 2 "" H 4150 6350 50  0001 C CNN
-F 3 "" H 4150 6350 50  0001 C CNN
-	1    4150 6350
-	1    0    0    -1  
-$EndComp
-Connection ~ 4150 6350
 Wire Wire Line
 	9500 5900 9550 5900
 Wire Wire Line
 	9500 6000 9550 6000
+Wire Wire Line
+	4050 2050 4650 2050
+Wire Wire Line
+	3950 3050 4650 3050
 $EndSCHEMATC

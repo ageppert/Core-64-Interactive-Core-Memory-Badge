@@ -35,10 +35,6 @@ Reads 1/4 voltage of\n+VSW (after RPP) \nbefore regulators.
 Text Notes 7950 1750 0    50   ~ 10
 Teensy LC has incoming USB power/programming on board.
 Wire Wire Line
-	1400 5150 5650 5150
-Wire Wire Line
-	5650 5250 1400 5250
-Wire Wire Line
 	4250 4050 5650 4050
 Wire Wire Line
 	4250 3950 5650 3950
@@ -52,7 +48,7 @@ Wire Wire Line
 	7650 4650 7750 4650
 Wire Wire Line
 	7650 5050 7750 5050
-Text GLabel 1400 5150 0    50   BiDi ~ 0
+Text GLabel 1450 5150 0    50   BiDi ~ 0
 I2C_DATA
 Text GLabel 5250 5350 0    50   Output ~ 0
 LED_MATRIX_3V3_SIG
@@ -85,7 +81,7 @@ U 1 1 5EC30987
 P 1950 7850
 F 0 "L2" H 1975 7897 50  0000 L CNN
 F 1 "Core_64_Logo" H 2000 7800 50  0000 L CNN
-F 2 "Core_Memory_8x8_Array:Core64_Logo" H 1950 7850 50  0001 C CNN
+F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 1950 7850 50  0001 C CNN
 F 3 "" H 1950 7850 50  0001 C CNN
 	1    1950 7850
 	1    0    0    -1  
@@ -372,7 +368,7 @@ Connection ~ 5450 2200
 Wire Wire Line
 	5450 2200 5450 2150
 Text Notes 5900 6400 0    50   ~ 0
-To use the Teensy 3.2 RTC you must add two things:\n1) Crystal: 32.768 kHz, 12.5 pF Citizen CFS-206, Digi-Key 300-8763-ND (5ppm)\n     (on bottom side of the Teensy board, not shown in this schematic)\n2) Battery Holder: MPD BC-2003, Digi-Key BC-2003-TR-CT-ND\n3) Battery: 3V CR2032 Digi-Key P189-ND\n     (battery and holder on backside of logic board)\n
+To use the Teensy 3.2 RTC you must add three things:\n1) Crystal: 32.768 kHz, 12.5 pF Citizen CFS-206, Digi-Key 300-8763-ND (5ppm)\n     (on bottom side of the Teensy board, not shown in this schematic)\n2) Battery Holder: MPD BC-2003, Digi-Key BC-2003-TR-CT-ND\n3) Battery: 3V CR2032 Digi-Key P189-ND\n     (battery and holder on backside of logic board)\n
 Connection ~ 7700 5500
 Wire Wire Line
 	5600 5500 5750 5500
@@ -484,8 +480,8 @@ Wire Wire Line
 	7850 2400 9400 2400
 Text Notes 550  6700 0    118  ~ 0
 SILKSCREEN FRONT
-Text Notes 3300 7800 0    50   ~ 0
-Core 64 Logo\nInteractive Core Memory\nQR Code\nMaker\nWebsite\nRTC Battery CR2032\nPCB Maker\nAssembler\nSerial Number\nP/N\nREV
+Text Notes 3300 7600 0    50   ~ 0
+Core 64 Logo\nInteractive Core Memory\nMaker, Assembler, S/N\nRTC Battery CR2032\nPCB Maker\nP/N\nREV\nDESCRIPTION   VERSION   [REL. DATE].  ANDY GEPPERT   \nDesigned by Andy Geppert  |  www.MachineIdeas.com\nwww.Core64.io
 Text Notes 550  6900 0    50   ~ 0
 Interactive Core Memory\nAll logic is 3V3 Level\n
 Wire Wire Line
@@ -564,7 +560,7 @@ Wire Wire Line
 Wire Notes Line
 	650  5000 2550 5000
 Text Notes 700  5450 0    50   ~ 0
-I2C here, there, and everywhere.
+I2C
 Wire Notes Line
 	2550 2650 2550 5500
 Wire Notes Line
@@ -573,7 +569,7 @@ Wire Notes Line
 	650  5500 5350 5500
 Wire Notes Line
 	650  2650 650  5500
-Text GLabel 1400 5250 0    50   BiDi ~ 0
+Text GLabel 1450 5250 0    50   BiDi ~ 0
 I2C_CLOCK
 Wire Wire Line
 	1550 3900 1550 3850
@@ -582,12 +578,12 @@ Wire Wire Line
 $Comp
 L Graphic:Logo_Open_Hardware_Small L4
 U 1 1 60308F85
-P 2350 7650
-F 0 "L4" H 2350 7925 50  0001 C CNN
-F 1 "Logo_Open_Hardware_Small" H 2350 7425 50  0001 C CNN
-F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 2350 7650 50  0001 C CNN
-F 3 "~" H 2350 7650 50  0001 C CNN
-	1    2350 7650
+P 2300 7300
+F 0 "L4" H 2300 7575 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 2300 7075 50  0001 C CNN
+F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 2300 7300 50  0001 C CNN
+F 3 "~" H 2300 7300 50  0001 C CNN
+	1    2300 7300
 	1    0    0    -1  
 $EndComp
 Text Notes 7950 2000 0    50   ~ 0
@@ -711,14 +707,14 @@ Wire Wire Line
 Connection ~ 3650 4750
 Wire Wire Line
 	3650 4750 5650 4750
-Text GLabel 2950 5600 2    50   Input ~ 0
+Text GLabel 3150 5750 2    50   Input ~ 0
 5V0_MON
-Text GLabel 2950 5750 2    50   Input ~ 0
+Text GLabel 3150 5900 2    50   Input ~ 0
 3V3_MON
 Wire Wire Line
-	2350 4850 2350 5750
+	2350 4850 2350 5900
 Wire Wire Line
-	2350 5750 2550 5750
+	2350 5900 2450 5900
 Connection ~ 2350 4850
 Wire Wire Line
 	2350 4850 1400 4850
@@ -733,7 +729,7 @@ Wire Notes Line
 Wire Wire Line
 	9600 4350 9600 4600
 Wire Wire Line
-	9600 4600 9800 4600
+	9600 4600 9700 4600
 Connection ~ 9600 4350
 Wire Wire Line
 	9600 4350 9650 4350
@@ -749,115 +745,43 @@ Wire Wire Line
 Connection ~ 9600 3050
 Wire Wire Line
 	9600 3050 9650 3050
-Text GLabel 2950 5900 2    50   Input ~ 0
+Text GLabel 3150 6050 2    50   Input ~ 0
 RR0_MON
 Wire Wire Line
-	2550 5900 2250 5900
+	2350 6050 2250 6050
 Wire Wire Line
-	2250 5900 2250 4550
+	2250 6050 2250 4550
 Connection ~ 2250 4550
 Wire Wire Line
 	2250 4550 1400 4550
-$Comp
-L Device:R R?
-U 1 1 60646D8E
-P 2700 5750
-AR Path="/5E755787/60646D8E" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/60646D8E" Ref="R?"  Part="1" 
-AR Path="/60646D8E" Ref="R43"  Part="1" 
-F 0 "R43" V 2650 5850 50  0000 L CNN
-F 1 "10k" V 2650 5500 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2630 5750 50  0001 C CNN
-F 3 "~" H 2700 5750 50  0001 C CNN
-	1    2700 5750
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 60648F4B
-P 2700 5900
-AR Path="/5E755787/60648F4B" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/60648F4B" Ref="R?"  Part="1" 
-AR Path="/60648F4B" Ref="R53"  Part="1" 
-F 0 "R53" V 2650 6000 50  0000 L CNN
-F 1 "10k" V 2650 5650 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2630 5900 50  0001 C CNN
-F 3 "~" H 2700 5900 50  0001 C CNN
-	1    2700 5900
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
-	2850 5900 2950 5900
+	2650 6050 3150 6050
 Wire Wire Line
-	2850 5750 2950 5750
-Wire Wire Line
-	2450 5600 2950 5600
-$Comp
-L Device:R R?
-U 1 1 60683EFC
-P 9950 4600
-AR Path="/5E755787/60683EFC" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/60683EFC" Ref="R?"  Part="1" 
-AR Path="/60683EFC" Ref="R55"  Part="1" 
-F 0 "R55" V 9900 4700 50  0000 L CNN
-F 1 "10k" V 9900 4350 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 9880 4600 50  0001 C CNN
-F 3 "~" H 9950 4600 50  0001 C CNN
-	1    9950 4600
-	0    -1   -1   0   
-$EndComp
+	2750 5900 3150 5900
 Wire Notes Line
 	9200 5850 9200 6450
 Wire Notes Line
 	5150 5850 9200 5850
 Wire Notes Line
 	9200 6450 5150 6450
-$Comp
-L Device:R R?
-U 1 1 606B32F6
-P 9950 3200
-AR Path="/5E755787/606B32F6" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/606B32F6" Ref="R?"  Part="1" 
-AR Path="/606B32F6" Ref="R54"  Part="1" 
-F 0 "R54" V 9900 3300 50  0000 L CNN
-F 1 "10k" V 9900 2950 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 9880 3200 50  0001 C CNN
-F 3 "~" H 9950 3200 50  0001 C CNN
-	1    9950 3200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
-	10100 3200 10250 3200
+	10000 3200 10250 3200
 Wire Wire Line
 	10250 3200 10250 3350
 Wire Wire Line
 	10250 3350 10150 3350
 Wire Wire Line
-	9600 3200 9800 3200
+	9600 3200 9700 3200
 Wire Wire Line
-	10100 4600 10250 4600
+	10000 4600 10250 4600
 Wire Wire Line
 	10250 4600 10250 4750
 Wire Wire Line
 	10250 4750 10150 4750
-$Comp
-L Device:R R?
-U 1 1 606EF222
-P 9950 4900
-AR Path="/5E755787/606EF222" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5D2551FF/606EF222" Ref="R?"  Part="1" 
-AR Path="/606EF222" Ref="R56"  Part="1" 
-F 0 "R56" V 9900 5000 50  0000 L CNN
-F 1 "10k" V 9900 4650 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 9880 4900 50  0001 C CNN
-F 3 "~" H 9950 4900 50  0001 C CNN
-	1    9950 4900
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
-	9500 4900 9800 4900
+	9500 4900 9700 4900
 Wire Wire Line
-	10100 4900 10250 4900
+	10000 4900 10250 4900
 Wire Wire Line
 	10250 4900 10250 5050
 Wire Wire Line
@@ -869,7 +793,7 @@ Wire Wire Line
 Wire Wire Line
 	2500 4800 2500 4750
 Wire Wire Line
-	2450 4750 2450 5600
+	2450 4750 2450 5750
 Connection ~ 2450 4750
 Wire Wire Line
 	2450 4750 2100 4750
@@ -903,4 +827,124 @@ Wire Wire Line
 	1700 4400 1700 4750
 Wire Wire Line
 	1700 4750 2100 4750
+$Comp
+L Device:R R?
+U 1 1 61998E01
+P 1800 5150
+AR Path="/5E755787/61998E01" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/61998E01" Ref="R?"  Part="1" 
+AR Path="/61998E01" Ref="R60"  Part="1" 
+AR Path="/5EA63449/61998E01" Ref="R?"  Part="1" 
+F 0 "R60" V 1900 5000 50  0000 L CNN
+F 1 "68" V 1900 5200 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1730 5150 50  0001 C CNN
+F 3 "~" H 1800 5150 50  0001 C CNN
+	1    1800 5150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61998E07
+P 1800 5250
+AR Path="/5E755787/61998E07" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/61998E07" Ref="R?"  Part="1" 
+AR Path="/61998E07" Ref="R61"  Part="1" 
+AR Path="/5EA63449/61998E07" Ref="R?"  Part="1" 
+F 0 "R61" V 1900 5250 50  0000 L CNN
+F 1 "68" V 1900 5100 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1730 5250 50  0001 C CNN
+F 3 "~" H 1800 5250 50  0001 C CNN
+	1    1800 5250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5650 5150 1950 5150
+Wire Wire Line
+	1650 5150 1450 5150
+Wire Wire Line
+	1450 5250 1650 5250
+Wire Wire Line
+	5650 5250 1950 5250
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 61B618D6
+P 2700 5750
+AR Path="/5E7548ED/61B618D6" Ref="JP?"  Part="1" 
+AR Path="/61B618D6" Ref="JP15"  Part="1" 
+F 0 "JP15" H 2550 5800 50  0000 C CNN
+F 1 "5V0 MON" H 2950 5800 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2700 5750 50  0001 C CNN
+F 3 "~" H 2700 5750 50  0001 C CNN
+	1    2700 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5750 2550 5750
+Wire Wire Line
+	2850 5750 3150 5750
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 61BC2A0E
+P 2600 5900
+AR Path="/5E7548ED/61BC2A0E" Ref="JP?"  Part="1" 
+AR Path="/61BC2A0E" Ref="JP14"  Part="1" 
+F 0 "JP14" H 2450 5950 50  0000 C CNN
+F 1 "3V3 MON" H 2850 5950 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2600 5900 50  0001 C CNN
+F 3 "~" H 2600 5900 50  0001 C CNN
+	1    2600 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 61BC2DF2
+P 2500 6050
+AR Path="/5E7548ED/61BC2DF2" Ref="JP?"  Part="1" 
+AR Path="/61BC2DF2" Ref="JP13"  Part="1" 
+F 0 "JP13" H 2350 6100 50  0000 C CNN
+F 1 "RR0 MON" H 2800 6100 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2500 6050 50  0001 C CNN
+F 3 "~" H 2500 6050 50  0001 C CNN
+	1    2500 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 61C35ED3
+P 9850 3200
+AR Path="/5E7548ED/61C35ED3" Ref="JP?"  Part="1" 
+AR Path="/61C35ED3" Ref="JP16"  Part="1" 
+F 0 "JP16" H 9700 3250 50  0000 C CNN
+F 1 "LR0 MON" H 10100 3250 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 3200 50  0001 C CNN
+F 3 "~" H 9850 3200 50  0001 C CNN
+	1    9850 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 61C4788B
+P 9850 4600
+AR Path="/5E7548ED/61C4788B" Ref="JP?"  Part="1" 
+AR Path="/61C4788B" Ref="JP17"  Part="1" 
+F 0 "JP17" H 9700 4650 50  0000 C CNN
+F 1 "BC0 MON" H 10100 4650 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 4600 50  0001 C CNN
+F 3 "~" H 9850 4600 50  0001 C CNN
+	1    9850 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 61C5666B
+P 9850 4900
+AR Path="/5E7548ED/61C5666B" Ref="JP?"  Part="1" 
+AR Path="/61C5666B" Ref="JP18"  Part="1" 
+F 0 "JP18" H 9700 4950 50  0000 C CNN
+F 1 "TC0 MON" H 10100 4950 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 4900 50  0001 C CNN
+F 3 "~" H 9850 4900 50  0001 C CNN
+	1    9850 4900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

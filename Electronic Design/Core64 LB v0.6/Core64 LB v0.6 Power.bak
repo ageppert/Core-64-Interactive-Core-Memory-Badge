@@ -105,9 +105,7 @@ Text Notes 600  750  0    100  ~ 0
 STANDARD KIT CONFIGURATION - AS MANUFACTURED
 Text Notes 5200 750  0    100  ~ 0
 ALTERNATE 1S LIPO BATTERY - USER SUPPLIED
-Wire Wire Line
-	4100 5250 3850 5250
-Text GLabel 10200 5550 2    50   Output ~ 0
+Text GLabel 10200 4800 2    50   Output ~ 0
 3V3
 Text Notes 750  4450 0    118  ~ 0
 POWER SWITCH, RPP, V & I MONITOR
@@ -117,40 +115,39 @@ Wire Notes Line
 	5200 4150 10350 4150
 Wire Notes Line
 	10350 850  5200 850 
-Connection ~ 3850 5250
 Text Notes 5000 4550 0    50   ~ 0
 LED ARRAY, TEENSY VIN, OPTIONAL TFT & COLOR OLED
 $Comp
 L Device:R R?
 U 1 1 5E800BC1
-P 3850 5400
+P 3850 6000
 AR Path="/5E755787/5E800BC1" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E800BC1" Ref="R?"  Part="1" 
 AR Path="/5E7548ED/5E800BC1" Ref="R51"  Part="1" 
-F 0 "R51" H 3920 5446 50  0000 L CNN
-F 1 "33k" H 3920 5355 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3780 5400 50  0001 C CNN
-F 3 "~" H 3850 5400 50  0001 C CNN
-	1    3850 5400
+F 0 "R51" H 3920 6046 50  0000 L CNN
+F 1 "10K" H 3920 5955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3780 6000 50  0001 C CNN
+F 3 "~" H 3850 6000 50  0001 C CNN
+	1    3850 6000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5E800BC7
-P 3850 5700
+P 3850 6300
 AR Path="/5E755787/5E800BC7" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5E800BC7" Ref="R?"  Part="1" 
 AR Path="/5E7548ED/5E800BC7" Ref="R52"  Part="1" 
-F 0 "R52" H 3920 5746 50  0000 L CNN
-F 1 "11k" H 3920 5655 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3780 5700 50  0001 C CNN
-F 3 "~" H 3850 5700 50  0001 C CNN
-	1    3850 5700
+F 0 "R52" H 3920 6346 50  0000 L CNN
+F 1 "10K" H 3920 6255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3780 6300 50  0001 C CNN
+F 3 "~" H 3850 6300 50  0001 C CNN
+	1    3850 6300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4100 5550 3850 5550
-Text GLabel 4100 5550 2    50   Output ~ 0
+	4100 6150 3850 6150
+Text GLabel 4100 6150 2    50   Output ~ 0
 BAT_MON
 Text Notes 650  6850 0    118  ~ 0
 ALL SYSTEM GROUND
@@ -295,18 +292,18 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0167
 U 1 1 5E93E34A
-P 3850 5900
+P 3850 6500
 AR Path="/5E7548ED/5E93E34A" Ref="#PWR0167"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5E93E34A" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0167" H 3850 5650 50  0001 C CNN
-F 1 "GND" H 3855 5725 50  0000 C CNN
-F 2 "" H 3850 5900 50  0001 C CNN
-F 3 "" H 3850 5900 50  0001 C CNN
-	1    3850 5900
+F 0 "#PWR0167" H 3850 6250 50  0001 C CNN
+F 1 "GND" H 3855 6325 50  0000 C CNN
+F 2 "" H 3850 6500 50  0001 C CNN
+F 3 "" H 3850 6500 50  0001 C CNN
+	1    3850 6500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 5850 3850 5900
+	3850 6450 3850 6500
 $Comp
 L Device:C C?
 U 1 1 5EBB706E
@@ -401,15 +398,13 @@ F 3 "" H 6050 5850 50  0001 C CNN
 	1    6050 5850
 	1    0    0    -1  
 $EndComp
-Connection ~ 3850 5550
+Connection ~ 3850 6150
 Text Notes 3500 2200 0    157  ~ 31
 7.5V MAX !!!
 Text Notes 2200 2150 0    50   ~ 0
 SILKSCREEN: BAT. +/- pins
 Text GLabel 4800 7450 1    50   Input ~ 0
 +RPP
-Wire Wire Line
-	3550 5250 3850 5250
 $Comp
 L Jumper:SolderJumper_2_Bridged JP6
 U 1 1 5F4B1331
@@ -455,10 +450,6 @@ Wire Wire Line
 Wire Wire Line
 	1750 7350 1750 7300
 Connection ~ 1500 7350
-Text Notes 4150 5750 0    50   ~ 0
-1%
-Text Notes 4150 5450 0    50   ~ 0
-1%
 Text Notes 1900 5200 0    50   ~ 0
 P-CHNL
 Text Notes 900  3950 0    146  ~ 29
@@ -547,15 +538,13 @@ F 6 "JST (JAPAN SOLDERLESS TERMINALS)" H 2200 1950 50  0001 L CNN "Manufacturer_
 F 7 "S03B-PASK-2(LF)(SN)" H 2200 1850 50  0001 L CNN "Manufacturer_Part_Number"
 F 8 "S03B-PASK-2(LF)(SN)" H 2200 1750 50  0001 L CNN "Arrow Part Number"
 F 9 "https://www.arrow.com/en/products/s03b-pask-2-lf-sn/jst-manufacturing" H 2200 1650 50  0001 L CNN "Arrow Price/Stock"
-F 10 "" H 2200 1550 50  0001 L CNN "Mouser Part Number"
-F 11 "" H 2200 1450 50  0001 L CNN "Mouser Price/Stock"
 	1    1550 2250
 	-1   0    0    1   
 $EndComp
 Text Notes 8450 4000 0    50   ~ 0
 SILKSCREEN: +/- pins
 Text Notes 5250 2950 0    50   ~ 0
-1) Remove the 4x “AAA” battery pack AND the battery connector.\n2) Purchase and install a LiPo charge manager.\n     a) The board is designed to accept this one: https://www.adafruit.com/product/1904 (Micro USB) and 4410 (USB C).\n     b) Solder the the charge manager directly to the board to keep a low profile.\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 15mm. A maximum \n     a) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate with Kapton tape.\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n     If you do NOT want the system to be powered from teh USB port of the charger, leave the SJ open.\n     Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is in\n        ON (up/battery) position.\n     Connecting a USB cable to the Teensy will NOT charge the battery, but it will power the system when the power switch is in\n        OFF (down/USB) position.\nB) OPTIONAL SH CLOSED:\n      The LiPo charger 5V pin (LiPo Charger USB port) may be connected to the Teensy USB port by closing the SJ.\n      Connecting a USB cable to the LiPo charger will charge the battery and power the system. It will not connect to the serial\n         port of the Teensy.\n      Connecting a USB cable to the Teensy will power the board and charge the batter and connect to the serial port of the\n         Teensy.
+1) Remove the 4x “AAA” battery pack AND the battery connector.\n2) Purchase and install a LiPo charge manager.\n     a) The Logic Board accepts this one: https://www.adafruit.com/product/1904 (Micro USB) and LED Matrix #4410 (USB C).\n     b) Solder the the charge manager directly to the board to keep a low profile.\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 15mm. A maximum \n     a) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate with Kapton tape.\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n     If you do NOT want the system to be powered from teh USB port of the charger, leave the SJ open.\n     Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is in\n        ON (up/battery) position.\n     Connecting a USB cable to the Teensy will NOT charge the battery, but it will power the system when the power switch is in\n        OFF (down/USB) position.\nB) OPTIONAL SH CLOSED:\n      The LiPo charger 5V pin (LiPo Charger USB port) may be connected to the Teensy USB port by closing the SJ.\n      Connecting a USB cable to the LiPo charger will charge the battery and power the system. It will not connect to the serial\n         port of the Teensy.\n      Connecting a USB cable to the Teensy will power the board and charge the batter and connect to the serial port of the\n         Teensy.
 Wire Wire Line
 	4500 7650 4650 7650
 Wire Wire Line
@@ -595,6 +584,7 @@ F 8 "TPS7A0533PDBVR" H 9000 4550 50  0001 L CNN "Arrow Part Number"
 F 9 "https://www.arrow.com/en/products/tps7a0533pdbvr/texas-instruments" H 9000 4450 50  0001 L CNN "Arrow Price/Stock"
 F 10 "595-TPS7A0533PDBVR" H 9000 4350 50  0001 L CNN "Mouser Part Number"
 F 11 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS7A0533PDBVR?qs=vdi0iO8H4N0h9F4GOtQJBA%3D%3D" H 9000 4250 50  0001 L CNN "Mouser Price/Stock"
+F 12 "TPS7A0533PDBVR" H 8150 5050 50  0001 C CNN "MPN"
 	1    8150 5050
 	1    0    0    -1  
 $EndComp
@@ -677,8 +667,6 @@ Wire Wire Line
 Connection ~ 7850 5250
 Wire Wire Line
 	7850 5250 7850 5300
-Wire Wire Line
-	9400 4800 9700 4800
 Text GLabel 8000 4650 0    50   Input ~ 0
 5V0
 $Comp
@@ -721,13 +709,13 @@ F 1 "LP3961EMP-5.0" H 6350 5450 50  0000 C CNN
 F 2 "LP3961EMP-5.0:SOT150P696X180-5N" H 6900 5350 50  0001 L CNN
 F 3 "https://4donline.ihs.com/images/VipMasterIC/IC/NATL/NATLS08520/NATLS08520-1.pdf?hkey=EC6BD57738AE6E33B588C5F9AD3CEFA7" H 6900 5250 50  0001 L CNN
 F 4 "Fast Ultra Low Dropout Linear Regulators" H 6900 5150 50  0001 L CNN "Description"
-F 5 "" H 6900 5050 50  0001 L CNN "Height"
-F 6 "Texas Instruments" H 6900 4950 50  0001 L CNN "Manufacturer_Name"
-F 7 "LP3961EMP-5.0" H 6900 4850 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "LP3961EMP-5.0" H 6900 4750 50  0001 L CNN "Arrow Part Number"
-F 9 "https://www.arrow.com/en/products/lp3961emp-5.0/texas-instruments" H 6900 4650 50  0001 L CNN "Arrow Price/Stock"
-F 10 "926-LP3961EMP-50" H 6900 4550 50  0001 L CNN "Mouser Part Number"
-F 11 "https://www.mouser.com/Search/Refine.aspx?Keyword=926-LP3961EMP-50" H 6900 4450 50  0001 L CNN "Mouser Price/Stock"
+F 5 "Texas Instruments" H 6900 4950 50  0001 L CNN "Manufacturer_Name"
+F 6 "LP3961EMP-5.0" H 6900 4850 50  0001 L CNN "Manufacturer_Part_Number"
+F 7 "LP3961EMP-5.0" H 6900 4750 50  0001 L CNN "Arrow Part Number"
+F 8 "https://www.arrow.com/en/products/lp3961emp-5.0/texas-instruments" H 6900 4650 50  0001 L CNN "Arrow Price/Stock"
+F 9 "926-LP3961EMP-50" H 6900 4550 50  0001 L CNN "Mouser Part Number"
+F 10 "https://www.mouser.com/Search/Refine.aspx?Keyword=926-LP3961EMP-50" H 6900 4450 50  0001 L CNN "Mouser Price/Stock"
+F 11 "LP3961EMP-5.0/NOPB" H 5850 5250 50  0001 C CNN "MPN"
 	1    5850 5250
 	1    0    0    -1  
 $EndComp
@@ -837,12 +825,12 @@ Connection ~ 6900 5100
 $Comp
 L Connector_Generic:Conn_01x02 J9
 U 1 1 5F9393CC
-P 10000 5750
-F 0 "J9" V 10100 5750 50  0000 R CNN
-F 1 "3V3 Cur. Mon." V 10200 5950 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 10000 5750 50  0001 C CNN
-F 3 "~" H 10000 5750 50  0001 C CNN
-	1    10000 5750
+P 10000 5000
+F 0 "J9" V 10100 5000 50  0000 R CNN
+F 1 "3V3 Cur. Mon." V 10200 5200 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 10000 5000 50  0001 C CNN
+F 3 "~" H 10000 5000 50  0001 C CNN
+	1    10000 5000
 	0    -1   1    0   
 $EndComp
 Connection ~ 7100 5000
@@ -931,9 +919,14 @@ L Device:Q_PMOS_GSD Q1
 U 1 1 5F522D96
 P 2250 5350
 F 0 "Q1" V 2596 5350 50  0000 C CNN
-F 1 "MCC_SL3401A" V 2503 5350 50  0000 C CNN
+F 1 "MCC_SL3401A_PMOS_GSD" V 2503 5350 50  0000 C CNN
 F 2 "Digikey:SOT-23-3" H 2450 5450 50  0001 C CNN
 F 3 "https://www.infineon.com/dgdl/BSS315P_Rev2.3.pdf?folderId=db3a304314dca38901154a72e3951a65&fileId=db3a304330f686060130ff61f31b7f06" H 2250 5350 50  0001 C CNN
+F 4 "MOSFET P-CHNL GSD LOW RDS(ON)" H 2250 5350 50  0001 C CNN "Description"
+F 5 "SL3401A-TP" H 2250 5350 50  0001 C CNN "MPN"
+F 6 "Micro Commercial Co" H 2250 5350 50  0001 C CNN "Manufacturer_Name"
+F 7 "DMP3125L-7" H 2250 5350 50  0001 C CNN "MPN(Secondary)"
+F 8 "Diodes Inc." H 2250 5350 50  0001 C CNN "Manufacturer(Secondary)"
 	1    2250 5350
 	0    -1   -1   0   
 $EndComp
@@ -952,85 +945,168 @@ Wire Wire Line
 Wire Wire Line
 	4050 4100 4900 4100
 Wire Wire Line
-	10100 5550 10200 5550
+	10100 4800 10200 4800
 Wire Wire Line
-	10000 5550 10100 5550
-Connection ~ 10000 5550
-Connection ~ 10100 5550
+	10000 4800 10100 4800
+Connection ~ 10000 4800
+Connection ~ 10100 4800
 Text GLabel 1500 4100 2    50   Input ~ 0
 TEENSY_VUSB
 $Comp
 L Device:R R?
 U 1 1 603A6799
-P 7700 5850
+P 9850 6000
 AR Path="/5E755787/603A6799" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/603A6799" Ref="R?"  Part="1" 
 AR Path="/5E7548ED/603A6799" Ref="R57"  Part="1" 
-F 0 "R57" H 7770 5896 50  0000 L CNN
-F 1 "11k" H 7770 5805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 7630 5850 50  0001 C CNN
-F 3 "~" H 7700 5850 50  0001 C CNN
-	1    7700 5850
+F 0 "R57" H 9920 6046 50  0000 L CNN
+F 1 "10K" H 9920 5955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9780 6000 50  0001 C CNN
+F 3 "~" H 9850 6000 50  0001 C CNN
+	1    9850 6000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 603A679F
-P 7700 6150
+P 9850 6300
 AR Path="/5E755787/603A679F" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/603A679F" Ref="R?"  Part="1" 
 AR Path="/5E7548ED/603A679F" Ref="R58"  Part="1" 
-F 0 "R58" H 7770 6196 50  0000 L CNN
-F 1 "11k" H 7770 6105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 7630 6150 50  0001 C CNN
-F 3 "~" H 7700 6150 50  0001 C CNN
-	1    7700 6150
+F 0 "R58" H 9920 6346 50  0000 L CNN
+F 1 "10K" H 9920 6255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9780 6300 50  0001 C CNN
+F 3 "~" H 9850 6300 50  0001 C CNN
+	1    9850 6300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7950 6000 7700 6000
-Text GLabel 7950 6000 2    50   Output ~ 0
+	10050 6150 9850 6150
+Text GLabel 10050 6150 2    50   Output ~ 0
 5V0_MON
 $Comp
 L power:GND #PWR0159
 U 1 1 603A67A7
-P 7700 6350
+P 9850 6500
 AR Path="/5E7548ED/603A67A7" Ref="#PWR0159"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/603A67A7" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0159" H 7700 6100 50  0001 C CNN
-F 1 "GND" H 7705 6175 50  0000 C CNN
-F 2 "" H 7700 6350 50  0001 C CNN
-F 3 "" H 7700 6350 50  0001 C CNN
-	1    7700 6350
+F 0 "#PWR0159" H 9850 6250 50  0001 C CNN
+F 1 "GND" H 9855 6325 50  0000 C CNN
+F 2 "" H 9850 6500 50  0001 C CNN
+F 3 "" H 9850 6500 50  0001 C CNN
+	1    9850 6500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 6300 7700 6350
-Connection ~ 7700 6000
-Text Notes 8000 6200 0    50   ~ 0
-1%
-Text Notes 8000 5900 0    50   ~ 0
-1%
-Text GLabel 7650 5600 0    50   Output ~ 0
+	9850 6450 9850 6500
+Connection ~ 9850 6150
+Text GLabel 9800 5750 0    50   Output ~ 0
 5V0
 Wire Wire Line
-	7650 5600 7700 5600
+	9800 5750 9850 5750
 Wire Wire Line
-	7700 5600 7700 5700
+	9850 5750 9850 5850
 Wire Wire Line
-	9150 6000 8900 6000
-Text GLabel 9150 6000 2    50   Output ~ 0
+	10050 5600 9800 5600
+Text GLabel 10050 5600 2    50   Output ~ 0
 3V3_MON
-Text GLabel 8900 6000 0    50   Output ~ 0
+Text GLabel 9800 5600 0    50   Output ~ 0
 3V3
-Wire Wire Line
-	9700 4800 9700 5550
-Wire Wire Line
-	9700 5550 10000 5550
 Wire Wire Line
 	5100 3150 5100 3000
 Wire Notes Line
 	5200 850  5200 4150
 Wire Notes Line
 	10350 850  10350 4150
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 61AFA726
+P 7700 5950
+AR Path="/5E755AC8/61AFA726" Ref="J?"  Part="1" 
+AR Path="/5E7548ED/61AFA726" Ref="J16"  Part="1" 
+F 0 "J16" H 7673 5881 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 7673 5974 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 7700 5950 50  0001 C CNN
+F 3 "~" H 7700 5950 50  0001 C CNN
+	1    7700 5950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 61AFA72C
+P 7700 6300
+AR Path="/5E755AC8/61AFA72C" Ref="J?"  Part="1" 
+AR Path="/5E7548ED/61AFA72C" Ref="J17"  Part="1" 
+F 0 "J17" H 7673 6231 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 7673 6324 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 7700 6300 50  0001 C CNN
+F 3 "~" H 7700 6300 50  0001 C CNN
+	1    7700 6300
+	-1   0    0    1   
+$EndComp
+Text Notes 7750 6450 0    50   ~ 0
+GND
+Text Notes 7750 6100 0    50   ~ 0
++
+Text Notes 7500 6400 0    50   ~ 0
+DNI
+Text Notes 7500 6050 0    50   ~ 0
+DNI
+Text Notes 7900 6250 0    50   ~ 0
+Optional: Thru hole radial lead Cap.\n2.5mm lead spacing, 6.3mm dia, 12.5mm tall
+Wire Wire Line
+	9400 4800 10000 4800
+Wire Wire Line
+	7100 5100 7500 5100
+Wire Wire Line
+	7500 5100 7500 5950
+Connection ~ 7100 5100
+$Comp
+L power:GND #PWR0107
+U 1 1 61B1D439
+P 7500 6450
+AR Path="/5E7548ED/61B1D439" Ref="#PWR0107"  Part="1" 
+AR Path="/5E755AC8/5D254AE8/61B1D439" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0107" H 7500 6200 50  0001 C CNN
+F 1 "GND" H 7505 6275 50  0000 C CNN
+F 2 "" H 7500 6450 50  0001 C CNN
+F 3 "" H 7500 6450 50  0001 C CNN
+	1    7500 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 6300 7500 6450
+Wire Wire Line
+	3550 5250 3850 5250
+$Comp
+L Device:R R?
+U 1 1 61B53BEC
+P 3850 5700
+AR Path="/5E755787/61B53BEC" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/61B53BEC" Ref="R?"  Part="1" 
+AR Path="/5E7548ED/61B53BEC" Ref="R16"  Part="1" 
+F 0 "R16" H 3920 5746 50  0000 L CNN
+F 1 "10K" H 3920 5655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3780 5700 50  0001 C CNN
+F 3 "~" H 3850 5700 50  0001 C CNN
+	1    3850 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61B53FD9
+P 3850 5400
+AR Path="/5E755787/61B53FD9" Ref="R?"  Part="1" 
+AR Path="/5E755AC8/5D2551FF/61B53FD9" Ref="R?"  Part="1" 
+AR Path="/5E7548ED/61B53FD9" Ref="R15"  Part="1" 
+F 0 "R15" H 3920 5446 50  0000 L CNN
+F 1 "10K" H 3920 5355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3780 5400 50  0001 C CNN
+F 3 "~" H 3850 5400 50  0001 C CNN
+	1    3850 5400
+	1    0    0    -1  
+$EndComp
+Connection ~ 3850 5250
+Wire Wire Line
+	3850 5250 4100 5250
 $EndSCHEMATC
