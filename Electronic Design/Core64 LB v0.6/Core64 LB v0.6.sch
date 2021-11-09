@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2021-11-05"
+Date "2021-11-08"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
@@ -72,6 +72,7 @@ F 0 "L1" H 1925 6897 50  0000 L CNN
 F 1 "Core_64_Logo" H 2050 6900 50  0000 L CNN
 F 2 "Core_Memory_8x8_Array:Core64_Logo" H 1900 6850 50  0001 C CNN
 F 3 "" H 1900 6850 50  0001 C CNN
+F 4 "No" H 1900 6850 50  0001 C CNN "Insert?"
 	1    1900 6850
 	1    0    0    -1  
 $EndComp
@@ -83,6 +84,7 @@ F 0 "L2" H 1975 7897 50  0000 L CNN
 F 1 "Core_64_Logo" H 2000 7800 50  0000 L CNN
 F 2 "Core_Memory_8x8_Array:Core64_Logo_9mm_tall" H 1950 7850 50  0001 C CNN
 F 3 "" H 1950 7850 50  0001 C CNN
+F 4 "No" H 1950 7850 50  0001 C CNN "Insert?"
 	1    1950 7850
 	1    0    0    -1  
 $EndComp
@@ -102,13 +104,15 @@ F 3 "" H 7700 5600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Teensy:Teensy3.2 U2
+L Teensy:Teensy3.2 U8
 U 1 1 5F49143E
 P 6650 4050
-F 0 "U2" H 6650 5648 60  0000 C CNN
+F 0 "U8" H 6650 5648 60  0000 C CNN
 F 1 "Teensy3.2" H 6650 5538 60  0000 C CNN
 F 2 "Teensy:Teensy30_31_32_LC_SMD_SOCKETS" H 6650 3250 60  0001 C CNN
 F 3 "" H 6650 3250 60  0000 C CNN
+F 4 "No" H 6650 4050 50  0001 C CNN "Insert?"
+F 5 "TEENSY 3.2" H 6650 4050 50  0001 C CNN "Description"
 	1    6650 4050
 	1    0    0    -1  
 $EndComp
@@ -345,11 +349,14 @@ U 1 1 5F73FDF3
 P 5450 2000
 AR Path="/5E755787/5F73FDF3" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5F73FDF3" Ref="R?"  Part="1" 
-AR Path="/5F73FDF3" Ref="R5"  Part="1" 
-F 0 "R5" H 5250 2100 50  0000 L CNN
+AR Path="/5F73FDF3" Ref="R47"  Part="1" 
+F 0 "R47" H 5250 2100 50  0000 L CNN
 F 1 "10k" H 5250 2000 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 5380 2000 50  0001 C CNN
 F 3 "~" H 5450 2000 50  0001 C CNN
+F 4 "RES 10K OHM" H 5450 2000 50  0001 C CNN "Description"
+F 5 "Yes" H 5450 2000 50  0001 C CNN "Insert?"
+F 6 "20%" H 5450 2000 50  0001 C CNN "Value_Modifier"
 	1    5450 2000
 	1    0    0    -1  
 $EndComp
@@ -378,11 +385,12 @@ U 1 1 5F7507F8
 P 5050 2200
 AR Path="/5E7548ED/5F7507F8" Ref="J?"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F7507F8" Ref="J?"  Part="1" 
-AR Path="/5F7507F8" Ref="J4"  Part="1" 
-F 0 "J4" H 5050 2300 50  0000 C CNN
+AR Path="/5F7507F8" Ref="J11"  Part="1" 
+F 0 "J11" H 5050 2300 50  0000 C CNN
 F 1 "PRG" H 5200 2200 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 5050 2200 50  0001 C CNN
 F 3 "~" H 5050 2200 50  0001 C CNN
+F 4 "No" H 5050 2200 50  0001 C CNN "Insert?"
 	1    5050 2200
 	-1   0    0    -1  
 $EndComp
@@ -394,6 +402,8 @@ F 0 "BT1" H 5200 6200 50  0000 L CNN
 F 1 "3V" H 5250 6100 50  0000 L CNN
 F 2 "Battery:BatteryHolder_MPD_BC2003_1x2032" V 5500 6160 50  0001 C CNN
 F 3 "~" V 5500 6160 50  0001 C CNN
+F 4 "No" H 5500 6100 50  0001 C CNN "Insert?"
+F 5 "Battery Cell Holder" H 5500 6100 50  0001 C CNN "Description"
 	1    5500 6100
 	1    0    0    -1  
 $EndComp
@@ -473,6 +483,7 @@ F 0 "J12" V 9400 2000 50  0000 R CNN
 F 1 "TEENSY Cur. Mon." V 9300 2000 50  0000 R CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 9400 2200 50  0001 C CNN
 F 3 "~" H 9400 2200 50  0001 C CNN
+F 4 "No" H 9400 2200 50  0001 C CNN "Insert?"
 	1    9400 2200
 	0    -1   -1   0   
 $EndComp
@@ -583,6 +594,7 @@ F 0 "L4" H 2300 7575 50  0001 C CNN
 F 1 "Logo_Open_Hardware_Small" H 2300 7075 50  0001 C CNN
 F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 2300 7300 50  0001 C CNN
 F 3 "~" H 2300 7300 50  0001 C CNN
+F 4 "No" H 2300 7300 50  0001 C CNN "Insert?"
 	1    2300 7300
 	1    0    0    -1  
 $EndComp
@@ -812,6 +824,7 @@ F 0 "JP8" H 2000 4611 50  0000 C CNN
 F 1 "SD CARD DETECT" H 2000 4518 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2000 4400 50  0001 C CNN
 F 3 "~" H 2000 4400 50  0001 C CNN
+F 4 "No" H 2000 4400 50  0001 C CNN "Insert?"
 	1    2000 4400
 	1    0    0    -1  
 $EndComp
@@ -833,12 +846,15 @@ U 1 1 61998E01
 P 1800 5150
 AR Path="/5E755787/61998E01" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/61998E01" Ref="R?"  Part="1" 
-AR Path="/61998E01" Ref="R60"  Part="1" 
+AR Path="/61998E01" Ref="R48"  Part="1" 
 AR Path="/5EA63449/61998E01" Ref="R?"  Part="1" 
-F 0 "R60" V 1900 5000 50  0000 L CNN
+F 0 "R48" V 1900 5000 50  0000 L CNN
 F 1 "68" V 1900 5200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 1730 5150 50  0001 C CNN
 F 3 "~" H 1800 5150 50  0001 C CNN
+F 4 "RES 68 OHM" H 1800 5150 50  0001 C CNN "Description"
+F 5 "10%" H 1800 5150 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 1800 5150 50  0001 C CNN "Insert?"
 	1    1800 5150
 	0    -1   -1   0   
 $EndComp
@@ -848,12 +864,15 @@ U 1 1 61998E07
 P 1800 5250
 AR Path="/5E755787/61998E07" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/61998E07" Ref="R?"  Part="1" 
-AR Path="/61998E07" Ref="R61"  Part="1" 
+AR Path="/61998E07" Ref="R49"  Part="1" 
 AR Path="/5EA63449/61998E07" Ref="R?"  Part="1" 
-F 0 "R61" V 1900 5250 50  0000 L CNN
+F 0 "R49" V 1900 5250 50  0000 L CNN
 F 1 "68" V 1900 5100 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 1730 5250 50  0001 C CNN
 F 3 "~" H 1800 5250 50  0001 C CNN
+F 4 "RES 68 OHM" H 1800 5250 50  0001 C CNN "Description"
+F 5 "10%" H 1800 5250 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 1800 5250 50  0001 C CNN "Insert?"
 	1    1800 5250
 	0    1    1    0   
 $EndComp
@@ -875,6 +894,7 @@ F 0 "JP15" H 2550 5800 50  0000 C CNN
 F 1 "5V0 MON" H 2950 5800 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2700 5750 50  0001 C CNN
 F 3 "~" H 2700 5750 50  0001 C CNN
+F 4 "No" H 2700 5750 50  0001 C CNN "Insert?"
 	1    2700 5750
 	1    0    0    -1  
 $EndComp
@@ -892,6 +912,7 @@ F 0 "JP14" H 2450 5950 50  0000 C CNN
 F 1 "3V3 MON" H 2850 5950 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2600 5900 50  0001 C CNN
 F 3 "~" H 2600 5900 50  0001 C CNN
+F 4 "No" H 2600 5900 50  0001 C CNN "Insert?"
 	1    2600 5900
 	1    0    0    -1  
 $EndComp
@@ -905,6 +926,7 @@ F 0 "JP13" H 2350 6100 50  0000 C CNN
 F 1 "RR0 MON" H 2800 6100 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2500 6050 50  0001 C CNN
 F 3 "~" H 2500 6050 50  0001 C CNN
+F 4 "No" H 2500 6050 50  0001 C CNN "Insert?"
 	1    2500 6050
 	1    0    0    -1  
 $EndComp
@@ -918,6 +940,7 @@ F 0 "JP16" H 9700 3250 50  0000 C CNN
 F 1 "LR0 MON" H 10100 3250 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 3200 50  0001 C CNN
 F 3 "~" H 9850 3200 50  0001 C CNN
+F 4 "No" H 9850 3200 50  0001 C CNN "Insert?"
 	1    9850 3200
 	1    0    0    -1  
 $EndComp
@@ -931,6 +954,7 @@ F 0 "JP17" H 9700 4650 50  0000 C CNN
 F 1 "BC0 MON" H 10100 4650 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 4600 50  0001 C CNN
 F 3 "~" H 9850 4600 50  0001 C CNN
+F 4 "No" H 9850 4600 50  0001 C CNN "Insert?"
 	1    9850 4600
 	1    0    0    -1  
 $EndComp
@@ -944,6 +968,7 @@ F 0 "JP18" H 9700 4950 50  0000 C CNN
 F 1 "TC0 MON" H 10100 4950 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 4900 50  0001 C CNN
 F 3 "~" H 9850 4900 50  0001 C CNN
+F 4 "No" H 9850 4900 50  0001 C CNN "Insert?"
 	1    9850 4900
 	1    0    0    -1  
 $EndComp

@@ -94,13 +94,16 @@ $EndComp
 Wire Wire Line
 	3550 1400 3650 1400
 $Comp
-L Device:R R19
+L Device:R R5
 U 1 1 5D3EAB23
 P 3400 1400
-F 0 "R19" V 3193 1400 50  0000 C CNN
+F 0 "R5" V 3193 1400 50  0000 C CNN
 F 1 "470" V 3284 1400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3330 1400 50  0001 C CNN
 F 3 "~" H 3400 1400 50  0001 C CNN
+F 4 "RES 470 OHM" H 3400 1400 50  0001 C CNN "Description"
+F 5 "10%" H 3400 1400 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 3400 1400 50  0001 C CNN "Insert?"
 	1    3400 1400
 	0    1    1    0   
 $EndComp
@@ -119,10 +122,10 @@ XT2,6
 Text GLabel 8950 1750 0    50   Output ~ 0
 XT3,7
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q4
+L Digikey-Transistors:MMBT4403LT1G Q5
 U 1 1 5D3EAB8E
 P 3850 1400
-F 0 "Q4" H 4038 1453 60  0000 L CNN
+F 0 "Q5" H 4038 1453 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 4038 1347 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 4050 1600 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 4050 1700 60  0001 L CNN
@@ -138,6 +141,7 @@ F 12 "Active" H 4050 2600 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 3850 1400 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 3850 1400 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 3850 1400 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 3850 1400 50  0001 C CNN "Insert?"
 	1    3850 1400
 	1    0    0    -1  
 $EndComp
@@ -149,14 +153,17 @@ F 0 "R21" V 3443 1750 50  0000 C CNN
 F 1 "6R8-5%" V 3534 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3580 1750 50  0001 C CNN
 F 3 "~" H 3650 1750 50  0001 C CNN
+F 4 "RES 6.8 OHM 1/8W 0805" H 3650 1750 50  0001 C CNN "Description"
+F 5 "5%" H 3650 1750 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 3650 1750 50  0001 C CNN "Insert?"
 	1    3650 1750
 	0    1    1    0   
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q5
+L Digikey-Transistors:MMBT4401LT1G Q6
 U 1 1 5D3EAB7F
 P 3850 2100
-F 0 "Q5" H 4038 2153 60  0000 L CNN
+F 0 "Q6" H 4038 2153 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 4038 2047 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 4050 2300 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4050 2400 60  0001 L CNN
@@ -172,6 +179,7 @@ F 12 "Active" H 4050 3300 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 3850 2100 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 3850 2100 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 3850 2100 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 3850 2100 50  0001 C CNN "Insert?"
 	1    3850 2100
 	1    0    0    -1  
 $EndComp
@@ -180,13 +188,16 @@ Q3N
 Wire Wire Line
 	3200 2100 3250 2100
 $Comp
-L Device:R R20
+L Device:R R6
 U 1 1 5D3EAB1C
 P 3400 2100
-F 0 "R20" V 3193 2100 50  0000 C CNN
+F 0 "R6" V 3193 2100 50  0000 C CNN
 F 1 "470" V 3284 2100 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3330 2100 50  0001 C CNN
 F 3 "~" H 3400 2100 50  0001 C CNN
+F 4 "RES 470 OHM" H 3400 2100 50  0001 C CNN "Description"
+F 5 "10%" H 3400 2100 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 3400 2100 50  0001 C CNN "Insert?"
 	1    3400 2100
 	0    1    1    0   
 $EndComp
@@ -220,10 +231,10 @@ Wire Wire Line
 Wire Wire Line
 	2900 4200 2900 5000
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q6
+L Digikey-Transistors:MMBT4403LT1G Q3
 U 1 1 5D5BD2C4
 P 4200 4200
-F 0 "Q6" H 4388 4253 60  0000 L CNN
+F 0 "Q3" H 4388 4253 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 4388 4147 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 4400 4400 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 4400 4500 60  0001 L CNN
@@ -239,14 +250,15 @@ F 12 "Active" H 4400 5400 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 4200 4200 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 4200 4200 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 4200 4200 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 4200 4200 50  0001 C CNN "Insert?"
 	1    4200 4200
 	1    0    0    -1  
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q7
+L Digikey-Transistors:MMBT4401LT1G Q4
 U 1 1 5D5BD2D3
 P 4200 5700
-F 0 "Q7" H 4388 5753 60  0000 L CNN
+F 0 "Q4" H 4388 5753 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 4388 5647 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 4400 5900 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 4400 6000 60  0001 L CNN
@@ -262,6 +274,7 @@ F 12 "Active" H 4400 6900 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 4200 5700 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 4200 5700 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 4200 5700 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 4200 5700 50  0001 C CNN "Insert?"
 	1    4200 5700
 	1    0    0    -1  
 $EndComp
@@ -301,26 +314,32 @@ Wire Wire Line
 Wire Wire Line
 	3500 4200 3550 4200
 $Comp
-L Device:R R22
+L Device:R R3
 U 1 1 5D5BD310
 P 3700 4200
-F 0 "R22" V 3493 4200 50  0000 C CNN
+F 0 "R3" V 3493 4200 50  0000 C CNN
 F 1 "470" V 3584 4200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3630 4200 50  0001 C CNN
 F 3 "~" H 3700 4200 50  0001 C CNN
+F 4 "RES 470 OHM" H 3700 4200 50  0001 C CNN "Description"
+F 5 "10%" H 3700 4200 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 3700 4200 50  0001 C CNN "Insert?"
 	1    3700 4200
 	0    1    1    0   
 $EndComp
 Wire Wire Line
 	3850 4200 4000 4200
 $Comp
-L Device:R R23
+L Device:R R4
 U 1 1 5D5BD317
 P 3700 5700
-F 0 "R23" V 3493 5700 50  0000 C CNN
+F 0 "R4" V 3493 5700 50  0000 C CNN
 F 1 "470" V 3584 5700 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3630 5700 50  0001 C CNN
 F 3 "~" H 3700 5700 50  0001 C CNN
+F 4 "RES 470 OHM" H 3700 5700 50  0001 C CNN "Description"
+F 5 "10%" H 3700 5700 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 3700 5700 50  0001 C CNN "Insert?"
 	1    3700 5700
 	0    1    1    0   
 $EndComp
@@ -389,13 +408,16 @@ $EndComp
 Wire Wire Line
 	5450 1400 5550 1400
 $Comp
-L Device:R R24
+L Device:R R7
 U 1 1 5D5FAA99
 P 5300 1400
-F 0 "R24" V 5093 1400 50  0000 C CNN
+F 0 "R7" V 5093 1400 50  0000 C CNN
 F 1 "470" V 5184 1400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 5230 1400 50  0001 C CNN
 F 3 "~" H 5300 1400 50  0001 C CNN
+F 4 "RES 470 OHM" H 5300 1400 50  0001 C CNN "Description"
+F 5 "10%" H 5300 1400 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 5300 1400 50  0001 C CNN "Insert?"
 	1    5300 1400
 	0    1    1    0   
 $EndComp
@@ -406,13 +428,16 @@ Q4P
 Wire Wire Line
 	5850 1150 5850 1200
 $Comp
-L Device:R R26
+L Device:R R22
 U 1 1 5D5FAAB1
 P 5550 1750
-F 0 "R26" V 5343 1750 50  0000 C CNN
+F 0 "R22" V 5343 1750 50  0000 C CNN
 F 1 "6R8-5%" V 5434 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 5480 1750 50  0001 C CNN
 F 3 "~" H 5550 1750 50  0001 C CNN
+F 4 "RES 6.8 OHM 1/8W 0805" H 5550 1750 50  0001 C CNN "Description"
+F 5 "5%" H 5550 1750 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 5550 1750 50  0001 C CNN "Insert?"
 	1    5550 1750
 	0    -1   1    0   
 $EndComp
@@ -421,13 +446,16 @@ Q4N
 Wire Wire Line
 	5100 2100 5150 2100
 $Comp
-L Device:R R25
+L Device:R R8
 U 1 1 5D5FAAC8
 P 5300 2100
-F 0 "R25" V 5093 2100 50  0000 C CNN
+F 0 "R8" V 5093 2100 50  0000 C CNN
 F 1 "470" V 5184 2100 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 5230 2100 50  0001 C CNN
 F 3 "~" H 5300 2100 50  0001 C CNN
+F 4 "RES 470 OHM" H 5300 2100 50  0001 C CNN "Description"
+F 5 "10%" H 5300 2100 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 5300 2100 50  0001 C CNN "Insert?"
 	1    5300 2100
 	0    1    1    0   
 $EndComp
@@ -465,13 +493,16 @@ $EndComp
 Wire Wire Line
 	7350 1400 7450 1400
 $Comp
-L Device:R R29
+L Device:R R9
 U 1 1 5D634364
 P 7200 1400
-F 0 "R29" V 6993 1400 50  0000 C CNN
+F 0 "R9" V 6993 1400 50  0000 C CNN
 F 1 "470" V 7084 1400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7130 1400 50  0001 C CNN
 F 3 "~" H 7200 1400 50  0001 C CNN
+F 4 "RES 470 OHM" H 7200 1400 50  0001 C CNN "Description"
+F 5 "10%" H 7200 1400 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7200 1400 50  0001 C CNN "Insert?"
 	1    7200 1400
 	0    1    1    0   
 $EndComp
@@ -482,10 +513,10 @@ Q5P
 Wire Wire Line
 	7750 1150 7750 1200
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q15
+L Digikey-Transistors:MMBT4403LT1G Q9
 U 1 1 5D634376
 P 7650 1400
-F 0 "Q15" H 7838 1453 60  0000 L CNN
+F 0 "Q9" H 7838 1453 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 7838 1347 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 7850 1600 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 7850 1700 60  0001 L CNN
@@ -501,14 +532,15 @@ F 12 "Active" H 7850 2600 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 7650 1400 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 7650 1400 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 7650 1400 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 7650 1400 50  0001 C CNN "Insert?"
 	1    7650 1400
 	1    0    0    -1  
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q16
+L Digikey-Transistors:MMBT4401LT1G Q10
 U 1 1 5D63438B
 P 7650 2100
-F 0 "Q16" H 7838 2153 60  0000 L CNN
+F 0 "Q10" H 7838 2153 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 7838 2047 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 7850 2300 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7850 2400 60  0001 L CNN
@@ -524,6 +556,7 @@ F 12 "Active" H 7850 3300 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 7650 2100 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 7650 2100 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 7650 2100 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 7650 2100 50  0001 C CNN "Insert?"
 	1    7650 2100
 	1    0    0    -1  
 $EndComp
@@ -532,13 +565,16 @@ Q5N
 Wire Wire Line
 	7000 2100 7050 2100
 $Comp
-L Device:R R30
+L Device:R R10
 U 1 1 5D634393
 P 7200 2100
-F 0 "R30" V 6993 2100 50  0000 C CNN
+F 0 "R10" V 6993 2100 50  0000 C CNN
 F 1 "470" V 7084 2100 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7130 2100 50  0001 C CNN
 F 3 "~" H 7200 2100 50  0001 C CNN
+F 4 "RES 470 OHM" H 7200 2100 50  0001 C CNN "Description"
+F 5 "10%" H 7200 2100 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7200 2100 50  0001 C CNN "Insert?"
 	1    7200 2100
 	0    1    1    0   
 $EndComp
@@ -576,13 +612,16 @@ $EndComp
 Wire Wire Line
 	9250 1400 9350 1400
 $Comp
-L Device:R R36
+L Device:R R11
 U 1 1 5D6343AB
 P 9100 1400
-F 0 "R36" V 8893 1400 50  0000 C CNN
+F 0 "R11" V 8893 1400 50  0000 C CNN
 F 1 "470" V 8984 1400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9030 1400 50  0001 C CNN
 F 3 "~" H 9100 1400 50  0001 C CNN
+F 4 "RES 470 OHM" H 9100 1400 50  0001 C CNN "Description"
+F 5 "10%" H 9100 1400 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9100 1400 50  0001 C CNN "Insert?"
 	1    9100 1400
 	0    1    1    0   
 $EndComp
@@ -593,10 +632,10 @@ Q6P
 Wire Wire Line
 	9650 1150 9650 1200
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q21
+L Digikey-Transistors:MMBT4403LT1G Q11
 U 1 1 5D6343BD
 P 9550 1400
-F 0 "Q21" H 9738 1453 60  0000 L CNN
+F 0 "Q11" H 9738 1453 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 9738 1347 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 9750 1600 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 9750 1700 60  0001 L CNN
@@ -612,25 +651,29 @@ F 12 "Active" H 9750 2600 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 9550 1400 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 9550 1400 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 9550 1400 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 9550 1400 50  0001 C CNN "Insert?"
 	1    9550 1400
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R38
+L Device:R R24
 U 1 1 5D6343C3
 P 9350 1750
-F 0 "R38" V 9143 1750 50  0000 C CNN
+F 0 "R24" V 9143 1750 50  0000 C CNN
 F 1 "6R8-5%" V 9234 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9280 1750 50  0001 C CNN
 F 3 "~" H 9350 1750 50  0001 C CNN
+F 4 "RES 6.8 OHM 1/8W 0805" H 9350 1750 50  0001 C CNN "Description"
+F 5 "5%" H 9350 1750 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9350 1750 50  0001 C CNN "Insert?"
 	1    9350 1750
 	0    -1   1    0   
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q22
+L Digikey-Transistors:MMBT4401LT1G Q12
 U 1 1 5D6343D2
 P 9550 2100
-F 0 "Q22" H 9738 2153 60  0000 L CNN
+F 0 "Q12" H 9738 2153 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 9738 2047 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 9750 2300 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9750 2400 60  0001 L CNN
@@ -646,6 +689,7 @@ F 12 "Active" H 9750 3300 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 9550 2100 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 9550 2100 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 9550 2100 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 9550 2100 50  0001 C CNN "Insert?"
 	1    9550 2100
 	1    0    0    -1  
 $EndComp
@@ -654,13 +698,16 @@ Q6N
 Wire Wire Line
 	8900 2100 8950 2100
 $Comp
-L Device:R R37
+L Device:R R12
 U 1 1 5D6343DA
 P 9100 2100
-F 0 "R37" V 8893 2100 50  0000 C CNN
+F 0 "R12" V 8893 2100 50  0000 C CNN
 F 1 "470" V 8984 2100 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9030 2100 50  0001 C CNN
 F 3 "~" H 9100 2100 50  0001 C CNN
+F 4 "RES 470 OHM" H 9100 2100 50  0001 C CNN "Description"
+F 5 "10%" H 9100 2100 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9100 2100 50  0001 C CNN "Insert?"
 	1    9100 2100
 	0    1    1    0   
 $EndComp
@@ -686,13 +733,16 @@ Wire Wire Line
 Wire Wire Line
 	7300 1750 7050 1750
 $Comp
-L Device:R R31
+L Device:R R23
 U 1 1 5D63437C
 P 7450 1750
-F 0 "R31" V 7243 1750 50  0000 C CNN
+F 0 "R23" V 7243 1750 50  0000 C CNN
 F 1 "6R8-5%" V 7334 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7380 1750 50  0001 C CNN
 F 3 "~" H 7450 1750 50  0001 C CNN
+F 4 "RES 6.8 OHM 1/8W 0805" H 7450 1750 50  0001 C CNN "Description"
+F 5 "5%" H 7450 1750 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7450 1750 50  0001 C CNN "Insert?"
 	1    7450 1750
 	0    -1   1    0   
 $EndComp
@@ -707,10 +757,10 @@ Wire Wire Line
 	9650 1600 9650 1750
 Connection ~ 9650 1750
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q17
+L Digikey-Transistors:MMBT4403LT1G Q13
 U 1 1 5D4AA6A4
 P 9500 2900
-F 0 "Q17" H 9688 2953 60  0000 L CNN
+F 0 "Q13" H 9688 2953 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 9688 2847 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 9700 3100 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 9700 3200 60  0001 L CNN
@@ -726,14 +776,15 @@ F 12 "Active" H 9700 4100 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 9500 2900 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 9500 2900 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 9500 2900 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 9500 2900 50  0001 C CNN "Insert?"
 	1    9500 2900
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q18
+L Digikey-Transistors:MMBT4401LT1G Q14
 U 1 1 5D4AA6B3
 P 9500 4150
-F 0 "Q18" H 9688 4203 60  0000 L CNN
+F 0 "Q14" H 9688 4203 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 9688 4097 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 9700 4350 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9700 4450 60  0001 L CNN
@@ -749,6 +800,7 @@ F 12 "Active" H 9700 5350 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 9500 4150 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 9500 4150 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 9500 4150 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 9500 4150 50  0001 C CNN "Insert?"
 	1    9500 4150
 	-1   0    0    -1  
 $EndComp
@@ -765,26 +817,32 @@ Wire Wire Line
 Wire Wire Line
 	10100 2900 10050 2900
 $Comp
-L Device:R R39
+L Device:R R13
 U 1 1 5D4AA6F0
 P 9900 2900
-F 0 "R39" V 9693 2900 50  0000 C CNN
+F 0 "R13" V 9693 2900 50  0000 C CNN
 F 1 "470" V 9784 2900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9830 2900 50  0001 C CNN
 F 3 "~" H 9900 2900 50  0001 C CNN
+F 4 "RES 470 OHM" H 9900 2900 50  0001 C CNN "Description"
+F 5 "10%" H 9900 2900 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9900 2900 50  0001 C CNN "Insert?"
 	1    9900 2900
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	9750 2900 9700 2900
 $Comp
-L Device:R R40
+L Device:R R14
 U 1 1 5D4AA6F7
 P 9900 4150
-F 0 "R40" V 9693 4150 50  0000 C CNN
+F 0 "R14" V 9693 4150 50  0000 C CNN
 F 1 "470" V 9784 4150 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9830 4150 50  0001 C CNN
 F 3 "~" H 9900 4150 50  0001 C CNN
+F 4 "RES 470 OHM" H 9900 4150 50  0001 C CNN "Description"
+F 5 "10%" H 9900 4150 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9900 4150 50  0001 C CNN "Insert?"
 	1    9900 4150
 	0    -1   1    0   
 $EndComp
@@ -837,10 +895,10 @@ YL0
 Text GLabel 6050 3050 0    50   Output ~ 0
 YL1
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q19
+L Digikey-Transistors:MMBT4403LT1G Q15
 U 1 1 5D5F2D8A
 P 9500 5050
-F 0 "Q19" H 9688 5103 60  0000 L CNN
+F 0 "Q15" H 9688 5103 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 9688 4997 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 9700 5250 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 9700 5350 60  0001 L CNN
@@ -856,14 +914,15 @@ F 12 "Active" H 9700 6250 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 9500 5050 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 9500 5050 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 9500 5050 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 9500 5050 50  0001 C CNN "Insert?"
 	1    9500 5050
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q20
+L Digikey-Transistors:MMBT4401LT1G Q16
 U 1 1 5D5F2D99
 P 9500 6300
-F 0 "Q20" H 9688 6353 60  0000 L CNN
+F 0 "Q16" H 9688 6353 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 9688 6247 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 9700 6500 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 9700 6600 60  0001 L CNN
@@ -879,6 +938,7 @@ F 12 "Active" H 9700 7500 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 9500 6300 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 9500 6300 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 9500 6300 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 9500 6300 50  0001 C CNN "Insert?"
 	1    9500 6300
 	-1   0    0    -1  
 $EndComp
@@ -895,26 +955,32 @@ Wire Wire Line
 Wire Wire Line
 	10100 5050 10050 5050
 $Comp
-L Device:R R41
+L Device:R R15
 U 1 1 5D5F2DB3
 P 9900 5050
-F 0 "R41" V 9693 5050 50  0000 C CNN
+F 0 "R15" V 9693 5050 50  0000 C CNN
 F 1 "470" V 9784 5050 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9830 5050 50  0001 C CNN
 F 3 "~" H 9900 5050 50  0001 C CNN
+F 4 "RES 470 OHM" H 9900 5050 50  0001 C CNN "Description"
+F 5 "10%" H 9900 5050 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9900 5050 50  0001 C CNN "Insert?"
 	1    9900 5050
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	9750 5050 9700 5050
 $Comp
-L Device:R R42
+L Device:R R16
 U 1 1 5D5F2DBA
 P 9900 6300
-F 0 "R42" V 9693 6300 50  0000 C CNN
+F 0 "R16" V 9693 6300 50  0000 C CNN
 F 1 "470" V 9784 6300 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 9830 6300 50  0001 C CNN
 F 3 "~" H 9900 6300 50  0001 C CNN
+F 4 "RES 470 OHM" H 9900 6300 50  0001 C CNN "Description"
+F 5 "10%" H 9900 6300 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 9900 6300 50  0001 C CNN "Insert?"
 	1    9900 6300
 	0    -1   1    0   
 $EndComp
@@ -964,13 +1030,16 @@ $EndComp
 Wire Wire Line
 	7600 4000 7500 4000
 $Comp
-L Device:R R34
+L Device:R R17
 U 1 1 5D6B8231
 P 7750 4000
-F 0 "R34" V 7543 4000 50  0000 C CNN
+F 0 "R17" V 7543 4000 50  0000 C CNN
 F 1 "470" V 7634 4000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7680 4000 50  0001 C CNN
 F 3 "~" H 7750 4000 50  0001 C CNN
+F 4 "RES 470 OHM" H 7750 4000 50  0001 C CNN "Description"
+F 5 "10%" H 7750 4000 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7750 4000 50  0001 C CNN "Insert?"
 	1    7750 4000
 	0    -1   1    0   
 $EndComp
@@ -981,10 +1050,10 @@ Q9P
 Wire Wire Line
 	7200 3750 7200 3800
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q11
+L Digikey-Transistors:MMBT4403LT1G Q17
 U 1 1 5D6B8243
 P 7300 4000
-F 0 "Q11" H 7488 4053 60  0000 L CNN
+F 0 "Q17" H 7488 4053 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 7488 3947 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 7500 4200 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 7500 4300 60  0001 L CNN
@@ -1000,25 +1069,29 @@ F 12 "Active" H 7500 5200 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 7300 4000 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 7300 4000 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 7300 4000 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 7300 4000 50  0001 C CNN "Insert?"
 	1    7300 4000
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:R R28
+L Device:R R25
 U 1 1 5D6B8249
 P 6900 4350
-F 0 "R28" V 6800 4350 50  0000 C CNN
+F 0 "R25" V 6800 4350 50  0000 C CNN
 F 1 "6R8-5%" V 7000 4350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 4350 50  0001 C CNN
 F 3 "~" H 6900 4350 50  0001 C CNN
+F 4 "RES 6.8 OHM 1/8W 0805" H 6900 4350 50  0001 C CNN "Description"
+F 5 "5%" H 6900 4350 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 6900 4350 50  0001 C CNN "Insert?"
 	1    6900 4350
 	0    -1   1    0   
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q12
+L Digikey-Transistors:MMBT4401LT1G Q18
 U 1 1 5D6B8258
 P 7300 4650
-F 0 "Q12" H 7488 4703 60  0000 L CNN
+F 0 "Q18" H 7488 4703 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 7488 4597 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 7500 4850 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7500 4950 60  0001 L CNN
@@ -1034,6 +1107,7 @@ F 12 "Active" H 7500 5850 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 7300 4650 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 7300 4650 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 7300 4650 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 7300 4650 50  0001 C CNN "Insert?"
 	1    7300 4650
 	-1   0    0    -1  
 $EndComp
@@ -1042,13 +1116,16 @@ Q9N
 Wire Wire Line
 	7950 4650 7900 4650
 $Comp
-L Device:R R35
+L Device:R R18
 U 1 1 5D6B8260
 P 7750 4650
-F 0 "R35" V 7850 4650 50  0000 C CNN
+F 0 "R18" V 7850 4650 50  0000 C CNN
 F 1 "470" V 7950 4650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7680 4650 50  0001 C CNN
 F 3 "~" H 7750 4650 50  0001 C CNN
+F 4 "RES 470 OHM" H 7750 4650 50  0001 C CNN "Description"
+F 5 "10%" H 7750 4650 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7750 4650 50  0001 C CNN "Insert?"
 	1    7750 4650
 	0    -1   1    0   
 $EndComp
@@ -1109,13 +1186,16 @@ $EndComp
 Wire Wire Line
 	7550 5650 7500 5650
 $Comp
-L Device:R R32
+L Device:R R19
 U 1 1 5D87AEA3
 P 7700 5650
-F 0 "R32" V 7493 5650 50  0000 C CNN
+F 0 "R19" V 7493 5650 50  0000 C CNN
 F 1 "470" V 7584 5650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7630 5650 50  0001 C CNN
 F 3 "~" H 7700 5650 50  0001 C CNN
+F 4 "RES 470 OHM" H 7700 5650 50  0001 C CNN "Description"
+F 5 "10%" H 7700 5650 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7700 5650 50  0001 C CNN "Insert?"
 	1    7700 5650
 	0    -1   1    0   
 $EndComp
@@ -1126,10 +1206,10 @@ Q10P
 Wire Wire Line
 	7200 5400 7200 5450
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q13
+L Digikey-Transistors:MMBT4403LT1G Q19
 U 1 1 5D87AEB5
 P 7300 5650
-F 0 "Q13" H 7488 5703 60  0000 L CNN
+F 0 "Q19" H 7488 5703 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 7488 5597 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 7500 5850 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 7500 5950 60  0001 L CNN
@@ -1145,25 +1225,29 @@ F 12 "Active" H 7500 6850 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 7300 5650 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 7300 5650 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 7300 5650 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 7300 5650 50  0001 C CNN "Insert?"
 	1    7300 5650
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:R R27
+L Device:R R26
 U 1 1 5D87AEBB
 P 6850 6000
-F 0 "R27" V 6750 6000 50  0000 C CNN
+F 0 "R26" V 6750 6000 50  0000 C CNN
 F 1 "6R8-5%" V 6950 6000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6780 6000 50  0001 C CNN
 F 3 "~" H 6850 6000 50  0001 C CNN
+F 4 "RES 6.8 OHM 1/8W 0805" H 6850 6000 50  0001 C CNN "Description"
+F 5 "5%" H 6850 6000 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 6850 6000 50  0001 C CNN "Insert?"
 	1    6850 6000
 	0    -1   1    0   
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q14
+L Digikey-Transistors:MMBT4401LT1G Q20
 U 1 1 5D87AECA
 P 7300 6300
-F 0 "Q14" H 7488 6353 60  0000 L CNN
+F 0 "Q20" H 7488 6353 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 7488 6247 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 7500 6500 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 7500 6600 60  0001 L CNN
@@ -1179,6 +1263,7 @@ F 12 "Active" H 7500 7500 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 7300 6300 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 7300 6300 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 7300 6300 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 7300 6300 50  0001 C CNN "Insert?"
 	1    7300 6300
 	-1   0    0    -1  
 $EndComp
@@ -1187,13 +1272,16 @@ Q10N
 Wire Wire Line
 	7900 6300 7850 6300
 $Comp
-L Device:R R33
+L Device:R R20
 U 1 1 5D87AED2
 P 7700 6300
-F 0 "R33" V 7800 6300 50  0000 C CNN
+F 0 "R20" V 7800 6300 50  0000 C CNN
 F 1 "470" V 7900 6300 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 7630 6300 50  0001 C CNN
 F 3 "~" H 7700 6300 50  0001 C CNN
+F 4 "RES 470 OHM" H 7700 6300 50  0001 C CNN "Description"
+F 5 "10%" H 7700 6300 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 7700 6300 50  0001 C CNN "Insert?"
 	1    7700 6300
 	0    -1   1    0   
 $EndComp
@@ -1226,32 +1314,38 @@ Wire Wire Line
 Wire Wire Line
 	6050 3450 6350 3450
 $Comp
-L Device:R R17
+L Device:R R1
 U 1 1 5D48D653
 P 1100 4200
-F 0 "R17" V 893 4200 50  0000 C CNN
+F 0 "R1" V 893 4200 50  0000 C CNN
 F 1 "470" V 984 4200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 1030 4200 50  0001 C CNN
 F 3 "~" H 1100 4200 50  0001 C CNN
+F 4 "RES 470 OHM" H 1100 4200 50  0001 C CNN "Description"
+F 5 "10%" H 1100 4200 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 1100 4200 50  0001 C CNN "Insert?"
 	1    1100 4200
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R18
+L Device:R R2
 U 1 1 5D48DBED
 P 1100 5700
-F 0 "R18" V 893 5700 50  0000 C CNN
+F 0 "R2" V 893 5700 50  0000 C CNN
 F 1 "470" V 984 5700 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 1030 5700 50  0001 C CNN
 F 3 "~" H 1100 5700 50  0001 C CNN
+F 4 "RES 470 OHM" H 1100 5700 50  0001 C CNN "Description"
+F 5 "10%" H 1100 5700 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 1100 5700 50  0001 C CNN "Insert?"
 	1    1100 5700
 	0    1    1    0   
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q2
+L Digikey-Transistors:MMBT4403LT1G Q1
 U 1 1 5D49119D
 P 1600 4200
-F 0 "Q2" H 1788 4253 60  0000 L CNN
+F 0 "Q1" H 1788 4253 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 1788 4147 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 1800 4400 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 1800 4500 60  0001 L CNN
@@ -1267,14 +1361,15 @@ F 12 "Active" H 1800 5400 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 1600 4200 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 1600 4200 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 1600 4200 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 1600 4200 50  0001 C CNN "Insert?"
 	1    1600 4200
 	1    0    0    -1  
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q3
+L Digikey-Transistors:MMBT4401LT1G Q2
 U 1 1 5D4976F4
 P 1600 5700
-F 0 "Q3" H 1788 5753 60  0000 L CNN
+F 0 "Q2" H 1788 5753 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 1788 5647 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 1800 5900 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 1800 6000 60  0001 L CNN
@@ -1290,6 +1385,7 @@ F 12 "Active" H 1800 6900 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 1600 5700 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 1600 5700 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 1600 5700 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 1600 5700 50  0001 C CNN "Insert?"
 	1    1600 5700
 	1    0    0    -1  
 $EndComp
@@ -1304,6 +1400,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 1080 475
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 1200 4750 50  0001 C CNN "Description"
 F 5 "BAT54AW-7-F" H 1200 4750 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 1200 4750 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 1200 4750 50  0001 C CNN "Insert?"
 	1    1200 4750
 	-1   0    0    1   
 $EndComp
@@ -1318,6 +1415,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 1120 525
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 1200 5250 50  0001 C CNN "Description"
 F 5 "BAT54CW-7-F" H 1200 5250 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 1200 5250 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 1200 5250 50  0001 C CNN "Insert?"
 	1    1200 5250
 	1    0    0    -1  
 $EndComp
@@ -1332,6 +1430,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 2280 475
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 2400 4750 50  0001 C CNN "Description"
 F 5 "BAT54AW-7-F" H 2400 4750 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 2400 4750 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 2400 4750 50  0001 C CNN "Insert?"
 	1    2400 4750
 	-1   0    0    1   
 $EndComp
@@ -1350,6 +1449,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 2320 525
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 2400 5250 50  0001 C CNN "Description"
 F 5 "BAT54CW-7-F" H 2400 5250 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 2400 5250 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 2400 5250 50  0001 C CNN "Insert?"
 	1    2400 5250
 	1    0    0    -1  
 $EndComp
@@ -1364,6 +1464,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 3680 475
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 3800 4750 50  0001 C CNN "Description"
 F 5 "BAT54AW-7-F" H 3800 4750 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 3800 4750 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 3800 4750 50  0001 C CNN "Insert?"
 	1    3800 4750
 	-1   0    0    1   
 $EndComp
@@ -1378,6 +1479,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 4880 475
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 5000 4750 50  0001 C CNN "Description"
 F 5 "BAT54AW-7-F" H 5000 4750 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 5000 4750 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 5000 4750 50  0001 C CNN "Insert?"
 	1    5000 4750
 	-1   0    0    1   
 $EndComp
@@ -1392,6 +1494,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 4920 525
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 5000 5250 50  0001 C CNN "Description"
 F 5 "BAT54CW-7-F" H 5000 5250 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 5000 5250 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 5000 5250 50  0001 C CNN "Insert?"
 	1    5000 5250
 	1    0    0    -1  
 $EndComp
@@ -1406,6 +1509,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 3720 525
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 3800 5250 50  0001 C CNN "Description"
 F 5 "BAT54CW-7-F" H 3800 5250 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 3800 5250 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 3800 5250 50  0001 C CNN "Insert?"
 	1    3800 5250
 	1    0    0    -1  
 $EndComp
@@ -1420,6 +1524,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9280 550
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 9400 5500 50  0001 C CNN "Description"
 F 5 "BAT54AW-7-F" H 9400 5500 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 9400 5500 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 9400 5500 50  0001 C CNN "Insert?"
 	1    9400 5500
 	-1   0    0    1   
 $EndComp
@@ -1434,6 +1539,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 590
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 9400 5900 50  0001 C CNN "Description"
 F 5 "BAT54CW-7-F" H 9400 5900 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 9400 5900 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 9400 5900 50  0001 C CNN "Insert?"
 	1    9400 5900
 	1    0    0    -1  
 $EndComp
@@ -1448,6 +1554,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9280 335
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 9400 3350 50  0001 C CNN "Description"
 F 5 "BAT54AW-7-F" H 9400 3350 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 9400 3350 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 9400 3350 50  0001 C CNN "Insert?"
 	1    9400 3350
 	-1   0    0    1   
 $EndComp
@@ -1462,6 +1569,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf" H 9320 375
 F 4 "DIODE ARRAY SCHOTTKY 30V " H 9400 3750 50  0001 C CNN "Description"
 F 5 "BAT54CW-7-F" H 9400 3750 50  0001 C CNN "MPN"
 F 6 "Diodes Inc." H 9400 3750 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 9400 3750 50  0001 C CNN "Insert?"
 	1    9400 3750
 	1    0    0    -1  
 $EndComp
@@ -1690,6 +1798,7 @@ F 0 "J2" H 2050 3150 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 2400 3050 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 2850 2000 50  0001 C CNN
 F 3 "~" H 2850 2000 50  0001 C CNN
+F 4 "No" H 2850 2000 50  0001 C CNN "Insert?"
 	1    2850 2000
 	1    0    0    -1  
 $EndComp
@@ -1701,6 +1810,7 @@ F 0 "J1" H 550 3150 50  0000 C CNN
 F 1 "SSW-116-22-F-S-VS‎" H 150 3050 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 600 2000 50  0001 C CNN
 F 3 "~" H 600 2000 50  0001 C CNN
+F 4 "No" H 600 2000 50  0001 C CNN "Insert?"
 	1    600  2000
 	-1   0    0    -1  
 $EndComp
@@ -1822,6 +1932,11 @@ F 1 "470uF" H 1100 7300 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 1000 7300 50  0001 C CNN
 F 3 "~" H 1000 7300 50  0001 C CNN
 F 4 "565-EMHL100ARA471MHA0GCT-ND" H 1000 7300 50  0001 C CNN "Digikey"
+F 5 "Yes" H 1000 7300 50  0001 C CNN "Insert?"
+F 6 "CAP ALUM 470UF 20% 10V SMD" H 1000 7300 50  0001 C CNN "Description"
+F 7 "6.3SEV330M6.3X8" H 1000 7300 50  0001 C CNN "MPN(Secondary)"
+F 8 "Rubycon" H 1000 7300 50  0001 C CNN "Manufacturer(Secondary)"
+F 9 "330UF 20% 6.3V" H 1000 7300 50  0001 C CNN "Value_Modifier"
 	1    1000 7300
 	1    0    0    -1  
 $EndComp
@@ -1870,11 +1985,14 @@ U 1 1 5F6E9DAB
 P 4150 7250
 AR Path="/5F6E9DAB" Ref="R?"  Part="1" 
 AR Path="/5D254AE8/5F6E9DAB" Ref="R?"  Part="1" 
-AR Path="/5E755AC8/5F6E9DAB" Ref="R49"  Part="1" 
-F 0 "R49" V 4050 7250 50  0000 C CNN
+AR Path="/5E755AC8/5F6E9DAB" Ref="R28"  Part="1" 
+F 0 "R28" V 4050 7250 50  0000 C CNN
 F 1 "10k" V 4250 7250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 4080 7250 50  0001 C CNN
 F 3 "~" H 4150 7250 50  0001 C CNN
+F 4 "RES 10K OHM" H 4150 7250 50  0001 C CNN "Description"
+F 5 "Yes" H 4150 7250 50  0001 C CNN "Insert?"
+F 6 "20%" H 4150 7250 50  0001 C CNN "Value_Modifier"
 	1    4150 7250
 	0    1    1    0   
 $EndComp
@@ -1886,11 +2004,12 @@ L Connector_Generic:Conn_01x02 J?
 U 1 1 5F97E8E3
 P 5050 6900
 AR Path="/5E7548ED/5F97E8E3" Ref="J?"  Part="1" 
-AR Path="/5E755AC8/5F97E8E3" Ref="J13"  Part="1" 
-F 0 "J13" V 5150 6900 50  0000 R CNN
-F 1 "Core Cur. Mon." V 5250 7200 50  0000 R CNN
+AR Path="/5E755AC8/5F97E8E3" Ref="J5"  Part="1" 
+F 0 "J5" V 5150 6900 50  0000 R CNN
+F 1 "CORE Cur. Mon." V 5250 7200 50  0000 R CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 5050 6900 50  0001 C CNN
 F 3 "~" H 5050 6900 50  0001 C CNN
+F 4 "No" H 5050 6900 50  0001 C CNN "Insert?"
 	1    5050 6900
 	0    1    1    0   
 $EndComp
@@ -1899,10 +2018,10 @@ QxP (PNP) is normally high, low to activate matrix transistor.\nQxN (NPN) is nor
 Text Notes 3300 6650 0    50   ~ 0
 N-CHNL FET as low-side switch
 $Comp
-L Device:Q_NMOS_GSD Q8
+L Device:Q_NMOS_GSD Q21
 U 1 1 5FABD474
 P 4350 7000
-F 0 "Q8" H 4555 7047 50  0000 L CNN
+F 0 "Q21" H 4555 7047 50  0000 L CNN
 F 1 "NVTR4503NT1G_NMOS_GSD" H 4550 6700 50  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 4550 7100 50  0001 C CNN
 F 3 "http://www.onsemi.com/pub/Collateral/NTR4503N-D.PDF" H 4350 7000 50  0001 C CNN
@@ -1911,16 +2030,17 @@ F 5 "Onsemi" H 4350 7000 50  0001 C CNN "Manufacturer_Name"
 F 6 "IRLML2030TRPBF" H 4350 7000 50  0001 C CNN "MPN(Secondary)"
 F 7 "Infineon Technologies" H 4350 7000 50  0001 C CNN "Manufacturer(Secondary)"
 F 8 "MOSFET N-CHNL GSD LOW RDS(ON)" H 4350 7000 50  0001 C CNN "Description"
+F 9 "Yes" H 4350 7000 50  0001 C CNN "Insert?"
 	1    4350 7000
 	1    0    0    -1  
 $EndComp
 Text Notes 3300 6800 0    50   ~ 0
 Rds(ON)=0.1
 $Comp
-L Digikey-Transistors:MMBT4401LT1G Q10
+L Digikey-Transistors:MMBT4401LT1G Q8
 U 1 1 5D5FAAC0
 P 5750 2100
-F 0 "Q10" H 5938 2153 60  0000 L CNN
+F 0 "Q8" H 5938 2153 60  0000 L CNN
 F 1 "MMBT4401LT1G" H 5938 2047 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 5950 2300 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4401LT1-D.PDF" H 5950 2400 60  0001 L CNN
@@ -1936,14 +2056,15 @@ F 12 "Active" H 5950 3300 60  0001 L CNN "Status"
 F 13 "MMBT4401-7-F" H 5750 2100 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 5750 2100 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 5750 2100 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 5750 2100 50  0001 C CNN "Insert?"
 	1    5750 2100
 	1    0    0    -1  
 $EndComp
 $Comp
-L Digikey-Transistors:MMBT4403LT1G Q9
+L Digikey-Transistors:MMBT4403LT1G Q7
 U 1 1 5D5FAAAB
 P 5750 1400
-F 0 "Q9" H 5938 1453 60  0000 L CNN
+F 0 "Q7" H 5938 1453 60  0000 L CNN
 F 1 "MMBT4403LT1G" H 5938 1347 60  0000 L CNN
 F 2 "Digikey:SOT-23-3" H 5950 1600 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT4403LT1-D.PDF" H 5950 1700 60  0001 L CNN
@@ -1959,6 +2080,7 @@ F 12 "Active" H 5950 2600 60  0001 L CNN "Status"
 F 13 "MMBT4403-7-F" H 5750 1400 50  0001 C CNN "MPN(Secondary)"
 F 14 "Diodes Inc." H 5750 1400 50  0001 C CNN "Manufacturer(Secondary)"
 F 15 "Onsemi" H 5750 1400 50  0001 C CNN "Manufacturer_Name"
+F 16 "Yes" H 5750 1400 50  0001 C CNN "Insert?"
 	1    5750 1400
 	1    0    0    -1  
 $EndComp
@@ -2044,6 +2166,7 @@ F 0 "JP12" H 4800 3150 50  0000 C CNN
 F 1 "Hall Switch 4" H 4800 3350 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 3250 50  0001 C CNN
 F 3 "~" H 4800 3250 50  0001 C CNN
+F 4 "No" H 4800 3250 50  0001 C CNN "Insert?"
 	1    4800 3250
 	1    0    0    1   
 $EndComp
@@ -2055,6 +2178,7 @@ F 0 "JP11" H 4800 2850 50  0000 C CNN
 F 1 "Hall Switch 3" H 4800 3050 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 2950 50  0001 C CNN
 F 3 "~" H 4800 2950 50  0001 C CNN
+F 4 "No" H 4800 2950 50  0001 C CNN "Insert?"
 	1    4800 2950
 	1    0    0    1   
 $EndComp
@@ -2066,6 +2190,7 @@ F 0 "JP9" H 3700 2850 50  0000 C CNN
 F 1 "Hall Switch 1" H 3700 3050 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 2950 50  0001 C CNN
 F 3 "~" H 3700 2950 50  0001 C CNN
+F 4 "No" H 3700 2950 50  0001 C CNN "Insert?"
 	1    3700 2950
 	1    0    0    1   
 $EndComp
@@ -2077,6 +2202,7 @@ F 0 "JP10" H 3700 3150 50  0000 C CNN
 F 1 "Hall Switch 2" H 3700 3350 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 3250 50  0001 C CNN
 F 3 "~" H 3700 3250 50  0001 C CNN
+F 4 "No" H 3700 3250 50  0001 C CNN "Insert?"
 	1    3700 3250
 	1    0    0    1   
 $EndComp
@@ -2121,13 +2247,16 @@ Wire Wire Line
 Wire Wire Line
 	7200 4350 7450 4350
 $Comp
-L Device:R R59
+L Device:R R27
 U 1 1 618ACD94
 P 3950 7000
-F 0 "R59" V 3743 7000 50  0000 C CNN
+F 0 "R27" V 3743 7000 50  0000 C CNN
 F 1 "470" V 3834 7000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3880 7000 50  0001 C CNN
 F 3 "~" H 3950 7000 50  0001 C CNN
+F 4 "RES 470 OHM" H 3950 7000 50  0001 C CNN "Description"
+F 5 "10%" H 3950 7000 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 3950 7000 50  0001 C CNN "Insert?"
 	1    3950 7000
 	0    1    1    0   
 $EndComp
@@ -2142,24 +2271,26 @@ Connection ~ 1000 7450
 Wire Wire Line
 	1000 7450 1000 7500
 $Comp
-L Connector:Conn_01x01_Male J10
+L Connector:Conn_01x01_Male J3
 U 1 1 61AA8F55
 P 1700 7100
-F 0 "J10" H 1673 7031 50  0000 R CNN
+F 0 "J3" H 1673 7031 50  0000 R CNN
 F 1 "Conn_01x01_Male" H 1673 7124 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 1700 7100 50  0001 C CNN
 F 3 "~" H 1700 7100 50  0001 C CNN
+F 4 "No" H 1700 7100 50  0001 C CNN "Insert?"
 	1    1700 7100
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Male J15
+L Connector:Conn_01x01_Male J4
 U 1 1 61AAA405
 P 1700 7450
-F 0 "J15" H 1673 7381 50  0000 R CNN
+F 0 "J4" H 1673 7381 50  0000 R CNN
 F 1 "Conn_01x01_Male" H 1673 7474 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 1700 7450 50  0001 C CNN
 F 3 "~" H 1700 7450 50  0001 C CNN
+F 4 "No" H 1700 7450 50  0001 C CNN "Insert?"
 	1    1700 7450
 	-1   0    0    1   
 $EndComp

@@ -6,7 +6,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 3 5
 Title "Core 64 - Expansion"
-Date "2021-11-05"
+Date "2021-11-08"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
@@ -42,13 +42,14 @@ Wire Wire Line
 Text Notes 600  4700 0    118  ~ 0
 OLED MONOCHROME I2C
 $Comp
-L Connector_Generic:Conn_01x04 X1
+L Connector_Generic:Conn_01x04 X7
 U 1 1 5E830BC9
 P 2300 5650
-F 0 "X1" V 2200 5300 50  0000 L CNN
+F 0 "X7" V 2200 5300 50  0000 L CNN
 F 1 "SSW-104-22-L-S-VS" V 2400 5100 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical_SMD_and_TH_Pin1Left" H 2300 5650 50  0001 C CNN
 F 3 "~" H 2300 5650 50  0001 C CNN
+F 4 "No" H 2300 5650 50  0001 C CNN "Insert?"
 	1    2300 5650
 	0    -1   1    0   
 $EndComp
@@ -109,6 +110,7 @@ F 0 "JP2" V 1600 5650 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1350 5150 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1750 5600 50  0001 C CNN
 F 3 "~" H 1750 5600 50  0001 C CNN
+F 4 "No" H 1750 5600 50  0001 C CNN "Insert?"
 	1    1750 5600
 	0    -1   -1   0   
 $EndComp
@@ -159,13 +161,14 @@ Wire Wire Line
 Wire Wire Line
 	5600 5350 5600 5650
 $Comp
-L Connector_Generic:Conn_01x08 J5
+L Connector_Generic:Conn_01x08 X4
 U 1 1 5EB0C89C
 P 5000 3600
-F 0 "J5" H 4850 4150 50  0000 L CNN
+F 0 "X4" H 4850 4150 50  0000 L CNN
 F 1 "HEADER_8-PIN_0.1" H 4650 4050 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 5000 3600 50  0001 C CNN
 F 3 "~" H 5000 3600 50  0001 C CNN
+F 4 "No" H 5000 3600 50  0001 C CNN "Insert?"
 	1    5000 3600
 	1    0    0    -1  
 $EndComp
@@ -204,6 +207,7 @@ F 0 "JP1" V 1550 5550 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 800 5400 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1450 5500 50  0001 C CNN
 F 3 "~" H 1450 5500 50  0001 C CNN
+F 4 "No" H 1450 5500 50  0001 C CNN "Insert?"
 	1    1450 5500
 	0    -1   -1   0   
 $EndComp
@@ -227,13 +231,15 @@ Wire Wire Line
 Wire Wire Line
 	850  5300 1450 5300
 $Comp
-L Device:C C10
+L Device:C C12
 U 1 1 5F548531
 P 1650 6900
-F 0 "C10" H 1765 6947 50  0000 L CNN
+F 0 "C12" H 1765 6947 50  0000 L CNN
 F 1 "0.1uF" H 1765 6854 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 1688 6750 50  0001 C CNN
 F 3 "~" H 1650 6900 50  0001 C CNN
+F 4 "Yes" H 1650 6900 50  0001 C CNN "Insert?"
+F 5 "CAP" H 1650 6900 50  0001 C CNN "Description"
 	1    1650 6900
 	-1   0    0    -1  
 $EndComp
@@ -344,13 +350,15 @@ Text GLabel 3850 7050 2    50   BiDi ~ 0
 SAO_G2_or_SPARE_2_or_CP_ADDR_1
 Connection ~ 2000 6950
 $Comp
-L 74xx_IEEE:74HC238 U5
+L 74xx_IEEE:74HC238 X10
 U 1 1 5F6FED24
 P 2550 7150
-F 0 "U5" H 2800 7650 50  0000 C CNN
+F 0 "X10" H 2800 7650 50  0000 C CNN
 F 1 "74HC238" H 2800 7550 50  0000 C CNN
 F 2 "Digikey:TSSOP-16-W4.40mm" H 2550 7150 50  0001 C CNN
 F 3 "" H 2550 7150 50  0001 C CNN
+F 4 "No" H 2550 7150 50  0001 C CNN "Insert?"
+F 5 "3-TO-8 DECODER" H 2550 7150 50  0001 C CNN "Description"
 	1    2550 7150
 	1    0    0    -1  
 $EndComp
@@ -374,6 +382,7 @@ F 0 "JP4" H 3550 7150 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3200 6600 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 7050 50  0001 C CNN
 F 3 "~" H 3600 7050 50  0001 C CNN
+F 4 "No" H 3600 7050 50  0001 C CNN "Insert?"
 	1    3600 7050
 	-1   0    0    -1  
 $EndComp
@@ -410,13 +419,17 @@ IR_OUT
 Text GLabel 6850 3600 0    50   BiDi ~ 0
 SPARE_ADC_DAC
 $Comp
-L Connector_Generic:Conn_01x04 X3
+L Connector_Generic:Conn_01x04 X8
 U 1 1 5E87C9AB
 P 3700 5100
-F 0 "X3" H 3900 4950 50  0000 R CNN
+F 0 "X8" H 3900 4950 50  0000 R CNN
 F 1 "QWIIC" H 4000 5100 50  0000 R CNN
 F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 3700 5100 50  0001 C CNN
 F 3 "~" H 3700 5100 50  0001 C CNN
+F 4 "CONN HEADER SMD R/A 4POS 1MM" H 3700 5100 50  0001 C CNN "Description"
+F 5 "SM04B-SRSS-TB(LF)(SN)" H 3700 5100 50  0001 C CNN "MPN"
+F 6 "JST" H 3700 5100 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 3700 5100 50  0001 C CNN "Insert?"
 	1    3700 5100
 	-1   0    0    1   
 $EndComp
@@ -487,13 +500,14 @@ Wire Wire Line
 Wire Wire Line
 	9050 4100 9050 4200
 $Comp
-L Connector_Generic:Conn_01x08 J6
+L Connector_Generic:Conn_01x08 X5
 U 1 1 5F896B67
 P 7050 3600
-F 0 "J6" H 6900 4150 50  0000 L CNN
+F 0 "X5" H 6900 4150 50  0000 L CNN
 F 1 "HEADER_8-PIN_0.1" H 6700 4050 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 7050 3600 50  0001 C CNN
 F 3 "~" H 7050 3600 50  0001 C CNN
+F 4 "No" H 7050 3600 50  0001 C CNN "Insert?"
 	1    7050 3600
 	1    0    0    -1  
 $EndComp
@@ -513,20 +527,20 @@ Wire Wire Line
 	8250 2400 8250 2600
 Wire Wire Line
 	8500 4700 9150 4700
-Text Notes 8600 6600 0    50   ~ 0
+Text Notes 8600 6700 0    50   ~ 0
 All 7-bit addresses should be greater\nthan 0x07 and less than 0x78 (120).
 Text Notes 8700 5900 0    50   ~ 0
 AMBIENT LIGHT SENSOR\nHALL SENSOR 1\nHALL SENSOR 2\nHALL SENSOR 3\nHALL SENSOR 4\nEEPROM (BOARD ID)
 Text Notes 9850 5900 0    50   ~ 0
-0X29 (47)\n0x30 (48)\n0x31 (49)\n0x32 (50)\n0x33 (51)\n0x57 (87)
+0x29 (47)\n0x30 (48)\n0x31 (49)\n0x32 (50)\n0x33 (51)\n0x57 (87)
 Text Notes 8600 5400 0    50   ~ 0
 INCLUDED:
-Text Notes 8600 6000 0    50   ~ 0
+Text Notes 8600 6050 0    50   ~ 0
 OPTIONAL:
-Text Notes 8700 6400 0    50   ~ 0
-OLED\nAND!XOR IO Exp. MCP23017\nAND!XOR EEPROM AT24C32r\nNFC CLICK PN7120\nPIMORONI UNICORN HAT
-Text Notes 9850 6400 0    50   ~ 0
-0x3C (60)\n0x20 (32)\n0x50 (80)\n0x50-53\n0x50 (N.C.)
+Text Notes 8700 6450 0    50   ~ 0
+AMBIENT PROX. SENSOR\nOLED\nAND!XOR IO Exp. MCP23017\nAND!XOR EEPROM AT24C32r\nNFC CLICK PN7120\n
+Text Notes 9850 6450 0    50   ~ 0
+0x38 (56)\n0x3C (60)\n0x20 (32)\n0x50 (80)\n0x50-53
 Text Notes 8550 5250 0    118  ~ 0
 I2C ADDRESS TABLE
 Text GLabel 6850 3800 0    50   Output ~ 0
@@ -572,13 +586,14 @@ Compatible: https://www.adafruit.com/product/1431\n1.5” 128x128, 16-bit color 
 Text GLabel 1750 2350 0    50   Input ~ 0
 5V0
 $Comp
-L Connector_Generic:Conn_01x11 J14
+L Connector_Generic:Conn_01x11 X2
 U 1 1 5F949D97
 P 2100 1950
-F 0 "J14" H 2250 1450 50  0000 L CNN
+F 0 "X2" H 2250 1450 50  0000 L CNN
 F 1 "HEADER_11-PIN_0.1" H 2250 1550 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x11_P2.54mm_Vertical" H 2100 1950 50  0001 C CNN
 F 3 "~" H 2100 1950 50  0001 C CNN
+F 4 "No" H 2100 1950 50  0001 C CNN "Insert?"
 	1    2100 1950
 	1    0    0    -1  
 $EndComp
@@ -672,17 +687,19 @@ L Adafruit_3.2_TFT:Adafruit_3.2_TFT_1743 U?
 U 1 1 5F9189ED
 P 9200 1850
 AR Path="/5F9189ED" Ref="U?"  Part="1" 
-AR Path="/5EA63449/5F9189ED" Ref="U8"  Part="1" 
-F 0 "U8" H 9678 1847 50  0000 L CNN
+AR Path="/5EA63449/5F9189ED" Ref="X3"  Part="1" 
+F 0 "X3" H 9678 1847 50  0000 L CNN
 F 1 "Adafruit_3.2_TFT_1743" H 9678 1754 50  0000 L CNN
 F 2 "Adafruit_3.2_TFT:Adafruit_3.2_TFT_Dual_PinHeader_1x20_P2.54mm_Vertical_SMD_Pin1Left" H 9300 650 50  0001 L CNN
 F 3 "http://www.farnell.com/datasheets/1998794.pdf" H 9300 550 50  0001 L CNN
-F 4 "https://www.adafruit.com/product/1743" H 9300 450 50  0001 L CNN "Description"
+F 4 "TFT LCD 3.2\" Module" H 9300 450 50  0001 L CNN "Description"
 F 5 "MIKROELEKTRONIKA" H 9300 250 50  0001 L CNN "Manufacturer_Name"
 F 6 "MIKROE-971" H 9300 150 50  0001 L CNN "Manufacturer_Part_Number"
 F 7 "MIKROE-971" H 9300 50  50  0001 L CNN "Arrow Part Number"
 F 8 "932-MIKROE-971" H 9300 -150 50  0001 L CNN "Mouser Part Number"
 F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=932-MIKROE-971" H 9300 -250 50  0001 L CNN "Mouser Price/Stock"
+F 10 "No" H 9200 1850 50  0001 C CNN "Insert?"
+F 11 "https://www.adafruit.com/product/1743" H 9200 1850 50  0001 C CNN "MPN"
 	1    9200 1850
 	1    0    0    -1  
 $EndComp
@@ -693,11 +710,14 @@ P 6500 1400
 AR Path="/5E755787/5FAF4975" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FAF4975" Ref="R?"  Part="1" 
 AR Path="/5FAF4975" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FAF4975" Ref="R46"  Part="1" 
-F 0 "R46" H 6570 1446 50  0000 L CNN
+AR Path="/5EA63449/5FAF4975" Ref="R55"  Part="1" 
+F 0 "R55" H 6570 1446 50  0000 L CNN
 F 1 "1K2" H 6570 1355 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6430 1400 50  0001 C CNN
 F 3 "~" H 6500 1400 50  0001 C CNN
+F 4 "RES 1.2K OHM" H 6500 1400 50  0001 C CNN "Description"
+F 5 "10%" H 6500 1400 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 6500 1400 50  0001 C CNN "Insert?"
 	1    6500 1400
 	1    0    0    -1  
 $EndComp
@@ -708,11 +728,14 @@ P 6900 1400
 AR Path="/5E755787/5FAF497B" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FAF497B" Ref="R?"  Part="1" 
 AR Path="/5FAF497B" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FAF497B" Ref="R47"  Part="1" 
-F 0 "R47" H 6970 1446 50  0000 L CNN
+AR Path="/5EA63449/5FAF497B" Ref="R56"  Part="1" 
+F 0 "R56" H 6970 1446 50  0000 L CNN
 F 1 "1K2" H 6970 1355 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 6830 1400 50  0001 C CNN
 F 3 "~" H 6900 1400 50  0001 C CNN
+F 4 "RES 1.2K OHM" H 6900 1400 50  0001 C CNN "Description"
+F 5 "10%" H 6900 1400 50  0001 C CNN "Value_Modifier"
+F 6 "Yes" H 6900 1400 50  0001 C CNN "Insert?"
 	1    6900 1400
 	1    0    0    -1  
 $EndComp
@@ -744,11 +767,14 @@ P 3800 1350
 AR Path="/5E755787/5FB255AB" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FB255AB" Ref="R?"  Part="1" 
 AR Path="/5FB255AB" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FB255AB" Ref="R3"  Part="1" 
-F 0 "R3" H 3850 1400 50  0000 L CNN
+AR Path="/5EA63449/5FB255AB" Ref="R51"  Part="1" 
+F 0 "R51" H 3850 1400 50  0000 L CNN
 F 1 "10k" H 3850 1300 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3730 1350 50  0001 C CNN
 F 3 "~" H 3800 1350 50  0001 C CNN
+F 4 "RES 10K OHM" H 3800 1350 50  0001 C CNN "Description"
+F 5 "No" H 3800 1350 50  0001 C CNN "Insert?"
+F 6 "20%" H 3800 1350 50  0001 C CNN "Value_Modifier"
 	1    3800 1350
 	-1   0    0    -1  
 $EndComp
@@ -769,11 +795,14 @@ P 4050 1350
 AR Path="/5E755787/5FB255B6" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FB255B6" Ref="R?"  Part="1" 
 AR Path="/5FB255B6" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FB255B6" Ref="R10"  Part="1" 
-F 0 "R10" H 4100 1400 50  0000 L CNN
+AR Path="/5EA63449/5FB255B6" Ref="R52"  Part="1" 
+F 0 "R52" H 4100 1400 50  0000 L CNN
 F 1 "10k" H 4100 1300 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3980 1350 50  0001 C CNN
 F 3 "~" H 4050 1350 50  0001 C CNN
+F 4 "RES 10K OHM" H 4050 1350 50  0001 C CNN "Description"
+F 5 "No" H 4050 1350 50  0001 C CNN "Insert?"
+F 6 "20%" H 4050 1350 50  0001 C CNN "Value_Modifier"
 	1    4050 1350
 	-1   0    0    -1  
 $EndComp
@@ -784,11 +813,14 @@ P 4300 1350
 AR Path="/5E755787/5FB255BC" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FB255BC" Ref="R?"  Part="1" 
 AR Path="/5FB255BC" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FB255BC" Ref="R44"  Part="1" 
-F 0 "R44" H 4350 1400 50  0000 L CNN
+AR Path="/5EA63449/5FB255BC" Ref="R53"  Part="1" 
+F 0 "R53" H 4350 1400 50  0000 L CNN
 F 1 "10k" H 4350 1300 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 4230 1350 50  0001 C CNN
 F 3 "~" H 4300 1350 50  0001 C CNN
+F 4 "RES 10K OHM" H 4300 1350 50  0001 C CNN "Description"
+F 5 "No" H 4300 1350 50  0001 C CNN "Insert?"
+F 6 "20%" H 4300 1350 50  0001 C CNN "Value_Modifier"
 	1    4300 1350
 	-1   0    0    -1  
 $EndComp
@@ -799,11 +831,14 @@ P 4550 1350
 AR Path="/5E755787/5FB255C2" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FB255C2" Ref="R?"  Part="1" 
 AR Path="/5FB255C2" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FB255C2" Ref="R45"  Part="1" 
-F 0 "R45" H 4600 1400 50  0000 L CNN
+AR Path="/5EA63449/5FB255C2" Ref="R54"  Part="1" 
+F 0 "R54" H 4600 1400 50  0000 L CNN
 F 1 "10k" H 4600 1300 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 4480 1350 50  0001 C CNN
 F 3 "~" H 4550 1350 50  0001 C CNN
+F 4 "RES 10K OHM" H 4550 1350 50  0001 C CNN "Description"
+F 5 "No" H 4550 1350 50  0001 C CNN "Insert?"
+F 6 "20%" H 4550 1350 50  0001 C CNN "Value_Modifier"
 	1    4550 1350
 	-1   0    0    -1  
 $EndComp
@@ -814,11 +849,14 @@ P 3550 1350
 AR Path="/5E755787/5FB255C8" Ref="R?"  Part="1" 
 AR Path="/5E755AC8/5D2551FF/5FB255C8" Ref="R?"  Part="1" 
 AR Path="/5FB255C8" Ref="R?"  Part="1" 
-AR Path="/5EA63449/5FB255C8" Ref="R2"  Part="1" 
-F 0 "R2" H 3600 1400 50  0000 L CNN
+AR Path="/5EA63449/5FB255C8" Ref="R50"  Part="1" 
+F 0 "R50" H 3600 1400 50  0000 L CNN
 F 1 "10k" H 3600 1300 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 3480 1350 50  0001 C CNN
 F 3 "~" H 3550 1350 50  0001 C CNN
+F 4 "RES 10K OHM" H 3550 1350 50  0001 C CNN "Description"
+F 5 "No" H 3550 1350 50  0001 C CNN "Insert?"
+F 6 "20%" H 3550 1350 50  0001 C CNN "Value_Modifier"
 	1    3550 1350
 	-1   0    0    -1  
 $EndComp
@@ -918,26 +956,31 @@ CARD DETECT\nDAT2\nD1\nCS (or D3)\nSI (or CMD)\nSO (or D0)\nCLK\nGND\n3V
 Text GLabel 4050 1100 0    50   Input ~ 0
 TEENSY_3V3
 $Comp
-L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X4
+L badgelife_shitty_addon_v169bis:SAO_conn_SFH11-NBPC-D03-ST-BK X9
 U 1 1 5E88FF30
 P 5900 5250
-F 0 "X4" H 6079 5247 50  0000 L CNN
+F 0 "X9" H 6079 5247 50  0000 L CNN
 F 1 "SAO_conn_SFH11-NBPC-D03-ST-BK" H 6079 5154 50  0000 L CNN
 F 2 "badgelife_sao_v169bis:Badgelife-SAOv169-BADGE-2x3" H 5900 5450 50  0001 C CNN
 F 3 "" H 5900 5450 50  0001 C CNN
+F 4 "CONN HDR 6POS KEYED SOCKET 0.1 T.H." H 5900 5250 50  0001 C CNN "Description"
+F 5 "SFH11-NBPC-D03-ST-BK" H 5900 5250 50  0001 C CNN "MPN"
+F 6 "Sullins" H 5900 5250 50  0001 C CNN "Manufacturer_Name"
+F 7 "Yes" H 5900 5250 50  0001 C CNN "Insert?"
 	1    5900 5250
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x09 X2
+L Connector_Generic:Conn_01x09 X6
 U 1 1 5EAA1F67
 P 9350 4300
-AR Path="/5EA63449/5EAA1F67" Ref="X2"  Part="1" 
+AR Path="/5EA63449/5EAA1F67" Ref="X6"  Part="1" 
 AR Path="/5EAA1F67" Ref="X?"  Part="1" 
-F 0 "X2" H 9250 3650 50  0000 L CNN
+F 0 "X6" H 9250 3650 50  0000 L CNN
 F 1 "Header_9-PIN_0.1" H 8950 3750 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x09_P2.54mm_Vertical" H 9350 4300 50  0001 C CNN
 F 3 "~" H 9350 4300 50  0001 C CNN
+F 4 "No" H 9350 4300 50  0001 C CNN "Insert?"
 	1    9350 4300
 	1    0    0    1   
 $EndComp
@@ -962,6 +1005,7 @@ F 0 "JP3" H 3550 6800 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3200 6250 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 6700 50  0001 C CNN
 F 3 "~" H 3600 6700 50  0001 C CNN
+F 4 "No" H 3600 6700 50  0001 C CNN "Insert?"
 	1    3600 6700
 	-1   0    0    -1  
 $EndComp
