@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 3 5
 Title "Core 64 - Expansion"
-Date "2021-11-05"
+Date "2021-11-09"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "WIP"
+Comment2 "As released"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -103,10 +103,10 @@ Wire Wire Line
 Wire Wire Line
 	5900 5800 5900 5650
 $Comp
-L Jumper:SolderJumper_3_Open JP2
+L Jumper:SolderJumper_3_Open JP16
 U 1 1 5E81A96A
 P 1750 5600
-F 0 "JP2" V 1600 5650 50  0000 L CNN
+F 0 "JP16" V 1600 5650 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 1350 5150 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1750 5600 50  0001 C CNN
 F 3 "~" H 1750 5600 50  0001 C CNN
@@ -200,10 +200,10 @@ Wire Wire Line
 Wire Wire Line
 	8750 4600 9150 4600
 $Comp
-L Jumper:SolderJumper_3_Open JP1
+L Jumper:SolderJumper_3_Open JP15
 U 1 1 5E82F3CE
 P 1450 5500
-F 0 "JP1" V 1550 5550 50  0000 L CNN
+F 0 "JP15" V 1550 5550 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 800 5400 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm_NumberLabels" H 1450 5500 50  0001 C CNN
 F 3 "~" H 1450 5500 50  0001 C CNN
@@ -238,7 +238,7 @@ F 0 "C12" H 1765 6947 50  0000 L CNN
 F 1 "0.1uF" H 1765 6854 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 1688 6750 50  0001 C CNN
 F 3 "~" H 1650 6900 50  0001 C CNN
-F 4 "Yes" H 1650 6900 50  0001 C CNN "Insert?"
+F 4 "No" H 1650 6900 50  0001 C CNN "Insert?"
 F 5 "CAP" H 1650 6900 50  0001 C CNN "Description"
 	1    1650 6900
 	-1   0    0    -1  
@@ -350,10 +350,10 @@ Text GLabel 3850 7050 2    50   BiDi ~ 0
 SAO_G2_or_SPARE_2_or_CP_ADDR_1
 Connection ~ 2000 6950
 $Comp
-L 74xx_IEEE:74HC238 X10
+L 74xx_IEEE:74HC238 U8
 U 1 1 5F6FED24
 P 2550 7150
-F 0 "X10" H 2800 7650 50  0000 C CNN
+F 0 "U8" H 2800 7650 50  0000 C CNN
 F 1 "74HC238" H 2800 7550 50  0000 C CNN
 F 2 "Digikey:TSSOP-16-W4.40mm" H 2550 7150 50  0001 C CNN
 F 3 "" H 2550 7150 50  0001 C CNN
@@ -371,14 +371,14 @@ Wire Wire Line
 Text Notes 2450 650  0    118  ~ 0
 EVERYTHING ON THIS SHEET IS USER-PROVIDED OPTIONAL ADD-ONS
 Text Notes 3500 8000 0    50   ~ 0
-To use more than 1 core plane:\n1) Add 3-to-8 decoder 74HC238 and decoupling capacitor.\n2) Cut both SJ pads 1-2 and solder pads 2-3.\n3) Cut 4 SJs 9-12 on DRIVER Sheet near left 20p socket for CP5-8.\nNOTES:\nSee Core Board schematic for other required CB changes.\nSAO#1 (LB) GPIO is still accessible as CP_ADDR_0 and 1, shared.\nSAO#2 (CB) GPIO becomes output [only] Y0 and Y1 of CP selector.\nSPARE GPIO 1-2-3 are used for Core Plane Addressing.
+To use more than 1 core plane (not compatible with Hall Switches):\n1) Add 3-to-8 decoder 74HC238 and decoupling capacitor.\n2) Cut both SJ pads (1-2) and close pads (2-3) for CP1 and 2_EN.\n3) Cut SJs 1-4 on DRIVER Sheet for CP5-8 if Hall Switches installed.\nNOTES:\nSee Core Board schematic for other required CB changes.\nSAO#1 (LB) GPIO is still accessible as CP_ADDR_0 and 1, shared.\nSAO#2 (CB) GPIO becomes output [only] Y0 and Y1 of CP selector.\nSPARE GPIO 1-2-3 are used for Core Plane Addressing.
 Wire Wire Line
 	3850 7050 3800 7050
 $Comp
-L Jumper:SolderJumper_3_Bridged12 JP4
+L Jumper:SolderJumper_3_Bridged12 JP18
 U 1 1 5F5AEC4F
 P 3600 7050
-F 0 "JP4" H 3550 7150 50  0000 L CNN
+F 0 "JP18" H 3550 7150 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3200 6600 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 7050 50  0001 C CNN
 F 3 "~" H 3600 7050 50  0001 C CNN
@@ -998,10 +998,10 @@ F 3 "" H 2550 7800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper:SolderJumper_3_Bridged12 JP3
+L Jumper:SolderJumper_3_Bridged12 JP17
 U 1 1 5F5B143C
 P 3600 6700
-F 0 "JP3" H 3550 6800 50  0000 L CNN
+F 0 "JP17" H 3550 6800 50  0000 L CNN
 F 1 "SolderJumper_3_Open" V 3200 6250 50  0001 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 3600 6700 50  0001 C CNN
 F 3 "~" H 3600 6700 50  0001 C CNN

@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Core 64 - Main Sheet Index"
-Date "2021-11-05"
+Date "2021-11-09"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "WIP"
+Comment2 "As released"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -104,10 +104,10 @@ F 3 "" H 7700 5600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Teensy:Teensy3.2 U8
+L Teensy:Teensy3.2 U7
 U 1 1 5F49143E
 P 6650 4050
-F 0 "U8" H 6650 5648 60  0000 C CNN
+F 0 "U7" H 6650 5648 60  0000 C CNN
 F 1 "Teensy3.2" H 6650 5538 60  0000 C CNN
 F 2 "Teensy:Teensy30_31_32_LC_SMD_SOCKETS" H 6650 3250 60  0001 C CNN
 F 3 "" H 6650 3250 60  0000 C CNN
@@ -385,8 +385,8 @@ U 1 1 5F7507F8
 P 5050 2200
 AR Path="/5E7548ED/5F7507F8" Ref="J?"  Part="1" 
 AR Path="/5E755AC8/5D254AE8/5F7507F8" Ref="J?"  Part="1" 
-AR Path="/5F7507F8" Ref="J11"  Part="1" 
-F 0 "J11" H 5050 2300 50  0000 C CNN
+AR Path="/5F7507F8" Ref="J13"  Part="1" 
+F 0 "J13" H 5050 2300 50  0000 C CNN
 F 1 "PRG" H 5200 2200 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 5050 2200 50  0001 C CNN
 F 3 "~" H 5050 2200 50  0001 C CNN
@@ -403,7 +403,8 @@ F 1 "3V" H 5250 6100 50  0000 L CNN
 F 2 "Battery:BatteryHolder_MPD_BC2003_1x2032" V 5500 6160 50  0001 C CNN
 F 3 "~" V 5500 6160 50  0001 C CNN
 F 4 "No" H 5500 6100 50  0001 C CNN "Insert?"
-F 5 "Battery Cell Holder" H 5500 6100 50  0001 C CNN "Description"
+F 5 "Battery Cell Holder, CR2032" H 5500 6100 50  0001 C CNN "Description"
+F 6 "MPD BC-2003" H 5500 6100 50  0001 C CNN "MPN"
 	1    5500 6100
 	1    0    0    -1  
 $EndComp
@@ -478,8 +479,8 @@ L Connector_Generic:Conn_01x02 J?
 U 1 1 5F9FB501
 P 9400 2200
 AR Path="/5E7548ED/5F9FB501" Ref="J?"  Part="1" 
-AR Path="/5F9FB501" Ref="J12"  Part="1" 
-F 0 "J12" V 9400 2000 50  0000 R CNN
+AR Path="/5F9FB501" Ref="J14"  Part="1" 
+F 0 "J14" V 9400 2000 50  0000 R CNN
 F 1 "TEENSY Cur. Mon." V 9300 2000 50  0000 R CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 9400 2200 50  0001 C CNN
 F 3 "~" H 9400 2200 50  0001 C CNN
@@ -889,8 +890,8 @@ L Jumper:SolderJumper_2_Bridged JP?
 U 1 1 61B618D6
 P 2700 5750
 AR Path="/5E7548ED/61B618D6" Ref="JP?"  Part="1" 
-AR Path="/61B618D6" Ref="JP15"  Part="1" 
-F 0 "JP15" H 2550 5800 50  0000 C CNN
+AR Path="/61B618D6" Ref="JP9"  Part="1" 
+F 0 "JP9" H 2550 5800 50  0000 C CNN
 F 1 "5V0 MON" H 2950 5800 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2700 5750 50  0001 C CNN
 F 3 "~" H 2700 5750 50  0001 C CNN
@@ -907,8 +908,8 @@ L Jumper:SolderJumper_2_Bridged JP?
 U 1 1 61BC2A0E
 P 2600 5900
 AR Path="/5E7548ED/61BC2A0E" Ref="JP?"  Part="1" 
-AR Path="/61BC2A0E" Ref="JP14"  Part="1" 
-F 0 "JP14" H 2450 5950 50  0000 C CNN
+AR Path="/61BC2A0E" Ref="JP10"  Part="1" 
+F 0 "JP10" H 2450 5950 50  0000 C CNN
 F 1 "3V3 MON" H 2850 5950 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2600 5900 50  0001 C CNN
 F 3 "~" H 2600 5900 50  0001 C CNN
@@ -921,8 +922,8 @@ L Jumper:SolderJumper_2_Bridged JP?
 U 1 1 61BC2DF2
 P 2500 6050
 AR Path="/5E7548ED/61BC2DF2" Ref="JP?"  Part="1" 
-AR Path="/61BC2DF2" Ref="JP13"  Part="1" 
-F 0 "JP13" H 2350 6100 50  0000 C CNN
+AR Path="/61BC2DF2" Ref="JP11"  Part="1" 
+F 0 "JP11" H 2350 6100 50  0000 C CNN
 F 1 "RR0 MON" H 2800 6100 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2500 6050 50  0001 C CNN
 F 3 "~" H 2500 6050 50  0001 C CNN
@@ -935,8 +936,8 @@ L Jumper:SolderJumper_2_Bridged JP?
 U 1 1 61C35ED3
 P 9850 3200
 AR Path="/5E7548ED/61C35ED3" Ref="JP?"  Part="1" 
-AR Path="/61C35ED3" Ref="JP16"  Part="1" 
-F 0 "JP16" H 9700 3250 50  0000 C CNN
+AR Path="/61C35ED3" Ref="JP12"  Part="1" 
+F 0 "JP12" H 9700 3250 50  0000 C CNN
 F 1 "LR0 MON" H 10100 3250 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 3200 50  0001 C CNN
 F 3 "~" H 9850 3200 50  0001 C CNN
@@ -949,8 +950,8 @@ L Jumper:SolderJumper_2_Bridged JP?
 U 1 1 61C4788B
 P 9850 4600
 AR Path="/5E7548ED/61C4788B" Ref="JP?"  Part="1" 
-AR Path="/61C4788B" Ref="JP17"  Part="1" 
-F 0 "JP17" H 9700 4650 50  0000 C CNN
+AR Path="/61C4788B" Ref="JP13"  Part="1" 
+F 0 "JP13" H 9700 4650 50  0000 C CNN
 F 1 "BC0 MON" H 10100 4650 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 4600 50  0001 C CNN
 F 3 "~" H 9850 4600 50  0001 C CNN
@@ -963,8 +964,8 @@ L Jumper:SolderJumper_2_Bridged JP?
 U 1 1 61C5666B
 P 9850 4900
 AR Path="/5E7548ED/61C5666B" Ref="JP?"  Part="1" 
-AR Path="/61C5666B" Ref="JP18"  Part="1" 
-F 0 "JP18" H 9700 4950 50  0000 C CNN
+AR Path="/61C5666B" Ref="JP14"  Part="1" 
+F 0 "JP14" H 9700 4950 50  0000 C CNN
 F 1 "TC0 MON" H 10100 4950 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 9850 4900 50  0001 C CNN
 F 3 "~" H 9850 4900 50  0001 C CNN

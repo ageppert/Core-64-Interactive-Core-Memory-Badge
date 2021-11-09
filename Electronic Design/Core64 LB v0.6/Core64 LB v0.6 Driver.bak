@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 5 5
 Title "Core 64 - Core Matrix Driver"
-Date "2021-11-05"
+Date "2021-11-09"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "WIP"
+Comment2 "As released"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -2159,10 +2159,10 @@ CP7_EN
 Text GLabel 4950 3250 2    50   Input ~ 0
 CP8_EN
 $Comp
-L Jumper:SolderJumper_2_Bridged JP12
+L Jumper:SolderJumper_2_Bridged JP4
 U 1 1 60397BD0
 P 4800 3250
-F 0 "JP12" H 4800 3150 50  0000 C CNN
+F 0 "JP4" H 4800 3150 50  0000 C CNN
 F 1 "Hall Switch 4" H 4800 3350 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 3250 50  0001 C CNN
 F 3 "~" H 4800 3250 50  0001 C CNN
@@ -2171,10 +2171,10 @@ F 4 "No" H 4800 3250 50  0001 C CNN "Insert?"
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Bridged JP11
+L Jumper:SolderJumper_2_Bridged JP3
 U 1 1 603B8476
 P 4800 2950
-F 0 "JP11" H 4800 2850 50  0000 C CNN
+F 0 "JP3" H 4800 2850 50  0000 C CNN
 F 1 "Hall Switch 3" H 4800 3050 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4800 2950 50  0001 C CNN
 F 3 "~" H 4800 2950 50  0001 C CNN
@@ -2183,10 +2183,10 @@ F 4 "No" H 4800 2950 50  0001 C CNN "Insert?"
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Bridged JP9
+L Jumper:SolderJumper_2_Bridged JP1
 U 1 1 6040AAB4
 P 3700 2950
-F 0 "JP9" H 3700 2850 50  0000 C CNN
+F 0 "JP1" H 3700 2850 50  0000 C CNN
 F 1 "Hall Switch 1" H 3700 3050 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 2950 50  0001 C CNN
 F 3 "~" H 3700 2950 50  0001 C CNN
@@ -2195,10 +2195,10 @@ F 4 "No" H 3700 2950 50  0001 C CNN "Insert?"
 	1    0    0    1   
 $EndComp
 $Comp
-L Jumper:SolderJumper_2_Bridged JP10
+L Jumper:SolderJumper_2_Bridged JP2
 U 1 1 6041B0A8
 P 3700 3250
-F 0 "JP10" H 3700 3150 50  0000 C CNN
+F 0 "JP2" H 3700 3150 50  0000 C CNN
 F 1 "Hall Switch 2" H 3700 3350 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3700 3250 50  0001 C CNN
 F 3 "~" H 3700 3250 50  0001 C CNN

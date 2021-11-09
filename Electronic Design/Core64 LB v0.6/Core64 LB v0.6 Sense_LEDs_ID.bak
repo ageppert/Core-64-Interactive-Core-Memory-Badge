@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 2 5
 Title "Core 64 - Sense"
-Date "2021-11-05"
+Date "2021-11-09"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "WIP"
+Comment2 "As released"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -243,7 +243,7 @@ F 2 "Resistor_SMD:R_0805_2012Metric" V 1180 2600 50  0001 C CNN
 F 3 "~" H 1250 2600 50  0001 C CNN
 F 4 "RES 1.5K OHM" H 1250 2600 50  0001 C CNN "Description"
 F 5 "1%" H 1250 2600 50  0001 C CNN "Value_Modifier"
-F 6 "Yes" H 1250 2600 50  0001 C CNN "Insert?"
+F 6 "No" H 1250 2600 50  0001 C CNN "Insert?"
 	1    1250 2600
 	1    0    0    -1  
 $EndComp

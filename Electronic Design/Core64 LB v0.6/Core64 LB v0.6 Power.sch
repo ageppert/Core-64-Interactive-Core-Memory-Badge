@@ -6,11 +6,11 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 4 5
 Title "Core 64 - Power Schematic"
-Date "2021-11-08"
+Date "2021-11-09"
 Rev "0.6"
 Comp "Concept and design by Andy Geppert @ www.MachineIdeas.com"
 Comment1 "Visit www.Core64.io for information on assembly and optional features."
-Comment2 "WIP"
+Comment2 "As released"
 Comment3 ""
 Comment4 "All non-polarized capacitors are X7R or X5R ceramic unless otherwise noted."
 $EndDescr
@@ -168,9 +168,9 @@ L Connector:Conn_01x08_Female J?
 U 1 1 5E8E7260
 P 4950 7900
 AR Path="/5E75D6AB/5E8E7260" Ref="J?"  Part="1" 
-AR Path="/5E7548ED/5E8E7260" Ref="J10"  Part="1" 
-F 0 "J10" V 4750 8700 50  0000 L CNN
-F 1 "CORE Cur. Mon." V 4850 8350 50  0000 L CNN
+AR Path="/5E7548ED/5E8E7260" Ref="J12"  Part="1" 
+F 0 "J12" V 4750 8700 50  0000 L CNN
+F 1 "Power Rails" V 4850 8350 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 4950 7900 50  0001 C CNN
 F 3 "~" H 4950 7900 50  0001 C CNN
 F 4 "No" H 4950 7900 50  0001 C CNN "Insert?"
@@ -378,10 +378,10 @@ Wire Wire Line
 	1900 5250 2050 5250
 Connection ~ 1900 5250
 $Comp
-L Jumper:SolderJumper_2_Bridged JP5
+L Jumper:SolderJumper_2_Bridged JP6
 U 1 1 5F553296
 P 950 5350
-F 0 "JP5" H 950 5500 50  0000 C CNN
+F 0 "JP6" H 950 5500 50  0000 C CNN
 F 1 "USB_Power_Enable" H 850 5600 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 950 5350 50  0001 C CNN
 F 3 "~" H 950 5350 50  0001 C CNN
@@ -422,11 +422,11 @@ SILKSCREEN: BAT. +/- pins
 Text GLabel 4800 7450 1    50   Input ~ 0
 +RPP
 $Comp
-L Jumper:SolderJumper_2_Bridged JP6
+L Jumper:SolderJumper_2_Bridged JP7
 U 1 1 5F4B1331
 P 3400 5250
-F 0 "JP6" H 3400 5350 50  0000 C CNN
-F 1 "Opt. Cur. Mon." H 3450 5450 50  0000 C CNN
+F 0 "JP7" H 3400 5350 50  0000 C CNN
+F 1 "Sys. Cur. Mon." H 3450 5450 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 3400 5250 50  0001 C CNN
 F 3 "~" H 3400 5250 50  0001 C CNN
 F 4 "No" H 3400 5250 50  0001 C CNN "Insert?"
@@ -564,7 +564,7 @@ $EndComp
 Text Notes 8450 4000 0    50   ~ 0
 SILKSCREEN: +/- pins
 Text Notes 5250 2950 0    50   ~ 0
-1) Remove the 4x “AAA” battery pack AND the battery connector.\n2) Purchase and install a LiPo charge manager.\n     a) The Logic Board accepts this one: https://www.adafruit.com/product/1904 (Micro USB) and LED Matrix #4410 (USB C).\n     b) Solder the the charge manager directly to the board to keep a low profile.\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 15mm. A maximum \n     a) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate with Kapton tape.\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n     If you do NOT want the system to be powered from teh USB port of the charger, leave the SJ open.\n     Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is in\n        ON (up/battery) position.\n     Connecting a USB cable to the Teensy will NOT charge the battery, but it will power the system when the power switch is in\n        OFF (down/USB) position.\nB) OPTIONAL SH CLOSED:\n      The LiPo charger 5V pin (LiPo Charger USB port) may be connected to the Teensy USB port by closing the SJ.\n      Connecting a USB cable to the LiPo charger will charge the battery and power the system. It will not connect to the serial\n         port of the Teensy.\n      Connecting a USB cable to the Teensy will power the board and charge the batter and connect to the serial port of the\n         Teensy.
+1) Remove the 4x “AAA” battery pack AND the battery connector, if installed.\n2) Purchase and install a LiPo charge manager.\n     a) The Logic Board accepts https://www.adafruit.com/product/1904 (Micro USB) and LED Matrix #4410 (USB C).\n     b) Solder the the charge manager directly to the board to keep a low profile.\n3) Purchase and install a 1S LiPo using double-sided tape. \n     a) Choose a 1S Lipo with built-in cell over/under voltage protection. Recommended:\n          2500mAh https://www.adafruit.com/product/328   1.8” x 2.4” x 0.26” (47mm x 61mm x 6.7mm)\n          2000mAh https://www.adafruit.com/product/2011  2.4” x 1.4” x 0.3” (60mm x 36mm x 7mm)\n          1200mAh https://www.adafruit.com/product/258    1.3” x 2.4” x 0.2” (34mm x 62mm x 5mm)\n     b) The LiPo can be up to 50 x 65 x 14mm maximum.\n     c) Make sure no part of the LiPo foil pouch can short-out adjacent pins or pads in the area. Insulate with Kapton tape.\n\nConfiguration of the Teensy_Charge_Enable Solder Jumper (SJ):\nA) DEFAULT SJ OPEN:\n     If you do NOT want the system to be powered from the USB port of the charger, leave the SJ open.\n     Connecting a USB cable to the LiPo charger will ONLY charge the battery and power the system when the power switch is in\n        ON (up/battery) position.\n     Connecting a USB cable to the Teensy will NOT charge the battery, but it will power the system when the power switch is in\n        OFF (down/USB) position.\nB) OPTIONAL SJ CLOSED:\n      The LiPo charger 5V pin (LiPo Charger USB port) may be connected to the Teensy USB port by closing the SJ.\n      Connecting a USB cable to the LiPo charger will charge the battery and power the system. It will not connect to the serial\n         port of the Teensy.\n      Connecting a USB cable to the Teensy will power the board and charge the battery and connect to the serial port of the\n         Teensy.
 Wire Wire Line
 	4500 7650 4650 7650
 Wire Wire Line
@@ -574,10 +574,10 @@ Wire Wire Line
 Wire Wire Line
 	4950 7450 4950 7700
 $Comp
-L Jumper:SolderJumper_2_Open JP7
+L Jumper:SolderJumper_2_Open JP5
 U 1 1 5F4F1B0D
 P 6500 3700
-F 0 "JP7" H 6500 3600 50  0000 C CNN
+F 0 "JP5" H 6500 3600 50  0000 C CNN
 F 1 "Teensy_Charge_Enable" H 6300 3800 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6500 3700 50  0001 C CNN
 F 3 "~" H 6500 3700 50  0001 C CNN
@@ -590,10 +590,10 @@ OPT: Close SJ to run board\nwhile it is charging with the\nLiPo charger USB port
 Wire Wire Line
 	6150 3700 6350 3700
 $Comp
-L TPS7A0533PDBVR:TPS7A0533PDBVR U7
+L TPS7A0533PDBVR:TPS7A0533PDBVR U6
 U 1 1 5F5B23D2
 P 8150 5050
-F 0 "U7" H 8650 5318 50  0000 C CNN
+F 0 "U6" H 8650 5318 50  0000 C CNN
 F 1 "TPS7A0533PDBVR" H 8650 5225 50  0000 C CNN
 F 2 "TPS7A0533PDBVR:SOT95P280X145-5N" H 9000 5150 50  0001 L CNN
 F 3 "http://www.ti.com/lit/gpn/tps7a05" H 9000 5050 50  0001 L CNN
@@ -734,10 +734,10 @@ F 5 "CAP" H 5100 5400 50  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L LP3961EMP-5.0:LP3961EMP-5.0 U6
+L LP3961EMP-5.0:LP3961EMP-5.0 U5
 U 1 1 5F69DC3B
 P 5850 5250
-F 0 "U6" H 6350 5550 50  0000 C CNN
+F 0 "U5" H 6350 5550 50  0000 C CNN
 F 1 "LP3961EMP-5.0" H 6350 5450 50  0000 C CNN
 F 2 "LP3961EMP-5.0:SOT150P696X180-5N" H 6900 5350 50  0001 L CNN
 F 3 "https://4donline.ihs.com/images/VipMasterIC/IC/NATL/NATLS08520/NATLS08520-1.pdf?hkey=EC6BD57738AE6E33B588C5F9AD3CEFA7" H 6900 5250 50  0001 L CNN
@@ -1077,8 +1077,8 @@ L Connector:Conn_01x01_Male J?
 U 1 1 61AFA726
 P 7700 5950
 AR Path="/5E755AC8/61AFA726" Ref="J?"  Part="1" 
-AR Path="/5E7548ED/61AFA726" Ref="J16"  Part="1" 
-F 0 "J16" H 7673 5881 50  0000 R CNN
+AR Path="/5E7548ED/61AFA726" Ref="J10"  Part="1" 
+F 0 "J10" H 7673 5881 50  0000 R CNN
 F 1 "Conn_01x01_Male" H 7673 5974 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 7700 5950 50  0001 C CNN
 F 3 "~" H 7700 5950 50  0001 C CNN
@@ -1091,8 +1091,8 @@ L Connector:Conn_01x01_Male J?
 U 1 1 61AFA72C
 P 7700 6300
 AR Path="/5E755AC8/61AFA72C" Ref="J?"  Part="1" 
-AR Path="/5E7548ED/61AFA72C" Ref="J17"  Part="1" 
-F 0 "J17" H 7673 6231 50  0000 R CNN
+AR Path="/5E7548ED/61AFA72C" Ref="J11"  Part="1" 
+F 0 "J11" H 7673 6231 50  0000 R CNN
 F 1 "Conn_01x01_Male" H 7673 6324 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical_No_Registration" H 7700 6300 50  0001 C CNN
 F 3 "~" H 7700 6300 50  0001 C CNN
