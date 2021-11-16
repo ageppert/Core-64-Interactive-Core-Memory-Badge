@@ -426,7 +426,7 @@ L Jumper:SolderJumper_2_Bridged JP7
 U 1 1 5F4B1331
 P 3400 5250
 F 0 "JP7" H 3400 5350 50  0000 C CNN
-F 1 "Opt. Cur. Mon." H 3450 5450 50  0000 C CNN
+F 1 "Sys. Cur. Mon." H 3450 5450 50  0000 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 3400 5250 50  0001 C CNN
 F 3 "~" H 3400 5250 50  0001 C CNN
 F 4 "No" H 3400 5250 50  0001 C CNN "Insert?"
@@ -713,6 +713,8 @@ F 6 "CAP ALUM 470UF 20% 10V SMD" H 7100 5250 50  0001 C CNN "Description"
 F 7 "6.3SEV330M6.3X8" H 7100 5250 50  0001 C CNN "MPN(Secondary)"
 F 8 "Rubycon" H 7100 5250 50  0001 C CNN "Manufacturer(Secondary)"
 F 9 "330UF 20% 6.3V" H 7100 5250 50  0001 C CNN "Value_Modifier"
+F 10 "EEE-FTA471XAL" H 7100 5250 50  0001 C CNN "MPN"
+F 11 "Panasonic" H 7100 5250 50  0001 C CNN "Manufacturer_Name"
 	1    7100 5250
 	1    0    0    -1  
 $EndComp
@@ -730,6 +732,9 @@ F 2 "Capacitor_SMD:C_1206_3216Metric" H 5100 5400 50  0001 C CNN
 F 3 "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=C3216X5R1A686M160AC" H 5100 5400 50  0001 C CNN
 F 4 "Yes" H 5100 5400 50  0001 C CNN "Insert?"
 F 5 "CAP" H 5100 5400 50  0001 C CNN "Description"
+F 6 "C3216X5R1A686M160AC" H 5100 5400 50  0001 C CNN "MPN"
+F 7 "DK" H 5100 5400 50  0001 C CNN "MPN(Secondary)"
+F 8 "TDK" H 5100 5400 50  0001 C CNN "Manufacturer_Name"
 	1    5100 5400
 	-1   0    0    -1  
 $EndComp

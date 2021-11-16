@@ -3879,7 +3879,7 @@
     (fp_text reference JP7 (at 0 -1.8) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value "Opt. Cur. Mon." (at 0 1.9) (layer F.Fab)
+    (fp_text value "Sys. Cur. Mon." (at 0 1.9) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_poly (pts (xy -0.25 -0.3) (xy 0.25 -0.3) (xy 0.25 0.3) (xy -0.25 0.3)) (layer F.Cu) (width 0))

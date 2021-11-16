@@ -1937,6 +1937,8 @@ F 6 "CAP ALUM 470UF 20% 10V SMD" H 1000 7300 50  0001 C CNN "Description"
 F 7 "6.3SEV330M6.3X8" H 1000 7300 50  0001 C CNN "MPN(Secondary)"
 F 8 "Rubycon" H 1000 7300 50  0001 C CNN "Manufacturer(Secondary)"
 F 9 "330UF 20% 6.3V" H 1000 7300 50  0001 C CNN "Value_Modifier"
+F 10 "EEE-FTA471XAL" H 1000 7300 50  0001 C CNN "MPN"
+F 11 "Panasonic" H 1000 7300 50  0001 C CNN "Manufacturer_Name"
 	1    1000 7300
 	1    0    0    -1  
 $EndComp
