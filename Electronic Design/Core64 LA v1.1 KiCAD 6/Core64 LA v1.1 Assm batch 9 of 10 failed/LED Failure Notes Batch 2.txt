@@ -1,0 +1,19 @@
+I received 5 completely assembled PCBs. 2 of 5 failed.
+
+WORKS: 2K OK
+WORKS: 2L OK
+WORKS: 2M OK
+FIXED: 2N D24 out. Replaced from batch 1 LEDs
+
+FIXED: 2O Flakey D13, 15. Dead 23, 33, 38, 44, 48, bottom two rows.
+Replaced 13. That fixed flakey 15 as well.
+Reflowed 48, 49 to see if 50 and beyond would work. That did not help.
+Replaced 23,33,38,44,48. That fixed all but 3 in the bottom two rows.
+Replaced 49, 60, 62. Now it all works.
+
+330°F with the 3/8 round nozzle was just hot enough to get the job done, but not yellow the boards.
+Even 5° more would yellow them.
+
+A hot plate at 300°F would have been ideal.
+
+Conclusion is that the LEDs are a bad batch. I don't want to use those any more! 

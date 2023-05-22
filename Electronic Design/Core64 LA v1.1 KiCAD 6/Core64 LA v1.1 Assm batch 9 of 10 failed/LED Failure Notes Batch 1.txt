@@ -1,0 +1,75 @@
+I received 10 completely assembled PCBs. There are problems with 9 of them. The problem is that some of the LEDs do not work. Somewhere between 1 and 5 LEDs do not work. Some of the LEDs do not light up at all. Some partially work with one or two colors out of the three RGB colors. I have ordered many of these from JLCPCB before, and have almost no problems. In one case, one LED was not completely soldered down, but after I reflowing it with hot air, it worked just fine. I tried reflowing several of the LEDs in this batch, but that did not fix the ones that did not work at all. It would also not fix LEDs that were partially working because even for them to partially work, all solder joints must be completed so it can receive the properly encoded signals. The bad LEDs do not follow a pattern - they are randomly distributed around the boards. Because of this troubleshooting, I think there were several defective LEDs in this batch. 
+
+FIXED: 1A 3 dead, 1 no green. Replaced D18, 23, 33, 46
+Donor: 1B 1 no green, 1 no red. Donor board. Flux it first. Heat with 315°C on the backside, wide square nozzle.
+FIXED: 1C 2 dead, 1 (43) no blue or green. Flakey behavior. Replaced 18, 43. 43 fixed all the columns of vertical flakiness.
+WORKS: 1D ALL GOOD
+FIXED: 1E 2 without blue (19 and 42?)
+FIXED: 1F 2 dead (2, 57),  1 no blue (13) (reflowed 2 and 13 and that alone didn't work). Then 17 failed, but came back as it cooled. Replaced 17.
+FIXED: 1G 1 dead. Reworked D4.
+FIXED: 1H 1 dead. Reworked D61.
+FIXED: 1I 4 dead, 1 no green. Replaced 7,31,35,55,57
+FIXED: 1J 4 dead, replace 15, 17, 42, 61, Then 49,56 needed replacement.
+
+--------------
+
+Hello sir or madam,
+
+Thanks for your feedback and sorry for any inconvenience caused.
+We have checked your order information and notice that the LED you used C194323 is a moisture-sensitive part.
+For this kind of part, it is suggested to bake the parts before assembly. And if you use many LEDs in your design, we suggest you proceed function test before delivery. There is some notice on our website. Kindly check the attachment. https://jlcpcb.com/help/article/61-Terms-and-Conditions-of-JLCPCB-Assembly-Service
+For these boards, could you please check how many leds in total are affected? And would it be possible that you get some replacements at your local and replace them on the boards? We would apply some coupon as compensation. Would it be acceptable?
+
+Best regards,
+Emma
+
+-----------------
+
+So I baked them on the 3d Printer hot plate. No change. Number of dead LEDs confirmed:
+A 4
+B 3
+C 3 and a lot of flakey behavior
+D 0
+E 2
+F 3
+G 1
+H 1
+I 5
+J 4
+
+Total of 26 out of 640 dead. 4% failure rate.
+
+------------------
+
+Hi Emma, thank you for your quick response.
+
+I understand the LED is a moisture sensitive component. Did the facility which performed the assembly follow the moisture precautions?
+
+After I tested the assembled boards, I baked them and re-tested them. There was no change in behavior. There are 26 failed LEDs out of the total 640 (10 boards X 64 LEDs per board). My previous orders from JLCPCB Assembly service had no problems. All boards worked.
+
+Do you have any others ideas about what might be different between this order SMT02303081158784 and the last order SMT0220915965060? Did a different company manufacture them?
+
+I have just placed another sample order W202303171122582 using a newer version of the LED (P/N C5359034, WS2813C-V3) and I hope those LEDs will be just as reliable as my previous orders. If you could add 30 of that LED part as to this existing order when it ships to me, I can try replacing the LEDs on the PCBAs which have failed LEDs.
+
+I would also appreciate a coupon for my next assembly order. If my sample order W202303171122582 turns out OK, I will need to follow-up and order 45 more of the same PCBAs right away. 
+
+Respectfully,
+Andy
+
+-------------------
+
+Hello Andy,
+
+Thanks for your reply and great effort.
+1-The parts should be baked before assembly. If there is some vapor in the part inside, after reflowing the part functionality would be affected. Baking after assembly would not help. The parts are kept in our warehouse in good condition. But when the parts are unpacked, there may be some time before assembly, and during which it may cause some moisture into the part. If you inform us to bake the boards, then we will bake them for 48 hours and take them out of the oven when they are ready for assembly.
+2-There is some risk of malfunction if the parts are not baked. Therefore, some can work normally, and some have a certain number of components damaged, which is normal. It does not mean that the components we received are not good.JLC totally understand that parts are so important to working boards, so all our parts are from reliable supplier and are quality-assured. Please do not worry about that.
+3-We are sorry that we cannot send more parts with assembly with the boards, since it may cause some custom clearance trouble. And also, when we get the parts from our warehouse, we can only get the same quantity as the order requires. Could you please try to get some parts at your local? We would apply a $10 coupon for you. Would it be acceptable?
+4-For your new order, I will send you an email for further confirmation. Kindly check it later.
+
+Best regards,
+Emma
+
+-----------------------
+
+So my next order will bake the LEDs...
+
