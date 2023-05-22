@@ -4,4 +4,7 @@
 	*.tsv
 	*.xml
 	# backup files
-	 *.bak
+	*.bak
+        # local project settings
+        *.kicad_prl
+        fp-info-cache
