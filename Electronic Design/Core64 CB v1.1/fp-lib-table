@@ -1,0 +1,10 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ALS_BH1730")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/ALS_BH1730.pretty")(options "")(descr ""))
+  (lib (name "Rohm_RPR-0521RS")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/Rohm_RPR-0521RS")(options "")(descr ""))
+  (lib (name "LiteOn_LTR-329ALS")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/LiteOn_LTR-329ALS")(options "")(descr ""))
+  (lib (name "Badgelife_SAO_v169bis_20190321-0053")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/Badgelife_SAO_v169bis_20190321-0053")(options "")(descr ""))
+  (lib (name "TI_TS3A4751PWR")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/TI_TS3A4751PWR")(options "")(descr ""))
+  (lib (name "Core_64_footprints")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library/Core_64_footprints.pretty")(options "")(descr ""))
+  (lib (name "Core_64_KiCad_Library")(type "KiCad")(uri "/Users/ageppert/Dropbox/Electronics/Core 64 Interactive Badge/Core-64-Interactive-Core-Memory-Badge/Electronic Design/Core_64_KiCad_Library")(options "")(descr ""))
+)
