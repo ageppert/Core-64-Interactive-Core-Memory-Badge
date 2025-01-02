@@ -1,0 +1,21 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 5a6b2dfe-0ece-4700-b466-37cd61f57d0a)
+
+  (paper "USLetter")
+
+  (title_block
+    (title "Stylus Schematic")
+    (date "2023-03-10")
+    (rev "0.6")
+    (company "Machine Ideas, LLC")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
