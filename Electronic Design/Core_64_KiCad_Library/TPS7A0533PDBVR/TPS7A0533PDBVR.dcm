@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP TPS7A0533PDBVR
-D 1-A, ultra-low-IQ, 200-mA low-dropout (LDO) regulator in a small-sized package
-K
-F http://www.ti.com/lit/gpn/tps7a05
-$ENDCMP
-#
-#End Doc Library

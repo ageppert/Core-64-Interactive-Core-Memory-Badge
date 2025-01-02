@@ -1,8 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP SGM2007-3.3XN5_TR
-D 1-A, ultra-low-IQ, 200-mA low-dropout (LDO) regulator in a small-sized package
-F http://www.ti.com/lit/gpn/tps7a05
-$ENDCMP
-#
-#End Doc Library

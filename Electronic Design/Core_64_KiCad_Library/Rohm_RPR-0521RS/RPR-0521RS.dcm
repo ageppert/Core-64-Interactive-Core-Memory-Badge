@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP RPR-0521RS
-D  ALS w/prx 1.8V logic w/ IrLED driver
-K
-F http://rohmfs.rohm.com/en/products/databook/datasheet/opto/optical_sensor/opto_module/rpr-0521rs-e.pdf
-$ENDCMP
-#
-#End Doc Library

@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP NCP176AMX330TCG
-D ON Semiconductor NCP176AMX330TCG, LDO Voltage Regulator, 500mA, 3.3 V +/-0.8%, 1.4  5.5 Vin, 6-Pin XDFN
-K
-F https://www.mouser.com/datasheet/2/308/NCP176-D-1551588.pdf
-$ENDCMP
-#
-#End Doc Library
